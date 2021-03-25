@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.eatop.common.ui;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.eclipse.eatop.common.ui.internal.Activator$Implementation
+Require-Bundle: org.eclipse.jface,
+ org.eclipse.emf.common.ui,
+ org.eclipse.eatop.geastadl,
+ org.eclipse.sphinx.emf
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: org.eclipse.eatop.common.ui.util
+Bundle-ClassPath: .
