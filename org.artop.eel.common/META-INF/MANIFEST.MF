@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.artop.eel.common;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: org.artop.eel.common.internal.Activator$Implementation
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.sphinx.emf
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.artop.eel.common.ecore,
+ org.artop.eel.common.internal;x-internal:=true,
+ org.artop.eel.common.resource
+Bundle-Localization: plugin

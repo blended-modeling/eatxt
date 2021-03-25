@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+   <copyright>
+  
+  Copyright (c) 2014 itemis and others.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors: 
+      itemis - Initial API and implementation
+  
+  </copyright>
+-->
+
+<plugin>
+     
+     <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://east-adl.info/2.1.12"
+            class="org.eclipse.eatop.eastadl21.Eastadl21Package"
+            genModel="model/EAST-ADL_SubsetFDAHDA.genmodel"/>
+     </extension>
+     
+     <extension
+         point="org.eclipse.sphinx.emf.metaModelDescriptors">
+       <descriptor
+            id="org.eclipse.eatop.eastadl21"
+            class="org.eclipse.eatop.eastadl21.util.Eastadl21ReleaseDescriptor">
+       </descriptor>
+     </extension>     
+     
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="org.eclipse.eatop.eastadl21.eastadl21XMLFile"
+            class="org.eclipse.eatop.eastadl21.util.Eastadl21ResourceFactoryImpl"/>
+   </extension>
+
+  
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.eatop.eastadl.eastadlXMLFile"
+            file-extensions="eaxml"
+            id="org.eclipse.eatop.eastadl21.eastadl21XMLFile"
+            name="%_UI_Eastadl21_content_type"
+            priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+		<parameter name="namespacePattern" value="http://east-adl.info/2\.[0-9]\.[0-9]+$"/>    
+	
+         </describer>
+      </content-type>
+   </extension>
+
+     
+     
+  <extension
+    point="org.eclipse.sphinx.emf.validation.registration">
+    <model
+      NsURI="http://east-adl.info/2.1.12"
+      class="org.eclipse.eatop.eastadl21.Referrable"
+      filter="_21"
+      Name="EAST-ADL 21"
+      id="org.eclipse.eatop.eastadl2112.Eastadl21.validation">
+    </model>
+   </extension>
+
+</plugin>

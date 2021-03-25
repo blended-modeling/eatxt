@@ -1,0 +1,16 @@
+target "east-adl-simplified" with source requirements
+
+location "http://download.eclipse.org/releases/2020-06/" eclipse-2020-06 {
+	org.eclipse.emf.sdk.feature.group
+	org.eclipse.xtext.sdk.feature.group
+}
+
+location "http://download.eclipse.org/sphinx/releases/0.11.x" sphinx {
+	org.eclipse.sphinx.emf.validation.feature.group
+	org.eclipse.sphinx.emf.serialization.feature.group
+}
+
+location "https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository/" eclipse-orbit-2020-06 {
+	org.junit.jupiter.api
+	org.junit.jupiter.engine
+}

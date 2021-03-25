@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.eclipse.eatop.eastadl2112;singleton:=true
+Automatic-Module-Name: org.eclipse.eatop.eastadl2112
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.eatop.common;visibility:=reexport,
+ org.eclipse.eatop.serialization;visibility:=reexport,
+ org.eclipse.sphinx.emf.validation;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.eatop.geastadl;visibility:=reexport,
+ org.eclipse.sphinx.emf.serialization;visibility:=reexport
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
+Export-Package: org.eclipse.eatop.eastadl21,
+ org.eclipse.eatop.eastadl21.impl;x-internal:=true,
+ org.eclipse.eatop.eastadl21.util,
+ org.eclipse.eatop.eastadl21.util
+Bundle-Name: %pluginName
+Bundle-Version: 0.5.0.qualifier
+Bundle-ClassPath: .,
+ lib/eastadl21.jar
+Bundle-Localization: plugin
+Bundle-Activator: org.eclipse.eatop.eastadl21.Activator$Implementation
+
