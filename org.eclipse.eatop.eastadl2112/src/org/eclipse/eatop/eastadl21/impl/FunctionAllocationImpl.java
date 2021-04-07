@@ -242,5 +242,5 @@ public class FunctionAllocationImpl extends EAElementImpl implements FunctionAll
 		}
 		return super.eIsSet(featureID);
 	}
-
+	
 } //FunctionAllocationImpl
