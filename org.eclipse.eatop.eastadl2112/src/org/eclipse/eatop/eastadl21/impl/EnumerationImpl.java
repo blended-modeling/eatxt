@@ -7,7 +7,7 @@ import java.util.Collection;
 import org.eclipse.eatop.eastadl21.Eastadl21Package;
 import org.eclipse.eatop.eastadl21.Enumeration;
 import org.eclipse.eatop.eastadl21.EnumerationLiteral;
-
+import org.eclipse.eatop.geastadl.ginfrastructure.gelements.GEAPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 

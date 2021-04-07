@@ -1,17 +1,17 @@
 /**
  * <copyright>
- *  
+ *
  * Copyright (c) 2014 Continental AG and others.
  * All rights reserved. This program and the accompanying materials are made
- * available under the terms of the Eclipse Public License 
+ * available under the terms of the Eclipse Public License
  * which accompanies this distribution, and is
  * available at http://www.eclipse.org/org/documents/epl-v10.php
- *  
- * Contributors: 
+ *
+ * Contributors:
  *     Continental AG - Initial API and implementation
- *  
+ *
  * </copyright>
- * 
+ *
  */
 package org.eclipse.eatop.geastadl.ginfrastructure.gelements;
 
@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>GEAXML</b></em>'. <!-- end-user-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.eatop.geastadl.ginfrastructure.gelements.GEAXML#getGTopLevelPackage <em>GTop Level Package</em>}</li>
+ * <li>{@link org.eclipse.eatop.geastadl.ginfrastructure.gelements.GEAXML#getGTopLevelPackage <em>GTop Level
+ * Package</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,11 +47,22 @@ public interface GEAXML extends EObject {
 	 * be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>GTop Level Package</em>' containment reference list.
-	 * @see org.eclipse.eatop.geastadl.ginfrastructure.gelements.GelementsPackage#getGEAXML_GTopLevelPackage()
+	 * @see org.eclipse.eatop.geastadl.ginfrastructure.gelements.GelementsPackage#getGEAXML_GTopLevelP@Override ackage()
 	 * @model containment="true" resolveProxies="false" transient="true" volatile="true" derived="true"
 	 */
-	EList<GEAPackage> gGetTopLevelPackage();
+	default EList<GEAPackage> gGetTopLevelPackage() {
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	default EList<GEAPackage> getGTopLevelPackage() {
+		return null;
+	}
 
 } // GEAXML

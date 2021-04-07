@@ -4,13 +4,9 @@ package org.eclipse.eatop.eastadl21.impl;
 
 import org.eclipse.eatop.eastadl21.Eastadl21Package;
 import org.eclipse.eatop.eastadl21.Referrable;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.sphinx.emf.ecore.ExtendedEObjectImpl;
 
 /**
