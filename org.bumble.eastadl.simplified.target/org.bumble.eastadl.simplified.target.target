@@ -7,6 +7,7 @@
       <unit id="org.eclipse.emf.sdk.feature.group" version="2.22.0.v20200519-1135"/>
       <unit id="org.eclipse.xtext.sdk.feature.group" version="2.22.0.v20200602-1533"/>
       <unit id="org.eclipse.e4.rcp.feature.group" version="4.16.0.v20200604-0951"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.16.0.v20200604-0951"/>
       <repository id="eclipse-2020-06" location="http://download.eclipse.org/releases/2020-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
