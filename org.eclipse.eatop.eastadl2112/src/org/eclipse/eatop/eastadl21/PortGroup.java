@@ -10,17 +10,15 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The PortGroup represents several FunctionPorts grouped into one. All FunctionPorts that are part of a PortGroup are graphically represented as a single FunctionPort. The PortGroup has no semantic meaning except that it makes graphical representation of the connected FunctionPorts easier to read, and provides a means to logically organize several FunctionPorts into one group.
+ * The PortGroup represents several FunctionPorts grouped into one. All FunctionPorts referenced by a PortGroup are graphically represented as a single FunctionPort. The PortGroup has no semantic meaning except that it makes graphical representation of the referenced FunctionPorts easier to read, and provides a means to logically organize several FunctionPorts into one group.
  * 
- * Connectors are still connected to the contained FunctionPorts, but tool support may simplify connections by allowing semiautomatic or automatic connection to all FunctionPorts of a PortGroup.
- * 
- * Note that the term "PortGroup" is also used by AADL.
+ * Connectors are still connected to the referenced FunctionPorts, but tool support may simplify connections by allowing semiautomatic or automatic connection to all FunctionPorts of a PortGroup.
  * 
  * Semantics:
  * The PortGroup provides the means to organize FunctionPorts and FunctionConnectors. It does not add semantics. In the model, the FunctionPorts contained in the PortGroup are connected as individual FunctionPorts.
  * 
  * Constraints:
- * [1] The FunctionPorts in a PortGroup must all be of the same component; all FunctionPorts in a PortGroup must be of the same kind (FunctionFlowPort with same EADirectionKind or FunctionClientServerPort with same ClientServerKind).
+ * [1] The FunctionPorts in a PortGroup must all be of the same component; all FunctionPorts in a PortGroup and its contained PortGroups must be of the same kind (FunctionFlowPort with same EADirectionKind or FunctionClientServerPort with same ClientServerKind).
  * 
  * Notation:
  * FunctionConnectors connected to FunctionPorts of a PortGroup are graphically collapsed into a single line.

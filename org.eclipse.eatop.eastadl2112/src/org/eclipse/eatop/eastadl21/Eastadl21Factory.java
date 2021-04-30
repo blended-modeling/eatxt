@@ -22,6 +22,15 @@ public interface Eastadl21Factory extends EFactory {
 	Eastadl21Factory eINSTANCE = org.eclipse.eatop.eastadl21.impl.Eastadl21FactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Design Level</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Design Level</em>'.
+	 * @generated
+	 */
+	DesignLevel createDesignLevel();
+
+	/**
 	 * Returns a new object of class '<em>Allocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -29,6 +38,24 @@ public interface Eastadl21Factory extends EFactory {
 	 * @generated
 	 */
 	Allocation createAllocation();
+
+	/**
+	 * Returns a new object of class '<em>Analysis Function Prototype</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Analysis Function Prototype</em>'.
+	 * @generated
+	 */
+	AnalysisFunctionPrototype createAnalysisFunctionPrototype();
+
+	/**
+	 * Returns a new object of class '<em>Analysis Function Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Analysis Function Type</em>'.
+	 * @generated
+	 */
+	AnalysisFunctionType createAnalysisFunctionType();
 
 	/**
 	 * Returns a new object of class '<em>Basic Software Function Type</em>'.
@@ -56,6 +83,15 @@ public interface Eastadl21Factory extends EFactory {
 	 * @generated
 	 */
 	DesignFunctionType createDesignFunctionType();
+
+	/**
+	 * Returns a new object of class '<em>Functional Device</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Functional Device</em>'.
+	 * @generated
+	 */
+	FunctionalDevice createFunctionalDevice();
 
 	/**
 	 * Returns a new object of class '<em>Function Allocation</em>'.
@@ -533,6 +569,33 @@ public interface Eastadl21Factory extends EFactory {
 	 * @generated
 	 */
 	EAStringValue createEAStringValue();
+
+	/**
+	 * Returns a new object of class '<em>User Attribute Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>User Attribute Definition</em>'.
+	 * @generated
+	 */
+	UserAttributeDefinition createUserAttributeDefinition();
+
+	/**
+	 * Returns a new object of class '<em>User Attributed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>User Attributed Element</em>'.
+	 * @generated
+	 */
+	UserAttributedElement createUserAttributedElement();
+
+	/**
+	 * Returns a new object of class '<em>User Element Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>User Element Type</em>'.
+	 * @generated
+	 */
+	UserElementType createUserElementType();
 
 	/**
 	 * Returns the package supported by this factory.

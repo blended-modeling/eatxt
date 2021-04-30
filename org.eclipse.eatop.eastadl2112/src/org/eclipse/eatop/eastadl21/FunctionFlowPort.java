@@ -52,6 +52,8 @@ package org.eclipse.eatop.eastadl21;
  * 
  * The output FunctionFlowPort declares a transmission point of data. The type of the data is defined by the associated EADatatype.
  * 
+ * A FunctionFlowPort with direction=inout is called an input/output FunctionFlowPort: Its semantics is the one of both the input and output FunctionFlowPort, described above.
+ * 
  * Extension: UML Port, specialization of SysML::FlowPort
  * 
  * Original fully qualified name: 

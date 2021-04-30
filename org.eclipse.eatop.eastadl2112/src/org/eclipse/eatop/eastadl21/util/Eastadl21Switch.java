@@ -89,6 +89,20 @@ public class Eastadl21Switch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case Eastadl21Package.DESIGN_LEVEL: {
+				DesignLevel designLevel = (DesignLevel)theEObject;
+				T result = caseDesignLevel(designLevel);
+				if (result == null) result = caseContext(designLevel);
+				if (result == null) result = caseEAPackageableElement(designLevel);
+				if (result == null) result = caseEAElement(designLevel);
+				if (result == null) result = caseGEAPackageableElement(designLevel);
+				if (result == null) result = caseIdentifiable(designLevel);
+				if (result == null) result = caseReferrable(designLevel);
+				if (result == null) result = caseGIdentifiable(designLevel);
+				if (result == null) result = caseGReferrable(designLevel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case Eastadl21Package.ALLOCATEABLE_ELEMENT: {
 				AllocateableElement allocateableElement = (AllocateableElement)theEObject;
 				T result = caseAllocateableElement(allocateableElement);
@@ -98,13 +112,40 @@ public class Eastadl21Switch<T> {
 			case Eastadl21Package.ALLOCATION: {
 				Allocation allocation = (Allocation)theEObject;
 				T result = caseAllocation(allocation);
-				if (result == null) result = caseEAPackageableElement(allocation);
 				if (result == null) result = caseEAElement(allocation);
-				if (result == null) result = caseGEAPackageableElement(allocation);
 				if (result == null) result = caseIdentifiable(allocation);
 				if (result == null) result = caseReferrable(allocation);
 				if (result == null) result = caseGIdentifiable(allocation);
 				if (result == null) result = caseGReferrable(allocation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Eastadl21Package.ANALYSIS_FUNCTION_PROTOTYPE: {
+				AnalysisFunctionPrototype analysisFunctionPrototype = (AnalysisFunctionPrototype)theEObject;
+				T result = caseAnalysisFunctionPrototype(analysisFunctionPrototype);
+				if (result == null) result = caseFunctionPrototype(analysisFunctionPrototype);
+				if (result == null) result = caseEAPrototype(analysisFunctionPrototype);
+				if (result == null) result = caseEAElement(analysisFunctionPrototype);
+				if (result == null) result = caseIdentifiable(analysisFunctionPrototype);
+				if (result == null) result = caseReferrable(analysisFunctionPrototype);
+				if (result == null) result = caseGIdentifiable(analysisFunctionPrototype);
+				if (result == null) result = caseGReferrable(analysisFunctionPrototype);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Eastadl21Package.ANALYSIS_FUNCTION_TYPE: {
+				AnalysisFunctionType analysisFunctionType = (AnalysisFunctionType)theEObject;
+				T result = caseAnalysisFunctionType(analysisFunctionType);
+				if (result == null) result = caseFunctionType(analysisFunctionType);
+				if (result == null) result = caseContext(analysisFunctionType);
+				if (result == null) result = caseEAType(analysisFunctionType);
+				if (result == null) result = caseEAPackageableElement(analysisFunctionType);
+				if (result == null) result = caseEAElement(analysisFunctionType);
+				if (result == null) result = caseGEAPackageableElement(analysisFunctionType);
+				if (result == null) result = caseIdentifiable(analysisFunctionType);
+				if (result == null) result = caseReferrable(analysisFunctionType);
+				if (result == null) result = caseGIdentifiable(analysisFunctionType);
+				if (result == null) result = caseGReferrable(analysisFunctionType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -152,6 +193,23 @@ public class Eastadl21Switch<T> {
 				if (result == null) result = caseReferrable(designFunctionType);
 				if (result == null) result = caseGIdentifiable(designFunctionType);
 				if (result == null) result = caseGReferrable(designFunctionType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Eastadl21Package.FUNCTIONAL_DEVICE: {
+				FunctionalDevice functionalDevice = (FunctionalDevice)theEObject;
+				T result = caseFunctionalDevice(functionalDevice);
+				if (result == null) result = caseAnalysisFunctionType(functionalDevice);
+				if (result == null) result = caseFunctionType(functionalDevice);
+				if (result == null) result = caseContext(functionalDevice);
+				if (result == null) result = caseEAType(functionalDevice);
+				if (result == null) result = caseEAPackageableElement(functionalDevice);
+				if (result == null) result = caseEAElement(functionalDevice);
+				if (result == null) result = caseGEAPackageableElement(functionalDevice);
+				if (result == null) result = caseIdentifiable(functionalDevice);
+				if (result == null) result = caseReferrable(functionalDevice);
+				if (result == null) result = caseGIdentifiable(functionalDevice);
+				if (result == null) result = caseGReferrable(functionalDevice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -962,8 +1020,62 @@ public class Eastadl21Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Eastadl21Package.USER_ATTRIBUTE_DEFINITION: {
+				UserAttributeDefinition userAttributeDefinition = (UserAttributeDefinition)theEObject;
+				T result = caseUserAttributeDefinition(userAttributeDefinition);
+				if (result == null) result = caseEAPackageableElement(userAttributeDefinition);
+				if (result == null) result = caseEAElement(userAttributeDefinition);
+				if (result == null) result = caseGEAPackageableElement(userAttributeDefinition);
+				if (result == null) result = caseIdentifiable(userAttributeDefinition);
+				if (result == null) result = caseReferrable(userAttributeDefinition);
+				if (result == null) result = caseGIdentifiable(userAttributeDefinition);
+				if (result == null) result = caseGReferrable(userAttributeDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Eastadl21Package.USER_ATTRIBUTED_ELEMENT: {
+				UserAttributedElement userAttributedElement = (UserAttributedElement)theEObject;
+				T result = caseUserAttributedElement(userAttributedElement);
+				if (result == null) result = caseEAPackageableElement(userAttributedElement);
+				if (result == null) result = caseEAElement(userAttributedElement);
+				if (result == null) result = caseGEAPackageableElement(userAttributedElement);
+				if (result == null) result = caseIdentifiable(userAttributedElement);
+				if (result == null) result = caseReferrable(userAttributedElement);
+				if (result == null) result = caseGIdentifiable(userAttributedElement);
+				if (result == null) result = caseGReferrable(userAttributedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Eastadl21Package.USER_ELEMENT_TYPE: {
+				UserElementType userElementType = (UserElementType)theEObject;
+				T result = caseUserElementType(userElementType);
+				if (result == null) result = caseEAPackageableElement(userElementType);
+				if (result == null) result = caseEAElement(userElementType);
+				if (result == null) result = caseGEAPackageableElement(userElementType);
+				if (result == null) result = caseIdentifiable(userElementType);
+				if (result == null) result = caseReferrable(userElementType);
+				if (result == null) result = caseGIdentifiable(userElementType);
+				if (result == null) result = caseGReferrable(userElementType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Design Level</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Design Level</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDesignLevel(DesignLevel object) {
+		return null;
 	}
 
 	/**
@@ -993,6 +1105,36 @@ public class Eastadl21Switch<T> {
 	 * @generated
 	 */
 	public T caseAllocation(Allocation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Analysis Function Prototype</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Analysis Function Prototype</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnalysisFunctionPrototype(AnalysisFunctionPrototype object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Analysis Function Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Analysis Function Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnalysisFunctionType(AnalysisFunctionType object) {
 		return null;
 	}
 
@@ -1038,6 +1180,21 @@ public class Eastadl21Switch<T> {
 	 * @generated
 	 */
 	public T caseDesignFunctionType(DesignFunctionType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Functional Device</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Functional Device</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionalDevice(FunctionalDevice object) {
 		return null;
 	}
 
@@ -2118,6 +2275,51 @@ public class Eastadl21Switch<T> {
 	 * @generated
 	 */
 	public T caseEAValue(EAValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>User Attribute Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>User Attribute Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUserAttributeDefinition(UserAttributeDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>User Attributed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>User Attributed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUserAttributedElement(UserAttributedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>User Element Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>User Element Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUserElementType(UserElementType object) {
 		return null;
 	}
 

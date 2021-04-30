@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AllocationImpl extends EAPackageableElementImpl implements Allocation {
+public class AllocationImpl extends EAElementImpl implements Allocation {
 	/**
 	 * The cached value of the '{@link #getFunctionAllocation() <em>Function Allocation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

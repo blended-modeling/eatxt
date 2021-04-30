@@ -15,7 +15,7 @@ package org.eclipse.eatop.eastadl21;
  * FunctionAllocation specifies that the identified AllocationTarget is a host for the identified AllocateableElement.
  * 
  * Constraints:
- * AllocatableElements allocated to HardwarePortConnectors must be FunctionConnectors.
+ * AllocatableElements allocated to PortConnectors must be FunctionConnectors.
  * AllocatableElements allocated to HardwarePorts or HardwarePins must be FunctionPorts.
  * AllocatableElements allocated to HardwareComponentPrototypes must be DesignFunctionPrototypes.
  * 

@@ -6,6 +6,8 @@ import org.eclipse.eatop.eastadl21.Actuator;
 import org.eclipse.eatop.eastadl21.AllocateableElement;
 import org.eclipse.eatop.eastadl21.Allocation;
 import org.eclipse.eatop.eastadl21.AllocationTarget;
+import org.eclipse.eatop.eastadl21.AnalysisFunctionPrototype;
+import org.eclipse.eatop.eastadl21.AnalysisFunctionType;
 import org.eclipse.eatop.eastadl21.ArrayDatatype;
 import org.eclipse.eatop.eastadl21.BasicSoftwareFunctionType;
 import org.eclipse.eatop.eastadl21.ClientServerKind;
@@ -15,6 +17,7 @@ import org.eclipse.eatop.eastadl21.CompositeDatatype;
 import org.eclipse.eatop.eastadl21.Context;
 import org.eclipse.eatop.eastadl21.DesignFunctionPrototype;
 import org.eclipse.eatop.eastadl21.DesignFunctionType;
+import org.eclipse.eatop.eastadl21.DesignLevel;
 import org.eclipse.eatop.eastadl21.EAArrayValue;
 import org.eclipse.eatop.eastadl21.EABoolean;
 import org.eclipse.eatop.eastadl21.EABooleanValue;
@@ -53,6 +56,7 @@ import org.eclipse.eatop.eastadl21.FunctionPort;
 import org.eclipse.eatop.eastadl21.FunctionPowerPort;
 import org.eclipse.eatop.eastadl21.FunctionPrototype;
 import org.eclipse.eatop.eastadl21.FunctionType;
+import org.eclipse.eatop.eastadl21.FunctionalDevice;
 import org.eclipse.eatop.eastadl21.HardwareBusKind;
 import org.eclipse.eatop.eastadl21.HardwareComponentPrototype;
 import org.eclipse.eatop.eastadl21.HardwareComponentType;
@@ -85,6 +89,9 @@ import org.eclipse.eatop.eastadl21.Sensor;
 import org.eclipse.eatop.eastadl21.TraceableSpecification;
 import org.eclipse.eatop.eastadl21.Unit;
 
+import org.eclipse.eatop.eastadl21.UserAttributeDefinition;
+import org.eclipse.eatop.eastadl21.UserAttributedElement;
+import org.eclipse.eatop.eastadl21.UserElementType;
 import org.eclipse.eatop.eastadl21.util.Eastadl21Validator;
 
 import org.eclipse.eatop.geastadl.ginfrastructure.gelements.GelementsPackage;
@@ -113,6 +120,13 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass designLevelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass allocateableElementEClass = null;
 
 	/**
@@ -121,6 +135,20 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	 * @generated
 	 */
 	private EClass allocationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass analysisFunctionPrototypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass analysisFunctionTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,6 +170,13 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	 * @generated
 	 */
 	private EClass designFunctionTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass functionalDeviceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -652,6 +687,27 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass userAttributeDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass userAttributedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass userElementTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum clientServerKindEEnum = null;
 
 	/**
@@ -805,6 +861,46 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	 * @generated
 	 */
 	@Override
+	public EClass getDesignLevel() {
+		return designLevelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDesignLevel_Allocation() {
+		return (EReference)designLevelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDesignLevel_FunctionalDesignArchitecture() {
+		return (EReference)designLevelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDesignLevel_HardwareDesignArchitecture() {
+		return (EReference)designLevelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAllocateableElement() {
 		return allocateableElementEClass;
 	}
@@ -827,6 +923,46 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	@Override
 	public EReference getAllocation_FunctionAllocation() {
 		return (EReference)allocationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAnalysisFunctionPrototype() {
+		return analysisFunctionPrototypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAnalysisFunctionPrototype_Type() {
+		return (EReference)analysisFunctionPrototypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAnalysisFunctionType() {
+		return analysisFunctionTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAnalysisFunctionType_Part() {
+		return (EReference)analysisFunctionTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -877,6 +1013,16 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	@Override
 	public EReference getDesignFunctionType_Part() {
 		return (EReference)designFunctionTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFunctionalDevice() {
+		return functionalDeviceEClass;
 	}
 
 	/**
@@ -2635,6 +2781,116 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	 * @generated
 	 */
 	@Override
+	public EClass getUserAttributeDefinition() {
+		return userAttributeDefinitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUserAttributeDefinition_DefaultValue() {
+		return (EReference)userAttributeDefinitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUserAttributeDefinition_Type() {
+		return (EReference)userAttributeDefinitionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUserAttributedElement() {
+		return userAttributedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUserAttributedElement_UaValue() {
+		return (EReference)userAttributedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUserAttributedElement_UaType() {
+		return (EReference)userAttributedElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUserAttributedElement_AttributedElement() {
+		return (EReference)userAttributedElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUserElementType() {
+		return userElementTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUserElementType_ValidFor() {
+		return (EAttribute)userElementTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUserElementType_Key() {
+		return (EAttribute)userElementTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUserElementType_UaDefinition() {
+		return (EReference)userElementTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getClientServerKind() {
 		return clientServerKindEEnum;
 	}
@@ -2768,10 +3024,21 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		isCreated = true;
 
 		// Create classes and their features
+		designLevelEClass = createEClass(DESIGN_LEVEL);
+		createEReference(designLevelEClass, DESIGN_LEVEL__ALLOCATION);
+		createEReference(designLevelEClass, DESIGN_LEVEL__FUNCTIONAL_DESIGN_ARCHITECTURE);
+		createEReference(designLevelEClass, DESIGN_LEVEL__HARDWARE_DESIGN_ARCHITECTURE);
+
 		allocateableElementEClass = createEClass(ALLOCATEABLE_ELEMENT);
 
 		allocationEClass = createEClass(ALLOCATION);
 		createEReference(allocationEClass, ALLOCATION__FUNCTION_ALLOCATION);
+
+		analysisFunctionPrototypeEClass = createEClass(ANALYSIS_FUNCTION_PROTOTYPE);
+		createEReference(analysisFunctionPrototypeEClass, ANALYSIS_FUNCTION_PROTOTYPE__TYPE);
+
+		analysisFunctionTypeEClass = createEClass(ANALYSIS_FUNCTION_TYPE);
+		createEReference(analysisFunctionTypeEClass, ANALYSIS_FUNCTION_TYPE__PART);
 
 		basicSoftwareFunctionTypeEClass = createEClass(BASIC_SOFTWARE_FUNCTION_TYPE);
 
@@ -2780,6 +3047,8 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 
 		designFunctionTypeEClass = createEClass(DESIGN_FUNCTION_TYPE);
 		createEReference(designFunctionTypeEClass, DESIGN_FUNCTION_TYPE__PART);
+
+		functionalDeviceEClass = createEClass(FUNCTIONAL_DEVICE);
 
 		functionAllocationEClass = createEClass(FUNCTION_ALLOCATION);
 		createEReference(functionAllocationEClass, FUNCTION_ALLOCATION__ALLOCATED_ELEMENT);
@@ -3028,6 +3297,20 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		eaValueEClass = createEClass(EA_VALUE);
 		createEReference(eaValueEClass, EA_VALUE__TYPE);
 
+		userAttributeDefinitionEClass = createEClass(USER_ATTRIBUTE_DEFINITION);
+		createEReference(userAttributeDefinitionEClass, USER_ATTRIBUTE_DEFINITION__DEFAULT_VALUE);
+		createEReference(userAttributeDefinitionEClass, USER_ATTRIBUTE_DEFINITION__TYPE);
+
+		userAttributedElementEClass = createEClass(USER_ATTRIBUTED_ELEMENT);
+		createEReference(userAttributedElementEClass, USER_ATTRIBUTED_ELEMENT__UA_VALUE);
+		createEReference(userAttributedElementEClass, USER_ATTRIBUTED_ELEMENT__UA_TYPE);
+		createEReference(userAttributedElementEClass, USER_ATTRIBUTED_ELEMENT__ATTRIBUTED_ELEMENT);
+
+		userElementTypeEClass = createEClass(USER_ELEMENT_TYPE);
+		createEAttribute(userElementTypeEClass, USER_ELEMENT_TYPE__VALID_FOR);
+		createEAttribute(userElementTypeEClass, USER_ELEMENT_TYPE__KEY);
+		createEReference(userElementTypeEClass, USER_ELEMENT_TYPE__UA_DEFINITION);
+
 		// Create enums
 		clientServerKindEEnum = createEEnum(CLIENT_SERVER_KIND);
 		eaDirectionKindEEnum = createEEnum(EA_DIRECTION_KIND);
@@ -3075,11 +3358,15 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		allocationEClass.getESuperTypes().add(this.getEAPackageableElement());
+		designLevelEClass.getESuperTypes().add(this.getContext());
+		allocationEClass.getESuperTypes().add(this.getEAElement());
+		analysisFunctionPrototypeEClass.getESuperTypes().add(this.getFunctionPrototype());
+		analysisFunctionTypeEClass.getESuperTypes().add(this.getFunctionType());
 		basicSoftwareFunctionTypeEClass.getESuperTypes().add(this.getDesignFunctionType());
 		designFunctionPrototypeEClass.getESuperTypes().add(this.getFunctionPrototype());
 		designFunctionPrototypeEClass.getESuperTypes().add(this.getAllocateableElement());
 		designFunctionTypeEClass.getESuperTypes().add(this.getFunctionType());
+		functionalDeviceEClass.getESuperTypes().add(this.getAnalysisFunctionType());
 		functionAllocationEClass.getESuperTypes().add(this.getEAElement());
 		functionClientServerInterfaceEClass.getESuperTypes().add(this.getTraceableSpecification());
 		functionClientServerPortEClass.getESuperTypes().add(this.getFunctionPort());
@@ -3157,12 +3444,26 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		eaExpressionEClass.getESuperTypes().add(this.getEAValue());
 		eaNumericalValueEClass.getESuperTypes().add(this.getEAValue());
 		eaStringValueEClass.getESuperTypes().add(this.getEAValue());
+		userAttributeDefinitionEClass.getESuperTypes().add(this.getEAPackageableElement());
+		userAttributedElementEClass.getESuperTypes().add(this.getEAPackageableElement());
+		userElementTypeEClass.getESuperTypes().add(this.getEAPackageableElement());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(designLevelEClass, DesignLevel.class, "DesignLevel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDesignLevel_Allocation(), this.getAllocation(), null, "allocation", null, 0, -1, DesignLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignLevel_FunctionalDesignArchitecture(), this.getDesignFunctionPrototype(), null, "functionalDesignArchitecture", null, 0, 1, DesignLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignLevel_HardwareDesignArchitecture(), this.getHardwareComponentPrototype(), null, "hardwareDesignArchitecture", null, 0, 1, DesignLevel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(allocateableElementEClass, AllocateableElement.class, "AllocateableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(allocationEClass, Allocation.class, "Allocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAllocation_FunctionAllocation(), this.getFunctionAllocation(), null, "functionAllocation", null, 0, -1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(analysisFunctionPrototypeEClass, AnalysisFunctionPrototype.class, "AnalysisFunctionPrototype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnalysisFunctionPrototype_Type(), this.getAnalysisFunctionType(), null, "type", null, 1, 1, AnalysisFunctionPrototype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(analysisFunctionTypeEClass, AnalysisFunctionType.class, "AnalysisFunctionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnalysisFunctionType_Part(), this.getAnalysisFunctionPrototype(), null, "part", null, 0, -1, AnalysisFunctionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(basicSoftwareFunctionTypeEClass, BasicSoftwareFunctionType.class, "BasicSoftwareFunctionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3171,6 +3472,8 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 
 		initEClass(designFunctionTypeEClass, DesignFunctionType.class, "DesignFunctionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDesignFunctionType_Part(), this.getDesignFunctionPrototype(), null, "part", null, 0, -1, DesignFunctionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(functionalDeviceEClass, FunctionalDevice.class, "FunctionalDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(functionAllocationEClass, FunctionAllocation.class, "FunctionAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFunctionAllocation_AllocatedElement(), this.getFunctionAllocation_allocatedElement(), null, "allocatedElement", null, 1, 1, FunctionAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3419,6 +3722,20 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		initEClass(eaValueEClass, EAValue.class, "EAValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEAValue_Type(), this.getEADatatype(), null, "type", null, 1, 1, EAValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(userAttributeDefinitionEClass, UserAttributeDefinition.class, "UserAttributeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUserAttributeDefinition_DefaultValue(), this.getEAValue(), null, "defaultValue", null, 0, 1, UserAttributeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserAttributeDefinition_Type(), this.getEADatatype(), null, "type", null, 1, 1, UserAttributeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(userAttributedElementEClass, UserAttributedElement.class, "UserAttributedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUserAttributedElement_UaValue(), this.getEAValue(), null, "uaValue", null, 0, -1, UserAttributedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserAttributedElement_UaType(), this.getUserElementType(), null, "uaType", null, 0, -1, UserAttributedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserAttributedElement_AttributedElement(), this.getIdentifiable(), null, "attributedElement", null, 1, 1, UserAttributedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(userElementTypeEClass, UserElementType.class, "UserElementType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUserElementType_ValidFor(), this.getString(), "validFor", null, 0, 1, UserElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUserElementType_Key(), this.getString(), "key", null, 1, 1, UserElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUserElementType_UaDefinition(), this.getUserAttributeDefinition(), null, "uaDefinition", null, 0, -1, UserElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(clientServerKindEEnum, ClientServerKind.class, "ClientServerKind");
 		addEEnumLiteral(clientServerKindEEnum, ClientServerKind.CLIENT);
@@ -3460,10 +3777,10 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		createXMLPersistenceMappingExtendedMetaDataAnnotations();
 		// http://www.eclipse.org/emf/2002/GenModel
 		createGenModelAnnotations();
-		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-		createExtendedMetaDataAnnotations();
 		// Stereotype
 		createStereotypeAnnotations();
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
 		// TaggedValues
 		createTaggedValuesAnnotations();
 	}
@@ -3483,6 +3800,38 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 			   "guid", "{7298DC40-A4F8-4a5d-A0CC-4A71F6987184}",
 			   "id", "1",
 			   "EA name", "eastadl21"
+		   });
+		addAnnotation
+		  (designLevelEClass,
+		   source,
+		   new String[] {
+			   "guid", "{3DA8D034-A23A-4d6a-9174-C76163018C43}",
+			   "id", "19",
+			   "EA name", "DesignLevel"
+		   });
+		addAnnotation
+		  (getDesignLevel_Allocation(),
+		   source,
+		   new String[] {
+			   "guid", "{49F4574F-E818-4cb3-B6C9-17F03BBA953B}",
+			   "id", "732",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (getDesignLevel_FunctionalDesignArchitecture(),
+		   source,
+		   new String[] {
+			   "guid", "{48012A9C-B5CA-49d2-9DE1-ABFA2AD87D0F}",
+			   "id", "733",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (getDesignLevel_HardwareDesignArchitecture(),
+		   source,
+		   new String[] {
+			   "guid", "{77E96486-A5F0-42e3-B1F0-2B3A3A6305CB}",
+			   "id", "731",
+			   "EA name", ""
 		   });
 		addAnnotation
 		  (allocateableElementEClass,
@@ -3506,6 +3855,38 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		   new String[] {
 			   "guid", "{845496EE-F7B5-4440-BE72-8F3DC81891D2}",
 			   "id", "682",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (analysisFunctionPrototypeEClass,
+		   source,
+		   new String[] {
+			   "guid", "{95E72BFB-F9BB-4bb2-B78C-F0227D35280C}",
+			   "id", "51",
+			   "EA name", "AnalysisFunctionPrototype"
+		   });
+		addAnnotation
+		  (getAnalysisFunctionPrototype_Type(),
+		   source,
+		   new String[] {
+			   "guid", "{0B20899E-F2AF-460c-98F5-B9634FB87D29}",
+			   "id", "606",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (analysisFunctionTypeEClass,
+		   source,
+		   new String[] {
+			   "guid", "{FD507174-A96E-4328-A323-4D51BF4ABC67}",
+			   "id", "57",
+			   "EA name", "AnalysisFunctionType"
+		   });
+		addAnnotation
+		  (getAnalysisFunctionType_Part(),
+		   source,
+		   new String[] {
+			   "guid", "{DCE3DDD8-7185-4db8-AAAD-AB3A2884A816}",
+			   "id", "605",
 			   "EA name", ""
 		   });
 		addAnnotation
@@ -3563,6 +3944,14 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 			   "guid", "{CF3960D3-9916-459d-BD2D-E40C7F7D6CD9}",
 			   "id", "54",
 			   "EA name", "EADirectionKind"
+		   });
+		addAnnotation
+		  (functionalDeviceEClass,
+		   source,
+		   new String[] {
+			   "guid", "{4B657BEF-838B-49b9-8B46-1CE35CEFE970}",
+			   "id", "43",
+			   "EA name", "FunctionalDevice"
 		   });
 		addAnnotation
 		  (functionAllocationEClass,
@@ -4973,6 +5362,94 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 			   "EA name", ""
 		   });
 		addAnnotation
+		  (userAttributeDefinitionEClass,
+		   source,
+		   new String[] {
+			   "guid", "{C6168EF6-BF21-483a-AB57-29476CFCBB8B}",
+			   "id", "281",
+			   "EA name", "UserAttributeDefinition"
+		   });
+		addAnnotation
+		  (getUserAttributeDefinition_DefaultValue(),
+		   source,
+		   new String[] {
+			   "guid", "{A04DA623-AF7C-4d15-BE7B-82E61F5CE693}",
+			   "id", "88",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (getUserAttributeDefinition_Type(),
+		   source,
+		   new String[] {
+			   "guid", "{FD35CE9A-94D5-4d1c-A5FF-FB44819443A1}",
+			   "id", "108",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (userAttributedElementEClass,
+		   source,
+		   new String[] {
+			   "guid", "{A1219C54-EAEF-43a3-A1AB-5B0632893861}",
+			   "id", "280",
+			   "EA name", "UserAttributedElement"
+		   });
+		addAnnotation
+		  (getUserAttributedElement_UaValue(),
+		   source,
+		   new String[] {
+			   "guid", "{82B92190-BCF1-488d-94EB-7B0023E7D34D}",
+			   "id", "90",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (getUserAttributedElement_UaType(),
+		   source,
+		   new String[] {
+			   "guid", "{6549EA90-8651-4487-9035-C32C8856972D}",
+			   "id", "83",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (getUserAttributedElement_AttributedElement(),
+		   source,
+		   new String[] {
+			   "guid", "{E80D8C33-14DD-4a85-ADB3-32076CC892F5}",
+			   "id", "168",
+			   "EA name", ""
+		   });
+		addAnnotation
+		  (userElementTypeEClass,
+		   source,
+		   new String[] {
+			   "guid", "{2828A38E-2714-4a98-A042-2C89C672D2A0}",
+			   "id", "279",
+			   "EA name", "UserElementType"
+		   });
+		addAnnotation
+		  (getUserElementType_ValidFor(),
+		   source,
+		   new String[] {
+			   "guid", "{0AD22778-BA7C-49e5-8D0B-8758E8E80C98}",
+			   "id", "210",
+			   "EA name", "validFor"
+		   });
+		addAnnotation
+		  (getUserElementType_Key(),
+		   source,
+		   new String[] {
+			   "guid", "{E8A227AA-4D80-4355-B5BA-377F5AB266FF}",
+			   "id", "209",
+			   "EA name", "key"
+		   });
+		addAnnotation
+		  (getUserElementType_UaDefinition(),
+		   source,
+		   new String[] {
+			   "guid", "{6804EA72-C6EA-42e4-8BD9-F3BF13F4F8C6}",
+			   "id", "82",
+			   "EA name", ""
+		   });
+		addAnnotation
 		  (booleanEDataType,
 		   source,
 		   new String[] {
@@ -5045,6 +5522,45 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 			   "defaultEReferenceReferencedTypeAttributeName", "TYPE"
 		   });
 		addAnnotation
+		  (designLevelEClass,
+		   source,
+		   new String[] {
+			   "wrapperName", "DESIGN-LEVELS"
+		   });
+		addAnnotation
+		  (getDesignLevel_Allocation(),
+		   source,
+		   new String[] {
+			   "wrapperName", "ALLOCATIONS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "true",
+			   "featureElement", "false",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "true"
+		   });
+		addAnnotation
+		  (getDesignLevel_FunctionalDesignArchitecture(),
+		   source,
+		   new String[] {
+			   "wrapperName", "FUNCTIONAL-DESIGN-ARCHITECTURES",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "false",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "false"
+		   });
+		addAnnotation
+		  (getDesignLevel_HardwareDesignArchitecture(),
+		   source,
+		   new String[] {
+			   "wrapperName", "HARDWARE-DESIGN-ARCHITECTURES",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "false",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "false"
+		   });
+		addAnnotation
 		  (allocateableElementEClass,
 		   source,
 		   new String[] {
@@ -5061,6 +5577,40 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		   source,
 		   new String[] {
 			   "wrapperName", "FUNCTION-ALLOCATIONS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "true",
+			   "featureElement", "false",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "true"
+		   });
+		addAnnotation
+		  (analysisFunctionPrototypeEClass,
+		   source,
+		   new String[] {
+			   "wrapperName", "ANALYSIS-FUNCTION-PROTOTYPES"
+		   });
+		addAnnotation
+		  (getAnalysisFunctionPrototype_Type(),
+		   source,
+		   new String[] {
+			   "wrapperName", "TYPE-TREFS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "false",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "false"
+		   });
+		addAnnotation
+		  (analysisFunctionTypeEClass,
+		   source,
+		   new String[] {
+			   "wrapperName", "ANALYSIS-FUNCTION-TYPES"
+		   });
+		addAnnotation
+		  (getAnalysisFunctionType_Part(),
+		   source,
+		   new String[] {
+			   "wrapperName", "PARTS",
 			   "xmlAttribute", "false",
 			   "featureWrapperElement", "true",
 			   "featureElement", "false",
@@ -5118,6 +5668,12 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		   source,
 		   new String[] {
 			   "wrapperName", "EA-DIRECTION-KINDS"
+		   });
+		addAnnotation
+		  (functionalDeviceEClass,
+		   source,
+		   new String[] {
+			   "wrapperName", "FUNCTIONAL-DEVICES"
 		   });
 		addAnnotation
 		  (functionAllocationEClass,
@@ -6698,6 +7254,112 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 			   "classifierElement", "false"
 		   });
 		addAnnotation
+		  (userAttributeDefinitionEClass,
+		   source,
+		   new String[] {
+			   "wrapperName", "USER-ATTRIBUTE-DEFINITIONS"
+		   });
+		addAnnotation
+		  (getUserAttributeDefinition_DefaultValue(),
+		   source,
+		   new String[] {
+			   "wrapperName", "DEFAULT-VALUES",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "false",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "true"
+		   });
+		addAnnotation
+		  (getUserAttributeDefinition_Type(),
+		   source,
+		   new String[] {
+			   "wrapperName", "TYPE-REFS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "false",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "false"
+		   });
+		addAnnotation
+		  (userAttributedElementEClass,
+		   source,
+		   new String[] {
+			   "wrapperName", "USER-ATTRIBUTED-ELEMENTS"
+		   });
+		addAnnotation
+		  (getUserAttributedElement_UaValue(),
+		   source,
+		   new String[] {
+			   "wrapperName", "UA-VALUES",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "true",
+			   "featureElement", "false",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "true"
+		   });
+		addAnnotation
+		  (getUserAttributedElement_UaType(),
+		   source,
+		   new String[] {
+			   "wrapperName", "UA-TYPE-REFS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "true",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "false"
+		   });
+		addAnnotation
+		  (getUserAttributedElement_AttributedElement(),
+		   source,
+		   new String[] {
+			   "wrapperName", "ATTRIBUTED-ELEMENT-REFS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "false",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "false"
+		   });
+		addAnnotation
+		  (userElementTypeEClass,
+		   source,
+		   new String[] {
+			   "wrapperName", "USER-ELEMENT-TYPES"
+		   });
+		addAnnotation
+		  (getUserElementType_ValidFor(),
+		   source,
+		   new String[] {
+			   "wrapperName", "VALID-FORS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "false",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "false"
+		   });
+		addAnnotation
+		  (getUserElementType_Key(),
+		   source,
+		   new String[] {
+			   "wrapperName", "KEYS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "false",
+			   "featureElement", "true",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "false"
+		   });
+		addAnnotation
+		  (getUserElementType_UaDefinition(),
+		   source,
+		   new String[] {
+			   "wrapperName", "UA-DEFINITIONS",
+			   "xmlAttribute", "false",
+			   "featureWrapperElement", "true",
+			   "featureElement", "false",
+			   "classifierWrapperElement", "false",
+			   "classifierElement", "true"
+		   });
+		addAnnotation
 		  (booleanEDataType,
 		   source,
 		   new String[] {
@@ -6764,6 +7426,12 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	protected void createGenModelAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/GenModel";
 		addAnnotation
+		  (designLevelEClass,
+		   source,
+		   new String[] {
+			   "documentation", "The DesignLevel represents the vehicle electrical/electronic system on the design abstraction level. It includes primarily the Functional Design Architecture (FDA), and the HardwareDesignArchitecture (HDA).\r\n\r\nFDA represents a top level Function. It is supposed to implement all the functionalities of a vehicle, as specified by a FAA or a Vehicle level (if no FAA has been defined during the process).\r\n\r\nThe design level in EAST-ADL includes the design architecture containing the functional specification and hardware architecture of the vehicle electrical/electronic system. The design architecture includes the FDA representing a decomposition of functionalities analyzed on the analysis level. The decomposition has the purpose of making it possible to meet constraints regarding non-functional properties such as allocation, efficiency, reuse, or supplier concerns. There is an n-to-m mapping between entities of the design level and the ones on the analysis level.\r\n\r\nNon-transparent infrastructure functionality such as mode changes and error handling are also represented at the design level, such that their impact on applications\' behaviors can be estimated.\r\n\r\nThe FDA parts are typed by DesignFunctionTypes and e.g. LocalDeviceManagers. The view of the HardwareArchitecture facilitates the realization of LocalDeviceManager as sensor/actuator HW elements.\r\n\r\nThe HDA is the hardware design from a system perspective. The HDA has two purposes:\r\n\r\n1) It shows the physical entities and how they are connected.\r\n\r\n2) It is an allocation target for the Functions of the FDA.\r\n\r\nThe HDA represents the hardware architecture of the embedded system. Its contained HW elements represent the physical aspects of the hardware entities and how they are connected. HardwareFunctionTypes associated to HW components represent the logical behavior of the contained HW elements. \r\n\r\nSemantics:\r\nThe DesignLevel is the representation of the vehicle electrical/electronic system on the design abstraction level. It corresponds to the design of logical functions and boundaries extended in regards to resource commitment.\r\n\r\nNotation:\r\nThe DesignLevel is shown as a solid-outline rectangle containing the name, with its ports or port groups on the perimeter. Contained entities may be shown with their connectors and allocations (White-box view).\r\n\r\nExtension: Class\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.SystemModeling.DesignLevel</b></em> "
+		   });
+		addAnnotation
 		  (allocateableElementEClass,
 		   source,
 		   new String[] {
@@ -6774,6 +7442,18 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		   source,
 		   new String[] {
 			   "documentation", "The Allocation element contains function allocations. It can bundle function allocations that belong together, e.g., all function allocations for a simulation.\r\n\r\nSemantics:\r\nThe Allocation element contains function allocations, i.e., it can bundle function allocations that belong together.\r\n\r\nExtension: Class\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.Allocation</b></em> "
+		   });
+		addAnnotation
+		  (analysisFunctionPrototypeEClass,
+		   source,
+		   new String[] {
+			   "documentation", "The AnalysisFunctionPrototype represents references to the occurrence of the AnalysisFunctionType that types it when it acts as a part.\r\n\r\nThe AnalysisFunctionPrototype is typed by an AnalysisFunctionType.\r\n\r\n\r\nSemantics:\r\nThe AnalysisFunctionPrototype represents an occurrence of the AnalysisFunctionType that types it.\r\n\r\n\r\nExtension:\r\nUML Property, specialization of SysML::BlockProperty\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.AnalysisFunctionPrototype</b></em> "
+		   });
+		addAnnotation
+		  (analysisFunctionTypeEClass,
+		   source,
+		   new String[] {
+			   "documentation", "The AnalysisFunctionType is a concrete FunctionType and therefore inherits the elementary function properties from the abstract metaclass FunctionType. The AnalysisFunctionType is used to model the functional structure on AnalysisLevel. The syntax of AnalysisFunctionTypes is inspired from the type-prototype pattern used by AUTOSAR.\r\n\r\nThe AnalysisFunctions may interact with other AnalysisFunctions (i.e., also FunctionalDevices) through their FunctionPorts.\r\n\r\nFurthermore, an AnalysisFunction may be decomposed into contained parts that are AnalysisFunctionPrototypes. This allows the functionalities provided by the parent AnalysisFunction to be broken up hierarchically into sub-functionalities.\r\n\r\nA FunctionBehavior may be associated with each AnalysisFunction. In the case where the AnalysisFunction is decomposed, the behavior is a specification for the composed behavior of the parts.\r\n\r\n\r\nSemantics:\r\nThe AnalysisFunctionType represents a node in a tree structure corresponding to the functional decomposition of a top level AnalysisFunction. The AnalysisFunction represents the analysis function used to describe the functionalities provided by a vehicle on the AnalysisLevel. At the AnalysisLevel, AnalysisFunctions are defined and structured according to the functional requirements, i.e., the functionalities provided to the user. \r\n\r\nExtension: UML Class, specialization of SysML::Block\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.AnalysisFunctionType</b></em> "
 		   });
 		addAnnotation
 		  (basicSoftwareFunctionTypeEClass,
@@ -6806,10 +7486,16 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 			   "documentation", "This element is an enumeration for the direction of a Port, which can either be \"in\", \"out\", or \"inout\".\r\n\r\nSemantics:\r\nThe EADirectionKind is an enumeration with literals describing the direction of ports.\r\n\r\nExtension: \r\nEnumeration, no extension.\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.EADirectionKind</b></em> "
 		   });
 		addAnnotation
+		  (functionalDeviceEClass,
+		   source,
+		   new String[] {
+			   "documentation", "The FunctionalDevice represents an abstract sensor or actuator that encapsulates sensor/actuator dynamics and the interfacing software. The FunctionalDevice is the interface between the electronic architecture and the environment (connected by ClampConnectors, see the Environment chapter). As such, it is a transfer function between the AnalysisFunction and the physical entity that it measures or actuates.\r\n\r\nA Realization dependency can be used for traceability from LocalDeviceManagers in the DesignLevel and Sensors/Actuators in the hardware design architecture that are represented by the FunctionalDevice.\r\n\r\nSemantics:\r\nThe behavior associated with the FunctionalDevice is the transfer function between the environment model representing the environment and an AnalysisFunction. The transfer function represents the sensor or actuator and its interfacing hardware and software (connectors, electronics, in/out interface, driver software, and application software).\r\n\r\nConstraints:\r\nNo additional constraints.\r\n\r\nExtension: Class, specialization of SysML::Block\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.FunctionalDevice</b></em> "
+		   });
+		addAnnotation
 		  (functionAllocationEClass,
 		   source,
 		   new String[] {
-			   "documentation", "FunctionAllocation represents an allocation constraint binding an AllocateableElement (computation functions or communication connectors) on an AllocationTarget (computation or communication resource).\r\n\r\nSemantics:\r\nFunctionAllocation specifies that the identified AllocationTarget is a host for the identified AllocateableElement.\r\n\r\nConstraints:\r\nAllocatableElements allocated to HardwarePortConnectors must be FunctionConnectors.\r\nAllocatableElements allocated to HardwarePorts or HardwarePins must be FunctionPorts.\r\nAllocatableElements allocated to HardwareComponentPrototypes must be DesignFunctionPrototypes.\r\n\r\nNotation:\r\nA FunctionAllocation is shown as a dependency (dashed line) with an \"allocation\" keyword attached to it.\r\n\r\nExtension: Class, specializesDesignConstraint\r\ntarget to AUTOSAR::ECUResourceTemplate::ECU\r\nallocatedAutosarComponent to AUTOSAR::Components::ClientPort\r\n\r\nToDo:\r\nCf. AUTOSAR SWMapping::MappingConstraint\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.FunctionAllocation</b></em> "
+			   "documentation", "FunctionAllocation represents an allocation constraint binding an AllocateableElement (computation functions or communication connectors) on an AllocationTarget (computation or communication resource).\r\n\r\nSemantics:\r\nFunctionAllocation specifies that the identified AllocationTarget is a host for the identified AllocateableElement.\r\n\r\nConstraints:\r\nAllocatableElements allocated to PortConnectors must be FunctionConnectors.\r\nAllocatableElements allocated to HardwarePorts or HardwarePins must be FunctionPorts.\r\nAllocatableElements allocated to HardwareComponentPrototypes must be DesignFunctionPrototypes.\r\n\r\nNotation:\r\nA FunctionAllocation is shown as a dependency (dashed line) with an \"allocation\" keyword attached to it.\r\n\r\nExtension: Class, specializesDesignConstraint\r\ntarget to AUTOSAR::ECUResourceTemplate::ECU\r\nallocatedAutosarComponent to AUTOSAR::Components::ClientPort\r\n\r\nToDo:\r\nCf. AUTOSAR SWMapping::MappingConstraint\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.FunctionAllocation</b></em> "
 		   });
 		addAnnotation
 		  (functionClientServerInterfaceEClass,
@@ -6833,7 +7519,7 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		  (functionFlowPortEClass,
 		   source,
 		   new String[] {
-			   "documentation", "The FunctionFlowPort is a metaclass for flowports, inspired by the SysML FlowPort.\r\n\r\nSemantics:\r\nFunctionFlowPorts are single buffer overwrite and nonconsumable.\r\n\r\nFunctionFlowPorts can be connected if their FunctionPort signatures match; i.e.:\r\n\r\nEADatatypes that are ValueTypes are compatible if\r\n\r\n* They have the same \"dimension\".\r\n\r\n* They have the same \"unit\".\r\n\r\nEADatatypes that are RangeableValueTypes are compatible if\r\n\r\n* The source EADatatype has the same or better \"accuracy\".\r\n\r\n* They have the same baseRangeable.\r\n\r\n* The source EADatatype has the same or smaller \"maxValue\".\r\n\r\n* The source EADatatype has the same or higher \"minValue\".\r\n\r\n* The source EADatatype has the same or higher \"resolution\".\r\n\r\n* They have the same \"significantDigits\".\r\n\r\nEADatatypes that are EnumerationValueTypes are compatible if\r\n\r\n* They have the same baseEnumeration.\r\n\r\nA FunctionFlowPort with direction=in is called an input FunctionFlowPort:\r\n\r\nThe input FunctionFlowPort indicates that the containing Function requires input data. The EADatatype of this data is defined by the associated EADatatype. The data is sampled at the invocation of the containing entity for discrete Functions. For continuous Functions, the input FunctionFlowPort represents a continuous input connection point.\r\n\r\nThe input FunctionFlowPort declares a reception point of data. It represents a single element buffer, which is overridden with the latest data. The type of the data is defined by the associated EADatatype.\r\n\r\nA FunctionFlowPort with direction=out is called an output FunctionFlowPort:\r\n\r\nThe output FunctionFlowPort indicates that the containing Function provides output data. The EADatatype of this data is defined by the associated EADatatype. The data is sent at the completion of the containing entity for discrete Functions. For continuous Functions, the output FunctionFlowPort represents a (time-)continuous output connection point.\r\n\r\nThe output FunctionFlowPort declares a transmission point of data. The type of the data is defined by the associated EADatatype.\r\n\r\nExtension: UML Port, specialization of SysML::FlowPort\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.FunctionFlowPort</b></em> "
+			   "documentation", "The FunctionFlowPort is a metaclass for flowports, inspired by the SysML FlowPort.\r\n\r\nSemantics:\r\nFunctionFlowPorts are single buffer overwrite and nonconsumable.\r\n\r\nFunctionFlowPorts can be connected if their FunctionPort signatures match; i.e.:\r\n\r\nEADatatypes that are ValueTypes are compatible if\r\n\r\n* They have the same \"dimension\".\r\n\r\n* They have the same \"unit\".\r\n\r\nEADatatypes that are RangeableValueTypes are compatible if\r\n\r\n* The source EADatatype has the same or better \"accuracy\".\r\n\r\n* They have the same baseRangeable.\r\n\r\n* The source EADatatype has the same or smaller \"maxValue\".\r\n\r\n* The source EADatatype has the same or higher \"minValue\".\r\n\r\n* The source EADatatype has the same or higher \"resolution\".\r\n\r\n* They have the same \"significantDigits\".\r\n\r\nEADatatypes that are EnumerationValueTypes are compatible if\r\n\r\n* They have the same baseEnumeration.\r\n\r\nA FunctionFlowPort with direction=in is called an input FunctionFlowPort:\r\n\r\nThe input FunctionFlowPort indicates that the containing Function requires input data. The EADatatype of this data is defined by the associated EADatatype. The data is sampled at the invocation of the containing entity for discrete Functions. For continuous Functions, the input FunctionFlowPort represents a continuous input connection point.\r\n\r\nThe input FunctionFlowPort declares a reception point of data. It represents a single element buffer, which is overridden with the latest data. The type of the data is defined by the associated EADatatype.\r\n\r\nA FunctionFlowPort with direction=out is called an output FunctionFlowPort:\r\n\r\nThe output FunctionFlowPort indicates that the containing Function provides output data. The EADatatype of this data is defined by the associated EADatatype. The data is sent at the completion of the containing entity for discrete Functions. For continuous Functions, the output FunctionFlowPort represents a (time-)continuous output connection point.\r\n\r\nThe output FunctionFlowPort declares a transmission point of data. The type of the data is defined by the associated EADatatype.\r\n\r\nA FunctionFlowPort with direction=inout is called an input/output FunctionFlowPort: Its semantics is the one of both the input and output FunctionFlowPort, described above.\r\n\r\nExtension: UML Port, specialization of SysML::FlowPort\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.FunctionFlowPort</b></em> "
 		   });
 		addAnnotation
 		  (functionPortEClass,
@@ -6887,7 +7573,7 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		  (portGroupEClass,
 		   source,
 		   new String[] {
-			   "documentation", "The PortGroup represents several FunctionPorts grouped into one. All FunctionPorts that are part of a PortGroup are graphically represented as a single FunctionPort. The PortGroup has no semantic meaning except that it makes graphical representation of the connected FunctionPorts easier to read, and provides a means to logically organize several FunctionPorts into one group.\r\n\r\nConnectors are still connected to the contained FunctionPorts, but tool support may simplify connections by allowing semiautomatic or automatic connection to all FunctionPorts of a PortGroup.\r\n\r\nNote that the term \"PortGroup\" is also used by AADL.\r\n\r\nSemantics:\r\nThe PortGroup provides the means to organize FunctionPorts and FunctionConnectors. It does not add semantics. In the model, the FunctionPorts contained in the PortGroup are connected as individual FunctionPorts.\r\n\r\nConstraints:\r\n[1] The FunctionPorts in a PortGroup must all be of the same component; all FunctionPorts in a PortGroup must be of the same kind (FunctionFlowPort with same EADirectionKind or FunctionClientServerPort with same ClientServerKind).\r\n\r\nNotation:\r\nFunctionConnectors connected to FunctionPorts of a PortGroup are graphically collapsed into a single line.\r\nThe PortGroup is rendered as its contained ports, but with a double outline.\r\n\r\nExtension: Class\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.PortGroup</b></em> "
+			   "documentation", "The PortGroup represents several FunctionPorts grouped into one. All FunctionPorts referenced by a PortGroup are graphically represented as a single FunctionPort. The PortGroup has no semantic meaning except that it makes graphical representation of the referenced FunctionPorts easier to read, and provides a means to logically organize several FunctionPorts into one group.\r\n\r\nConnectors are still connected to the referenced FunctionPorts, but tool support may simplify connections by allowing semiautomatic or automatic connection to all FunctionPorts of a PortGroup.\r\n\r\nSemantics:\r\nThe PortGroup provides the means to organize FunctionPorts and FunctionConnectors. It does not add semantics. In the model, the FunctionPorts contained in the PortGroup are connected as individual FunctionPorts.\r\n\r\nConstraints:\r\n[1] The FunctionPorts in a PortGroup must all be of the same component; all FunctionPorts in a PortGroup and its contained PortGroups must be of the same kind (FunctionFlowPort with same EADirectionKind or FunctionClientServerPort with same ClientServerKind).\r\n\r\nNotation:\r\nFunctionConnectors connected to FunctionPorts of a PortGroup are graphically collapsed into a single line.\r\nThe PortGroup is rendered as its contained ports, but with a double outline.\r\n\r\nExtension: Class\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Structure.FunctionModeling.PortGroup</b></em> "
 		   });
 		addAnnotation
 		  (functionAllocation_allocatedElementEClass,
@@ -7388,6 +8074,36 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 			   "documentation", "EAValue is an abstract element with concrete elements used to store typed values in the model. Some of the specializations correspond to UML2 literal specifications EAValue corresponds to UML2 Value Specification which is a typed element.\r\n\r\nThe EAValue does not have a name and is contained where a value is modeled.\r\n\r\nSemantics:\r\nThe semantics of this element is defined by the element typed by the corresponding EADatatype.\r\n\r\nExtension:\r\nUML2:ValueSpecification\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Infrastructure.Values.EAValue</b></em> "
 		   });
 		addAnnotation
+		  (userAttributeDefinitionEClass,
+		   source,
+		   new String[] {
+			   "documentation", "UserAttributeDefinition defines a certain user attribute. \r\n\r\nThe name of a UserAttributeDefinition should be used in editing tools as a label for the input field representing the user attribute and its description should be presented to the user to explain the meaning of this user attribute.\r\n\r\nTo identify a user attribute in a universally unique way, its short name is appended to the key of the containing UserElementType after appending a \".\" character (dot) as a separator. For example, if a UserAttributeDefinition with short name \"MyStatus\" is contained in a UserElementType with key \"com.myCompany.myDepartment.myProject.MyPort\", then the user attribute represented by this UserAttributeDefinition has the key \"com.myCompany.myDepartment.myProject.MyPort.MyStatus\".\r\n\r\nSemantics:\r\nUserAttributeDefinition defines a user defined attribute.\r\n\r\nExtension:\r\nClass\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Infrastructure.UserAttributes.UserAttributeDefinition</b></em> "
+		   });
+		addAnnotation
+		  (userAttributedElementEClass,
+		   source,
+		   new String[] {
+			   "documentation", "UserAttributedElement is used to attach user attribute values to any EAST-ADL or AUTOSAR element, i.e. all instances of all subclasses of Identifiable. What user attributes a certain element should be supplied with can be defined beforehand with UserElementTypes.\r\n\r\nAccording to a common EAST-ADL meta-modeling pattern, the meta-classes that are attributable, i.e. to which user attributes may be attached, do not inherit from meta-class UserAttributedElement but instead UserAttributedElement points to these meta-classes via association \"attributedElement\" (for example, to allow attaching user attributes to AUTOSAR Identifiable that cannot inherit from EAST-ADL infrastructure meta-classes).\r\n\r\nThe actual values are given as a contained instance of EAValue and are provided with a definition through the UserAttributeDefinitions in the UserElementType. If more than one value is contained, then the same number of UserElementTypes/UserAttributeDefinitions must be referenced and the order of values and definitions must be consistent (see constraint no. 2 below).\r\n\r\nExample: let us assume that a DesignFunctionType \"WiperSystem\" should be provided with the value \"OK\" for a user attribute \"Status\". This is achieved by creating an instance of UserAttributedElement pointing via association \"attributedElement\" to instance \"WiperSystem\", pointing via instance \"uaType\" to the UserElementType with a UserAttributeDefinition \"Status\" and containing via containment association \"uaValue\" an EAStringValue \"OK\".\r\n\r\nSemantics:\r\nUserAttributedElement can be annotated with user attributes.\r\n\r\nConstraints:\r\n[1] The associations \"uaValue\" and the uaDefinitions of all \"uaType\"s must refer to the same number of elements.\r\n[2] The order of associations \"uaValue\" and \"uaType\" / \"uaDefinition\" must be consistent, i.e. the n-th EAValue must correspond to the n-th UserAttributeDefinition when listing all UserElementTypes\' definitions in depth-first order.\r\n\r\nExtension:\r\nClass\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Infrastructure.UserAttributes.UserAttributedElement</b></em> "
+		   });
+		addAnnotation
+		  (userElementTypeEClass,
+		   source,
+		   new String[] {
+			   "documentation", "UserElementType defines a certain set of user attributes, i.e. it states that all Identifiables of a certain kind (c.f. the validFor attribute) may be provided with a user attribute value of some datatype. For example, it can be specified that all AnalysisFunctionPrototypes may be amended with an attribute \"Status\".\r\n\r\nThe name of a UserElementType should be used in editing tools as a label for the input field representing the user attribute and its description should be presented to the user to explain the meaning of this user attribute.\r\n\r\nSemantics:\r\nUserElementType represents a user defined type of the specified EAST-ADL or AUTOSAR metaclass.\r\n\r\nConstraints:\r\n[1] The short names of all UserAttributeDefinitions (i.e. value of attribute \"shortName\" in UserAttributeDefinition, which is inherited from meta-class Referrable) referred to by association \"uaDefinition\" must be unique within this UserElementType. In other words, no two UserAttributeDefinitions referred to by association \"uaDefinition\" must have the same short name.\r\n\r\nExtension:\r\nClass\n\nOriginal fully qualified name: \n<em><b>eastadl21.EAST-ADL.Infrastructure.UserAttributes.UserElementType</b></em> "
+		   });
+		addAnnotation
+		  (getUserElementType_ValidFor(),
+		   source,
+		   new String[] {
+			   "documentation", "Comma-separated list of metaclass names this user element type is applicable to. If undefined, then this type is applicable to all subclasses of metaclass Identifiable. White-space may appear before and after metaclass names and commas.\r\n\r\nExample: If UserElementType \'MyFunction\' has its validFor attribute set to \"FunctionalDevice, LocalDeviceManager\", then the contained UserAttributeDefinitions are only applicable to functional devices and local device managers, i.e. only instances of FunctionalDevice and LocalDeviceManager may be adorned with the \'MyFunction\' user element type."
+		   });
+		addAnnotation
+		  (getUserElementType_Key(),
+		   source,
+		   new String[] {
+			   "documentation", "The globally unique identifier of the user element type. Any string may be used as key as long as it is globally unique.\r\n\r\nHowever, there is a recommended procedure for building globally unique keys for user attributes, similar to package naming conventions in the Java programming language:\r\n\r\n(1) use an internet domain name which is sufficiently specific so that you have control over who will use it for user attribute key generation (e.g. \"myDepartment.myCompany.com\")\r\n\r\n(2) reverse it as in Java package names (e.g. \"com.myCompany.myDepartment\")\r\n\r\n(3) optionally append additional, dot-separated names for the specific context in which the user attribute is to be used (e.g. \"myProject\" which results in \"com.myCompany.myDepartment.myProject\")\r\n\r\n(4) add a last segment that names the user element type and is sufficiently descriptive to explain its purpose (e.g. \"MyPort\").\r\n\r\nIn this example, the key of our status attribute would be \"com.myCompany.myDepartment.myProject.MyPort\".\r\n\r\nIn general, the last segment of the key, i.e. everything following the last dot, should be sufficient to identify the attribute in its usual, most specific context of use. Therefore, implementations may use this last segment as an abbreviated name of the user attribute, e.g. for presenting it in a GUI. But note that the name of the UserElementType should usually be used (if defined)."
+		   });
+		addAnnotation
 		  (booleanEDataType,
 		   source,
 		   new String[] {
@@ -7440,6 +8156,37 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation
+		  (designLevelEClass,
+		   source,
+		   new String[] {
+			   "name", "DESIGN-LEVEL",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getDesignLevel_Allocation(),
+		   source,
+		   new String[] {
+			   "name", "ALLOCATION",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (getDesignLevel_FunctionalDesignArchitecture(),
+		   source,
+		   new String[] {
+			   "name", "FUNCTIONAL-DESIGN-ARCHITECTURE",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (getDesignLevel_HardwareDesignArchitecture(),
+		   source,
+		   new String[] {
+			   "name", "HARDWARE-DESIGN-ARCHITECTURE",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
 		  (allocateableElementEClass,
 		   source,
 		   new String[] {
@@ -7458,6 +8205,36 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		   source,
 		   new String[] {
 			   "name", "FUNCTION-ALLOCATION",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (analysisFunctionPrototypeEClass,
+		   source,
+		   new String[] {
+			   "name", "ANALYSIS-FUNCTION-PROTOTYPE",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getAnalysisFunctionPrototype_Type(),
+		   source,
+		   new String[] {
+			   "name", "TYPE-TREF",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (analysisFunctionTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "ANALYSIS-FUNCTION-TYPE",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getAnalysisFunctionType_Part(),
+		   source,
+		   new String[] {
+			   "name", "PART",
 			   "kind", "element",
 			   "namespace", "http://east-adl.info/2.1.12"
 		   });
@@ -7509,6 +8286,13 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 		   source,
 		   new String[] {
 			   "name", "EA-DIRECTION-KIND"
+		   });
+		addAnnotation
+		  (functionalDeviceEClass,
+		   source,
+		   new String[] {
+			   "name", "FUNCTIONAL-DEVICE",
+			   "kind", "elementOnly"
 		   });
 		addAnnotation
 		  (functionAllocationEClass,
@@ -8814,6 +9598,89 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 			   "namespace", "http://east-adl.info/2.1.12"
 		   });
 		addAnnotation
+		  (userAttributeDefinitionEClass,
+		   source,
+		   new String[] {
+			   "name", "USER-ATTRIBUTE-DEFINITION",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getUserAttributeDefinition_DefaultValue(),
+		   source,
+		   new String[] {
+			   "name", "DEFAULT-VALUE",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (getUserAttributeDefinition_Type(),
+		   source,
+		   new String[] {
+			   "name", "TYPE-REF",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (userAttributedElementEClass,
+		   source,
+		   new String[] {
+			   "name", "USER-ATTRIBUTED-ELEMENT",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getUserAttributedElement_UaValue(),
+		   source,
+		   new String[] {
+			   "name", "UA-VALUE",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (getUserAttributedElement_UaType(),
+		   source,
+		   new String[] {
+			   "name", "UA-TYPE-REF",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (getUserAttributedElement_AttributedElement(),
+		   source,
+		   new String[] {
+			   "name", "ATTRIBUTED-ELEMENT-REF",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
+		  (userElementTypeEClass,
+		   source,
+		   new String[] {
+			   "name", "USER-ELEMENT-TYPE",
+			   "kind", "elementOnly"
+		   });
+		addAnnotation
+		  (getUserElementType_ValidFor(),
+		   source,
+		   new String[] {
+			   "name", "VALID-FOR",
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getUserElementType_Key(),
+		   source,
+		   new String[] {
+			   "name", "KEY",
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getUserElementType_UaDefinition(),
+		   source,
+		   new String[] {
+			   "name", "UA-DEFINITION",
+			   "kind", "element",
+			   "namespace", "http://east-adl.info/2.1.12"
+		   });
+		addAnnotation
 		  (booleanEDataType,
 		   source,
 		   new String[] {
@@ -8870,6 +9737,18 @@ public class Eastadl21PackageImpl extends EPackageImpl implements Eastadl21Packa
 	 */
 	protected void createStereotypeAnnotations() {
 		String source = "Stereotype";
+		addAnnotation
+		  (designLevelEClass,
+		   source,
+		   new String[] {
+			   "Stereotype", "atpStructureElement"
+		   });
+		addAnnotation
+		  (getAnalysisFunctionPrototype_Type(),
+		   source,
+		   new String[] {
+			   "Stereotype", "isOfType"
+		   });
 		addAnnotation
 		  (clientServerKindEEnum,
 		   source,

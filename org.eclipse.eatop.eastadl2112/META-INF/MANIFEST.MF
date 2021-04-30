@@ -23,4 +23,3 @@ Bundle-ClassPath: .,
  lib/eastadl21.jar
 Bundle-Localization: plugin
 Bundle-Activator: org.eclipse.eatop.eastadl21.Activator$Implementation
-

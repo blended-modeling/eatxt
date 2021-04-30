@@ -15,7 +15,7 @@ package org.eclipse.eatop.eastadl21;
  * ArrayDatatype is a datatype for an array of datatypes of the same type.
  * 
  * Notation:
- * The datatype ArrayDatatype is denoted using the rectangle symbol with keyword Â«Datatype ArrayDatatypeÂ».
+ * The datatype ArrayDatatype is denoted using the rectangle symbol with keyword «Datatype ArrayDatatype».
  * 
  * Original fully qualified name: 
  * <em><b>eastadl21.EAST-ADL.Infrastructure.Datatypes.ArrayDatatype</b></em> 
