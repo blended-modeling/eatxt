@@ -8,9 +8,7 @@ Bundle-SymbolicName: org.bumble.eastadl.simplified.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.bumble.eastadl.simplified,
  org.eclipse.eatop.eastadl2112,
- org.junit.jupiter.api;bundle-version="[5.0.0,6.0.0)",
+ org.junit.jupiter.api;bundle-version="[5.1.0,6.0.0)",
  org.eclipse.xtext.testing,
- org.eclipse.xtext.xbase.testing,
- org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
+ org.eclipse.xtext.xbase.testing
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: org.bumble.eastadl.simplified.tests;x-internal=true

@@ -34,7 +34,7 @@ import org.eclipse.emf.common.util.EList;
  *        annotation="http:///org/eclipse/sphinx/emf/serialization/XMLPersistenceMappingExtendedMetaData wrapperName='ALLOCATIONS'"
  * @generated
  */
-public interface Allocation extends EAPackageableElement {
+public interface Allocation extends EAElement {
 	/**
 	 * Returns the value of the '<em><b>Function Allocation</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.eatop.eastadl21.FunctionAllocation}.

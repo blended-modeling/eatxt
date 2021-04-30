@@ -87,16 +87,24 @@ public class Eastadl21Validator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
+			case Eastadl21Package.DESIGN_LEVEL:
+				return validateDesignLevel((DesignLevel)value, diagnostics, context);
 			case Eastadl21Package.ALLOCATEABLE_ELEMENT:
 				return validateAllocateableElement((AllocateableElement)value, diagnostics, context);
 			case Eastadl21Package.ALLOCATION:
 				return validateAllocation((Allocation)value, diagnostics, context);
+			case Eastadl21Package.ANALYSIS_FUNCTION_PROTOTYPE:
+				return validateAnalysisFunctionPrototype((AnalysisFunctionPrototype)value, diagnostics, context);
+			case Eastadl21Package.ANALYSIS_FUNCTION_TYPE:
+				return validateAnalysisFunctionType((AnalysisFunctionType)value, diagnostics, context);
 			case Eastadl21Package.BASIC_SOFTWARE_FUNCTION_TYPE:
 				return validateBasicSoftwareFunctionType((BasicSoftwareFunctionType)value, diagnostics, context);
 			case Eastadl21Package.DESIGN_FUNCTION_PROTOTYPE:
 				return validateDesignFunctionPrototype((DesignFunctionPrototype)value, diagnostics, context);
 			case Eastadl21Package.DESIGN_FUNCTION_TYPE:
 				return validateDesignFunctionType((DesignFunctionType)value, diagnostics, context);
+			case Eastadl21Package.FUNCTIONAL_DEVICE:
+				return validateFunctionalDevice((FunctionalDevice)value, diagnostics, context);
 			case Eastadl21Package.FUNCTION_ALLOCATION:
 				return validateFunctionAllocation((FunctionAllocation)value, diagnostics, context);
 			case Eastadl21Package.FUNCTION_CLIENT_SERVER_INTERFACE:
@@ -241,6 +249,12 @@ public class Eastadl21Validator extends EObjectValidator {
 				return validateEAStringValue((EAStringValue)value, diagnostics, context);
 			case Eastadl21Package.EA_VALUE:
 				return validateEAValue((EAValue)value, diagnostics, context);
+			case Eastadl21Package.USER_ATTRIBUTE_DEFINITION:
+				return validateUserAttributeDefinition((UserAttributeDefinition)value, diagnostics, context);
+			case Eastadl21Package.USER_ATTRIBUTED_ELEMENT:
+				return validateUserAttributedElement((UserAttributedElement)value, diagnostics, context);
+			case Eastadl21Package.USER_ELEMENT_TYPE:
+				return validateUserElementType((UserElementType)value, diagnostics, context);
 			case Eastadl21Package.CLIENT_SERVER_KIND:
 				return validateClientServerKind((ClientServerKind)value, diagnostics, context);
 			case Eastadl21Package.EA_DIRECTION_KIND:
@@ -273,6 +287,15 @@ public class Eastadl21Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateDesignLevel(DesignLevel designLevel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(designLevel, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateAllocateableElement(AllocateableElement allocateableElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(allocateableElement, diagnostics, context);
 	}
@@ -284,6 +307,24 @@ public class Eastadl21Validator extends EObjectValidator {
 	 */
 	public boolean validateAllocation(Allocation allocation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(allocation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAnalysisFunctionPrototype(AnalysisFunctionPrototype analysisFunctionPrototype, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(analysisFunctionPrototype, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAnalysisFunctionType(AnalysisFunctionType analysisFunctionType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(analysisFunctionType, diagnostics, context);
 	}
 
 	/**
@@ -311,6 +352,15 @@ public class Eastadl21Validator extends EObjectValidator {
 	 */
 	public boolean validateDesignFunctionType(DesignFunctionType designFunctionType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(designFunctionType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFunctionalDevice(FunctionalDevice functionalDevice, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(functionalDevice, diagnostics, context);
 	}
 
 	/**
@@ -959,6 +1009,33 @@ public class Eastadl21Validator extends EObjectValidator {
 	 */
 	public boolean validateEAValue(EAValue eaValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(eaValue, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUserAttributeDefinition(UserAttributeDefinition userAttributeDefinition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(userAttributeDefinition, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUserAttributedElement(UserAttributedElement userAttributedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(userAttributedElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUserElementType(UserElementType userElementType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(userElementType, diagnostics, context);
 	}
 
 	/**

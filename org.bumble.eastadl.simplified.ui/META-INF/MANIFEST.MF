@@ -13,13 +13,6 @@ Require-Bundle: org.bumble.eastadl.simplified,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0",
- org.eclipse.ui,
- org.eclipse.compare,
- org.eclipse.xtext.builder
+ org.eclipse.ui.ide;bundle-version="3.5.0"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: org.bumble.eastadl.simplified.ui.contentassist,
- org.bumble.eastadl.simplified.ui.internal,
- org.bumble.eastadl.simplified.ui.quickfix
-Bundle-Activator: org.bumble.eastadl.simplified.ui.internal.SimplifiedActivator

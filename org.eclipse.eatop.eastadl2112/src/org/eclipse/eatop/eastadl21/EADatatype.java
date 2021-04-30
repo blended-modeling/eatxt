@@ -18,7 +18,7 @@ package org.eclipse.eatop.eastadl21;
  * [1] In the case of an AR implementation, an EADatatype is realized generally by PrimitiveTypeWithSemantics, which has to be consistent w.r.t. range, resolution, etc.
  * 
  * Notation:
- * The EADatatype is denoted using the rectangle symbol with keyword Â«DatatypeÂ».
+ * The EADatatype is denoted using the rectangle symbol with keyword «Datatype».
  * 
  * 
  * Original fully qualified name: 

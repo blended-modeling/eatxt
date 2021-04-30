@@ -74,12 +74,24 @@ public class Eastadl21AdapterFactory extends AdapterFactoryImpl {
 	protected Eastadl21Switch<Adapter> modelSwitch =
 		new Eastadl21Switch<Adapter>() {
 			@Override
+			public Adapter caseDesignLevel(DesignLevel object) {
+				return createDesignLevelAdapter();
+			}
+			@Override
 			public Adapter caseAllocateableElement(AllocateableElement object) {
 				return createAllocateableElementAdapter();
 			}
 			@Override
 			public Adapter caseAllocation(Allocation object) {
 				return createAllocationAdapter();
+			}
+			@Override
+			public Adapter caseAnalysisFunctionPrototype(AnalysisFunctionPrototype object) {
+				return createAnalysisFunctionPrototypeAdapter();
+			}
+			@Override
+			public Adapter caseAnalysisFunctionType(AnalysisFunctionType object) {
+				return createAnalysisFunctionTypeAdapter();
 			}
 			@Override
 			public Adapter caseBasicSoftwareFunctionType(BasicSoftwareFunctionType object) {
@@ -92,6 +104,10 @@ public class Eastadl21AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDesignFunctionType(DesignFunctionType object) {
 				return createDesignFunctionTypeAdapter();
+			}
+			@Override
+			public Adapter caseFunctionalDevice(FunctionalDevice object) {
+				return createFunctionalDeviceAdapter();
 			}
 			@Override
 			public Adapter caseFunctionAllocation(FunctionAllocation object) {
@@ -382,6 +398,18 @@ public class Eastadl21AdapterFactory extends AdapterFactoryImpl {
 				return createEAValueAdapter();
 			}
 			@Override
+			public Adapter caseUserAttributeDefinition(UserAttributeDefinition object) {
+				return createUserAttributeDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseUserAttributedElement(UserAttributedElement object) {
+				return createUserAttributedElementAdapter();
+			}
+			@Override
+			public Adapter caseUserElementType(UserElementType object) {
+				return createUserElementTypeAdapter();
+			}
+			@Override
 			public Adapter caseGReferrable(GReferrable object) {
 				return createGReferrableAdapter();
 			}
@@ -422,6 +450,20 @@ public class Eastadl21AdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eatop.eastadl21.DesignLevel <em>Design Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eatop.eastadl21.DesignLevel
+	 * @generated
+	 */
+	public Adapter createDesignLevelAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.eatop.eastadl21.AllocateableElement <em>Allocateable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -446,6 +488,34 @@ public class Eastadl21AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAllocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eatop.eastadl21.AnalysisFunctionPrototype <em>Analysis Function Prototype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eatop.eastadl21.AnalysisFunctionPrototype
+	 * @generated
+	 */
+	public Adapter createAnalysisFunctionPrototypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eatop.eastadl21.AnalysisFunctionType <em>Analysis Function Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eatop.eastadl21.AnalysisFunctionType
+	 * @generated
+	 */
+	public Adapter createAnalysisFunctionTypeAdapter() {
 		return null;
 	}
 
@@ -488,6 +558,20 @@ public class Eastadl21AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDesignFunctionTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eatop.eastadl21.FunctionalDevice <em>Functional Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eatop.eastadl21.FunctionalDevice
+	 * @generated
+	 */
+	public Adapter createFunctionalDeviceAdapter() {
 		return null;
 	}
 
@@ -1496,6 +1580,48 @@ public class Eastadl21AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEAValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eatop.eastadl21.UserAttributeDefinition <em>User Attribute Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributeDefinition
+	 * @generated
+	 */
+	public Adapter createUserAttributeDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eatop.eastadl21.UserAttributedElement <em>User Attributed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributedElement
+	 * @generated
+	 */
+	public Adapter createUserAttributedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eatop.eastadl21.UserElementType <em>User Element Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eatop.eastadl21.UserElementType
+	 * @generated
+	 */
+	public Adapter createUserElementTypeAdapter() {
 		return null;
 	}
 

@@ -57,10 +57,14 @@ public class Eastadl21FactoryImpl extends EFactoryImpl implements Eastadl21Facto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case Eastadl21Package.DESIGN_LEVEL: return createDesignLevel();
 			case Eastadl21Package.ALLOCATION: return createAllocation();
+			case Eastadl21Package.ANALYSIS_FUNCTION_PROTOTYPE: return createAnalysisFunctionPrototype();
+			case Eastadl21Package.ANALYSIS_FUNCTION_TYPE: return createAnalysisFunctionType();
 			case Eastadl21Package.BASIC_SOFTWARE_FUNCTION_TYPE: return createBasicSoftwareFunctionType();
 			case Eastadl21Package.DESIGN_FUNCTION_PROTOTYPE: return createDesignFunctionPrototype();
 			case Eastadl21Package.DESIGN_FUNCTION_TYPE: return createDesignFunctionType();
+			case Eastadl21Package.FUNCTIONAL_DEVICE: return createFunctionalDevice();
 			case Eastadl21Package.FUNCTION_ALLOCATION: return createFunctionAllocation();
 			case Eastadl21Package.FUNCTION_CLIENT_SERVER_INTERFACE: return createFunctionClientServerInterface();
 			case Eastadl21Package.FUNCTION_CLIENT_SERVER_PORT: return createFunctionClientServerPort();
@@ -114,6 +118,9 @@ public class Eastadl21FactoryImpl extends EFactoryImpl implements Eastadl21Facto
 			case Eastadl21Package.EA_EXPRESSION: return createEAExpression();
 			case Eastadl21Package.EA_NUMERICAL_VALUE: return createEANumericalValue();
 			case Eastadl21Package.EA_STRING_VALUE: return createEAStringValue();
+			case Eastadl21Package.USER_ATTRIBUTE_DEFINITION: return createUserAttributeDefinition();
+			case Eastadl21Package.USER_ATTRIBUTED_ELEMENT: return createUserAttributedElement();
+			case Eastadl21Package.USER_ELEMENT_TYPE: return createUserElementType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -195,9 +202,42 @@ public class Eastadl21FactoryImpl extends EFactoryImpl implements Eastadl21Facto
 	 * @generated
 	 */
 	@Override
+	public DesignLevel createDesignLevel() {
+		DesignLevelImpl designLevel = new DesignLevelImpl();
+		return designLevel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Allocation createAllocation() {
 		AllocationImpl allocation = new AllocationImpl();
 		return allocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AnalysisFunctionPrototype createAnalysisFunctionPrototype() {
+		AnalysisFunctionPrototypeImpl analysisFunctionPrototype = new AnalysisFunctionPrototypeImpl();
+		return analysisFunctionPrototype;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AnalysisFunctionType createAnalysisFunctionType() {
+		AnalysisFunctionTypeImpl analysisFunctionType = new AnalysisFunctionTypeImpl();
+		return analysisFunctionType;
 	}
 
 	/**
@@ -231,6 +271,17 @@ public class Eastadl21FactoryImpl extends EFactoryImpl implements Eastadl21Facto
 	public DesignFunctionType createDesignFunctionType() {
 		DesignFunctionTypeImpl designFunctionType = new DesignFunctionTypeImpl();
 		return designFunctionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FunctionalDevice createFunctionalDevice() {
+		FunctionalDeviceImpl functionalDevice = new FunctionalDeviceImpl();
+		return functionalDevice;
 	}
 
 	/**
@@ -814,6 +865,39 @@ public class Eastadl21FactoryImpl extends EFactoryImpl implements Eastadl21Facto
 	public EAStringValue createEAStringValue() {
 		EAStringValueImpl eaStringValue = new EAStringValueImpl();
 		return eaStringValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UserAttributeDefinition createUserAttributeDefinition() {
+		UserAttributeDefinitionImpl userAttributeDefinition = new UserAttributeDefinitionImpl();
+		return userAttributeDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UserAttributedElement createUserAttributedElement() {
+		UserAttributedElementImpl userAttributedElement = new UserAttributedElementImpl();
+		return userAttributedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UserElementType createUserElementType() {
+		UserElementTypeImpl userElementType = new UserElementTypeImpl();
+		return userElementType;
 	}
 
 	/**

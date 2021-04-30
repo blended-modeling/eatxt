@@ -15,7 +15,7 @@ package org.eclipse.eatop.eastadl21;
  * The RangeableValueType adds the ability to describe the accuracy, resolution, and the significant digits of the baseRangeable datatype.
  * 
  * Notation:
- * The datatype RangeableValueType is denoted using the rectangle symbol with keyword Â«Datatype RangeableValueTypeÂ».
+ * The datatype RangeableValueType is denoted using the rectangle symbol with keyword «Datatype RangeableValueType».
  * 
  * Extension: UML Datatype, SysML ValueType
  * 

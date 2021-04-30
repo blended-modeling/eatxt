@@ -51,7 +51,7 @@ public interface Eastadl21Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "";
+	String eNS_PREFIX = "com.chalmers";
 
 	/**
 	 * The package content type ID.
@@ -77,16 +77,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getAllocateableElement()
 	 * @generated
 	 */
-	int ALLOCATEABLE_ELEMENT = 0;
-
-	/**
-	 * The number of structural features of the '<em>Allocateable Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATEABLE_ELEMENT_FEATURE_COUNT = 0;
+	int ALLOCATEABLE_ELEMENT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.ReferrableImpl <em>Referrable</em>}' class.
@@ -96,7 +87,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getReferrable()
 	 * @generated
 	 */
-	int REFERRABLE = 51;
+	int REFERRABLE = 55;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -133,7 +124,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getIdentifiable()
 	 * @generated
 	 */
-	int IDENTIFIABLE = 54;
+	int IDENTIFIABLE = 58;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -188,7 +179,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAElement()
 	 * @generated
 	 */
-	int EA_ELEMENT = 42;
+	int EA_ELEMENT = 46;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -261,7 +252,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAPackageableElement()
 	 * @generated
 	 */
-	int EA_PACKAGEABLE_ELEMENT = 44;
+	int EA_PACKAGEABLE_ELEMENT = 48;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -352,97 +343,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getAllocation()
 	 * @generated
 	 */
-	int ALLOCATION = 1;
-
-	/**
-	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__GSHORT_NAME = EA_PACKAGEABLE_ELEMENT__GSHORT_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__SHORT_NAME = EA_PACKAGEABLE_ELEMENT__SHORT_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Category</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__CATEGORY = EA_PACKAGEABLE_ELEMENT__CATEGORY;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__UUID = EA_PACKAGEABLE_ELEMENT__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__NAME = EA_PACKAGEABLE_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__OWNED_COMMENT = EA_PACKAGEABLE_ELEMENT__OWNED_COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>GEA Package element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__GEA_PACKAGE_ELEMENT = EA_PACKAGEABLE_ELEMENT__GEA_PACKAGE_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>EA Package element</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__EA_PACKAGE_ELEMENT = EA_PACKAGEABLE_ELEMENT__EA_PACKAGE_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Function Allocation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION__FUNCTION_ALLOCATION = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Allocation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION_FEATURE_COUNT = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
+	int ALLOCATION = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.ContextImpl <em>Context</em>}' class.
@@ -452,7 +353,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getContext()
 	 * @generated
 	 */
-	int CONTEXT = 40;
+	int CONTEXT = 44;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -554,6 +455,223 @@ public interface Eastadl21Package extends EPackage {
 	int CONTEXT_FEATURE_COUNT = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.DesignLevelImpl <em>Design Level</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.DesignLevelImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getDesignLevel()
+	 * @generated
+	 */
+	int DESIGN_LEVEL = 0;
+
+	/**
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__GSHORT_NAME = CONTEXT__GSHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__SHORT_NAME = CONTEXT__SHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__CATEGORY = CONTEXT__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__UUID = CONTEXT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__NAME = CONTEXT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__OWNED_COMMENT = CONTEXT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>GEA Package element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__GEA_PACKAGE_ELEMENT = CONTEXT__GEA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>EA Package element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__EA_PACKAGE_ELEMENT = CONTEXT__EA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__TRACEABLE_SPECIFICATION = CONTEXT__TRACEABLE_SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Relationship</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__OWNED_RELATIONSHIP = CONTEXT__OWNED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '<em><b>Allocation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__ALLOCATION = CONTEXT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Functional Design Architecture</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__FUNCTIONAL_DESIGN_ARCHITECTURE = CONTEXT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Hardware Design Architecture</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL__HARDWARE_DESIGN_ARCHITECTURE = CONTEXT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Design Level</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_LEVEL_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Allocateable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATEABLE_ELEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__GSHORT_NAME = EA_ELEMENT__GSHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__SHORT_NAME = EA_ELEMENT__SHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__CATEGORY = EA_ELEMENT__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__UUID = EA_ELEMENT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__NAME = EA_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__OWNED_COMMENT = EA_ELEMENT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Function Allocation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__FUNCTION_ALLOCATION = EA_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Allocation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION_FEATURE_COUNT = EA_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.FunctionTypeImpl <em>Function Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -561,7 +679,211 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionType()
 	 * @generated
 	 */
-	int FUNCTION_TYPE = 13;
+	int FUNCTION_TYPE = 17;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.AnalysisFunctionTypeImpl <em>Analysis Function Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.AnalysisFunctionTypeImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getAnalysisFunctionType()
+	 * @generated
+	 */
+	int ANALYSIS_FUNCTION_TYPE = 4;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.DesignFunctionTypeImpl <em>Design Function Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.DesignFunctionTypeImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getDesignFunctionType()
+	 * @generated
+	 */
+	int DESIGN_FUNCTION_TYPE = 7;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.BasicSoftwareFunctionTypeImpl <em>Basic Software Function Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.BasicSoftwareFunctionTypeImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getBasicSoftwareFunctionType()
+	 * @generated
+	 */
+	int BASIC_SOFTWARE_FUNCTION_TYPE = 5;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.EAPrototypeImpl <em>EA Prototype</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.EAPrototypeImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAPrototype()
+	 * @generated
+	 */
+	int EA_PROTOTYPE = 50;
+
+	/**
+	 * The number of structural features of the '<em>EA Prototype</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EA_PROTOTYPE_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.FunctionPrototypeImpl <em>Function Prototype</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.FunctionPrototypeImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionPrototype()
+	 * @generated
+	 */
+	int FUNCTION_PROTOTYPE = 16;
+
+	/**
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE__GSHORT_NAME = EA_PROTOTYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE__SHORT_NAME = EA_PROTOTYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE__CATEGORY = EA_PROTOTYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE__UUID = EA_PROTOTYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE__NAME = EA_PROTOTYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE__OWNED_COMMENT = EA_PROTOTYPE_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Function Prototype</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_PROTOTYPE_FEATURE_COUNT = EA_PROTOTYPE_FEATURE_COUNT + 6;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.AnalysisFunctionPrototypeImpl <em>Analysis Function Prototype</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.AnalysisFunctionPrototypeImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getAnalysisFunctionPrototype()
+	 * @generated
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE = 3;
+
+	/**
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE__GSHORT_NAME = FUNCTION_PROTOTYPE__GSHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE__SHORT_NAME = FUNCTION_PROTOTYPE__SHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE__CATEGORY = FUNCTION_PROTOTYPE__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE__UUID = FUNCTION_PROTOTYPE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE__NAME = FUNCTION_PROTOTYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE__OWNED_COMMENT = FUNCTION_PROTOTYPE__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE__TYPE = FUNCTION_PROTOTYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Analysis Function Prototype</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_PROTOTYPE_FEATURE_COUNT = FUNCTION_PROTOTYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -699,14 +1021,148 @@ public interface Eastadl21Package extends EPackage {
 	int FUNCTION_TYPE_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.DesignFunctionTypeImpl <em>Design Function Type</em>}' class.
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.eatop.eastadl21.impl.DesignFunctionTypeImpl
-	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getDesignFunctionType()
 	 * @generated
+	 * @ordered
 	 */
-	int DESIGN_FUNCTION_TYPE = 4;
+	int ANALYSIS_FUNCTION_TYPE__GSHORT_NAME = FUNCTION_TYPE__GSHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__SHORT_NAME = FUNCTION_TYPE__SHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__CATEGORY = FUNCTION_TYPE__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__UUID = FUNCTION_TYPE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__NAME = FUNCTION_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__OWNED_COMMENT = FUNCTION_TYPE__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>GEA Package element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__GEA_PACKAGE_ELEMENT = FUNCTION_TYPE__GEA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>EA Package element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__EA_PACKAGE_ELEMENT = FUNCTION_TYPE__EA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__TRACEABLE_SPECIFICATION = FUNCTION_TYPE__TRACEABLE_SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Relationship</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__OWNED_RELATIONSHIP = FUNCTION_TYPE__OWNED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__IS_ELEMENTARY = FUNCTION_TYPE__IS_ELEMENTARY;
+
+	/**
+	 * The feature id for the '<em><b>Port Group</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__PORT_GROUP = FUNCTION_TYPE__PORT_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Connector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__CONNECTOR = FUNCTION_TYPE__CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__PORT = FUNCTION_TYPE__PORT;
+
+	/**
+	 * The feature id for the '<em><b>Part</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE__PART = FUNCTION_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Analysis Function Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_FUNCTION_TYPE_FEATURE_COUNT = FUNCTION_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -853,16 +1309,6 @@ public interface Eastadl21Package extends EPackage {
 	int DESIGN_FUNCTION_TYPE_FEATURE_COUNT = FUNCTION_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.BasicSoftwareFunctionTypeImpl <em>Basic Software Function Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.eatop.eastadl21.impl.BasicSoftwareFunctionTypeImpl
-	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getBasicSoftwareFunctionType()
-	 * @generated
-	 */
-	int BASIC_SOFTWARE_FUNCTION_TYPE = 2;
-
-	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1007,98 +1453,6 @@ public interface Eastadl21Package extends EPackage {
 	int BASIC_SOFTWARE_FUNCTION_TYPE_FEATURE_COUNT = DESIGN_FUNCTION_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.EAPrototypeImpl <em>EA Prototype</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.eatop.eastadl21.impl.EAPrototypeImpl
-	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAPrototype()
-	 * @generated
-	 */
-	int EA_PROTOTYPE = 46;
-
-	/**
-	 * The number of structural features of the '<em>EA Prototype</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EA_PROTOTYPE_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.FunctionPrototypeImpl <em>Function Prototype</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.eatop.eastadl21.impl.FunctionPrototypeImpl
-	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionPrototype()
-	 * @generated
-	 */
-	int FUNCTION_PROTOTYPE = 12;
-
-	/**
-	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PROTOTYPE__GSHORT_NAME = EA_PROTOTYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PROTOTYPE__SHORT_NAME = EA_PROTOTYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Category</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PROTOTYPE__CATEGORY = EA_PROTOTYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PROTOTYPE__UUID = EA_PROTOTYPE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PROTOTYPE__NAME = EA_PROTOTYPE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PROTOTYPE__OWNED_COMMENT = EA_PROTOTYPE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Function Prototype</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_PROTOTYPE_FEATURE_COUNT = EA_PROTOTYPE_FEATURE_COUNT + 6;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.DesignFunctionPrototypeImpl <em>Design Function Prototype</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1106,7 +1460,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getDesignFunctionPrototype()
 	 * @generated
 	 */
-	int DESIGN_FUNCTION_PROTOTYPE = 3;
+	int DESIGN_FUNCTION_PROTOTYPE = 6;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1181,6 +1535,160 @@ public interface Eastadl21Package extends EPackage {
 	int DESIGN_FUNCTION_PROTOTYPE_FEATURE_COUNT = FUNCTION_PROTOTYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.FunctionalDeviceImpl <em>Functional Device</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.FunctionalDeviceImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionalDevice()
+	 * @generated
+	 */
+	int FUNCTIONAL_DEVICE = 8;
+
+	/**
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__GSHORT_NAME = ANALYSIS_FUNCTION_TYPE__GSHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__SHORT_NAME = ANALYSIS_FUNCTION_TYPE__SHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__CATEGORY = ANALYSIS_FUNCTION_TYPE__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__UUID = ANALYSIS_FUNCTION_TYPE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__NAME = ANALYSIS_FUNCTION_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__OWNED_COMMENT = ANALYSIS_FUNCTION_TYPE__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>GEA Package element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__GEA_PACKAGE_ELEMENT = ANALYSIS_FUNCTION_TYPE__GEA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>EA Package element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__EA_PACKAGE_ELEMENT = ANALYSIS_FUNCTION_TYPE__EA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Traceable Specification</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__TRACEABLE_SPECIFICATION = ANALYSIS_FUNCTION_TYPE__TRACEABLE_SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Relationship</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__OWNED_RELATIONSHIP = ANALYSIS_FUNCTION_TYPE__OWNED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '<em><b>Is Elementary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__IS_ELEMENTARY = ANALYSIS_FUNCTION_TYPE__IS_ELEMENTARY;
+
+	/**
+	 * The feature id for the '<em><b>Port Group</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__PORT_GROUP = ANALYSIS_FUNCTION_TYPE__PORT_GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Connector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__CONNECTOR = ANALYSIS_FUNCTION_TYPE__CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__PORT = ANALYSIS_FUNCTION_TYPE__PORT;
+
+	/**
+	 * The feature id for the '<em><b>Part</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE__PART = ANALYSIS_FUNCTION_TYPE__PART;
+
+	/**
+	 * The number of structural features of the '<em>Functional Device</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_DEVICE_FEATURE_COUNT = ANALYSIS_FUNCTION_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.FunctionAllocationImpl <em>Function Allocation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1188,7 +1696,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionAllocation()
 	 * @generated
 	 */
-	int FUNCTION_ALLOCATION = 5;
+	int FUNCTION_ALLOCATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1279,7 +1787,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getTraceableSpecification()
 	 * @generated
 	 */
-	int TRACEABLE_SPECIFICATION = 53;
+	int TRACEABLE_SPECIFICATION = 57;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1388,7 +1896,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionClientServerInterface()
 	 * @generated
 	 */
-	int FUNCTION_CLIENT_SERVER_INTERFACE = 6;
+	int FUNCTION_CLIENT_SERVER_INTERFACE = 10;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1506,7 +2014,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionPort()
 	 * @generated
 	 */
-	int FUNCTION_PORT = 10;
+	int FUNCTION_PORT = 14;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1579,7 +2087,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionClientServerPort()
 	 * @generated
 	 */
-	int FUNCTION_CLIENT_SERVER_PORT = 7;
+	int FUNCTION_CLIENT_SERVER_PORT = 11;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1670,7 +2178,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionConnector()
 	 * @generated
 	 */
-	int FUNCTION_CONNECTOR = 8;
+	int FUNCTION_CONNECTOR = 12;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1752,7 +2260,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionFlowPort()
 	 * @generated
 	 */
-	int FUNCTION_FLOW_PORT = 9;
+	int FUNCTION_FLOW_PORT = 13;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1852,7 +2360,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionPowerPort()
 	 * @generated
 	 */
-	int FUNCTION_POWER_PORT = 11;
+	int FUNCTION_POWER_PORT = 15;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -1934,7 +2442,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwareFunctionType()
 	 * @generated
 	 */
-	int HARDWARE_FUNCTION_TYPE = 14;
+	int HARDWARE_FUNCTION_TYPE = 18;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -2097,7 +2605,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getLocalDeviceManager()
 	 * @generated
 	 */
-	int LOCAL_DEVICE_MANAGER = 15;
+	int LOCAL_DEVICE_MANAGER = 19;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -2251,7 +2759,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 16;
+	int OPERATION = 20;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -2342,7 +2850,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getPortGroup()
 	 * @generated
 	 */
-	int PORT_GROUP = 17;
+	int PORT_GROUP = 21;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -2433,7 +2941,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionAllocation_allocatedElement()
 	 * @generated
 	 */
-	int FUNCTION_ALLOCATION_ALLOCATED_ELEMENT = 18;
+	int FUNCTION_ALLOCATION_ALLOCATED_ELEMENT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Allocateable Element context</b></em>' reference list.
@@ -2470,7 +2978,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionAllocation_target()
 	 * @generated
 	 */
-	int FUNCTION_ALLOCATION_TARGET = 19;
+	int FUNCTION_ALLOCATION_TARGET = 23;
 
 	/**
 	 * The feature id for the '<em><b>Allocation Target context</b></em>' reference list.
@@ -2507,7 +3015,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionConnector_port()
 	 * @generated
 	 */
-	int FUNCTION_CONNECTOR_PORT = 20;
+	int FUNCTION_CONNECTOR_PORT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Function Prototype</b></em>' reference.
@@ -2544,7 +3052,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwareComponentType()
 	 * @generated
 	 */
-	int HARDWARE_COMPONENT_TYPE = 25;
+	int HARDWARE_COMPONENT_TYPE = 29;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -2698,7 +3206,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getActuator()
 	 * @generated
 	 */
-	int ACTUATOR = 21;
+	int ACTUATOR = 25;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -2852,7 +3360,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwarePin()
 	 * @generated
 	 */
-	int HARDWARE_PIN = 27;
+	int HARDWARE_PIN = 31;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -2943,7 +3451,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getCommunicationHardwarePin()
 	 * @generated
 	 */
-	int COMMUNICATION_HARDWARE_PIN = 22;
+	int COMMUNICATION_HARDWARE_PIN = 26;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3034,7 +3542,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getElectricalComponent()
 	 * @generated
 	 */
-	int ELECTRICAL_COMPONENT = 23;
+	int ELECTRICAL_COMPONENT = 27;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3197,7 +3705,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getAllocationTarget()
 	 * @generated
 	 */
-	int ALLOCATION_TARGET = 36;
+	int ALLOCATION_TARGET = 40;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3270,7 +3778,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwareComponentPrototype()
 	 * @generated
 	 */
-	int HARDWARE_COMPONENT_PROTOTYPE = 24;
+	int HARDWARE_COMPONENT_PROTOTYPE = 28;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3352,7 +3860,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwareConnector()
 	 * @generated
 	 */
-	int HARDWARE_CONNECTOR = 26;
+	int HARDWARE_CONNECTOR = 30;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3434,7 +3942,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAPort()
 	 * @generated
 	 */
-	int EA_PORT = 45;
+	int EA_PORT = 49;
 
 	/**
 	 * The number of structural features of the '<em>EA Port</em>' class.
@@ -3453,7 +3961,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwarePort()
 	 * @generated
 	 */
-	int HARDWARE_PORT = 28;
+	int HARDWARE_PORT = 32;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3562,7 +4070,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAConnector()
 	 * @generated
 	 */
-	int EA_CONNECTOR = 41;
+	int EA_CONNECTOR = 45;
 
 	/**
 	 * The number of structural features of the '<em>EA Connector</em>' class.
@@ -3581,7 +4089,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwarePortConnector()
 	 * @generated
 	 */
-	int HARDWARE_PORT_CONNECTOR = 29;
+	int HARDWARE_PORT_CONNECTOR = 33;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3672,7 +4180,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getIOHardwarePin()
 	 * @generated
 	 */
-	int IO_HARDWARE_PIN = 30;
+	int IO_HARDWARE_PIN = 34;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3772,7 +4280,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getLogicalPortConnector()
 	 * @generated
 	 */
-	int LOGICAL_PORT_CONNECTOR = 31;
+	int LOGICAL_PORT_CONNECTOR = 35;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -3872,7 +4380,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 32;
+	int NODE = 36;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -4035,7 +4543,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getPortConnector()
 	 * @generated
 	 */
-	int PORT_CONNECTOR = 33;
+	int PORT_CONNECTOR = 37;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -4117,7 +4625,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getPowerHardwarePin()
 	 * @generated
 	 */
-	int POWER_HARDWARE_PIN = 34;
+	int POWER_HARDWARE_PIN = 38;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -4208,7 +4716,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getSensor()
 	 * @generated
 	 */
-	int SENSOR = 35;
+	int SENSOR = 39;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -4362,7 +4870,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwareConnector_port()
 	 * @generated
 	 */
-	int HARDWARE_CONNECTOR_PORT = 37;
+	int HARDWARE_CONNECTOR_PORT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Hardware Pin</b></em>' reference.
@@ -4399,7 +4907,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwarePortConnector_port()
 	 * @generated
 	 */
-	int HARDWARE_PORT_CONNECTOR_PORT = 38;
+	int HARDWARE_PORT_CONNECTOR_PORT = 42;
 
 	/**
 	 * The feature id for the '<em><b>Hardware Port</b></em>' reference.
@@ -4436,7 +4944,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getComment()
 	 * @generated
 	 */
-	int COMMENT = 39;
+	int COMMENT = 43;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -4464,7 +4972,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAPackage()
 	 * @generated
 	 */
-	int EA_PACKAGE = 43;
+	int EA_PACKAGE = 47;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -4573,7 +5081,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAType()
 	 * @generated
 	 */
-	int EA_TYPE = 47;
+	int EA_TYPE = 51;
 
 	/**
 	 * The number of structural features of the '<em>EA Type</em>' class.
@@ -4592,7 +5100,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAXML()
 	 * @generated
 	 */
-	int EAXML = 48;
+	int EAXML = 52;
 
 	/**
 	 * The feature id for the '<em><b>GTop Level Package</b></em>' reference list.
@@ -4629,7 +5137,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getRationale()
 	 * @generated
 	 */
-	int RATIONALE = 49;
+	int RATIONALE = 53;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -4657,7 +5165,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getRelationship()
 	 * @generated
 	 */
-	int RELATIONSHIP = 52;
+	int RELATIONSHIP = 56;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -4730,7 +5238,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getRealization()
 	 * @generated
 	 */
-	int REALIZATION = 50;
+	int REALIZATION = 54;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -4821,7 +5329,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getRealization_realized()
 	 * @generated
 	 */
-	int REALIZATION_REALIZED = 55;
+	int REALIZATION_REALIZED = 59;
 
 	/**
 	 * The feature id for the '<em><b>Identifiable target</b></em>' reference.
@@ -4858,7 +5366,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getRealization_realizedBy()
 	 * @generated
 	 */
-	int REALIZATION_REALIZED_BY = 56;
+	int REALIZATION_REALIZED_BY = 60;
 
 	/**
 	 * The feature id for the '<em><b>Identifiable target</b></em>' reference.
@@ -4895,7 +5403,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEADatatype()
 	 * @generated
 	 */
-	int EA_DATATYPE = 60;
+	int EA_DATATYPE = 64;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5004,7 +5512,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getArrayDatatype()
 	 * @generated
 	 */
-	int ARRAY_DATATYPE = 57;
+	int ARRAY_DATATYPE = 61;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5140,7 +5648,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getCompositeDatatype()
 	 * @generated
 	 */
-	int COMPOSITE_DATATYPE = 58;
+	int COMPOSITE_DATATYPE = 62;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5258,7 +5766,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEABoolean()
 	 * @generated
 	 */
-	int EA_BOOLEAN = 59;
+	int EA_BOOLEAN = 63;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5367,7 +5875,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEADatatypePrototype()
 	 * @generated
 	 */
-	int EA_DATATYPE_PROTOTYPE = 61;
+	int EA_DATATYPE_PROTOTYPE = 65;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5449,7 +5957,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEANumerical()
 	 * @generated
 	 */
-	int EA_NUMERICAL = 62;
+	int EA_NUMERICAL = 66;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5585,7 +6093,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAString()
 	 * @generated
 	 */
-	int EA_STRING = 63;
+	int EA_STRING = 67;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5694,7 +6202,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEnumeration()
 	 * @generated
 	 */
-	int ENUMERATION = 64;
+	int ENUMERATION = 68;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5821,7 +6329,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEnumerationLiteral()
 	 * @generated
 	 */
-	int ENUMERATION_LITERAL = 65;
+	int ENUMERATION_LITERAL = 69;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -5894,7 +6402,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getQuantity()
 	 * @generated
 	 */
-	int QUANTITY = 66;
+	int QUANTITY = 70;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -6048,7 +6556,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getRangeableValueType()
 	 * @generated
 	 */
-	int RANGEABLE_VALUE_TYPE = 67;
+	int RANGEABLE_VALUE_TYPE = 71;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -6193,7 +6701,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getUnit()
 	 * @generated
 	 */
-	int UNIT = 68;
+	int UNIT = 72;
 
 	/**
 	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
@@ -6329,7 +6837,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAValue()
 	 * @generated
 	 */
-	int EA_VALUE = 76;
+	int EA_VALUE = 80;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -6357,7 +6865,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAArrayValue()
 	 * @generated
 	 */
-	int EA_ARRAY_VALUE = 69;
+	int EA_ARRAY_VALUE = 73;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -6394,7 +6902,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEABooleanValue()
 	 * @generated
 	 */
-	int EA_BOOLEAN_VALUE = 70;
+	int EA_BOOLEAN_VALUE = 74;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -6431,7 +6939,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEACompositeValue()
 	 * @generated
 	 */
-	int EA_COMPOSITE_VALUE = 71;
+	int EA_COMPOSITE_VALUE = 75;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -6468,7 +6976,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAEnumerationValue()
 	 * @generated
 	 */
-	int EA_ENUMERATION_VALUE = 72;
+	int EA_ENUMERATION_VALUE = 76;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -6505,7 +7013,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAExpression()
 	 * @generated
 	 */
-	int EA_EXPRESSION = 73;
+	int EA_EXPRESSION = 77;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -6542,7 +7050,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEANumericalValue()
 	 * @generated
 	 */
-	int EA_NUMERICAL_VALUE = 74;
+	int EA_NUMERICAL_VALUE = 78;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -6579,7 +7087,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEAStringValue()
 	 * @generated
 	 */
-	int EA_STRING_VALUE = 75;
+	int EA_STRING_VALUE = 79;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -6609,6 +7117,351 @@ public interface Eastadl21Package extends EPackage {
 	int EA_STRING_VALUE_FEATURE_COUNT = EA_VALUE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.UserAttributeDefinitionImpl <em>User Attribute Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.UserAttributeDefinitionImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getUserAttributeDefinition()
+	 * @generated
+	 */
+	int USER_ATTRIBUTE_DEFINITION = 81;
+
+	/**
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__GSHORT_NAME = EA_PACKAGEABLE_ELEMENT__GSHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__SHORT_NAME = EA_PACKAGEABLE_ELEMENT__SHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__CATEGORY = EA_PACKAGEABLE_ELEMENT__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__UUID = EA_PACKAGEABLE_ELEMENT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__NAME = EA_PACKAGEABLE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__OWNED_COMMENT = EA_PACKAGEABLE_ELEMENT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>GEA Package element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__GEA_PACKAGE_ELEMENT = EA_PACKAGEABLE_ELEMENT__GEA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>EA Package element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__EA_PACKAGE_ELEMENT = EA_PACKAGEABLE_ELEMENT__EA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__DEFAULT_VALUE = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION__TYPE = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>User Attribute Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTE_DEFINITION_FEATURE_COUNT = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.UserAttributedElementImpl <em>User Attributed Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.UserAttributedElementImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getUserAttributedElement()
+	 * @generated
+	 */
+	int USER_ATTRIBUTED_ELEMENT = 82;
+
+	/**
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__GSHORT_NAME = EA_PACKAGEABLE_ELEMENT__GSHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__SHORT_NAME = EA_PACKAGEABLE_ELEMENT__SHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__CATEGORY = EA_PACKAGEABLE_ELEMENT__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__UUID = EA_PACKAGEABLE_ELEMENT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__NAME = EA_PACKAGEABLE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__OWNED_COMMENT = EA_PACKAGEABLE_ELEMENT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>GEA Package element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__GEA_PACKAGE_ELEMENT = EA_PACKAGEABLE_ELEMENT__GEA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>EA Package element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__EA_PACKAGE_ELEMENT = EA_PACKAGEABLE_ELEMENT__EA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Ua Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__UA_VALUE = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Ua Type</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__UA_TYPE = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Attributed Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT__ATTRIBUTED_ELEMENT = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>User Attributed Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ATTRIBUTED_ELEMENT_FEATURE_COUNT = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.impl.UserElementTypeImpl <em>User Element Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eatop.eastadl21.impl.UserElementTypeImpl
+	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getUserElementType()
+	 * @generated
+	 */
+	int USER_ELEMENT_TYPE = 83;
+
+	/**
+	 * The feature id for the '<em><b>GShort Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__GSHORT_NAME = EA_PACKAGEABLE_ELEMENT__GSHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__SHORT_NAME = EA_PACKAGEABLE_ELEMENT__SHORT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__CATEGORY = EA_PACKAGEABLE_ELEMENT__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__UUID = EA_PACKAGEABLE_ELEMENT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__NAME = EA_PACKAGEABLE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__OWNED_COMMENT = EA_PACKAGEABLE_ELEMENT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>GEA Package element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__GEA_PACKAGE_ELEMENT = EA_PACKAGEABLE_ELEMENT__GEA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>EA Package element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__EA_PACKAGE_ELEMENT = EA_PACKAGEABLE_ELEMENT__EA_PACKAGE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Valid For</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__VALID_FOR = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__KEY = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Ua Definition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE__UA_DEFINITION = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>User Element Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ELEMENT_TYPE_FEATURE_COUNT = EA_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.ClientServerKind <em>Client Server Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6616,7 +7469,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getClientServerKind()
 	 * @generated
 	 */
-	int CLIENT_SERVER_KIND = 77;
+	int CLIENT_SERVER_KIND = 84;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.EADirectionKind <em>EA Direction Kind</em>}' enum.
@@ -6626,7 +7479,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getEADirectionKind()
 	 * @generated
 	 */
-	int EA_DIRECTION_KIND = 78;
+	int EA_DIRECTION_KIND = 85;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.HardwareBusKind <em>Hardware Bus Kind</em>}' enum.
@@ -6636,7 +7489,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getHardwareBusKind()
 	 * @generated
 	 */
-	int HARDWARE_BUS_KIND = 79;
+	int HARDWARE_BUS_KIND = 86;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eatop.eastadl21.IOHardwarePinKind <em>IO Hardware Pin Kind</em>}' enum.
@@ -6646,7 +7499,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getIOHardwarePinKind()
 	 * @generated
 	 */
-	int IO_HARDWARE_PIN_KIND = 80;
+	int IO_HARDWARE_PIN_KIND = 87;
 
 	/**
 	 * The meta object id for the '<em>Boolean</em>' data type.
@@ -6656,7 +7509,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getBoolean()
 	 * @generated
 	 */
-	int BOOLEAN = 81;
+	int BOOLEAN = 88;
 
 	/**
 	 * The meta object id for the '<em>Float</em>' data type.
@@ -6666,7 +7519,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFloat()
 	 * @generated
 	 */
-	int FLOAT = 82;
+	int FLOAT = 89;
 
 	/**
 	 * The meta object id for the '<em>Identifier</em>' data type.
@@ -6676,7 +7529,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getIdentifier()
 	 * @generated
 	 */
-	int IDENTIFIER = 83;
+	int IDENTIFIER = 90;
 
 	/**
 	 * The meta object id for the '<em>Integer</em>' data type.
@@ -6686,7 +7539,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 84;
+	int INTEGER = 91;
 
 	/**
 	 * The meta object id for the '<em>Numerical</em>' data type.
@@ -6696,7 +7549,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getNumerical()
 	 * @generated
 	 */
-	int NUMERICAL = 85;
+	int NUMERICAL = 92;
 
 	/**
 	 * The meta object id for the '<em>Ref</em>' data type.
@@ -6706,7 +7559,7 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getRef()
 	 * @generated
 	 */
-	int REF = 86;
+	int REF = 93;
 
 	/**
 	 * The meta object id for the '<em>String</em>' data type.
@@ -6716,8 +7569,51 @@ public interface Eastadl21Package extends EPackage {
 	 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 87;
+	int STRING = 94;
 
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.DesignLevel <em>Design Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Design Level</em>'.
+	 * @see org.eclipse.eatop.eastadl21.DesignLevel
+	 * @generated
+	 */
+	EClass getDesignLevel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eatop.eastadl21.DesignLevel#getAllocation <em>Allocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Allocation</em>'.
+	 * @see org.eclipse.eatop.eastadl21.DesignLevel#getAllocation()
+	 * @see #getDesignLevel()
+	 * @generated
+	 */
+	EReference getDesignLevel_Allocation();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eatop.eastadl21.DesignLevel#getFunctionalDesignArchitecture <em>Functional Design Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Functional Design Architecture</em>'.
+	 * @see org.eclipse.eatop.eastadl21.DesignLevel#getFunctionalDesignArchitecture()
+	 * @see #getDesignLevel()
+	 * @generated
+	 */
+	EReference getDesignLevel_FunctionalDesignArchitecture();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eatop.eastadl21.DesignLevel#getHardwareDesignArchitecture <em>Hardware Design Architecture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Hardware Design Architecture</em>'.
+	 * @see org.eclipse.eatop.eastadl21.DesignLevel#getHardwareDesignArchitecture()
+	 * @see #getDesignLevel()
+	 * @generated
+	 */
+	EReference getDesignLevel_HardwareDesignArchitecture();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.AllocateableElement <em>Allocateable Element</em>}'.
@@ -6749,6 +7645,48 @@ public interface Eastadl21Package extends EPackage {
 	 * @generated
 	 */
 	EReference getAllocation_FunctionAllocation();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.AnalysisFunctionPrototype <em>Analysis Function Prototype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Analysis Function Prototype</em>'.
+	 * @see org.eclipse.eatop.eastadl21.AnalysisFunctionPrototype
+	 * @generated
+	 */
+	EClass getAnalysisFunctionPrototype();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.eatop.eastadl21.AnalysisFunctionPrototype#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see org.eclipse.eatop.eastadl21.AnalysisFunctionPrototype#getType()
+	 * @see #getAnalysisFunctionPrototype()
+	 * @generated
+	 */
+	EReference getAnalysisFunctionPrototype_Type();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.AnalysisFunctionType <em>Analysis Function Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Analysis Function Type</em>'.
+	 * @see org.eclipse.eatop.eastadl21.AnalysisFunctionType
+	 * @generated
+	 */
+	EClass getAnalysisFunctionType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eatop.eastadl21.AnalysisFunctionType#getPart <em>Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Part</em>'.
+	 * @see org.eclipse.eatop.eastadl21.AnalysisFunctionType#getPart()
+	 * @see #getAnalysisFunctionType()
+	 * @generated
+	 */
+	EReference getAnalysisFunctionType_Part();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.BasicSoftwareFunctionType <em>Basic Software Function Type</em>}'.
@@ -6801,6 +7739,16 @@ public interface Eastadl21Package extends EPackage {
 	 * @generated
 	 */
 	EReference getDesignFunctionType_Part();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.FunctionalDevice <em>Functional Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Functional Device</em>'.
+	 * @see org.eclipse.eatop.eastadl21.FunctionalDevice
+	 * @generated
+	 */
+	EClass getFunctionalDevice();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.FunctionAllocation <em>Function Allocation</em>}'.
@@ -8656,6 +9604,124 @@ public interface Eastadl21Package extends EPackage {
 	EReference getEAValue_Type();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.UserAttributeDefinition <em>User Attribute Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>User Attribute Definition</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributeDefinition
+	 * @generated
+	 */
+	EClass getUserAttributeDefinition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eatop.eastadl21.UserAttributeDefinition#getDefaultValue <em>Default Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Default Value</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributeDefinition#getDefaultValue()
+	 * @see #getUserAttributeDefinition()
+	 * @generated
+	 */
+	EReference getUserAttributeDefinition_DefaultValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.eatop.eastadl21.UserAttributeDefinition#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributeDefinition#getType()
+	 * @see #getUserAttributeDefinition()
+	 * @generated
+	 */
+	EReference getUserAttributeDefinition_Type();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.UserAttributedElement <em>User Attributed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>User Attributed Element</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributedElement
+	 * @generated
+	 */
+	EClass getUserAttributedElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eatop.eastadl21.UserAttributedElement#getUaValue <em>Ua Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ua Value</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributedElement#getUaValue()
+	 * @see #getUserAttributedElement()
+	 * @generated
+	 */
+	EReference getUserAttributedElement_UaValue();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.eatop.eastadl21.UserAttributedElement#getUaType <em>Ua Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Ua Type</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributedElement#getUaType()
+	 * @see #getUserAttributedElement()
+	 * @generated
+	 */
+	EReference getUserAttributedElement_UaType();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.eatop.eastadl21.UserAttributedElement#getAttributedElement <em>Attributed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attributed Element</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserAttributedElement#getAttributedElement()
+	 * @see #getUserAttributedElement()
+	 * @generated
+	 */
+	EReference getUserAttributedElement_AttributedElement();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eatop.eastadl21.UserElementType <em>User Element Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>User Element Type</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserElementType
+	 * @generated
+	 */
+	EClass getUserElementType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eatop.eastadl21.UserElementType#getValidFor <em>Valid For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valid For</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserElementType#getValidFor()
+	 * @see #getUserElementType()
+	 * @generated
+	 */
+	EAttribute getUserElementType_ValidFor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eatop.eastadl21.UserElementType#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserElementType#getKey()
+	 * @see #getUserElementType()
+	 * @generated
+	 */
+	EAttribute getUserElementType_Key();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eatop.eastadl21.UserElementType#getUaDefinition <em>Ua Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ua Definition</em>'.
+	 * @see org.eclipse.eatop.eastadl21.UserElementType#getUaDefinition()
+	 * @see #getUserElementType()
+	 * @generated
+	 */
+	EReference getUserElementType_UaDefinition();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.eatop.eastadl21.ClientServerKind <em>Client Server Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8893,6 +9959,40 @@ public interface Eastadl21Package extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.DesignLevelImpl <em>Design Level</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.eatop.eastadl21.impl.DesignLevelImpl
+		 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getDesignLevel()
+		 * @generated
+		 */
+		EClass DESIGN_LEVEL = eINSTANCE.getDesignLevel();
+
+		/**
+		 * The meta object literal for the '<em><b>Allocation</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN_LEVEL__ALLOCATION = eINSTANCE.getDesignLevel_Allocation();
+
+		/**
+		 * The meta object literal for the '<em><b>Functional Design Architecture</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN_LEVEL__FUNCTIONAL_DESIGN_ARCHITECTURE = eINSTANCE.getDesignLevel_FunctionalDesignArchitecture();
+
+		/**
+		 * The meta object literal for the '<em><b>Hardware Design Architecture</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN_LEVEL__HARDWARE_DESIGN_ARCHITECTURE = eINSTANCE.getDesignLevel_HardwareDesignArchitecture();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.AllocateableElementImpl <em>Allocateable Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8919,6 +10019,42 @@ public interface Eastadl21Package extends EPackage {
 		 * @generated
 		 */
 		EReference ALLOCATION__FUNCTION_ALLOCATION = eINSTANCE.getAllocation_FunctionAllocation();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.AnalysisFunctionPrototypeImpl <em>Analysis Function Prototype</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.eatop.eastadl21.impl.AnalysisFunctionPrototypeImpl
+		 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getAnalysisFunctionPrototype()
+		 * @generated
+		 */
+		EClass ANALYSIS_FUNCTION_PROTOTYPE = eINSTANCE.getAnalysisFunctionPrototype();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANALYSIS_FUNCTION_PROTOTYPE__TYPE = eINSTANCE.getAnalysisFunctionPrototype_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.AnalysisFunctionTypeImpl <em>Analysis Function Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.eatop.eastadl21.impl.AnalysisFunctionTypeImpl
+		 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getAnalysisFunctionType()
+		 * @generated
+		 */
+		EClass ANALYSIS_FUNCTION_TYPE = eINSTANCE.getAnalysisFunctionType();
+
+		/**
+		 * The meta object literal for the '<em><b>Part</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANALYSIS_FUNCTION_TYPE__PART = eINSTANCE.getAnalysisFunctionType_Part();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.BasicSoftwareFunctionTypeImpl <em>Basic Software Function Type</em>}' class.
@@ -8965,6 +10101,16 @@ public interface Eastadl21Package extends EPackage {
 		 * @generated
 		 */
 		EReference DESIGN_FUNCTION_TYPE__PART = eINSTANCE.getDesignFunctionType_Part();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.FunctionalDeviceImpl <em>Functional Device</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.eatop.eastadl21.impl.FunctionalDeviceImpl
+		 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getFunctionalDevice()
+		 * @generated
+		 */
+		EClass FUNCTIONAL_DEVICE = eINSTANCE.getFunctionalDevice();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.FunctionAllocationImpl <em>Function Allocation</em>}' class.
@@ -10509,6 +11655,100 @@ public interface Eastadl21Package extends EPackage {
 		 * @generated
 		 */
 		EReference EA_VALUE__TYPE = eINSTANCE.getEAValue_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.UserAttributeDefinitionImpl <em>User Attribute Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.eatop.eastadl21.impl.UserAttributeDefinitionImpl
+		 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getUserAttributeDefinition()
+		 * @generated
+		 */
+		EClass USER_ATTRIBUTE_DEFINITION = eINSTANCE.getUserAttributeDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USER_ATTRIBUTE_DEFINITION__DEFAULT_VALUE = eINSTANCE.getUserAttributeDefinition_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USER_ATTRIBUTE_DEFINITION__TYPE = eINSTANCE.getUserAttributeDefinition_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.UserAttributedElementImpl <em>User Attributed Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.eatop.eastadl21.impl.UserAttributedElementImpl
+		 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getUserAttributedElement()
+		 * @generated
+		 */
+		EClass USER_ATTRIBUTED_ELEMENT = eINSTANCE.getUserAttributedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Ua Value</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USER_ATTRIBUTED_ELEMENT__UA_VALUE = eINSTANCE.getUserAttributedElement_UaValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Ua Type</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USER_ATTRIBUTED_ELEMENT__UA_TYPE = eINSTANCE.getUserAttributedElement_UaType();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributed Element</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USER_ATTRIBUTED_ELEMENT__ATTRIBUTED_ELEMENT = eINSTANCE.getUserAttributedElement_AttributedElement();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.impl.UserElementTypeImpl <em>User Element Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.eatop.eastadl21.impl.UserElementTypeImpl
+		 * @see org.eclipse.eatop.eastadl21.impl.Eastadl21PackageImpl#getUserElementType()
+		 * @generated
+		 */
+		EClass USER_ELEMENT_TYPE = eINSTANCE.getUserElementType();
+
+		/**
+		 * The meta object literal for the '<em><b>Valid For</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USER_ELEMENT_TYPE__VALID_FOR = eINSTANCE.getUserElementType_ValidFor();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USER_ELEMENT_TYPE__KEY = eINSTANCE.getUserElementType_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Ua Definition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USER_ELEMENT_TYPE__UA_DEFINITION = eINSTANCE.getUserElementType_UaDefinition();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eatop.eastadl21.ClientServerKind <em>Client Server Kind</em>}' enum.

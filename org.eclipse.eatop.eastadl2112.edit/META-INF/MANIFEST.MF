@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.eclipse.eatop.eastadl2112.edit;singleton:=true
+Automatic-Module-Name: org.eclipse.eatop.eastadl2112.edit
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.eatop.eastadl2112;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
