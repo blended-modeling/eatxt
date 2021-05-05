@@ -14,7 +14,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class GrammarOptimization {	
-
+	public String fileName = "D:\\Git\\Git_Local\\east-adl-simplified\\org.bumble.eastadl.simplified\\src\\org\\bumble\\eastadl\\simplified\\MyDsl.xtext";
+	//public String fileName = "E:\\02.Work relevant\\Bumble Project\\EAST-ADL\\Examples\\temp new xtext.txt";
 	/**
 	 * Main method (entry method)
 	 */
@@ -32,8 +33,7 @@ public class GrammarOptimization {
     /**
      * Optimize xtext grammar as a whole
      */
-    public void OptimizeAsAWhole() {
-		String fileName = "D:\\\\Git\\\\Git_Local\\\\east-adl-simplified\\\\org.bumble.eastadl.simplified\\\\src\\\\org\\\\bumble\\\\eastadl\\\\simplified\\\\MyDsl.xtext";
+    public void OptimizeAsAWhole() {		
     	File file = new File(fileName);
 		
 		try {
@@ -54,9 +54,7 @@ public class GrammarOptimization {
     /**
      * Optimize xtext grammar line by line
      */
-    public void OptimizeInLIne() {
-    	// get file path
-    	String fileName = "D:\\Git\\Git_Local\\east-adl-simplified\\org.bumble.eastadl.simplified\\src\\org\\bumble\\eastadl\\simplified\\MyDsl.xtext";
+    public void OptimizeInLIne() { 	
     	File file = new File(fileName);
     	List<String> listString = new ArrayList<String>();
     	
@@ -126,10 +124,14 @@ public class GrammarOptimization {
     	
     	// remove '{' and '}' from input string
     	String regex1 = "([\'])([{])([\'])";
-    	String strTemp2 = strTemp1.replaceAll(regex1, "\s");
+    	String strTemp2 = strTemp1.replaceAll(regex1, "");
     	String regex2 = "([\'])([}])([\'])";
-    	strOutput = strTemp2.replaceAll(regex2, "\s");
+    	String strTemp3 = strTemp2.replaceAll(regex2, "");
     	
+    	// move shortName from attribute to the head
+        String regex3 = "\\'\\s*(\\r|\\n)\\s*(\\r|\\n)\\s*\\'shortName\\'\\s";
+        strOutput = strTemp3.replaceAll(regex3, "\'\s");
+   	
     	return strOutput;
     }
     
