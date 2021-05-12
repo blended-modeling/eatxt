@@ -9,5 +9,8 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.bumble.eastadl.simplified,
  org.eclipse.eatop.eastadl2112,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.bumble.eastadl.simplified.ide.contentassist.antlr.internal,
+ org.bumble.eastadl.simplified.ide.contentassist.antlr

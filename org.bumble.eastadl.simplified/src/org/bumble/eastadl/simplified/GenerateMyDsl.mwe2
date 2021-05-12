@@ -1,4 +1,4 @@
-module org.bumble.eastadl.simplified.GenerateMyDsl
+module org.bumble.eastadl.simplified.GenerateEastAdlSimplified
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
@@ -31,8 +31,8 @@ Workflow {
 			}
 		}
 		language = StandardLanguage {
-			name = "org.bumble.eastadl.simplified.MyDsl"
-			fileExtensions = "mydsl"
+			name = "org.bumble.eastadl.simplified.EastAdlSimplified"
+			fileExtensions = "eatxt"
 			referencedResource = "platform:/resource/org.eclipse.eatop.eastadl2112/model/eastadl22alpha_subsetdesignlevel.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
