@@ -15,7 +15,7 @@ package org.eclipse.eatop.eastadl21;
  * EABoolean is the primitive type that holds two literals: true, false.
  * 
  * Notation:
- * The datatype EABoolean is denoted using the rectangle symbol with keyword «Datatype Boolean».
+ * The datatype EABoolean is denoted using the rectangle symbol with keyword Â«Datatype BooleanÂ».
  * 
  * Extension: UML Boolean
  * 
