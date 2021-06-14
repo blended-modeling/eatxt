@@ -16,7 +16,7 @@ package org.eclipse.eatop.eastadl21;
  * 
  * 
  * Notation:
- * The datatype EAString is denoted using the rectangle symbol with keyword «Datatype String».
+ * The datatype EAString is denoted using the rectangle symbol with keyword Â«Datatype StringÂ».
  * 
  * Extension: UML String
  * 

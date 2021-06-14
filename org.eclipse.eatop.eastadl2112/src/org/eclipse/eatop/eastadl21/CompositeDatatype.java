@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * A CompositeDatatype represents a non-scalar datatype. The contained datatypePrototypes act as record variables to identify the ordered datatype instances of the tuple (the CompositeDatatype).
  * 
  * Notation:
- * The datatype CompositeDatatype is denoted using the rectangle symbol with keyword «Datatype CompositeDatatype».
+ * The datatype CompositeDatatype is denoted using the rectangle symbol with keyword Â«Datatype CompositeDatatypeÂ».
  * 
  * Extension: UML Datatype
  * 

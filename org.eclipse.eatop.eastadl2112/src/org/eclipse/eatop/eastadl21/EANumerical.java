@@ -15,7 +15,7 @@ package org.eclipse.eatop.eastadl21;
  * EANumerical has attributes for modeling of the allowed range.
  * 
  * Notation:
- * The datatype EANumerical is denoted using the rectangle symbol with keyword «Datatype Numerical».
+ * The datatype EANumerical is denoted using the rectangle symbol with keyword Â«Datatype NumericalÂ».
  * 
  * Extension: UML Datatype
  * 
