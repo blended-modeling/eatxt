@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * 
  * 
  * Notation:
- * The datatype Enumeration is denoted using the rectangle symbol with keyword «Datatype Enumeration».
+ * The datatype Enumeration is denoted using the rectangle symbol with keyword Â«Datatype EnumerationÂ».
  * 
  * Extension: UML Enumeration
  * 
