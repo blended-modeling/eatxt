@@ -1,0 +1,11 @@
+// We modify the concrete syntax of the Xbase block expression and make them indentation-aware
+@Override
+XBlockExpression returns xbase::XExpression:
+	{xbase::XBlockExpression}
+	BEGIN
+		(expressions+=XExpressionOrVarDeclaration ';'?)*
+	END;
+	
+// The following synthetic tokens are used for the indentation-aware blocks
+terminal BEGIN: 'synthetic:BEGIN';  // increase indentation
+terminal END: 'synthetic:END';      // decrease indentation
