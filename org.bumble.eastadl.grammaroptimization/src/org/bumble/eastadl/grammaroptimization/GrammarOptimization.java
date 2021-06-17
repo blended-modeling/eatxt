@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,7 +19,8 @@ import java.util.regex.Pattern;
 public class GrammarOptimization {
 	private static final String ECLIPSE_WORKSPACE_PATH = "(.*\\\\east-adl-simplified)";
 	private static final String XTEXT_PROJECT_NAME = "org.bumble.eastadl.simplified";
-	private static final String XTEXT_FILE_NAME = "EastAdlSimplified.xtext";
+	private static final String NEW_LANGUAGE_NAME = "EastAdlSimplified";
+	private static final String GRAMMAR_RELATIVE_PATH = "\\src\\org\\bumble\\eastadl\\simplified\\";
 
 	// public String testFileName = "E:\\02.Work relevant\\Bumble
 	// Project\\EAST-ADL\\Examples\\temp new xtext.txt";
@@ -27,6 +29,7 @@ public class GrammarOptimization {
 	 * suitable for whom hasn't installed RCP
 	 */
 	public static void main(String[] args) {
+		System.out.println("*************************************Start optimizing grammar!\n");
 		// Get absolute of current project
 		Path path = FileSystems.getDefault().getPath("");
 		String directoryName = path.toAbsolutePath().toString();
@@ -40,51 +43,192 @@ public class GrammarOptimization {
 		String strEclipseWorkspace = optimizer.getTargetString(directoryName, pattern);
 
 		// Construct name string of xtext text file
-		String fileName = strEclipseWorkspace + "\\" + XTEXT_PROJECT_NAME + "\\src\\org\\bumble\\eastadl\\simplified\\"
-				+ XTEXT_FILE_NAME;
+		String xtextFileName = strEclipseWorkspace + "\\" + XTEXT_PROJECT_NAME + GRAMMAR_RELATIVE_PATH
+				+ NEW_LANGUAGE_NAME + ".xtext";
+		String xtendFileName = strEclipseWorkspace + "\\" + XTEXT_PROJECT_NAME + GRAMMAR_RELATIVE_PATH + "formatting2\\"
+				+ NEW_LANGUAGE_NAME + "Formatter" + ".xtend";
 
-		// Core process for optimizing grammar
-		optimizer.OptimizeAsAWhole(fileName);
-	}
+		File xtextFile = new File(xtextFileName);
 
-	/**
-	 * Get the second matching group of the regex in a specific string
-	 */
-	private String getTargetString(String strOrigin, Pattern pattern) {
-		if (null == strOrigin || null == pattern)
-			return null;
-
-		Matcher matcher = pattern.matcher(strOrigin);
-
-		if (matcher.find()) {
-			return matcher.group(1);
+		if (!xtextFile.exists()) {
+			System.err.printf("*******************File %s.xtext doesn't exist!\n", NEW_LANGUAGE_NAME);
+			System.err.println("**************Place check the name and path of the xtext file!");
+			System.err.println("**********Please make sure you have generated xtext artifacts!");
+			System.err.println("**********************************************Stop optimizing!");
+			return;
 		}
 
-		return null;
+		File xtendFile = new File(xtendFileName);
+
+		if (!xtendFile.exists()) {
+			System.err.printf("**********File %sFormatter.xtend doesn't exist!\n", NEW_LANGUAGE_NAME);
+			System.err.println("**************Place check the name and path of the xtend file!");
+			System.err.println("**********************************************Stop optimizing!");
+			return;
+		}
+
+		// 1. Remove brackets from xtext file (by using BEGIN and END)
+		if (!optimizer.optimizeXtext(xtextFile, directoryName)) {
+			System.err.println("*************************Failed to optimize xtext, so stopped!");
+			return;
+		}
+
+		// 2. Modify the formatting xtend file
+		if (!optimizer.modifyFormatter(xtendFile, directoryName)) {
+			System.err.println("**********************Failed to modify xtend file, so stopped!");
+			return;
+		}
+
+		System.out.println("************************Stop optimizing grammar! Successfully!");
+	}
+
+	public boolean modifyFormatter(File file, String directoryName) {
+
+		try {
+			// Contruct file path for replacement text
+			String strReplaceTextPath = directoryName + "\\TextforReplacingFormatterXtend.txt";
+
+			// Create file object for replacement text
+			File fileReplaceText = new File(strReplaceTextPath);
+
+			if (!fileReplaceText.exists()) {
+				System.err.printf("********File TextforReplacingFormatterXtend.txt doesn't exist!\n");
+				System.err.printf("**************************Stop modifying formatter xtend file.\n");
+				return false;
+			}
+
+			// Read text from replacement txt file
+			String strReplaceXtend = IOHelper.readFile(fileReplaceText);
+
+			if (null == strReplaceXtend || strReplaceXtend.isEmpty()) {
+				System.err.printf("**************************Failed to read string from txt file!\n");
+				return false;
+			}
+
+			// Set grammar package name into string
+			String strRegex = "<yourGrammarPackage>";
+			String strReplace = "org.bumble.eastadl.simplified";
+			Pattern replace = Pattern.compile(strRegex);
+			Matcher matcher = replace.matcher(strReplaceXtend);
+			strReplaceXtend = matcher.replaceAll(strReplace).toString();
+
+			// Set grammar name into string
+			strRegex = "<yourGrammarName>";
+			strReplace = "EastAdlSimplified";
+			replace = Pattern.compile(strRegex);
+			matcher = replace.matcher(strReplaceXtend);
+			strReplaceXtend = matcher.replaceAll(strReplace).toString();
+
+			// Write all the read text into formatter xtend
+			FileOutputStream fos = new FileOutputStream(file);
+			fos.write(strReplaceXtend.getBytes());
+			fos.close();
+
+			System.out.println("***********************Finish modifying the grammar formatter.");
+		} catch (IOException e) {
+			System.err.printf("Failed to modifer formatter xtend file, err: %s\n", e.getMessage());
+			return false;
+		}
+		return true;
 	}
 
 	/**
 	 * Optimize xtext grammar as a whole
 	 */
-	public void OptimizeAsAWhole(String fileName) {
-		File file = new File(fileName);
-
-		if (!file.exists()) {
-			System.err.printf("File %s doesn't exist!\n", fileName);
-		}
+	public boolean optimizeXtext(File file, String directoryName) {
 
 		try {
 			// read whole content from xtext file
 			String strOrigin = IOHelper.readFile(file);
 
-			// optimize grammar in string-level
-			String strProcessed = Process(strOrigin);
+			if (null == strOrigin || strOrigin.isEmpty()) {
+				System.err.printf("************************Failed to read string from xtext file.\n");
+				return false;
+			}
+
+			// 1. optimize grammar in string-level
+			String strProcessed = removeBrackets(strOrigin);
+			System.out.println("Finish removing brackets by replacing them with BEGIN AND END.");
+
+			// 2. Clarify BEGIN and END
+			strProcessed = clarifyBeginAndEnd(strProcessed, directoryName);
+			System.out.println("****************Finish clarifying BEGIN and END in xtext file.");
+
+			// 3. Add import
+			strProcessed = addImport(strProcessed);
+			System.out.println("**********Finish adding import to the beginning of xtext file.");
 
 			// write the optimized grammar back into the xtext file
 			IOHelper.saveFile(file, strProcessed);
 		} catch (IOException e) {
 			System.err.printf("Failed to optimize the whole file, err: %s\n", e.getMessage());
+			return false;
 		}
+
+		return true;
+	}
+
+	/**
+	 * Specific optimization operation
+	 */
+	public String removeBrackets(String strInput) {
+		String strOutput = "";
+
+		// convert tab symbol to four whitespace
+		Pattern replace1 = Pattern.compile("\t");
+		Matcher matcher1 = replace1.matcher(strInput);
+		String strTemp1 = matcher1.replaceAll("\s\s\s\s").toString();
+
+		// remove '{' and '}' from input string
+		String regex1 = "([\'])([{])([\'])";
+		String strTemp2 = strTemp1.replaceAll(regex1, "BEGIN");
+		String regex2 = "([\'])([}])([\'])";
+		String strTemp3 = strTemp2.replaceAll(regex2, "END");
+
+		// move shortName from attribute to the head
+		String regex3 = "\\'\\s*(\\r|\\n)\\s*(\\r|\\n)\\s*\\'shortName\\'\\s";
+		strOutput = strTemp3.replaceAll(regex3, "\'\s");
+
+		return strOutput;
+	}
+
+	public String clarifyBeginAndEnd(String strInput, String directoryName) {
+		String strOutput = "";
+
+		String strReplaceEndFile = directoryName + "\\ClarificationTextforBEGINandEND.txt";
+
+		// Create file object for replacement text
+		File fileReplaceText = new File(strReplaceEndFile);
+
+		if (!fileReplaceText.exists()) {
+			System.err.printf("*******File ClarificationTextforBEGINandEND.txt doesn't exist!\n");
+			System.err.printf("**************************Stop modifying formatter xtend file.\n");
+			return null;
+		}
+
+		// read whole content from xtext file
+		String strAddEnd = null;
+		try {
+			strAddEnd = IOHelper.readFile(fileReplaceText);
+		} catch (IOException e) {
+			System.err.printf("Failed to read text from ClarificationTextforBEGINandEND.txt!\n");
+			return null;
+		}
+
+		strOutput = strInput + '\n' + strAddEnd;
+
+		return strOutput;
+	}
+
+	public String addImport(String strInput) {
+		String strOutput = "";
+		String strRegex = "org.eclipse.xtext.common.Terminals";
+		String strReplace = "org.eclipse.xtext.xbase.Xbase" + '\n'
+				+ "import \"http://www.eclipse.org/xtext/xbase/Xbase\" as xbase";
+		Pattern replace = Pattern.compile(strRegex);
+		Matcher matcher = replace.matcher(strInput);
+		strOutput = matcher.replaceAll(strReplace).toString();
+		return strOutput;
 	}
 
 	/**
@@ -104,7 +248,7 @@ public class GrammarOptimization {
 				String strSource, strTarget;
 				while ((strSource = br.readLine()) != null) {
 					// remove '{' and '}' from input string
-					strTarget = Process(strSource);
+					strTarget = removeBrackets(strSource);
 
 					// put the processed string into list
 					listString.add(strTarget);
@@ -142,30 +286,19 @@ public class GrammarOptimization {
 	}
 
 	/**
-	 * Specific optimization operation
+	 * Get the second matching group of the regex in a specific string
 	 */
-	public String Process(String strInput) {
-		if (null == strInput || strInput.isEmpty())
-			return "";
+	private String getTargetString(String strOrigin, Pattern pattern) {
+		if (null == strOrigin || null == pattern)
+			return null;
 
-		String strOutput = "";
+		Matcher matcher = pattern.matcher(strOrigin);
 
-		// convert tab symbol to four whitespace
-		Pattern replace1 = Pattern.compile("\t");
-		Matcher matcher1 = replace1.matcher(strInput);
-		String strTemp1 = matcher1.replaceAll("\s\s\s\s").toString();
+		if (matcher.find()) {
+			return matcher.group(1);
+		}
 
-		// remove '{' and '}' from input string
-		String regex1 = "([\'])([{])([\'])";
-		String strTemp2 = strTemp1.replaceAll(regex1, "");
-		String regex2 = "([\'])([}])([\'])";
-		String strTemp3 = strTemp2.replaceAll(regex2, "");
-
-		// move shortName from attribute to the head
-		String regex3 = "\\'\\s*(\\r|\\n)\\s*(\\r|\\n)\\s*\\'shortName\\'\\s";
-		strOutput = strTemp3.replaceAll(regex3, "\'\s");
-
-		return strOutput;
+		return null;
 	}
 
 	/**
