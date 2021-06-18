@@ -4,76 +4,130 @@
 package org.bumble.eastadl.simplified.serializer;
 
 import com.google.inject.Inject;
+import eastadl22_alpha.Actuator;
+import eastadl22_alpha.Allocation;
+import eastadl22_alpha.AnalysisFunctionPrototype;
+import eastadl22_alpha.AnalysisFunctionType;
+import eastadl22_alpha.ArrayDatatype;
+import eastadl22_alpha.BasicSoftwareFunctionType;
+import eastadl22_alpha.Comment;
+import eastadl22_alpha.CommunicationHardwarePin;
+import eastadl22_alpha.CompositeDatatype;
+import eastadl22_alpha.DesignFunctionPrototype;
+import eastadl22_alpha.DesignFunctionType;
+import eastadl22_alpha.DesignLevel;
+import eastadl22_alpha.EAArrayValue;
+import eastadl22_alpha.EABoolean;
+import eastadl22_alpha.EABooleanValue;
+import eastadl22_alpha.EACompositeValue;
+import eastadl22_alpha.EADatatypePrototype;
+import eastadl22_alpha.EAEnumerationValue;
+import eastadl22_alpha.EAExpression;
+import eastadl22_alpha.EANumerical;
+import eastadl22_alpha.EANumericalValue;
+import eastadl22_alpha.EAPackage;
+import eastadl22_alpha.EAString;
+import eastadl22_alpha.EAStringValue;
+import eastadl22_alpha.EAXML;
+import eastadl22_alpha.Eastadl22_alphaPackage;
+import eastadl22_alpha.ElectricalComponent;
+import eastadl22_alpha.Enumeration;
+import eastadl22_alpha.EnumerationLiteral;
+import eastadl22_alpha.FunctionAllocation;
+import eastadl22_alpha.FunctionAllocation_allocatedElement;
+import eastadl22_alpha.FunctionAllocation_target;
+import eastadl22_alpha.FunctionClientServerInterface;
+import eastadl22_alpha.FunctionClientServerPort;
+import eastadl22_alpha.FunctionConnector;
+import eastadl22_alpha.FunctionConnector_port;
+import eastadl22_alpha.FunctionFlowPort;
+import eastadl22_alpha.FunctionPowerPort;
+import eastadl22_alpha.FunctionalDevice;
+import eastadl22_alpha.HardwareComponentPrototype;
+import eastadl22_alpha.HardwareComponentType;
+import eastadl22_alpha.HardwareConnector;
+import eastadl22_alpha.HardwareConnector_port;
+import eastadl22_alpha.HardwareFunctionType;
+import eastadl22_alpha.HardwarePort;
+import eastadl22_alpha.HardwarePortConnector;
+import eastadl22_alpha.HardwarePortConnector_port;
+import eastadl22_alpha.IOHardwarePin;
+import eastadl22_alpha.LocalDeviceManager;
+import eastadl22_alpha.LogicalPortConnector;
+import eastadl22_alpha.Node;
+import eastadl22_alpha.Operation;
+import eastadl22_alpha.PortGroup;
+import eastadl22_alpha.PowerHardwarePin;
+import eastadl22_alpha.Quantity;
+import eastadl22_alpha.RangeableValueType;
+import eastadl22_alpha.Rationale;
+import eastadl22_alpha.Realization;
+import eastadl22_alpha.Realization_realized;
+import eastadl22_alpha.Realization_realizedBy;
+import eastadl22_alpha.Sensor;
+import eastadl22_alpha.Unit;
+import eastadl22_alpha.UserAttributeDefinition;
+import eastadl22_alpha.UserAttributedElement;
+import eastadl22_alpha.UserElementType;
 import java.util.Set;
 import org.bumble.eastadl.simplified.services.EastAdlSimplifiedGrammarAccess;
-import org.eclipse.eatop.eastadl21.Actuator;
-import org.eclipse.eatop.eastadl21.Allocation;
-import org.eclipse.eatop.eastadl21.ArrayDatatype;
-import org.eclipse.eatop.eastadl21.BasicSoftwareFunctionType;
-import org.eclipse.eatop.eastadl21.Comment;
-import org.eclipse.eatop.eastadl21.CommunicationHardwarePin;
-import org.eclipse.eatop.eastadl21.CompositeDatatype;
-import org.eclipse.eatop.eastadl21.DesignFunctionPrototype;
-import org.eclipse.eatop.eastadl21.DesignFunctionType;
-import org.eclipse.eatop.eastadl21.EAArrayValue;
-import org.eclipse.eatop.eastadl21.EABoolean;
-import org.eclipse.eatop.eastadl21.EABooleanValue;
-import org.eclipse.eatop.eastadl21.EACompositeValue;
-import org.eclipse.eatop.eastadl21.EADatatypePrototype;
-import org.eclipse.eatop.eastadl21.EAEnumerationValue;
-import org.eclipse.eatop.eastadl21.EAExpression;
-import org.eclipse.eatop.eastadl21.EANumerical;
-import org.eclipse.eatop.eastadl21.EANumericalValue;
-import org.eclipse.eatop.eastadl21.EAPackage;
-import org.eclipse.eatop.eastadl21.EAString;
-import org.eclipse.eatop.eastadl21.EAStringValue;
-import org.eclipse.eatop.eastadl21.Eastadl21Package;
-import org.eclipse.eatop.eastadl21.ElectricalComponent;
-import org.eclipse.eatop.eastadl21.Enumeration;
-import org.eclipse.eatop.eastadl21.EnumerationLiteral;
-import org.eclipse.eatop.eastadl21.FunctionAllocation;
-import org.eclipse.eatop.eastadl21.FunctionAllocation_allocatedElement;
-import org.eclipse.eatop.eastadl21.FunctionAllocation_target;
-import org.eclipse.eatop.eastadl21.FunctionClientServerInterface;
-import org.eclipse.eatop.eastadl21.FunctionClientServerPort;
-import org.eclipse.eatop.eastadl21.FunctionConnector;
-import org.eclipse.eatop.eastadl21.FunctionConnector_port;
-import org.eclipse.eatop.eastadl21.FunctionFlowPort;
-import org.eclipse.eatop.eastadl21.FunctionPowerPort;
-import org.eclipse.eatop.eastadl21.HardwareComponentPrototype;
-import org.eclipse.eatop.eastadl21.HardwareComponentType;
-import org.eclipse.eatop.eastadl21.HardwareConnector;
-import org.eclipse.eatop.eastadl21.HardwareConnector_port;
-import org.eclipse.eatop.eastadl21.HardwareFunctionType;
-import org.eclipse.eatop.eastadl21.HardwarePort;
-import org.eclipse.eatop.eastadl21.HardwarePortConnector;
-import org.eclipse.eatop.eastadl21.HardwarePortConnector_port;
-import org.eclipse.eatop.eastadl21.IOHardwarePin;
-import org.eclipse.eatop.eastadl21.LocalDeviceManager;
-import org.eclipse.eatop.eastadl21.Node;
-import org.eclipse.eatop.eastadl21.Operation;
-import org.eclipse.eatop.eastadl21.PortGroup;
-import org.eclipse.eatop.eastadl21.PowerHardwarePin;
-import org.eclipse.eatop.eastadl21.Quantity;
-import org.eclipse.eatop.eastadl21.RangeableValueType;
-import org.eclipse.eatop.eastadl21.Rationale;
-import org.eclipse.eatop.eastadl21.Realization;
-import org.eclipse.eatop.eastadl21.Realization_realized;
-import org.eclipse.eatop.eastadl21.Realization_realizedBy;
-import org.eclipse.eatop.eastadl21.Sensor;
-import org.eclipse.eatop.eastadl21.Unit;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.common.types.JvmFormalParameter;
+import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
+import org.eclipse.xtext.common.types.JvmInnerTypeReference;
+import org.eclipse.xtext.common.types.JvmLowerBound;
+import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeParameter;
+import org.eclipse.xtext.common.types.JvmUpperBound;
+import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
+import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.eclipse.xtext.xbase.XAssignment;
+import org.eclipse.xtext.xbase.XBasicForLoopExpression;
+import org.eclipse.xtext.xbase.XBinaryOperation;
+import org.eclipse.xtext.xbase.XBlockExpression;
+import org.eclipse.xtext.xbase.XBooleanLiteral;
+import org.eclipse.xtext.xbase.XCasePart;
+import org.eclipse.xtext.xbase.XCastedExpression;
+import org.eclipse.xtext.xbase.XCatchClause;
+import org.eclipse.xtext.xbase.XClosure;
+import org.eclipse.xtext.xbase.XConstructorCall;
+import org.eclipse.xtext.xbase.XDoWhileExpression;
+import org.eclipse.xtext.xbase.XFeatureCall;
+import org.eclipse.xtext.xbase.XForLoopExpression;
+import org.eclipse.xtext.xbase.XIfExpression;
+import org.eclipse.xtext.xbase.XInstanceOfExpression;
+import org.eclipse.xtext.xbase.XListLiteral;
+import org.eclipse.xtext.xbase.XMemberFeatureCall;
+import org.eclipse.xtext.xbase.XNullLiteral;
+import org.eclipse.xtext.xbase.XNumberLiteral;
+import org.eclipse.xtext.xbase.XPostfixOperation;
+import org.eclipse.xtext.xbase.XReturnExpression;
+import org.eclipse.xtext.xbase.XSetLiteral;
+import org.eclipse.xtext.xbase.XStringLiteral;
+import org.eclipse.xtext.xbase.XSwitchExpression;
+import org.eclipse.xtext.xbase.XSynchronizedExpression;
+import org.eclipse.xtext.xbase.XThrowExpression;
+import org.eclipse.xtext.xbase.XTryCatchFinallyExpression;
+import org.eclipse.xtext.xbase.XTypeLiteral;
+import org.eclipse.xtext.xbase.XUnaryOperation;
+import org.eclipse.xtext.xbase.XVariableDeclaration;
+import org.eclipse.xtext.xbase.XWhileExpression;
+import org.eclipse.xtext.xbase.XbasePackage;
+import org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer;
+import org.eclipse.xtext.xtype.XFunctionTypeRef;
+import org.eclipse.xtext.xtype.XImportDeclaration;
+import org.eclipse.xtext.xtype.XImportSection;
+import org.eclipse.xtext.xtype.XtypePackage;
 
 @SuppressWarnings("all")
-public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemanticSequencer {
+public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 
 	@Inject
 	private EastAdlSimplifiedGrammarAccess grammarAccess;
@@ -84,172 +138,438 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == Eastadl21Package.eINSTANCE)
+		if (epackage == Eastadl22_alphaPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case Eastadl21Package.ACTUATOR:
+			case Eastadl22_alphaPackage.ACTUATOR:
 				sequence_Actuator(context, (Actuator) semanticObject); 
 				return; 
-			case Eastadl21Package.ALLOCATION:
+			case Eastadl22_alphaPackage.ALLOCATION:
 				sequence_Allocation(context, (Allocation) semanticObject); 
 				return; 
-			case Eastadl21Package.ARRAY_DATATYPE:
+			case Eastadl22_alphaPackage.ANALYSIS_FUNCTION_PROTOTYPE:
+				sequence_AnalysisFunctionPrototype(context, (AnalysisFunctionPrototype) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.ANALYSIS_FUNCTION_TYPE:
+				sequence_AnalysisFunctionType_Impl(context, (AnalysisFunctionType) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.ARRAY_DATATYPE:
 				sequence_ArrayDatatype(context, (ArrayDatatype) semanticObject); 
 				return; 
-			case Eastadl21Package.BASIC_SOFTWARE_FUNCTION_TYPE:
+			case Eastadl22_alphaPackage.BASIC_SOFTWARE_FUNCTION_TYPE:
 				sequence_BasicSoftwareFunctionType(context, (BasicSoftwareFunctionType) semanticObject); 
 				return; 
-			case Eastadl21Package.COMMENT:
+			case Eastadl22_alphaPackage.COMMENT:
 				sequence_Comment_Impl(context, (Comment) semanticObject); 
 				return; 
-			case Eastadl21Package.COMMUNICATION_HARDWARE_PIN:
+			case Eastadl22_alphaPackage.COMMUNICATION_HARDWARE_PIN:
 				sequence_CommunicationHardwarePin(context, (CommunicationHardwarePin) semanticObject); 
 				return; 
-			case Eastadl21Package.COMPOSITE_DATATYPE:
+			case Eastadl22_alphaPackage.COMPOSITE_DATATYPE:
 				sequence_CompositeDatatype(context, (CompositeDatatype) semanticObject); 
 				return; 
-			case Eastadl21Package.DESIGN_FUNCTION_PROTOTYPE:
+			case Eastadl22_alphaPackage.DESIGN_FUNCTION_PROTOTYPE:
 				sequence_DesignFunctionPrototype(context, (DesignFunctionPrototype) semanticObject); 
 				return; 
-			case Eastadl21Package.DESIGN_FUNCTION_TYPE:
+			case Eastadl22_alphaPackage.DESIGN_FUNCTION_TYPE:
 				sequence_DesignFunctionType_Impl(context, (DesignFunctionType) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_ARRAY_VALUE:
+			case Eastadl22_alphaPackage.DESIGN_LEVEL:
+				sequence_DesignLevel(context, (DesignLevel) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.EA_ARRAY_VALUE:
 				sequence_EAArrayValue(context, (EAArrayValue) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_BOOLEAN:
+			case Eastadl22_alphaPackage.EA_BOOLEAN:
 				sequence_EABoolean(context, (EABoolean) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_BOOLEAN_VALUE:
+			case Eastadl22_alphaPackage.EA_BOOLEAN_VALUE:
 				sequence_EABooleanValue(context, (EABooleanValue) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_COMPOSITE_VALUE:
+			case Eastadl22_alphaPackage.EA_COMPOSITE_VALUE:
 				sequence_EACompositeValue(context, (EACompositeValue) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_DATATYPE_PROTOTYPE:
+			case Eastadl22_alphaPackage.EA_DATATYPE_PROTOTYPE:
 				sequence_EADatatypePrototype(context, (EADatatypePrototype) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_ENUMERATION_VALUE:
+			case Eastadl22_alphaPackage.EA_ENUMERATION_VALUE:
 				sequence_EAEnumerationValue(context, (EAEnumerationValue) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_EXPRESSION:
+			case Eastadl22_alphaPackage.EA_EXPRESSION:
 				sequence_EAExpression(context, (EAExpression) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_NUMERICAL:
+			case Eastadl22_alphaPackage.EA_NUMERICAL:
 				sequence_EANumerical(context, (EANumerical) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_NUMERICAL_VALUE:
+			case Eastadl22_alphaPackage.EA_NUMERICAL_VALUE:
 				sequence_EANumericalValue(context, (EANumericalValue) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_PACKAGE:
+			case Eastadl22_alphaPackage.EA_PACKAGE:
 				sequence_EAPackage(context, (EAPackage) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_STRING:
+			case Eastadl22_alphaPackage.EA_STRING:
 				sequence_EAString(context, (EAString) semanticObject); 
 				return; 
-			case Eastadl21Package.EA_STRING_VALUE:
+			case Eastadl22_alphaPackage.EA_STRING_VALUE:
 				sequence_EAStringValue(context, (EAStringValue) semanticObject); 
 				return; 
-			case Eastadl21Package.ELECTRICAL_COMPONENT:
+			case Eastadl22_alphaPackage.EAXML:
+				sequence_EAXML(context, (EAXML) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.ELECTRICAL_COMPONENT:
 				sequence_ElectricalComponent(context, (ElectricalComponent) semanticObject); 
 				return; 
-			case Eastadl21Package.ENUMERATION:
+			case Eastadl22_alphaPackage.ENUMERATION:
 				sequence_Enumeration(context, (Enumeration) semanticObject); 
 				return; 
-			case Eastadl21Package.ENUMERATION_LITERAL:
+			case Eastadl22_alphaPackage.ENUMERATION_LITERAL:
 				sequence_EnumerationLiteral(context, (EnumerationLiteral) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_ALLOCATION:
+			case Eastadl22_alphaPackage.FUNCTION_ALLOCATION:
 				sequence_FunctionAllocation(context, (FunctionAllocation) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_ALLOCATION_ALLOCATED_ELEMENT:
+			case Eastadl22_alphaPackage.FUNCTION_ALLOCATION_ALLOCATED_ELEMENT:
 				sequence_FunctionAllocation_allocatedElement(context, (FunctionAllocation_allocatedElement) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_ALLOCATION_TARGET:
+			case Eastadl22_alphaPackage.FUNCTION_ALLOCATION_TARGET:
 				sequence_FunctionAllocation_target(context, (FunctionAllocation_target) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_CLIENT_SERVER_INTERFACE:
+			case Eastadl22_alphaPackage.FUNCTION_CLIENT_SERVER_INTERFACE:
 				sequence_FunctionClientServerInterface(context, (FunctionClientServerInterface) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_CLIENT_SERVER_PORT:
+			case Eastadl22_alphaPackage.FUNCTION_CLIENT_SERVER_PORT:
 				sequence_FunctionClientServerPort(context, (FunctionClientServerPort) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_CONNECTOR:
+			case Eastadl22_alphaPackage.FUNCTION_CONNECTOR:
 				sequence_FunctionConnector(context, (FunctionConnector) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_CONNECTOR_PORT:
+			case Eastadl22_alphaPackage.FUNCTION_CONNECTOR_PORT:
 				sequence_FunctionConnector_port(context, (FunctionConnector_port) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_FLOW_PORT:
+			case Eastadl22_alphaPackage.FUNCTION_FLOW_PORT:
 				sequence_FunctionFlowPort(context, (FunctionFlowPort) semanticObject); 
 				return; 
-			case Eastadl21Package.FUNCTION_POWER_PORT:
+			case Eastadl22_alphaPackage.FUNCTION_POWER_PORT:
 				sequence_FunctionPowerPort(context, (FunctionPowerPort) semanticObject); 
 				return; 
-			case Eastadl21Package.HARDWARE_COMPONENT_PROTOTYPE:
+			case Eastadl22_alphaPackage.FUNCTIONAL_DEVICE:
+				sequence_FunctionalDevice(context, (FunctionalDevice) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.HARDWARE_COMPONENT_PROTOTYPE:
 				sequence_HardwareComponentPrototype(context, (HardwareComponentPrototype) semanticObject); 
 				return; 
-			case Eastadl21Package.HARDWARE_COMPONENT_TYPE:
+			case Eastadl22_alphaPackage.HARDWARE_COMPONENT_TYPE:
 				sequence_HardwareComponentType_Impl(context, (HardwareComponentType) semanticObject); 
 				return; 
-			case Eastadl21Package.HARDWARE_CONNECTOR:
+			case Eastadl22_alphaPackage.HARDWARE_CONNECTOR:
 				sequence_HardwareConnector(context, (HardwareConnector) semanticObject); 
 				return; 
-			case Eastadl21Package.HARDWARE_CONNECTOR_PORT:
+			case Eastadl22_alphaPackage.HARDWARE_CONNECTOR_PORT:
 				sequence_HardwareConnector_port(context, (HardwareConnector_port) semanticObject); 
 				return; 
-			case Eastadl21Package.HARDWARE_FUNCTION_TYPE:
+			case Eastadl22_alphaPackage.HARDWARE_FUNCTION_TYPE:
 				sequence_HardwareFunctionType(context, (HardwareFunctionType) semanticObject); 
 				return; 
-			case Eastadl21Package.HARDWARE_PORT:
+			case Eastadl22_alphaPackage.HARDWARE_PORT:
 				sequence_HardwarePort(context, (HardwarePort) semanticObject); 
 				return; 
-			case Eastadl21Package.HARDWARE_PORT_CONNECTOR:
+			case Eastadl22_alphaPackage.HARDWARE_PORT_CONNECTOR:
 				sequence_HardwarePortConnector(context, (HardwarePortConnector) semanticObject); 
 				return; 
-			case Eastadl21Package.HARDWARE_PORT_CONNECTOR_PORT:
+			case Eastadl22_alphaPackage.HARDWARE_PORT_CONNECTOR_PORT:
 				sequence_HardwarePortConnector_port(context, (HardwarePortConnector_port) semanticObject); 
 				return; 
-			case Eastadl21Package.IO_HARDWARE_PIN:
+			case Eastadl22_alphaPackage.IO_HARDWARE_PIN:
 				sequence_IOHardwarePin(context, (IOHardwarePin) semanticObject); 
 				return; 
-			case Eastadl21Package.LOCAL_DEVICE_MANAGER:
+			case Eastadl22_alphaPackage.LOCAL_DEVICE_MANAGER:
 				sequence_LocalDeviceManager(context, (LocalDeviceManager) semanticObject); 
 				return; 
-			case Eastadl21Package.NODE:
+			case Eastadl22_alphaPackage.LOGICAL_PORT_CONNECTOR:
+				sequence_LogicalPortConnector(context, (LogicalPortConnector) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.NODE:
 				sequence_Node(context, (Node) semanticObject); 
 				return; 
-			case Eastadl21Package.OPERATION:
+			case Eastadl22_alphaPackage.OPERATION:
 				sequence_Operation(context, (Operation) semanticObject); 
 				return; 
-			case Eastadl21Package.PORT_GROUP:
+			case Eastadl22_alphaPackage.PORT_GROUP:
 				sequence_PortGroup(context, (PortGroup) semanticObject); 
 				return; 
-			case Eastadl21Package.POWER_HARDWARE_PIN:
+			case Eastadl22_alphaPackage.POWER_HARDWARE_PIN:
 				sequence_PowerHardwarePin(context, (PowerHardwarePin) semanticObject); 
 				return; 
-			case Eastadl21Package.QUANTITY:
+			case Eastadl22_alphaPackage.QUANTITY:
 				sequence_Quantity(context, (Quantity) semanticObject); 
 				return; 
-			case Eastadl21Package.RANGEABLE_VALUE_TYPE:
+			case Eastadl22_alphaPackage.RANGEABLE_VALUE_TYPE:
 				sequence_RangeableValueType(context, (RangeableValueType) semanticObject); 
 				return; 
-			case Eastadl21Package.RATIONALE:
+			case Eastadl22_alphaPackage.RATIONALE:
 				sequence_Rationale(context, (Rationale) semanticObject); 
 				return; 
-			case Eastadl21Package.REALIZATION:
+			case Eastadl22_alphaPackage.REALIZATION:
 				sequence_Realization(context, (Realization) semanticObject); 
 				return; 
-			case Eastadl21Package.REALIZATION_REALIZED:
+			case Eastadl22_alphaPackage.REALIZATION_REALIZED:
 				sequence_Realization_realized(context, (Realization_realized) semanticObject); 
 				return; 
-			case Eastadl21Package.REALIZATION_REALIZED_BY:
+			case Eastadl22_alphaPackage.REALIZATION_REALIZED_BY:
 				sequence_Realization_realizedBy(context, (Realization_realizedBy) semanticObject); 
 				return; 
-			case Eastadl21Package.SENSOR:
+			case Eastadl22_alphaPackage.SENSOR:
 				sequence_Sensor(context, (Sensor) semanticObject); 
 				return; 
-			case Eastadl21Package.UNIT:
+			case Eastadl22_alphaPackage.UNIT:
 				sequence_Unit(context, (Unit) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.USER_ATTRIBUTE_DEFINITION:
+				sequence_UserAttributeDefinition(context, (UserAttributeDefinition) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.USER_ATTRIBUTED_ELEMENT:
+				sequence_UserAttributedElement(context, (UserAttributedElement) semanticObject); 
+				return; 
+			case Eastadl22_alphaPackage.USER_ELEMENT_TYPE:
+				sequence_UserElementType(context, (UserElementType) semanticObject); 
+				return; 
+			}
+		else if (epackage == TypesPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case TypesPackage.JVM_FORMAL_PARAMETER:
+				if (rule == grammarAccess.getFullJvmFormalParameterRule()) {
+					sequence_FullJvmFormalParameter(context, (JvmFormalParameter) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getJvmFormalParameterRule()) {
+					sequence_JvmFormalParameter(context, (JvmFormalParameter) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.JVM_GENERIC_ARRAY_TYPE_REFERENCE:
+				sequence_JvmTypeReference(context, (JvmGenericArrayTypeReference) semanticObject); 
+				return; 
+			case TypesPackage.JVM_INNER_TYPE_REFERENCE:
+				sequence_JvmParameterizedTypeReference(context, (JvmInnerTypeReference) semanticObject); 
+				return; 
+			case TypesPackage.JVM_LOWER_BOUND:
+				if (rule == grammarAccess.getJvmLowerBoundAndedRule()) {
+					sequence_JvmLowerBoundAnded(context, (JvmLowerBound) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getJvmLowerBoundRule()) {
+					sequence_JvmLowerBound(context, (JvmLowerBound) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.JVM_PARAMETERIZED_TYPE_REFERENCE:
+				if (action == grammarAccess.getJvmParameterizedTypeReferenceAccess().getJvmInnerTypeReferenceOuterAction_1_4_0_0_0()) {
+					sequence_JvmParameterizedTypeReference_JvmInnerTypeReference_1_4_0_0_0(context, (JvmParameterizedTypeReference) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getJvmTypeReferenceRule()
+						|| action == grammarAccess.getJvmTypeReferenceAccess().getJvmGenericArrayTypeReferenceComponentTypeAction_0_1_0_0()
+						|| rule == grammarAccess.getJvmParameterizedTypeReferenceRule()
+						|| rule == grammarAccess.getJvmArgumentTypeReferenceRule()) {
+					sequence_JvmParameterizedTypeReference(context, (JvmParameterizedTypeReference) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.JVM_TYPE_PARAMETER:
+				sequence_JvmTypeParameter(context, (JvmTypeParameter) semanticObject); 
+				return; 
+			case TypesPackage.JVM_UPPER_BOUND:
+				if (rule == grammarAccess.getJvmUpperBoundAndedRule()) {
+					sequence_JvmUpperBoundAnded(context, (JvmUpperBound) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getJvmUpperBoundRule()) {
+					sequence_JvmUpperBound(context, (JvmUpperBound) semanticObject); 
+					return; 
+				}
+				else break;
+			case TypesPackage.JVM_WILDCARD_TYPE_REFERENCE:
+				sequence_JvmWildcardTypeReference(context, (JvmWildcardTypeReference) semanticObject); 
+				return; 
+			}
+		else if (epackage == XbasePackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case XbasePackage.XASSIGNMENT:
+				sequence_XAssignment_XMemberFeatureCall(context, (XAssignment) semanticObject); 
+				return; 
+			case XbasePackage.XBASIC_FOR_LOOP_EXPRESSION:
+				sequence_XBasicForLoopExpression(context, (XBasicForLoopExpression) semanticObject); 
+				return; 
+			case XbasePackage.XBINARY_OPERATION:
+				sequence_XAdditiveExpression_XAndExpression_XAssignment_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
+				return; 
+			case XbasePackage.XBLOCK_EXPRESSION:
+				if (rule == grammarAccess.getXBlockExpressionRule()
+						|| rule == grammarAccess.getXExpressionRule()
+						|| rule == grammarAccess.getXAssignmentRule()
+						|| action == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0()
+						|| rule == grammarAccess.getXOrExpressionRule()
+						|| action == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXAndExpressionRule()
+						|| action == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXEqualityExpressionRule()
+						|| action == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXRelationalExpressionRule()
+						|| action == grammarAccess.getXRelationalExpressionAccess().getXInstanceOfExpressionExpressionAction_1_0_0_0_0()
+						|| action == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0()
+						|| rule == grammarAccess.getXOtherOperatorExpressionRule()
+						|| action == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXAdditiveExpressionRule()
+						|| action == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXMultiplicativeExpressionRule()
+						|| action == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXUnaryOperationRule()
+						|| rule == grammarAccess.getXCastedExpressionRule()
+						|| action == grammarAccess.getXCastedExpressionAccess().getXCastedExpressionTargetAction_1_0_0_0()
+						|| rule == grammarAccess.getXPostfixOperationRule()
+						|| action == grammarAccess.getXPostfixOperationAccess().getXPostfixOperationOperandAction_1_0_0()
+						|| rule == grammarAccess.getXMemberFeatureCallRule()
+						|| action == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0()
+						|| action == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0()
+						|| rule == grammarAccess.getXPrimaryExpressionRule()
+						|| rule == grammarAccess.getXParenthesizedExpressionRule()
+						|| rule == grammarAccess.getXExpressionOrVarDeclarationRule()) {
+					sequence_XBlockExpression(context, (XBlockExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getXExpressionInClosureRule()) {
+					sequence_XExpressionInClosure(context, (XBlockExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case XbasePackage.XBOOLEAN_LITERAL:
+				sequence_XBooleanLiteral(context, (XBooleanLiteral) semanticObject); 
+				return; 
+			case XbasePackage.XCASE_PART:
+				sequence_XCasePart(context, (XCasePart) semanticObject); 
+				return; 
+			case XbasePackage.XCASTED_EXPRESSION:
+				sequence_XCastedExpression(context, (XCastedExpression) semanticObject); 
+				return; 
+			case XbasePackage.XCATCH_CLAUSE:
+				sequence_XCatchClause(context, (XCatchClause) semanticObject); 
+				return; 
+			case XbasePackage.XCLOSURE:
+				if (rule == grammarAccess.getXExpressionRule()
+						|| rule == grammarAccess.getXAssignmentRule()
+						|| action == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0()
+						|| rule == grammarAccess.getXOrExpressionRule()
+						|| action == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXAndExpressionRule()
+						|| action == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXEqualityExpressionRule()
+						|| action == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXRelationalExpressionRule()
+						|| action == grammarAccess.getXRelationalExpressionAccess().getXInstanceOfExpressionExpressionAction_1_0_0_0_0()
+						|| action == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0()
+						|| rule == grammarAccess.getXOtherOperatorExpressionRule()
+						|| action == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXAdditiveExpressionRule()
+						|| action == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXMultiplicativeExpressionRule()
+						|| action == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()
+						|| rule == grammarAccess.getXUnaryOperationRule()
+						|| rule == grammarAccess.getXCastedExpressionRule()
+						|| action == grammarAccess.getXCastedExpressionAccess().getXCastedExpressionTargetAction_1_0_0_0()
+						|| rule == grammarAccess.getXPostfixOperationRule()
+						|| action == grammarAccess.getXPostfixOperationAccess().getXPostfixOperationOperandAction_1_0_0()
+						|| rule == grammarAccess.getXMemberFeatureCallRule()
+						|| action == grammarAccess.getXMemberFeatureCallAccess().getXAssignmentAssignableAction_1_0_0_0_0()
+						|| action == grammarAccess.getXMemberFeatureCallAccess().getXMemberFeatureCallMemberCallTargetAction_1_1_0_0_0()
+						|| rule == grammarAccess.getXPrimaryExpressionRule()
+						|| rule == grammarAccess.getXLiteralRule()
+						|| rule == grammarAccess.getXClosureRule()
+						|| rule == grammarAccess.getXParenthesizedExpressionRule()
+						|| rule == grammarAccess.getXExpressionOrVarDeclarationRule()) {
+					sequence_XClosure(context, (XClosure) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getXShortClosureRule()) {
+					sequence_XShortClosure(context, (XClosure) semanticObject); 
+					return; 
+				}
+				else break;
+			case XbasePackage.XCONSTRUCTOR_CALL:
+				sequence_XConstructorCall(context, (XConstructorCall) semanticObject); 
+				return; 
+			case XbasePackage.XDO_WHILE_EXPRESSION:
+				sequence_XDoWhileExpression(context, (XDoWhileExpression) semanticObject); 
+				return; 
+			case XbasePackage.XFEATURE_CALL:
+				sequence_XFeatureCall(context, (XFeatureCall) semanticObject); 
+				return; 
+			case XbasePackage.XFOR_LOOP_EXPRESSION:
+				sequence_XForLoopExpression(context, (XForLoopExpression) semanticObject); 
+				return; 
+			case XbasePackage.XIF_EXPRESSION:
+				sequence_XIfExpression(context, (XIfExpression) semanticObject); 
+				return; 
+			case XbasePackage.XINSTANCE_OF_EXPRESSION:
+				sequence_XRelationalExpression(context, (XInstanceOfExpression) semanticObject); 
+				return; 
+			case XbasePackage.XLIST_LITERAL:
+				sequence_XListLiteral(context, (XListLiteral) semanticObject); 
+				return; 
+			case XbasePackage.XMEMBER_FEATURE_CALL:
+				sequence_XMemberFeatureCall(context, (XMemberFeatureCall) semanticObject); 
+				return; 
+			case XbasePackage.XNULL_LITERAL:
+				sequence_XNullLiteral(context, (XNullLiteral) semanticObject); 
+				return; 
+			case XbasePackage.XNUMBER_LITERAL:
+				sequence_XNumberLiteral(context, (XNumberLiteral) semanticObject); 
+				return; 
+			case XbasePackage.XPOSTFIX_OPERATION:
+				sequence_XPostfixOperation(context, (XPostfixOperation) semanticObject); 
+				return; 
+			case XbasePackage.XRETURN_EXPRESSION:
+				sequence_XReturnExpression(context, (XReturnExpression) semanticObject); 
+				return; 
+			case XbasePackage.XSET_LITERAL:
+				sequence_XSetLiteral(context, (XSetLiteral) semanticObject); 
+				return; 
+			case XbasePackage.XSTRING_LITERAL:
+				sequence_XStringLiteral(context, (XStringLiteral) semanticObject); 
+				return; 
+			case XbasePackage.XSWITCH_EXPRESSION:
+				sequence_XSwitchExpression(context, (XSwitchExpression) semanticObject); 
+				return; 
+			case XbasePackage.XSYNCHRONIZED_EXPRESSION:
+				sequence_XSynchronizedExpression(context, (XSynchronizedExpression) semanticObject); 
+				return; 
+			case XbasePackage.XTHROW_EXPRESSION:
+				sequence_XThrowExpression(context, (XThrowExpression) semanticObject); 
+				return; 
+			case XbasePackage.XTRY_CATCH_FINALLY_EXPRESSION:
+				sequence_XTryCatchFinallyExpression(context, (XTryCatchFinallyExpression) semanticObject); 
+				return; 
+			case XbasePackage.XTYPE_LITERAL:
+				sequence_XTypeLiteral(context, (XTypeLiteral) semanticObject); 
+				return; 
+			case XbasePackage.XUNARY_OPERATION:
+				sequence_XUnaryOperation(context, (XUnaryOperation) semanticObject); 
+				return; 
+			case XbasePackage.XVARIABLE_DECLARATION:
+				sequence_XVariableDeclaration(context, (XVariableDeclaration) semanticObject); 
+				return; 
+			case XbasePackage.XWHILE_EXPRESSION:
+				sequence_XWhileExpression(context, (XWhileExpression) semanticObject); 
+				return; 
+			}
+		else if (epackage == XtypePackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case XtypePackage.XFUNCTION_TYPE_REF:
+				sequence_XFunctionTypeRef(context, (XFunctionTypeRef) semanticObject); 
+				return; 
+			case XtypePackage.XIMPORT_DECLARATION:
+				sequence_XImportDeclaration(context, (XImportDeclaration) semanticObject); 
+				return; 
+			case XtypePackage.XIMPORT_SECTION:
+				sequence_XImportSection(context, (XImportSection) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -258,7 +578,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns Actuator
 	 *     HardwareComponentType returns Actuator
+	 *     Identifiable returns Actuator
 	 *     EAElement returns Actuator
 	 *     Actuator returns Actuator
 	 *
@@ -274,7 +596,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         (pin+=HardwarePin pin+=HardwarePin*)? 
 	 *         (part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? 
 	 *         (connector+=HardwareConnector connector+=HardwareConnector*)? 
-	 *         (port+=HardwarePort port+=HardwarePort*)?
+	 *         (port+=HardwarePort port+=HardwarePort*)? 
+	 *         (portConnector+=PortConnector portConnector+=PortConnector*)?
 	 *     )
 	 */
 	protected void sequence_Actuator(ISerializationContext context, Actuator semanticObject) {
@@ -284,6 +607,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns Allocation
 	 *     EAElement returns Allocation
 	 *     Allocation returns Allocation
 	 *
@@ -304,8 +628,61 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns AnalysisFunctionPrototype
+	 *     EAElement returns AnalysisFunctionPrototype
+	 *     FunctionPrototype returns AnalysisFunctionPrototype
+	 *     AnalysisFunctionPrototype returns AnalysisFunctionPrototype
+	 *
+	 * Constraint:
+	 *     (
+	 *         shortName=Identifier 
+	 *         category=Identifier? 
+	 *         uuid=String0? 
+	 *         name=String0? 
+	 *         type=[AnalysisFunctionType|EString] 
+	 *         (ownedComment+=Comment ownedComment+=Comment*)?
+	 *     )
+	 */
+	protected void sequence_AnalysisFunctionPrototype(ISerializationContext context, AnalysisFunctionPrototype semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EAPackageableElement returns AnalysisFunctionType
+	 *     Identifiable returns AnalysisFunctionType
+	 *     EAElement returns AnalysisFunctionType
+	 *     AnalysisFunctionType returns AnalysisFunctionType
+	 *     AnalysisFunctionType_Impl returns AnalysisFunctionType
+	 *
+	 * Constraint:
+	 *     (
+	 *         shortName=Identifier 
+	 *         category=Identifier? 
+	 *         uuid=String0? 
+	 *         name=String0? 
+	 *         isElementary=Boolean? 
+	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
+	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
+	 *         (ownedRelationship+=Relationship ownedRelationship+=Relationship*)? 
+	 *         (portGroup+=PortGroup portGroup+=PortGroup*)? 
+	 *         (connector+=FunctionConnector connector+=FunctionConnector*)? 
+	 *         (port+=FunctionPort port+=FunctionPort*)? 
+	 *         (part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype*)?
+	 *     )
+	 */
+	protected void sequence_AnalysisFunctionType_Impl(ISerializationContext context, AnalysisFunctionType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EAPackageableElement returns ArrayDatatype
 	 *     TraceableSpecification returns ArrayDatatype
 	 *     EADatatype returns ArrayDatatype
+	 *     Identifiable returns ArrayDatatype
 	 *     EAElement returns ArrayDatatype
 	 *     ArrayDatatype returns ArrayDatatype
 	 *
@@ -316,6 +693,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         text=String0? 
+	 *         uri=String0? 
 	 *         maxLength=Integer? 
 	 *         minLength=Integer? 
 	 *         elementType=[EADatatype|EString] 
@@ -329,6 +707,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns BasicSoftwareFunctionType
+	 *     Identifiable returns BasicSoftwareFunctionType
 	 *     DesignFunctionType returns BasicSoftwareFunctionType
 	 *     EAElement returns BasicSoftwareFunctionType
 	 *     BasicSoftwareFunctionType returns BasicSoftwareFunctionType
@@ -364,11 +744,11 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 */
 	protected void sequence_Comment_Impl(ISerializationContext context, Comment semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Eastadl21Package.Literals.COMMENT__BODY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl21Package.Literals.COMMENT__BODY));
+			if (transientValues.isValueTransient(semanticObject, Eastadl22_alphaPackage.Literals.COMMENT__BODY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22_alphaPackage.Literals.COMMENT__BODY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComment_ImplAccess().getBodyString0ParserRuleCall_2_0(), semanticObject.getBody());
+		feeder.accept(grammarAccess.getComment_ImplAccess().getBodyString0ParserRuleCall_3_0(), semanticObject.getBody());
 		feeder.finish();
 	}
 	
@@ -376,8 +756,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * Contexts:
 	 *     HardwarePin returns CommunicationHardwarePin
-	 *     AllocationTarget returns CommunicationHardwarePin
+	 *     Identifiable returns CommunicationHardwarePin
 	 *     EAElement returns CommunicationHardwarePin
+	 *     AllocationTarget returns CommunicationHardwarePin
 	 *     CommunicationHardwarePin returns CommunicationHardwarePin
 	 *
 	 * Constraint:
@@ -398,8 +779,10 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns CompositeDatatype
 	 *     TraceableSpecification returns CompositeDatatype
 	 *     EADatatype returns CompositeDatatype
+	 *     Identifiable returns CompositeDatatype
 	 *     EAElement returns CompositeDatatype
 	 *     CompositeDatatype returns CompositeDatatype
 	 *
@@ -410,6 +793,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         text=String0? 
+	 *         uri=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         datatypePrototype+=EADatatypePrototype 
 	 *         datatypePrototype+=EADatatypePrototype*
@@ -422,9 +806,10 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns DesignFunctionPrototype
+	 *     EAElement returns DesignFunctionPrototype
 	 *     AllocateableElement returns DesignFunctionPrototype
 	 *     FunctionPrototype returns DesignFunctionPrototype
-	 *     EAElement returns DesignFunctionPrototype
 	 *     DesignFunctionPrototype returns DesignFunctionPrototype
 	 *
 	 * Constraint:
@@ -444,6 +829,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns DesignFunctionType
+	 *     Identifiable returns DesignFunctionType
 	 *     DesignFunctionType returns DesignFunctionType
 	 *     EAElement returns DesignFunctionType
 	 *     DesignFunctionType_Impl returns DesignFunctionType
@@ -471,6 +858,32 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns DesignLevel
+	 *     Identifiable returns DesignLevel
+	 *     EAElement returns DesignLevel
+	 *     DesignLevel returns DesignLevel
+	 *
+	 * Constraint:
+	 *     (
+	 *         shortName=Identifier 
+	 *         category=Identifier? 
+	 *         uuid=String0? 
+	 *         name=String0? 
+	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
+	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
+	 *         (ownedRelationship+=Relationship ownedRelationship+=Relationship*)? 
+	 *         (allocation+=Allocation allocation+=Allocation*)? 
+	 *         functionalDesignArchitecture=DesignFunctionPrototype? 
+	 *         hardwareDesignArchitecture=HardwareComponentPrototype?
+	 *     )
+	 */
+	protected void sequence_DesignLevel(ISerializationContext context, DesignLevel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     EAValue returns EAArrayValue
 	 *     EAArrayValue returns EAArrayValue
 	 *
@@ -492,22 +905,24 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 */
 	protected void sequence_EABooleanValue(ISerializationContext context, EABooleanValue semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Eastadl21Package.Literals.EA_BOOLEAN_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl21Package.Literals.EA_BOOLEAN_VALUE__VALUE));
-			if (transientValues.isValueTransient(semanticObject, Eastadl21Package.Literals.EA_VALUE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl21Package.Literals.EA_VALUE__TYPE));
+			if (transientValues.isValueTransient(semanticObject, Eastadl22_alphaPackage.Literals.EA_BOOLEAN_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22_alphaPackage.Literals.EA_BOOLEAN_VALUE__VALUE));
+			if (transientValues.isValueTransient(semanticObject, Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEABooleanValueAccess().getValueBooleanParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getEABooleanValueAccess().getTypeEADatatypeEStringParserRuleCall_4_0_1(), semanticObject.eGet(Eastadl21Package.Literals.EA_VALUE__TYPE, false));
+		feeder.accept(grammarAccess.getEABooleanValueAccess().getValueBooleanParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getEABooleanValueAccess().getTypeEADatatypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE, false));
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns EABoolean
 	 *     TraceableSpecification returns EABoolean
 	 *     EADatatype returns EABoolean
+	 *     Identifiable returns EABoolean
 	 *     EAElement returns EABoolean
 	 *     EABoolean returns EABoolean
 	 *
@@ -518,6 +933,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         text=String0? 
+	 *         uri=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)?
 	 *     )
 	 */
@@ -541,6 +957,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns EADatatypePrototype
 	 *     EAElement returns EADatatypePrototype
 	 *     EADatatypePrototype returns EADatatypePrototype
 	 *
@@ -595,22 +1012,24 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 */
 	protected void sequence_EANumericalValue(ISerializationContext context, EANumericalValue semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Eastadl21Package.Literals.EA_NUMERICAL_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl21Package.Literals.EA_NUMERICAL_VALUE__VALUE));
-			if (transientValues.isValueTransient(semanticObject, Eastadl21Package.Literals.EA_VALUE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl21Package.Literals.EA_VALUE__TYPE));
+			if (transientValues.isValueTransient(semanticObject, Eastadl22_alphaPackage.Literals.EA_NUMERICAL_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22_alphaPackage.Literals.EA_NUMERICAL_VALUE__VALUE));
+			if (transientValues.isValueTransient(semanticObject, Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEANumericalValueAccess().getValueNumericalParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getEANumericalValueAccess().getTypeEADatatypeEStringParserRuleCall_4_0_1(), semanticObject.eGet(Eastadl21Package.Literals.EA_VALUE__TYPE, false));
+		feeder.accept(grammarAccess.getEANumericalValueAccess().getValueNumericalParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getEANumericalValueAccess().getTypeEADatatypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE, false));
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns EANumerical
 	 *     TraceableSpecification returns EANumerical
 	 *     EADatatype returns EANumerical
+	 *     Identifiable returns EANumerical
 	 *     EAElement returns EANumerical
 	 *     EANumerical returns EANumerical
 	 *
@@ -621,6 +1040,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         text=String0? 
+	 *         uri=String0? 
 	 *         max=Numerical? 
 	 *         min=Numerical? 
 	 *         unit=[Unit|EString]? 
@@ -634,6 +1054,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns EAPackage
 	 *     EAElement returns EAPackage
 	 *     EAPackage returns EAPackage
 	 *
@@ -644,7 +1065,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
-	 *         (subPackage+=EAPackage subPackage+=EAPackage*)?
+	 *         (subPackage+=EAPackage subPackage+=EAPackage*)? 
+	 *         (element+=EAPackageableElement element+=EAPackageableElement*)?
 	 *     )
 	 */
 	protected void sequence_EAPackage(ISerializationContext context, EAPackage semanticObject) {
@@ -662,22 +1084,24 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 */
 	protected void sequence_EAStringValue(ISerializationContext context, EAStringValue semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Eastadl21Package.Literals.EA_STRING_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl21Package.Literals.EA_STRING_VALUE__VALUE));
-			if (transientValues.isValueTransient(semanticObject, Eastadl21Package.Literals.EA_VALUE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl21Package.Literals.EA_VALUE__TYPE));
+			if (transientValues.isValueTransient(semanticObject, Eastadl22_alphaPackage.Literals.EA_STRING_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22_alphaPackage.Literals.EA_STRING_VALUE__VALUE));
+			if (transientValues.isValueTransient(semanticObject, Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEAStringValueAccess().getValueString0ParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getEAStringValueAccess().getTypeEADatatypeEStringParserRuleCall_4_0_1(), semanticObject.eGet(Eastadl21Package.Literals.EA_VALUE__TYPE, false));
+		feeder.accept(grammarAccess.getEAStringValueAccess().getValueString0ParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getEAStringValueAccess().getTypeEADatatypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(Eastadl22_alphaPackage.Literals.EA_VALUE__TYPE, false));
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns EAString
 	 *     TraceableSpecification returns EAString
 	 *     EADatatype returns EAString
+	 *     Identifiable returns EAString
 	 *     EAElement returns EAString
 	 *     EAString returns EAString
 	 *
@@ -688,6 +1112,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         text=String0? 
+	 *         uri=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)?
 	 *     )
 	 */
@@ -698,7 +1123,21 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAXML returns EAXML
+	 *
+	 * Constraint:
+	 *     (topLevelPackage+=EAPackage topLevelPackage+=EAPackage*)?
+	 */
+	protected void sequence_EAXML(ISerializationContext context, EAXML semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EAPackageableElement returns ElectricalComponent
 	 *     HardwareComponentType returns ElectricalComponent
+	 *     Identifiable returns ElectricalComponent
 	 *     EAElement returns ElectricalComponent
 	 *     ElectricalComponent returns ElectricalComponent
 	 *
@@ -715,7 +1154,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         (pin+=HardwarePin pin+=HardwarePin*)? 
 	 *         (part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? 
 	 *         (connector+=HardwareConnector connector+=HardwareConnector*)? 
-	 *         (port+=HardwarePort port+=HardwarePort*)?
+	 *         (port+=HardwarePort port+=HardwarePort*)? 
+	 *         (portConnector+=PortConnector portConnector+=PortConnector*)?
 	 *     )
 	 */
 	protected void sequence_ElectricalComponent(ISerializationContext context, ElectricalComponent semanticObject) {
@@ -725,6 +1165,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns EnumerationLiteral
 	 *     EAElement returns EnumerationLiteral
 	 *     EnumerationLiteral returns EnumerationLiteral
 	 *
@@ -738,8 +1179,10 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns Enumeration
 	 *     TraceableSpecification returns Enumeration
 	 *     EADatatype returns Enumeration
+	 *     Identifiable returns Enumeration
 	 *     EAElement returns Enumeration
 	 *     Enumeration returns Enumeration
 	 *
@@ -750,6 +1193,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         text=String0? 
+	 *         uri=String0? 
 	 *         isMultiValued=Boolean 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         literal+=EnumerationLiteral 
@@ -763,6 +1207,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns FunctionAllocation
 	 *     EAElement returns FunctionAllocation
 	 *     FunctionAllocation returns FunctionAllocation
 	 *
@@ -814,7 +1259,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns FunctionClientServerInterface
 	 *     TraceableSpecification returns FunctionClientServerInterface
+	 *     Identifiable returns FunctionClientServerInterface
 	 *     EAElement returns FunctionClientServerInterface
 	 *     FunctionClientServerInterface returns FunctionClientServerInterface
 	 *
@@ -825,6 +1272,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         text=String0? 
+	 *         uri=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         (operation+=Operation operation+=Operation*)?
 	 *     )
@@ -837,8 +1285,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * Contexts:
 	 *     FunctionPort returns FunctionClientServerPort
-	 *     AllocateableElement returns FunctionClientServerPort
+	 *     Identifiable returns FunctionClientServerPort
 	 *     EAElement returns FunctionClientServerPort
+	 *     AllocateableElement returns FunctionClientServerPort
 	 *     FunctionClientServerPort returns FunctionClientServerPort
 	 *
 	 * Constraint:
@@ -859,8 +1308,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     AllocateableElement returns FunctionConnector
+	 *     Identifiable returns FunctionConnector
 	 *     EAElement returns FunctionConnector
+	 *     AllocateableElement returns FunctionConnector
 	 *     FunctionConnector returns FunctionConnector
 	 *
 	 * Constraint:
@@ -894,8 +1344,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * Contexts:
 	 *     FunctionPort returns FunctionFlowPort
-	 *     AllocateableElement returns FunctionFlowPort
+	 *     Identifiable returns FunctionFlowPort
 	 *     EAElement returns FunctionFlowPort
+	 *     AllocateableElement returns FunctionFlowPort
 	 *     FunctionFlowPort returns FunctionFlowPort
 	 *
 	 * Constraint:
@@ -918,8 +1369,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * Contexts:
 	 *     FunctionPort returns FunctionPowerPort
-	 *     AllocateableElement returns FunctionPowerPort
+	 *     Identifiable returns FunctionPowerPort
 	 *     EAElement returns FunctionPowerPort
+	 *     AllocateableElement returns FunctionPowerPort
 	 *     FunctionPowerPort returns FunctionPowerPort
 	 *
 	 * Constraint:
@@ -939,8 +1391,38 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     AllocationTarget returns HardwareComponentPrototype
+	 *     EAPackageableElement returns FunctionalDevice
+	 *     Identifiable returns FunctionalDevice
+	 *     EAElement returns FunctionalDevice
+	 *     AnalysisFunctionType returns FunctionalDevice
+	 *     FunctionalDevice returns FunctionalDevice
+	 *
+	 * Constraint:
+	 *     (
+	 *         shortName=Identifier 
+	 *         category=Identifier? 
+	 *         uuid=String0? 
+	 *         name=String0? 
+	 *         isElementary=Boolean? 
+	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
+	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
+	 *         (ownedRelationship+=Relationship ownedRelationship+=Relationship*)? 
+	 *         (portGroup+=PortGroup portGroup+=PortGroup*)? 
+	 *         (connector+=FunctionConnector connector+=FunctionConnector*)? 
+	 *         (port+=FunctionPort port+=FunctionPort*)? 
+	 *         (part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype*)?
+	 *     )
+	 */
+	protected void sequence_FunctionalDevice(ISerializationContext context, FunctionalDevice semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Identifiable returns HardwareComponentPrototype
 	 *     EAElement returns HardwareComponentPrototype
+	 *     AllocationTarget returns HardwareComponentPrototype
 	 *     HardwareComponentPrototype returns HardwareComponentPrototype
 	 *
 	 * Constraint:
@@ -960,7 +1442,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns HardwareComponentType
 	 *     HardwareComponentType returns HardwareComponentType
+	 *     Identifiable returns HardwareComponentType
 	 *     EAElement returns HardwareComponentType
 	 *     HardwareComponentType_Impl returns HardwareComponentType
 	 *
@@ -976,7 +1460,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         (pin+=HardwarePin pin+=HardwarePin*)? 
 	 *         (part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? 
 	 *         (connector+=HardwareConnector connector+=HardwareConnector*)? 
-	 *         (port+=HardwarePort port+=HardwarePort*)?
+	 *         (port+=HardwarePort port+=HardwarePort*)? 
+	 *         (portConnector+=PortConnector portConnector+=PortConnector*)?
 	 *     )
 	 */
 	protected void sequence_HardwareComponentType_Impl(ISerializationContext context, HardwareComponentType semanticObject) {
@@ -986,6 +1471,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns HardwareConnector
 	 *     EAElement returns HardwareConnector
 	 *     HardwareConnector returns HardwareConnector
 	 *
@@ -1019,6 +1505,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns HardwareFunctionType
+	 *     Identifiable returns HardwareFunctionType
 	 *     DesignFunctionType returns HardwareFunctionType
 	 *     EAElement returns HardwareFunctionType
 	 *     HardwareFunctionType returns HardwareFunctionType
@@ -1047,8 +1535,10 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     AllocationTarget returns HardwarePortConnector
+	 *     PortConnector returns HardwarePortConnector
+	 *     Identifiable returns HardwarePortConnector
 	 *     EAElement returns HardwarePortConnector
+	 *     AllocationTarget returns HardwarePortConnector
 	 *     HardwarePortConnector returns HardwarePortConnector
 	 *
 	 * Constraint:
@@ -1082,8 +1572,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     AllocationTarget returns HardwarePort
+	 *     Identifiable returns HardwarePort
 	 *     EAElement returns HardwarePort
+	 *     AllocationTarget returns HardwarePort
 	 *     HardwarePort returns HardwarePort
 	 *
 	 * Constraint:
@@ -1107,8 +1598,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * Contexts:
 	 *     HardwarePin returns IOHardwarePin
-	 *     AllocationTarget returns IOHardwarePin
+	 *     Identifiable returns IOHardwarePin
 	 *     EAElement returns IOHardwarePin
+	 *     AllocationTarget returns IOHardwarePin
 	 *     IOHardwarePin returns IOHardwarePin
 	 *
 	 * Constraint:
@@ -1130,6 +1622,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns LocalDeviceManager
+	 *     Identifiable returns LocalDeviceManager
 	 *     DesignFunctionType returns LocalDeviceManager
 	 *     EAElement returns LocalDeviceManager
 	 *     LocalDeviceManager returns LocalDeviceManager
@@ -1157,7 +1651,35 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     PortConnector returns LogicalPortConnector
+	 *     Identifiable returns LogicalPortConnector
+	 *     EAElement returns LogicalPortConnector
+	 *     AllocationTarget returns LogicalPortConnector
+	 *     LogicalPortConnector returns LogicalPortConnector
+	 *
+	 * Constraint:
+	 *     (
+	 *         shortName=Identifier 
+	 *         category=Identifier? 
+	 *         uuid=String0? 
+	 *         name=String0? 
+	 *         kind=HardwareBusKind? 
+	 *         busSpeed=Float? 
+	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
+	 *         port+=HardwarePortConnector_port 
+	 *         port+=HardwarePortConnector_port*
+	 *     )
+	 */
+	protected void sequence_LogicalPortConnector(ISerializationContext context, LogicalPortConnector semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EAPackageableElement returns Node
 	 *     HardwareComponentType returns Node
+	 *     Identifiable returns Node
 	 *     EAElement returns Node
 	 *     Node returns Node
 	 *
@@ -1174,7 +1696,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         (pin+=HardwarePin pin+=HardwarePin*)? 
 	 *         (part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? 
 	 *         (connector+=HardwareConnector connector+=HardwareConnector*)? 
-	 *         (port+=HardwarePort port+=HardwarePort*)?
+	 *         (port+=HardwarePort port+=HardwarePort*)? 
+	 *         (portConnector+=PortConnector portConnector+=PortConnector*)?
 	 *     )
 	 */
 	protected void sequence_Node(ISerializationContext context, Node semanticObject) {
@@ -1184,6 +1707,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns Operation
 	 *     EAElement returns Operation
 	 *     Operation returns Operation
 	 *
@@ -1205,6 +1729,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Identifiable returns PortGroup
 	 *     EAElement returns PortGroup
 	 *     PortGroup returns PortGroup
 	 *
@@ -1227,8 +1752,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * Contexts:
 	 *     HardwarePin returns PowerHardwarePin
-	 *     AllocationTarget returns PowerHardwarePin
+	 *     Identifiable returns PowerHardwarePin
 	 *     EAElement returns PowerHardwarePin
+	 *     AllocationTarget returns PowerHardwarePin
 	 *     PowerHardwarePin returns PowerHardwarePin
 	 *
 	 * Constraint:
@@ -1249,6 +1775,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns Quantity
+	 *     Identifiable returns Quantity
 	 *     EAElement returns Quantity
 	 *     Quantity returns Quantity
 	 *
@@ -1275,8 +1803,10 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns RangeableValueType
 	 *     TraceableSpecification returns RangeableValueType
 	 *     EADatatype returns RangeableValueType
+	 *     Identifiable returns RangeableValueType
 	 *     EAElement returns RangeableValueType
 	 *     RangeableValueType returns RangeableValueType
 	 *
@@ -1287,6 +1817,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         text=String0? 
+	 *         uri=String0? 
 	 *         accuracy=Float 
 	 *         resolution=Float 
 	 *         significantDigits=Integer? 
@@ -1309,11 +1840,11 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 */
 	protected void sequence_Rationale(ISerializationContext context, Rationale semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Eastadl21Package.Literals.COMMENT__BODY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl21Package.Literals.COMMENT__BODY));
+			if (transientValues.isValueTransient(semanticObject, Eastadl22_alphaPackage.Literals.COMMENT__BODY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22_alphaPackage.Literals.COMMENT__BODY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRationaleAccess().getBodyString0ParserRuleCall_2_0(), semanticObject.getBody());
+		feeder.accept(grammarAccess.getRationaleAccess().getBodyString0ParserRuleCall_3_0(), semanticObject.getBody());
 		feeder.finish();
 	}
 	
@@ -1321,6 +1852,7 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	/**
 	 * Contexts:
 	 *     Relationship returns Realization
+	 *     Identifiable returns Realization
 	 *     EAElement returns Realization
 	 *     Realization returns Realization
 	 *
@@ -1368,7 +1900,9 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns Sensor
 	 *     HardwareComponentType returns Sensor
+	 *     Identifiable returns Sensor
 	 *     EAElement returns Sensor
 	 *     Sensor returns Sensor
 	 *
@@ -1384,7 +1918,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *         (pin+=HardwarePin pin+=HardwarePin*)? 
 	 *         (part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? 
 	 *         (connector+=HardwareConnector connector+=HardwareConnector*)? 
-	 *         (port+=HardwarePort port+=HardwarePort*)?
+	 *         (port+=HardwarePort port+=HardwarePort*)? 
+	 *         (portConnector+=PortConnector portConnector+=PortConnector*)?
 	 *     )
 	 */
 	protected void sequence_Sensor(ISerializationContext context, Sensor semanticObject) {
@@ -1394,6 +1929,8 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     EAPackageableElement returns Unit
+	 *     Identifiable returns Unit
 	 *     EAElement returns Unit
 	 *     Unit returns Unit
 	 *
@@ -1412,6 +1949,118 @@ public class EastAdlSimplifiedSemanticSequencer extends AbstractDelegatingSemant
 	 *     )
 	 */
 	protected void sequence_Unit(ISerializationContext context, Unit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EAPackageableElement returns UserAttributeDefinition
+	 *     Identifiable returns UserAttributeDefinition
+	 *     EAElement returns UserAttributeDefinition
+	 *     UserAttributeDefinition returns UserAttributeDefinition
+	 *
+	 * Constraint:
+	 *     (
+	 *         shortName=Identifier 
+	 *         category=Identifier? 
+	 *         uuid=String0? 
+	 *         name=String0? 
+	 *         type=[EADatatype|EString] 
+	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
+	 *         defaultValue=EAValue?
+	 *     )
+	 */
+	protected void sequence_UserAttributeDefinition(ISerializationContext context, UserAttributeDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EAPackageableElement returns UserAttributedElement
+	 *     Identifiable returns UserAttributedElement
+	 *     EAElement returns UserAttributedElement
+	 *     UserAttributedElement returns UserAttributedElement
+	 *
+	 * Constraint:
+	 *     (
+	 *         shortName=Identifier 
+	 *         category=Identifier? 
+	 *         uuid=String0? 
+	 *         name=String0? 
+	 *         (uaType+=[UserElementType|EString] uaType+=[UserElementType|EString]*)? 
+	 *         attributedElement=[Identifiable|EString] 
+	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
+	 *         (uaValue+=EAValue uaValue+=EAValue*)?
+	 *     )
+	 */
+	protected void sequence_UserAttributedElement(ISerializationContext context, UserAttributedElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EAPackageableElement returns UserElementType
+	 *     Identifiable returns UserElementType
+	 *     EAElement returns UserElementType
+	 *     UserElementType returns UserElementType
+	 *
+	 * Constraint:
+	 *     (
+	 *         shortName=Identifier 
+	 *         category=Identifier? 
+	 *         uuid=String0? 
+	 *         name=String0? 
+	 *         validFor=String0? 
+	 *         key=String0 
+	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
+	 *         (uaDefinition+=UserAttributeDefinition uaDefinition+=UserAttributeDefinition*)?
+	 *     )
+	 */
+	protected void sequence_UserElementType(ISerializationContext context, UserElementType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     XBlockExpression returns XBlockExpression
+	 *     XExpression returns XBlockExpression
+	 *     XAssignment returns XBlockExpression
+	 *     XAssignment.XBinaryOperation_1_1_0_0_0 returns XBlockExpression
+	 *     XOrExpression returns XBlockExpression
+	 *     XOrExpression.XBinaryOperation_1_0_0_0 returns XBlockExpression
+	 *     XAndExpression returns XBlockExpression
+	 *     XAndExpression.XBinaryOperation_1_0_0_0 returns XBlockExpression
+	 *     XEqualityExpression returns XBlockExpression
+	 *     XEqualityExpression.XBinaryOperation_1_0_0_0 returns XBlockExpression
+	 *     XRelationalExpression returns XBlockExpression
+	 *     XRelationalExpression.XInstanceOfExpression_1_0_0_0_0 returns XBlockExpression
+	 *     XRelationalExpression.XBinaryOperation_1_1_0_0_0 returns XBlockExpression
+	 *     XOtherOperatorExpression returns XBlockExpression
+	 *     XOtherOperatorExpression.XBinaryOperation_1_0_0_0 returns XBlockExpression
+	 *     XAdditiveExpression returns XBlockExpression
+	 *     XAdditiveExpression.XBinaryOperation_1_0_0_0 returns XBlockExpression
+	 *     XMultiplicativeExpression returns XBlockExpression
+	 *     XMultiplicativeExpression.XBinaryOperation_1_0_0_0 returns XBlockExpression
+	 *     XUnaryOperation returns XBlockExpression
+	 *     XCastedExpression returns XBlockExpression
+	 *     XCastedExpression.XCastedExpression_1_0_0_0 returns XBlockExpression
+	 *     XPostfixOperation returns XBlockExpression
+	 *     XPostfixOperation.XPostfixOperation_1_0_0 returns XBlockExpression
+	 *     XMemberFeatureCall returns XBlockExpression
+	 *     XMemberFeatureCall.XAssignment_1_0_0_0_0 returns XBlockExpression
+	 *     XMemberFeatureCall.XMemberFeatureCall_1_1_0_0_0 returns XBlockExpression
+	 *     XPrimaryExpression returns XBlockExpression
+	 *     XParenthesizedExpression returns XBlockExpression
+	 *     XExpressionOrVarDeclaration returns XBlockExpression
+	 *
+	 * Constraint:
+	 *     expressions+=XExpressionOrVarDeclaration*
+	 */
+	protected void sequence_XBlockExpression(ISerializationContext context, XBlockExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

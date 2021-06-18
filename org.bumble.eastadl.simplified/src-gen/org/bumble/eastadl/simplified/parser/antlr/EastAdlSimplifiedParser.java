@@ -4,6 +4,8 @@
 package org.bumble.eastadl.simplified.parser.antlr;
 
 import com.google.inject.Inject;
+import org.antlr.runtime.CharStream;
+import org.antlr.runtime.TokenSource;
 import org.bumble.eastadl.simplified.parser.antlr.internal.InternalEastAdlSimplifiedParser;
 import org.bumble.eastadl.simplified.services.EastAdlSimplifiedGrammarAccess;
 import org.eclipse.xtext.parser.antlr.AbstractAntlrParser;
@@ -19,6 +21,19 @@ public class EastAdlSimplifiedParser extends AbstractAntlrParser {
 		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
 	}
 	
+	@Override
+	protected TokenSource createLexer(CharStream stream) {
+		return new EastAdlSimplifiedTokenSource(super.createLexer(stream));
+	}
+	
+	/**
+	 * Indentation aware languages do not support partial parsing since the lexer is inherently stateful.
+	 * Override and return {@code true} if your terminal splitting is stateless.
+	 */
+	@Override
+	protected boolean isReparseSupported() {
+		return false;
+	}
 
 	@Override
 	protected InternalEastAdlSimplifiedParser createParser(XtextTokenStream stream) {
@@ -27,7 +42,7 @@ public class EastAdlSimplifiedParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Comment";
+		return "EAXML";
 	}
 
 	public EastAdlSimplifiedGrammarAccess getGrammarAccess() {
