@@ -11,6 +11,6 @@ public class EastAdlSimplifiedAntlrTokenFileProvider implements IAntlrTokenFileP
 	@Override
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-		return classLoader.getResourceAsStream("org/bumble/eastadl/simplified/parser/antlr/internal/InternalEastAdlSimplified.tokens");
+		return classLoader.getResourceAsStream("org/bumble/eastadl/simplified/parser/antlr/internal/InternalEastAdlSimplifiedParser.tokens");
 	}
 }

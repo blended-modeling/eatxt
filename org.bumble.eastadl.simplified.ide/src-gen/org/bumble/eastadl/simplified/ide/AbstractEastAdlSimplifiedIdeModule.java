@@ -6,24 +6,26 @@ package org.bumble.eastadl.simplified.ide;
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
 import org.bumble.eastadl.simplified.ide.contentassist.antlr.EastAdlSimplifiedParser;
-import org.bumble.eastadl.simplified.ide.contentassist.antlr.internal.InternalEastAdlSimplifiedLexer;
-import org.eclipse.xtext.ide.DefaultIdeModule;
+import org.bumble.eastadl.simplified.ide.contentassist.antlr.lexer.InternalEastAdlSimplifiedLexer;
 import org.eclipse.xtext.ide.LexerIdeBindings;
+import org.eclipse.xtext.ide.editor.contentassist.CompletionPrefixProvider;
 import org.eclipse.xtext.ide.editor.contentassist.FQNPrefixMatcher;
 import org.eclipse.xtext.ide.editor.contentassist.IPrefixMatcher;
 import org.eclipse.xtext.ide.editor.contentassist.IProposalConflictHelper;
+import org.eclipse.xtext.ide.editor.contentassist.IndentationAwareCompletionPrefixProvider;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.AntlrProposalConflictHelper;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.IContentAssistParser;
 import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 import org.eclipse.xtext.ide.refactoring.IRenameStrategy2;
 import org.eclipse.xtext.ide.server.rename.IRenameService2;
 import org.eclipse.xtext.ide.server.rename.RenameService2;
+import org.eclipse.xtext.xbase.ide.DefaultXbaseIdeModule;
 
 /**
  * Manual modifications go to {@link EastAdlSimplifiedIdeModule}.
  */
 @SuppressWarnings("all")
-public abstract class AbstractEastAdlSimplifiedIdeModule extends DefaultIdeModule {
+public abstract class AbstractEastAdlSimplifiedIdeModule extends DefaultXbaseIdeModule {
 
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public void configureContentAssistLexer(Binder binder) {
@@ -40,6 +42,11 @@ public abstract class AbstractEastAdlSimplifiedIdeModule extends DefaultIdeModul
 	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
 	public Class<? extends IProposalConflictHelper> bindIProposalConflictHelper() {
 		return AntlrProposalConflictHelper.class;
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment2
+	public Class<? extends CompletionPrefixProvider> bindCompletionPrefixProvider() {
+		return IndentationAwareCompletionPrefixProvider.class;
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.exporting.QualifiedNamesFragment2

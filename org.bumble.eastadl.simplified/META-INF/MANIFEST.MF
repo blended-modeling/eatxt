@@ -6,13 +6,15 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.bumble.eastadl.simplified; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.eatop.eastadl2112,
+Require-Bundle: org.eclipse.eatop.eastadl22alpha_subset,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[8.0.1,8.1.0)";resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.bumble.eastadl.simplified.serializer,
  org.bumble.eastadl.simplified.formatting2,
@@ -22,5 +24,7 @@ Export-Package: org.bumble.eastadl.simplified.serializer,
  org.bumble.eastadl.simplified.generator,
  org.bumble.eastadl.simplified,
  org.bumble.eastadl.simplified.services,
- org.bumble.eastadl.simplified.scoping
+ org.bumble.eastadl.simplified.scoping,
+ org.bumble.eastadl.simplified.jvmmodel,
+ org.bumble.eastadl.simplified.parser.antlr.lexer
 Import-Package: org.apache.log4j

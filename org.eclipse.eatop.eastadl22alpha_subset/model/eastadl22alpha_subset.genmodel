@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.eatop.eastadl22alpha_subset/src" modelPluginID="org.eclipse.eatop.eastadl22alpha_subset"
+    modelName="Eastadl22alpha_subset" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.eatop.geastadl/model/geastadl.genmodel#//geastadl"
+    importOrganizing="true">
+  <foreignModel>eastadl22alpha_subset.ecore</foreignModel>
+  <genPackages prefix="Eastadl22_alpha" resource="XML" disposableProviderFactory="true"
+      ecorePackage="eastadl22alpha_subset.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eastadl22alpha_subset.ecore#//ClientServerKind">
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//ClientServerKind/client"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//ClientServerKind/server"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eastadl22alpha_subset.ecore#//EADirectionKind">
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//EADirectionKind/in"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//EADirectionKind/inout"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//EADirectionKind/out"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eastadl22alpha_subset.ecore#//HardwareBusKind">
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//HardwareBusKind/TimeTriggered"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//HardwareBusKind/EventTriggered"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//HardwareBusKind/TimeAndEventTriggered"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//HardwareBusKind/other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eastadl22alpha_subset.ecore#//IOHardwarePinKind">
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//IOHardwarePinKind/digital"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//IOHardwarePinKind/analog"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//IOHardwarePinKind/pwm"/>
+      <genEnumLiterals ecoreEnumLiteral="eastadl22alpha_subset.ecore#//IOHardwarePinKind/other"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="eastadl22alpha_subset.ecore#//Boolean"/>
+    <genDataTypes ecoreDataType="eastadl22alpha_subset.ecore#//Float"/>
+    <genDataTypes ecoreDataType="eastadl22alpha_subset.ecore#//Identifier"/>
+    <genDataTypes ecoreDataType="eastadl22alpha_subset.ecore#//Integer"/>
+    <genDataTypes ecoreDataType="eastadl22alpha_subset.ecore#//Numerical"/>
+    <genDataTypes ecoreDataType="eastadl22alpha_subset.ecore#//Ref"/>
+    <genDataTypes ecoreDataType="eastadl22alpha_subset.ecore#//String"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//DesignLevel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//DesignLevel/allocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//DesignLevel/functionalDesignArchitecture"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//DesignLevel/hardwareDesignArchitecture"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//AllocateableElement"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Allocation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Allocation/functionAllocation"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//AnalysisFunctionPrototype">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//AnalysisFunctionPrototype/type"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//AnalysisFunctionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//AnalysisFunctionType/part"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//BasicSoftwareFunctionType"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//DesignFunctionPrototype">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//DesignFunctionPrototype/type"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//DesignFunctionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//DesignFunctionType/part"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionalDevice"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionAllocation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionAllocation/allocatedElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionAllocation/target"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionClientServerInterface">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionClientServerInterface/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionClientServerPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//FunctionClientServerPort/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionClientServerPort/type"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionConnector">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionConnector/port"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionFlowPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//FunctionFlowPort/direction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionFlowPort/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionFlowPort/defaultValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//FunctionPort"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionPowerPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionPowerPort/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//FunctionPrototype"/>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//FunctionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//FunctionType/isElementary"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionType/portGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionType/connector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionType/port"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//HardwareFunctionType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareFunctionType/hardwareComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//LocalDeviceManager"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Operation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Operation/return"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Operation/argument"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//PortGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//PortGroup/portGroup"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//PortGroup/port"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionAllocation_allocatedElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionAllocation_allocatedElement/allocateableElement_context"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionAllocation_allocatedElement/allocateableElement"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionAllocation_target">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionAllocation_target/allocationTarget_context"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionAllocation_target/allocationTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//FunctionConnector_port">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionConnector_port/functionPrototype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//FunctionConnector_port/functionPort"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Actuator"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//CommunicationHardwarePin"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//ElectricalComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//ElectricalComponent/isActive"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//HardwareComponentPrototype">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareComponentPrototype/type"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//HardwareComponentType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareComponentType/pin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareComponentType/part"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareComponentType/connector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareComponentType/port"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareComponentType/portConnector"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//HardwareConnector">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareConnector/port"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//HardwarePin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//HardwarePin/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//HardwarePin/isGround"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//HardwarePort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//HardwarePort/isShield"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwarePort/containedPin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwarePort/containedPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwarePort/referencedPin"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//HardwarePortConnector">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwarePortConnector/connector"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//IOHardwarePin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//IOHardwarePin/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//LogicalPortConnector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//LogicalPortConnector/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//LogicalPortConnector/busSpeed"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Node/executionRate"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//PortConnector">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//PortConnector/port"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//PowerHardwarePin"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Sensor"/>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//AllocationTarget"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//HardwareConnector_port">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareConnector_port/hardwarePin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwareConnector_port/hardwareComponentPrototype"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//HardwarePortConnector_port">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwarePortConnector_port/hardwarePort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//HardwarePortConnector_port/hardwareComponentPrototype"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Comment/body"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//Context">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Context/traceableSpecification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Context/ownedRelationship"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//EAConnector"/>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//EAElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//EAElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAElement/ownedComment"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EAPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAPackage/subPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAPackage/element"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//EAPackageableElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAPackageableElement/EAPackage_element"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//EAPort"/>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//EAPrototype"/>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//EAType"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EAXML">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAXML/topLevelPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Rationale"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Realization">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Realization/realized"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Realization/realizedBy"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//Referrable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Referrable/shortName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//Relationship"/>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//TraceableSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//TraceableSpecification/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//TraceableSpecification/uri"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//Identifiable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Identifiable/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Identifiable/uuid"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Realization_realized">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Realization_realized/identifiable_target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Realization_realized/identifiable_context"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Realization_realizedBy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Realization_realizedBy/identifiable_target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Realization_realizedBy/identifiable_context"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//ArrayDatatype">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//ArrayDatatype/maxLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//ArrayDatatype/minLength"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//ArrayDatatype/elementType"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//CompositeDatatype">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//CompositeDatatype/datatypePrototype"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EABoolean"/>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//EADatatype"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EADatatypePrototype">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EADatatypePrototype/type"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EANumerical">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//EANumerical/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//EANumerical/min"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EANumerical/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EAString"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Enumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Enumeration/isMultiValued"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Enumeration/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EnumerationLiteral"/>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Quantity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Quantity/amountOfSubstanceExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Quantity/electricCurrentExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Quantity/lengthExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Quantity/luminousIntensityExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Quantity/massExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Quantity/thermodynamicTemperatureExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Quantity/timeExp"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//RangeableValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//RangeableValueType/accuracy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//RangeableValueType/resolution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//RangeableValueType/significantDigits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//RangeableValueType/baseRangeable"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//Unit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Unit/factor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Unit/symbol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//Unit/offset"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Unit/reference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//Unit/quantity"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EAArrayValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAArrayValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EABooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//EABooleanValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EACompositeValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EACompositeValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EAEnumerationValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAEnumerationValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EAExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAExpression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EANumericalValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//EANumericalValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//EAStringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//EAStringValue/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eastadl22alpha_subset.ecore#//EAValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//EAValue/type"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//UserAttributeDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//UserAttributeDefinition/defaultValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//UserAttributeDefinition/type"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//UserAttributedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//UserAttributedElement/uaValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//UserAttributedElement/uaType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//UserAttributedElement/attributedElement"/>
+    </genClasses>
+    <genClasses ecoreClass="eastadl22alpha_subset.ecore#//UserElementType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//UserElementType/validFor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eastadl22alpha_subset.ecore#//UserElementType/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eastadl22alpha_subset.ecore#//UserElementType/uaDefinition"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

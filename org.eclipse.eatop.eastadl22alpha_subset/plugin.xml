@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated eastadl22alpha_subset -->
+      <package
+            uri="http://east-adl.info/2.2_alpha"
+            class="eastadl22_alpha.Eastadl22_alphaPackage"
+            genModel="model/eastadl22alpha_subset.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated eastadl22alpha_subset -->
+      <parser
+            type="eastadl22_alpha"
+            class="eastadl22_alpha.util.Eastadl22_alphaResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

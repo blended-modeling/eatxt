@@ -3,7 +3,7 @@
  */
 package org.bumble.eastadl.simplified.scoping;
 
-import org.eclipse.xtext.scoping.impl.DelegatingScopeProvider;
+import org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider;
 
-public abstract class AbstractEastAdlSimplifiedScopeProvider extends DelegatingScopeProvider {
+public abstract class AbstractEastAdlSimplifiedScopeProvider extends XbaseBatchScopeProvider {
 }

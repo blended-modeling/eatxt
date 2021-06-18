@@ -4,7 +4,7 @@
 package org.bumble.eastadl.simplified.tests
 
 import com.google.inject.Inject
-import org.eclipse.eatop.eastadl21.Comment
+import eastadl22_alpha.EAXML
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 @InjectWith(EastAdlSimplifiedInjectorProvider)
 class EastAdlSimplifiedParsingTest {
 	@Inject
-	ParseHelper<Comment> parseHelper
+	ParseHelper<EAXML> parseHelper
 	
 	@Test
 	def void loadModel() {
