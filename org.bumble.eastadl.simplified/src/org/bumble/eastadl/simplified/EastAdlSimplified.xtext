@@ -2,7 +2,7 @@
 grammar org.bumble.eastadl.simplified.EastAdlSimplified with org.eclipse.xtext.xbase.Xbase
 import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 
-import "http://east-adl.info/2.2_alpha" 
+import "http://east-adl.info/2.2.0" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 EAXML returns EAXML:

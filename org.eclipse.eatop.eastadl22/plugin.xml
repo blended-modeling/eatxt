@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated eastadl22 -->
+      <package
+            uri="http://east-adl.info/2.2.0"
+            class="org.eclipse.eatop.eastadl22.Eastadl22Package"
+            genModel="model/eastadl22.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated eastadl22 -->
+      <parser
+            type="eastadl22"
+            class="org.eclipse.eatop.eastadl22.util.Eastadl22ResourceFactoryImpl"/>
+   </extension>
+   
+
+
+</plugin>

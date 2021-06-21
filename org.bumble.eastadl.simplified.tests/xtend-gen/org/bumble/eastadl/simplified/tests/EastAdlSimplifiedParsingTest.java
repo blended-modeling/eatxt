@@ -4,7 +4,7 @@
 package org.bumble.eastadl.simplified.tests;
 
 import com.google.inject.Inject;
-import eastadl22_alpha.EAXML;
+import org.eclipse.eatop.eastadl22.EAXML;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
