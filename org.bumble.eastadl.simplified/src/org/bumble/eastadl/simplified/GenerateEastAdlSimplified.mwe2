@@ -33,7 +33,9 @@ Workflow {
 		language = StandardLanguage {
 			name = "org.bumble.eastadl.simplified.EastAdlSimplified"
 			fileExtensions = "eatxt"
-			referencedResource = "platform:/resource/org.eclipse.eatop.eastadl22alpha_subset/model/eastadl22alpha_subset.genmodel"
+			// FIXME: dirty hack due to wrongly registered plugin (wrong ID "eastadl22" instead of "org.eclipse.eatop.eastadl22"), the following line should be:
+			// referencedResource = "platform:/resource/org.eclipse.eatop.eastadl22/model/eastadl22.genmodel"
+			referencedResource = "platform:/resource/eastadl22/model/eastadl22.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 

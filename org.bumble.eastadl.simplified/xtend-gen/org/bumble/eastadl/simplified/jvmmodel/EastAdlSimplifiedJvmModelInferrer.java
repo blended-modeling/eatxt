@@ -4,8 +4,8 @@
 package org.bumble.eastadl.simplified.jvmmodel;
 
 import com.google.inject.Inject;
-import eastadl22_alpha.EAXML;
 import java.util.Arrays;
+import org.eclipse.eatop.eastadl22.EAXML;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
