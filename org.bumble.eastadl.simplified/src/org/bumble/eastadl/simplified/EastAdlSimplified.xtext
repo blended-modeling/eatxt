@@ -104,11 +104,11 @@ EAPackage returns EAPackage:
         ('element' BEGIN element+=EAPackageableElement ( "," element+=EAPackageableElement)* END )?
     END;
 
-Identifier returns Identifier:
-    'Identifier' /* TODO: implement this rule and an appropriate IValueConverter */;
+Identifier returns String:
+    EString /* TODO: implement this rule and an appropriate IValueConverter */;
 
 String0 returns String:
-    'String' /* TODO: implement this rule and an appropriate IValueConverter */;
+    EString /* TODO: implement this rule and an appropriate IValueConverter */;
 
 Comment_Impl returns Comment:
     'Comment'
@@ -620,7 +620,7 @@ FunctionFlowPort returns FunctionFlowPort:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'direction' direction=EADirectionKind
-        'type' type=[EADatatype|EString]
+        'type' type=[EADatatype]
         ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
         ('defaultValue' defaultValue=EAValue)?
     END;
@@ -879,11 +879,11 @@ Integer returns Integer:
 // We modify the concrete syntax of the Xbase block expression and make them indentation-aware
 @Override
 XBlockExpression returns xbase::XExpression:
-	{xbase::XBlockExpression}
-	BEGIN
-		(expressions+=XExpressionOrVarDeclaration ';'?)*
-	END;
-	
+    {xbase::XBlockExpression}
+    BEGIN
+        (expressions+=XExpressionOrVarDeclaration ';'?)*
+    END;
+    
 // The following synthetic tokens are used for the indentation-aware blocks
 terminal BEGIN: 'synthetic:BEGIN';  // increase indentation
 terminal END: 'synthetic:END';      // decrease indentation
