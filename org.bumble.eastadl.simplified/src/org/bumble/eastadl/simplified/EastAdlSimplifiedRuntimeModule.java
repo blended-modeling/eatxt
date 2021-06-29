@@ -3,9 +3,17 @@
  */
 package org.bumble.eastadl.simplified;
 
+import org.bumble.eastadl.simplified.naming.EastAdlQualifiedShortnameProvider;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class EastAdlSimplifiedRuntimeModule extends AbstractEastAdlSimplifiedRuntimeModule {
+	
+    @Override
+    public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+        return EastAdlQualifiedShortnameProvider.class;
+    }
+ 	
 }
