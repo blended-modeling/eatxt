@@ -3,6 +3,18 @@
  */
 package org.bumble.eastadl.simplified.scoping;
 
+import java.util.List;
+import java.util.function.Predicate;
+
+import org.eclipse.eatop.eastadl22.EADatatype;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.naming.QualifiedName;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
+
+import com.google.common.base.Function;
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +23,24 @@ package org.bumble.eastadl.simplified.scoping;
  * on how and when to use it.
  */
 public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedScopeProvider {
+
+	
+	
+	@Override
+	public IScope getScope(EObject context, EReference reference) {
+	    if (reference.getEReferenceType().getInstanceTypeName().equals(EADatatype.class.getName()) ) {
+	        EObject rootElement = EcoreUtil2.getRootContainer(context);
+	        List<EADatatype> candidates = EcoreUtil2.getAllContentsOfType(rootElement, EADatatype.class);
+	        Predicate<EADatatype> nullShortName = c -> c.getShortName() == null;
+	        candidates.removeIf(nullShortName);
+	        Function<EADatatype, QualifiedName> displayShortNames = x -> QualifiedName.create(x.getShortName());
+	        return Scopes.scopeFor(candidates, displayShortNames, IScope.NULLSCOPE);
+	    }
+	    // TODO: generalize the procedure so that it works as above for all typed elements (e.g., prototypes) for all typed classes. If not possible then less preferably in an if-then-else manner
+	    
+	    // FIXME: Does not work for the same name in different namespaces right now!
+	    
+	    return super.getScope(context, reference);
+	}
 
 }
