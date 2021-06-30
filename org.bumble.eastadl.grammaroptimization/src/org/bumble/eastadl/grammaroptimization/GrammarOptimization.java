@@ -67,7 +67,7 @@ public class GrammarOptimization {
 			return;
 		}
 
-		// 1. Remove brackets from xtext file (by using BEGIN and END)
+		// 1. Modify the xtext file
 		if (!optimizer.optimizeXtext(xtextFile, directoryName)) {
 			System.err.println("*************************Failed to optimize xtext, so stopped!");
 			return;
@@ -146,17 +146,25 @@ public class GrammarOptimization {
 				return false;
 			}
 
-			// 1. optimize grammar in string-level
-			String strProcessed = removeBrackets(strOrigin);
-			System.out.println("Finish removing brackets by replacing them with BEGIN AND END.");
+			// 1. Remove tab symbols (by replacing with four whitespace)
+			String strProcessed = replaceString(strOrigin, "\t", "\s\s\s\s");
+			System.out.println("Finish removing tab symbols by replacing with four whitespace!");
 
-			// 2. Clarify BEGIN and END
+			// 2. Remove brackets by replacing them with BEGIN and END
+			strProcessed = removeBrackets(strProcessed);
+			System.out.println("*****Finish removing brackets by replacing with BEGIN and END.");
+
+			// 3. Clarify BEGIN and END
 			strProcessed = clarifyBeginAndEnd(strProcessed, directoryName);
 			System.out.println("****************Finish clarifying BEGIN and END in xtext file.");
 
-			// 3. Add import
+			// 4. Add import
 			strProcessed = addImport(strProcessed);
 			System.out.println("**********Finish adding import to the beginning of xtext file.");
+
+			// 5. Reduce nesting
+			strProcessed = reduceNestDepth(strProcessed);
+			System.out.println("*********************************Finish reducing nested depth.");
 
 			// write the optimized grammar back into the xtext file
 			IOHelper.saveFile(file, strProcessed);
@@ -168,26 +176,74 @@ public class GrammarOptimization {
 		return true;
 	}
 
+	public String replaceString(String strInput, String strRegex, String strReplacement) {
+		String strOutput = null;
+		Pattern pattern = Pattern.compile(strRegex);
+		Matcher matcher = pattern.matcher(strInput);
+
+		if (matcher.find()) {
+			System.out.println("Find " + strRegex);
+			strOutput = matcher.replaceAll(strReplacement);
+		}
+
+		return strOutput;
+	}
+
 	/**
 	 * Specific optimization operation
 	 */
 	public String removeBrackets(String strInput) {
 		String strOutput = "";
 
-		// convert tab symbol to four whitespace
-		Pattern replace1 = Pattern.compile("\t");
-		Matcher matcher1 = replace1.matcher(strInput);
-		String strTemp1 = matcher1.replaceAll("\s\s\s\s").toString();
-
 		// remove '{' and '}' from input string
 		String regex1 = "([\'])([{])([\'])";
-		String strTemp2 = strTemp1.replaceAll(regex1, "BEGIN");
+		String strTemp2 = strInput.replaceAll(regex1, "BEGIN");
 		String regex2 = "([\'])([}])([\'])";
-		String strTemp3 = strTemp2.replaceAll(regex2, "END");
+		strOutput = strTemp2.replaceAll(regex2, "END");
 
-		// move shortName from attribute to the head
-		String regex3 = "\\'\\s*(\\r|\\n)\\s*(\\r|\\n)\\s*\\'shortName\\'\\s";
-		strOutput = strTemp3.replaceAll(regex3, "\'\s");
+//		// move shortName from attribute to the head
+//		String regex3 = "\\'\\s*(\\r|\\n)\\s*(\\r|\\n)\\s*\\'shortName\\'\\s";
+//		strOutput = strTemp3.replaceAll(regex3, "\'\s");
+
+		return strOutput;
+	}
+
+	public String removeShortName(String strInput) {
+		String strOutput = "";
+
+		String strRegex = "\\'(\\n|\\r)\\s*BEGIN(\\r|\\n)\\s*\\'shortName\\'\\sshortName=Identifier(\\n|\\s)";
+		String strReplacement = "'\sshortName=Identifier\n    BEGIN";
+
+		strOutput = replaceString(strInput, strRegex, strReplacement);
+
+		return strOutput;
+	}
+
+	public String reduceNestDepth(String strInput) {
+		String strOutput = "";
+
+		// 1. Remove topLevelPackage
+		strOutput = replaceString(strInput, "'topLevelPackage' BEGIN topLevelPackage", "topLevelPackage");
+		strOutput = replaceString(strOutput, "topLevelPackage\\+=EAPackage\\)\\* END", "topLevelPackage+=EAPackage)*");
+		System.out.println("******************************Finish removing topLevelPackage.");
+
+		// 2. Remove EAXML
+		String strRegexBegin = "'EAXML'(\\r|\\n)\\s*BEGIN(\\r|\\n)\\s*\\(topLevelPackage";
+		String strReplaceBegin = "(topLevelPackage";
+		strOutput = replaceString(strOutput, strRegexBegin, strReplaceBegin);
+		String strRegexEnd = "topLevelPackage\\+=EAPackage\\)\\*\\s\\)\\?(\\r|\\n)\\s*END";
+		String strReplaceEnd = "topLevelPackage+=EAPackage)* )?\n    ";
+		strOutput = replaceString(strOutput, strRegexEnd, strReplaceEnd);
+		System.out.println("****************************************Finish removing EAXML.");
+
+//		// 2. Remove shortName
+//		strOutput = removeShortName(strOutput);
+//		System.out.println("*******************Finish removing shortName from every class.");
+
+		// 3. Remove subPackage
+		strOutput = replaceString(strOutput, "'subPackage' BEGIN subPackage", "subPackage");
+		strOutput = replaceString(strOutput, "subPackage\\+=EAPackage\\)\\* END", "subPackage+=EAPackage)*");
+		System.out.println("***********************************Finish removing subPackage.");
 
 		return strOutput;
 	}
@@ -228,6 +284,23 @@ public class GrammarOptimization {
 		Pattern replace = Pattern.compile(strRegex);
 		Matcher matcher = replace.matcher(strInput);
 		strOutput = matcher.replaceAll(strReplace).toString();
+		return strOutput;
+	}
+
+	public String addDefinitionOfEString(String strInput) {
+		String strOutput = "";
+
+		// To search if the xtext file contains definition of EString
+		Pattern pattern = Pattern.compile("EString\\sreturns");
+		Matcher matcher = pattern.matcher(strInput);
+
+		if (matcher.find()) {
+			return strInput;
+		}
+
+		// If doesn't, please add a definition for EString
+		String strDefinition = "EString returns ecore::EString:\n    STRING | ID;\n";
+		strOutput = strInput + strDefinition;
 		return strOutput;
 	}
 
