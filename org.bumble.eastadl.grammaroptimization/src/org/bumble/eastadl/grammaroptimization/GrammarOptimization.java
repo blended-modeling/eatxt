@@ -29,7 +29,7 @@ public class GrammarOptimization {
 	 * suitable for whom hasn't installed RCP
 	 */
 	public static void main(String[] args) {
-		System.out.println("[Info]**************************************Start optimizing grammar!\n");
+		System.out.println("[Info]**************************************Start optimizing grammar!");
 		// Get absolute of current project
 		Path path = FileSystems.getDefault().getPath("");
 		String directoryName = path.toAbsolutePath().toString();
@@ -236,9 +236,9 @@ public class GrammarOptimization {
 
 		// 3. Remove BEGIN and END of all members in classes
 
-//		// 2. Remove shortName
-//		strOutput = removeShortName(strOutput);
-//		System.out.println("[Info]********************Finish removing shortName from every class.");
+		// 2. Remove shortName
+		strOutput = removeShortName(strOutput);
+		System.out.println("[Info]********************Finish removing shortName from every class.");
 
 		// 3. Remove keyword subPackage
 		strOutput = replaceString(strOutput, "'subPackage' BEGIN subPackage", "subPackage");
