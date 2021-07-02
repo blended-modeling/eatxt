@@ -6,7 +6,12 @@ package org.bumble.eastadl.simplified.scoping;
 import java.util.List;
 import java.util.function.Predicate;
 
+import org.eclipse.eatop.eastadl22.AnalysisFunctionType;
+import org.eclipse.eatop.eastadl22.DesignFunctionType;
 import org.eclipse.eatop.eastadl22.EADatatype;
+import org.eclipse.eatop.eastadl22.HardwareFunctionType;
+import org.eclipse.eatop.eastadl22.Referrable;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
@@ -19,28 +24,41 @@ import com.google.common.base.Function;
 /**
  * This class contains custom scoping description.
  * 
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
+ * See
+ * https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
  * on how and when to use it.
  */
 public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedScopeProvider {
 
-	
-	
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
-	    if (reference.getEReferenceType().getInstanceTypeName().equals(EADatatype.class.getName()) ) {
-	        EObject rootElement = EcoreUtil2.getRootContainer(context);
-	        List<EADatatype> candidates = EcoreUtil2.getAllContentsOfType(rootElement, EADatatype.class);
-	        Predicate<EADatatype> nullShortName = c -> c.getShortName() == null;
-	        candidates.removeIf(nullShortName);
-	        Function<EADatatype, QualifiedName> displayShortNames = x -> QualifiedName.create(x.getShortName());
-	        return Scopes.scopeFor(candidates, displayShortNames, IScope.NULLSCOPE);
-	    }
-	    // TODO: generalize the procedure so that it works as above for all typed elements (e.g., prototypes) for all typed classes. If not possible then less preferably in an if-then-else manner
-	    
-	    // FIXME: Does not work for the same name in different namespaces right now!
-	    
-	    return super.getScope(context, reference);
+		EClass targetEClass = reference.getEReferenceType();
+		String targetClassName = targetEClass.getInstanceTypeName();
+		if (targetClassName.equals(EADatatype.class.getName())
+				|| targetClassName.equals(DesignFunctionType.class.getName())
+				|| targetClassName.equals(HardwareFunctionType.class.getName())
+				|| targetClassName.equals(AnalysisFunctionType.class.getName())) {
+			EObject rootElement = EcoreUtil2.getRootContainer(context);
+			try {
+				Class targetJavaClass = Class.forName(targetEClass.getInstanceTypeName());
+				List<Referrable> candidates = (List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElement,
+						targetJavaClass);
+				Predicate<Referrable> nullShortName = c -> c.getShortName() == null;
+				candidates.removeIf(nullShortName);
+				Function<Referrable, QualifiedName> displayShortNames = x -> QualifiedName.create(x.getShortName());
+				return Scopes.scopeFor(candidates, displayShortNames, IScope.NULLSCOPE);
+			} catch (ClassNotFoundException e) {
+				// won't happen
+				e.printStackTrace();
+			}
+		}
+		// TODO: generalize the procedure so that it works as above also for all
+		// Allocations. As this is more complicated, probably an extra if-block has to
+		// be implemented for this
+
+		// FIXME: Does not work for the same name in different namespaces right now!
+
+		return super.getScope(context, reference);
 	}
 
 }
