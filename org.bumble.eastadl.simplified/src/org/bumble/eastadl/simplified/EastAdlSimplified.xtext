@@ -7,10 +7,8 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 EAXML returns EAXML:
     {EAXML}
-    'EAXML'
-    BEGIN
-        ('topLevelPackage' BEGIN topLevelPackage+=EAPackage ( "," topLevelPackage+=EAPackage)* END )?
-    END;
+    (topLevelPackage+=EAPackage ( "," topLevelPackage+=EAPackage)* )?
+    ;
 
 
 Comment returns Comment:
@@ -93,23 +91,24 @@ FunctionPrototype returns FunctionPrototype:
     AnalysisFunctionPrototype | DesignFunctionPrototype;
 
 EAPackage returns EAPackage:
-    'EAPackage'
+    'EAPackage' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('subPackage' BEGIN subPackage+=EAPackage ( "," subPackage+=EAPackage)* END )?
-        ('element' BEGIN element+=EAPackageableElement ( "," element+=EAPackageableElement)* END )?
+        (subPackage+=EAPackage ( "," subPackage+=EAPackage)* )?
+        (element+=EAPackageableElement ( "," element+=EAPackageableElement)* )?
     END;
 
 Identifier returns String:
-    EString /* TODO: implement this rule and an appropriate IValueConverter */;
-
+//    EString /* TODO: implement this rule and an appropriate IValueConverter */;
+    ID;
+    
 String0 returns String:
-    EString /* TODO: implement this rule and an appropriate IValueConverter */;
-
+//    EString /* TODO: implement this rule and an appropriate IValueConverter */;
+    ID;
+    
 Comment_Impl returns Comment:
     'Comment'
     BEGIN
@@ -123,9 +122,8 @@ Rationale returns Rationale:
     END;
 
 DesignLevel returns DesignLevel:
-    'DesignLevel'
+    'DesignLevel' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -138,9 +136,8 @@ DesignLevel returns DesignLevel:
     END;
 
 AnalysisFunctionType_Impl returns AnalysisFunctionType:
-    'AnalysisFunctionType'
+    'AnalysisFunctionType' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -155,9 +152,8 @@ AnalysisFunctionType_Impl returns AnalysisFunctionType:
     END;
 
 BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
-    'BasicSoftwareFunctionType'
+    'BasicSoftwareFunctionType' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -172,9 +168,8 @@ BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
     END;
 
 DesignFunctionType_Impl returns DesignFunctionType:
-    'DesignFunctionType'
+    'DesignFunctionType' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -189,9 +184,8 @@ DesignFunctionType_Impl returns DesignFunctionType:
     END;
 
 FunctionalDevice returns FunctionalDevice:
-    'FunctionalDevice'
+    'FunctionalDevice' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -206,9 +200,8 @@ FunctionalDevice returns FunctionalDevice:
     END;
 
 FunctionClientServerInterface returns FunctionClientServerInterface:
-    'FunctionClientServerInterface'
+    'FunctionClientServerInterface' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -219,9 +212,8 @@ FunctionClientServerInterface returns FunctionClientServerInterface:
     END;
 
 HardwareFunctionType returns HardwareFunctionType:
-    'HardwareFunctionType'
+    'HardwareFunctionType' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -237,9 +229,8 @@ HardwareFunctionType returns HardwareFunctionType:
     END;
 
 LocalDeviceManager returns LocalDeviceManager:
-    'LocalDeviceManager'
+    'LocalDeviceManager' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -254,9 +245,8 @@ LocalDeviceManager returns LocalDeviceManager:
     END;
 
 Actuator returns Actuator:
-    'Actuator'
+    'Actuator' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -271,9 +261,8 @@ Actuator returns Actuator:
     END;
 
 ElectricalComponent returns ElectricalComponent:
-    'ElectricalComponent'
+    'ElectricalComponent' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -289,9 +278,8 @@ ElectricalComponent returns ElectricalComponent:
     END;
 
 HardwareComponentType_Impl returns HardwareComponentType:
-    'HardwareComponentType'
+    'HardwareComponentType' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -306,9 +294,8 @@ HardwareComponentType_Impl returns HardwareComponentType:
     END;
 
 Node returns Node:
-    'Node'
+    'Node' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -324,9 +311,8 @@ Node returns Node:
     END;
 
 Sensor returns Sensor:
-    'Sensor'
+    'Sensor' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -341,9 +327,8 @@ Sensor returns Sensor:
     END;
 
 ArrayDatatype returns ArrayDatatype:
-    'ArrayDatatype'
+    'ArrayDatatype' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -356,9 +341,8 @@ ArrayDatatype returns ArrayDatatype:
     END;
 
 CompositeDatatype returns CompositeDatatype:
-    'CompositeDatatype'
+    'CompositeDatatype' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -369,9 +353,8 @@ CompositeDatatype returns CompositeDatatype:
     END;
 
 EABoolean returns EABoolean:
-    'EABoolean'
+    'EABoolean' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -381,9 +364,8 @@ EABoolean returns EABoolean:
     END;
 
 EANumerical returns EANumerical:
-    'EANumerical'
+    'EANumerical' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -396,9 +378,8 @@ EANumerical returns EANumerical:
     END;
 
 EAString returns EAString:
-    'EAString'
+    'EAString' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -408,9 +389,8 @@ EAString returns EAString:
     END;
 
 Enumeration returns Enumeration:
-    'Enumeration'
+    'Enumeration' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -422,9 +402,8 @@ Enumeration returns Enumeration:
     END;
 
 Quantity returns Quantity:
-    'Quantity'
+    'Quantity' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -439,9 +418,8 @@ Quantity returns Quantity:
     END;
 
 RangeableValueType returns RangeableValueType:
-    'RangeableValueType'
+    'RangeableValueType' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -455,9 +433,8 @@ RangeableValueType returns RangeableValueType:
     END;
 
 Unit returns Unit:
-    'Unit'
+    'Unit' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -470,9 +447,8 @@ Unit returns Unit:
     END;
 
 UserAttributeDefinition returns UserAttributeDefinition:
-    'UserAttributeDefinition'
+    'UserAttributeDefinition' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -482,9 +458,8 @@ UserAttributeDefinition returns UserAttributeDefinition:
     END;
 
 UserAttributedElement returns UserAttributedElement:
-    'UserAttributedElement'
+    'UserAttributedElement' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -495,9 +470,8 @@ UserAttributedElement returns UserAttributedElement:
     END;
 
 UserElementType returns UserElementType:
-    'UserElementType'
+    'UserElementType' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -508,9 +482,8 @@ UserElementType returns UserElementType:
     END;
 
 Allocation returns Allocation:
-    'Allocation'
+    'Allocation' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -519,9 +492,8 @@ Allocation returns Allocation:
     END;
 
 DesignFunctionPrototype returns DesignFunctionPrototype:
-    'DesignFunctionPrototype'
+    'DesignFunctionPrototype' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -530,9 +502,8 @@ DesignFunctionPrototype returns DesignFunctionPrototype:
     END;
 
 HardwareComponentPrototype returns HardwareComponentPrototype:
-    'HardwareComponentPrototype'
+    'HardwareComponentPrototype' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -541,9 +512,8 @@ HardwareComponentPrototype returns HardwareComponentPrototype:
     END;
 
 Realization returns Realization:
-    'Realization'
+    'Realization' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -567,9 +537,8 @@ Realization_realizedBy returns Realization_realizedBy:
     END;
 
 AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
-    'AnalysisFunctionPrototype'
+    'AnalysisFunctionPrototype' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -578,9 +547,8 @@ AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
     END;
 
 FunctionAllocation returns FunctionAllocation:
-    'FunctionAllocation'
+    'FunctionAllocation' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -590,9 +558,8 @@ FunctionAllocation returns FunctionAllocation:
     END;
 
 FunctionClientServerPort returns FunctionClientServerPort:
-    'FunctionClientServerPort'
+    'FunctionClientServerPort' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -602,9 +569,8 @@ FunctionClientServerPort returns FunctionClientServerPort:
     END;
 
 FunctionConnector returns FunctionConnector:
-    'FunctionConnector'
+    'FunctionConnector' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -613,9 +579,8 @@ FunctionConnector returns FunctionConnector:
     END;
 
 FunctionFlowPort returns FunctionFlowPort:
-    'FunctionFlowPort'
+    'FunctionFlowPort' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -626,9 +591,8 @@ FunctionFlowPort returns FunctionFlowPort:
     END;
 
 FunctionPowerPort returns FunctionPowerPort:
-    'FunctionPowerPort'
+    'FunctionPowerPort' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -637,9 +601,8 @@ FunctionPowerPort returns FunctionPowerPort:
     END;
 
 Operation returns Operation:
-    'Operation'
+    'Operation' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -649,9 +612,8 @@ Operation returns Operation:
     END;
 
 PortGroup returns PortGroup:
-    'PortGroup'
+    'PortGroup' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -661,9 +623,8 @@ PortGroup returns PortGroup:
     END;
 
 CommunicationHardwarePin returns CommunicationHardwarePin:
-    'CommunicationHardwarePin'
+    'CommunicationHardwarePin' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -673,9 +634,8 @@ CommunicationHardwarePin returns CommunicationHardwarePin:
     END;
 
 HardwareConnector returns HardwareConnector:
-    'HardwareConnector'
+    'HardwareConnector' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -684,9 +644,8 @@ HardwareConnector returns HardwareConnector:
     END;
 
 HardwarePort returns HardwarePort:
-    'HardwarePort'
+    'HardwarePort' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -698,9 +657,8 @@ HardwarePort returns HardwarePort:
     END;
 
 HardwarePortConnector returns HardwarePortConnector:
-    'HardwarePortConnector'
+    'HardwarePortConnector' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -710,9 +668,8 @@ HardwarePortConnector returns HardwarePortConnector:
     END;
 
 IOHardwarePin returns IOHardwarePin:
-    'IOHardwarePin'
+    'IOHardwarePin' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -723,9 +680,8 @@ IOHardwarePin returns IOHardwarePin:
     END;
 
 LogicalPortConnector returns LogicalPortConnector:
-    'LogicalPortConnector'
+    'LogicalPortConnector' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -736,9 +692,8 @@ LogicalPortConnector returns LogicalPortConnector:
     END;
 
 PowerHardwarePin returns PowerHardwarePin:
-    'PowerHardwarePin'
+    'PowerHardwarePin' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -748,9 +703,8 @@ PowerHardwarePin returns PowerHardwarePin:
     END;
 
 EADatatypePrototype returns EADatatypePrototype:
-    'EADatatypePrototype'
+    'EADatatypePrototype' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -759,9 +713,8 @@ EADatatypePrototype returns EADatatypePrototype:
     END;
 
 EnumerationLiteral returns EnumerationLiteral:
-    'EnumerationLiteral'
+    'EnumerationLiteral' shortName=Identifier
     BEGIN
-        'shortName' shortName=Identifier
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -870,11 +823,17 @@ enum IOHardwarePinKind returns IOHardwarePinKind:
 enum HardwareBusKind returns HardwareBusKind:
                 TimeTriggered = 'TimeTriggered' | EventTriggered = 'EventTriggered' | TimeAndEventTriggered = 'TimeAndEventTriggered' | other = 'other';
 
-Float returns Float:
-    'Float' /* TODO: implement this rule and an appropriate IValueConverter */;
+//Float returns Float:
+//    'Float' /* TODO: implement this rule and an appropriate IValueConverter */;
+Float returns ecore::EDouble:
+    INT '.' INT
+;
 
-Integer returns Integer:
-    'Integer' /* TODO: implement this rule and an appropriate IValueConverter */;
+//Integer returns Integer:
+//    'Integer' /* TODO: implement this rule and an appropriate IValueConverter */;
+Integer returns ecore::EInt: 
+    INT
+;
 
 // We modify the concrete syntax of the Xbase block expression and make them indentation-aware
 @Override
