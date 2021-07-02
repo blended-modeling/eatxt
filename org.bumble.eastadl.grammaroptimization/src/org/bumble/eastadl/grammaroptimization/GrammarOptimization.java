@@ -29,7 +29,7 @@ public class GrammarOptimization {
 	 * suitable for whom hasn't installed RCP
 	 */
 	public static void main(String[] args) {
-		System.out.println("*************************************Start optimizing grammar!\n");
+		System.out.println("[Info]**************************************Start optimizing grammar!");
 		// Get absolute of current project
 		Path path = FileSystems.getDefault().getPath("");
 		String directoryName = path.toAbsolutePath().toString();
@@ -51,35 +51,35 @@ public class GrammarOptimization {
 		File xtextFile = new File(xtextFileName);
 
 		if (!xtextFile.exists()) {
-			System.err.printf("*******************File %s.xtext doesn't exist!\n", NEW_LANGUAGE_NAME);
-			System.err.println("**************Place check the name and path of the xtext file!");
-			System.err.println("**********Please make sure you have generated xtext artifacts!");
-			System.err.println("**********************************************Stop optimizing!");
+			System.err.printf("[Error]*******************File %s.xtext doesn't exist!\n", NEW_LANGUAGE_NAME);
+			System.err.println("[Error]**************Place check the name and path of the xtext file!");
+			System.err.println("[Error]**********Please make sure you have generated xtext artifacts!");
+			System.err.println("[Error]**********************************************Stop optimizing!");
 			return;
 		}
 
 		File xtendFile = new File(xtendFileName);
 
 		if (!xtendFile.exists()) {
-			System.err.printf("**********File %sFormatter.xtend doesn't exist!\n", NEW_LANGUAGE_NAME);
-			System.err.println("**************Place check the name and path of the xtend file!");
-			System.err.println("**********************************************Stop optimizing!");
+			System.err.printf("[Error]**********File %sFormatter.xtend doesn't exist!\n", NEW_LANGUAGE_NAME);
+			System.err.println("[Error]**************Place check the name and path of the xtend file!");
+			System.err.println("[Error]**********************************************Stop optimizing!");
 			return;
 		}
 
-		// 1. Remove brackets from xtext file (by using BEGIN and END)
+		// 1. Modify the xtext file
 		if (!optimizer.optimizeXtext(xtextFile, directoryName)) {
-			System.err.println("*************************Failed to optimize xtext, so stopped!");
+			System.err.println("[Error]*************************Failed to optimize xtext, so stopped!");
 			return;
 		}
 
 		// 2. Modify the formatting xtend file
 		if (!optimizer.modifyFormatter(xtendFile, directoryName)) {
-			System.err.println("**********************Failed to modify xtend file, so stopped!");
+			System.err.println("[Error]**********************Failed to modify xtend file, so stopped!");
 			return;
 		}
 
-		System.out.println("************************Stop optimizing grammar! Successfully!");
+		System.out.println("[Info]*************************Stop optimizing grammar! Successfully!");
 	}
 
 	public boolean modifyFormatter(File file, String directoryName) {
@@ -92,8 +92,8 @@ public class GrammarOptimization {
 			File fileReplaceText = new File(strReplaceTextPath);
 
 			if (!fileReplaceText.exists()) {
-				System.err.printf("********File TextforReplacingFormatterXtend.txt doesn't exist!\n");
-				System.err.printf("**************************Stop modifying formatter xtend file.\n");
+				System.err.printf("[Error]********File TextforReplacingFormatterXtend.txt doesn't exist!\n");
+				System.err.printf("[Error]**************************Stop modifying formatter xtend file.\n");
 				return false;
 			}
 
@@ -101,32 +101,28 @@ public class GrammarOptimization {
 			String strReplaceXtend = IOHelper.readFile(fileReplaceText);
 
 			if (null == strReplaceXtend || strReplaceXtend.isEmpty()) {
-				System.err.printf("**************************Failed to read string from txt file!\n");
+				System.err.printf("[Error]**************************Failed to read string from txt file!\n");
 				return false;
 			}
 
 			// Set grammar package name into string
 			String strRegex = "<yourGrammarPackage>";
 			String strReplace = "org.bumble.eastadl.simplified";
-			Pattern replace = Pattern.compile(strRegex);
-			Matcher matcher = replace.matcher(strReplaceXtend);
-			strReplaceXtend = matcher.replaceAll(strReplace).toString();
+			strReplaceXtend = replaceString(strReplaceXtend, strRegex, strReplace);
 
 			// Set grammar name into string
 			strRegex = "<yourGrammarName>";
 			strReplace = "EastAdlSimplified";
-			replace = Pattern.compile(strRegex);
-			matcher = replace.matcher(strReplaceXtend);
-			strReplaceXtend = matcher.replaceAll(strReplace).toString();
+			strReplaceXtend = replaceString(strReplaceXtend, strRegex, strReplace);
 
 			// Write all the read text into formatter xtend
 			FileOutputStream fos = new FileOutputStream(file);
 			fos.write(strReplaceXtend.getBytes());
 			fos.close();
 
-			System.out.println("***********************Finish modifying the grammar formatter.");
+			System.out.println("[Info]************************Finish modifying the grammar formatter.");
 		} catch (IOException e) {
-			System.err.printf("Failed to modifer formatter xtend file, err: %s\n", e.getMessage());
+			System.err.printf("[Error] Failed to modifer formatter xtend file, err: %s\n", e.getMessage());
 			return false;
 		}
 		return true;
@@ -142,30 +138,53 @@ public class GrammarOptimization {
 			String strOrigin = IOHelper.readFile(file);
 
 			if (null == strOrigin || strOrigin.isEmpty()) {
-				System.err.printf("************************Failed to read string from xtext file.\n");
+				System.err.printf("[Error]************************Failed to read string from xtext file.\n");
 				return false;
 			}
 
-			// 1. optimize grammar in string-level
-			String strProcessed = removeBrackets(strOrigin);
-			System.out.println("Finish removing brackets by replacing them with BEGIN AND END.");
+			// 1. Remove tab symbols (by replacing with four whitespace)
+			String strProcessed = replaceString(strOrigin, "\t", "\s\s\s\s");
+			System.out.println("[Info] Finish removing tab symbols by replacing with four whitespace!");
 
-			// 2. Clarify BEGIN and END
+			// 2. Remove brackets by replacing them with BEGIN and END
+			strProcessed = removeBrackets(strProcessed);
+			System.out.println("[Info]******Finish removing brackets by replacing with BEGIN and END.");
+
+			// 3. Clarify BEGIN and END
 			strProcessed = clarifyBeginAndEnd(strProcessed, directoryName);
-			System.out.println("****************Finish clarifying BEGIN and END in xtext file.");
+			System.out.println("[Info]*****************Finish clarifying BEGIN and END in xtext file.");
 
-			// 3. Add import
+			// 4. Add import
 			strProcessed = addImport(strProcessed);
-			System.out.println("**********Finish adding import to the beginning of xtext file.");
+			System.out.println("[Info]***********Finish adding import to the beginning of xtext file.");
+
+			// 5. Reduce nesting
+			strProcessed = reduceNestDepth(strProcessed);
+			System.out.println("[Info]**********************************Finish reducing nested depth.");
 
 			// write the optimized grammar back into the xtext file
 			IOHelper.saveFile(file, strProcessed);
 		} catch (IOException e) {
-			System.err.printf("Failed to optimize the whole file, err: %s\n", e.getMessage());
+			System.err.printf("[Error] Failed to optimize the whole file, err: %s\n", e.getMessage());
 			return false;
 		}
 
 		return true;
+	}
+
+	public String replaceString(String strInput, String strRegex, String strReplacement) {
+		String strOutput = null;
+		Pattern pattern = Pattern.compile(strRegex);
+		Matcher matcher = pattern.matcher(strInput);
+
+		if (matcher.find()) {
+			strOutput = matcher.replaceAll(strReplacement);
+		} else {
+			System.err.printf("[Error] Failed to find strRegex: %s!\n", strRegex);
+			strOutput = strInput;
+		}
+
+		return strOutput;
 	}
 
 	/**
@@ -174,20 +193,63 @@ public class GrammarOptimization {
 	public String removeBrackets(String strInput) {
 		String strOutput = "";
 
-		// convert tab symbol to four whitespace
-		Pattern replace1 = Pattern.compile("\t");
-		Matcher matcher1 = replace1.matcher(strInput);
-		String strTemp1 = matcher1.replaceAll("\s\s\s\s").toString();
-
 		// remove '{' and '}' from input string
 		String regex1 = "([\'])([{])([\'])";
-		String strTemp2 = strTemp1.replaceAll(regex1, "BEGIN");
+		String strTemp2 = strInput.replaceAll(regex1, "BEGIN");
 		String regex2 = "([\'])([}])([\'])";
-		String strTemp3 = strTemp2.replaceAll(regex2, "END");
+		strOutput = strTemp2.replaceAll(regex2, "END");
 
-		// move shortName from attribute to the head
-		String regex3 = "\\'\\s*(\\r|\\n)\\s*(\\r|\\n)\\s*\\'shortName\\'\\s";
-		strOutput = strTemp3.replaceAll(regex3, "\'\s");
+//		// move shortName from attribute to the head
+//		String regex3 = "\\'\\s*(\\r|\\n)\\s*(\\r|\\n)\\s*\\'shortName\\'\\s";
+//		strOutput = strTemp3.replaceAll(regex3, "\'\s");
+
+		return strOutput;
+	}
+
+	public String removeShortName(String strInput) {
+		String strOutput = "";
+
+		String strRegex = "\\'(\\n|\\r)\\s*BEGIN(\\r|\\n)\\s*\\'shortName\\'\\sshortName=Identifier(\\n|\\s)";
+		String strReplacement = "'\sshortName=Identifier\n    BEGIN";
+
+		strOutput = replaceString(strInput, strRegex, strReplacement);
+
+		return strOutput;
+	}
+
+	public String reduceNestDepth(String strInput) {
+		String strOutput = "";
+
+		// 1. Remove topLevelPackage
+		strOutput = replaceString(strInput, "'topLevelPackage' BEGIN topLevelPackage", "topLevelPackage");
+		strOutput = replaceString(strOutput, "topLevelPackage\\+=EAPackage\\)\\* END", "topLevelPackage+=EAPackage)*");
+		System.out.println("[Info]***********************Finish removing keyword topLevelPackage.");
+
+		// 2. Remove EAXML
+		String strRegexBegin = "'EAXML'(\\r|\\n)\\s*BEGIN(\\r|\\n)\\s*\\(topLevelPackage";
+		String strReplaceBegin = "(topLevelPackage";
+		strOutput = replaceString(strOutput, strRegexBegin, strReplaceBegin);
+		String strRegexEnd = "topLevelPackage\\+=EAPackage\\)\\*\\s\\)\\?(\\r|\\n)\\s*END";
+		String strReplaceEnd = "topLevelPackage+=EAPackage)* )?\n    ";
+		strOutput = replaceString(strOutput, strRegexEnd, strReplaceEnd);
+		System.out.println("[Info]*********************************Finish removing keyword EAXML.");
+
+		// 3. Remove BEGIN and END of all members in classes
+
+		// 2. Remove shortName
+		strOutput = removeShortName(strOutput);
+		System.out.println("[Info]********************Finish removing shortName from every class.");
+
+		// 3. Remove keyword subPackage
+		strOutput = replaceString(strOutput, "'subPackage' BEGIN subPackage", "subPackage");
+		strOutput = replaceString(strOutput, "subPackage\\+=EAPackage\\)\\* END", "subPackage+=EAPackage)*");
+		System.out.println("[Info]****************************Finish removing keyword subPackage.");
+
+		// 4. Remove key element
+		strOutput = replaceString(strOutput, "'element' BEGIN element", "element");
+		strOutput = replaceString(strOutput, "element\\+=EAPackageableElement\\)\\*\\sEND",
+				"element+=EAPackageableElement)*");
+		System.out.println("[Info]*******************************Finish removing keyword element.");
 
 		return strOutput;
 	}
@@ -201,8 +263,8 @@ public class GrammarOptimization {
 		File fileReplaceText = new File(strReplaceEndFile);
 
 		if (!fileReplaceText.exists()) {
-			System.err.printf("*******File ClarificationTextforBEGINandEND.txt doesn't exist!\n");
-			System.err.printf("**************************Stop modifying formatter xtend file.\n");
+			System.err.printf("[Error]*******File ClarificationTextforBEGINandEND.txt doesn't exist!\n");
+			System.err.printf("[Error]**************************Stop modifying formatter xtend file.\n");
 			return null;
 		}
 
@@ -210,12 +272,18 @@ public class GrammarOptimization {
 		String strAddEnd = null;
 		try {
 			strAddEnd = IOHelper.readFile(fileReplaceText);
-		} catch (IOException e) {
-			System.err.printf("Failed to read text from ClarificationTextforBEGINandEND.txt!\n");
-			return null;
-		}
+			String strRegex = "XBlockExpression\\sreturns";
 
-		strOutput = strInput + '\n' + strAddEnd;
+			if (!checkExistofString(strInput, strRegex)) {
+				strOutput = strInput + '\n' + strAddEnd;
+			} else {
+				System.out.printf("[Warning]********The definition of XBlockExpression is already exist.\n");
+				strOutput = strInput;
+			}
+		} catch (IOException e) {
+			System.err.printf("[Error] Failed to read text from ClarificationTextforBEGINandEND.txt!\n");
+			return strInput;
+		}
 
 		return strOutput;
 	}
@@ -225,10 +293,37 @@ public class GrammarOptimization {
 		String strRegex = "org.eclipse.xtext.common.Terminals";
 		String strReplace = "org.eclipse.xtext.xbase.Xbase" + '\n'
 				+ "import \"http://www.eclipse.org/xtext/xbase/Xbase\" as xbase";
-		Pattern replace = Pattern.compile(strRegex);
-		Matcher matcher = replace.matcher(strInput);
-		strOutput = matcher.replaceAll(strReplace).toString();
+
+		strOutput = replaceString(strInput, strRegex, strReplace);
 		return strOutput;
+	}
+
+	public String addDefinitionOfEString(String strInput) {
+		String strOutput = "";
+
+		String strRegex = "EString\\sreturns";
+
+		if (checkExistofString(strInput, strRegex)) {
+			return strInput;
+		}
+
+		// If doesn't, please add a definition for EString
+		String strDefinition = "EString returns ecore::EString:\n    STRING | ID;\n";
+		strOutput = strInput + strDefinition;
+		return strOutput;
+	}
+
+	public boolean checkExistofString(String strInput, String strRegex) {
+		boolean isExist = false;
+
+		Pattern pattern = Pattern.compile(strRegex);
+		Matcher matcher = pattern.matcher(strInput);
+
+		if (matcher.find()) {
+			isExist = true;
+		}
+
+		return isExist;
 	}
 
 	/**
@@ -254,7 +349,7 @@ public class GrammarOptimization {
 					listString.add(strTarget);
 				}
 			} catch (IOException e) {
-				System.err.printf("Failed to read lines from file, err: %s\n", e.getMessage());
+				System.err.printf("[Error] Failed to read lines from file, err: %s\n", e.getMessage());
 			}
 
 			if (listString.isEmpty())
@@ -269,7 +364,8 @@ public class GrammarOptimization {
 					try {
 						writer.write(strTemp + "\r\n");
 					} catch (IOException e) {
-						System.err.printf("Failed to write grammar back to xtext file, err: %s\n", e.getMessage());
+						System.err.printf("[Error] Failed to write grammar back to xtext file, err: %s\n",
+								e.getMessage());
 					}
 				}
 
