@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.eatop.geastadl.internal.Activator$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.eatop.geastadl.ginfrastructure.gelements,
  org.eclipse.eatop.geastadl.ginfrastructure.gelements.impl,
  org.eclipse.eatop.geastadl.ginfrastructure.gelements.util,
