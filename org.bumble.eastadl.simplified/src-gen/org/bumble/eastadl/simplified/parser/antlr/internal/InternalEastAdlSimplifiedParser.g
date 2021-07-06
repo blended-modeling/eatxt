@@ -77,29 +77,13 @@ ruleEAXML returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1=EAXML
-		{
-			newLeafNode(otherlv_1, grammarAccess.getEAXMLAccess().getEAXMLKeyword_1());
-		}
-		this_BEGIN_2=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_2, grammarAccess.getEAXMLAccess().getBEGINTerminalRuleCall_2());
-		}
 		(
-			otherlv_3=TopLevelPackage
-			{
-				newLeafNode(otherlv_3, grammarAccess.getEAXMLAccess().getTopLevelPackageKeyword_3_0());
-			}
-			this_BEGIN_4=RULE_BEGIN
-			{
-				newLeafNode(this_BEGIN_4, grammarAccess.getEAXMLAccess().getBEGINTerminalRuleCall_3_1());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAXMLAccess().getTopLevelPackageEAPackageParserRuleCall_3_2_0());
+						newCompositeNode(grammarAccess.getEAXMLAccess().getTopLevelPackageEAPackageParserRuleCall_1_0_0());
 					}
-					lv_topLevelPackage_5_0=ruleEAPackage
+					lv_topLevelPackage_1_0=ruleEAPackage
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAXMLRule());
@@ -107,23 +91,23 @@ ruleEAXML returns [EObject current=null]
 						add(
 							$current,
 							"topLevelPackage",
-							lv_topLevelPackage_5_0,
+							lv_topLevelPackage_1_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EAPackage");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_6=Comma
+				otherlv_2=Comma
 				{
-					newLeafNode(otherlv_6, grammarAccess.getEAXMLAccess().getCommaKeyword_3_3_0());
+					newLeafNode(otherlv_2, grammarAccess.getEAXMLAccess().getCommaKeyword_1_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEAXMLAccess().getTopLevelPackageEAPackageParserRuleCall_3_3_1_0());
+							newCompositeNode(grammarAccess.getEAXMLAccess().getTopLevelPackageEAPackageParserRuleCall_1_1_1_0());
 						}
-						lv_topLevelPackage_7_0=ruleEAPackage
+						lv_topLevelPackage_3_0=ruleEAPackage
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEAXMLRule());
@@ -131,22 +115,14 @@ ruleEAXML returns [EObject current=null]
 							add(
 								$current,
 								"topLevelPackage",
-								lv_topLevelPackage_7_0,
+								lv_topLevelPackage_3_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.EAPackage");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_8=RULE_END
-			{
-				newLeafNode(this_END_8, grammarAccess.getEAXMLAccess().getENDTerminalRuleCall_3_4());
-			}
 		)?
-		this_END_9=RULE_END
-		{
-			newLeafNode(this_END_9, grammarAccess.getEAXMLAccess().getENDTerminalRuleCall_4());
-		}
 	)
 ;
 
@@ -715,20 +691,12 @@ ruleEAPackage returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEAPackageAccess().getEAPackageKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getEAPackageAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEAPackageAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEAPackageAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEAPackageAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -736,23 +704,27 @@ ruleEAPackage returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getEAPackageAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEAPackageAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEAPackageAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAPackageAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getEAPackageAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -760,7 +732,7 @@ ruleEAPackage returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -768,16 +740,16 @@ ruleEAPackage returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getEAPackageAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getEAPackageAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAPackageAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getEAPackageAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -785,7 +757,7 @@ ruleEAPackage returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -793,16 +765,16 @@ ruleEAPackage returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getEAPackageAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getEAPackageAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAPackageAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEAPackageAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -810,7 +782,7 @@ ruleEAPackage returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -818,20 +790,20 @@ ruleEAPackage returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getEAPackageAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getEAPackageAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getEAPackageAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getEAPackageAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAPackageAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getEAPackageAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -839,23 +811,23 @@ ruleEAPackage returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getEAPackageAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getEAPackageAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEAPackageAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getEAPackageAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -863,33 +835,25 @@ ruleEAPackage returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getEAPackageAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getEAPackageAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
 		(
-			otherlv_16=SubPackage
-			{
-				newLeafNode(otherlv_16, grammarAccess.getEAPackageAccess().getSubPackageKeyword_8_0());
-			}
-			this_BEGIN_17=RULE_BEGIN
-			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getEAPackageAccess().getBEGINTerminalRuleCall_8_1());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAPackageAccess().getSubPackageEAPackageParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getEAPackageAccess().getSubPackageEAPackageParserRuleCall_7_0_0());
 					}
-					lv_subPackage_18_0=ruleEAPackage
+					lv_subPackage_15_0=ruleEAPackage
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -897,23 +861,23 @@ ruleEAPackage returns [EObject current=null]
 						add(
 							$current,
 							"subPackage",
-							lv_subPackage_18_0,
+							lv_subPackage_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EAPackage");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getEAPackageAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getEAPackageAccess().getCommaKeyword_7_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEAPackageAccess().getSubPackageEAPackageParserRuleCall_8_3_1_0());
+							newCompositeNode(grammarAccess.getEAPackageAccess().getSubPackageEAPackageParserRuleCall_7_1_1_0());
 						}
-						lv_subPackage_20_0=ruleEAPackage
+						lv_subPackage_17_0=ruleEAPackage
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -921,33 +885,21 @@ ruleEAPackage returns [EObject current=null]
 							add(
 								$current,
 								"subPackage",
-								lv_subPackage_20_0,
+								lv_subPackage_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.EAPackage");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
-			{
-				newLeafNode(this_END_21, grammarAccess.getEAPackageAccess().getENDTerminalRuleCall_8_4());
-			}
 		)?
 		(
-			otherlv_22=Element
-			{
-				newLeafNode(otherlv_22, grammarAccess.getEAPackageAccess().getElementKeyword_9_0());
-			}
-			this_BEGIN_23=RULE_BEGIN
-			{
-				newLeafNode(this_BEGIN_23, grammarAccess.getEAPackageAccess().getBEGINTerminalRuleCall_9_1());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAPackageAccess().getElementEAPackageableElementParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getEAPackageAccess().getElementEAPackageableElementParserRuleCall_8_0_0());
 					}
-					lv_element_24_0=ruleEAPackageableElement
+					lv_element_18_0=ruleEAPackageableElement
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -955,23 +907,23 @@ ruleEAPackage returns [EObject current=null]
 						add(
 							$current,
 							"element",
-							lv_element_24_0,
+							lv_element_18_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EAPackageableElement");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=Comma
+				otherlv_19=Comma
 				{
-					newLeafNode(otherlv_25, grammarAccess.getEAPackageAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_19, grammarAccess.getEAPackageAccess().getCommaKeyword_8_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEAPackageAccess().getElementEAPackageableElementParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getEAPackageAccess().getElementEAPackageableElementParserRuleCall_8_1_1_0());
 						}
-						lv_element_26_0=ruleEAPackageableElement
+						lv_element_20_0=ruleEAPackageableElement
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEAPackageRule());
@@ -979,21 +931,17 @@ ruleEAPackage returns [EObject current=null]
 							add(
 								$current,
 								"element",
-								lv_element_26_0,
+								lv_element_20_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.EAPackageableElement");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_27=RULE_END
-			{
-				newLeafNode(this_END_27, grammarAccess.getEAPackageAccess().getENDTerminalRuleCall_9_4());
-			}
 		)?
-		this_END_28=RULE_END
+		this_END_21=RULE_END
 		{
-			newLeafNode(this_END_28, grammarAccess.getEAPackageAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_21, grammarAccess.getEAPackageAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -1013,15 +961,12 @@ ruleIdentifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
 @after {
 	leaveRule();
 }:
+	this_ID_0=RULE_ID
 	{
-		newCompositeNode(grammarAccess.getIdentifierAccess().getEStringParserRuleCall());
-	}
-	this_EString_0=ruleEString
-	{
-		$current.merge(this_EString_0);
+		$current.merge(this_ID_0);
 	}
 	{
-		afterParserOrEnumRuleCall();
+		newLeafNode(this_ID_0, grammarAccess.getIdentifierAccess().getIDTerminalRuleCall());
 	}
 ;
 
@@ -1040,15 +985,12 @@ ruleString0 returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 @after {
 	leaveRule();
 }:
+	this_ID_0=RULE_ID
 	{
-		newCompositeNode(grammarAccess.getString0Access().getEStringParserRuleCall());
-	}
-	this_EString_0=ruleEString
-	{
-		$current.merge(this_EString_0);
+		$current.merge(this_ID_0);
 	}
 	{
-		afterParserOrEnumRuleCall();
+		newLeafNode(this_ID_0, grammarAccess.getString0Access().getIDTerminalRuleCall());
 	}
 ;
 
@@ -1180,20 +1122,12 @@ ruleDesignLevel returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getDesignLevelAccess().getDesignLevelKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getDesignLevelAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDesignLevelAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getDesignLevelAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1201,23 +1135,27 @@ ruleDesignLevel returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getDesignLevelAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getDesignLevelAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1225,7 +1163,7 @@ ruleDesignLevel returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -1233,16 +1171,16 @@ ruleDesignLevel returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getDesignLevelAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getDesignLevelAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1250,7 +1188,7 @@ ruleDesignLevel returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -1258,16 +1196,16 @@ ruleDesignLevel returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getDesignLevelAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getDesignLevelAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1275,7 +1213,7 @@ ruleDesignLevel returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -1283,13 +1221,13 @@ ruleDesignLevel returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=TraceableSpecification
+			otherlv_9=TraceableSpecification
 			{
-				newLeafNode(otherlv_10, grammarAccess.getDesignLevelAccess().getTraceableSpecificationKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getDesignLevelAccess().getTraceableSpecificationKeyword_6_0());
 			}
-			otherlv_11=LeftParenthesis
+			otherlv_10=LeftParenthesis
 			{
-				newLeafNode(otherlv_11, grammarAccess.getDesignLevelAccess().getLeftParenthesisKeyword_7_1());
+				newLeafNode(otherlv_10, grammarAccess.getDesignLevelAccess().getLeftParenthesisKeyword_6_1());
 			}
 			(
 				(
@@ -1299,7 +1237,7 @@ ruleDesignLevel returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getTraceableSpecificationTraceableSpecificationCrossReference_6_2_0());
 					}
 					ruleEString
 					{
@@ -1308,9 +1246,9 @@ ruleDesignLevel returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getDesignLevelAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getDesignLevelAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
@@ -1320,7 +1258,7 @@ ruleDesignLevel returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getDesignLevelAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
+							newCompositeNode(grammarAccess.getDesignLevelAccess().getTraceableSpecificationTraceableSpecificationCrossReference_6_3_1_0());
 						}
 						ruleEString
 						{
@@ -1329,26 +1267,26 @@ ruleDesignLevel returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_15=RightParenthesis
+			otherlv_14=RightParenthesis
 			{
-				newLeafNode(otherlv_15, grammarAccess.getDesignLevelAccess().getRightParenthesisKeyword_7_4());
+				newLeafNode(otherlv_14, grammarAccess.getDesignLevelAccess().getRightParenthesisKeyword_6_4());
 			}
 		)?
 		(
-			otherlv_16=OwnedComment
+			otherlv_15=OwnedComment
 			{
-				newLeafNode(otherlv_16, grammarAccess.getDesignLevelAccess().getOwnedCommentKeyword_8_0());
+				newLeafNode(otherlv_15, grammarAccess.getDesignLevelAccess().getOwnedCommentKeyword_7_0());
 			}
-			this_BEGIN_17=RULE_BEGIN
+			this_BEGIN_16=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_8_1());
+				newLeafNode(this_BEGIN_16, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_7_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
 					}
-					lv_ownedComment_18_0=ruleComment
+					lv_ownedComment_17_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1356,23 +1294,23 @@ ruleDesignLevel returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_18_0,
+							lv_ownedComment_17_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_18=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getDesignLevelAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_18, grammarAccess.getDesignLevelAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignLevelAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
+							newCompositeNode(grammarAccess.getDesignLevelAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
 						}
-						lv_ownedComment_20_0=ruleComment
+						lv_ownedComment_19_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1380,33 +1318,33 @@ ruleDesignLevel returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_20_0,
+								lv_ownedComment_19_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
+			this_END_20=RULE_END
 			{
-				newLeafNode(this_END_21, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_8_4());
+				newLeafNode(this_END_20, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_7_4());
 			}
 		)?
 		(
-			otherlv_22=OwnedRelationship
+			otherlv_21=OwnedRelationship
 			{
-				newLeafNode(otherlv_22, grammarAccess.getDesignLevelAccess().getOwnedRelationshipKeyword_9_0());
+				newLeafNode(otherlv_21, grammarAccess.getDesignLevelAccess().getOwnedRelationshipKeyword_8_0());
 			}
-			this_BEGIN_23=RULE_BEGIN
+			this_BEGIN_22=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_23, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_22, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getOwnedRelationshipRelationshipParserRuleCall_8_2_0());
 					}
-					lv_ownedRelationship_24_0=ruleRelationship
+					lv_ownedRelationship_23_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1414,23 +1352,23 @@ ruleDesignLevel returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_24_0,
+							lv_ownedRelationship_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=Comma
+				otherlv_24=Comma
 				{
-					newLeafNode(otherlv_25, grammarAccess.getDesignLevelAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_24, grammarAccess.getDesignLevelAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignLevelAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getDesignLevelAccess().getOwnedRelationshipRelationshipParserRuleCall_8_3_1_0());
 						}
-						lv_ownedRelationship_26_0=ruleRelationship
+						lv_ownedRelationship_25_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1438,33 +1376,33 @@ ruleDesignLevel returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_26_0,
+								lv_ownedRelationship_25_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_27=RULE_END
+			this_END_26=RULE_END
 			{
-				newLeafNode(this_END_27, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_26, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_28=Allocation_1
+			otherlv_27=Allocation_1
 			{
-				newLeafNode(otherlv_28, grammarAccess.getDesignLevelAccess().getAllocationKeyword_10_0());
+				newLeafNode(otherlv_27, grammarAccess.getDesignLevelAccess().getAllocationKeyword_9_0());
 			}
-			this_BEGIN_29=RULE_BEGIN
+			this_BEGIN_28=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_29, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_28, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getAllocationAllocationParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getAllocationAllocationParserRuleCall_9_2_0());
 					}
-					lv_allocation_30_0=ruleAllocation
+					lv_allocation_29_0=ruleAllocation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1472,23 +1410,23 @@ ruleDesignLevel returns [EObject current=null]
 						add(
 							$current,
 							"allocation",
-							lv_allocation_30_0,
+							lv_allocation_29_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Allocation");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_31=Comma
+				otherlv_30=Comma
 				{
-					newLeafNode(otherlv_31, grammarAccess.getDesignLevelAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_30, grammarAccess.getDesignLevelAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignLevelAccess().getAllocationAllocationParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getDesignLevelAccess().getAllocationAllocationParserRuleCall_9_3_1_0());
 						}
-						lv_allocation_32_0=ruleAllocation
+						lv_allocation_31_0=ruleAllocation
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1496,29 +1434,29 @@ ruleDesignLevel returns [EObject current=null]
 							add(
 								$current,
 								"allocation",
-								lv_allocation_32_0,
+								lv_allocation_31_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Allocation");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_33=RULE_END
+			this_END_32=RULE_END
 			{
-				newLeafNode(this_END_33, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_32, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_34=FunctionalDesignArchitecture
+			otherlv_33=FunctionalDesignArchitecture
 			{
-				newLeafNode(otherlv_34, grammarAccess.getDesignLevelAccess().getFunctionalDesignArchitectureKeyword_11_0());
+				newLeafNode(otherlv_33, grammarAccess.getDesignLevelAccess().getFunctionalDesignArchitectureKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getFunctionalDesignArchitectureDesignFunctionPrototypeParserRuleCall_11_1_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getFunctionalDesignArchitectureDesignFunctionPrototypeParserRuleCall_10_1_0());
 					}
-					lv_functionalDesignArchitecture_35_0=ruleDesignFunctionPrototype
+					lv_functionalDesignArchitecture_34_0=ruleDesignFunctionPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1526,7 +1464,7 @@ ruleDesignLevel returns [EObject current=null]
 						set(
 							$current,
 							"functionalDesignArchitecture",
-							lv_functionalDesignArchitecture_35_0,
+							lv_functionalDesignArchitecture_34_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 						afterParserOrEnumRuleCall();
 					}
@@ -1534,16 +1472,16 @@ ruleDesignLevel returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_36=HardwareDesignArchitecture
+			otherlv_35=HardwareDesignArchitecture
 			{
-				newLeafNode(otherlv_36, grammarAccess.getDesignLevelAccess().getHardwareDesignArchitectureKeyword_12_0());
+				newLeafNode(otherlv_35, grammarAccess.getDesignLevelAccess().getHardwareDesignArchitectureKeyword_11_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignLevelAccess().getHardwareDesignArchitectureHardwareComponentPrototypeParserRuleCall_12_1_0());
+						newCompositeNode(grammarAccess.getDesignLevelAccess().getHardwareDesignArchitectureHardwareComponentPrototypeParserRuleCall_11_1_0());
 					}
-					lv_hardwareDesignArchitecture_37_0=ruleHardwareComponentPrototype
+					lv_hardwareDesignArchitecture_36_0=ruleHardwareComponentPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignLevelRule());
@@ -1551,16 +1489,16 @@ ruleDesignLevel returns [EObject current=null]
 						set(
 							$current,
 							"hardwareDesignArchitecture",
-							lv_hardwareDesignArchitecture_37_0,
+							lv_hardwareDesignArchitecture_36_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		this_END_38=RULE_END
+		this_END_37=RULE_END
 		{
-			newLeafNode(this_END_38, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_13());
+			newLeafNode(this_END_37, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_12());
 		}
 	)
 ;
@@ -1585,20 +1523,12 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAnalysisFunctionType_ImplAccess().getAnalysisFunctionTypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getAnalysisFunctionType_ImplAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1606,23 +1536,27 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getAnalysisFunctionType_ImplAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getAnalysisFunctionType_ImplAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1630,7 +1564,7 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -1638,16 +1572,16 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getAnalysisFunctionType_ImplAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getAnalysisFunctionType_ImplAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1655,7 +1589,7 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -1663,16 +1597,16 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getAnalysisFunctionType_ImplAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getAnalysisFunctionType_ImplAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1680,7 +1614,7 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -1688,16 +1622,16 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=IsElementary
+			otherlv_9=IsElementary
 			{
-				newLeafNode(otherlv_10, grammarAccess.getAnalysisFunctionType_ImplAccess().getIsElementaryKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getAnalysisFunctionType_ImplAccess().getIsElementaryKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getIsElementaryBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getIsElementaryBooleanParserRuleCall_6_1_0());
 					}
-					lv_isElementary_11_0=ruleBoolean
+					lv_isElementary_10_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1705,7 +1639,7 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"isElementary",
-							lv_isElementary_11_0,
+							lv_isElementary_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -1713,13 +1647,13 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=TraceableSpecification
+			otherlv_11=TraceableSpecification
 			{
-				newLeafNode(otherlv_12, grammarAccess.getAnalysisFunctionType_ImplAccess().getTraceableSpecificationKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getAnalysisFunctionType_ImplAccess().getTraceableSpecificationKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getAnalysisFunctionType_ImplAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getAnalysisFunctionType_ImplAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -1729,7 +1663,7 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -1738,9 +1672,9 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -1750,7 +1684,7 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -1759,26 +1693,26 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getAnalysisFunctionType_ImplAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getAnalysisFunctionType_ImplAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1786,23 +1720,23 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1810,33 +1744,33 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_24=OwnedRelationship
+			otherlv_23=OwnedRelationship
 			{
-				newLeafNode(otherlv_24, grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedRelationshipKeyword_10_0());
+				newLeafNode(otherlv_23, grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedRelationshipKeyword_9_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
 					}
-					lv_ownedRelationship_26_0=ruleRelationship
+					lv_ownedRelationship_25_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1844,23 +1778,23 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_26_0,
+							lv_ownedRelationship_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
 						}
-						lv_ownedRelationship_28_0=ruleRelationship
+						lv_ownedRelationship_27_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1868,33 +1802,33 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_28_0,
+								lv_ownedRelationship_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_28, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_30=PortGroup_1
+			otherlv_29=PortGroup_1
 			{
-				newLeafNode(otherlv_30, grammarAccess.getAnalysisFunctionType_ImplAccess().getPortGroupKeyword_11_0());
+				newLeafNode(otherlv_29, grammarAccess.getAnalysisFunctionType_ImplAccess().getPortGroupKeyword_10_0());
 			}
-			this_BEGIN_31=RULE_BEGIN
+			this_BEGIN_30=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_31, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_30, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPortGroupPortGroupParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPortGroupPortGroupParserRuleCall_10_2_0());
 					}
-					lv_portGroup_32_0=rulePortGroup
+					lv_portGroup_31_0=rulePortGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1902,23 +1836,23 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"portGroup",
-							lv_portGroup_32_0,
+							lv_portGroup_31_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_33=Comma
+				otherlv_32=Comma
 				{
-					newLeafNode(otherlv_33, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_32, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPortGroupPortGroupParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPortGroupPortGroupParserRuleCall_10_3_1_0());
 						}
-						lv_portGroup_34_0=rulePortGroup
+						lv_portGroup_33_0=rulePortGroup
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1926,33 +1860,33 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"portGroup",
-								lv_portGroup_34_0,
+								lv_portGroup_33_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_35=RULE_END
+			this_END_34=RULE_END
 			{
-				newLeafNode(this_END_35, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_34, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_36=Connector
+			otherlv_35=Connector
 			{
-				newLeafNode(otherlv_36, grammarAccess.getAnalysisFunctionType_ImplAccess().getConnectorKeyword_12_0());
+				newLeafNode(otherlv_35, grammarAccess.getAnalysisFunctionType_ImplAccess().getConnectorKeyword_11_0());
 			}
-			this_BEGIN_37=RULE_BEGIN
+			this_BEGIN_36=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_37, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_36, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getConnectorFunctionConnectorParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getConnectorFunctionConnectorParserRuleCall_11_2_0());
 					}
-					lv_connector_38_0=ruleFunctionConnector
+					lv_connector_37_0=ruleFunctionConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1960,23 +1894,23 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_38_0,
+							lv_connector_37_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_39=Comma
+				otherlv_38=Comma
 				{
-					newLeafNode(otherlv_39, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_38, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getConnectorFunctionConnectorParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getConnectorFunctionConnectorParserRuleCall_11_3_1_0());
 						}
-						lv_connector_40_0=ruleFunctionConnector
+						lv_connector_39_0=ruleFunctionConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -1984,33 +1918,33 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_40_0,
+								lv_connector_39_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_41=RULE_END
+			this_END_40=RULE_END
 			{
-				newLeafNode(this_END_41, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_40, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_42=Port
+			otherlv_41=Port
 			{
-				newLeafNode(otherlv_42, grammarAccess.getAnalysisFunctionType_ImplAccess().getPortKeyword_13_0());
+				newLeafNode(otherlv_41, grammarAccess.getAnalysisFunctionType_ImplAccess().getPortKeyword_12_0());
 			}
-			this_BEGIN_43=RULE_BEGIN
+			this_BEGIN_42=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_43, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_42, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPortFunctionPortParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPortFunctionPortParserRuleCall_12_2_0());
 					}
-					lv_port_44_0=ruleFunctionPort
+					lv_port_43_0=ruleFunctionPort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -2018,23 +1952,23 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_44_0,
+							lv_port_43_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_45=Comma
+				otherlv_44=Comma
 				{
-					newLeafNode(otherlv_45, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_44, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPortFunctionPortParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPortFunctionPortParserRuleCall_12_3_1_0());
 						}
-						lv_port_46_0=ruleFunctionPort
+						lv_port_45_0=ruleFunctionPort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -2042,33 +1976,33 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_46_0,
+								lv_port_45_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_47=RULE_END
+			this_END_46=RULE_END
 			{
-				newLeafNode(this_END_47, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_46, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_48=Part
+			otherlv_47=Part
 			{
-				newLeafNode(otherlv_48, grammarAccess.getAnalysisFunctionType_ImplAccess().getPartKeyword_14_0());
+				newLeafNode(otherlv_47, grammarAccess.getAnalysisFunctionType_ImplAccess().getPartKeyword_13_0());
 			}
-			this_BEGIN_49=RULE_BEGIN
+			this_BEGIN_48=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_49, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_48, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPartAnalysisFunctionPrototypeParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPartAnalysisFunctionPrototypeParserRuleCall_13_2_0());
 					}
-					lv_part_50_0=ruleAnalysisFunctionPrototype
+					lv_part_49_0=ruleAnalysisFunctionPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -2076,23 +2010,23 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_50_0,
+							lv_part_49_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.AnalysisFunctionPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_51=Comma
+				otherlv_50=Comma
 				{
-					newLeafNode(otherlv_51, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_50, grammarAccess.getAnalysisFunctionType_ImplAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPartAnalysisFunctionPrototypeParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getAnalysisFunctionType_ImplAccess().getPartAnalysisFunctionPrototypeParserRuleCall_13_3_1_0());
 						}
-						lv_part_52_0=ruleAnalysisFunctionPrototype
+						lv_part_51_0=ruleAnalysisFunctionPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAnalysisFunctionType_ImplRule());
@@ -2100,21 +2034,21 @@ ruleAnalysisFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_52_0,
+								lv_part_51_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.AnalysisFunctionPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_53=RULE_END
+			this_END_52=RULE_END
 			{
-				newLeafNode(this_END_53, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_52, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
-		this_END_54=RULE_END
+		this_END_53=RULE_END
 		{
-			newLeafNode(this_END_54, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_15());
+			newLeafNode(this_END_53, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_14());
 		}
 	)
 ;
@@ -2139,20 +2073,12 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBasicSoftwareFunctionTypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getBasicSoftwareFunctionTypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2160,23 +2086,27 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2184,7 +2114,7 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -2192,16 +2122,16 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getBasicSoftwareFunctionTypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getBasicSoftwareFunctionTypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2209,7 +2139,7 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -2217,16 +2147,16 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getBasicSoftwareFunctionTypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getBasicSoftwareFunctionTypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2234,7 +2164,7 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -2242,16 +2172,16 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=IsElementary
+			otherlv_9=IsElementary
 			{
-				newLeafNode(otherlv_10, grammarAccess.getBasicSoftwareFunctionTypeAccess().getIsElementaryKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getBasicSoftwareFunctionTypeAccess().getIsElementaryKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getIsElementaryBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getIsElementaryBooleanParserRuleCall_6_1_0());
 					}
-					lv_isElementary_11_0=ruleBoolean
+					lv_isElementary_10_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2259,7 +2189,7 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						set(
 							$current,
 							"isElementary",
-							lv_isElementary_11_0,
+							lv_isElementary_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -2267,13 +2197,13 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=TraceableSpecification
+			otherlv_11=TraceableSpecification
 			{
-				newLeafNode(otherlv_12, grammarAccess.getBasicSoftwareFunctionTypeAccess().getTraceableSpecificationKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getBasicSoftwareFunctionTypeAccess().getTraceableSpecificationKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getBasicSoftwareFunctionTypeAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getBasicSoftwareFunctionTypeAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -2283,7 +2213,7 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -2292,9 +2222,9 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -2304,7 +2234,7 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -2313,26 +2243,26 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getBasicSoftwareFunctionTypeAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getBasicSoftwareFunctionTypeAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2340,23 +2270,23 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2364,33 +2294,33 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_24=OwnedRelationship
+			otherlv_23=OwnedRelationship
 			{
-				newLeafNode(otherlv_24, grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedRelationshipKeyword_10_0());
+				newLeafNode(otherlv_23, grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedRelationshipKeyword_9_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedRelationshipRelationshipParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
 					}
-					lv_ownedRelationship_26_0=ruleRelationship
+					lv_ownedRelationship_25_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2398,23 +2328,23 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_26_0,
+							lv_ownedRelationship_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedRelationshipRelationshipParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
 						}
-						lv_ownedRelationship_28_0=ruleRelationship
+						lv_ownedRelationship_27_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2422,33 +2352,33 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_28_0,
+								lv_ownedRelationship_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_28, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_30=PortGroup_1
+			otherlv_29=PortGroup_1
 			{
-				newLeafNode(otherlv_30, grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortGroupKeyword_11_0());
+				newLeafNode(otherlv_29, grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortGroupKeyword_10_0());
 			}
-			this_BEGIN_31=RULE_BEGIN
+			this_BEGIN_30=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_31, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_30, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortGroupPortGroupParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortGroupPortGroupParserRuleCall_10_2_0());
 					}
-					lv_portGroup_32_0=rulePortGroup
+					lv_portGroup_31_0=rulePortGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2456,23 +2386,23 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"portGroup",
-							lv_portGroup_32_0,
+							lv_portGroup_31_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_33=Comma
+				otherlv_32=Comma
 				{
-					newLeafNode(otherlv_33, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_32, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortGroupPortGroupParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortGroupPortGroupParserRuleCall_10_3_1_0());
 						}
-						lv_portGroup_34_0=rulePortGroup
+						lv_portGroup_33_0=rulePortGroup
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2480,33 +2410,33 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"portGroup",
-								lv_portGroup_34_0,
+								lv_portGroup_33_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_35=RULE_END
+			this_END_34=RULE_END
 			{
-				newLeafNode(this_END_35, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_34, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_36=Connector
+			otherlv_35=Connector
 			{
-				newLeafNode(otherlv_36, grammarAccess.getBasicSoftwareFunctionTypeAccess().getConnectorKeyword_12_0());
+				newLeafNode(otherlv_35, grammarAccess.getBasicSoftwareFunctionTypeAccess().getConnectorKeyword_11_0());
 			}
-			this_BEGIN_37=RULE_BEGIN
+			this_BEGIN_36=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_37, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_36, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getConnectorFunctionConnectorParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getConnectorFunctionConnectorParserRuleCall_11_2_0());
 					}
-					lv_connector_38_0=ruleFunctionConnector
+					lv_connector_37_0=ruleFunctionConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2514,23 +2444,23 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_38_0,
+							lv_connector_37_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_39=Comma
+				otherlv_38=Comma
 				{
-					newLeafNode(otherlv_39, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_38, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getConnectorFunctionConnectorParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getConnectorFunctionConnectorParserRuleCall_11_3_1_0());
 						}
-						lv_connector_40_0=ruleFunctionConnector
+						lv_connector_39_0=ruleFunctionConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2538,33 +2468,33 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_40_0,
+								lv_connector_39_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_41=RULE_END
+			this_END_40=RULE_END
 			{
-				newLeafNode(this_END_41, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_40, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_42=Port
+			otherlv_41=Port
 			{
-				newLeafNode(otherlv_42, grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortKeyword_13_0());
+				newLeafNode(otherlv_41, grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortKeyword_12_0());
 			}
-			this_BEGIN_43=RULE_BEGIN
+			this_BEGIN_42=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_43, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_42, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortFunctionPortParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortFunctionPortParserRuleCall_12_2_0());
 					}
-					lv_port_44_0=ruleFunctionPort
+					lv_port_43_0=ruleFunctionPort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2572,23 +2502,23 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_44_0,
+							lv_port_43_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_45=Comma
+				otherlv_44=Comma
 				{
-					newLeafNode(otherlv_45, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_44, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortFunctionPortParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPortFunctionPortParserRuleCall_12_3_1_0());
 						}
-						lv_port_46_0=ruleFunctionPort
+						lv_port_45_0=ruleFunctionPort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2596,33 +2526,33 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_46_0,
+								lv_port_45_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_47=RULE_END
+			this_END_46=RULE_END
 			{
-				newLeafNode(this_END_47, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_46, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_48=Part
+			otherlv_47=Part
 			{
-				newLeafNode(otherlv_48, grammarAccess.getBasicSoftwareFunctionTypeAccess().getPartKeyword_14_0());
+				newLeafNode(otherlv_47, grammarAccess.getBasicSoftwareFunctionTypeAccess().getPartKeyword_13_0());
 			}
-			this_BEGIN_49=RULE_BEGIN
+			this_BEGIN_48=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_49, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_48, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPartDesignFunctionPrototypeParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPartDesignFunctionPrototypeParserRuleCall_13_2_0());
 					}
-					lv_part_50_0=ruleDesignFunctionPrototype
+					lv_part_49_0=ruleDesignFunctionPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2630,23 +2560,23 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_50_0,
+							lv_part_49_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_51=Comma
+				otherlv_50=Comma
 				{
-					newLeafNode(otherlv_51, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_50, grammarAccess.getBasicSoftwareFunctionTypeAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPartDesignFunctionPrototypeParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getBasicSoftwareFunctionTypeAccess().getPartDesignFunctionPrototypeParserRuleCall_13_3_1_0());
 						}
-						lv_part_52_0=ruleDesignFunctionPrototype
+						lv_part_51_0=ruleDesignFunctionPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getBasicSoftwareFunctionTypeRule());
@@ -2654,21 +2584,21 @@ ruleBasicSoftwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_52_0,
+								lv_part_51_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_53=RULE_END
+			this_END_52=RULE_END
 			{
-				newLeafNode(this_END_53, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_52, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
-		this_END_54=RULE_END
+		this_END_53=RULE_END
 		{
-			newLeafNode(this_END_54, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_15());
+			newLeafNode(this_END_53, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_14());
 		}
 	)
 ;
@@ -2693,20 +2623,12 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getDesignFunctionType_ImplAccess().getDesignFunctionTypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getDesignFunctionType_ImplAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2714,23 +2636,27 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getDesignFunctionType_ImplAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getDesignFunctionType_ImplAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2738,7 +2664,7 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -2746,16 +2672,16 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getDesignFunctionType_ImplAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getDesignFunctionType_ImplAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2763,7 +2689,7 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -2771,16 +2697,16 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getDesignFunctionType_ImplAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getDesignFunctionType_ImplAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2788,7 +2714,7 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -2796,16 +2722,16 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=IsElementary
+			otherlv_9=IsElementary
 			{
-				newLeafNode(otherlv_10, grammarAccess.getDesignFunctionType_ImplAccess().getIsElementaryKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getDesignFunctionType_ImplAccess().getIsElementaryKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getIsElementaryBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getIsElementaryBooleanParserRuleCall_6_1_0());
 					}
-					lv_isElementary_11_0=ruleBoolean
+					lv_isElementary_10_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2813,7 +2739,7 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"isElementary",
-							lv_isElementary_11_0,
+							lv_isElementary_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -2821,13 +2747,13 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=TraceableSpecification
+			otherlv_11=TraceableSpecification
 			{
-				newLeafNode(otherlv_12, grammarAccess.getDesignFunctionType_ImplAccess().getTraceableSpecificationKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getDesignFunctionType_ImplAccess().getTraceableSpecificationKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getDesignFunctionType_ImplAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getDesignFunctionType_ImplAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -2837,7 +2763,7 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -2846,9 +2772,9 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -2858,7 +2784,7 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -2867,26 +2793,26 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getDesignFunctionType_ImplAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getDesignFunctionType_ImplAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getDesignFunctionType_ImplAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getDesignFunctionType_ImplAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2894,23 +2820,23 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2918,33 +2844,33 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_24=OwnedRelationship
+			otherlv_23=OwnedRelationship
 			{
-				newLeafNode(otherlv_24, grammarAccess.getDesignFunctionType_ImplAccess().getOwnedRelationshipKeyword_10_0());
+				newLeafNode(otherlv_23, grammarAccess.getDesignFunctionType_ImplAccess().getOwnedRelationshipKeyword_9_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
 					}
-					lv_ownedRelationship_26_0=ruleRelationship
+					lv_ownedRelationship_25_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2952,23 +2878,23 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_26_0,
+							lv_ownedRelationship_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
 						}
-						lv_ownedRelationship_28_0=ruleRelationship
+						lv_ownedRelationship_27_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -2976,33 +2902,33 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_28_0,
+								lv_ownedRelationship_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_28, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_30=PortGroup_1
+			otherlv_29=PortGroup_1
 			{
-				newLeafNode(otherlv_30, grammarAccess.getDesignFunctionType_ImplAccess().getPortGroupKeyword_11_0());
+				newLeafNode(otherlv_29, grammarAccess.getDesignFunctionType_ImplAccess().getPortGroupKeyword_10_0());
 			}
-			this_BEGIN_31=RULE_BEGIN
+			this_BEGIN_30=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_31, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_30, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPortGroupPortGroupParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPortGroupPortGroupParserRuleCall_10_2_0());
 					}
-					lv_portGroup_32_0=rulePortGroup
+					lv_portGroup_31_0=rulePortGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -3010,23 +2936,23 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"portGroup",
-							lv_portGroup_32_0,
+							lv_portGroup_31_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_33=Comma
+				otherlv_32=Comma
 				{
-					newLeafNode(otherlv_33, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_32, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPortGroupPortGroupParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPortGroupPortGroupParserRuleCall_10_3_1_0());
 						}
-						lv_portGroup_34_0=rulePortGroup
+						lv_portGroup_33_0=rulePortGroup
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -3034,33 +2960,33 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"portGroup",
-								lv_portGroup_34_0,
+								lv_portGroup_33_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_35=RULE_END
+			this_END_34=RULE_END
 			{
-				newLeafNode(this_END_35, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_34, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_36=Connector
+			otherlv_35=Connector
 			{
-				newLeafNode(otherlv_36, grammarAccess.getDesignFunctionType_ImplAccess().getConnectorKeyword_12_0());
+				newLeafNode(otherlv_35, grammarAccess.getDesignFunctionType_ImplAccess().getConnectorKeyword_11_0());
 			}
-			this_BEGIN_37=RULE_BEGIN
+			this_BEGIN_36=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_37, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_36, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getConnectorFunctionConnectorParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getConnectorFunctionConnectorParserRuleCall_11_2_0());
 					}
-					lv_connector_38_0=ruleFunctionConnector
+					lv_connector_37_0=ruleFunctionConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -3068,23 +2994,23 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_38_0,
+							lv_connector_37_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_39=Comma
+				otherlv_38=Comma
 				{
-					newLeafNode(otherlv_39, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_38, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getConnectorFunctionConnectorParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getConnectorFunctionConnectorParserRuleCall_11_3_1_0());
 						}
-						lv_connector_40_0=ruleFunctionConnector
+						lv_connector_39_0=ruleFunctionConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -3092,33 +3018,33 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_40_0,
+								lv_connector_39_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_41=RULE_END
+			this_END_40=RULE_END
 			{
-				newLeafNode(this_END_41, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_40, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_42=Port
+			otherlv_41=Port
 			{
-				newLeafNode(otherlv_42, grammarAccess.getDesignFunctionType_ImplAccess().getPortKeyword_13_0());
+				newLeafNode(otherlv_41, grammarAccess.getDesignFunctionType_ImplAccess().getPortKeyword_12_0());
 			}
-			this_BEGIN_43=RULE_BEGIN
+			this_BEGIN_42=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_43, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_42, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPortFunctionPortParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPortFunctionPortParserRuleCall_12_2_0());
 					}
-					lv_port_44_0=ruleFunctionPort
+					lv_port_43_0=ruleFunctionPort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -3126,23 +3052,23 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_44_0,
+							lv_port_43_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_45=Comma
+				otherlv_44=Comma
 				{
-					newLeafNode(otherlv_45, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_44, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPortFunctionPortParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPortFunctionPortParserRuleCall_12_3_1_0());
 						}
-						lv_port_46_0=ruleFunctionPort
+						lv_port_45_0=ruleFunctionPort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -3150,33 +3076,33 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_46_0,
+								lv_port_45_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_47=RULE_END
+			this_END_46=RULE_END
 			{
-				newLeafNode(this_END_47, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_46, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_48=Part
+			otherlv_47=Part
 			{
-				newLeafNode(otherlv_48, grammarAccess.getDesignFunctionType_ImplAccess().getPartKeyword_14_0());
+				newLeafNode(otherlv_47, grammarAccess.getDesignFunctionType_ImplAccess().getPartKeyword_13_0());
 			}
-			this_BEGIN_49=RULE_BEGIN
+			this_BEGIN_48=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_49, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_48, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPartDesignFunctionPrototypeParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPartDesignFunctionPrototypeParserRuleCall_13_2_0());
 					}
-					lv_part_50_0=ruleDesignFunctionPrototype
+					lv_part_49_0=ruleDesignFunctionPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -3184,23 +3110,23 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_50_0,
+							lv_part_49_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_51=Comma
+				otherlv_50=Comma
 				{
-					newLeafNode(otherlv_51, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_50, grammarAccess.getDesignFunctionType_ImplAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPartDesignFunctionPrototypeParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getDesignFunctionType_ImplAccess().getPartDesignFunctionPrototypeParserRuleCall_13_3_1_0());
 						}
-						lv_part_52_0=ruleDesignFunctionPrototype
+						lv_part_51_0=ruleDesignFunctionPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignFunctionType_ImplRule());
@@ -3208,21 +3134,21 @@ ruleDesignFunctionType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_52_0,
+								lv_part_51_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_53=RULE_END
+			this_END_52=RULE_END
 			{
-				newLeafNode(this_END_53, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_52, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
-		this_END_54=RULE_END
+		this_END_53=RULE_END
 		{
-			newLeafNode(this_END_54, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_15());
+			newLeafNode(this_END_53, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_14());
 		}
 	)
 ;
@@ -3247,20 +3173,12 @@ ruleFunctionalDevice returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFunctionalDeviceAccess().getFunctionalDeviceKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFunctionalDeviceAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3268,23 +3186,27 @@ ruleFunctionalDevice returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getFunctionalDeviceAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getFunctionalDeviceAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3292,7 +3214,7 @@ ruleFunctionalDevice returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -3300,16 +3222,16 @@ ruleFunctionalDevice returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getFunctionalDeviceAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getFunctionalDeviceAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3317,7 +3239,7 @@ ruleFunctionalDevice returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -3325,16 +3247,16 @@ ruleFunctionalDevice returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getFunctionalDeviceAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getFunctionalDeviceAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3342,7 +3264,7 @@ ruleFunctionalDevice returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -3350,16 +3272,16 @@ ruleFunctionalDevice returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=IsElementary
+			otherlv_9=IsElementary
 			{
-				newLeafNode(otherlv_10, grammarAccess.getFunctionalDeviceAccess().getIsElementaryKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getFunctionalDeviceAccess().getIsElementaryKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getIsElementaryBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getIsElementaryBooleanParserRuleCall_6_1_0());
 					}
-					lv_isElementary_11_0=ruleBoolean
+					lv_isElementary_10_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3367,7 +3289,7 @@ ruleFunctionalDevice returns [EObject current=null]
 						set(
 							$current,
 							"isElementary",
-							lv_isElementary_11_0,
+							lv_isElementary_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -3375,13 +3297,13 @@ ruleFunctionalDevice returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=TraceableSpecification
+			otherlv_11=TraceableSpecification
 			{
-				newLeafNode(otherlv_12, grammarAccess.getFunctionalDeviceAccess().getTraceableSpecificationKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getFunctionalDeviceAccess().getTraceableSpecificationKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getFunctionalDeviceAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getFunctionalDeviceAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -3391,7 +3313,7 @@ ruleFunctionalDevice returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -3400,9 +3322,9 @@ ruleFunctionalDevice returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -3412,7 +3334,7 @@ ruleFunctionalDevice returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -3421,26 +3343,26 @@ ruleFunctionalDevice returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getFunctionalDeviceAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getFunctionalDeviceAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getFunctionalDeviceAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getFunctionalDeviceAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3448,23 +3370,23 @@ ruleFunctionalDevice returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3472,33 +3394,33 @@ ruleFunctionalDevice returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_24=OwnedRelationship
+			otherlv_23=OwnedRelationship
 			{
-				newLeafNode(otherlv_24, grammarAccess.getFunctionalDeviceAccess().getOwnedRelationshipKeyword_10_0());
+				newLeafNode(otherlv_23, grammarAccess.getFunctionalDeviceAccess().getOwnedRelationshipKeyword_9_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getOwnedRelationshipRelationshipParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
 					}
-					lv_ownedRelationship_26_0=ruleRelationship
+					lv_ownedRelationship_25_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3506,23 +3428,23 @@ ruleFunctionalDevice returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_26_0,
+							lv_ownedRelationship_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getOwnedRelationshipRelationshipParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
 						}
-						lv_ownedRelationship_28_0=ruleRelationship
+						lv_ownedRelationship_27_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3530,33 +3452,33 @@ ruleFunctionalDevice returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_28_0,
+								lv_ownedRelationship_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_28, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_30=PortGroup_1
+			otherlv_29=PortGroup_1
 			{
-				newLeafNode(otherlv_30, grammarAccess.getFunctionalDeviceAccess().getPortGroupKeyword_11_0());
+				newLeafNode(otherlv_29, grammarAccess.getFunctionalDeviceAccess().getPortGroupKeyword_10_0());
 			}
-			this_BEGIN_31=RULE_BEGIN
+			this_BEGIN_30=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_31, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_30, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPortGroupPortGroupParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPortGroupPortGroupParserRuleCall_10_2_0());
 					}
-					lv_portGroup_32_0=rulePortGroup
+					lv_portGroup_31_0=rulePortGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3564,23 +3486,23 @@ ruleFunctionalDevice returns [EObject current=null]
 						add(
 							$current,
 							"portGroup",
-							lv_portGroup_32_0,
+							lv_portGroup_31_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_33=Comma
+				otherlv_32=Comma
 				{
-					newLeafNode(otherlv_33, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_32, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPortGroupPortGroupParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPortGroupPortGroupParserRuleCall_10_3_1_0());
 						}
-						lv_portGroup_34_0=rulePortGroup
+						lv_portGroup_33_0=rulePortGroup
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3588,33 +3510,33 @@ ruleFunctionalDevice returns [EObject current=null]
 							add(
 								$current,
 								"portGroup",
-								lv_portGroup_34_0,
+								lv_portGroup_33_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_35=RULE_END
+			this_END_34=RULE_END
 			{
-				newLeafNode(this_END_35, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_34, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_36=Connector
+			otherlv_35=Connector
 			{
-				newLeafNode(otherlv_36, grammarAccess.getFunctionalDeviceAccess().getConnectorKeyword_12_0());
+				newLeafNode(otherlv_35, grammarAccess.getFunctionalDeviceAccess().getConnectorKeyword_11_0());
 			}
-			this_BEGIN_37=RULE_BEGIN
+			this_BEGIN_36=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_37, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_36, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getConnectorFunctionConnectorParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getConnectorFunctionConnectorParserRuleCall_11_2_0());
 					}
-					lv_connector_38_0=ruleFunctionConnector
+					lv_connector_37_0=ruleFunctionConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3622,23 +3544,23 @@ ruleFunctionalDevice returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_38_0,
+							lv_connector_37_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_39=Comma
+				otherlv_38=Comma
 				{
-					newLeafNode(otherlv_39, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_38, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getConnectorFunctionConnectorParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getConnectorFunctionConnectorParserRuleCall_11_3_1_0());
 						}
-						lv_connector_40_0=ruleFunctionConnector
+						lv_connector_39_0=ruleFunctionConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3646,33 +3568,33 @@ ruleFunctionalDevice returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_40_0,
+								lv_connector_39_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_41=RULE_END
+			this_END_40=RULE_END
 			{
-				newLeafNode(this_END_41, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_40, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_42=Port
+			otherlv_41=Port
 			{
-				newLeafNode(otherlv_42, grammarAccess.getFunctionalDeviceAccess().getPortKeyword_13_0());
+				newLeafNode(otherlv_41, grammarAccess.getFunctionalDeviceAccess().getPortKeyword_12_0());
 			}
-			this_BEGIN_43=RULE_BEGIN
+			this_BEGIN_42=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_43, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_42, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPortFunctionPortParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPortFunctionPortParserRuleCall_12_2_0());
 					}
-					lv_port_44_0=ruleFunctionPort
+					lv_port_43_0=ruleFunctionPort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3680,23 +3602,23 @@ ruleFunctionalDevice returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_44_0,
+							lv_port_43_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_45=Comma
+				otherlv_44=Comma
 				{
-					newLeafNode(otherlv_45, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_44, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPortFunctionPortParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPortFunctionPortParserRuleCall_12_3_1_0());
 						}
-						lv_port_46_0=ruleFunctionPort
+						lv_port_45_0=ruleFunctionPort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3704,33 +3626,33 @@ ruleFunctionalDevice returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_46_0,
+								lv_port_45_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_47=RULE_END
+			this_END_46=RULE_END
 			{
-				newLeafNode(this_END_47, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_46, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_48=Part
+			otherlv_47=Part
 			{
-				newLeafNode(otherlv_48, grammarAccess.getFunctionalDeviceAccess().getPartKeyword_14_0());
+				newLeafNode(otherlv_47, grammarAccess.getFunctionalDeviceAccess().getPartKeyword_13_0());
 			}
-			this_BEGIN_49=RULE_BEGIN
+			this_BEGIN_48=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_49, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_48, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPartAnalysisFunctionPrototypeParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPartAnalysisFunctionPrototypeParserRuleCall_13_2_0());
 					}
-					lv_part_50_0=ruleAnalysisFunctionPrototype
+					lv_part_49_0=ruleAnalysisFunctionPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3738,23 +3660,23 @@ ruleFunctionalDevice returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_50_0,
+							lv_part_49_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.AnalysisFunctionPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_51=Comma
+				otherlv_50=Comma
 				{
-					newLeafNode(otherlv_51, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_50, grammarAccess.getFunctionalDeviceAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPartAnalysisFunctionPrototypeParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionalDeviceAccess().getPartAnalysisFunctionPrototypeParserRuleCall_13_3_1_0());
 						}
-						lv_part_52_0=ruleAnalysisFunctionPrototype
+						lv_part_51_0=ruleAnalysisFunctionPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionalDeviceRule());
@@ -3762,21 +3684,21 @@ ruleFunctionalDevice returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_52_0,
+								lv_part_51_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.AnalysisFunctionPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_53=RULE_END
+			this_END_52=RULE_END
 			{
-				newLeafNode(this_END_53, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_52, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
-		this_END_54=RULE_END
+		this_END_53=RULE_END
 		{
-			newLeafNode(this_END_54, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_15());
+			newLeafNode(this_END_53, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_14());
 		}
 	)
 ;
@@ -3801,20 +3723,12 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFunctionClientServerInterfaceAccess().getFunctionClientServerInterfaceKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getFunctionClientServerInterfaceAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFunctionClientServerInterfaceAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -3822,23 +3736,27 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getFunctionClientServerInterfaceAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getFunctionClientServerInterfaceAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getFunctionClientServerInterfaceAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -3846,7 +3764,7 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -3854,16 +3772,16 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getFunctionClientServerInterfaceAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getFunctionClientServerInterfaceAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -3871,7 +3789,7 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -3879,16 +3797,16 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getFunctionClientServerInterfaceAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getFunctionClientServerInterfaceAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -3896,7 +3814,7 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -3904,16 +3822,16 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Text
+			otherlv_9=Text
 			{
-				newLeafNode(otherlv_10, grammarAccess.getFunctionClientServerInterfaceAccess().getTextKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getFunctionClientServerInterfaceAccess().getTextKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getTextString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getTextString0ParserRuleCall_6_1_0());
 					}
-					lv_text_11_0=ruleString0
+					lv_text_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -3921,7 +3839,7 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 						set(
 							$current,
 							"text",
-							lv_text_11_0,
+							lv_text_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -3929,16 +3847,16 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=Uri
+			otherlv_11=Uri
 			{
-				newLeafNode(otherlv_12, grammarAccess.getFunctionClientServerInterfaceAccess().getUriKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getFunctionClientServerInterfaceAccess().getUriKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getUriString0ParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getUriString0ParserRuleCall_7_1_0());
 					}
-					lv_uri_13_0=ruleString0
+					lv_uri_12_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -3946,7 +3864,7 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 						set(
 							$current,
 							"uri",
-							lv_uri_13_0,
+							lv_uri_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -3954,20 +3872,20 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getFunctionClientServerInterfaceAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getFunctionClientServerInterfaceAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getFunctionClientServerInterfaceAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getFunctionClientServerInterfaceAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -3975,23 +3893,23 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getFunctionClientServerInterfaceAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getFunctionClientServerInterfaceAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -3999,33 +3917,33 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getFunctionClientServerInterfaceAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_18, grammarAccess.getFunctionClientServerInterfaceAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_20=Operation_1
+			otherlv_19=Operation_1
 			{
-				newLeafNode(otherlv_20, grammarAccess.getFunctionClientServerInterfaceAccess().getOperationKeyword_10_0());
+				newLeafNode(otherlv_19, grammarAccess.getFunctionClientServerInterfaceAccess().getOperationKeyword_9_0());
 			}
-			this_BEGIN_21=RULE_BEGIN
+			this_BEGIN_20=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_21, grammarAccess.getFunctionClientServerInterfaceAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_20, grammarAccess.getFunctionClientServerInterfaceAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getOperationOperationParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getOperationOperationParserRuleCall_9_2_0());
 					}
-					lv_operation_22_0=ruleOperation
+					lv_operation_21_0=ruleOperation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -4033,23 +3951,23 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 						add(
 							$current,
 							"operation",
-							lv_operation_22_0,
+							lv_operation_21_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Operation");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_23=Comma
+				otherlv_22=Comma
 				{
-					newLeafNode(otherlv_23, grammarAccess.getFunctionClientServerInterfaceAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_22, grammarAccess.getFunctionClientServerInterfaceAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getOperationOperationParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionClientServerInterfaceAccess().getOperationOperationParserRuleCall_9_3_1_0());
 						}
-						lv_operation_24_0=ruleOperation
+						lv_operation_23_0=ruleOperation
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionClientServerInterfaceRule());
@@ -4057,21 +3975,21 @@ ruleFunctionClientServerInterface returns [EObject current=null]
 							add(
 								$current,
 								"operation",
-								lv_operation_24_0,
+								lv_operation_23_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Operation");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_25=RULE_END
+			this_END_24=RULE_END
 			{
-				newLeafNode(this_END_25, grammarAccess.getFunctionClientServerInterfaceAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_24, grammarAccess.getFunctionClientServerInterfaceAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
-		this_END_26=RULE_END
+		this_END_25=RULE_END
 		{
-			newLeafNode(this_END_26, grammarAccess.getFunctionClientServerInterfaceAccess().getENDTerminalRuleCall_11());
+			newLeafNode(this_END_25, grammarAccess.getFunctionClientServerInterfaceAccess().getENDTerminalRuleCall_10());
 		}
 	)
 ;
@@ -4096,20 +4014,12 @@ ruleHardwareFunctionType returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getHardwareFunctionTypeAccess().getHardwareFunctionTypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getHardwareFunctionTypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4117,23 +4027,27 @@ ruleHardwareFunctionType returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getHardwareFunctionTypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getHardwareFunctionTypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4141,7 +4055,7 @@ ruleHardwareFunctionType returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -4149,16 +4063,16 @@ ruleHardwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getHardwareFunctionTypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getHardwareFunctionTypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4166,7 +4080,7 @@ ruleHardwareFunctionType returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -4174,16 +4088,16 @@ ruleHardwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getHardwareFunctionTypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getHardwareFunctionTypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4191,7 +4105,7 @@ ruleHardwareFunctionType returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -4199,16 +4113,16 @@ ruleHardwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=IsElementary
+			otherlv_9=IsElementary
 			{
-				newLeafNode(otherlv_10, grammarAccess.getHardwareFunctionTypeAccess().getIsElementaryKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getHardwareFunctionTypeAccess().getIsElementaryKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getIsElementaryBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getIsElementaryBooleanParserRuleCall_6_1_0());
 					}
-					lv_isElementary_11_0=ruleBoolean
+					lv_isElementary_10_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4216,7 +4130,7 @@ ruleHardwareFunctionType returns [EObject current=null]
 						set(
 							$current,
 							"isElementary",
-							lv_isElementary_11_0,
+							lv_isElementary_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -4224,13 +4138,13 @@ ruleHardwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=TraceableSpecification
+			otherlv_11=TraceableSpecification
 			{
-				newLeafNode(otherlv_12, grammarAccess.getHardwareFunctionTypeAccess().getTraceableSpecificationKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getHardwareFunctionTypeAccess().getTraceableSpecificationKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getHardwareFunctionTypeAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getHardwareFunctionTypeAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -4240,7 +4154,7 @@ ruleHardwareFunctionType returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -4249,9 +4163,9 @@ ruleHardwareFunctionType returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -4261,7 +4175,7 @@ ruleHardwareFunctionType returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -4270,15 +4184,15 @@ ruleHardwareFunctionType returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getHardwareFunctionTypeAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getHardwareFunctionTypeAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=HardwareComponent
+			otherlv_17=HardwareComponent
 			{
-				newLeafNode(otherlv_18, grammarAccess.getHardwareFunctionTypeAccess().getHardwareComponentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getHardwareFunctionTypeAccess().getHardwareComponentKeyword_8_0());
 			}
 			(
 				(
@@ -4288,7 +4202,7 @@ ruleHardwareFunctionType returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getHardwareComponentHardwareComponentTypeCrossReference_9_1_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getHardwareComponentHardwareComponentTypeCrossReference_8_1_0());
 					}
 					ruleEString
 					{
@@ -4298,20 +4212,20 @@ ruleHardwareFunctionType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_20=OwnedComment
+			otherlv_19=OwnedComment
 			{
-				newLeafNode(otherlv_20, grammarAccess.getHardwareFunctionTypeAccess().getOwnedCommentKeyword_10_0());
+				newLeafNode(otherlv_19, grammarAccess.getHardwareFunctionTypeAccess().getOwnedCommentKeyword_9_0());
 			}
-			this_BEGIN_21=RULE_BEGIN
+			this_BEGIN_20=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_21, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_20, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getOwnedCommentCommentParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
 					}
-					lv_ownedComment_22_0=ruleComment
+					lv_ownedComment_21_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4319,23 +4233,23 @@ ruleHardwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_22_0,
+							lv_ownedComment_21_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_23=Comma
+				otherlv_22=Comma
 				{
-					newLeafNode(otherlv_23, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_22, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getOwnedCommentCommentParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
 						}
-						lv_ownedComment_24_0=ruleComment
+						lv_ownedComment_23_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4343,33 +4257,33 @@ ruleHardwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_24_0,
+								lv_ownedComment_23_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_25=RULE_END
+			this_END_24=RULE_END
 			{
-				newLeafNode(this_END_25, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_24, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_26=OwnedRelationship
+			otherlv_25=OwnedRelationship
 			{
-				newLeafNode(otherlv_26, grammarAccess.getHardwareFunctionTypeAccess().getOwnedRelationshipKeyword_11_0());
+				newLeafNode(otherlv_25, grammarAccess.getHardwareFunctionTypeAccess().getOwnedRelationshipKeyword_10_0());
 			}
-			this_BEGIN_27=RULE_BEGIN
+			this_BEGIN_26=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_27, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_26, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getOwnedRelationshipRelationshipParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getOwnedRelationshipRelationshipParserRuleCall_10_2_0());
 					}
-					lv_ownedRelationship_28_0=ruleRelationship
+					lv_ownedRelationship_27_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4377,23 +4291,23 @@ ruleHardwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_28_0,
+							lv_ownedRelationship_27_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_29=Comma
+				otherlv_28=Comma
 				{
-					newLeafNode(otherlv_29, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_28, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getOwnedRelationshipRelationshipParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getOwnedRelationshipRelationshipParserRuleCall_10_3_1_0());
 						}
-						lv_ownedRelationship_30_0=ruleRelationship
+						lv_ownedRelationship_29_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4401,33 +4315,33 @@ ruleHardwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_30_0,
+								lv_ownedRelationship_29_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_31=RULE_END
+			this_END_30=RULE_END
 			{
-				newLeafNode(this_END_31, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_30, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_32=PortGroup_1
+			otherlv_31=PortGroup_1
 			{
-				newLeafNode(otherlv_32, grammarAccess.getHardwareFunctionTypeAccess().getPortGroupKeyword_12_0());
+				newLeafNode(otherlv_31, grammarAccess.getHardwareFunctionTypeAccess().getPortGroupKeyword_11_0());
 			}
-			this_BEGIN_33=RULE_BEGIN
+			this_BEGIN_32=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_33, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_32, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPortGroupPortGroupParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPortGroupPortGroupParserRuleCall_11_2_0());
 					}
-					lv_portGroup_34_0=rulePortGroup
+					lv_portGroup_33_0=rulePortGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4435,23 +4349,23 @@ ruleHardwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"portGroup",
-							lv_portGroup_34_0,
+							lv_portGroup_33_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_35=Comma
+				otherlv_34=Comma
 				{
-					newLeafNode(otherlv_35, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_34, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPortGroupPortGroupParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPortGroupPortGroupParserRuleCall_11_3_1_0());
 						}
-						lv_portGroup_36_0=rulePortGroup
+						lv_portGroup_35_0=rulePortGroup
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4459,33 +4373,33 @@ ruleHardwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"portGroup",
-								lv_portGroup_36_0,
+								lv_portGroup_35_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_37=RULE_END
+			this_END_36=RULE_END
 			{
-				newLeafNode(this_END_37, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_36, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_38=Connector
+			otherlv_37=Connector
 			{
-				newLeafNode(otherlv_38, grammarAccess.getHardwareFunctionTypeAccess().getConnectorKeyword_13_0());
+				newLeafNode(otherlv_37, grammarAccess.getHardwareFunctionTypeAccess().getConnectorKeyword_12_0());
 			}
-			this_BEGIN_39=RULE_BEGIN
+			this_BEGIN_38=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_39, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_38, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getConnectorFunctionConnectorParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getConnectorFunctionConnectorParserRuleCall_12_2_0());
 					}
-					lv_connector_40_0=ruleFunctionConnector
+					lv_connector_39_0=ruleFunctionConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4493,23 +4407,23 @@ ruleHardwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_40_0,
+							lv_connector_39_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_41=Comma
+				otherlv_40=Comma
 				{
-					newLeafNode(otherlv_41, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_40, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getConnectorFunctionConnectorParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getConnectorFunctionConnectorParserRuleCall_12_3_1_0());
 						}
-						lv_connector_42_0=ruleFunctionConnector
+						lv_connector_41_0=ruleFunctionConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4517,33 +4431,33 @@ ruleHardwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_42_0,
+								lv_connector_41_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_43=RULE_END
+			this_END_42=RULE_END
 			{
-				newLeafNode(this_END_43, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_42, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_44=Port
+			otherlv_43=Port
 			{
-				newLeafNode(otherlv_44, grammarAccess.getHardwareFunctionTypeAccess().getPortKeyword_14_0());
+				newLeafNode(otherlv_43, grammarAccess.getHardwareFunctionTypeAccess().getPortKeyword_13_0());
 			}
-			this_BEGIN_45=RULE_BEGIN
+			this_BEGIN_44=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_45, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_44, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPortFunctionPortParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPortFunctionPortParserRuleCall_13_2_0());
 					}
-					lv_port_46_0=ruleFunctionPort
+					lv_port_45_0=ruleFunctionPort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4551,23 +4465,23 @@ ruleHardwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_46_0,
+							lv_port_45_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_47=Comma
+				otherlv_46=Comma
 				{
-					newLeafNode(otherlv_47, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_46, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPortFunctionPortParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPortFunctionPortParserRuleCall_13_3_1_0());
 						}
-						lv_port_48_0=ruleFunctionPort
+						lv_port_47_0=ruleFunctionPort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4575,33 +4489,33 @@ ruleHardwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_48_0,
+								lv_port_47_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_49=RULE_END
+			this_END_48=RULE_END
 			{
-				newLeafNode(this_END_49, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_48, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
 		(
-			otherlv_50=Part
+			otherlv_49=Part
 			{
-				newLeafNode(otherlv_50, grammarAccess.getHardwareFunctionTypeAccess().getPartKeyword_15_0());
+				newLeafNode(otherlv_49, grammarAccess.getHardwareFunctionTypeAccess().getPartKeyword_14_0());
 			}
-			this_BEGIN_51=RULE_BEGIN
+			this_BEGIN_50=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_51, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_15_1());
+				newLeafNode(this_BEGIN_50, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_14_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPartDesignFunctionPrototypeParserRuleCall_15_2_0());
+						newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPartDesignFunctionPrototypeParserRuleCall_14_2_0());
 					}
-					lv_part_52_0=ruleDesignFunctionPrototype
+					lv_part_51_0=ruleDesignFunctionPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4609,23 +4523,23 @@ ruleHardwareFunctionType returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_52_0,
+							lv_part_51_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_53=Comma
+				otherlv_52=Comma
 				{
-					newLeafNode(otherlv_53, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_15_3_0());
+					newLeafNode(otherlv_52, grammarAccess.getHardwareFunctionTypeAccess().getCommaKeyword_14_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPartDesignFunctionPrototypeParserRuleCall_15_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareFunctionTypeAccess().getPartDesignFunctionPrototypeParserRuleCall_14_3_1_0());
 						}
-						lv_part_54_0=ruleDesignFunctionPrototype
+						lv_part_53_0=ruleDesignFunctionPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareFunctionTypeRule());
@@ -4633,21 +4547,21 @@ ruleHardwareFunctionType returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_54_0,
+								lv_part_53_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_55=RULE_END
+			this_END_54=RULE_END
 			{
-				newLeafNode(this_END_55, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_15_4());
+				newLeafNode(this_END_54, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_14_4());
 			}
 		)?
-		this_END_56=RULE_END
+		this_END_55=RULE_END
 		{
-			newLeafNode(this_END_56, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_16());
+			newLeafNode(this_END_55, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_15());
 		}
 	)
 ;
@@ -4672,20 +4586,12 @@ ruleLocalDeviceManager returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getLocalDeviceManagerAccess().getLocalDeviceManagerKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getLocalDeviceManagerAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4693,23 +4599,27 @@ ruleLocalDeviceManager returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getLocalDeviceManagerAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getLocalDeviceManagerAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4717,7 +4627,7 @@ ruleLocalDeviceManager returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -4725,16 +4635,16 @@ ruleLocalDeviceManager returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getLocalDeviceManagerAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getLocalDeviceManagerAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4742,7 +4652,7 @@ ruleLocalDeviceManager returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -4750,16 +4660,16 @@ ruleLocalDeviceManager returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getLocalDeviceManagerAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getLocalDeviceManagerAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4767,7 +4677,7 @@ ruleLocalDeviceManager returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -4775,16 +4685,16 @@ ruleLocalDeviceManager returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=IsElementary
+			otherlv_9=IsElementary
 			{
-				newLeafNode(otherlv_10, grammarAccess.getLocalDeviceManagerAccess().getIsElementaryKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getLocalDeviceManagerAccess().getIsElementaryKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getIsElementaryBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getIsElementaryBooleanParserRuleCall_6_1_0());
 					}
-					lv_isElementary_11_0=ruleBoolean
+					lv_isElementary_10_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4792,7 +4702,7 @@ ruleLocalDeviceManager returns [EObject current=null]
 						set(
 							$current,
 							"isElementary",
-							lv_isElementary_11_0,
+							lv_isElementary_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -4800,13 +4710,13 @@ ruleLocalDeviceManager returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=TraceableSpecification
+			otherlv_11=TraceableSpecification
 			{
-				newLeafNode(otherlv_12, grammarAccess.getLocalDeviceManagerAccess().getTraceableSpecificationKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getLocalDeviceManagerAccess().getTraceableSpecificationKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getLocalDeviceManagerAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getLocalDeviceManagerAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -4816,7 +4726,7 @@ ruleLocalDeviceManager returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -4825,9 +4735,9 @@ ruleLocalDeviceManager returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -4837,7 +4747,7 @@ ruleLocalDeviceManager returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -4846,26 +4756,26 @@ ruleLocalDeviceManager returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getLocalDeviceManagerAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getLocalDeviceManagerAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getLocalDeviceManagerAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getLocalDeviceManagerAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4873,23 +4783,23 @@ ruleLocalDeviceManager returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4897,33 +4807,33 @@ ruleLocalDeviceManager returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_24=OwnedRelationship
+			otherlv_23=OwnedRelationship
 			{
-				newLeafNode(otherlv_24, grammarAccess.getLocalDeviceManagerAccess().getOwnedRelationshipKeyword_10_0());
+				newLeafNode(otherlv_23, grammarAccess.getLocalDeviceManagerAccess().getOwnedRelationshipKeyword_9_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getOwnedRelationshipRelationshipParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
 					}
-					lv_ownedRelationship_26_0=ruleRelationship
+					lv_ownedRelationship_25_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4931,23 +4841,23 @@ ruleLocalDeviceManager returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_26_0,
+							lv_ownedRelationship_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getOwnedRelationshipRelationshipParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
 						}
-						lv_ownedRelationship_28_0=ruleRelationship
+						lv_ownedRelationship_27_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4955,33 +4865,33 @@ ruleLocalDeviceManager returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_28_0,
+								lv_ownedRelationship_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_28, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_30=PortGroup_1
+			otherlv_29=PortGroup_1
 			{
-				newLeafNode(otherlv_30, grammarAccess.getLocalDeviceManagerAccess().getPortGroupKeyword_11_0());
+				newLeafNode(otherlv_29, grammarAccess.getLocalDeviceManagerAccess().getPortGroupKeyword_10_0());
 			}
-			this_BEGIN_31=RULE_BEGIN
+			this_BEGIN_30=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_31, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_30, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPortGroupPortGroupParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPortGroupPortGroupParserRuleCall_10_2_0());
 					}
-					lv_portGroup_32_0=rulePortGroup
+					lv_portGroup_31_0=rulePortGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -4989,23 +4899,23 @@ ruleLocalDeviceManager returns [EObject current=null]
 						add(
 							$current,
 							"portGroup",
-							lv_portGroup_32_0,
+							lv_portGroup_31_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_33=Comma
+				otherlv_32=Comma
 				{
-					newLeafNode(otherlv_33, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_32, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPortGroupPortGroupParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPortGroupPortGroupParserRuleCall_10_3_1_0());
 						}
-						lv_portGroup_34_0=rulePortGroup
+						lv_portGroup_33_0=rulePortGroup
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -5013,33 +4923,33 @@ ruleLocalDeviceManager returns [EObject current=null]
 							add(
 								$current,
 								"portGroup",
-								lv_portGroup_34_0,
+								lv_portGroup_33_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_35=RULE_END
+			this_END_34=RULE_END
 			{
-				newLeafNode(this_END_35, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_34, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_36=Connector
+			otherlv_35=Connector
 			{
-				newLeafNode(otherlv_36, grammarAccess.getLocalDeviceManagerAccess().getConnectorKeyword_12_0());
+				newLeafNode(otherlv_35, grammarAccess.getLocalDeviceManagerAccess().getConnectorKeyword_11_0());
 			}
-			this_BEGIN_37=RULE_BEGIN
+			this_BEGIN_36=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_37, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_36, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getConnectorFunctionConnectorParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getConnectorFunctionConnectorParserRuleCall_11_2_0());
 					}
-					lv_connector_38_0=ruleFunctionConnector
+					lv_connector_37_0=ruleFunctionConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -5047,23 +4957,23 @@ ruleLocalDeviceManager returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_38_0,
+							lv_connector_37_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_39=Comma
+				otherlv_38=Comma
 				{
-					newLeafNode(otherlv_39, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_38, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getConnectorFunctionConnectorParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getConnectorFunctionConnectorParserRuleCall_11_3_1_0());
 						}
-						lv_connector_40_0=ruleFunctionConnector
+						lv_connector_39_0=ruleFunctionConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -5071,33 +4981,33 @@ ruleLocalDeviceManager returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_40_0,
+								lv_connector_39_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_41=RULE_END
+			this_END_40=RULE_END
 			{
-				newLeafNode(this_END_41, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_40, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_42=Port
+			otherlv_41=Port
 			{
-				newLeafNode(otherlv_42, grammarAccess.getLocalDeviceManagerAccess().getPortKeyword_13_0());
+				newLeafNode(otherlv_41, grammarAccess.getLocalDeviceManagerAccess().getPortKeyword_12_0());
 			}
-			this_BEGIN_43=RULE_BEGIN
+			this_BEGIN_42=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_43, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_42, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPortFunctionPortParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPortFunctionPortParserRuleCall_12_2_0());
 					}
-					lv_port_44_0=ruleFunctionPort
+					lv_port_43_0=ruleFunctionPort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -5105,23 +5015,23 @@ ruleLocalDeviceManager returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_44_0,
+							lv_port_43_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_45=Comma
+				otherlv_44=Comma
 				{
-					newLeafNode(otherlv_45, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_44, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPortFunctionPortParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPortFunctionPortParserRuleCall_12_3_1_0());
 						}
-						lv_port_46_0=ruleFunctionPort
+						lv_port_45_0=ruleFunctionPort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -5129,33 +5039,33 @@ ruleLocalDeviceManager returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_46_0,
+								lv_port_45_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_47=RULE_END
+			this_END_46=RULE_END
 			{
-				newLeafNode(this_END_47, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_46, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_48=Part
+			otherlv_47=Part
 			{
-				newLeafNode(otherlv_48, grammarAccess.getLocalDeviceManagerAccess().getPartKeyword_14_0());
+				newLeafNode(otherlv_47, grammarAccess.getLocalDeviceManagerAccess().getPartKeyword_13_0());
 			}
-			this_BEGIN_49=RULE_BEGIN
+			this_BEGIN_48=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_49, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_48, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPartDesignFunctionPrototypeParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPartDesignFunctionPrototypeParserRuleCall_13_2_0());
 					}
-					lv_part_50_0=ruleDesignFunctionPrototype
+					lv_part_49_0=ruleDesignFunctionPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -5163,23 +5073,23 @@ ruleLocalDeviceManager returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_50_0,
+							lv_part_49_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_51=Comma
+				otherlv_50=Comma
 				{
-					newLeafNode(otherlv_51, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_50, grammarAccess.getLocalDeviceManagerAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPartDesignFunctionPrototypeParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getLocalDeviceManagerAccess().getPartDesignFunctionPrototypeParserRuleCall_13_3_1_0());
 						}
-						lv_part_52_0=ruleDesignFunctionPrototype
+						lv_part_51_0=ruleDesignFunctionPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getLocalDeviceManagerRule());
@@ -5187,21 +5097,21 @@ ruleLocalDeviceManager returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_52_0,
+								lv_part_51_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_53=RULE_END
+			this_END_52=RULE_END
 			{
-				newLeafNode(this_END_53, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_52, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
-		this_END_54=RULE_END
+		this_END_53=RULE_END
 		{
-			newLeafNode(this_END_54, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_15());
+			newLeafNode(this_END_53, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_14());
 		}
 	)
 ;
@@ -5226,20 +5136,12 @@ ruleActuator returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getActuatorAccess().getActuatorKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getActuatorAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getActuatorAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getActuatorAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5247,23 +5149,27 @@ ruleActuator returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getActuatorAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getActuatorAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5271,7 +5177,7 @@ ruleActuator returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -5279,16 +5185,16 @@ ruleActuator returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getActuatorAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getActuatorAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5296,7 +5202,7 @@ ruleActuator returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -5304,16 +5210,16 @@ ruleActuator returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getActuatorAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getActuatorAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5321,7 +5227,7 @@ ruleActuator returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -5329,13 +5235,13 @@ ruleActuator returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=TraceableSpecification
+			otherlv_9=TraceableSpecification
 			{
-				newLeafNode(otherlv_10, grammarAccess.getActuatorAccess().getTraceableSpecificationKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getActuatorAccess().getTraceableSpecificationKeyword_6_0());
 			}
-			otherlv_11=LeftParenthesis
+			otherlv_10=LeftParenthesis
 			{
-				newLeafNode(otherlv_11, grammarAccess.getActuatorAccess().getLeftParenthesisKeyword_7_1());
+				newLeafNode(otherlv_10, grammarAccess.getActuatorAccess().getLeftParenthesisKeyword_6_1());
 			}
 			(
 				(
@@ -5345,7 +5251,7 @@ ruleActuator returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getTraceableSpecificationTraceableSpecificationCrossReference_6_2_0());
 					}
 					ruleEString
 					{
@@ -5354,9 +5260,9 @@ ruleActuator returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getActuatorAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getActuatorAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
@@ -5366,7 +5272,7 @@ ruleActuator returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getTraceableSpecificationTraceableSpecificationCrossReference_6_3_1_0());
 						}
 						ruleEString
 						{
@@ -5375,26 +5281,26 @@ ruleActuator returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_15=RightParenthesis
+			otherlv_14=RightParenthesis
 			{
-				newLeafNode(otherlv_15, grammarAccess.getActuatorAccess().getRightParenthesisKeyword_7_4());
+				newLeafNode(otherlv_14, grammarAccess.getActuatorAccess().getRightParenthesisKeyword_6_4());
 			}
 		)?
 		(
-			otherlv_16=OwnedComment
+			otherlv_15=OwnedComment
 			{
-				newLeafNode(otherlv_16, grammarAccess.getActuatorAccess().getOwnedCommentKeyword_8_0());
+				newLeafNode(otherlv_15, grammarAccess.getActuatorAccess().getOwnedCommentKeyword_7_0());
 			}
-			this_BEGIN_17=RULE_BEGIN
+			this_BEGIN_16=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_8_1());
+				newLeafNode(this_BEGIN_16, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_7_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
 					}
-					lv_ownedComment_18_0=ruleComment
+					lv_ownedComment_17_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5402,23 +5308,23 @@ ruleActuator returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_18_0,
+							lv_ownedComment_17_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_18=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getActuatorAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_18, grammarAccess.getActuatorAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
 						}
-						lv_ownedComment_20_0=ruleComment
+						lv_ownedComment_19_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5426,33 +5332,33 @@ ruleActuator returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_20_0,
+								lv_ownedComment_19_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
+			this_END_20=RULE_END
 			{
-				newLeafNode(this_END_21, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_8_4());
+				newLeafNode(this_END_20, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_7_4());
 			}
 		)?
 		(
-			otherlv_22=OwnedRelationship
+			otherlv_21=OwnedRelationship
 			{
-				newLeafNode(otherlv_22, grammarAccess.getActuatorAccess().getOwnedRelationshipKeyword_9_0());
+				newLeafNode(otherlv_21, grammarAccess.getActuatorAccess().getOwnedRelationshipKeyword_8_0());
 			}
-			this_BEGIN_23=RULE_BEGIN
+			this_BEGIN_22=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_23, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_22, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getOwnedRelationshipRelationshipParserRuleCall_8_2_0());
 					}
-					lv_ownedRelationship_24_0=ruleRelationship
+					lv_ownedRelationship_23_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5460,23 +5366,23 @@ ruleActuator returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_24_0,
+							lv_ownedRelationship_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=Comma
+				otherlv_24=Comma
 				{
-					newLeafNode(otherlv_25, grammarAccess.getActuatorAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_24, grammarAccess.getActuatorAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getOwnedRelationshipRelationshipParserRuleCall_8_3_1_0());
 						}
-						lv_ownedRelationship_26_0=ruleRelationship
+						lv_ownedRelationship_25_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5484,33 +5390,33 @@ ruleActuator returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_26_0,
+								lv_ownedRelationship_25_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_27=RULE_END
+			this_END_26=RULE_END
 			{
-				newLeafNode(this_END_27, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_26, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_28=Pin
+			otherlv_27=Pin
 			{
-				newLeafNode(otherlv_28, grammarAccess.getActuatorAccess().getPinKeyword_10_0());
+				newLeafNode(otherlv_27, grammarAccess.getActuatorAccess().getPinKeyword_9_0());
 			}
-			this_BEGIN_29=RULE_BEGIN
+			this_BEGIN_28=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_29, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_28, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getPinHardwarePinParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getPinHardwarePinParserRuleCall_9_2_0());
 					}
-					lv_pin_30_0=ruleHardwarePin
+					lv_pin_29_0=ruleHardwarePin
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5518,23 +5424,23 @@ ruleActuator returns [EObject current=null]
 						add(
 							$current,
 							"pin",
-							lv_pin_30_0,
+							lv_pin_29_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_31=Comma
+				otherlv_30=Comma
 				{
-					newLeafNode(otherlv_31, grammarAccess.getActuatorAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_30, grammarAccess.getActuatorAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getPinHardwarePinParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getPinHardwarePinParserRuleCall_9_3_1_0());
 						}
-						lv_pin_32_0=ruleHardwarePin
+						lv_pin_31_0=ruleHardwarePin
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5542,33 +5448,33 @@ ruleActuator returns [EObject current=null]
 							add(
 								$current,
 								"pin",
-								lv_pin_32_0,
+								lv_pin_31_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_33=RULE_END
+			this_END_32=RULE_END
 			{
-				newLeafNode(this_END_33, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_32, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_34=Part
+			otherlv_33=Part
 			{
-				newLeafNode(otherlv_34, grammarAccess.getActuatorAccess().getPartKeyword_11_0());
+				newLeafNode(otherlv_33, grammarAccess.getActuatorAccess().getPartKeyword_10_0());
 			}
-			this_BEGIN_35=RULE_BEGIN
+			this_BEGIN_34=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_35, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_34, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getPartHardwareComponentPrototypeParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getPartHardwareComponentPrototypeParserRuleCall_10_2_0());
 					}
-					lv_part_36_0=ruleHardwareComponentPrototype
+					lv_part_35_0=ruleHardwareComponentPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5576,23 +5482,23 @@ ruleActuator returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_36_0,
+							lv_part_35_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_37=Comma
+				otherlv_36=Comma
 				{
-					newLeafNode(otherlv_37, grammarAccess.getActuatorAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_36, grammarAccess.getActuatorAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getPartHardwareComponentPrototypeParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getPartHardwareComponentPrototypeParserRuleCall_10_3_1_0());
 						}
-						lv_part_38_0=ruleHardwareComponentPrototype
+						lv_part_37_0=ruleHardwareComponentPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5600,33 +5506,33 @@ ruleActuator returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_38_0,
+								lv_part_37_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_39=RULE_END
+			this_END_38=RULE_END
 			{
-				newLeafNode(this_END_39, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_38, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_40=Connector
+			otherlv_39=Connector
 			{
-				newLeafNode(otherlv_40, grammarAccess.getActuatorAccess().getConnectorKeyword_12_0());
+				newLeafNode(otherlv_39, grammarAccess.getActuatorAccess().getConnectorKeyword_11_0());
 			}
-			this_BEGIN_41=RULE_BEGIN
+			this_BEGIN_40=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_41, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_40, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getConnectorHardwareConnectorParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getConnectorHardwareConnectorParserRuleCall_11_2_0());
 					}
-					lv_connector_42_0=ruleHardwareConnector
+					lv_connector_41_0=ruleHardwareConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5634,23 +5540,23 @@ ruleActuator returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_42_0,
+							lv_connector_41_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_43=Comma
+				otherlv_42=Comma
 				{
-					newLeafNode(otherlv_43, grammarAccess.getActuatorAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_42, grammarAccess.getActuatorAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getConnectorHardwareConnectorParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getConnectorHardwareConnectorParserRuleCall_11_3_1_0());
 						}
-						lv_connector_44_0=ruleHardwareConnector
+						lv_connector_43_0=ruleHardwareConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5658,33 +5564,33 @@ ruleActuator returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_44_0,
+								lv_connector_43_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_45=RULE_END
+			this_END_44=RULE_END
 			{
-				newLeafNode(this_END_45, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_44, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_46=Port
+			otherlv_45=Port
 			{
-				newLeafNode(otherlv_46, grammarAccess.getActuatorAccess().getPortKeyword_13_0());
+				newLeafNode(otherlv_45, grammarAccess.getActuatorAccess().getPortKeyword_12_0());
 			}
-			this_BEGIN_47=RULE_BEGIN
+			this_BEGIN_46=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_47, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_46, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getPortHardwarePortParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getPortHardwarePortParserRuleCall_12_2_0());
 					}
-					lv_port_48_0=ruleHardwarePort
+					lv_port_47_0=ruleHardwarePort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5692,23 +5598,23 @@ ruleActuator returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_48_0,
+							lv_port_47_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_49=Comma
+				otherlv_48=Comma
 				{
-					newLeafNode(otherlv_49, grammarAccess.getActuatorAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_48, grammarAccess.getActuatorAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getPortHardwarePortParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getPortHardwarePortParserRuleCall_12_3_1_0());
 						}
-						lv_port_50_0=ruleHardwarePort
+						lv_port_49_0=ruleHardwarePort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5716,33 +5622,33 @@ ruleActuator returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_50_0,
+								lv_port_49_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_51=RULE_END
+			this_END_50=RULE_END
 			{
-				newLeafNode(this_END_51, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_50, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_52=PortConnector
+			otherlv_51=PortConnector
 			{
-				newLeafNode(otherlv_52, grammarAccess.getActuatorAccess().getPortConnectorKeyword_14_0());
+				newLeafNode(otherlv_51, grammarAccess.getActuatorAccess().getPortConnectorKeyword_13_0());
 			}
-			this_BEGIN_53=RULE_BEGIN
+			this_BEGIN_52=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_53, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_52, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getPortConnectorPortConnectorParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getPortConnectorPortConnectorParserRuleCall_13_2_0());
 					}
-					lv_portConnector_54_0=rulePortConnector
+					lv_portConnector_53_0=rulePortConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5750,23 +5656,23 @@ ruleActuator returns [EObject current=null]
 						add(
 							$current,
 							"portConnector",
-							lv_portConnector_54_0,
+							lv_portConnector_53_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_55=Comma
+				otherlv_54=Comma
 				{
-					newLeafNode(otherlv_55, grammarAccess.getActuatorAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_54, grammarAccess.getActuatorAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getPortConnectorPortConnectorParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getPortConnectorPortConnectorParserRuleCall_13_3_1_0());
 						}
-						lv_portConnector_56_0=rulePortConnector
+						lv_portConnector_55_0=rulePortConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -5774,21 +5680,21 @@ ruleActuator returns [EObject current=null]
 							add(
 								$current,
 								"portConnector",
-								lv_portConnector_56_0,
+								lv_portConnector_55_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_57=RULE_END
+			this_END_56=RULE_END
 			{
-				newLeafNode(this_END_57, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_56, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
-		this_END_58=RULE_END
+		this_END_57=RULE_END
 		{
-			newLeafNode(this_END_58, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_15());
+			newLeafNode(this_END_57, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_14());
 		}
 	)
 ;
@@ -5813,20 +5719,12 @@ ruleElectricalComponent returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getElectricalComponentAccess().getElectricalComponentKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getElectricalComponentAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getElectricalComponentAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getElectricalComponentAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -5834,23 +5732,27 @@ ruleElectricalComponent returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getElectricalComponentAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getElectricalComponentAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -5858,7 +5760,7 @@ ruleElectricalComponent returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -5866,16 +5768,16 @@ ruleElectricalComponent returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getElectricalComponentAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getElectricalComponentAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -5883,7 +5785,7 @@ ruleElectricalComponent returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -5891,16 +5793,16 @@ ruleElectricalComponent returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getElectricalComponentAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getElectricalComponentAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -5908,7 +5810,7 @@ ruleElectricalComponent returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -5916,16 +5818,16 @@ ruleElectricalComponent returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=IsActive
+			otherlv_9=IsActive
 			{
-				newLeafNode(otherlv_10, grammarAccess.getElectricalComponentAccess().getIsActiveKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getElectricalComponentAccess().getIsActiveKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getIsActiveBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getIsActiveBooleanParserRuleCall_6_1_0());
 					}
-					lv_isActive_11_0=ruleBoolean
+					lv_isActive_10_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -5933,7 +5835,7 @@ ruleElectricalComponent returns [EObject current=null]
 						set(
 							$current,
 							"isActive",
-							lv_isActive_11_0,
+							lv_isActive_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -5941,13 +5843,13 @@ ruleElectricalComponent returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=TraceableSpecification
+			otherlv_11=TraceableSpecification
 			{
-				newLeafNode(otherlv_12, grammarAccess.getElectricalComponentAccess().getTraceableSpecificationKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getElectricalComponentAccess().getTraceableSpecificationKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getElectricalComponentAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getElectricalComponentAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -5957,7 +5859,7 @@ ruleElectricalComponent returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -5966,9 +5868,9 @@ ruleElectricalComponent returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getElectricalComponentAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getElectricalComponentAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -5978,7 +5880,7 @@ ruleElectricalComponent returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getElectricalComponentAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getElectricalComponentAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -5987,26 +5889,26 @@ ruleElectricalComponent returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getElectricalComponentAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getElectricalComponentAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getElectricalComponentAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getElectricalComponentAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6014,23 +5916,23 @@ ruleElectricalComponent returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getElectricalComponentAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getElectricalComponentAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getElectricalComponentAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getElectricalComponentAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6038,33 +5940,33 @@ ruleElectricalComponent returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_24=OwnedRelationship
+			otherlv_23=OwnedRelationship
 			{
-				newLeafNode(otherlv_24, grammarAccess.getElectricalComponentAccess().getOwnedRelationshipKeyword_10_0());
+				newLeafNode(otherlv_23, grammarAccess.getElectricalComponentAccess().getOwnedRelationshipKeyword_9_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getOwnedRelationshipRelationshipParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
 					}
-					lv_ownedRelationship_26_0=ruleRelationship
+					lv_ownedRelationship_25_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6072,23 +5974,23 @@ ruleElectricalComponent returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_26_0,
+							lv_ownedRelationship_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getElectricalComponentAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getElectricalComponentAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getElectricalComponentAccess().getOwnedRelationshipRelationshipParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getElectricalComponentAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
 						}
-						lv_ownedRelationship_28_0=ruleRelationship
+						lv_ownedRelationship_27_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6096,33 +5998,33 @@ ruleElectricalComponent returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_28_0,
+								lv_ownedRelationship_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_28, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_30=Pin
+			otherlv_29=Pin
 			{
-				newLeafNode(otherlv_30, grammarAccess.getElectricalComponentAccess().getPinKeyword_11_0());
+				newLeafNode(otherlv_29, grammarAccess.getElectricalComponentAccess().getPinKeyword_10_0());
 			}
-			this_BEGIN_31=RULE_BEGIN
+			this_BEGIN_30=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_31, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_30, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getPinHardwarePinParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getPinHardwarePinParserRuleCall_10_2_0());
 					}
-					lv_pin_32_0=ruleHardwarePin
+					lv_pin_31_0=ruleHardwarePin
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6130,23 +6032,23 @@ ruleElectricalComponent returns [EObject current=null]
 						add(
 							$current,
 							"pin",
-							lv_pin_32_0,
+							lv_pin_31_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_33=Comma
+				otherlv_32=Comma
 				{
-					newLeafNode(otherlv_33, grammarAccess.getElectricalComponentAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_32, grammarAccess.getElectricalComponentAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getElectricalComponentAccess().getPinHardwarePinParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getElectricalComponentAccess().getPinHardwarePinParserRuleCall_10_3_1_0());
 						}
-						lv_pin_34_0=ruleHardwarePin
+						lv_pin_33_0=ruleHardwarePin
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6154,33 +6056,33 @@ ruleElectricalComponent returns [EObject current=null]
 							add(
 								$current,
 								"pin",
-								lv_pin_34_0,
+								lv_pin_33_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_35=RULE_END
+			this_END_34=RULE_END
 			{
-				newLeafNode(this_END_35, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_34, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_36=Part
+			otherlv_35=Part
 			{
-				newLeafNode(otherlv_36, grammarAccess.getElectricalComponentAccess().getPartKeyword_12_0());
+				newLeafNode(otherlv_35, grammarAccess.getElectricalComponentAccess().getPartKeyword_11_0());
 			}
-			this_BEGIN_37=RULE_BEGIN
+			this_BEGIN_36=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_37, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_36, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getPartHardwareComponentPrototypeParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getPartHardwareComponentPrototypeParserRuleCall_11_2_0());
 					}
-					lv_part_38_0=ruleHardwareComponentPrototype
+					lv_part_37_0=ruleHardwareComponentPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6188,23 +6090,23 @@ ruleElectricalComponent returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_38_0,
+							lv_part_37_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_39=Comma
+				otherlv_38=Comma
 				{
-					newLeafNode(otherlv_39, grammarAccess.getElectricalComponentAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_38, grammarAccess.getElectricalComponentAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getElectricalComponentAccess().getPartHardwareComponentPrototypeParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getElectricalComponentAccess().getPartHardwareComponentPrototypeParserRuleCall_11_3_1_0());
 						}
-						lv_part_40_0=ruleHardwareComponentPrototype
+						lv_part_39_0=ruleHardwareComponentPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6212,33 +6114,33 @@ ruleElectricalComponent returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_40_0,
+								lv_part_39_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_41=RULE_END
+			this_END_40=RULE_END
 			{
-				newLeafNode(this_END_41, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_40, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_42=Connector
+			otherlv_41=Connector
 			{
-				newLeafNode(otherlv_42, grammarAccess.getElectricalComponentAccess().getConnectorKeyword_13_0());
+				newLeafNode(otherlv_41, grammarAccess.getElectricalComponentAccess().getConnectorKeyword_12_0());
 			}
-			this_BEGIN_43=RULE_BEGIN
+			this_BEGIN_42=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_43, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_42, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getConnectorHardwareConnectorParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getConnectorHardwareConnectorParserRuleCall_12_2_0());
 					}
-					lv_connector_44_0=ruleHardwareConnector
+					lv_connector_43_0=ruleHardwareConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6246,23 +6148,23 @@ ruleElectricalComponent returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_44_0,
+							lv_connector_43_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_45=Comma
+				otherlv_44=Comma
 				{
-					newLeafNode(otherlv_45, grammarAccess.getElectricalComponentAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_44, grammarAccess.getElectricalComponentAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getElectricalComponentAccess().getConnectorHardwareConnectorParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getElectricalComponentAccess().getConnectorHardwareConnectorParserRuleCall_12_3_1_0());
 						}
-						lv_connector_46_0=ruleHardwareConnector
+						lv_connector_45_0=ruleHardwareConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6270,33 +6172,33 @@ ruleElectricalComponent returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_46_0,
+								lv_connector_45_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_47=RULE_END
+			this_END_46=RULE_END
 			{
-				newLeafNode(this_END_47, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_46, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_48=Port
+			otherlv_47=Port
 			{
-				newLeafNode(otherlv_48, grammarAccess.getElectricalComponentAccess().getPortKeyword_14_0());
+				newLeafNode(otherlv_47, grammarAccess.getElectricalComponentAccess().getPortKeyword_13_0());
 			}
-			this_BEGIN_49=RULE_BEGIN
+			this_BEGIN_48=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_49, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_48, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getPortHardwarePortParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getPortHardwarePortParserRuleCall_13_2_0());
 					}
-					lv_port_50_0=ruleHardwarePort
+					lv_port_49_0=ruleHardwarePort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6304,23 +6206,23 @@ ruleElectricalComponent returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_50_0,
+							lv_port_49_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_51=Comma
+				otherlv_50=Comma
 				{
-					newLeafNode(otherlv_51, grammarAccess.getElectricalComponentAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_50, grammarAccess.getElectricalComponentAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getElectricalComponentAccess().getPortHardwarePortParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getElectricalComponentAccess().getPortHardwarePortParserRuleCall_13_3_1_0());
 						}
-						lv_port_52_0=ruleHardwarePort
+						lv_port_51_0=ruleHardwarePort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6328,33 +6230,33 @@ ruleElectricalComponent returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_52_0,
+								lv_port_51_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_53=RULE_END
+			this_END_52=RULE_END
 			{
-				newLeafNode(this_END_53, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_52, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
 		(
-			otherlv_54=PortConnector
+			otherlv_53=PortConnector
 			{
-				newLeafNode(otherlv_54, grammarAccess.getElectricalComponentAccess().getPortConnectorKeyword_15_0());
+				newLeafNode(otherlv_53, grammarAccess.getElectricalComponentAccess().getPortConnectorKeyword_14_0());
 			}
-			this_BEGIN_55=RULE_BEGIN
+			this_BEGIN_54=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_55, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_15_1());
+				newLeafNode(this_BEGIN_54, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_14_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElectricalComponentAccess().getPortConnectorPortConnectorParserRuleCall_15_2_0());
+						newCompositeNode(grammarAccess.getElectricalComponentAccess().getPortConnectorPortConnectorParserRuleCall_14_2_0());
 					}
-					lv_portConnector_56_0=rulePortConnector
+					lv_portConnector_55_0=rulePortConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6362,23 +6264,23 @@ ruleElectricalComponent returns [EObject current=null]
 						add(
 							$current,
 							"portConnector",
-							lv_portConnector_56_0,
+							lv_portConnector_55_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_57=Comma
+				otherlv_56=Comma
 				{
-					newLeafNode(otherlv_57, grammarAccess.getElectricalComponentAccess().getCommaKeyword_15_3_0());
+					newLeafNode(otherlv_56, grammarAccess.getElectricalComponentAccess().getCommaKeyword_14_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getElectricalComponentAccess().getPortConnectorPortConnectorParserRuleCall_15_3_1_0());
+							newCompositeNode(grammarAccess.getElectricalComponentAccess().getPortConnectorPortConnectorParserRuleCall_14_3_1_0());
 						}
-						lv_portConnector_58_0=rulePortConnector
+						lv_portConnector_57_0=rulePortConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getElectricalComponentRule());
@@ -6386,21 +6288,21 @@ ruleElectricalComponent returns [EObject current=null]
 							add(
 								$current,
 								"portConnector",
-								lv_portConnector_58_0,
+								lv_portConnector_57_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_59=RULE_END
+			this_END_58=RULE_END
 			{
-				newLeafNode(this_END_59, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_15_4());
+				newLeafNode(this_END_58, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_14_4());
 			}
 		)?
-		this_END_60=RULE_END
+		this_END_59=RULE_END
 		{
-			newLeafNode(this_END_60, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_16());
+			newLeafNode(this_END_59, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_15());
 		}
 	)
 ;
@@ -6425,20 +6327,12 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getHardwareComponentType_ImplAccess().getHardwareComponentTypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getHardwareComponentType_ImplAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6446,23 +6340,27 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getHardwareComponentType_ImplAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getHardwareComponentType_ImplAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6470,7 +6368,7 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -6478,16 +6376,16 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getHardwareComponentType_ImplAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getHardwareComponentType_ImplAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6495,7 +6393,7 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -6503,16 +6401,16 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getHardwareComponentType_ImplAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getHardwareComponentType_ImplAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6520,7 +6418,7 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -6528,13 +6426,13 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=TraceableSpecification
+			otherlv_9=TraceableSpecification
 			{
-				newLeafNode(otherlv_10, grammarAccess.getHardwareComponentType_ImplAccess().getTraceableSpecificationKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getHardwareComponentType_ImplAccess().getTraceableSpecificationKeyword_6_0());
 			}
-			otherlv_11=LeftParenthesis
+			otherlv_10=LeftParenthesis
 			{
-				newLeafNode(otherlv_11, grammarAccess.getHardwareComponentType_ImplAccess().getLeftParenthesisKeyword_7_1());
+				newLeafNode(otherlv_10, grammarAccess.getHardwareComponentType_ImplAccess().getLeftParenthesisKeyword_6_1());
 			}
 			(
 				(
@@ -6544,7 +6442,7 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_6_2_0());
 					}
 					ruleEString
 					{
@@ -6553,9 +6451,9 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
@@ -6565,7 +6463,7 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getTraceableSpecificationTraceableSpecificationCrossReference_6_3_1_0());
 						}
 						ruleEString
 						{
@@ -6574,26 +6472,26 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_15=RightParenthesis
+			otherlv_14=RightParenthesis
 			{
-				newLeafNode(otherlv_15, grammarAccess.getHardwareComponentType_ImplAccess().getRightParenthesisKeyword_7_4());
+				newLeafNode(otherlv_14, grammarAccess.getHardwareComponentType_ImplAccess().getRightParenthesisKeyword_6_4());
 			}
 		)?
 		(
-			otherlv_16=OwnedComment
+			otherlv_15=OwnedComment
 			{
-				newLeafNode(otherlv_16, grammarAccess.getHardwareComponentType_ImplAccess().getOwnedCommentKeyword_8_0());
+				newLeafNode(otherlv_15, grammarAccess.getHardwareComponentType_ImplAccess().getOwnedCommentKeyword_7_0());
 			}
-			this_BEGIN_17=RULE_BEGIN
+			this_BEGIN_16=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_8_1());
+				newLeafNode(this_BEGIN_16, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_7_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
 					}
-					lv_ownedComment_18_0=ruleComment
+					lv_ownedComment_17_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6601,23 +6499,23 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_18_0,
+							lv_ownedComment_17_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_18=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_18, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
 						}
-						lv_ownedComment_20_0=ruleComment
+						lv_ownedComment_19_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6625,33 +6523,33 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_20_0,
+								lv_ownedComment_19_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
+			this_END_20=RULE_END
 			{
-				newLeafNode(this_END_21, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_8_4());
+				newLeafNode(this_END_20, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_7_4());
 			}
 		)?
 		(
-			otherlv_22=OwnedRelationship
+			otherlv_21=OwnedRelationship
 			{
-				newLeafNode(otherlv_22, grammarAccess.getHardwareComponentType_ImplAccess().getOwnedRelationshipKeyword_9_0());
+				newLeafNode(otherlv_21, grammarAccess.getHardwareComponentType_ImplAccess().getOwnedRelationshipKeyword_8_0());
 			}
-			this_BEGIN_23=RULE_BEGIN
+			this_BEGIN_22=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_23, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_22, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_8_2_0());
 					}
-					lv_ownedRelationship_24_0=ruleRelationship
+					lv_ownedRelationship_23_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6659,23 +6557,23 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_24_0,
+							lv_ownedRelationship_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=Comma
+				otherlv_24=Comma
 				{
-					newLeafNode(otherlv_25, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_24, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getOwnedRelationshipRelationshipParserRuleCall_8_3_1_0());
 						}
-						lv_ownedRelationship_26_0=ruleRelationship
+						lv_ownedRelationship_25_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6683,33 +6581,33 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_26_0,
+								lv_ownedRelationship_25_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_27=RULE_END
+			this_END_26=RULE_END
 			{
-				newLeafNode(this_END_27, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_26, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_28=Pin
+			otherlv_27=Pin
 			{
-				newLeafNode(otherlv_28, grammarAccess.getHardwareComponentType_ImplAccess().getPinKeyword_10_0());
+				newLeafNode(otherlv_27, grammarAccess.getHardwareComponentType_ImplAccess().getPinKeyword_9_0());
 			}
-			this_BEGIN_29=RULE_BEGIN
+			this_BEGIN_28=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_29, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_28, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPinHardwarePinParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPinHardwarePinParserRuleCall_9_2_0());
 					}
-					lv_pin_30_0=ruleHardwarePin
+					lv_pin_29_0=ruleHardwarePin
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6717,23 +6615,23 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"pin",
-							lv_pin_30_0,
+							lv_pin_29_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_31=Comma
+				otherlv_30=Comma
 				{
-					newLeafNode(otherlv_31, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_30, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPinHardwarePinParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPinHardwarePinParserRuleCall_9_3_1_0());
 						}
-						lv_pin_32_0=ruleHardwarePin
+						lv_pin_31_0=ruleHardwarePin
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6741,33 +6639,33 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"pin",
-								lv_pin_32_0,
+								lv_pin_31_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_33=RULE_END
+			this_END_32=RULE_END
 			{
-				newLeafNode(this_END_33, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_32, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_34=Part
+			otherlv_33=Part
 			{
-				newLeafNode(otherlv_34, grammarAccess.getHardwareComponentType_ImplAccess().getPartKeyword_11_0());
+				newLeafNode(otherlv_33, grammarAccess.getHardwareComponentType_ImplAccess().getPartKeyword_10_0());
 			}
-			this_BEGIN_35=RULE_BEGIN
+			this_BEGIN_34=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_35, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_34, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPartHardwareComponentPrototypeParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPartHardwareComponentPrototypeParserRuleCall_10_2_0());
 					}
-					lv_part_36_0=ruleHardwareComponentPrototype
+					lv_part_35_0=ruleHardwareComponentPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6775,23 +6673,23 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_36_0,
+							lv_part_35_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_37=Comma
+				otherlv_36=Comma
 				{
-					newLeafNode(otherlv_37, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_36, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPartHardwareComponentPrototypeParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPartHardwareComponentPrototypeParserRuleCall_10_3_1_0());
 						}
-						lv_part_38_0=ruleHardwareComponentPrototype
+						lv_part_37_0=ruleHardwareComponentPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6799,33 +6697,33 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_38_0,
+								lv_part_37_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_39=RULE_END
+			this_END_38=RULE_END
 			{
-				newLeafNode(this_END_39, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_38, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_40=Connector
+			otherlv_39=Connector
 			{
-				newLeafNode(otherlv_40, grammarAccess.getHardwareComponentType_ImplAccess().getConnectorKeyword_12_0());
+				newLeafNode(otherlv_39, grammarAccess.getHardwareComponentType_ImplAccess().getConnectorKeyword_11_0());
 			}
-			this_BEGIN_41=RULE_BEGIN
+			this_BEGIN_40=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_41, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_40, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getConnectorHardwareConnectorParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getConnectorHardwareConnectorParserRuleCall_11_2_0());
 					}
-					lv_connector_42_0=ruleHardwareConnector
+					lv_connector_41_0=ruleHardwareConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6833,23 +6731,23 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_42_0,
+							lv_connector_41_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_43=Comma
+				otherlv_42=Comma
 				{
-					newLeafNode(otherlv_43, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_42, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getConnectorHardwareConnectorParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getConnectorHardwareConnectorParserRuleCall_11_3_1_0());
 						}
-						lv_connector_44_0=ruleHardwareConnector
+						lv_connector_43_0=ruleHardwareConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6857,33 +6755,33 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_44_0,
+								lv_connector_43_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_45=RULE_END
+			this_END_44=RULE_END
 			{
-				newLeafNode(this_END_45, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_44, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_46=Port
+			otherlv_45=Port
 			{
-				newLeafNode(otherlv_46, grammarAccess.getHardwareComponentType_ImplAccess().getPortKeyword_13_0());
+				newLeafNode(otherlv_45, grammarAccess.getHardwareComponentType_ImplAccess().getPortKeyword_12_0());
 			}
-			this_BEGIN_47=RULE_BEGIN
+			this_BEGIN_46=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_47, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_46, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPortHardwarePortParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPortHardwarePortParserRuleCall_12_2_0());
 					}
-					lv_port_48_0=ruleHardwarePort
+					lv_port_47_0=ruleHardwarePort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6891,23 +6789,23 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_48_0,
+							lv_port_47_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_49=Comma
+				otherlv_48=Comma
 				{
-					newLeafNode(otherlv_49, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_48, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPortHardwarePortParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPortHardwarePortParserRuleCall_12_3_1_0());
 						}
-						lv_port_50_0=ruleHardwarePort
+						lv_port_49_0=ruleHardwarePort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6915,33 +6813,33 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_50_0,
+								lv_port_49_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_51=RULE_END
+			this_END_50=RULE_END
 			{
-				newLeafNode(this_END_51, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_50, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_52=PortConnector
+			otherlv_51=PortConnector
 			{
-				newLeafNode(otherlv_52, grammarAccess.getHardwareComponentType_ImplAccess().getPortConnectorKeyword_14_0());
+				newLeafNode(otherlv_51, grammarAccess.getHardwareComponentType_ImplAccess().getPortConnectorKeyword_13_0());
 			}
-			this_BEGIN_53=RULE_BEGIN
+			this_BEGIN_52=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_53, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_52, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPortConnectorPortConnectorParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPortConnectorPortConnectorParserRuleCall_13_2_0());
 					}
-					lv_portConnector_54_0=rulePortConnector
+					lv_portConnector_53_0=rulePortConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6949,23 +6847,23 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 						add(
 							$current,
 							"portConnector",
-							lv_portConnector_54_0,
+							lv_portConnector_53_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_55=Comma
+				otherlv_54=Comma
 				{
-					newLeafNode(otherlv_55, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_54, grammarAccess.getHardwareComponentType_ImplAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPortConnectorPortConnectorParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentType_ImplAccess().getPortConnectorPortConnectorParserRuleCall_13_3_1_0());
 						}
-						lv_portConnector_56_0=rulePortConnector
+						lv_portConnector_55_0=rulePortConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareComponentType_ImplRule());
@@ -6973,21 +6871,21 @@ ruleHardwareComponentType_Impl returns [EObject current=null]
 							add(
 								$current,
 								"portConnector",
-								lv_portConnector_56_0,
+								lv_portConnector_55_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_57=RULE_END
+			this_END_56=RULE_END
 			{
-				newLeafNode(this_END_57, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_56, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
-		this_END_58=RULE_END
+		this_END_57=RULE_END
 		{
-			newLeafNode(this_END_58, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_15());
+			newLeafNode(this_END_57, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_14());
 		}
 	)
 ;
@@ -7012,20 +6910,12 @@ ruleNode returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getNodeAccess().getNodeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getNodeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNodeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getNodeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7033,23 +6923,27 @@ ruleNode returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getNodeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getNodeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7057,7 +6951,7 @@ ruleNode returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -7065,16 +6959,16 @@ ruleNode returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getNodeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getNodeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7082,7 +6976,7 @@ ruleNode returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -7090,16 +6984,16 @@ ruleNode returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getNodeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getNodeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7107,7 +7001,7 @@ ruleNode returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -7115,16 +7009,16 @@ ruleNode returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=ExecutionRate
+			otherlv_9=ExecutionRate
 			{
-				newLeafNode(otherlv_10, grammarAccess.getNodeAccess().getExecutionRateKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getNodeAccess().getExecutionRateKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getExecutionRateFloatParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getExecutionRateFloatParserRuleCall_6_1_0());
 					}
-					lv_executionRate_11_0=ruleFloat
+					lv_executionRate_10_0=ruleFloat
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7132,7 +7026,7 @@ ruleNode returns [EObject current=null]
 						set(
 							$current,
 							"executionRate",
-							lv_executionRate_11_0,
+							lv_executionRate_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Float");
 						afterParserOrEnumRuleCall();
 					}
@@ -7140,13 +7034,13 @@ ruleNode returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=TraceableSpecification
+			otherlv_11=TraceableSpecification
 			{
-				newLeafNode(otherlv_12, grammarAccess.getNodeAccess().getTraceableSpecificationKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getNodeAccess().getTraceableSpecificationKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getNodeAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getNodeAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -7156,7 +7050,7 @@ ruleNode returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -7165,9 +7059,9 @@ ruleNode returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getNodeAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getNodeAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -7177,7 +7071,7 @@ ruleNode returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getNodeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getNodeAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -7186,26 +7080,26 @@ ruleNode returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getNodeAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getNodeAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getNodeAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getNodeAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7213,23 +7107,23 @@ ruleNode returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getNodeAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getNodeAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getNodeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getNodeAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7237,33 +7131,33 @@ ruleNode returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getNodeAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getNodeAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_24=OwnedRelationship
+			otherlv_23=OwnedRelationship
 			{
-				newLeafNode(otherlv_24, grammarAccess.getNodeAccess().getOwnedRelationshipKeyword_10_0());
+				newLeafNode(otherlv_23, grammarAccess.getNodeAccess().getOwnedRelationshipKeyword_9_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getOwnedRelationshipRelationshipParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
 					}
-					lv_ownedRelationship_26_0=ruleRelationship
+					lv_ownedRelationship_25_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7271,23 +7165,23 @@ ruleNode returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_26_0,
+							lv_ownedRelationship_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getNodeAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getNodeAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getNodeAccess().getOwnedRelationshipRelationshipParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getNodeAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
 						}
-						lv_ownedRelationship_28_0=ruleRelationship
+						lv_ownedRelationship_27_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7295,33 +7189,33 @@ ruleNode returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_28_0,
+								lv_ownedRelationship_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getNodeAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_28, grammarAccess.getNodeAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_30=Pin
+			otherlv_29=Pin
 			{
-				newLeafNode(otherlv_30, grammarAccess.getNodeAccess().getPinKeyword_11_0());
+				newLeafNode(otherlv_29, grammarAccess.getNodeAccess().getPinKeyword_10_0());
 			}
-			this_BEGIN_31=RULE_BEGIN
+			this_BEGIN_30=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_31, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_30, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getPinHardwarePinParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getPinHardwarePinParserRuleCall_10_2_0());
 					}
-					lv_pin_32_0=ruleHardwarePin
+					lv_pin_31_0=ruleHardwarePin
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7329,23 +7223,23 @@ ruleNode returns [EObject current=null]
 						add(
 							$current,
 							"pin",
-							lv_pin_32_0,
+							lv_pin_31_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_33=Comma
+				otherlv_32=Comma
 				{
-					newLeafNode(otherlv_33, grammarAccess.getNodeAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_32, grammarAccess.getNodeAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getNodeAccess().getPinHardwarePinParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getNodeAccess().getPinHardwarePinParserRuleCall_10_3_1_0());
 						}
-						lv_pin_34_0=ruleHardwarePin
+						lv_pin_33_0=ruleHardwarePin
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7353,33 +7247,33 @@ ruleNode returns [EObject current=null]
 							add(
 								$current,
 								"pin",
-								lv_pin_34_0,
+								lv_pin_33_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_35=RULE_END
+			this_END_34=RULE_END
 			{
-				newLeafNode(this_END_35, grammarAccess.getNodeAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_34, grammarAccess.getNodeAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_36=Part
+			otherlv_35=Part
 			{
-				newLeafNode(otherlv_36, grammarAccess.getNodeAccess().getPartKeyword_12_0());
+				newLeafNode(otherlv_35, grammarAccess.getNodeAccess().getPartKeyword_11_0());
 			}
-			this_BEGIN_37=RULE_BEGIN
+			this_BEGIN_36=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_37, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_36, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getPartHardwareComponentPrototypeParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getPartHardwareComponentPrototypeParserRuleCall_11_2_0());
 					}
-					lv_part_38_0=ruleHardwareComponentPrototype
+					lv_part_37_0=ruleHardwareComponentPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7387,23 +7281,23 @@ ruleNode returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_38_0,
+							lv_part_37_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_39=Comma
+				otherlv_38=Comma
 				{
-					newLeafNode(otherlv_39, grammarAccess.getNodeAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_38, grammarAccess.getNodeAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getNodeAccess().getPartHardwareComponentPrototypeParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getNodeAccess().getPartHardwareComponentPrototypeParserRuleCall_11_3_1_0());
 						}
-						lv_part_40_0=ruleHardwareComponentPrototype
+						lv_part_39_0=ruleHardwareComponentPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7411,33 +7305,33 @@ ruleNode returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_40_0,
+								lv_part_39_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_41=RULE_END
+			this_END_40=RULE_END
 			{
-				newLeafNode(this_END_41, grammarAccess.getNodeAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_40, grammarAccess.getNodeAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_42=Connector
+			otherlv_41=Connector
 			{
-				newLeafNode(otherlv_42, grammarAccess.getNodeAccess().getConnectorKeyword_13_0());
+				newLeafNode(otherlv_41, grammarAccess.getNodeAccess().getConnectorKeyword_12_0());
 			}
-			this_BEGIN_43=RULE_BEGIN
+			this_BEGIN_42=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_43, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_42, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getConnectorHardwareConnectorParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getConnectorHardwareConnectorParserRuleCall_12_2_0());
 					}
-					lv_connector_44_0=ruleHardwareConnector
+					lv_connector_43_0=ruleHardwareConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7445,23 +7339,23 @@ ruleNode returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_44_0,
+							lv_connector_43_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_45=Comma
+				otherlv_44=Comma
 				{
-					newLeafNode(otherlv_45, grammarAccess.getNodeAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_44, grammarAccess.getNodeAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getNodeAccess().getConnectorHardwareConnectorParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getNodeAccess().getConnectorHardwareConnectorParserRuleCall_12_3_1_0());
 						}
-						lv_connector_46_0=ruleHardwareConnector
+						lv_connector_45_0=ruleHardwareConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7469,33 +7363,33 @@ ruleNode returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_46_0,
+								lv_connector_45_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_47=RULE_END
+			this_END_46=RULE_END
 			{
-				newLeafNode(this_END_47, grammarAccess.getNodeAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_46, grammarAccess.getNodeAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_48=Port
+			otherlv_47=Port
 			{
-				newLeafNode(otherlv_48, grammarAccess.getNodeAccess().getPortKeyword_14_0());
+				newLeafNode(otherlv_47, grammarAccess.getNodeAccess().getPortKeyword_13_0());
 			}
-			this_BEGIN_49=RULE_BEGIN
+			this_BEGIN_48=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_49, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_48, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getPortHardwarePortParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getPortHardwarePortParserRuleCall_13_2_0());
 					}
-					lv_port_50_0=ruleHardwarePort
+					lv_port_49_0=ruleHardwarePort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7503,23 +7397,23 @@ ruleNode returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_50_0,
+							lv_port_49_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_51=Comma
+				otherlv_50=Comma
 				{
-					newLeafNode(otherlv_51, grammarAccess.getNodeAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_50, grammarAccess.getNodeAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getNodeAccess().getPortHardwarePortParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getNodeAccess().getPortHardwarePortParserRuleCall_13_3_1_0());
 						}
-						lv_port_52_0=ruleHardwarePort
+						lv_port_51_0=ruleHardwarePort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7527,33 +7421,33 @@ ruleNode returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_52_0,
+								lv_port_51_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_53=RULE_END
+			this_END_52=RULE_END
 			{
-				newLeafNode(this_END_53, grammarAccess.getNodeAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_52, grammarAccess.getNodeAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
 		(
-			otherlv_54=PortConnector
+			otherlv_53=PortConnector
 			{
-				newLeafNode(otherlv_54, grammarAccess.getNodeAccess().getPortConnectorKeyword_15_0());
+				newLeafNode(otherlv_53, grammarAccess.getNodeAccess().getPortConnectorKeyword_14_0());
 			}
-			this_BEGIN_55=RULE_BEGIN
+			this_BEGIN_54=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_55, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_15_1());
+				newLeafNode(this_BEGIN_54, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_14_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNodeAccess().getPortConnectorPortConnectorParserRuleCall_15_2_0());
+						newCompositeNode(grammarAccess.getNodeAccess().getPortConnectorPortConnectorParserRuleCall_14_2_0());
 					}
-					lv_portConnector_56_0=rulePortConnector
+					lv_portConnector_55_0=rulePortConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7561,23 +7455,23 @@ ruleNode returns [EObject current=null]
 						add(
 							$current,
 							"portConnector",
-							lv_portConnector_56_0,
+							lv_portConnector_55_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_57=Comma
+				otherlv_56=Comma
 				{
-					newLeafNode(otherlv_57, grammarAccess.getNodeAccess().getCommaKeyword_15_3_0());
+					newLeafNode(otherlv_56, grammarAccess.getNodeAccess().getCommaKeyword_14_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getNodeAccess().getPortConnectorPortConnectorParserRuleCall_15_3_1_0());
+							newCompositeNode(grammarAccess.getNodeAccess().getPortConnectorPortConnectorParserRuleCall_14_3_1_0());
 						}
-						lv_portConnector_58_0=rulePortConnector
+						lv_portConnector_57_0=rulePortConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getNodeRule());
@@ -7585,21 +7479,21 @@ ruleNode returns [EObject current=null]
 							add(
 								$current,
 								"portConnector",
-								lv_portConnector_58_0,
+								lv_portConnector_57_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_59=RULE_END
+			this_END_58=RULE_END
 			{
-				newLeafNode(this_END_59, grammarAccess.getNodeAccess().getENDTerminalRuleCall_15_4());
+				newLeafNode(this_END_58, grammarAccess.getNodeAccess().getENDTerminalRuleCall_14_4());
 			}
 		)?
-		this_END_60=RULE_END
+		this_END_59=RULE_END
 		{
-			newLeafNode(this_END_60, grammarAccess.getNodeAccess().getENDTerminalRuleCall_16());
+			newLeafNode(this_END_59, grammarAccess.getNodeAccess().getENDTerminalRuleCall_15());
 		}
 	)
 ;
@@ -7624,20 +7518,12 @@ ruleSensor returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getSensorAccess().getSensorKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getSensorAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSensorAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSensorAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7645,23 +7531,27 @@ ruleSensor returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getSensorAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getSensorAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7669,7 +7559,7 @@ ruleSensor returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -7677,16 +7567,16 @@ ruleSensor returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getSensorAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getSensorAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7694,7 +7584,7 @@ ruleSensor returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -7702,16 +7592,16 @@ ruleSensor returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getSensorAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getSensorAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7719,7 +7609,7 @@ ruleSensor returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -7727,13 +7617,13 @@ ruleSensor returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=TraceableSpecification
+			otherlv_9=TraceableSpecification
 			{
-				newLeafNode(otherlv_10, grammarAccess.getSensorAccess().getTraceableSpecificationKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getSensorAccess().getTraceableSpecificationKeyword_6_0());
 			}
-			otherlv_11=LeftParenthesis
+			otherlv_10=LeftParenthesis
 			{
-				newLeafNode(otherlv_11, grammarAccess.getSensorAccess().getLeftParenthesisKeyword_7_1());
+				newLeafNode(otherlv_10, grammarAccess.getSensorAccess().getLeftParenthesisKeyword_6_1());
 			}
 			(
 				(
@@ -7743,7 +7633,7 @@ ruleSensor returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getTraceableSpecificationTraceableSpecificationCrossReference_6_2_0());
 					}
 					ruleEString
 					{
@@ -7752,9 +7642,9 @@ ruleSensor returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getSensorAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getSensorAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
@@ -7764,7 +7654,7 @@ ruleSensor returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getSensorAccess().getTraceableSpecificationTraceableSpecificationCrossReference_7_3_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getTraceableSpecificationTraceableSpecificationCrossReference_6_3_1_0());
 						}
 						ruleEString
 						{
@@ -7773,26 +7663,26 @@ ruleSensor returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_15=RightParenthesis
+			otherlv_14=RightParenthesis
 			{
-				newLeafNode(otherlv_15, grammarAccess.getSensorAccess().getRightParenthesisKeyword_7_4());
+				newLeafNode(otherlv_14, grammarAccess.getSensorAccess().getRightParenthesisKeyword_6_4());
 			}
 		)?
 		(
-			otherlv_16=OwnedComment
+			otherlv_15=OwnedComment
 			{
-				newLeafNode(otherlv_16, grammarAccess.getSensorAccess().getOwnedCommentKeyword_8_0());
+				newLeafNode(otherlv_15, grammarAccess.getSensorAccess().getOwnedCommentKeyword_7_0());
 			}
-			this_BEGIN_17=RULE_BEGIN
+			this_BEGIN_16=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_8_1());
+				newLeafNode(this_BEGIN_16, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_7_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
 					}
-					lv_ownedComment_18_0=ruleComment
+					lv_ownedComment_17_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7800,23 +7690,23 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_18_0,
+							lv_ownedComment_17_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_18=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getSensorAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_18, grammarAccess.getSensorAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getSensorAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
 						}
-						lv_ownedComment_20_0=ruleComment
+						lv_ownedComment_19_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7824,33 +7714,33 @@ ruleSensor returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_20_0,
+								lv_ownedComment_19_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
+			this_END_20=RULE_END
 			{
-				newLeafNode(this_END_21, grammarAccess.getSensorAccess().getENDTerminalRuleCall_8_4());
+				newLeafNode(this_END_20, grammarAccess.getSensorAccess().getENDTerminalRuleCall_7_4());
 			}
 		)?
 		(
-			otherlv_22=OwnedRelationship
+			otherlv_21=OwnedRelationship
 			{
-				newLeafNode(otherlv_22, grammarAccess.getSensorAccess().getOwnedRelationshipKeyword_9_0());
+				newLeafNode(otherlv_21, grammarAccess.getSensorAccess().getOwnedRelationshipKeyword_8_0());
 			}
-			this_BEGIN_23=RULE_BEGIN
+			this_BEGIN_22=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_23, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_22, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getOwnedRelationshipRelationshipParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getOwnedRelationshipRelationshipParserRuleCall_8_2_0());
 					}
-					lv_ownedRelationship_24_0=ruleRelationship
+					lv_ownedRelationship_23_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7858,23 +7748,23 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"ownedRelationship",
-							lv_ownedRelationship_24_0,
+							lv_ownedRelationship_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=Comma
+				otherlv_24=Comma
 				{
-					newLeafNode(otherlv_25, grammarAccess.getSensorAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_24, grammarAccess.getSensorAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getSensorAccess().getOwnedRelationshipRelationshipParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getOwnedRelationshipRelationshipParserRuleCall_8_3_1_0());
 						}
-						lv_ownedRelationship_26_0=ruleRelationship
+						lv_ownedRelationship_25_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7882,33 +7772,33 @@ ruleSensor returns [EObject current=null]
 							add(
 								$current,
 								"ownedRelationship",
-								lv_ownedRelationship_26_0,
+								lv_ownedRelationship_25_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_27=RULE_END
+			this_END_26=RULE_END
 			{
-				newLeafNode(this_END_27, grammarAccess.getSensorAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_26, grammarAccess.getSensorAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_28=Pin
+			otherlv_27=Pin
 			{
-				newLeafNode(otherlv_28, grammarAccess.getSensorAccess().getPinKeyword_10_0());
+				newLeafNode(otherlv_27, grammarAccess.getSensorAccess().getPinKeyword_9_0());
 			}
-			this_BEGIN_29=RULE_BEGIN
+			this_BEGIN_28=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_29, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_28, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getPinHardwarePinParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getPinHardwarePinParserRuleCall_9_2_0());
 					}
-					lv_pin_30_0=ruleHardwarePin
+					lv_pin_29_0=ruleHardwarePin
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7916,23 +7806,23 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"pin",
-							lv_pin_30_0,
+							lv_pin_29_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_31=Comma
+				otherlv_30=Comma
 				{
-					newLeafNode(otherlv_31, grammarAccess.getSensorAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_30, grammarAccess.getSensorAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getSensorAccess().getPinHardwarePinParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getPinHardwarePinParserRuleCall_9_3_1_0());
 						}
-						lv_pin_32_0=ruleHardwarePin
+						lv_pin_31_0=ruleHardwarePin
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7940,33 +7830,33 @@ ruleSensor returns [EObject current=null]
 							add(
 								$current,
 								"pin",
-								lv_pin_32_0,
+								lv_pin_31_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_33=RULE_END
+			this_END_32=RULE_END
 			{
-				newLeafNode(this_END_33, grammarAccess.getSensorAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_32, grammarAccess.getSensorAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_34=Part
+			otherlv_33=Part
 			{
-				newLeafNode(otherlv_34, grammarAccess.getSensorAccess().getPartKeyword_11_0());
+				newLeafNode(otherlv_33, grammarAccess.getSensorAccess().getPartKeyword_10_0());
 			}
-			this_BEGIN_35=RULE_BEGIN
+			this_BEGIN_34=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_35, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_34, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getPartHardwareComponentPrototypeParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getPartHardwareComponentPrototypeParserRuleCall_10_2_0());
 					}
-					lv_part_36_0=ruleHardwareComponentPrototype
+					lv_part_35_0=ruleHardwareComponentPrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7974,23 +7864,23 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"part",
-							lv_part_36_0,
+							lv_part_35_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_37=Comma
+				otherlv_36=Comma
 				{
-					newLeafNode(otherlv_37, grammarAccess.getSensorAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_36, grammarAccess.getSensorAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getSensorAccess().getPartHardwareComponentPrototypeParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getPartHardwareComponentPrototypeParserRuleCall_10_3_1_0());
 						}
-						lv_part_38_0=ruleHardwareComponentPrototype
+						lv_part_37_0=ruleHardwareComponentPrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -7998,33 +7888,33 @@ ruleSensor returns [EObject current=null]
 							add(
 								$current,
 								"part",
-								lv_part_38_0,
+								lv_part_37_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_39=RULE_END
+			this_END_38=RULE_END
 			{
-				newLeafNode(this_END_39, grammarAccess.getSensorAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_38, grammarAccess.getSensorAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_40=Connector
+			otherlv_39=Connector
 			{
-				newLeafNode(otherlv_40, grammarAccess.getSensorAccess().getConnectorKeyword_12_0());
+				newLeafNode(otherlv_39, grammarAccess.getSensorAccess().getConnectorKeyword_11_0());
 			}
-			this_BEGIN_41=RULE_BEGIN
+			this_BEGIN_40=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_41, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_40, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getConnectorHardwareConnectorParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getConnectorHardwareConnectorParserRuleCall_11_2_0());
 					}
-					lv_connector_42_0=ruleHardwareConnector
+					lv_connector_41_0=ruleHardwareConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -8032,23 +7922,23 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_42_0,
+							lv_connector_41_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_43=Comma
+				otherlv_42=Comma
 				{
-					newLeafNode(otherlv_43, grammarAccess.getSensorAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_42, grammarAccess.getSensorAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getSensorAccess().getConnectorHardwareConnectorParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getConnectorHardwareConnectorParserRuleCall_11_3_1_0());
 						}
-						lv_connector_44_0=ruleHardwareConnector
+						lv_connector_43_0=ruleHardwareConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -8056,33 +7946,33 @@ ruleSensor returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_44_0,
+								lv_connector_43_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_45=RULE_END
+			this_END_44=RULE_END
 			{
-				newLeafNode(this_END_45, grammarAccess.getSensorAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_44, grammarAccess.getSensorAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
 		(
-			otherlv_46=Port
+			otherlv_45=Port
 			{
-				newLeafNode(otherlv_46, grammarAccess.getSensorAccess().getPortKeyword_13_0());
+				newLeafNode(otherlv_45, grammarAccess.getSensorAccess().getPortKeyword_12_0());
 			}
-			this_BEGIN_47=RULE_BEGIN
+			this_BEGIN_46=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_47, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_46, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getPortHardwarePortParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getPortHardwarePortParserRuleCall_12_2_0());
 					}
-					lv_port_48_0=ruleHardwarePort
+					lv_port_47_0=ruleHardwarePort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -8090,23 +7980,23 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_48_0,
+							lv_port_47_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_49=Comma
+				otherlv_48=Comma
 				{
-					newLeafNode(otherlv_49, grammarAccess.getSensorAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_48, grammarAccess.getSensorAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getSensorAccess().getPortHardwarePortParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getPortHardwarePortParserRuleCall_12_3_1_0());
 						}
-						lv_port_50_0=ruleHardwarePort
+						lv_port_49_0=ruleHardwarePort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -8114,33 +8004,33 @@ ruleSensor returns [EObject current=null]
 							add(
 								$current,
 								"port",
-								lv_port_50_0,
+								lv_port_49_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_51=RULE_END
+			this_END_50=RULE_END
 			{
-				newLeafNode(this_END_51, grammarAccess.getSensorAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_50, grammarAccess.getSensorAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
 		(
-			otherlv_52=PortConnector
+			otherlv_51=PortConnector
 			{
-				newLeafNode(otherlv_52, grammarAccess.getSensorAccess().getPortConnectorKeyword_14_0());
+				newLeafNode(otherlv_51, grammarAccess.getSensorAccess().getPortConnectorKeyword_13_0());
 			}
-			this_BEGIN_53=RULE_BEGIN
+			this_BEGIN_52=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_53, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_14_1());
+				newLeafNode(this_BEGIN_52, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_13_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getPortConnectorPortConnectorParserRuleCall_14_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getPortConnectorPortConnectorParserRuleCall_13_2_0());
 					}
-					lv_portConnector_54_0=rulePortConnector
+					lv_portConnector_53_0=rulePortConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -8148,23 +8038,23 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"portConnector",
-							lv_portConnector_54_0,
+							lv_portConnector_53_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_55=Comma
+				otherlv_54=Comma
 				{
-					newLeafNode(otherlv_55, grammarAccess.getSensorAccess().getCommaKeyword_14_3_0());
+					newLeafNode(otherlv_54, grammarAccess.getSensorAccess().getCommaKeyword_13_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getSensorAccess().getPortConnectorPortConnectorParserRuleCall_14_3_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getPortConnectorPortConnectorParserRuleCall_13_3_1_0());
 						}
-						lv_portConnector_56_0=rulePortConnector
+						lv_portConnector_55_0=rulePortConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -8172,21 +8062,21 @@ ruleSensor returns [EObject current=null]
 							add(
 								$current,
 								"portConnector",
-								lv_portConnector_56_0,
+								lv_portConnector_55_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_57=RULE_END
+			this_END_56=RULE_END
 			{
-				newLeafNode(this_END_57, grammarAccess.getSensorAccess().getENDTerminalRuleCall_14_4());
+				newLeafNode(this_END_56, grammarAccess.getSensorAccess().getENDTerminalRuleCall_13_4());
 			}
 		)?
-		this_END_58=RULE_END
+		this_END_57=RULE_END
 		{
-			newLeafNode(this_END_58, grammarAccess.getSensorAccess().getENDTerminalRuleCall_15());
+			newLeafNode(this_END_57, grammarAccess.getSensorAccess().getENDTerminalRuleCall_14());
 		}
 	)
 ;
@@ -8211,20 +8101,12 @@ ruleArrayDatatype returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getArrayDatatypeAccess().getArrayDatatypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getArrayDatatypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getArrayDatatypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getArrayDatatypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getArrayDatatypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8232,23 +8114,27 @@ ruleArrayDatatype returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getArrayDatatypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getArrayDatatypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getArrayDatatypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8256,7 +8142,7 @@ ruleArrayDatatype returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -8264,16 +8150,16 @@ ruleArrayDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getArrayDatatypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getArrayDatatypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8281,7 +8167,7 @@ ruleArrayDatatype returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8289,16 +8175,16 @@ ruleArrayDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getArrayDatatypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getArrayDatatypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8306,7 +8192,7 @@ ruleArrayDatatype returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8314,16 +8200,16 @@ ruleArrayDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Text
+			otherlv_9=Text
 			{
-				newLeafNode(otherlv_10, grammarAccess.getArrayDatatypeAccess().getTextKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getArrayDatatypeAccess().getTextKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getTextString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getTextString0ParserRuleCall_6_1_0());
 					}
-					lv_text_11_0=ruleString0
+					lv_text_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8331,7 +8217,7 @@ ruleArrayDatatype returns [EObject current=null]
 						set(
 							$current,
 							"text",
-							lv_text_11_0,
+							lv_text_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8339,16 +8225,16 @@ ruleArrayDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=Uri
+			otherlv_11=Uri
 			{
-				newLeafNode(otherlv_12, grammarAccess.getArrayDatatypeAccess().getUriKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getArrayDatatypeAccess().getUriKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getUriString0ParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getUriString0ParserRuleCall_7_1_0());
 					}
-					lv_uri_13_0=ruleString0
+					lv_uri_12_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8356,7 +8242,7 @@ ruleArrayDatatype returns [EObject current=null]
 						set(
 							$current,
 							"uri",
-							lv_uri_13_0,
+							lv_uri_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8364,16 +8250,16 @@ ruleArrayDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=MaxLength
+			otherlv_13=MaxLength
 			{
-				newLeafNode(otherlv_14, grammarAccess.getArrayDatatypeAccess().getMaxLengthKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getArrayDatatypeAccess().getMaxLengthKeyword_8_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getMaxLengthIntegerParserRuleCall_9_1_0());
+						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getMaxLengthIntegerParserRuleCall_8_1_0());
 					}
-					lv_maxLength_15_0=ruleInteger
+					lv_maxLength_14_0=ruleInteger
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8381,7 +8267,7 @@ ruleArrayDatatype returns [EObject current=null]
 						set(
 							$current,
 							"maxLength",
-							lv_maxLength_15_0,
+							lv_maxLength_14_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 						afterParserOrEnumRuleCall();
 					}
@@ -8389,16 +8275,16 @@ ruleArrayDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_16=MinLength
+			otherlv_15=MinLength
 			{
-				newLeafNode(otherlv_16, grammarAccess.getArrayDatatypeAccess().getMinLengthKeyword_10_0());
+				newLeafNode(otherlv_15, grammarAccess.getArrayDatatypeAccess().getMinLengthKeyword_9_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getMinLengthIntegerParserRuleCall_10_1_0());
+						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getMinLengthIntegerParserRuleCall_9_1_0());
 					}
-					lv_minLength_17_0=ruleInteger
+					lv_minLength_16_0=ruleInteger
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8406,16 +8292,16 @@ ruleArrayDatatype returns [EObject current=null]
 						set(
 							$current,
 							"minLength",
-							lv_minLength_17_0,
+							lv_minLength_16_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_18=ElementType
+		otherlv_17=ElementType
 		{
-			newLeafNode(otherlv_18, grammarAccess.getArrayDatatypeAccess().getElementTypeKeyword_11());
+			newLeafNode(otherlv_17, grammarAccess.getArrayDatatypeAccess().getElementTypeKeyword_10());
 		}
 		(
 			(
@@ -8425,7 +8311,7 @@ ruleArrayDatatype returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getArrayDatatypeAccess().getElementTypeEADatatypeCrossReference_12_0());
+					newCompositeNode(grammarAccess.getArrayDatatypeAccess().getElementTypeEADatatypeCrossReference_11_0());
 				}
 				ruleEString
 				{
@@ -8434,20 +8320,20 @@ ruleArrayDatatype returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_20=OwnedComment
+			otherlv_19=OwnedComment
 			{
-				newLeafNode(otherlv_20, grammarAccess.getArrayDatatypeAccess().getOwnedCommentKeyword_13_0());
+				newLeafNode(otherlv_19, grammarAccess.getArrayDatatypeAccess().getOwnedCommentKeyword_12_0());
 			}
-			this_BEGIN_21=RULE_BEGIN
+			this_BEGIN_20=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_21, grammarAccess.getArrayDatatypeAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_20, grammarAccess.getArrayDatatypeAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getOwnedCommentCommentParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getArrayDatatypeAccess().getOwnedCommentCommentParserRuleCall_12_2_0());
 					}
-					lv_ownedComment_22_0=ruleComment
+					lv_ownedComment_21_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8455,23 +8341,23 @@ ruleArrayDatatype returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_22_0,
+							lv_ownedComment_21_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_23=Comma
+				otherlv_22=Comma
 				{
-					newLeafNode(otherlv_23, grammarAccess.getArrayDatatypeAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_22, grammarAccess.getArrayDatatypeAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getArrayDatatypeAccess().getOwnedCommentCommentParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getArrayDatatypeAccess().getOwnedCommentCommentParserRuleCall_12_3_1_0());
 						}
-						lv_ownedComment_24_0=ruleComment
+						lv_ownedComment_23_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getArrayDatatypeRule());
@@ -8479,21 +8365,21 @@ ruleArrayDatatype returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_24_0,
+								lv_ownedComment_23_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_25=RULE_END
+			this_END_24=RULE_END
 			{
-				newLeafNode(this_END_25, grammarAccess.getArrayDatatypeAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_24, grammarAccess.getArrayDatatypeAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
-		this_END_26=RULE_END
+		this_END_25=RULE_END
 		{
-			newLeafNode(this_END_26, grammarAccess.getArrayDatatypeAccess().getENDTerminalRuleCall_14());
+			newLeafNode(this_END_25, grammarAccess.getArrayDatatypeAccess().getENDTerminalRuleCall_13());
 		}
 	)
 ;
@@ -8518,20 +8404,12 @@ ruleCompositeDatatype returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getCompositeDatatypeAccess().getCompositeDatatypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getCompositeDatatypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getCompositeDatatypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8539,23 +8417,27 @@ ruleCompositeDatatype returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getCompositeDatatypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getCompositeDatatypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getCompositeDatatypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8563,7 +8445,7 @@ ruleCompositeDatatype returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -8571,16 +8453,16 @@ ruleCompositeDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getCompositeDatatypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getCompositeDatatypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8588,7 +8470,7 @@ ruleCompositeDatatype returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8596,16 +8478,16 @@ ruleCompositeDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getCompositeDatatypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getCompositeDatatypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8613,7 +8495,7 @@ ruleCompositeDatatype returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8621,16 +8503,16 @@ ruleCompositeDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Text
+			otherlv_9=Text
 			{
-				newLeafNode(otherlv_10, grammarAccess.getCompositeDatatypeAccess().getTextKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getCompositeDatatypeAccess().getTextKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getTextString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getTextString0ParserRuleCall_6_1_0());
 					}
-					lv_text_11_0=ruleString0
+					lv_text_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8638,7 +8520,7 @@ ruleCompositeDatatype returns [EObject current=null]
 						set(
 							$current,
 							"text",
-							lv_text_11_0,
+							lv_text_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8646,16 +8528,16 @@ ruleCompositeDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=Uri
+			otherlv_11=Uri
 			{
-				newLeafNode(otherlv_12, grammarAccess.getCompositeDatatypeAccess().getUriKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getCompositeDatatypeAccess().getUriKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getUriString0ParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getUriString0ParserRuleCall_7_1_0());
 					}
-					lv_uri_13_0=ruleString0
+					lv_uri_12_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8663,7 +8545,7 @@ ruleCompositeDatatype returns [EObject current=null]
 						set(
 							$current,
 							"uri",
-							lv_uri_13_0,
+							lv_uri_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8671,20 +8553,20 @@ ruleCompositeDatatype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getCompositeDatatypeAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getCompositeDatatypeAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getCompositeDatatypeAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getCompositeDatatypeAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8692,23 +8574,23 @@ ruleCompositeDatatype returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getCompositeDatatypeAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getCompositeDatatypeAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8716,32 +8598,32 @@ ruleCompositeDatatype returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getCompositeDatatypeAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_18, grammarAccess.getCompositeDatatypeAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		otherlv_20=DatatypePrototype
+		otherlv_19=DatatypePrototype
 		{
-			newLeafNode(otherlv_20, grammarAccess.getCompositeDatatypeAccess().getDatatypePrototypeKeyword_10());
+			newLeafNode(otherlv_19, grammarAccess.getCompositeDatatypeAccess().getDatatypePrototypeKeyword_9());
 		}
-		this_BEGIN_21=RULE_BEGIN
+		this_BEGIN_20=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_21, grammarAccess.getCompositeDatatypeAccess().getBEGINTerminalRuleCall_11());
+			newLeafNode(this_BEGIN_20, grammarAccess.getCompositeDatatypeAccess().getBEGINTerminalRuleCall_10());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getDatatypePrototypeEADatatypePrototypeParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getDatatypePrototypeEADatatypePrototypeParserRuleCall_11_0());
 				}
-				lv_datatypePrototype_22_0=ruleEADatatypePrototype
+				lv_datatypePrototype_21_0=ruleEADatatypePrototype
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8749,23 +8631,23 @@ ruleCompositeDatatype returns [EObject current=null]
 					add(
 						$current,
 						"datatypePrototype",
-						lv_datatypePrototype_22_0,
+						lv_datatypePrototype_21_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.EADatatypePrototype");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_23=Comma
+			otherlv_22=Comma
 			{
-				newLeafNode(otherlv_23, grammarAccess.getCompositeDatatypeAccess().getCommaKeyword_13_0());
+				newLeafNode(otherlv_22, grammarAccess.getCompositeDatatypeAccess().getCommaKeyword_12_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getDatatypePrototypeEADatatypePrototypeParserRuleCall_13_1_0());
+						newCompositeNode(grammarAccess.getCompositeDatatypeAccess().getDatatypePrototypeEADatatypePrototypeParserRuleCall_12_1_0());
 					}
-					lv_datatypePrototype_24_0=ruleEADatatypePrototype
+					lv_datatypePrototype_23_0=ruleEADatatypePrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeDatatypeRule());
@@ -8773,20 +8655,20 @@ ruleCompositeDatatype returns [EObject current=null]
 						add(
 							$current,
 							"datatypePrototype",
-							lv_datatypePrototype_24_0,
+							lv_datatypePrototype_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EADatatypePrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
+		this_END_24=RULE_END
+		{
+			newLeafNode(this_END_24, grammarAccess.getCompositeDatatypeAccess().getENDTerminalRuleCall_13());
+		}
 		this_END_25=RULE_END
 		{
 			newLeafNode(this_END_25, grammarAccess.getCompositeDatatypeAccess().getENDTerminalRuleCall_14());
-		}
-		this_END_26=RULE_END
-		{
-			newLeafNode(this_END_26, grammarAccess.getCompositeDatatypeAccess().getENDTerminalRuleCall_15());
 		}
 	)
 ;
@@ -8811,20 +8693,12 @@ ruleEABoolean returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEABooleanAccess().getEABooleanKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getEABooleanAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEABooleanAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEABooleanAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEABooleanAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEABooleanRule());
@@ -8832,23 +8706,27 @@ ruleEABoolean returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getEABooleanAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEABooleanAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEABooleanAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEABooleanAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getEABooleanAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEABooleanRule());
@@ -8856,7 +8734,7 @@ ruleEABoolean returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -8864,16 +8742,16 @@ ruleEABoolean returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getEABooleanAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getEABooleanAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEABooleanAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getEABooleanAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEABooleanRule());
@@ -8881,7 +8759,7 @@ ruleEABoolean returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8889,16 +8767,16 @@ ruleEABoolean returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getEABooleanAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getEABooleanAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEABooleanAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEABooleanAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEABooleanRule());
@@ -8906,7 +8784,7 @@ ruleEABoolean returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8914,16 +8792,16 @@ ruleEABoolean returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Text
+			otherlv_9=Text
 			{
-				newLeafNode(otherlv_10, grammarAccess.getEABooleanAccess().getTextKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getEABooleanAccess().getTextKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEABooleanAccess().getTextString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getEABooleanAccess().getTextString0ParserRuleCall_6_1_0());
 					}
-					lv_text_11_0=ruleString0
+					lv_text_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEABooleanRule());
@@ -8931,7 +8809,7 @@ ruleEABoolean returns [EObject current=null]
 						set(
 							$current,
 							"text",
-							lv_text_11_0,
+							lv_text_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8939,16 +8817,16 @@ ruleEABoolean returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=Uri
+			otherlv_11=Uri
 			{
-				newLeafNode(otherlv_12, grammarAccess.getEABooleanAccess().getUriKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getEABooleanAccess().getUriKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEABooleanAccess().getUriString0ParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getEABooleanAccess().getUriString0ParserRuleCall_7_1_0());
 					}
-					lv_uri_13_0=ruleString0
+					lv_uri_12_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEABooleanRule());
@@ -8956,7 +8834,7 @@ ruleEABoolean returns [EObject current=null]
 						set(
 							$current,
 							"uri",
-							lv_uri_13_0,
+							lv_uri_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -8964,20 +8842,20 @@ ruleEABoolean returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getEABooleanAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getEABooleanAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getEABooleanAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getEABooleanAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEABooleanAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getEABooleanAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEABooleanRule());
@@ -8985,23 +8863,23 @@ ruleEABoolean returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getEABooleanAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getEABooleanAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEABooleanAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getEABooleanAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEABooleanRule());
@@ -9009,21 +8887,21 @@ ruleEABoolean returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getEABooleanAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_18, grammarAccess.getEABooleanAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_20=RULE_END
+		this_END_19=RULE_END
 		{
-			newLeafNode(this_END_20, grammarAccess.getEABooleanAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_19, grammarAccess.getEABooleanAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -9048,20 +8926,12 @@ ruleEANumerical returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEANumericalAccess().getEANumericalKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getEANumericalAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEANumericalAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEANumericalAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEANumericalAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9069,23 +8939,27 @@ ruleEANumerical returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getEANumericalAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEANumericalAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEANumericalAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9093,7 +8967,7 @@ ruleEANumerical returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -9101,16 +8975,16 @@ ruleEANumerical returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getEANumericalAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getEANumericalAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9118,7 +8992,7 @@ ruleEANumerical returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9126,16 +9000,16 @@ ruleEANumerical returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getEANumericalAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getEANumericalAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9143,7 +9017,7 @@ ruleEANumerical returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9151,16 +9025,16 @@ ruleEANumerical returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Text
+			otherlv_9=Text
 			{
-				newLeafNode(otherlv_10, grammarAccess.getEANumericalAccess().getTextKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getEANumericalAccess().getTextKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getTextString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getTextString0ParserRuleCall_6_1_0());
 					}
-					lv_text_11_0=ruleString0
+					lv_text_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9168,7 +9042,7 @@ ruleEANumerical returns [EObject current=null]
 						set(
 							$current,
 							"text",
-							lv_text_11_0,
+							lv_text_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9176,16 +9050,16 @@ ruleEANumerical returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=Uri
+			otherlv_11=Uri
 			{
-				newLeafNode(otherlv_12, grammarAccess.getEANumericalAccess().getUriKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getEANumericalAccess().getUriKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getUriString0ParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getUriString0ParserRuleCall_7_1_0());
 					}
-					lv_uri_13_0=ruleString0
+					lv_uri_12_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9193,7 +9067,7 @@ ruleEANumerical returns [EObject current=null]
 						set(
 							$current,
 							"uri",
-							lv_uri_13_0,
+							lv_uri_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9201,16 +9075,16 @@ ruleEANumerical returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=Max
+			otherlv_13=Max
 			{
-				newLeafNode(otherlv_14, grammarAccess.getEANumericalAccess().getMaxKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getEANumericalAccess().getMaxKeyword_8_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getMaxNumericalParserRuleCall_9_1_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getMaxNumericalParserRuleCall_8_1_0());
 					}
-					lv_max_15_0=ruleNumerical
+					lv_max_14_0=ruleNumerical
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9218,7 +9092,7 @@ ruleEANumerical returns [EObject current=null]
 						set(
 							$current,
 							"max",
-							lv_max_15_0,
+							lv_max_14_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Numerical");
 						afterParserOrEnumRuleCall();
 					}
@@ -9226,16 +9100,16 @@ ruleEANumerical returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_16=Min
+			otherlv_15=Min
 			{
-				newLeafNode(otherlv_16, grammarAccess.getEANumericalAccess().getMinKeyword_10_0());
+				newLeafNode(otherlv_15, grammarAccess.getEANumericalAccess().getMinKeyword_9_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getMinNumericalParserRuleCall_10_1_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getMinNumericalParserRuleCall_9_1_0());
 					}
-					lv_min_17_0=ruleNumerical
+					lv_min_16_0=ruleNumerical
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9243,7 +9117,7 @@ ruleEANumerical returns [EObject current=null]
 						set(
 							$current,
 							"min",
-							lv_min_17_0,
+							lv_min_16_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Numerical");
 						afterParserOrEnumRuleCall();
 					}
@@ -9251,9 +9125,9 @@ ruleEANumerical returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_18=Unit_1
+			otherlv_17=Unit_1
 			{
-				newLeafNode(otherlv_18, grammarAccess.getEANumericalAccess().getUnitKeyword_11_0());
+				newLeafNode(otherlv_17, grammarAccess.getEANumericalAccess().getUnitKeyword_10_0());
 			}
 			(
 				(
@@ -9263,7 +9137,7 @@ ruleEANumerical returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getUnitUnitCrossReference_11_1_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getUnitUnitCrossReference_10_1_0());
 					}
 					ruleEString
 					{
@@ -9273,20 +9147,20 @@ ruleEANumerical returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_20=OwnedComment
+			otherlv_19=OwnedComment
 			{
-				newLeafNode(otherlv_20, grammarAccess.getEANumericalAccess().getOwnedCommentKeyword_12_0());
+				newLeafNode(otherlv_19, grammarAccess.getEANumericalAccess().getOwnedCommentKeyword_11_0());
 			}
-			this_BEGIN_21=RULE_BEGIN
+			this_BEGIN_20=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_21, grammarAccess.getEANumericalAccess().getBEGINTerminalRuleCall_12_1());
+				newLeafNode(this_BEGIN_20, grammarAccess.getEANumericalAccess().getBEGINTerminalRuleCall_11_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEANumericalAccess().getOwnedCommentCommentParserRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getEANumericalAccess().getOwnedCommentCommentParserRuleCall_11_2_0());
 					}
-					lv_ownedComment_22_0=ruleComment
+					lv_ownedComment_21_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9294,23 +9168,23 @@ ruleEANumerical returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_22_0,
+							lv_ownedComment_21_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_23=Comma
+				otherlv_22=Comma
 				{
-					newLeafNode(otherlv_23, grammarAccess.getEANumericalAccess().getCommaKeyword_12_3_0());
+					newLeafNode(otherlv_22, grammarAccess.getEANumericalAccess().getCommaKeyword_11_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEANumericalAccess().getOwnedCommentCommentParserRuleCall_12_3_1_0());
+							newCompositeNode(grammarAccess.getEANumericalAccess().getOwnedCommentCommentParserRuleCall_11_3_1_0());
 						}
-						lv_ownedComment_24_0=ruleComment
+						lv_ownedComment_23_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEANumericalRule());
@@ -9318,21 +9192,21 @@ ruleEANumerical returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_24_0,
+								lv_ownedComment_23_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_25=RULE_END
+			this_END_24=RULE_END
 			{
-				newLeafNode(this_END_25, grammarAccess.getEANumericalAccess().getENDTerminalRuleCall_12_4());
+				newLeafNode(this_END_24, grammarAccess.getEANumericalAccess().getENDTerminalRuleCall_11_4());
 			}
 		)?
-		this_END_26=RULE_END
+		this_END_25=RULE_END
 		{
-			newLeafNode(this_END_26, grammarAccess.getEANumericalAccess().getENDTerminalRuleCall_13());
+			newLeafNode(this_END_25, grammarAccess.getEANumericalAccess().getENDTerminalRuleCall_12());
 		}
 	)
 ;
@@ -9357,20 +9231,12 @@ ruleEAString returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEAStringAccess().getEAStringKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getEAStringAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEAStringAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEAStringAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEAStringAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEAStringRule());
@@ -9378,23 +9244,27 @@ ruleEAString returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getEAStringAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEAStringAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEAStringAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAStringAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getEAStringAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAStringRule());
@@ -9402,7 +9272,7 @@ ruleEAString returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -9410,16 +9280,16 @@ ruleEAString returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getEAStringAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getEAStringAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAStringAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getEAStringAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAStringRule());
@@ -9427,7 +9297,7 @@ ruleEAString returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9435,16 +9305,16 @@ ruleEAString returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getEAStringAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getEAStringAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAStringAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEAStringAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAStringRule());
@@ -9452,7 +9322,7 @@ ruleEAString returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9460,16 +9330,16 @@ ruleEAString returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Text
+			otherlv_9=Text
 			{
-				newLeafNode(otherlv_10, grammarAccess.getEAStringAccess().getTextKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getEAStringAccess().getTextKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAStringAccess().getTextString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getEAStringAccess().getTextString0ParserRuleCall_6_1_0());
 					}
-					lv_text_11_0=ruleString0
+					lv_text_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAStringRule());
@@ -9477,7 +9347,7 @@ ruleEAString returns [EObject current=null]
 						set(
 							$current,
 							"text",
-							lv_text_11_0,
+							lv_text_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9485,16 +9355,16 @@ ruleEAString returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=Uri
+			otherlv_11=Uri
 			{
-				newLeafNode(otherlv_12, grammarAccess.getEAStringAccess().getUriKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getEAStringAccess().getUriKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAStringAccess().getUriString0ParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getEAStringAccess().getUriString0ParserRuleCall_7_1_0());
 					}
-					lv_uri_13_0=ruleString0
+					lv_uri_12_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAStringRule());
@@ -9502,7 +9372,7 @@ ruleEAString returns [EObject current=null]
 						set(
 							$current,
 							"uri",
-							lv_uri_13_0,
+							lv_uri_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9510,20 +9380,20 @@ ruleEAString returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getEAStringAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getEAStringAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getEAStringAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getEAStringAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEAStringAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getEAStringAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEAStringRule());
@@ -9531,23 +9401,23 @@ ruleEAString returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getEAStringAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getEAStringAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEAStringAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getEAStringAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEAStringRule());
@@ -9555,21 +9425,21 @@ ruleEAString returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getEAStringAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_18, grammarAccess.getEAStringAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_20=RULE_END
+		this_END_19=RULE_END
 		{
-			newLeafNode(this_END_20, grammarAccess.getEAStringAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_19, grammarAccess.getEAStringAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -9594,20 +9464,12 @@ ruleEnumeration returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEnumerationAccess().getEnumerationKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getEnumerationAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEnumerationAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEnumerationAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEnumerationAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9615,23 +9477,27 @@ ruleEnumeration returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getEnumerationAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEnumerationAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEnumerationAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getEnumerationAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9639,7 +9505,7 @@ ruleEnumeration returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -9647,16 +9513,16 @@ ruleEnumeration returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getEnumerationAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getEnumerationAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getEnumerationAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9664,7 +9530,7 @@ ruleEnumeration returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9672,16 +9538,16 @@ ruleEnumeration returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getEnumerationAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getEnumerationAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEnumerationAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9689,7 +9555,7 @@ ruleEnumeration returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9697,16 +9563,16 @@ ruleEnumeration returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Text
+			otherlv_9=Text
 			{
-				newLeafNode(otherlv_10, grammarAccess.getEnumerationAccess().getTextKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getEnumerationAccess().getTextKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationAccess().getTextString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getEnumerationAccess().getTextString0ParserRuleCall_6_1_0());
 					}
-					lv_text_11_0=ruleString0
+					lv_text_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9714,7 +9580,7 @@ ruleEnumeration returns [EObject current=null]
 						set(
 							$current,
 							"text",
-							lv_text_11_0,
+							lv_text_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9722,16 +9588,16 @@ ruleEnumeration returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=Uri
+			otherlv_11=Uri
 			{
-				newLeafNode(otherlv_12, grammarAccess.getEnumerationAccess().getUriKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getEnumerationAccess().getUriKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationAccess().getUriString0ParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getEnumerationAccess().getUriString0ParserRuleCall_7_1_0());
 					}
-					lv_uri_13_0=ruleString0
+					lv_uri_12_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9739,23 +9605,23 @@ ruleEnumeration returns [EObject current=null]
 						set(
 							$current,
 							"uri",
-							lv_uri_13_0,
+							lv_uri_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_14=IsMultiValued
+		otherlv_13=IsMultiValued
 		{
-			newLeafNode(otherlv_14, grammarAccess.getEnumerationAccess().getIsMultiValuedKeyword_9());
+			newLeafNode(otherlv_13, grammarAccess.getEnumerationAccess().getIsMultiValuedKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEnumerationAccess().getIsMultiValuedBooleanParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getEnumerationAccess().getIsMultiValuedBooleanParserRuleCall_9_0());
 				}
-				lv_isMultiValued_15_0=ruleBoolean
+				lv_isMultiValued_14_0=ruleBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9763,27 +9629,27 @@ ruleEnumeration returns [EObject current=null]
 					set(
 						$current,
 						"isMultiValued",
-						lv_isMultiValued_15_0,
+						lv_isMultiValued_14_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_16=OwnedComment
+			otherlv_15=OwnedComment
 			{
-				newLeafNode(otherlv_16, grammarAccess.getEnumerationAccess().getOwnedCommentKeyword_11_0());
+				newLeafNode(otherlv_15, grammarAccess.getEnumerationAccess().getOwnedCommentKeyword_10_0());
 			}
-			this_BEGIN_17=RULE_BEGIN
+			this_BEGIN_16=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getEnumerationAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_16, grammarAccess.getEnumerationAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationAccess().getOwnedCommentCommentParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getEnumerationAccess().getOwnedCommentCommentParserRuleCall_10_2_0());
 					}
-					lv_ownedComment_18_0=ruleComment
+					lv_ownedComment_17_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9791,23 +9657,23 @@ ruleEnumeration returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_18_0,
+							lv_ownedComment_17_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_18=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getEnumerationAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_18, grammarAccess.getEnumerationAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEnumerationAccess().getOwnedCommentCommentParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getEnumerationAccess().getOwnedCommentCommentParserRuleCall_10_3_1_0());
 						}
-						lv_ownedComment_20_0=ruleComment
+						lv_ownedComment_19_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9815,32 +9681,32 @@ ruleEnumeration returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_20_0,
+								lv_ownedComment_19_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
+			this_END_20=RULE_END
 			{
-				newLeafNode(this_END_21, grammarAccess.getEnumerationAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_20, grammarAccess.getEnumerationAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
-		otherlv_22=Literal
+		otherlv_21=Literal
 		{
-			newLeafNode(otherlv_22, grammarAccess.getEnumerationAccess().getLiteralKeyword_12());
+			newLeafNode(otherlv_21, grammarAccess.getEnumerationAccess().getLiteralKeyword_11());
 		}
-		this_BEGIN_23=RULE_BEGIN
+		this_BEGIN_22=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_23, grammarAccess.getEnumerationAccess().getBEGINTerminalRuleCall_13());
+			newLeafNode(this_BEGIN_22, grammarAccess.getEnumerationAccess().getBEGINTerminalRuleCall_12());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEnumerationAccess().getLiteralEnumerationLiteralParserRuleCall_14_0());
+					newCompositeNode(grammarAccess.getEnumerationAccess().getLiteralEnumerationLiteralParserRuleCall_13_0());
 				}
-				lv_literal_24_0=ruleEnumerationLiteral
+				lv_literal_23_0=ruleEnumerationLiteral
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9848,23 +9714,23 @@ ruleEnumeration returns [EObject current=null]
 					add(
 						$current,
 						"literal",
-						lv_literal_24_0,
+						lv_literal_23_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.EnumerationLiteral");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_25=Comma
+			otherlv_24=Comma
 			{
-				newLeafNode(otherlv_25, grammarAccess.getEnumerationAccess().getCommaKeyword_15_0());
+				newLeafNode(otherlv_24, grammarAccess.getEnumerationAccess().getCommaKeyword_14_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationAccess().getLiteralEnumerationLiteralParserRuleCall_15_1_0());
+						newCompositeNode(grammarAccess.getEnumerationAccess().getLiteralEnumerationLiteralParserRuleCall_14_1_0());
 					}
-					lv_literal_26_0=ruleEnumerationLiteral
+					lv_literal_25_0=ruleEnumerationLiteral
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationRule());
@@ -9872,20 +9738,20 @@ ruleEnumeration returns [EObject current=null]
 						add(
 							$current,
 							"literal",
-							lv_literal_26_0,
+							lv_literal_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EnumerationLiteral");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
+		this_END_26=RULE_END
+		{
+			newLeafNode(this_END_26, grammarAccess.getEnumerationAccess().getENDTerminalRuleCall_15());
+		}
 		this_END_27=RULE_END
 		{
 			newLeafNode(this_END_27, grammarAccess.getEnumerationAccess().getENDTerminalRuleCall_16());
-		}
-		this_END_28=RULE_END
-		{
-			newLeafNode(this_END_28, grammarAccess.getEnumerationAccess().getENDTerminalRuleCall_17());
 		}
 	)
 ;
@@ -9910,20 +9776,12 @@ ruleQuantity returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getQuantityAccess().getQuantityKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getQuantityAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getQuantityAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuantityAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getQuantityAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -9931,23 +9789,27 @@ ruleQuantity returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getQuantityAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getQuantityAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getQuantityAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuantityAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getQuantityAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -9955,7 +9817,7 @@ ruleQuantity returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -9963,16 +9825,16 @@ ruleQuantity returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getQuantityAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getQuantityAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuantityAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getQuantityAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -9980,7 +9842,7 @@ ruleQuantity returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -9988,16 +9850,16 @@ ruleQuantity returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getQuantityAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getQuantityAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuantityAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getQuantityAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10005,23 +9867,23 @@ ruleQuantity returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=AmountOfSubstanceExp
+		otherlv_9=AmountOfSubstanceExp
 		{
-			newLeafNode(otherlv_10, grammarAccess.getQuantityAccess().getAmountOfSubstanceExpKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getQuantityAccess().getAmountOfSubstanceExpKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuantityAccess().getAmountOfSubstanceExpIntegerParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getQuantityAccess().getAmountOfSubstanceExpIntegerParserRuleCall_7_0());
 				}
-				lv_amountOfSubstanceExp_11_0=ruleInteger
+				lv_amountOfSubstanceExp_10_0=ruleInteger
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10029,22 +9891,22 @@ ruleQuantity returns [EObject current=null]
 					set(
 						$current,
 						"amountOfSubstanceExp",
-						lv_amountOfSubstanceExp_11_0,
+						lv_amountOfSubstanceExp_10_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_12=ElectricCurrentExp
+		otherlv_11=ElectricCurrentExp
 		{
-			newLeafNode(otherlv_12, grammarAccess.getQuantityAccess().getElectricCurrentExpKeyword_9());
+			newLeafNode(otherlv_11, grammarAccess.getQuantityAccess().getElectricCurrentExpKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuantityAccess().getElectricCurrentExpIntegerParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getQuantityAccess().getElectricCurrentExpIntegerParserRuleCall_9_0());
 				}
-				lv_electricCurrentExp_13_0=ruleInteger
+				lv_electricCurrentExp_12_0=ruleInteger
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10052,22 +9914,22 @@ ruleQuantity returns [EObject current=null]
 					set(
 						$current,
 						"electricCurrentExp",
-						lv_electricCurrentExp_13_0,
+						lv_electricCurrentExp_12_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_14=LengthExp
+		otherlv_13=LengthExp
 		{
-			newLeafNode(otherlv_14, grammarAccess.getQuantityAccess().getLengthExpKeyword_11());
+			newLeafNode(otherlv_13, grammarAccess.getQuantityAccess().getLengthExpKeyword_10());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuantityAccess().getLengthExpIntegerParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getQuantityAccess().getLengthExpIntegerParserRuleCall_11_0());
 				}
-				lv_lengthExp_15_0=ruleInteger
+				lv_lengthExp_14_0=ruleInteger
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10075,22 +9937,22 @@ ruleQuantity returns [EObject current=null]
 					set(
 						$current,
 						"lengthExp",
-						lv_lengthExp_15_0,
+						lv_lengthExp_14_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_16=LuminousIntensityExp
+		otherlv_15=LuminousIntensityExp
 		{
-			newLeafNode(otherlv_16, grammarAccess.getQuantityAccess().getLuminousIntensityExpKeyword_13());
+			newLeafNode(otherlv_15, grammarAccess.getQuantityAccess().getLuminousIntensityExpKeyword_12());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuantityAccess().getLuminousIntensityExpIntegerParserRuleCall_14_0());
+					newCompositeNode(grammarAccess.getQuantityAccess().getLuminousIntensityExpIntegerParserRuleCall_13_0());
 				}
-				lv_luminousIntensityExp_17_0=ruleInteger
+				lv_luminousIntensityExp_16_0=ruleInteger
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10098,22 +9960,22 @@ ruleQuantity returns [EObject current=null]
 					set(
 						$current,
 						"luminousIntensityExp",
-						lv_luminousIntensityExp_17_0,
+						lv_luminousIntensityExp_16_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_18=MassExp
+		otherlv_17=MassExp
 		{
-			newLeafNode(otherlv_18, grammarAccess.getQuantityAccess().getMassExpKeyword_15());
+			newLeafNode(otherlv_17, grammarAccess.getQuantityAccess().getMassExpKeyword_14());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuantityAccess().getMassExpIntegerParserRuleCall_16_0());
+					newCompositeNode(grammarAccess.getQuantityAccess().getMassExpIntegerParserRuleCall_15_0());
 				}
-				lv_massExp_19_0=ruleInteger
+				lv_massExp_18_0=ruleInteger
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10121,22 +9983,22 @@ ruleQuantity returns [EObject current=null]
 					set(
 						$current,
 						"massExp",
-						lv_massExp_19_0,
+						lv_massExp_18_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_20=ThermodynamicTemperatureExp
+		otherlv_19=ThermodynamicTemperatureExp
 		{
-			newLeafNode(otherlv_20, grammarAccess.getQuantityAccess().getThermodynamicTemperatureExpKeyword_17());
+			newLeafNode(otherlv_19, grammarAccess.getQuantityAccess().getThermodynamicTemperatureExpKeyword_16());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuantityAccess().getThermodynamicTemperatureExpIntegerParserRuleCall_18_0());
+					newCompositeNode(grammarAccess.getQuantityAccess().getThermodynamicTemperatureExpIntegerParserRuleCall_17_0());
 				}
-				lv_thermodynamicTemperatureExp_21_0=ruleInteger
+				lv_thermodynamicTemperatureExp_20_0=ruleInteger
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10144,22 +10006,22 @@ ruleQuantity returns [EObject current=null]
 					set(
 						$current,
 						"thermodynamicTemperatureExp",
-						lv_thermodynamicTemperatureExp_21_0,
+						lv_thermodynamicTemperatureExp_20_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_22=TimeExp
+		otherlv_21=TimeExp
 		{
-			newLeafNode(otherlv_22, grammarAccess.getQuantityAccess().getTimeExpKeyword_19());
+			newLeafNode(otherlv_21, grammarAccess.getQuantityAccess().getTimeExpKeyword_18());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuantityAccess().getTimeExpIntegerParserRuleCall_20_0());
+					newCompositeNode(grammarAccess.getQuantityAccess().getTimeExpIntegerParserRuleCall_19_0());
 				}
-				lv_timeExp_23_0=ruleInteger
+				lv_timeExp_22_0=ruleInteger
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10167,27 +10029,27 @@ ruleQuantity returns [EObject current=null]
 					set(
 						$current,
 						"timeExp",
-						lv_timeExp_23_0,
+						lv_timeExp_22_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_24=OwnedComment
+			otherlv_23=OwnedComment
 			{
-				newLeafNode(otherlv_24, grammarAccess.getQuantityAccess().getOwnedCommentKeyword_21_0());
+				newLeafNode(otherlv_23, grammarAccess.getQuantityAccess().getOwnedCommentKeyword_20_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getQuantityAccess().getBEGINTerminalRuleCall_21_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getQuantityAccess().getBEGINTerminalRuleCall_20_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuantityAccess().getOwnedCommentCommentParserRuleCall_21_2_0());
+						newCompositeNode(grammarAccess.getQuantityAccess().getOwnedCommentCommentParserRuleCall_20_2_0());
 					}
-					lv_ownedComment_26_0=ruleComment
+					lv_ownedComment_25_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10195,23 +10057,23 @@ ruleQuantity returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_26_0,
+							lv_ownedComment_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getQuantityAccess().getCommaKeyword_21_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getQuantityAccess().getCommaKeyword_20_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getQuantityAccess().getOwnedCommentCommentParserRuleCall_21_3_1_0());
+							newCompositeNode(grammarAccess.getQuantityAccess().getOwnedCommentCommentParserRuleCall_20_3_1_0());
 						}
-						lv_ownedComment_28_0=ruleComment
+						lv_ownedComment_27_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getQuantityRule());
@@ -10219,21 +10081,21 @@ ruleQuantity returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_28_0,
+								lv_ownedComment_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getQuantityAccess().getENDTerminalRuleCall_21_4());
+				newLeafNode(this_END_28, grammarAccess.getQuantityAccess().getENDTerminalRuleCall_20_4());
 			}
 		)?
-		this_END_30=RULE_END
+		this_END_29=RULE_END
 		{
-			newLeafNode(this_END_30, grammarAccess.getQuantityAccess().getENDTerminalRuleCall_22());
+			newLeafNode(this_END_29, grammarAccess.getQuantityAccess().getENDTerminalRuleCall_21());
 		}
 	)
 ;
@@ -10258,20 +10120,12 @@ ruleRangeableValueType returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getRangeableValueTypeAccess().getRangeableValueTypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getRangeableValueTypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getRangeableValueTypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10279,23 +10133,27 @@ ruleRangeableValueType returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getRangeableValueTypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getRangeableValueTypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getRangeableValueTypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10303,7 +10161,7 @@ ruleRangeableValueType returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -10311,16 +10169,16 @@ ruleRangeableValueType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getRangeableValueTypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getRangeableValueTypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10328,7 +10186,7 @@ ruleRangeableValueType returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -10336,16 +10194,16 @@ ruleRangeableValueType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getRangeableValueTypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getRangeableValueTypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10353,7 +10211,7 @@ ruleRangeableValueType returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -10361,16 +10219,16 @@ ruleRangeableValueType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Text
+			otherlv_9=Text
 			{
-				newLeafNode(otherlv_10, grammarAccess.getRangeableValueTypeAccess().getTextKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getRangeableValueTypeAccess().getTextKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getTextString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getTextString0ParserRuleCall_6_1_0());
 					}
-					lv_text_11_0=ruleString0
+					lv_text_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10378,7 +10236,7 @@ ruleRangeableValueType returns [EObject current=null]
 						set(
 							$current,
 							"text",
-							lv_text_11_0,
+							lv_text_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -10386,16 +10244,16 @@ ruleRangeableValueType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=Uri
+			otherlv_11=Uri
 			{
-				newLeafNode(otherlv_12, grammarAccess.getRangeableValueTypeAccess().getUriKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getRangeableValueTypeAccess().getUriKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getUriString0ParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getUriString0ParserRuleCall_7_1_0());
 					}
-					lv_uri_13_0=ruleString0
+					lv_uri_12_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10403,23 +10261,23 @@ ruleRangeableValueType returns [EObject current=null]
 						set(
 							$current,
 							"uri",
-							lv_uri_13_0,
+							lv_uri_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_14=Accuracy
+		otherlv_13=Accuracy
 		{
-			newLeafNode(otherlv_14, grammarAccess.getRangeableValueTypeAccess().getAccuracyKeyword_9());
+			newLeafNode(otherlv_13, grammarAccess.getRangeableValueTypeAccess().getAccuracyKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getAccuracyFloatParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getAccuracyFloatParserRuleCall_9_0());
 				}
-				lv_accuracy_15_0=ruleFloat
+				lv_accuracy_14_0=ruleFloat
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10427,22 +10285,22 @@ ruleRangeableValueType returns [EObject current=null]
 					set(
 						$current,
 						"accuracy",
-						lv_accuracy_15_0,
+						lv_accuracy_14_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Float");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_16=Resolution
+		otherlv_15=Resolution
 		{
-			newLeafNode(otherlv_16, grammarAccess.getRangeableValueTypeAccess().getResolutionKeyword_11());
+			newLeafNode(otherlv_15, grammarAccess.getRangeableValueTypeAccess().getResolutionKeyword_10());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getResolutionFloatParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getResolutionFloatParserRuleCall_11_0());
 				}
-				lv_resolution_17_0=ruleFloat
+				lv_resolution_16_0=ruleFloat
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10450,23 +10308,23 @@ ruleRangeableValueType returns [EObject current=null]
 					set(
 						$current,
 						"resolution",
-						lv_resolution_17_0,
+						lv_resolution_16_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Float");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_18=SignificantDigits
+			otherlv_17=SignificantDigits
 			{
-				newLeafNode(otherlv_18, grammarAccess.getRangeableValueTypeAccess().getSignificantDigitsKeyword_13_0());
+				newLeafNode(otherlv_17, grammarAccess.getRangeableValueTypeAccess().getSignificantDigitsKeyword_12_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getSignificantDigitsIntegerParserRuleCall_13_1_0());
+						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getSignificantDigitsIntegerParserRuleCall_12_1_0());
 					}
-					lv_significantDigits_19_0=ruleInteger
+					lv_significantDigits_18_0=ruleInteger
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10474,16 +10332,16 @@ ruleRangeableValueType returns [EObject current=null]
 						set(
 							$current,
 							"significantDigits",
-							lv_significantDigits_19_0,
+							lv_significantDigits_18_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Integer");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_20=BaseRangeable
+		otherlv_19=BaseRangeable
 		{
-			newLeafNode(otherlv_20, grammarAccess.getRangeableValueTypeAccess().getBaseRangeableKeyword_14());
+			newLeafNode(otherlv_19, grammarAccess.getRangeableValueTypeAccess().getBaseRangeableKeyword_13());
 		}
 		(
 			(
@@ -10493,7 +10351,7 @@ ruleRangeableValueType returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getBaseRangeableEANumericalCrossReference_15_0());
+					newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getBaseRangeableEANumericalCrossReference_14_0());
 				}
 				ruleEString
 				{
@@ -10502,20 +10360,20 @@ ruleRangeableValueType returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_22=OwnedComment
+			otherlv_21=OwnedComment
 			{
-				newLeafNode(otherlv_22, grammarAccess.getRangeableValueTypeAccess().getOwnedCommentKeyword_16_0());
+				newLeafNode(otherlv_21, grammarAccess.getRangeableValueTypeAccess().getOwnedCommentKeyword_15_0());
 			}
-			this_BEGIN_23=RULE_BEGIN
+			this_BEGIN_22=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_23, grammarAccess.getRangeableValueTypeAccess().getBEGINTerminalRuleCall_16_1());
+				newLeafNode(this_BEGIN_22, grammarAccess.getRangeableValueTypeAccess().getBEGINTerminalRuleCall_15_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getOwnedCommentCommentParserRuleCall_16_2_0());
+						newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getOwnedCommentCommentParserRuleCall_15_2_0());
 					}
-					lv_ownedComment_24_0=ruleComment
+					lv_ownedComment_23_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10523,23 +10381,23 @@ ruleRangeableValueType returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_24_0,
+							lv_ownedComment_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=Comma
+				otherlv_24=Comma
 				{
-					newLeafNode(otherlv_25, grammarAccess.getRangeableValueTypeAccess().getCommaKeyword_16_3_0());
+					newLeafNode(otherlv_24, grammarAccess.getRangeableValueTypeAccess().getCommaKeyword_15_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getOwnedCommentCommentParserRuleCall_16_3_1_0());
+							newCompositeNode(grammarAccess.getRangeableValueTypeAccess().getOwnedCommentCommentParserRuleCall_15_3_1_0());
 						}
-						lv_ownedComment_26_0=ruleComment
+						lv_ownedComment_25_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getRangeableValueTypeRule());
@@ -10547,21 +10405,21 @@ ruleRangeableValueType returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_26_0,
+								lv_ownedComment_25_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_27=RULE_END
+			this_END_26=RULE_END
 			{
-				newLeafNode(this_END_27, grammarAccess.getRangeableValueTypeAccess().getENDTerminalRuleCall_16_4());
+				newLeafNode(this_END_26, grammarAccess.getRangeableValueTypeAccess().getENDTerminalRuleCall_15_4());
 			}
 		)?
-		this_END_28=RULE_END
+		this_END_27=RULE_END
 		{
-			newLeafNode(this_END_28, grammarAccess.getRangeableValueTypeAccess().getENDTerminalRuleCall_17());
+			newLeafNode(this_END_27, grammarAccess.getRangeableValueTypeAccess().getENDTerminalRuleCall_16());
 		}
 	)
 ;
@@ -10586,20 +10444,12 @@ ruleUnit returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getUnitAccess().getUnitKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getUnitAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getUnitAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUnitAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getUnitAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10607,23 +10457,27 @@ ruleUnit returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getUnitAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getUnitAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getUnitAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUnitAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getUnitAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10631,7 +10485,7 @@ ruleUnit returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -10639,16 +10493,16 @@ ruleUnit returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getUnitAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getUnitAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUnitAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getUnitAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10656,7 +10510,7 @@ ruleUnit returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -10664,16 +10518,16 @@ ruleUnit returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getUnitAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getUnitAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUnitAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getUnitAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10681,23 +10535,23 @@ ruleUnit returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Factor
+		otherlv_9=Factor
 		{
-			newLeafNode(otherlv_10, grammarAccess.getUnitAccess().getFactorKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getUnitAccess().getFactorKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUnitAccess().getFactorFloatParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getUnitAccess().getFactorFloatParserRuleCall_7_0());
 				}
-				lv_factor_11_0=ruleFloat
+				lv_factor_10_0=ruleFloat
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10705,22 +10559,22 @@ ruleUnit returns [EObject current=null]
 					set(
 						$current,
 						"factor",
-						lv_factor_11_0,
+						lv_factor_10_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Float");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_12=Symbol
+		otherlv_11=Symbol
 		{
-			newLeafNode(otherlv_12, grammarAccess.getUnitAccess().getSymbolKeyword_9());
+			newLeafNode(otherlv_11, grammarAccess.getUnitAccess().getSymbolKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUnitAccess().getSymbolString0ParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getUnitAccess().getSymbolString0ParserRuleCall_9_0());
 				}
-				lv_symbol_13_0=ruleString0
+				lv_symbol_12_0=ruleString0
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10728,22 +10582,22 @@ ruleUnit returns [EObject current=null]
 					set(
 						$current,
 						"symbol",
-						lv_symbol_13_0,
+						lv_symbol_12_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_14=Offset
+		otherlv_13=Offset
 		{
-			newLeafNode(otherlv_14, grammarAccess.getUnitAccess().getOffsetKeyword_11());
+			newLeafNode(otherlv_13, grammarAccess.getUnitAccess().getOffsetKeyword_10());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUnitAccess().getOffsetFloatParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getUnitAccess().getOffsetFloatParserRuleCall_11_0());
 				}
-				lv_offset_15_0=ruleFloat
+				lv_offset_14_0=ruleFloat
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10751,16 +10605,16 @@ ruleUnit returns [EObject current=null]
 					set(
 						$current,
 						"offset",
-						lv_offset_15_0,
+						lv_offset_14_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Float");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_16=Reference
+			otherlv_15=Reference
 			{
-				newLeafNode(otherlv_16, grammarAccess.getUnitAccess().getReferenceKeyword_13_0());
+				newLeafNode(otherlv_15, grammarAccess.getUnitAccess().getReferenceKeyword_12_0());
 			}
 			(
 				(
@@ -10770,7 +10624,7 @@ ruleUnit returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getUnitAccess().getReferenceUnitCrossReference_13_1_0());
+						newCompositeNode(grammarAccess.getUnitAccess().getReferenceUnitCrossReference_12_1_0());
 					}
 					ruleEString
 					{
@@ -10780,9 +10634,9 @@ ruleUnit returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_18=Quantity_1
+			otherlv_17=Quantity_1
 			{
-				newLeafNode(otherlv_18, grammarAccess.getUnitAccess().getQuantityKeyword_14_0());
+				newLeafNode(otherlv_17, grammarAccess.getUnitAccess().getQuantityKeyword_13_0());
 			}
 			(
 				(
@@ -10792,7 +10646,7 @@ ruleUnit returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getUnitAccess().getQuantityQuantityCrossReference_14_1_0());
+						newCompositeNode(grammarAccess.getUnitAccess().getQuantityQuantityCrossReference_13_1_0());
 					}
 					ruleEString
 					{
@@ -10802,20 +10656,20 @@ ruleUnit returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_20=OwnedComment
+			otherlv_19=OwnedComment
 			{
-				newLeafNode(otherlv_20, grammarAccess.getUnitAccess().getOwnedCommentKeyword_15_0());
+				newLeafNode(otherlv_19, grammarAccess.getUnitAccess().getOwnedCommentKeyword_14_0());
 			}
-			this_BEGIN_21=RULE_BEGIN
+			this_BEGIN_20=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_21, grammarAccess.getUnitAccess().getBEGINTerminalRuleCall_15_1());
+				newLeafNode(this_BEGIN_20, grammarAccess.getUnitAccess().getBEGINTerminalRuleCall_14_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUnitAccess().getOwnedCommentCommentParserRuleCall_15_2_0());
+						newCompositeNode(grammarAccess.getUnitAccess().getOwnedCommentCommentParserRuleCall_14_2_0());
 					}
-					lv_ownedComment_22_0=ruleComment
+					lv_ownedComment_21_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10823,23 +10677,23 @@ ruleUnit returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_22_0,
+							lv_ownedComment_21_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_23=Comma
+				otherlv_22=Comma
 				{
-					newLeafNode(otherlv_23, grammarAccess.getUnitAccess().getCommaKeyword_15_3_0());
+					newLeafNode(otherlv_22, grammarAccess.getUnitAccess().getCommaKeyword_14_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getUnitAccess().getOwnedCommentCommentParserRuleCall_15_3_1_0());
+							newCompositeNode(grammarAccess.getUnitAccess().getOwnedCommentCommentParserRuleCall_14_3_1_0());
 						}
-						lv_ownedComment_24_0=ruleComment
+						lv_ownedComment_23_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getUnitRule());
@@ -10847,21 +10701,21 @@ ruleUnit returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_24_0,
+								lv_ownedComment_23_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_25=RULE_END
+			this_END_24=RULE_END
 			{
-				newLeafNode(this_END_25, grammarAccess.getUnitAccess().getENDTerminalRuleCall_15_4());
+				newLeafNode(this_END_24, grammarAccess.getUnitAccess().getENDTerminalRuleCall_14_4());
 			}
 		)?
-		this_END_26=RULE_END
+		this_END_25=RULE_END
 		{
-			newLeafNode(this_END_26, grammarAccess.getUnitAccess().getENDTerminalRuleCall_16());
+			newLeafNode(this_END_25, grammarAccess.getUnitAccess().getENDTerminalRuleCall_15());
 		}
 	)
 ;
@@ -10886,20 +10740,12 @@ ruleUserAttributeDefinition returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getUserAttributeDefinitionAccess().getUserAttributeDefinitionKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getUserAttributeDefinitionAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getUserAttributeDefinitionAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUserAttributeDefinitionRule());
@@ -10907,23 +10753,27 @@ ruleUserAttributeDefinition returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getUserAttributeDefinitionAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getUserAttributeDefinitionAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getUserAttributeDefinitionAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributeDefinitionRule());
@@ -10931,7 +10781,7 @@ ruleUserAttributeDefinition returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -10939,16 +10789,16 @@ ruleUserAttributeDefinition returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getUserAttributeDefinitionAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getUserAttributeDefinitionAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributeDefinitionRule());
@@ -10956,7 +10806,7 @@ ruleUserAttributeDefinition returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -10964,16 +10814,16 @@ ruleUserAttributeDefinition returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getUserAttributeDefinitionAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getUserAttributeDefinitionAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributeDefinitionRule());
@@ -10981,16 +10831,16 @@ ruleUserAttributeDefinition returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Type
+		otherlv_9=Type
 		{
-			newLeafNode(otherlv_10, grammarAccess.getUserAttributeDefinitionAccess().getTypeKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getUserAttributeDefinitionAccess().getTypeKeyword_6());
 		}
 		(
 			(
@@ -11000,7 +10850,7 @@ ruleUserAttributeDefinition returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getTypeEADatatypeCrossReference_8_0());
+					newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getTypeEADatatypeCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -11009,20 +10859,20 @@ ruleUserAttributeDefinition returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_12=OwnedComment
+			otherlv_11=OwnedComment
 			{
-				newLeafNode(otherlv_12, grammarAccess.getUserAttributeDefinitionAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_11, grammarAccess.getUserAttributeDefinitionAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_13=RULE_BEGIN
+			this_BEGIN_12=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_13, grammarAccess.getUserAttributeDefinitionAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_12, grammarAccess.getUserAttributeDefinitionAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_14_0=ruleComment
+					lv_ownedComment_13_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributeDefinitionRule());
@@ -11030,23 +10880,23 @@ ruleUserAttributeDefinition returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_14_0,
+							lv_ownedComment_13_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getUserAttributeDefinitionAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getUserAttributeDefinitionAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_16_0=ruleComment
+						lv_ownedComment_15_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getUserAttributeDefinitionRule());
@@ -11054,29 +10904,29 @@ ruleUserAttributeDefinition returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_16_0,
+								lv_ownedComment_15_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_17=RULE_END
+			this_END_16=RULE_END
 			{
-				newLeafNode(this_END_17, grammarAccess.getUserAttributeDefinitionAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_16, grammarAccess.getUserAttributeDefinitionAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_18=DefaultValue
+			otherlv_17=DefaultValue
 			{
-				newLeafNode(otherlv_18, grammarAccess.getUserAttributeDefinitionAccess().getDefaultValueKeyword_10_0());
+				newLeafNode(otherlv_17, grammarAccess.getUserAttributeDefinitionAccess().getDefaultValueKeyword_9_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getDefaultValueEAValueParserRuleCall_10_1_0());
+						newCompositeNode(grammarAccess.getUserAttributeDefinitionAccess().getDefaultValueEAValueParserRuleCall_9_1_0());
 					}
-					lv_defaultValue_19_0=ruleEAValue
+					lv_defaultValue_18_0=ruleEAValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributeDefinitionRule());
@@ -11084,16 +10934,16 @@ ruleUserAttributeDefinition returns [EObject current=null]
 						set(
 							$current,
 							"defaultValue",
-							lv_defaultValue_19_0,
+							lv_defaultValue_18_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EAValue");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		this_END_20=RULE_END
+		this_END_19=RULE_END
 		{
-			newLeafNode(this_END_20, grammarAccess.getUserAttributeDefinitionAccess().getENDTerminalRuleCall_11());
+			newLeafNode(this_END_19, grammarAccess.getUserAttributeDefinitionAccess().getENDTerminalRuleCall_10());
 		}
 	)
 ;
@@ -11118,20 +10968,12 @@ ruleUserAttributedElement returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getUserAttributedElementAccess().getUserAttributedElementKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getUserAttributedElementAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getUserAttributedElementAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUserAttributedElementAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getUserAttributedElementAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUserAttributedElementRule());
@@ -11139,23 +10981,27 @@ ruleUserAttributedElement returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getUserAttributedElementAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getUserAttributedElementAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getUserAttributedElementAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributedElementRule());
@@ -11163,7 +11009,7 @@ ruleUserAttributedElement returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -11171,16 +11017,16 @@ ruleUserAttributedElement returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getUserAttributedElementAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getUserAttributedElementAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributedElementRule());
@@ -11188,7 +11034,7 @@ ruleUserAttributedElement returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -11196,16 +11042,16 @@ ruleUserAttributedElement returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getUserAttributedElementAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getUserAttributedElementAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributedElementRule());
@@ -11213,7 +11059,7 @@ ruleUserAttributedElement returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -11221,13 +11067,13 @@ ruleUserAttributedElement returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=UaType
+			otherlv_9=UaType
 			{
-				newLeafNode(otherlv_10, grammarAccess.getUserAttributedElementAccess().getUaTypeKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getUserAttributedElementAccess().getUaTypeKeyword_6_0());
 			}
-			otherlv_11=LeftParenthesis
+			otherlv_10=LeftParenthesis
 			{
-				newLeafNode(otherlv_11, grammarAccess.getUserAttributedElementAccess().getLeftParenthesisKeyword_7_1());
+				newLeafNode(otherlv_10, grammarAccess.getUserAttributedElementAccess().getLeftParenthesisKeyword_6_1());
 			}
 			(
 				(
@@ -11237,7 +11083,7 @@ ruleUserAttributedElement returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUaTypeUserElementTypeCrossReference_7_2_0());
+						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUaTypeUserElementTypeCrossReference_6_2_0());
 					}
 					ruleEString
 					{
@@ -11246,9 +11092,9 @@ ruleUserAttributedElement returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getUserAttributedElementAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getUserAttributedElementAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
@@ -11258,7 +11104,7 @@ ruleUserAttributedElement returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUaTypeUserElementTypeCrossReference_7_3_1_0());
+							newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUaTypeUserElementTypeCrossReference_6_3_1_0());
 						}
 						ruleEString
 						{
@@ -11267,14 +11113,14 @@ ruleUserAttributedElement returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_15=RightParenthesis
+			otherlv_14=RightParenthesis
 			{
-				newLeafNode(otherlv_15, grammarAccess.getUserAttributedElementAccess().getRightParenthesisKeyword_7_4());
+				newLeafNode(otherlv_14, grammarAccess.getUserAttributedElementAccess().getRightParenthesisKeyword_6_4());
 			}
 		)?
-		otherlv_16=AttributedElement
+		otherlv_15=AttributedElement
 		{
-			newLeafNode(otherlv_16, grammarAccess.getUserAttributedElementAccess().getAttributedElementKeyword_8());
+			newLeafNode(otherlv_15, grammarAccess.getUserAttributedElementAccess().getAttributedElementKeyword_7());
 		}
 		(
 			(
@@ -11284,7 +11130,7 @@ ruleUserAttributedElement returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getUserAttributedElementAccess().getAttributedElementIdentifiableCrossReference_9_0());
+					newCompositeNode(grammarAccess.getUserAttributedElementAccess().getAttributedElementIdentifiableCrossReference_8_0());
 				}
 				ruleEString
 				{
@@ -11293,20 +11139,20 @@ ruleUserAttributedElement returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getUserAttributedElementAccess().getOwnedCommentKeyword_10_0());
+				newLeafNode(otherlv_17, grammarAccess.getUserAttributedElementAccess().getOwnedCommentKeyword_9_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getUserAttributedElementAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getUserAttributedElementAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getOwnedCommentCommentParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributedElementRule());
@@ -11314,23 +11160,23 @@ ruleUserAttributedElement returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getUserAttributedElementAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getUserAttributedElementAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getUserAttributedElementAccess().getOwnedCommentCommentParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getUserAttributedElementAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getUserAttributedElementRule());
@@ -11338,33 +11184,33 @@ ruleUserAttributedElement returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getUserAttributedElementAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_22, grammarAccess.getUserAttributedElementAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_24=UaValue
+			otherlv_23=UaValue
 			{
-				newLeafNode(otherlv_24, grammarAccess.getUserAttributedElementAccess().getUaValueKeyword_11_0());
+				newLeafNode(otherlv_23, grammarAccess.getUserAttributedElementAccess().getUaValueKeyword_10_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getUserAttributedElementAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getUserAttributedElementAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUaValueEAValueParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUaValueEAValueParserRuleCall_10_2_0());
 					}
-					lv_uaValue_26_0=ruleEAValue
+					lv_uaValue_25_0=ruleEAValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserAttributedElementRule());
@@ -11372,23 +11218,23 @@ ruleUserAttributedElement returns [EObject current=null]
 						add(
 							$current,
 							"uaValue",
-							lv_uaValue_26_0,
+							lv_uaValue_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EAValue");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getUserAttributedElementAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getUserAttributedElementAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUaValueEAValueParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getUserAttributedElementAccess().getUaValueEAValueParserRuleCall_10_3_1_0());
 						}
-						lv_uaValue_28_0=ruleEAValue
+						lv_uaValue_27_0=ruleEAValue
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getUserAttributedElementRule());
@@ -11396,21 +11242,21 @@ ruleUserAttributedElement returns [EObject current=null]
 							add(
 								$current,
 								"uaValue",
-								lv_uaValue_28_0,
+								lv_uaValue_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.EAValue");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getUserAttributedElementAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_28, grammarAccess.getUserAttributedElementAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
-		this_END_30=RULE_END
+		this_END_29=RULE_END
 		{
-			newLeafNode(this_END_30, grammarAccess.getUserAttributedElementAccess().getENDTerminalRuleCall_12());
+			newLeafNode(this_END_29, grammarAccess.getUserAttributedElementAccess().getENDTerminalRuleCall_11());
 		}
 	)
 ;
@@ -11435,20 +11281,12 @@ ruleUserElementType returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getUserElementTypeAccess().getUserElementTypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getUserElementTypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getUserElementTypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUserElementTypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getUserElementTypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11456,23 +11294,27 @@ ruleUserElementType returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getUserElementTypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getUserElementTypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getUserElementTypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserElementTypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getUserElementTypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11480,7 +11322,7 @@ ruleUserElementType returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -11488,16 +11330,16 @@ ruleUserElementType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getUserElementTypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getUserElementTypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserElementTypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getUserElementTypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11505,7 +11347,7 @@ ruleUserElementType returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -11513,16 +11355,16 @@ ruleUserElementType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getUserElementTypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getUserElementTypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserElementTypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getUserElementTypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11530,7 +11372,7 @@ ruleUserElementType returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -11538,16 +11380,16 @@ ruleUserElementType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=ValidFor
+			otherlv_9=ValidFor
 			{
-				newLeafNode(otherlv_10, grammarAccess.getUserElementTypeAccess().getValidForKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getUserElementTypeAccess().getValidForKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserElementTypeAccess().getValidForString0ParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getUserElementTypeAccess().getValidForString0ParserRuleCall_6_1_0());
 					}
-					lv_validFor_11_0=ruleString0
+					lv_validFor_10_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11555,23 +11397,23 @@ ruleUserElementType returns [EObject current=null]
 						set(
 							$current,
 							"validFor",
-							lv_validFor_11_0,
+							lv_validFor_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_12=Key
+		otherlv_11=Key
 		{
-			newLeafNode(otherlv_12, grammarAccess.getUserElementTypeAccess().getKeyKeyword_8());
+			newLeafNode(otherlv_11, grammarAccess.getUserElementTypeAccess().getKeyKeyword_7());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getUserElementTypeAccess().getKeyString0ParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getUserElementTypeAccess().getKeyString0ParserRuleCall_8_0());
 				}
-				lv_key_13_0=ruleString0
+				lv_key_12_0=ruleString0
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11579,27 +11421,27 @@ ruleUserElementType returns [EObject current=null]
 					set(
 						$current,
 						"key",
-						lv_key_13_0,
+						lv_key_12_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getUserElementTypeAccess().getOwnedCommentKeyword_10_0());
+				newLeafNode(otherlv_13, grammarAccess.getUserElementTypeAccess().getOwnedCommentKeyword_9_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getUserElementTypeAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getUserElementTypeAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserElementTypeAccess().getOwnedCommentCommentParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getUserElementTypeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11607,23 +11449,23 @@ ruleUserElementType returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getUserElementTypeAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getUserElementTypeAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getUserElementTypeAccess().getOwnedCommentCommentParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getUserElementTypeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11631,33 +11473,33 @@ ruleUserElementType returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getUserElementTypeAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_18, grammarAccess.getUserElementTypeAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_20=UaDefinition
+			otherlv_19=UaDefinition
 			{
-				newLeafNode(otherlv_20, grammarAccess.getUserElementTypeAccess().getUaDefinitionKeyword_11_0());
+				newLeafNode(otherlv_19, grammarAccess.getUserElementTypeAccess().getUaDefinitionKeyword_10_0());
 			}
-			this_BEGIN_21=RULE_BEGIN
+			this_BEGIN_20=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_21, grammarAccess.getUserElementTypeAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_20, grammarAccess.getUserElementTypeAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getUserElementTypeAccess().getUaDefinitionUserAttributeDefinitionParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getUserElementTypeAccess().getUaDefinitionUserAttributeDefinitionParserRuleCall_10_2_0());
 					}
-					lv_uaDefinition_22_0=ruleUserAttributeDefinition
+					lv_uaDefinition_21_0=ruleUserAttributeDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11665,23 +11507,23 @@ ruleUserElementType returns [EObject current=null]
 						add(
 							$current,
 							"uaDefinition",
-							lv_uaDefinition_22_0,
+							lv_uaDefinition_21_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.UserAttributeDefinition");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_23=Comma
+				otherlv_22=Comma
 				{
-					newLeafNode(otherlv_23, grammarAccess.getUserElementTypeAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_22, grammarAccess.getUserElementTypeAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getUserElementTypeAccess().getUaDefinitionUserAttributeDefinitionParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getUserElementTypeAccess().getUaDefinitionUserAttributeDefinitionParserRuleCall_10_3_1_0());
 						}
-						lv_uaDefinition_24_0=ruleUserAttributeDefinition
+						lv_uaDefinition_23_0=ruleUserAttributeDefinition
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getUserElementTypeRule());
@@ -11689,21 +11531,21 @@ ruleUserElementType returns [EObject current=null]
 							add(
 								$current,
 								"uaDefinition",
-								lv_uaDefinition_24_0,
+								lv_uaDefinition_23_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.UserAttributeDefinition");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_25=RULE_END
+			this_END_24=RULE_END
 			{
-				newLeafNode(this_END_25, grammarAccess.getUserElementTypeAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_24, grammarAccess.getUserElementTypeAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
-		this_END_26=RULE_END
+		this_END_25=RULE_END
 		{
-			newLeafNode(this_END_26, grammarAccess.getUserElementTypeAccess().getENDTerminalRuleCall_12());
+			newLeafNode(this_END_25, grammarAccess.getUserElementTypeAccess().getENDTerminalRuleCall_11());
 		}
 	)
 ;
@@ -11728,20 +11570,12 @@ ruleAllocation returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAllocationAccess().getAllocationKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getAllocationAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getAllocationAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAllocationAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getAllocationAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAllocationRule());
@@ -11749,23 +11583,27 @@ ruleAllocation returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getAllocationAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getAllocationAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getAllocationAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAllocationAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getAllocationAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAllocationRule());
@@ -11773,7 +11611,7 @@ ruleAllocation returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -11781,16 +11619,16 @@ ruleAllocation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getAllocationAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getAllocationAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAllocationAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getAllocationAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAllocationRule());
@@ -11798,7 +11636,7 @@ ruleAllocation returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -11806,16 +11644,16 @@ ruleAllocation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getAllocationAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getAllocationAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAllocationAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getAllocationAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAllocationRule());
@@ -11823,7 +11661,7 @@ ruleAllocation returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -11831,20 +11669,20 @@ ruleAllocation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getAllocationAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getAllocationAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getAllocationAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getAllocationAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAllocationAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getAllocationAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAllocationRule());
@@ -11852,23 +11690,23 @@ ruleAllocation returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getAllocationAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getAllocationAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAllocationAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getAllocationAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAllocationRule());
@@ -11876,33 +11714,33 @@ ruleAllocation returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getAllocationAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getAllocationAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
 		(
-			otherlv_16=FunctionAllocation_1
+			otherlv_15=FunctionAllocation_1
 			{
-				newLeafNode(otherlv_16, grammarAccess.getAllocationAccess().getFunctionAllocationKeyword_8_0());
+				newLeafNode(otherlv_15, grammarAccess.getAllocationAccess().getFunctionAllocationKeyword_7_0());
 			}
-			this_BEGIN_17=RULE_BEGIN
+			this_BEGIN_16=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getAllocationAccess().getBEGINTerminalRuleCall_8_1());
+				newLeafNode(this_BEGIN_16, grammarAccess.getAllocationAccess().getBEGINTerminalRuleCall_7_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAllocationAccess().getFunctionAllocationFunctionAllocationParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getAllocationAccess().getFunctionAllocationFunctionAllocationParserRuleCall_7_2_0());
 					}
-					lv_functionAllocation_18_0=ruleFunctionAllocation
+					lv_functionAllocation_17_0=ruleFunctionAllocation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAllocationRule());
@@ -11910,23 +11748,23 @@ ruleAllocation returns [EObject current=null]
 						add(
 							$current,
 							"functionAllocation",
-							lv_functionAllocation_18_0,
+							lv_functionAllocation_17_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionAllocation");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_18=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getAllocationAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_18, grammarAccess.getAllocationAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAllocationAccess().getFunctionAllocationFunctionAllocationParserRuleCall_8_3_1_0());
+							newCompositeNode(grammarAccess.getAllocationAccess().getFunctionAllocationFunctionAllocationParserRuleCall_7_3_1_0());
 						}
-						lv_functionAllocation_20_0=ruleFunctionAllocation
+						lv_functionAllocation_19_0=ruleFunctionAllocation
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAllocationRule());
@@ -11934,21 +11772,21 @@ ruleAllocation returns [EObject current=null]
 							add(
 								$current,
 								"functionAllocation",
-								lv_functionAllocation_20_0,
+								lv_functionAllocation_19_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionAllocation");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
+			this_END_20=RULE_END
 			{
-				newLeafNode(this_END_21, grammarAccess.getAllocationAccess().getENDTerminalRuleCall_8_4());
+				newLeafNode(this_END_20, grammarAccess.getAllocationAccess().getENDTerminalRuleCall_7_4());
 			}
 		)?
-		this_END_22=RULE_END
+		this_END_21=RULE_END
 		{
-			newLeafNode(this_END_22, grammarAccess.getAllocationAccess().getENDTerminalRuleCall_9());
+			newLeafNode(this_END_21, grammarAccess.getAllocationAccess().getENDTerminalRuleCall_8());
 		}
 	)
 ;
@@ -11973,20 +11811,12 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getDesignFunctionPrototypeAccess().getDesignFunctionPrototypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getDesignFunctionPrototypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getDesignFunctionPrototypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDesignFunctionPrototypeRule());
@@ -11994,23 +11824,27 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getDesignFunctionPrototypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getDesignFunctionPrototypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getDesignFunctionPrototypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionPrototypeRule());
@@ -12018,7 +11852,7 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -12026,16 +11860,16 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getDesignFunctionPrototypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getDesignFunctionPrototypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionPrototypeRule());
@@ -12043,7 +11877,7 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -12051,16 +11885,16 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getDesignFunctionPrototypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getDesignFunctionPrototypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionPrototypeRule());
@@ -12068,16 +11902,16 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Type
+		otherlv_9=Type
 		{
-			newLeafNode(otherlv_10, grammarAccess.getDesignFunctionPrototypeAccess().getTypeKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getDesignFunctionPrototypeAccess().getTypeKeyword_6());
 		}
 		(
 			(
@@ -12087,7 +11921,7 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getTypeDesignFunctionTypeCrossReference_8_0());
+					newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getTypeDesignFunctionTypeCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -12096,20 +11930,20 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_12=OwnedComment
+			otherlv_11=OwnedComment
 			{
-				newLeafNode(otherlv_12, grammarAccess.getDesignFunctionPrototypeAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_11, grammarAccess.getDesignFunctionPrototypeAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_13=RULE_BEGIN
+			this_BEGIN_12=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_13, grammarAccess.getDesignFunctionPrototypeAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_12, grammarAccess.getDesignFunctionPrototypeAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_14_0=ruleComment
+					lv_ownedComment_13_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDesignFunctionPrototypeRule());
@@ -12117,23 +11951,23 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_14_0,
+							lv_ownedComment_13_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getDesignFunctionPrototypeAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getDesignFunctionPrototypeAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getDesignFunctionPrototypeAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_16_0=ruleComment
+						lv_ownedComment_15_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDesignFunctionPrototypeRule());
@@ -12141,21 +11975,21 @@ ruleDesignFunctionPrototype returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_16_0,
+								lv_ownedComment_15_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_17=RULE_END
+			this_END_16=RULE_END
 			{
-				newLeafNode(this_END_17, grammarAccess.getDesignFunctionPrototypeAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_16, grammarAccess.getDesignFunctionPrototypeAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_18=RULE_END
+		this_END_17=RULE_END
 		{
-			newLeafNode(this_END_18, grammarAccess.getDesignFunctionPrototypeAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_17, grammarAccess.getDesignFunctionPrototypeAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -12180,20 +12014,12 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getHardwareComponentPrototypeAccess().getHardwareComponentPrototypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getHardwareComponentPrototypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getHardwareComponentPrototypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHardwareComponentPrototypeRule());
@@ -12201,23 +12027,27 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getHardwareComponentPrototypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getHardwareComponentPrototypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getHardwareComponentPrototypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentPrototypeRule());
@@ -12225,7 +12055,7 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -12233,16 +12063,16 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getHardwareComponentPrototypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getHardwareComponentPrototypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentPrototypeRule());
@@ -12250,7 +12080,7 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -12258,16 +12088,16 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getHardwareComponentPrototypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getHardwareComponentPrototypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentPrototypeRule());
@@ -12275,16 +12105,16 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Type
+		otherlv_9=Type
 		{
-			newLeafNode(otherlv_10, grammarAccess.getHardwareComponentPrototypeAccess().getTypeKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getHardwareComponentPrototypeAccess().getTypeKeyword_6());
 		}
 		(
 			(
@@ -12294,7 +12124,7 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getTypeHardwareComponentTypeCrossReference_8_0());
+					newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getTypeHardwareComponentTypeCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -12303,20 +12133,20 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_12=OwnedComment
+			otherlv_11=OwnedComment
 			{
-				newLeafNode(otherlv_12, grammarAccess.getHardwareComponentPrototypeAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_11, grammarAccess.getHardwareComponentPrototypeAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_13=RULE_BEGIN
+			this_BEGIN_12=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_13, grammarAccess.getHardwareComponentPrototypeAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_12, grammarAccess.getHardwareComponentPrototypeAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_14_0=ruleComment
+					lv_ownedComment_13_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareComponentPrototypeRule());
@@ -12324,23 +12154,23 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_14_0,
+							lv_ownedComment_13_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getHardwareComponentPrototypeAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getHardwareComponentPrototypeAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareComponentPrototypeAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_16_0=ruleComment
+						lv_ownedComment_15_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareComponentPrototypeRule());
@@ -12348,21 +12178,21 @@ ruleHardwareComponentPrototype returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_16_0,
+								lv_ownedComment_15_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_17=RULE_END
+			this_END_16=RULE_END
 			{
-				newLeafNode(this_END_17, grammarAccess.getHardwareComponentPrototypeAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_16, grammarAccess.getHardwareComponentPrototypeAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_18=RULE_END
+		this_END_17=RULE_END
 		{
-			newLeafNode(this_END_18, grammarAccess.getHardwareComponentPrototypeAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_17, grammarAccess.getHardwareComponentPrototypeAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -12387,20 +12217,12 @@ ruleRealization returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getRealizationAccess().getRealizationKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getRealizationAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getRealizationAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRealizationAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getRealizationAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12408,23 +12230,27 @@ ruleRealization returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getRealizationAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getRealizationAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getRealizationAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRealizationAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getRealizationAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12432,7 +12258,7 @@ ruleRealization returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -12440,16 +12266,16 @@ ruleRealization returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getRealizationAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getRealizationAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRealizationAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getRealizationAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12457,7 +12283,7 @@ ruleRealization returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -12465,16 +12291,16 @@ ruleRealization returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getRealizationAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getRealizationAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRealizationAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getRealizationAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12482,7 +12308,7 @@ ruleRealization returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -12490,20 +12316,20 @@ ruleRealization returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getRealizationAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getRealizationAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getRealizationAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getRealizationAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRealizationAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getRealizationAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12511,23 +12337,23 @@ ruleRealization returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getRealizationAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getRealizationAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getRealizationAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getRealizationAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12535,32 +12361,32 @@ ruleRealization returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getRealizationAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getRealizationAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
-		otherlv_16=Realized
+		otherlv_15=Realized
 		{
-			newLeafNode(otherlv_16, grammarAccess.getRealizationAccess().getRealizedKeyword_8());
+			newLeafNode(otherlv_15, grammarAccess.getRealizationAccess().getRealizedKeyword_7());
 		}
-		this_BEGIN_17=RULE_BEGIN
+		this_BEGIN_16=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_17, grammarAccess.getRealizationAccess().getBEGINTerminalRuleCall_9());
+			newLeafNode(this_BEGIN_16, grammarAccess.getRealizationAccess().getBEGINTerminalRuleCall_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRealizationAccess().getRealizedRealization_realizedParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getRealizationAccess().getRealizedRealization_realizedParserRuleCall_9_0());
 				}
-				lv_realized_18_0=ruleRealization_realized
+				lv_realized_17_0=ruleRealization_realized
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12568,23 +12394,23 @@ ruleRealization returns [EObject current=null]
 					add(
 						$current,
 						"realized",
-						lv_realized_18_0,
+						lv_realized_17_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Realization_realized");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_19=Comma
+			otherlv_18=Comma
 			{
-				newLeafNode(otherlv_19, grammarAccess.getRealizationAccess().getCommaKeyword_11_0());
+				newLeafNode(otherlv_18, grammarAccess.getRealizationAccess().getCommaKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRealizationAccess().getRealizedRealization_realizedParserRuleCall_11_1_0());
+						newCompositeNode(grammarAccess.getRealizationAccess().getRealizedRealization_realizedParserRuleCall_10_1_0());
 					}
-					lv_realized_20_0=ruleRealization_realized
+					lv_realized_19_0=ruleRealization_realized
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12592,31 +12418,31 @@ ruleRealization returns [EObject current=null]
 						add(
 							$current,
 							"realized",
-							lv_realized_20_0,
+							lv_realized_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Realization_realized");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		this_END_21=RULE_END
+		this_END_20=RULE_END
 		{
-			newLeafNode(this_END_21, grammarAccess.getRealizationAccess().getENDTerminalRuleCall_12());
+			newLeafNode(this_END_20, grammarAccess.getRealizationAccess().getENDTerminalRuleCall_11());
 		}
-		otherlv_22=RealizedBy
+		otherlv_21=RealizedBy
 		{
-			newLeafNode(otherlv_22, grammarAccess.getRealizationAccess().getRealizedByKeyword_13());
+			newLeafNode(otherlv_21, grammarAccess.getRealizationAccess().getRealizedByKeyword_12());
 		}
-		this_BEGIN_23=RULE_BEGIN
+		this_BEGIN_22=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_23, grammarAccess.getRealizationAccess().getBEGINTerminalRuleCall_14());
+			newLeafNode(this_BEGIN_22, grammarAccess.getRealizationAccess().getBEGINTerminalRuleCall_13());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRealizationAccess().getRealizedByRealization_realizedByParserRuleCall_15_0());
+					newCompositeNode(grammarAccess.getRealizationAccess().getRealizedByRealization_realizedByParserRuleCall_14_0());
 				}
-				lv_realizedBy_24_0=ruleRealization_realizedBy
+				lv_realizedBy_23_0=ruleRealization_realizedBy
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12624,23 +12450,23 @@ ruleRealization returns [EObject current=null]
 					add(
 						$current,
 						"realizedBy",
-						lv_realizedBy_24_0,
+						lv_realizedBy_23_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Realization_realizedBy");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_25=Comma
+			otherlv_24=Comma
 			{
-				newLeafNode(otherlv_25, grammarAccess.getRealizationAccess().getCommaKeyword_16_0());
+				newLeafNode(otherlv_24, grammarAccess.getRealizationAccess().getCommaKeyword_15_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRealizationAccess().getRealizedByRealization_realizedByParserRuleCall_16_1_0());
+						newCompositeNode(grammarAccess.getRealizationAccess().getRealizedByRealization_realizedByParserRuleCall_15_1_0());
 					}
-					lv_realizedBy_26_0=ruleRealization_realizedBy
+					lv_realizedBy_25_0=ruleRealization_realizedBy
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRealizationRule());
@@ -12648,20 +12474,20 @@ ruleRealization returns [EObject current=null]
 						add(
 							$current,
 							"realizedBy",
-							lv_realizedBy_26_0,
+							lv_realizedBy_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Realization_realizedBy");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
+		this_END_26=RULE_END
+		{
+			newLeafNode(this_END_26, grammarAccess.getRealizationAccess().getENDTerminalRuleCall_16());
+		}
 		this_END_27=RULE_END
 		{
 			newLeafNode(this_END_27, grammarAccess.getRealizationAccess().getENDTerminalRuleCall_17());
-		}
-		this_END_28=RULE_END
-		{
-			newLeafNode(this_END_28, grammarAccess.getRealizationAccess().getENDTerminalRuleCall_18());
 		}
 	)
 ;
@@ -12892,20 +12718,12 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAnalysisFunctionPrototypeAccess().getAnalysisFunctionPrototypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getAnalysisFunctionPrototypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getAnalysisFunctionPrototypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAnalysisFunctionPrototypeRule());
@@ -12913,23 +12731,27 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getAnalysisFunctionPrototypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getAnalysisFunctionPrototypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getAnalysisFunctionPrototypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionPrototypeRule());
@@ -12937,7 +12759,7 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -12945,16 +12767,16 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getAnalysisFunctionPrototypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getAnalysisFunctionPrototypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionPrototypeRule());
@@ -12962,7 +12784,7 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -12970,16 +12792,16 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getAnalysisFunctionPrototypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getAnalysisFunctionPrototypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionPrototypeRule());
@@ -12987,16 +12809,16 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Type
+		otherlv_9=Type
 		{
-			newLeafNode(otherlv_10, grammarAccess.getAnalysisFunctionPrototypeAccess().getTypeKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getAnalysisFunctionPrototypeAccess().getTypeKeyword_6());
 		}
 		(
 			(
@@ -13006,7 +12828,7 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getTypeAnalysisFunctionTypeCrossReference_8_0());
+					newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getTypeAnalysisFunctionTypeCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -13015,20 +12837,20 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_12=OwnedComment
+			otherlv_11=OwnedComment
 			{
-				newLeafNode(otherlv_12, grammarAccess.getAnalysisFunctionPrototypeAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_11, grammarAccess.getAnalysisFunctionPrototypeAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_13=RULE_BEGIN
+			this_BEGIN_12=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_13, grammarAccess.getAnalysisFunctionPrototypeAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_12, grammarAccess.getAnalysisFunctionPrototypeAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_14_0=ruleComment
+					lv_ownedComment_13_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnalysisFunctionPrototypeRule());
@@ -13036,23 +12858,23 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_14_0,
+							lv_ownedComment_13_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getAnalysisFunctionPrototypeAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getAnalysisFunctionPrototypeAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getAnalysisFunctionPrototypeAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_16_0=ruleComment
+						lv_ownedComment_15_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getAnalysisFunctionPrototypeRule());
@@ -13060,21 +12882,21 @@ ruleAnalysisFunctionPrototype returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_16_0,
+								lv_ownedComment_15_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_17=RULE_END
+			this_END_16=RULE_END
 			{
-				newLeafNode(this_END_17, grammarAccess.getAnalysisFunctionPrototypeAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_16, grammarAccess.getAnalysisFunctionPrototypeAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_18=RULE_END
+		this_END_17=RULE_END
 		{
-			newLeafNode(this_END_18, grammarAccess.getAnalysisFunctionPrototypeAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_17, grammarAccess.getAnalysisFunctionPrototypeAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -13099,20 +12921,12 @@ ruleFunctionAllocation returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFunctionAllocationAccess().getFunctionAllocationKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getFunctionAllocationAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFunctionAllocationAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionAllocationAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionAllocationAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionAllocationRule());
@@ -13120,23 +12934,27 @@ ruleFunctionAllocation returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getFunctionAllocationAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getFunctionAllocationAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getFunctionAllocationAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionAllocationAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getFunctionAllocationAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionAllocationRule());
@@ -13144,7 +12962,7 @@ ruleFunctionAllocation returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -13152,16 +12970,16 @@ ruleFunctionAllocation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getFunctionAllocationAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getFunctionAllocationAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionAllocationAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getFunctionAllocationAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionAllocationRule());
@@ -13169,7 +12987,7 @@ ruleFunctionAllocation returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -13177,16 +12995,16 @@ ruleFunctionAllocation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getFunctionAllocationAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getFunctionAllocationAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionAllocationAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFunctionAllocationAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionAllocationRule());
@@ -13194,7 +13012,7 @@ ruleFunctionAllocation returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -13202,20 +13020,20 @@ ruleFunctionAllocation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getFunctionAllocationAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getFunctionAllocationAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getFunctionAllocationAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getFunctionAllocationAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionAllocationAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getFunctionAllocationAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionAllocationRule());
@@ -13223,23 +13041,23 @@ ruleFunctionAllocation returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getFunctionAllocationAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getFunctionAllocationAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionAllocationAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionAllocationAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionAllocationRule());
@@ -13247,28 +13065,28 @@ ruleFunctionAllocation returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getFunctionAllocationAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getFunctionAllocationAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
-		otherlv_16=AllocatedElement
+		otherlv_15=AllocatedElement
 		{
-			newLeafNode(otherlv_16, grammarAccess.getFunctionAllocationAccess().getAllocatedElementKeyword_8());
+			newLeafNode(otherlv_15, grammarAccess.getFunctionAllocationAccess().getAllocatedElementKeyword_7());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionAllocationAccess().getAllocatedElementFunctionAllocation_allocatedElementParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getFunctionAllocationAccess().getAllocatedElementFunctionAllocation_allocatedElementParserRuleCall_8_0());
 				}
-				lv_allocatedElement_17_0=ruleFunctionAllocation_allocatedElement
+				lv_allocatedElement_16_0=ruleFunctionAllocation_allocatedElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionAllocationRule());
@@ -13276,22 +13094,22 @@ ruleFunctionAllocation returns [EObject current=null]
 					set(
 						$current,
 						"allocatedElement",
-						lv_allocatedElement_17_0,
+						lv_allocatedElement_16_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionAllocation_allocatedElement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_18=Target
+		otherlv_17=Target
 		{
-			newLeafNode(otherlv_18, grammarAccess.getFunctionAllocationAccess().getTargetKeyword_10());
+			newLeafNode(otherlv_17, grammarAccess.getFunctionAllocationAccess().getTargetKeyword_9());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionAllocationAccess().getTargetFunctionAllocation_targetParserRuleCall_11_0());
+					newCompositeNode(grammarAccess.getFunctionAllocationAccess().getTargetFunctionAllocation_targetParserRuleCall_10_0());
 				}
-				lv_target_19_0=ruleFunctionAllocation_target
+				lv_target_18_0=ruleFunctionAllocation_target
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionAllocationRule());
@@ -13299,15 +13117,15 @@ ruleFunctionAllocation returns [EObject current=null]
 					set(
 						$current,
 						"target",
-						lv_target_19_0,
+						lv_target_18_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionAllocation_target");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		this_END_20=RULE_END
+		this_END_19=RULE_END
 		{
-			newLeafNode(this_END_20, grammarAccess.getFunctionAllocationAccess().getENDTerminalRuleCall_12());
+			newLeafNode(this_END_19, grammarAccess.getFunctionAllocationAccess().getENDTerminalRuleCall_11());
 		}
 	)
 ;
@@ -13332,20 +13150,12 @@ ruleFunctionClientServerPort returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFunctionClientServerPortAccess().getFunctionClientServerPortKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getFunctionClientServerPortAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFunctionClientServerPortAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionClientServerPortRule());
@@ -13353,23 +13163,27 @@ ruleFunctionClientServerPort returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getFunctionClientServerPortAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getFunctionClientServerPortAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getFunctionClientServerPortAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerPortRule());
@@ -13377,7 +13191,7 @@ ruleFunctionClientServerPort returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -13385,16 +13199,16 @@ ruleFunctionClientServerPort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getFunctionClientServerPortAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getFunctionClientServerPortAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerPortRule());
@@ -13402,7 +13216,7 @@ ruleFunctionClientServerPort returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -13410,16 +13224,16 @@ ruleFunctionClientServerPort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getFunctionClientServerPortAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getFunctionClientServerPortAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerPortRule());
@@ -13427,23 +13241,23 @@ ruleFunctionClientServerPort returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Kind
+		otherlv_9=Kind
 		{
-			newLeafNode(otherlv_10, grammarAccess.getFunctionClientServerPortAccess().getKindKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getFunctionClientServerPortAccess().getKindKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getKindClientServerKindEnumRuleCall_8_0());
+					newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getKindClientServerKindEnumRuleCall_7_0());
 				}
-				lv_kind_11_0=ruleClientServerKind
+				lv_kind_10_0=ruleClientServerKind
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionClientServerPortRule());
@@ -13451,15 +13265,15 @@ ruleFunctionClientServerPort returns [EObject current=null]
 					set(
 						$current,
 						"kind",
-						lv_kind_11_0,
+						lv_kind_10_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.ClientServerKind");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_12=Type
+		otherlv_11=Type
 		{
-			newLeafNode(otherlv_12, grammarAccess.getFunctionClientServerPortAccess().getTypeKeyword_9());
+			newLeafNode(otherlv_11, grammarAccess.getFunctionClientServerPortAccess().getTypeKeyword_8());
 		}
 		(
 			(
@@ -13469,7 +13283,7 @@ ruleFunctionClientServerPort returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getTypeFunctionClientServerInterfaceCrossReference_10_0());
+					newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getTypeFunctionClientServerInterfaceCrossReference_9_0());
 				}
 				ruleEString
 				{
@@ -13478,20 +13292,20 @@ ruleFunctionClientServerPort returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getFunctionClientServerPortAccess().getOwnedCommentKeyword_11_0());
+				newLeafNode(otherlv_13, grammarAccess.getFunctionClientServerPortAccess().getOwnedCommentKeyword_10_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getFunctionClientServerPortAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getFunctionClientServerPortAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getOwnedCommentCommentParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getOwnedCommentCommentParserRuleCall_10_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionClientServerPortRule());
@@ -13499,23 +13313,23 @@ ruleFunctionClientServerPort returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getFunctionClientServerPortAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getFunctionClientServerPortAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getOwnedCommentCommentParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionClientServerPortAccess().getOwnedCommentCommentParserRuleCall_10_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionClientServerPortRule());
@@ -13523,21 +13337,21 @@ ruleFunctionClientServerPort returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getFunctionClientServerPortAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_18, grammarAccess.getFunctionClientServerPortAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
-		this_END_20=RULE_END
+		this_END_19=RULE_END
 		{
-			newLeafNode(this_END_20, grammarAccess.getFunctionClientServerPortAccess().getENDTerminalRuleCall_12());
+			newLeafNode(this_END_19, grammarAccess.getFunctionClientServerPortAccess().getENDTerminalRuleCall_11());
 		}
 	)
 ;
@@ -13562,20 +13376,12 @@ ruleFunctionConnector returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFunctionConnectorAccess().getFunctionConnectorKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getFunctionConnectorAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFunctionConnectorAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionConnectorAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionConnectorAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionConnectorRule());
@@ -13583,23 +13389,27 @@ ruleFunctionConnector returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getFunctionConnectorAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getFunctionConnectorAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getFunctionConnectorAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionConnectorRule());
@@ -13607,7 +13417,7 @@ ruleFunctionConnector returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -13615,16 +13425,16 @@ ruleFunctionConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getFunctionConnectorAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getFunctionConnectorAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionConnectorRule());
@@ -13632,7 +13442,7 @@ ruleFunctionConnector returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -13640,16 +13450,16 @@ ruleFunctionConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getFunctionConnectorAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getFunctionConnectorAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionConnectorRule());
@@ -13657,7 +13467,7 @@ ruleFunctionConnector returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -13665,20 +13475,20 @@ ruleFunctionConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getFunctionConnectorAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getFunctionConnectorAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getFunctionConnectorAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getFunctionConnectorAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionConnectorRule());
@@ -13686,23 +13496,23 @@ ruleFunctionConnector returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getFunctionConnectorAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getFunctionConnectorAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionConnectorAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionConnectorAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionConnectorRule());
@@ -13710,32 +13520,32 @@ ruleFunctionConnector returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getFunctionConnectorAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getFunctionConnectorAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
-		otherlv_16=Port
+		otherlv_15=Port
 		{
-			newLeafNode(otherlv_16, grammarAccess.getFunctionConnectorAccess().getPortKeyword_8());
+			newLeafNode(otherlv_15, grammarAccess.getFunctionConnectorAccess().getPortKeyword_7());
 		}
-		this_BEGIN_17=RULE_BEGIN
+		this_BEGIN_16=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_17, grammarAccess.getFunctionConnectorAccess().getBEGINTerminalRuleCall_9());
+			newLeafNode(this_BEGIN_16, grammarAccess.getFunctionConnectorAccess().getBEGINTerminalRuleCall_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionConnectorAccess().getPortFunctionConnector_portParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getFunctionConnectorAccess().getPortFunctionConnector_portParserRuleCall_9_0());
 				}
-				lv_port_18_0=ruleFunctionConnector_port
+				lv_port_17_0=ruleFunctionConnector_port
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionConnectorRule());
@@ -13743,23 +13553,23 @@ ruleFunctionConnector returns [EObject current=null]
 					add(
 						$current,
 						"port",
-						lv_port_18_0,
+						lv_port_17_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector_port");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_19=Comma
+			otherlv_18=Comma
 			{
-				newLeafNode(otherlv_19, grammarAccess.getFunctionConnectorAccess().getCommaKeyword_11_0());
+				newLeafNode(otherlv_18, grammarAccess.getFunctionConnectorAccess().getCommaKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getPortFunctionConnector_portParserRuleCall_11_1_0());
+						newCompositeNode(grammarAccess.getFunctionConnectorAccess().getPortFunctionConnector_portParserRuleCall_10_1_0());
 					}
-					lv_port_20_0=ruleFunctionConnector_port
+					lv_port_19_0=ruleFunctionConnector_port
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionConnectorRule());
@@ -13767,20 +13577,20 @@ ruleFunctionConnector returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_20_0,
+							lv_port_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector_port");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
+		this_END_20=RULE_END
+		{
+			newLeafNode(this_END_20, grammarAccess.getFunctionConnectorAccess().getENDTerminalRuleCall_11());
+		}
 		this_END_21=RULE_END
 		{
 			newLeafNode(this_END_21, grammarAccess.getFunctionConnectorAccess().getENDTerminalRuleCall_12());
-		}
-		this_END_22=RULE_END
-		{
-			newLeafNode(this_END_22, grammarAccess.getFunctionConnectorAccess().getENDTerminalRuleCall_13());
 		}
 	)
 ;
@@ -13805,20 +13615,12 @@ ruleFunctionFlowPort returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFunctionFlowPortAccess().getFunctionFlowPortKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getFunctionFlowPortAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFunctionFlowPortAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionFlowPortRule());
@@ -13826,23 +13628,27 @@ ruleFunctionFlowPort returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getFunctionFlowPortAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getFunctionFlowPortAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getFunctionFlowPortAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionFlowPortRule());
@@ -13850,7 +13656,7 @@ ruleFunctionFlowPort returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -13858,16 +13664,16 @@ ruleFunctionFlowPort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getFunctionFlowPortAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getFunctionFlowPortAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionFlowPortRule());
@@ -13875,7 +13681,7 @@ ruleFunctionFlowPort returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -13883,16 +13689,16 @@ ruleFunctionFlowPort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getFunctionFlowPortAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getFunctionFlowPortAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionFlowPortRule());
@@ -13900,23 +13706,23 @@ ruleFunctionFlowPort returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Direction
+		otherlv_9=Direction
 		{
-			newLeafNode(otherlv_10, grammarAccess.getFunctionFlowPortAccess().getDirectionKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getFunctionFlowPortAccess().getDirectionKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getDirectionEADirectionKindEnumRuleCall_8_0());
+					newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getDirectionEADirectionKindEnumRuleCall_7_0());
 				}
-				lv_direction_11_0=ruleEADirectionKind
+				lv_direction_10_0=ruleEADirectionKind
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionFlowPortRule());
@@ -13924,15 +13730,15 @@ ruleFunctionFlowPort returns [EObject current=null]
 					set(
 						$current,
 						"direction",
-						lv_direction_11_0,
+						lv_direction_10_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.EADirectionKind");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_12=Type
+		otherlv_11=Type
 		{
-			newLeafNode(otherlv_12, grammarAccess.getFunctionFlowPortAccess().getTypeKeyword_9());
+			newLeafNode(otherlv_11, grammarAccess.getFunctionFlowPortAccess().getTypeKeyword_8());
 		}
 		(
 			(
@@ -13941,27 +13747,27 @@ ruleFunctionFlowPort returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFunctionFlowPortRule());
 					}
 				}
-				otherlv_13=RULE_ID
+				otherlv_12=RULE_ID
 				{
-					newLeafNode(otherlv_13, grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeCrossReference_10_0());
+					newLeafNode(otherlv_12, grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeCrossReference_9_0());
 				}
 			)
 		)
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getFunctionFlowPortAccess().getOwnedCommentKeyword_11_0());
+				newLeafNode(otherlv_13, grammarAccess.getFunctionFlowPortAccess().getOwnedCommentKeyword_10_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getFunctionFlowPortAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getFunctionFlowPortAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getOwnedCommentCommentParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getOwnedCommentCommentParserRuleCall_10_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionFlowPortRule());
@@ -13969,23 +13775,23 @@ ruleFunctionFlowPort returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getFunctionFlowPortAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getFunctionFlowPortAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getOwnedCommentCommentParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getOwnedCommentCommentParserRuleCall_10_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionFlowPortRule());
@@ -13993,29 +13799,29 @@ ruleFunctionFlowPort returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getFunctionFlowPortAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_18, grammarAccess.getFunctionFlowPortAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
 		(
-			otherlv_20=DefaultValue
+			otherlv_19=DefaultValue
 			{
-				newLeafNode(otherlv_20, grammarAccess.getFunctionFlowPortAccess().getDefaultValueKeyword_12_0());
+				newLeafNode(otherlv_19, grammarAccess.getFunctionFlowPortAccess().getDefaultValueKeyword_11_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getDefaultValueEAValueParserRuleCall_12_1_0());
+						newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getDefaultValueEAValueParserRuleCall_11_1_0());
 					}
-					lv_defaultValue_21_0=ruleEAValue
+					lv_defaultValue_20_0=ruleEAValue
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionFlowPortRule());
@@ -14023,16 +13829,16 @@ ruleFunctionFlowPort returns [EObject current=null]
 						set(
 							$current,
 							"defaultValue",
-							lv_defaultValue_21_0,
+							lv_defaultValue_20_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EAValue");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		this_END_22=RULE_END
+		this_END_21=RULE_END
 		{
-			newLeafNode(this_END_22, grammarAccess.getFunctionFlowPortAccess().getENDTerminalRuleCall_13());
+			newLeafNode(this_END_21, grammarAccess.getFunctionFlowPortAccess().getENDTerminalRuleCall_12());
 		}
 	)
 ;
@@ -14057,20 +13863,12 @@ ruleFunctionPowerPort returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getFunctionPowerPortAccess().getFunctionPowerPortKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getFunctionPowerPortAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFunctionPowerPortAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionPowerPortRule());
@@ -14078,23 +13876,27 @@ ruleFunctionPowerPort returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getFunctionPowerPortAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getFunctionPowerPortAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getFunctionPowerPortAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionPowerPortRule());
@@ -14102,7 +13904,7 @@ ruleFunctionPowerPort returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -14110,16 +13912,16 @@ ruleFunctionPowerPort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getFunctionPowerPortAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getFunctionPowerPortAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionPowerPortRule());
@@ -14127,7 +13929,7 @@ ruleFunctionPowerPort returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -14135,16 +13937,16 @@ ruleFunctionPowerPort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getFunctionPowerPortAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getFunctionPowerPortAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionPowerPortRule());
@@ -14152,16 +13954,16 @@ ruleFunctionPowerPort returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Type
+		otherlv_9=Type
 		{
-			newLeafNode(otherlv_10, grammarAccess.getFunctionPowerPortAccess().getTypeKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getFunctionPowerPortAccess().getTypeKeyword_6());
 		}
 		(
 			(
@@ -14171,7 +13973,7 @@ ruleFunctionPowerPort returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getTypeCompositeDatatypeCrossReference_8_0());
+					newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getTypeCompositeDatatypeCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -14180,20 +13982,20 @@ ruleFunctionPowerPort returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_12=OwnedComment
+			otherlv_11=OwnedComment
 			{
-				newLeafNode(otherlv_12, grammarAccess.getFunctionPowerPortAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_11, grammarAccess.getFunctionPowerPortAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_13=RULE_BEGIN
+			this_BEGIN_12=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_13, grammarAccess.getFunctionPowerPortAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_12, grammarAccess.getFunctionPowerPortAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_14_0=ruleComment
+					lv_ownedComment_13_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionPowerPortRule());
@@ -14201,23 +14003,23 @@ ruleFunctionPowerPort returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_14_0,
+							lv_ownedComment_13_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getFunctionPowerPortAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getFunctionPowerPortAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getFunctionPowerPortAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_16_0=ruleComment
+						lv_ownedComment_15_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionPowerPortRule());
@@ -14225,21 +14027,21 @@ ruleFunctionPowerPort returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_16_0,
+								lv_ownedComment_15_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_17=RULE_END
+			this_END_16=RULE_END
 			{
-				newLeafNode(this_END_17, grammarAccess.getFunctionPowerPortAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_16, grammarAccess.getFunctionPowerPortAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_18=RULE_END
+		this_END_17=RULE_END
 		{
-			newLeafNode(this_END_18, grammarAccess.getFunctionPowerPortAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_17, grammarAccess.getFunctionPowerPortAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -14264,20 +14066,12 @@ ruleOperation returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getOperationAccess().getOperationKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getOperationAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getOperationAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getOperationAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getOperationAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14285,23 +14079,27 @@ ruleOperation returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getOperationAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getOperationAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getOperationAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOperationAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getOperationAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14309,7 +14107,7 @@ ruleOperation returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -14317,16 +14115,16 @@ ruleOperation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getOperationAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getOperationAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOperationAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getOperationAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14334,7 +14132,7 @@ ruleOperation returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -14342,16 +14140,16 @@ ruleOperation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getOperationAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getOperationAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOperationAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getOperationAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14359,7 +14157,7 @@ ruleOperation returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -14367,20 +14165,20 @@ ruleOperation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getOperationAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getOperationAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getOperationAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getOperationAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOperationAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getOperationAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14388,23 +14186,23 @@ ruleOperation returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getOperationAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getOperationAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getOperationAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getOperationAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14412,29 +14210,29 @@ ruleOperation returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getOperationAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getOperationAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
 		(
-			otherlv_16=Return
+			otherlv_15=Return
 			{
-				newLeafNode(otherlv_16, grammarAccess.getOperationAccess().getReturnKeyword_8_0());
+				newLeafNode(otherlv_15, grammarAccess.getOperationAccess().getReturnKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOperationAccess().getReturnEADatatypePrototypeParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getOperationAccess().getReturnEADatatypePrototypeParserRuleCall_7_1_0());
 					}
-					lv_return_17_0=ruleEADatatypePrototype
+					lv_return_16_0=ruleEADatatypePrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14442,7 +14240,7 @@ ruleOperation returns [EObject current=null]
 						set(
 							$current,
 							"return",
-							lv_return_17_0,
+							lv_return_16_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EADatatypePrototype");
 						afterParserOrEnumRuleCall();
 					}
@@ -14450,20 +14248,20 @@ ruleOperation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_18=Argument
+			otherlv_17=Argument
 			{
-				newLeafNode(otherlv_18, grammarAccess.getOperationAccess().getArgumentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getOperationAccess().getArgumentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getOperationAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getOperationAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOperationAccess().getArgumentEADatatypePrototypeParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getOperationAccess().getArgumentEADatatypePrototypeParserRuleCall_8_2_0());
 					}
-					lv_argument_20_0=ruleEADatatypePrototype
+					lv_argument_19_0=ruleEADatatypePrototype
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14471,23 +14269,23 @@ ruleOperation returns [EObject current=null]
 						add(
 							$current,
 							"argument",
-							lv_argument_20_0,
+							lv_argument_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EADatatypePrototype");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getOperationAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getOperationAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getOperationAccess().getArgumentEADatatypePrototypeParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getOperationAccess().getArgumentEADatatypePrototypeParserRuleCall_8_3_1_0());
 						}
-						lv_argument_22_0=ruleEADatatypePrototype
+						lv_argument_21_0=ruleEADatatypePrototype
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -14495,21 +14293,21 @@ ruleOperation returns [EObject current=null]
 							add(
 								$current,
 								"argument",
-								lv_argument_22_0,
+								lv_argument_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.EADatatypePrototype");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getOperationAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getOperationAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_24=RULE_END
+		this_END_23=RULE_END
 		{
-			newLeafNode(this_END_24, grammarAccess.getOperationAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_23, grammarAccess.getOperationAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -14534,20 +14332,12 @@ rulePortGroup returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getPortGroupAccess().getPortGroupKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getPortGroupAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getPortGroupAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPortGroupAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getPortGroupAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPortGroupRule());
@@ -14555,23 +14345,27 @@ rulePortGroup returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getPortGroupAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getPortGroupAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getPortGroupAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPortGroupAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getPortGroupAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPortGroupRule());
@@ -14579,7 +14373,7 @@ rulePortGroup returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -14587,16 +14381,16 @@ rulePortGroup returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getPortGroupAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getPortGroupAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPortGroupAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getPortGroupAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPortGroupRule());
@@ -14604,7 +14398,7 @@ rulePortGroup returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -14612,16 +14406,16 @@ rulePortGroup returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getPortGroupAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getPortGroupAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPortGroupAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getPortGroupAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPortGroupRule());
@@ -14629,7 +14423,7 @@ rulePortGroup returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -14637,13 +14431,13 @@ rulePortGroup returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Port
+			otherlv_9=Port
 			{
-				newLeafNode(otherlv_10, grammarAccess.getPortGroupAccess().getPortKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getPortGroupAccess().getPortKeyword_6_0());
 			}
-			otherlv_11=LeftParenthesis
+			otherlv_10=LeftParenthesis
 			{
-				newLeafNode(otherlv_11, grammarAccess.getPortGroupAccess().getLeftParenthesisKeyword_7_1());
+				newLeafNode(otherlv_10, grammarAccess.getPortGroupAccess().getLeftParenthesisKeyword_6_1());
 			}
 			(
 				(
@@ -14653,7 +14447,7 @@ rulePortGroup returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getPortGroupAccess().getPortFunctionPortCrossReference_7_2_0());
+						newCompositeNode(grammarAccess.getPortGroupAccess().getPortFunctionPortCrossReference_6_2_0());
 					}
 					ruleEString
 					{
@@ -14662,9 +14456,9 @@ rulePortGroup returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getPortGroupAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getPortGroupAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
@@ -14674,7 +14468,7 @@ rulePortGroup returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getPortGroupAccess().getPortFunctionPortCrossReference_7_3_1_0());
+							newCompositeNode(grammarAccess.getPortGroupAccess().getPortFunctionPortCrossReference_6_3_1_0());
 						}
 						ruleEString
 						{
@@ -14683,26 +14477,26 @@ rulePortGroup returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_15=RightParenthesis
+			otherlv_14=RightParenthesis
 			{
-				newLeafNode(otherlv_15, grammarAccess.getPortGroupAccess().getRightParenthesisKeyword_7_4());
+				newLeafNode(otherlv_14, grammarAccess.getPortGroupAccess().getRightParenthesisKeyword_6_4());
 			}
 		)?
 		(
-			otherlv_16=OwnedComment
+			otherlv_15=OwnedComment
 			{
-				newLeafNode(otherlv_16, grammarAccess.getPortGroupAccess().getOwnedCommentKeyword_8_0());
+				newLeafNode(otherlv_15, grammarAccess.getPortGroupAccess().getOwnedCommentKeyword_7_0());
 			}
-			this_BEGIN_17=RULE_BEGIN
+			this_BEGIN_16=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getPortGroupAccess().getBEGINTerminalRuleCall_8_1());
+				newLeafNode(this_BEGIN_16, grammarAccess.getPortGroupAccess().getBEGINTerminalRuleCall_7_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPortGroupAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getPortGroupAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
 					}
-					lv_ownedComment_18_0=ruleComment
+					lv_ownedComment_17_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPortGroupRule());
@@ -14710,23 +14504,23 @@ rulePortGroup returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_18_0,
+							lv_ownedComment_17_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_18=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getPortGroupAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_18, grammarAccess.getPortGroupAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPortGroupAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
+							newCompositeNode(grammarAccess.getPortGroupAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
 						}
-						lv_ownedComment_20_0=ruleComment
+						lv_ownedComment_19_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getPortGroupRule());
@@ -14734,33 +14528,33 @@ rulePortGroup returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_20_0,
+								lv_ownedComment_19_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
+			this_END_20=RULE_END
 			{
-				newLeafNode(this_END_21, grammarAccess.getPortGroupAccess().getENDTerminalRuleCall_8_4());
+				newLeafNode(this_END_20, grammarAccess.getPortGroupAccess().getENDTerminalRuleCall_7_4());
 			}
 		)?
 		(
-			otherlv_22=PortGroup_1
+			otherlv_21=PortGroup_1
 			{
-				newLeafNode(otherlv_22, grammarAccess.getPortGroupAccess().getPortGroupKeyword_9_0());
+				newLeafNode(otherlv_21, grammarAccess.getPortGroupAccess().getPortGroupKeyword_8_0());
 			}
-			this_BEGIN_23=RULE_BEGIN
+			this_BEGIN_22=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_23, grammarAccess.getPortGroupAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_22, grammarAccess.getPortGroupAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPortGroupAccess().getPortGroupPortGroupParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getPortGroupAccess().getPortGroupPortGroupParserRuleCall_8_2_0());
 					}
-					lv_portGroup_24_0=rulePortGroup
+					lv_portGroup_23_0=rulePortGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPortGroupRule());
@@ -14768,23 +14562,23 @@ rulePortGroup returns [EObject current=null]
 						add(
 							$current,
 							"portGroup",
-							lv_portGroup_24_0,
+							lv_portGroup_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=Comma
+				otherlv_24=Comma
 				{
-					newLeafNode(otherlv_25, grammarAccess.getPortGroupAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_24, grammarAccess.getPortGroupAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPortGroupAccess().getPortGroupPortGroupParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getPortGroupAccess().getPortGroupPortGroupParserRuleCall_8_3_1_0());
 						}
-						lv_portGroup_26_0=rulePortGroup
+						lv_portGroup_25_0=rulePortGroup
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getPortGroupRule());
@@ -14792,21 +14586,21 @@ rulePortGroup returns [EObject current=null]
 							add(
 								$current,
 								"portGroup",
-								lv_portGroup_26_0,
+								lv_portGroup_25_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_27=RULE_END
+			this_END_26=RULE_END
 			{
-				newLeafNode(this_END_27, grammarAccess.getPortGroupAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_26, grammarAccess.getPortGroupAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_28=RULE_END
+		this_END_27=RULE_END
 		{
-			newLeafNode(this_END_28, grammarAccess.getPortGroupAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_27, grammarAccess.getPortGroupAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -14831,20 +14625,12 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getCommunicationHardwarePinAccess().getCommunicationHardwarePinKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getCommunicationHardwarePinAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getCommunicationHardwarePinAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCommunicationHardwarePinRule());
@@ -14852,23 +14638,27 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getCommunicationHardwarePinAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getCommunicationHardwarePinAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getCommunicationHardwarePinAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCommunicationHardwarePinRule());
@@ -14876,7 +14666,7 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -14884,16 +14674,16 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getCommunicationHardwarePinAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getCommunicationHardwarePinAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCommunicationHardwarePinRule());
@@ -14901,7 +14691,7 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -14909,16 +14699,16 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getCommunicationHardwarePinAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getCommunicationHardwarePinAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCommunicationHardwarePinRule());
@@ -14926,7 +14716,7 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -14934,16 +14724,16 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Direction
+			otherlv_9=Direction
 			{
-				newLeafNode(otherlv_10, grammarAccess.getCommunicationHardwarePinAccess().getDirectionKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getCommunicationHardwarePinAccess().getDirectionKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getDirectionEADirectionKindEnumRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getDirectionEADirectionKindEnumRuleCall_6_1_0());
 					}
-					lv_direction_11_0=ruleEADirectionKind
+					lv_direction_10_0=ruleEADirectionKind
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCommunicationHardwarePinRule());
@@ -14951,7 +14741,7 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"direction",
-							lv_direction_11_0,
+							lv_direction_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EADirectionKind");
 						afterParserOrEnumRuleCall();
 					}
@@ -14959,16 +14749,16 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=IsGround
+			otherlv_11=IsGround
 			{
-				newLeafNode(otherlv_12, grammarAccess.getCommunicationHardwarePinAccess().getIsGroundKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getCommunicationHardwarePinAccess().getIsGroundKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getIsGroundBooleanParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getIsGroundBooleanParserRuleCall_7_1_0());
 					}
-					lv_isGround_13_0=ruleBoolean
+					lv_isGround_12_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCommunicationHardwarePinRule());
@@ -14976,7 +14766,7 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"isGround",
-							lv_isGround_13_0,
+							lv_isGround_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -14984,20 +14774,20 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getCommunicationHardwarePinAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getCommunicationHardwarePinAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getCommunicationHardwarePinAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getCommunicationHardwarePinAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCommunicationHardwarePinRule());
@@ -15005,23 +14795,23 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getCommunicationHardwarePinAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getCommunicationHardwarePinAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getCommunicationHardwarePinAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getCommunicationHardwarePinRule());
@@ -15029,21 +14819,21 @@ ruleCommunicationHardwarePin returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getCommunicationHardwarePinAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_18, grammarAccess.getCommunicationHardwarePinAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_20=RULE_END
+		this_END_19=RULE_END
 		{
-			newLeafNode(this_END_20, grammarAccess.getCommunicationHardwarePinAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_19, grammarAccess.getCommunicationHardwarePinAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -15068,20 +14858,12 @@ ruleHardwareConnector returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getHardwareConnectorAccess().getHardwareConnectorKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getHardwareConnectorAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getHardwareConnectorAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHardwareConnectorAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getHardwareConnectorAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHardwareConnectorRule());
@@ -15089,23 +14871,27 @@ ruleHardwareConnector returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getHardwareConnectorAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getHardwareConnectorAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getHardwareConnectorAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareConnectorRule());
@@ -15113,7 +14899,7 @@ ruleHardwareConnector returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -15121,16 +14907,16 @@ ruleHardwareConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getHardwareConnectorAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getHardwareConnectorAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareConnectorRule());
@@ -15138,7 +14924,7 @@ ruleHardwareConnector returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -15146,16 +14932,16 @@ ruleHardwareConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getHardwareConnectorAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getHardwareConnectorAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareConnectorRule());
@@ -15163,7 +14949,7 @@ ruleHardwareConnector returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -15171,20 +14957,20 @@ ruleHardwareConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getHardwareConnectorAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getHardwareConnectorAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getHardwareConnectorAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getHardwareConnectorAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareConnectorRule());
@@ -15192,23 +14978,23 @@ ruleHardwareConnector returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getHardwareConnectorAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getHardwareConnectorAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwareConnectorAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getHardwareConnectorAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwareConnectorRule());
@@ -15216,32 +15002,32 @@ ruleHardwareConnector returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getHardwareConnectorAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getHardwareConnectorAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
-		otherlv_16=Port
+		otherlv_15=Port
 		{
-			newLeafNode(otherlv_16, grammarAccess.getHardwareConnectorAccess().getPortKeyword_8());
+			newLeafNode(otherlv_15, grammarAccess.getHardwareConnectorAccess().getPortKeyword_7());
 		}
-		this_BEGIN_17=RULE_BEGIN
+		this_BEGIN_16=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_17, grammarAccess.getHardwareConnectorAccess().getBEGINTerminalRuleCall_9());
+			newLeafNode(this_BEGIN_16, grammarAccess.getHardwareConnectorAccess().getBEGINTerminalRuleCall_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHardwareConnectorAccess().getPortHardwareConnector_portParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getHardwareConnectorAccess().getPortHardwareConnector_portParserRuleCall_9_0());
 				}
-				lv_port_18_0=ruleHardwareConnector_port
+				lv_port_17_0=ruleHardwareConnector_port
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHardwareConnectorRule());
@@ -15249,23 +15035,23 @@ ruleHardwareConnector returns [EObject current=null]
 					add(
 						$current,
 						"port",
-						lv_port_18_0,
+						lv_port_17_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector_port");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_19=Comma
+			otherlv_18=Comma
 			{
-				newLeafNode(otherlv_19, grammarAccess.getHardwareConnectorAccess().getCommaKeyword_11_0());
+				newLeafNode(otherlv_18, grammarAccess.getHardwareConnectorAccess().getCommaKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getPortHardwareConnector_portParserRuleCall_11_1_0());
+						newCompositeNode(grammarAccess.getHardwareConnectorAccess().getPortHardwareConnector_portParserRuleCall_10_1_0());
 					}
-					lv_port_20_0=ruleHardwareConnector_port
+					lv_port_19_0=ruleHardwareConnector_port
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwareConnectorRule());
@@ -15273,20 +15059,20 @@ ruleHardwareConnector returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_20_0,
+							lv_port_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector_port");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
+		this_END_20=RULE_END
+		{
+			newLeafNode(this_END_20, grammarAccess.getHardwareConnectorAccess().getENDTerminalRuleCall_11());
+		}
 		this_END_21=RULE_END
 		{
 			newLeafNode(this_END_21, grammarAccess.getHardwareConnectorAccess().getENDTerminalRuleCall_12());
-		}
-		this_END_22=RULE_END
-		{
-			newLeafNode(this_END_22, grammarAccess.getHardwareConnectorAccess().getENDTerminalRuleCall_13());
 		}
 	)
 ;
@@ -15311,20 +15097,12 @@ ruleHardwarePort returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getHardwarePortAccess().getHardwarePortKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getHardwarePortAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHardwarePortAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getHardwarePortAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15332,23 +15110,27 @@ ruleHardwarePort returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getHardwarePortAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getHardwarePortAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getHardwarePortAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15356,7 +15138,7 @@ ruleHardwarePort returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -15364,16 +15146,16 @@ ruleHardwarePort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getHardwarePortAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getHardwarePortAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getHardwarePortAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15381,7 +15163,7 @@ ruleHardwarePort returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -15389,16 +15171,16 @@ ruleHardwarePort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getHardwarePortAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getHardwarePortAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getHardwarePortAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15406,7 +15188,7 @@ ruleHardwarePort returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -15414,16 +15196,16 @@ ruleHardwarePort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=IsShield
+			otherlv_9=IsShield
 			{
-				newLeafNode(otherlv_10, grammarAccess.getHardwarePortAccess().getIsShieldKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getHardwarePortAccess().getIsShieldKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortAccess().getIsShieldBooleanParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getHardwarePortAccess().getIsShieldBooleanParserRuleCall_6_1_0());
 					}
-					lv_isShield_11_0=ruleBoolean
+					lv_isShield_10_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15431,7 +15213,7 @@ ruleHardwarePort returns [EObject current=null]
 						set(
 							$current,
 							"isShield",
-							lv_isShield_11_0,
+							lv_isShield_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -15439,13 +15221,13 @@ ruleHardwarePort returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=ReferencedPin
+			otherlv_11=ReferencedPin
 			{
-				newLeafNode(otherlv_12, grammarAccess.getHardwarePortAccess().getReferencedPinKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getHardwarePortAccess().getReferencedPinKeyword_7_0());
 			}
-			otherlv_13=LeftParenthesis
+			otherlv_12=LeftParenthesis
 			{
-				newLeafNode(otherlv_13, grammarAccess.getHardwarePortAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_12, grammarAccess.getHardwarePortAccess().getLeftParenthesisKeyword_7_1());
 			}
 			(
 				(
@@ -15455,7 +15237,7 @@ ruleHardwarePort returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getHardwarePortAccess().getReferencedPinHardwarePinCrossReference_8_2_0());
+						newCompositeNode(grammarAccess.getHardwarePortAccess().getReferencedPinHardwarePinCrossReference_7_2_0());
 					}
 					ruleEString
 					{
@@ -15464,9 +15246,9 @@ ruleHardwarePort returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getHardwarePortAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getHardwarePortAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
@@ -15476,7 +15258,7 @@ ruleHardwarePort returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getHardwarePortAccess().getReferencedPinHardwarePinCrossReference_8_3_1_0());
+							newCompositeNode(grammarAccess.getHardwarePortAccess().getReferencedPinHardwarePinCrossReference_7_3_1_0());
 						}
 						ruleEString
 						{
@@ -15485,26 +15267,26 @@ ruleHardwarePort returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_17=RightParenthesis
+			otherlv_16=RightParenthesis
 			{
-				newLeafNode(otherlv_17, grammarAccess.getHardwarePortAccess().getRightParenthesisKeyword_8_4());
+				newLeafNode(otherlv_16, grammarAccess.getHardwarePortAccess().getRightParenthesisKeyword_7_4());
 			}
 		)?
 		(
-			otherlv_18=OwnedComment
+			otherlv_17=OwnedComment
 			{
-				newLeafNode(otherlv_18, grammarAccess.getHardwarePortAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_17, grammarAccess.getHardwarePortAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_19=RULE_BEGIN
+			this_BEGIN_18=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_19, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_18, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getHardwarePortAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_20_0=ruleComment
+					lv_ownedComment_19_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15512,23 +15294,23 @@ ruleHardwarePort returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_20_0,
+							lv_ownedComment_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_21=Comma
+				otherlv_20=Comma
 				{
-					newLeafNode(otherlv_21, grammarAccess.getHardwarePortAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_20, grammarAccess.getHardwarePortAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwarePortAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getHardwarePortAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_22_0=ruleComment
+						lv_ownedComment_21_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15536,33 +15318,33 @@ ruleHardwarePort returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_22_0,
+								lv_ownedComment_21_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_23=RULE_END
+			this_END_22=RULE_END
 			{
-				newLeafNode(this_END_23, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_22, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
 		(
-			otherlv_24=ContainedPin
+			otherlv_23=ContainedPin
 			{
-				newLeafNode(otherlv_24, grammarAccess.getHardwarePortAccess().getContainedPinKeyword_10_0());
+				newLeafNode(otherlv_23, grammarAccess.getHardwarePortAccess().getContainedPinKeyword_9_0());
 			}
-			this_BEGIN_25=RULE_BEGIN
+			this_BEGIN_24=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_25, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_24, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortAccess().getContainedPinHardwarePinParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getHardwarePortAccess().getContainedPinHardwarePinParserRuleCall_9_2_0());
 					}
-					lv_containedPin_26_0=ruleHardwarePin
+					lv_containedPin_25_0=ruleHardwarePin
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15570,23 +15352,23 @@ ruleHardwarePort returns [EObject current=null]
 						add(
 							$current,
 							"containedPin",
-							lv_containedPin_26_0,
+							lv_containedPin_25_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_27=Comma
+				otherlv_26=Comma
 				{
-					newLeafNode(otherlv_27, grammarAccess.getHardwarePortAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_26, grammarAccess.getHardwarePortAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwarePortAccess().getContainedPinHardwarePinParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getHardwarePortAccess().getContainedPinHardwarePinParserRuleCall_9_3_1_0());
 						}
-						lv_containedPin_28_0=ruleHardwarePin
+						lv_containedPin_27_0=ruleHardwarePin
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15594,33 +15376,33 @@ ruleHardwarePort returns [EObject current=null]
 							add(
 								$current,
 								"containedPin",
-								lv_containedPin_28_0,
+								lv_containedPin_27_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePin");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_29=RULE_END
+			this_END_28=RULE_END
 			{
-				newLeafNode(this_END_29, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_28, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
 		(
-			otherlv_30=ContainedPort
+			otherlv_29=ContainedPort
 			{
-				newLeafNode(otherlv_30, grammarAccess.getHardwarePortAccess().getContainedPortKeyword_11_0());
+				newLeafNode(otherlv_29, grammarAccess.getHardwarePortAccess().getContainedPortKeyword_10_0());
 			}
-			this_BEGIN_31=RULE_BEGIN
+			this_BEGIN_30=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_31, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_11_1());
+				newLeafNode(this_BEGIN_30, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortAccess().getContainedPortHardwarePortParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getHardwarePortAccess().getContainedPortHardwarePortParserRuleCall_10_2_0());
 					}
-					lv_containedPort_32_0=ruleHardwarePort
+					lv_containedPort_31_0=ruleHardwarePort
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15628,23 +15410,23 @@ ruleHardwarePort returns [EObject current=null]
 						add(
 							$current,
 							"containedPort",
-							lv_containedPort_32_0,
+							lv_containedPort_31_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_33=Comma
+				otherlv_32=Comma
 				{
-					newLeafNode(otherlv_33, grammarAccess.getHardwarePortAccess().getCommaKeyword_11_3_0());
+					newLeafNode(otherlv_32, grammarAccess.getHardwarePortAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwarePortAccess().getContainedPortHardwarePortParserRuleCall_11_3_1_0());
+							newCompositeNode(grammarAccess.getHardwarePortAccess().getContainedPortHardwarePortParserRuleCall_10_3_1_0());
 						}
-						lv_containedPort_34_0=ruleHardwarePort
+						lv_containedPort_33_0=ruleHardwarePort
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwarePortRule());
@@ -15652,21 +15434,21 @@ ruleHardwarePort returns [EObject current=null]
 							add(
 								$current,
 								"containedPort",
-								lv_containedPort_34_0,
+								lv_containedPort_33_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_35=RULE_END
+			this_END_34=RULE_END
 			{
-				newLeafNode(this_END_35, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_11_4());
+				newLeafNode(this_END_34, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_10_4());
 			}
 		)?
-		this_END_36=RULE_END
+		this_END_35=RULE_END
 		{
-			newLeafNode(this_END_36, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_12());
+			newLeafNode(this_END_35, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_11());
 		}
 	)
 ;
@@ -15691,20 +15473,12 @@ ruleHardwarePortConnector returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getHardwarePortConnectorAccess().getHardwarePortConnectorKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getHardwarePortConnectorAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getHardwarePortConnectorAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15712,23 +15486,27 @@ ruleHardwarePortConnector returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getHardwarePortConnectorAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getHardwarePortConnectorAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getHardwarePortConnectorAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15736,7 +15514,7 @@ ruleHardwarePortConnector returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -15744,16 +15522,16 @@ ruleHardwarePortConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getHardwarePortConnectorAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getHardwarePortConnectorAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15761,7 +15539,7 @@ ruleHardwarePortConnector returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -15769,16 +15547,16 @@ ruleHardwarePortConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getHardwarePortConnectorAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getHardwarePortConnectorAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15786,7 +15564,7 @@ ruleHardwarePortConnector returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -15794,20 +15572,20 @@ ruleHardwarePortConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getHardwarePortConnectorAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getHardwarePortConnectorAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getHardwarePortConnectorAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getHardwarePortConnectorAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15815,23 +15593,23 @@ ruleHardwarePortConnector returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getHardwarePortConnectorAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getHardwarePortConnectorAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15839,32 +15617,32 @@ ruleHardwarePortConnector returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getHardwarePortConnectorAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getHardwarePortConnectorAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
-		otherlv_16=Port
+		otherlv_15=Port
 		{
-			newLeafNode(otherlv_16, grammarAccess.getHardwarePortConnectorAccess().getPortKeyword_8());
+			newLeafNode(otherlv_15, grammarAccess.getHardwarePortConnectorAccess().getPortKeyword_7());
 		}
-		this_BEGIN_17=RULE_BEGIN
+		this_BEGIN_16=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_17, grammarAccess.getHardwarePortConnectorAccess().getBEGINTerminalRuleCall_9());
+			newLeafNode(this_BEGIN_16, grammarAccess.getHardwarePortConnectorAccess().getBEGINTerminalRuleCall_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getPortHardwarePortConnector_portParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getPortHardwarePortConnector_portParserRuleCall_9_0());
 				}
-				lv_port_18_0=ruleHardwarePortConnector_port
+				lv_port_17_0=ruleHardwarePortConnector_port
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15872,23 +15650,23 @@ ruleHardwarePortConnector returns [EObject current=null]
 					add(
 						$current,
 						"port",
-						lv_port_18_0,
+						lv_port_17_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePortConnector_port");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_19=Comma
+			otherlv_18=Comma
 			{
-				newLeafNode(otherlv_19, grammarAccess.getHardwarePortConnectorAccess().getCommaKeyword_11_0());
+				newLeafNode(otherlv_18, grammarAccess.getHardwarePortConnectorAccess().getCommaKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getPortHardwarePortConnector_portParserRuleCall_11_1_0());
+						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getPortHardwarePortConnector_portParserRuleCall_10_1_0());
 					}
-					lv_port_20_0=ruleHardwarePortConnector_port
+					lv_port_19_0=ruleHardwarePortConnector_port
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15896,32 +15674,32 @@ ruleHardwarePortConnector returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_20_0,
+							lv_port_19_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePortConnector_port");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		this_END_21=RULE_END
+		this_END_20=RULE_END
 		{
-			newLeafNode(this_END_21, grammarAccess.getHardwarePortConnectorAccess().getENDTerminalRuleCall_12());
+			newLeafNode(this_END_20, grammarAccess.getHardwarePortConnectorAccess().getENDTerminalRuleCall_11());
 		}
 		(
-			otherlv_22=Connector
+			otherlv_21=Connector
 			{
-				newLeafNode(otherlv_22, grammarAccess.getHardwarePortConnectorAccess().getConnectorKeyword_13_0());
+				newLeafNode(otherlv_21, grammarAccess.getHardwarePortConnectorAccess().getConnectorKeyword_12_0());
 			}
-			this_BEGIN_23=RULE_BEGIN
+			this_BEGIN_22=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_23, grammarAccess.getHardwarePortConnectorAccess().getBEGINTerminalRuleCall_13_1());
+				newLeafNode(this_BEGIN_22, grammarAccess.getHardwarePortConnectorAccess().getBEGINTerminalRuleCall_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getConnectorHardwareConnectorParserRuleCall_13_2_0());
+						newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getConnectorHardwareConnectorParserRuleCall_12_2_0());
 					}
-					lv_connector_24_0=ruleHardwareConnector
+					lv_connector_23_0=ruleHardwareConnector
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15929,23 +15707,23 @@ ruleHardwarePortConnector returns [EObject current=null]
 						add(
 							$current,
 							"connector",
-							lv_connector_24_0,
+							lv_connector_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=Comma
+				otherlv_24=Comma
 				{
-					newLeafNode(otherlv_25, grammarAccess.getHardwarePortConnectorAccess().getCommaKeyword_13_3_0());
+					newLeafNode(otherlv_24, grammarAccess.getHardwarePortConnectorAccess().getCommaKeyword_12_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getConnectorHardwareConnectorParserRuleCall_13_3_1_0());
+							newCompositeNode(grammarAccess.getHardwarePortConnectorAccess().getConnectorHardwareConnectorParserRuleCall_12_3_1_0());
 						}
-						lv_connector_26_0=ruleHardwareConnector
+						lv_connector_25_0=ruleHardwareConnector
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getHardwarePortConnectorRule());
@@ -15953,21 +15731,21 @@ ruleHardwarePortConnector returns [EObject current=null]
 							add(
 								$current,
 								"connector",
-								lv_connector_26_0,
+								lv_connector_25_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_27=RULE_END
+			this_END_26=RULE_END
 			{
-				newLeafNode(this_END_27, grammarAccess.getHardwarePortConnectorAccess().getENDTerminalRuleCall_13_4());
+				newLeafNode(this_END_26, grammarAccess.getHardwarePortConnectorAccess().getENDTerminalRuleCall_12_4());
 			}
 		)?
-		this_END_28=RULE_END
+		this_END_27=RULE_END
 		{
-			newLeafNode(this_END_28, grammarAccess.getHardwarePortConnectorAccess().getENDTerminalRuleCall_14());
+			newLeafNode(this_END_27, grammarAccess.getHardwarePortConnectorAccess().getENDTerminalRuleCall_13());
 		}
 	)
 ;
@@ -15992,20 +15770,12 @@ ruleIOHardwarePin returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getIOHardwarePinAccess().getIOHardwarePinKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getIOHardwarePinAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getIOHardwarePinAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getIOHardwarePinAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getIOHardwarePinAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16013,23 +15783,27 @@ ruleIOHardwarePin returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getIOHardwarePinAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getIOHardwarePinAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getIOHardwarePinAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16037,7 +15811,7 @@ ruleIOHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -16045,16 +15819,16 @@ ruleIOHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getIOHardwarePinAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getIOHardwarePinAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16062,7 +15836,7 @@ ruleIOHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -16070,16 +15844,16 @@ ruleIOHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getIOHardwarePinAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getIOHardwarePinAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16087,7 +15861,7 @@ ruleIOHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -16095,16 +15869,16 @@ ruleIOHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Direction
+			otherlv_9=Direction
 			{
-				newLeafNode(otherlv_10, grammarAccess.getIOHardwarePinAccess().getDirectionKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getIOHardwarePinAccess().getDirectionKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getDirectionEADirectionKindEnumRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getDirectionEADirectionKindEnumRuleCall_6_1_0());
 					}
-					lv_direction_11_0=ruleEADirectionKind
+					lv_direction_10_0=ruleEADirectionKind
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16112,7 +15886,7 @@ ruleIOHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"direction",
-							lv_direction_11_0,
+							lv_direction_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EADirectionKind");
 						afterParserOrEnumRuleCall();
 					}
@@ -16120,16 +15894,16 @@ ruleIOHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=IsGround
+			otherlv_11=IsGround
 			{
-				newLeafNode(otherlv_12, grammarAccess.getIOHardwarePinAccess().getIsGroundKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getIOHardwarePinAccess().getIsGroundKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getIsGroundBooleanParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getIsGroundBooleanParserRuleCall_7_1_0());
 					}
-					lv_isGround_13_0=ruleBoolean
+					lv_isGround_12_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16137,7 +15911,7 @@ ruleIOHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"isGround",
-							lv_isGround_13_0,
+							lv_isGround_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -16145,16 +15919,16 @@ ruleIOHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=Kind
+			otherlv_13=Kind
 			{
-				newLeafNode(otherlv_14, grammarAccess.getIOHardwarePinAccess().getKindKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getIOHardwarePinAccess().getKindKeyword_8_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getKindIOHardwarePinKindEnumRuleCall_9_1_0());
+						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getKindIOHardwarePinKindEnumRuleCall_8_1_0());
 					}
-					lv_kind_15_0=ruleIOHardwarePinKind
+					lv_kind_14_0=ruleIOHardwarePinKind
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16162,7 +15936,7 @@ ruleIOHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"kind",
-							lv_kind_15_0,
+							lv_kind_14_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.IOHardwarePinKind");
 						afterParserOrEnumRuleCall();
 					}
@@ -16170,20 +15944,20 @@ ruleIOHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_16=OwnedComment
+			otherlv_15=OwnedComment
 			{
-				newLeafNode(otherlv_16, grammarAccess.getIOHardwarePinAccess().getOwnedCommentKeyword_10_0());
+				newLeafNode(otherlv_15, grammarAccess.getIOHardwarePinAccess().getOwnedCommentKeyword_9_0());
 			}
-			this_BEGIN_17=RULE_BEGIN
+			this_BEGIN_16=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_17, grammarAccess.getIOHardwarePinAccess().getBEGINTerminalRuleCall_10_1());
+				newLeafNode(this_BEGIN_16, grammarAccess.getIOHardwarePinAccess().getBEGINTerminalRuleCall_9_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getOwnedCommentCommentParserRuleCall_10_2_0());
+						newCompositeNode(grammarAccess.getIOHardwarePinAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
 					}
-					lv_ownedComment_18_0=ruleComment
+					lv_ownedComment_17_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16191,23 +15965,23 @@ ruleIOHardwarePin returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_18_0,
+							lv_ownedComment_17_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=Comma
+				otherlv_18=Comma
 				{
-					newLeafNode(otherlv_19, grammarAccess.getIOHardwarePinAccess().getCommaKeyword_10_3_0());
+					newLeafNode(otherlv_18, grammarAccess.getIOHardwarePinAccess().getCommaKeyword_9_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getIOHardwarePinAccess().getOwnedCommentCommentParserRuleCall_10_3_1_0());
+							newCompositeNode(grammarAccess.getIOHardwarePinAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
 						}
-						lv_ownedComment_20_0=ruleComment
+						lv_ownedComment_19_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getIOHardwarePinRule());
@@ -16215,21 +15989,21 @@ ruleIOHardwarePin returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_20_0,
+								lv_ownedComment_19_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_21=RULE_END
+			this_END_20=RULE_END
 			{
-				newLeafNode(this_END_21, grammarAccess.getIOHardwarePinAccess().getENDTerminalRuleCall_10_4());
+				newLeafNode(this_END_20, grammarAccess.getIOHardwarePinAccess().getENDTerminalRuleCall_9_4());
 			}
 		)?
-		this_END_22=RULE_END
+		this_END_21=RULE_END
 		{
-			newLeafNode(this_END_22, grammarAccess.getIOHardwarePinAccess().getENDTerminalRuleCall_11());
+			newLeafNode(this_END_21, grammarAccess.getIOHardwarePinAccess().getENDTerminalRuleCall_10());
 		}
 	)
 ;
@@ -16254,20 +16028,12 @@ ruleLogicalPortConnector returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getLogicalPortConnectorAccess().getLogicalPortConnectorKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getLogicalPortConnectorAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getLogicalPortConnectorAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16275,23 +16041,27 @@ ruleLogicalPortConnector returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getLogicalPortConnectorAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getLogicalPortConnectorAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getLogicalPortConnectorAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16299,7 +16069,7 @@ ruleLogicalPortConnector returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -16307,16 +16077,16 @@ ruleLogicalPortConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getLogicalPortConnectorAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getLogicalPortConnectorAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16324,7 +16094,7 @@ ruleLogicalPortConnector returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -16332,16 +16102,16 @@ ruleLogicalPortConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getLogicalPortConnectorAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getLogicalPortConnectorAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16349,7 +16119,7 @@ ruleLogicalPortConnector returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -16357,16 +16127,16 @@ ruleLogicalPortConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Kind
+			otherlv_9=Kind
 			{
-				newLeafNode(otherlv_10, grammarAccess.getLogicalPortConnectorAccess().getKindKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getLogicalPortConnectorAccess().getKindKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getKindHardwareBusKindEnumRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getKindHardwareBusKindEnumRuleCall_6_1_0());
 					}
-					lv_kind_11_0=ruleHardwareBusKind
+					lv_kind_10_0=ruleHardwareBusKind
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16374,7 +16144,7 @@ ruleLogicalPortConnector returns [EObject current=null]
 						set(
 							$current,
 							"kind",
-							lv_kind_11_0,
+							lv_kind_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwareBusKind");
 						afterParserOrEnumRuleCall();
 					}
@@ -16382,16 +16152,16 @@ ruleLogicalPortConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=BusSpeed
+			otherlv_11=BusSpeed
 			{
-				newLeafNode(otherlv_12, grammarAccess.getLogicalPortConnectorAccess().getBusSpeedKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getLogicalPortConnectorAccess().getBusSpeedKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getBusSpeedFloatParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getBusSpeedFloatParserRuleCall_7_1_0());
 					}
-					lv_busSpeed_13_0=ruleFloat
+					lv_busSpeed_12_0=ruleFloat
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16399,7 +16169,7 @@ ruleLogicalPortConnector returns [EObject current=null]
 						set(
 							$current,
 							"busSpeed",
-							lv_busSpeed_13_0,
+							lv_busSpeed_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Float");
 						afterParserOrEnumRuleCall();
 					}
@@ -16407,20 +16177,20 @@ ruleLogicalPortConnector returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getLogicalPortConnectorAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getLogicalPortConnectorAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getLogicalPortConnectorAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getLogicalPortConnectorAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16428,23 +16198,23 @@ ruleLogicalPortConnector returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getLogicalPortConnectorAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getLogicalPortConnectorAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16452,32 +16222,32 @@ ruleLogicalPortConnector returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getLogicalPortConnectorAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_18, grammarAccess.getLogicalPortConnectorAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		otherlv_20=Port
+		otherlv_19=Port
 		{
-			newLeafNode(otherlv_20, grammarAccess.getLogicalPortConnectorAccess().getPortKeyword_10());
+			newLeafNode(otherlv_19, grammarAccess.getLogicalPortConnectorAccess().getPortKeyword_9());
 		}
-		this_BEGIN_21=RULE_BEGIN
+		this_BEGIN_20=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_21, grammarAccess.getLogicalPortConnectorAccess().getBEGINTerminalRuleCall_11());
+			newLeafNode(this_BEGIN_20, grammarAccess.getLogicalPortConnectorAccess().getBEGINTerminalRuleCall_10());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getPortHardwarePortConnector_portParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getPortHardwarePortConnector_portParserRuleCall_11_0());
 				}
-				lv_port_22_0=ruleHardwarePortConnector_port
+				lv_port_21_0=ruleHardwarePortConnector_port
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16485,23 +16255,23 @@ ruleLogicalPortConnector returns [EObject current=null]
 					add(
 						$current,
 						"port",
-						lv_port_22_0,
+						lv_port_21_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePortConnector_port");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_23=Comma
+			otherlv_22=Comma
 			{
-				newLeafNode(otherlv_23, grammarAccess.getLogicalPortConnectorAccess().getCommaKeyword_13_0());
+				newLeafNode(otherlv_22, grammarAccess.getLogicalPortConnectorAccess().getCommaKeyword_12_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getPortHardwarePortConnector_portParserRuleCall_13_1_0());
+						newCompositeNode(grammarAccess.getLogicalPortConnectorAccess().getPortHardwarePortConnector_portParserRuleCall_12_1_0());
 					}
-					lv_port_24_0=ruleHardwarePortConnector_port
+					lv_port_23_0=ruleHardwarePortConnector_port
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLogicalPortConnectorRule());
@@ -16509,20 +16279,20 @@ ruleLogicalPortConnector returns [EObject current=null]
 						add(
 							$current,
 							"port",
-							lv_port_24_0,
+							lv_port_23_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePortConnector_port");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
+		this_END_24=RULE_END
+		{
+			newLeafNode(this_END_24, grammarAccess.getLogicalPortConnectorAccess().getENDTerminalRuleCall_13());
+		}
 		this_END_25=RULE_END
 		{
 			newLeafNode(this_END_25, grammarAccess.getLogicalPortConnectorAccess().getENDTerminalRuleCall_14());
-		}
-		this_END_26=RULE_END
-		{
-			newLeafNode(this_END_26, grammarAccess.getLogicalPortConnectorAccess().getENDTerminalRuleCall_15());
 		}
 	)
 ;
@@ -16547,20 +16317,12 @@ rulePowerHardwarePin returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getPowerHardwarePinAccess().getPowerHardwarePinKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getPowerHardwarePinAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getPowerHardwarePinAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPowerHardwarePinRule());
@@ -16568,23 +16330,27 @@ rulePowerHardwarePin returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getPowerHardwarePinAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getPowerHardwarePinAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getPowerHardwarePinAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPowerHardwarePinRule());
@@ -16592,7 +16358,7 @@ rulePowerHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -16600,16 +16366,16 @@ rulePowerHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getPowerHardwarePinAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getPowerHardwarePinAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPowerHardwarePinRule());
@@ -16617,7 +16383,7 @@ rulePowerHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -16625,16 +16391,16 @@ rulePowerHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getPowerHardwarePinAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getPowerHardwarePinAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPowerHardwarePinRule());
@@ -16642,7 +16408,7 @@ rulePowerHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -16650,16 +16416,16 @@ rulePowerHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=Direction
+			otherlv_9=Direction
 			{
-				newLeafNode(otherlv_10, grammarAccess.getPowerHardwarePinAccess().getDirectionKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getPowerHardwarePinAccess().getDirectionKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getDirectionEADirectionKindEnumRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getDirectionEADirectionKindEnumRuleCall_6_1_0());
 					}
-					lv_direction_11_0=ruleEADirectionKind
+					lv_direction_10_0=ruleEADirectionKind
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPowerHardwarePinRule());
@@ -16667,7 +16433,7 @@ rulePowerHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"direction",
-							lv_direction_11_0,
+							lv_direction_10_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.EADirectionKind");
 						afterParserOrEnumRuleCall();
 					}
@@ -16675,16 +16441,16 @@ rulePowerHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_12=IsGround
+			otherlv_11=IsGround
 			{
-				newLeafNode(otherlv_12, grammarAccess.getPowerHardwarePinAccess().getIsGroundKeyword_8_0());
+				newLeafNode(otherlv_11, grammarAccess.getPowerHardwarePinAccess().getIsGroundKeyword_7_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getIsGroundBooleanParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getIsGroundBooleanParserRuleCall_7_1_0());
 					}
-					lv_isGround_13_0=ruleBoolean
+					lv_isGround_12_0=ruleBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPowerHardwarePinRule());
@@ -16692,7 +16458,7 @@ rulePowerHardwarePin returns [EObject current=null]
 						set(
 							$current,
 							"isGround",
-							lv_isGround_13_0,
+							lv_isGround_12_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -16700,20 +16466,20 @@ rulePowerHardwarePin returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_14=OwnedComment
+			otherlv_13=OwnedComment
 			{
-				newLeafNode(otherlv_14, grammarAccess.getPowerHardwarePinAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_13, grammarAccess.getPowerHardwarePinAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_15=RULE_BEGIN
+			this_BEGIN_14=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_15, grammarAccess.getPowerHardwarePinAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_14, grammarAccess.getPowerHardwarePinAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_16_0=ruleComment
+					lv_ownedComment_15_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPowerHardwarePinRule());
@@ -16721,23 +16487,23 @@ rulePowerHardwarePin returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_16_0,
+							lv_ownedComment_15_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_17=Comma
+				otherlv_16=Comma
 				{
-					newLeafNode(otherlv_17, grammarAccess.getPowerHardwarePinAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getPowerHardwarePinAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getPowerHardwarePinAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_18_0=ruleComment
+						lv_ownedComment_17_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getPowerHardwarePinRule());
@@ -16745,21 +16511,21 @@ rulePowerHardwarePin returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_18_0,
+								lv_ownedComment_17_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_19=RULE_END
+			this_END_18=RULE_END
 			{
-				newLeafNode(this_END_19, grammarAccess.getPowerHardwarePinAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_18, grammarAccess.getPowerHardwarePinAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_20=RULE_END
+		this_END_19=RULE_END
 		{
-			newLeafNode(this_END_20, grammarAccess.getPowerHardwarePinAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_19, grammarAccess.getPowerHardwarePinAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -16784,20 +16550,12 @@ ruleEADatatypePrototype returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEADatatypePrototypeAccess().getEADatatypePrototypeKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getEADatatypePrototypeAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEADatatypePrototypeAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEADatatypePrototypeRule());
@@ -16805,23 +16563,27 @@ ruleEADatatypePrototype returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getEADatatypePrototypeAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEADatatypePrototypeAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEADatatypePrototypeAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEADatatypePrototypeRule());
@@ -16829,7 +16591,7 @@ ruleEADatatypePrototype returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -16837,16 +16599,16 @@ ruleEADatatypePrototype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getEADatatypePrototypeAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getEADatatypePrototypeAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEADatatypePrototypeRule());
@@ -16854,7 +16616,7 @@ ruleEADatatypePrototype returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -16862,16 +16624,16 @@ ruleEADatatypePrototype returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getEADatatypePrototypeAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getEADatatypePrototypeAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEADatatypePrototypeRule());
@@ -16879,16 +16641,16 @@ ruleEADatatypePrototype returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10=Type
+		otherlv_9=Type
 		{
-			newLeafNode(otherlv_10, grammarAccess.getEADatatypePrototypeAccess().getTypeKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getEADatatypePrototypeAccess().getTypeKeyword_6());
 		}
 		(
 			(
@@ -16898,7 +16660,7 @@ ruleEADatatypePrototype returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getTypeEADatatypeCrossReference_8_0());
+					newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getTypeEADatatypeCrossReference_7_0());
 				}
 				ruleEString
 				{
@@ -16907,20 +16669,20 @@ ruleEADatatypePrototype returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_12=OwnedComment
+			otherlv_11=OwnedComment
 			{
-				newLeafNode(otherlv_12, grammarAccess.getEADatatypePrototypeAccess().getOwnedCommentKeyword_9_0());
+				newLeafNode(otherlv_11, grammarAccess.getEADatatypePrototypeAccess().getOwnedCommentKeyword_8_0());
 			}
-			this_BEGIN_13=RULE_BEGIN
+			this_BEGIN_12=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_13, grammarAccess.getEADatatypePrototypeAccess().getBEGINTerminalRuleCall_9_1());
+				newLeafNode(this_BEGIN_12, grammarAccess.getEADatatypePrototypeAccess().getBEGINTerminalRuleCall_8_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getOwnedCommentCommentParserRuleCall_9_2_0());
+						newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getOwnedCommentCommentParserRuleCall_8_2_0());
 					}
-					lv_ownedComment_14_0=ruleComment
+					lv_ownedComment_13_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEADatatypePrototypeRule());
@@ -16928,23 +16690,23 @@ ruleEADatatypePrototype returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_14_0,
+							lv_ownedComment_13_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_15=Comma
+				otherlv_14=Comma
 				{
-					newLeafNode(otherlv_15, grammarAccess.getEADatatypePrototypeAccess().getCommaKeyword_9_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getEADatatypePrototypeAccess().getCommaKeyword_8_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getOwnedCommentCommentParserRuleCall_9_3_1_0());
+							newCompositeNode(grammarAccess.getEADatatypePrototypeAccess().getOwnedCommentCommentParserRuleCall_8_3_1_0());
 						}
-						lv_ownedComment_16_0=ruleComment
+						lv_ownedComment_15_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEADatatypePrototypeRule());
@@ -16952,21 +16714,21 @@ ruleEADatatypePrototype returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_16_0,
+								lv_ownedComment_15_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_17=RULE_END
+			this_END_16=RULE_END
 			{
-				newLeafNode(this_END_17, grammarAccess.getEADatatypePrototypeAccess().getENDTerminalRuleCall_9_4());
+				newLeafNode(this_END_16, grammarAccess.getEADatatypePrototypeAccess().getENDTerminalRuleCall_8_4());
 			}
 		)?
-		this_END_18=RULE_END
+		this_END_17=RULE_END
 		{
-			newLeafNode(this_END_18, grammarAccess.getEADatatypePrototypeAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_17, grammarAccess.getEADatatypePrototypeAccess().getENDTerminalRuleCall_9());
 		}
 	)
 ;
@@ -16991,20 +16753,12 @@ ruleEnumerationLiteral returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEnumerationLiteralAccess().getEnumerationLiteralKeyword_0());
 		}
-		this_BEGIN_1=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_1, grammarAccess.getEnumerationLiteralAccess().getBEGINTerminalRuleCall_1());
-		}
-		otherlv_2=ShortName
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEnumerationLiteralAccess().getShortNameKeyword_2());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getShortNameIdentifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getShortNameIdentifierParserRuleCall_1_0());
 				}
-				lv_shortName_3_0=ruleIdentifier
+				lv_shortName_1_0=ruleIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
@@ -17012,23 +16766,27 @@ ruleEnumerationLiteral returns [EObject current=null]
 					set(
 						$current,
 						"shortName",
-						lv_shortName_3_0,
+						lv_shortName_1_0,
 						"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		this_BEGIN_2=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_2, grammarAccess.getEnumerationLiteralAccess().getBEGINTerminalRuleCall_2());
+		}
 		(
-			otherlv_4=Category
+			otherlv_3=Category
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEnumerationLiteralAccess().getCategoryKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEnumerationLiteralAccess().getCategoryKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getCategoryIdentifierParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getCategoryIdentifierParserRuleCall_3_1_0());
 					}
-					lv_category_5_0=ruleIdentifier
+					lv_category_4_0=ruleIdentifier
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
@@ -17036,7 +16794,7 @@ ruleEnumerationLiteral returns [EObject current=null]
 						set(
 							$current,
 							"category",
-							lv_category_5_0,
+							lv_category_4_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
 						afterParserOrEnumRuleCall();
 					}
@@ -17044,16 +16802,16 @@ ruleEnumerationLiteral returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_6=Uuid
+			otherlv_5=Uuid
 			{
-				newLeafNode(otherlv_6, grammarAccess.getEnumerationLiteralAccess().getUuidKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getEnumerationLiteralAccess().getUuidKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getUuidString0ParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getUuidString0ParserRuleCall_4_1_0());
 					}
-					lv_uuid_7_0=ruleString0
+					lv_uuid_6_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
@@ -17061,7 +16819,7 @@ ruleEnumerationLiteral returns [EObject current=null]
 						set(
 							$current,
 							"uuid",
-							lv_uuid_7_0,
+							lv_uuid_6_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -17069,16 +16827,16 @@ ruleEnumerationLiteral returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8=Name
+			otherlv_7=Name
 			{
-				newLeafNode(otherlv_8, grammarAccess.getEnumerationLiteralAccess().getNameKeyword_6_0());
+				newLeafNode(otherlv_7, grammarAccess.getEnumerationLiteralAccess().getNameKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getNameString0ParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getNameString0ParserRuleCall_5_1_0());
 					}
-					lv_name_9_0=ruleString0
+					lv_name_8_0=ruleString0
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
@@ -17086,7 +16844,7 @@ ruleEnumerationLiteral returns [EObject current=null]
 						set(
 							$current,
 							"name",
-							lv_name_9_0,
+							lv_name_8_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.String0");
 						afterParserOrEnumRuleCall();
 					}
@@ -17094,20 +16852,20 @@ ruleEnumerationLiteral returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10=OwnedComment
+			otherlv_9=OwnedComment
 			{
-				newLeafNode(otherlv_10, grammarAccess.getEnumerationLiteralAccess().getOwnedCommentKeyword_7_0());
+				newLeafNode(otherlv_9, grammarAccess.getEnumerationLiteralAccess().getOwnedCommentKeyword_6_0());
 			}
-			this_BEGIN_11=RULE_BEGIN
+			this_BEGIN_10=RULE_BEGIN
 			{
-				newLeafNode(this_BEGIN_11, grammarAccess.getEnumerationLiteralAccess().getBEGINTerminalRuleCall_7_1());
+				newLeafNode(this_BEGIN_10, grammarAccess.getEnumerationLiteralAccess().getBEGINTerminalRuleCall_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getOwnedCommentCommentParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getOwnedCommentCommentParserRuleCall_6_2_0());
 					}
-					lv_ownedComment_12_0=ruleComment
+					lv_ownedComment_11_0=ruleComment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
@@ -17115,23 +16873,23 @@ ruleEnumerationLiteral returns [EObject current=null]
 						add(
 							$current,
 							"ownedComment",
-							lv_ownedComment_12_0,
+							lv_ownedComment_11_0,
 							"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=Comma
+				otherlv_12=Comma
 				{
-					newLeafNode(otherlv_13, grammarAccess.getEnumerationLiteralAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_12, grammarAccess.getEnumerationLiteralAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getOwnedCommentCommentParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getOwnedCommentCommentParserRuleCall_6_3_1_0());
 						}
-						lv_ownedComment_14_0=ruleComment
+						lv_ownedComment_13_0=ruleComment
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
@@ -17139,21 +16897,21 @@ ruleEnumerationLiteral returns [EObject current=null]
 							add(
 								$current,
 								"ownedComment",
-								lv_ownedComment_14_0,
+								lv_ownedComment_13_0,
 								"org.bumble.eastadl.simplified.EastAdlSimplified.Comment");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			this_END_15=RULE_END
+			this_END_14=RULE_END
 			{
-				newLeafNode(this_END_15, grammarAccess.getEnumerationLiteralAccess().getENDTerminalRuleCall_7_4());
+				newLeafNode(this_END_14, grammarAccess.getEnumerationLiteralAccess().getENDTerminalRuleCall_6_4());
 			}
 		)?
-		this_END_16=RULE_END
+		this_END_15=RULE_END
 		{
-			newLeafNode(this_END_16, grammarAccess.getEnumerationLiteralAccess().getENDTerminalRuleCall_8());
+			newLeafNode(this_END_15, grammarAccess.getEnumerationLiteralAccess().getENDTerminalRuleCall_7());
 		}
 	)
 ;
@@ -18290,11 +18048,27 @@ ruleFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @after {
 	leaveRule();
 }:
-	kw=Float
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getFloatAccess().getFloatKeyword());
-	}
+	(
+		this_INT_0=RULE_INT
+		{
+			$current.merge(this_INT_0);
+		}
+		{
+			newLeafNode(this_INT_0, grammarAccess.getFloatAccess().getINTTerminalRuleCall_0());
+		}
+		kw=FullStop
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getFloatAccess().getFullStopKeyword_1());
+		}
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getFloatAccess().getINTTerminalRuleCall_2());
+		}
+	)
 ;
 
 // Entry rule entryRuleInteger
@@ -18312,10 +18086,12 @@ ruleInteger returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 @after {
 	leaveRule();
 }:
-	kw=Integer
+	this_INT_0=RULE_INT
 	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getIntegerAccess().getIntegerKeyword());
+		$current.merge(this_INT_0);
+	}
+	{
+		newLeafNode(this_INT_0, grammarAccess.getIntegerAccess().getINTTerminalRuleCall());
 	}
 ;
 

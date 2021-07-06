@@ -8,7 +8,7 @@ Bundle-ClassPath: .,
  lib/eastadl22.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.eatop.eastadl22,
  org.eclipse.eatop.eastadl22.impl,
  org.eclipse.eatop.eastadl22.util
