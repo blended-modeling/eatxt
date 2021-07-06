@@ -135,8 +135,6 @@ AllocationTarget : 'allocationTarget';
 
 UserElementType : 'UserElementType';
 
-TopLevelPackage : 'topLevelPackage';
-
 EABooleanValue : 'EABooleanValue';
 
 EventTriggered : 'EventTriggered';
@@ -205,8 +203,6 @@ RealizedBy : 'realizedBy';
 
 Resolution : 'resolution';
 
-SubPackage : 'subPackage';
-
 EABoolean : 'EABoolean';
 
 EAPackage : 'EAPackage';
@@ -236,8 +232,6 @@ Operation_1 : 'operation';
 PortGroup_1 : 'portGroup';
 
 Reference : 'reference';
-
-ShortName : 'shortName';
 
 Actuator : 'Actuator';
 
@@ -269,13 +263,9 @@ Boolean : 'Boolean';
 
 Comment : 'Comment';
 
-Integer : 'Integer';
-
 Default : 'default';
 
 Digital : 'digital';
-
-Element : 'element';
 
 Extends : 'extends';
 
@@ -316,10 +306,6 @@ Target : 'target';
 Typeof : 'typeof';
 
 UaType : 'uaType';
-
-EAXML : 'EAXML';
-
-Float : 'Float';
 
 Catch : 'catch';
 
