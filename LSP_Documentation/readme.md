@@ -34,7 +34,7 @@ Syntax highlighting can be added by means of [TextMate](https://projects.eclipse
 For implementing a VS Code LSP extension and integrating an Xtext LS, one needs the VS Code npm package [vscode-languageclient](https://www.npmjs.com/package/vscode-languageclient).
 Its version [7.0.0 supports the current LSP version 3.16, whereas 6.1.x supports LSP version 3.15](https://github.com/Microsoft/vscode-languageserver-node#readme).
 VS Code typically installs the latest version.
-Thus, one has to typically deinstall it completely and install a specific version if downgrading is required (e.g., via <code>npm install vscode-languageclient@6.1.4</code>).
+Thus, if downgrading is required, one has to deinstall it completely and install a specific version (e.g., via <code>npm uninstall vscode-languageclient</code> and <code>npm install vscode-languageclient@6.1.4</code>).
 
 #### Syntax Highlighting
 Syntax highlighting also bases on TextMate, but is better [integrated in VS Code](https://vscode-eastus.azurewebsites.net/api/language-extensions/syntax-highlight-guide).
