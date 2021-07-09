@@ -75,6 +75,7 @@ public void register(Injector injector) {
   As a starting point, you can create new Xtext plugins from an Ecore metamodel with the following options and then adapt the Gradle scripts for your probably already existing plugins to your needs:
   
   ![image](https://user-images.githubusercontent.com/82101353/125102656-d15e2600-e0db-11eb-8118-97f627c2ef6b.png)
+  
   The "Fat Jar" option uses a "Shadow Jar" Gradle plugin and should bundle *all* required compiled classes (including all dependencies to LSP4J etc.) to one Jar archive.
   For this purpose, this Xtext Wizard option creates a parent plugin that contains the main Gradle script as well as the actual Xtext plugins with dedicated Gradle settings.
   However, although the Jar archive looks fine at the first glance, it was not sufficient for me (see next section).
