@@ -174,11 +174,53 @@ VS Code typically installs the latest version.
   Only one run configuration worked for me, to be described after HDD is restored]
   
 #### Metamodel Preparations
-  For getting an own EMF model into the GLSP world, one has to let its metamodel elements derive from the [GLSP graph types metamodel](https://github.com/eclipse-glsp/glsp-server/blob/master/examples/org.eclipse.glsp.example.workflow/model/workflow-graph.ecore) (cf. the (workflow metamodel)[https://github.com/eclipse-glsp/glsp-server/blob/master/plugins/org.eclipse.glsp.graph/model/glsp-graph.ecore]).
+  For getting an own EMF model into the GLSP world, one has to let its metamodel elements derive from the [GLSP graph types metamodel](https://github.com/eclipse-glsp/glsp-server/blob/master/examples/org.eclipse.glsp.example.workflow/model/workflow-graph.ecore) (cf. the [workflow metamodel](https://github.com/eclipse-glsp/glsp-server/blob/master/plugins/org.eclipse.glsp.graph/model/glsp-graph.ecore)).
   For example, metamodel classes that shall be rendered as nodes have to derive from <code>GNode</code>, classes that shall be rendered as edges have to derive from <code>GEdge</code>, etc. (there is even a class <code>GPort</code>, which we hopefully can use for EAST-ADL ports).
   
   The challenge here is, that one has to extend the base metamodel for this purpose, which we probably do not want for the EAST-ADL metamodel.
   However, I think I read somewhere that you can bind GLSP graph types to your domain-specific concepts in the code in a leightweight manner (i.e., without modifying the base metamodel), but I do not find this part at the moment.
+  
+  #### \<yourBasePackage\>.\<yourDSML\>GLSPModule <a name="GLSPServerModule"></a>
+  Mandatory and the entry point: The configuration for binding your own classes, e.g., diagram configurations, operation handlers.
+  Let it derive from either [<code>org.eclipse.glsp.server.di.DefaultGLSPModule</code>](https://github.com/eclipse-glsp/glsp-server/blob/0.9.0.RC01/plugins/org.eclipse.glsp.server/src/org/eclipse/glsp/server/di/DefaultGLSPModule.java) or [<code>org.eclipse.glsp.server.di.GLSPModule</code>](https://github.com/eclipse-glsp/glsp-server/blob/0.9.0.RC01/plugins/org.eclipse.glsp.server/src/org/eclipse/glsp/server/di/GLSPModule.java), and implement all abstract methods to get an initial and minimal configuration.
+  See the [<code>WorkflowGLSPModule</code>](https://github.com/eclipse-glsp/glsp-server/blob/master/examples/org.eclipse.glsp.example.workflow/src/org/eclipse/glsp/example/workflow/WorkflowGLSPModule.java) for an example application.
+  
+  Important methods to override will be (cf. the following sections):
+ ``` 
+ @Override
+ protected Class<? extends GraphExtension> bindGraphExtension() {
+      return <yourDSML>GraphExtension.class;
+ }
+
+@Override
+protected void configureDiagramConfigurations(final MultiBinding<DiagramConfiguration> binding) {
+      binding.add(<yourDSML>DiagramConfiguration.class);
+}
+
+@Override
+protected void configureOperationHandlers(final MultiBinding<OperationHandler> binding) {
+      super.configureOperationHandlers(binding);
+      binding.add(Create<oneSpecificModelElementType>Handler.class);
+      ...
+      binding.add(Edit<oneSpecificModelElementType>Handler.class);
+      ...
+}
+  ``` 
+  
+  
+  #### \<yourBasePackage\>.\<yourDSML\>GraphExtension
+...
+
+  #### \<yourBasePackage\>.\<yourDSML\>DiagramConfiguration
+....
+
+  #### \<yourBasePackage\>.handler.Create<oneSpecificModelElementType>Handler
+...
+  
+  
+  #### \<yourBasePackage\>.\<yourDSML\>GLSPServer
+  Optional, check [this workflow server](https://github.com/eclipse-glsp/glsp-server/blob/master/examples/org.eclipse.glsp.example.workflow/src/org/eclipse/glsp/example/workflow/WorkflowGLSPServer.java) for adding logging capabilities.
+  To be binded in [the GLSPModule](#GLSPServerModule) by overriding the method <code>bindGLSPServer()</code>. 
   
 ### GLSP Client
   #### Application Core
