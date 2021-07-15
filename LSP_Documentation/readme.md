@@ -169,6 +169,7 @@ VS Code typically installs the latest version.
   My setting was to have the GLSP server side in the version 0.9.0.RC1 in the [source code version from GitHub](https://github.com/eclipse-glsp/glsp-server) running in a dedicated Eclipse instance.
   This way, one can easily debug and conduct changes on the running server.
   For getting into it, I initially ran [the workflow example](https://github.com/eclipse-glsp/glsp-server/tree/master/examples/org.eclipse.glsp.example.workflow) and built, based on that, a minimal version of an own domain-specific EMF language.
+  For getting an impression on the work required for a minimal configuration, there is also a (currently not running) [minimal example](https://github.com/eclipse-glsp/glsp-examples/tree/master/minimal).
   
   [There are two run configurations, which are are also provided on GitHub. 
   Only one run configuration worked for me, to be described after HDD is restored]
@@ -187,10 +188,10 @@ VS Code typically installs the latest version.
   
   Important methods to override will be (cf. the following sections):
  ``` 
- @Override
- protected Class<? extends GraphExtension> bindGraphExtension() {
+@Override
+protected Class<? extends GraphExtension> bindGraphExtension() {
       return <yourDSML>GraphExtension.class;
- }
+}
 
 @Override
 protected void configureDiagramConfigurations(final MultiBinding<DiagramConfiguration> binding) {
@@ -209,13 +210,97 @@ protected void configureOperationHandlers(final MultiBinding<OperationHandler> b
   
   
   #### \<yourBasePackage\>.\<yourDSML\>GraphExtension
-...
+Mandatory and simple: In this class, one has to proivde bindings to the metamodel's model code factories.
+Basically, you only write the following code (cf. [<code>WFGraphExtension</code>](https://github.com/eclipse-glsp/glsp-server/blob/0.9.0.RC01/examples/org.eclipse.glsp.example.workflow/src/org/eclipse/glsp/example/workflow/WFGraphExtension.java)):
+``` 
+public class <yourDSML>GraphExtension implements GraphExtension {
+
+   @Override
+   public EPackage getEPackage() { return <yourDSML>Package.eINSTANCE; }
+
+   @Override
+   public EFactory getEFactory() { return <yourDSML>Factory.eINSTANCE; }
+}
+  ``` 
 
   #### \<yourBasePackage\>.\<yourDSML\>DiagramConfiguration
-....
+Mandatory and central to the configuration of the diagrams' particular nodes and edges (cf. [<code>WorkflowDiagramConfiguration</code>](https://github.com/eclipse-glsp/glsp-server/blob/0.9.0.RC01/examples/org.eclipse.glsp.example.workflow/src/org/eclipse/glsp/example/workflow/WorkflowDiagramConfiguration.java)).
 
-  #### \<yourBasePackage\>.handler.Create<oneSpecificModelElementType>Handler
-...
+##### getDiagramType() <a name="GLSPServerConfiguration_diagramType"></a>
+``` 
+@Override
+public String getDiagramType() { return "<uniqueDiagramTypeID>"; } // has to fit to the diagram type ID used in the client 
+```
+
+##### getTypeMappings()
+Central method to bind the [DSML model element type IDs](#GLSPServerConfiguration_modelElementTypes) to the actual DSML model element types as part of the model code:
+``` 
+@Override
+public Map<String, EClass> getTypeMappings() {
+    Map<String, EClass> mappings = DefaultTypes.getDefaultTypeMappings();
+    mappings.put(<yourDSML>Types.<DSML_ModelElement_Type_ID>, <yourDSML>Package.Literals.<yourDSMLModelElementType>);
+    ...
+    return mappings;
+}
+``` 
+
+##### get[Shape|Edge]TypeHints()
+Optional, probably mouse-overs when hovering across the corresponding diagram element and/or configuring which model element types can be connected by which edge types; I left them empty for my initial basic configuration:
+``` 
+@Override
+public List<ShapeTypeHint> getShapeTypeHints() {
+    List<ShapeTypeHint> nodeHints = new ArrayList<>();
+    // optional:
+    nodeHints.add(createDefaultShapeTypeHint(<yourDSML>Types.<DSML_ModelElement_Type_ID>));
+    ...
+    return nodeHints;
+}
+
+@Override
+public List<EdgeTypeHint> getEdgeTypeHints() {
+    List<EdgeTypeHint> edgeHints = new ArrayList<>();
+    ...
+    return edgeHints;
+}
+``` 
+
+
+
+
+  #### \<yourBasePackage\>.handler.[Create|Edit|...]\<oneSpecificModelElementType\>Handler
+Mandatory; for each model class that shall be part of the palette you have to provide such a class (cf. [package <code>org.eclipse.glsp.example.workflow.handler</code>](https://github.com/eclipse-glsp/glsp-server/tree/0.9.0.RC01/examples/org.eclipse.glsp.example.workflow/src/org/eclipse/glsp/example/workflow/handler) or [class <code>MinimalCreateNodeOperationHandler</code>](https://github.com/eclipse-glsp/glsp-examples/blob/master/minimal/server/org.eclipse.glsp.example.minimal/src/main/java/org/eclipse/glsp/example/minimal/handler/MinimalCreateNodeOperationHandler.java)):
+``` 
+public class Create<yourDSMLNode>OperationHandler extends CreateNodeOperationHandler {
+
+   public Create<yourDSMLNode>NodeOperationHandler(final String elementTypeId) {
+      super(elementTypeId);
+   }
+
+   @Override
+   protected TaskNodeBuilder builder(final Optional<GPoint> point, final GModelState modelState) {
+      // optional but useful, to be integrated in the model element name:
+      int nodeCounter = GModelUtil.generateId(<yourDSML>Package.Literals.<yourDSMLModelElementType>, "<someString?>", modelState);
+      GNodeBuilder builder = new GNodeBuilder(<yourDSML>Types.<DSML_ModelElement_Type_ID>)
+         .size(40, 20)
+         .addCssClass("<corresponding CSS class provided in client>");
+      point.ifPresent(builder::position);
+      return builder.build();
+   }
+   
+   // edges have to be created differently, no experiences until now
+}
+``` 
+
+#### \<yourBasePackage\>.utils.\<yourDSML\>Types <a name="GLSPServerConfiguration_modelElementTypes"></a>
+Optional but recommended, central definition of IDs for the particular GLSP node and edge representations of your DSML (cf. [<code>ModelTypes</code>](https://github.com/eclipse-glsp/glsp-server/blob/0.9.0.RC01/examples/org.eclipse.glsp.example.workflow/src/org/eclipse/glsp/example/workflow/utils/ModelTypes.java)):
+``` 
+public final class <yourDSML>Types {
+    private  <yourDSML>Types() {}
+
+    public static final String <DSML_ModelElement_Type_ID> = "<uniqueID>";
+    ...
+}
+  ``` 
   
   
   #### \<yourBasePackage\>.\<yourDSML\>GLSPServer
@@ -224,5 +309,6 @@ protected void configureOperationHandlers(final MultiBinding<OperationHandler> b
   
 ### GLSP Client
   #### Application Core
+diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType)
   
   #### VS Code Integration Glue Code
