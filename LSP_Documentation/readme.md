@@ -171,8 +171,9 @@ VS Code typically installs the latest version.
   For getting into it, I initially ran [the workflow example](https://github.com/eclipse-glsp/glsp-server/tree/master/examples/org.eclipse.glsp.example.workflow) and built, based on that, a minimal version of an own domain-specific EMF language.
   For getting an impression on the work required for a minimal configuration, there is also a (currently not running) [minimal example](https://github.com/eclipse-glsp/glsp-examples/tree/master/minimal).
   
-  [There are two run configurations, which are are also provided on GitHub. 
-  Only one run configuration worked for me, to be described after HDD is restored]
+  There are two run configurations provided at GitHub: [One without using a web sockt](https://github.com/eclipse-glsp/glsp-server/blob/0.9.0.RC01/examples/org.eclipse.glsp.example.workflow/Start_Workflow_Example_Server.launch), and [one with using a web socket](https://github.com/eclipse-glsp/glsp-server/blob/0.9.0.RC01/examples/org.eclipse.glsp.example.workflow/Start_Workflow_Example_Server_(Websocket).launch). 
+  Only the first one ran without any problems for me.
+  One can easily copy it and adapt it to your own server application.
   
 #### Metamodel Preparations
   For getting an own EMF model into the GLSP world, one has to let its metamodel elements derive from the [GLSP graph types metamodel](https://github.com/eclipse-glsp/glsp-server/blob/master/examples/org.eclipse.glsp.example.workflow/model/workflow-graph.ecore) (cf. the [workflow metamodel](https://github.com/eclipse-glsp/glsp-server/blob/master/plugins/org.eclipse.glsp.graph/model/glsp-graph.ecore)).
@@ -307,8 +308,55 @@ public final class <yourDSML>Types {
   Optional, check [this workflow server](https://github.com/eclipse-glsp/glsp-server/blob/master/examples/org.eclipse.glsp.example.workflow/src/org/eclipse/glsp/example/workflow/WorkflowGLSPServer.java) for adding logging capabilities.
   To be binded in [the GLSPModule](#GLSPServerModule) by overriding the method <code>bindGLSPServer()</code>. 
   
+  
 ### GLSP Client
+  The actual GLSP client implementation consists of two parts: The client application core that has to fit to the GLSP server configuration and is intended to be reused for different IDEs, and an IDE-specific glue code that integrates the core code into one specific IDE.
+  In my case, I tried to integrate the core into VS Code, which also should run in Eclipse Theia.
+  
   #### Application Core
-diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType)
+  I applied the workflow example for the core can as part of the [dedicated glue code repository](https://github.com/eclipse-glsp/glsp-vscode-integration/tree/master/example/workflow), but it was initially developed [here](https://github.com/eclipse-glsp/glsp-client/tree/0.9.0-RC01/examples/workflow-glsp).
+diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType).
+  
+  ##### .vscode/launch.json
+  Cf. the [worfklow <code>.vscode/launch.json</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/.vscode/launch.json):
+  ```   
+{
+    {
+      "name": "<your description text> (External GLSP Server)",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "args": [
+        "${workspaceFolder}/example/workflow/workspace",
+        "--extensionDevelopmentPath=${workspaceFolder}/example/workflow/extension"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/<yourPathToYourClientConfiguration>/*.js",
+        "${workspaceFolder}/vscode-integration/lib/**/*.js"
+      ],
+      "sourceMaps": true,
+      "env": {
+        "GLSP_SERVER_DEBUG": "true",
+        "GLSP_SERVER_PORT": "5007" // has to fit to the launch configuration of the server side
+      }
+    }
+  ]
+}  
+    ``` 
+  
+  ##### .vscode/tasks.json
+  [...to be completed after HDD is restored...]
+  
+  
+  ##### VS Code Extension
+  ...
+  ... <yourPathToYourClientConfiguration>/extension/src/... .ts    ...
+  
+  ##### Webview
+  ...
+  ... <yourPathToYourClientConfiguration>/webview/src/main.ts ...
+  
+  
   
   #### VS Code Integration Glue Code
+The VS Code glue code for the workflow example can be found in a [dedicated repository](https://github.com/eclipse-glsp/glsp-vscode-integration).
