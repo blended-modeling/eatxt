@@ -268,7 +268,7 @@ public List<EdgeTypeHint> getEdgeTypeHints() {
 
 
 
-  #### \<yourBasePackage\>.handler.[Create|Edit|...]\<oneSpecificModelElementType\>Handler
+  #### \<yourBasePackage\>.handler.[Create|Edit|...]\<oneSpecificModelElementType\>Handler <a name="GLSPServerConfiguration_handler"></a>
 Mandatory; for each model class that shall be part of the palette you have to provide such a class (cf. [package <code>org.eclipse.glsp.example.workflow.handler</code>](https://github.com/eclipse-glsp/glsp-server/tree/0.9.0.RC01/examples/org.eclipse.glsp.example.workflow/src/org/eclipse/glsp/example/workflow/handler) or [class <code>MinimalCreateNodeOperationHandler</code>](https://github.com/eclipse-glsp/glsp-examples/blob/master/minimal/server/org.eclipse.glsp.example.minimal/src/main/java/org/eclipse/glsp/example/minimal/handler/MinimalCreateNodeOperationHandler.java)):
 ``` 
 public class Create<yourDSMLNode>OperationHandler extends CreateNodeOperationHandler {
@@ -315,7 +315,7 @@ public final class <yourDSML>Types {
   
   I applied the following directory structure:<br/>
   <code>rootDirectory</code><br/>
-  <code>|-- configuration</code> (= the core): The diagram configuration with bindings of the server-side node / model element types (cf. [type mappings](#GLSPServerConfiguration_typeMappings) and [model element type IDs](#GLSPServerConfiguration_modelElementTypes)) to default or custom GLSP shapes<br/>
+  <code>|-- configuration</code> (= the core): The diagram configuration with bindings of the server-side element type IDs (cf. [type mappings](#GLSPServerConfiguration_typeMappings) and [model element type IDs](#GLSPServerConfiguration_modelElementTypes)) to default or custom GLSP shapes<br/>
   <code>|-- extension</code> (= part of the glue code): Wrapper to bind the core configuration into an extension<br/>
   <code>|-- webview</code> (= part of the glue code): Some strange stuff that compiles an JavaScript executable out of the parts mentioned above<br/>
   <code>|-- workspace</code>: The runtime workspace folder to be opened when the extension starts up, with an example file<br/>
@@ -371,8 +371,28 @@ public final class <yourDSML>Types {
   If one looks at the workflow example for the core as part of the [dedicated glue code repository](https://github.com/eclipse-glsp/glsp-vscode-integration/tree/master/example/workflow), the actual core application is downloaded and deployed via Yarn.
   In contrast, we have to develop for our purposes an own configuration of the application core, cf. the [workflow example client configuration as part of the GLSP client repository](https://github.com/eclipse-glsp/glsp-client/tree/0.9.0-RC01/examples/workflow-glsp).
   
+  ##### CSS (configuration/css/diagram.css)
+  For adding, e.g., colors to the quite similar forms. 
+  For example, we will have in EAST-ADL several kinds of rectangular components with ports and connectors, which we can enable to easier distinguish (e.g., between AnalysisFunction[Proto-]Types, DesignFunction[Proto-]Types, ...) by means of colors (cf. [CSS class definition in server-side create handlers](#GLSPServerConfiguration_handler) and [workflow <code>diagram.css</code>](https://github.com/eclipse-glsp/glsp-client/blob/0.9.0-RC01/examples/workflow-glsp/css/diagram.css)):
+``` 
+.<CSS class as defined in server-side create handler>>.sprotty-node {
+    fill: <yourFavouriteColorForThisModelElementType>;
+}
+``` 
   
-diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType).
+  ##### The Actual Configuration (configuration/src/di.config.ts)
+  Defines for any model type ID specified at server side each a GLSP default or custom node/edge shape type to be rendered by means of a binding.
+  
+  The frame of the configuration can be borrowed from the [workflow <code>di.config.ts</code>](https://github.com/eclipse-glsp/glsp-client/blob/0.9.0-RC01/examples/workflow-glsp/src/di.config.ts).
+  Based on this, the particular bindings for any model element type ID (cf. [type mappings](#GLSPServerConfiguration_typeMappings) and [model element type IDs](#GLSPServerConfiguration_modelElementTypes)) are specified as follows (assuming that we want to render the model element type with a rectangular node):
+``` 
+configureModelElement(context, '<uniqueID>', RectangularNode, RectangularNodeView);
+``` 
+  Note, that we cannot reuse the Java constants <code>\<yourDSML\>Types.\<DSML_ModelElement_Type_ID\></code> in the TypeScript-based GLSP client. 
+  Instead, we have to refer to their particular String values (i.e., <code>\<uniqueID\></code>; cf. [model element type IDs](#GLSPServerConfiguration_modelElementTypes)).
+  
+  
+???diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType).
   
 
   
