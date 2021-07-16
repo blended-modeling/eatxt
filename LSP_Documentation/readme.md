@@ -233,7 +233,7 @@ Mandatory and central to the configuration of the diagrams' particular nodes and
 public String getDiagramType() { return "<uniqueDiagramTypeID>"; } // has to fit to the diagram type ID used in the client 
 ```
 
-##### getTypeMappings()
+##### getTypeMappings() <a name="GLSPServerConfiguration_typeMappings"></a>
 Central method to bind the [DSML model element type IDs](#GLSPServerConfiguration_modelElementTypes) to the actual DSML model element types as part of the model code:
 ``` 
 @Override
@@ -311,13 +311,18 @@ public final class <yourDSML>Types {
   
 ### GLSP Client
   The actual GLSP client implementation consists of two parts: The client application core that has to fit to the GLSP server configuration and is intended to be reused for different IDEs, and an IDE-specific glue code that integrates the core code into one specific IDE.
-  In my case, I tried to integrate the core into VS Code, which also should run in Eclipse Theia.
+  In my case, I tried to integrate the core into VS Code, which should also run in Eclipse Theia.
   
-  #### Application Core
-  I applied the workflow example for the core can as part of the [dedicated glue code repository](https://github.com/eclipse-glsp/glsp-vscode-integration/tree/master/example/workflow), but it was initially developed [here](https://github.com/eclipse-glsp/glsp-client/tree/0.9.0-RC01/examples/workflow-glsp).
-diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType).
+  I applied the following directory structure:<br/>
+  <code>rootDirectory</code><br/>
+  <code>|-- configuration</code> (= the core): The diagram configuration with bindings of the server-side node / model element types (cf. [type mappings](#GLSPServerConfiguration_typeMappings) and [model element type IDs](#GLSPServerConfiguration_modelElementTypes)) to default or custom GLSP shapes<br/>
+  <code>|-- extension</code> (= part of the glue code): Wrapper to bind the core configuration into an extension<br/>
+  <code>|-- webview</code> (= part of the glue code): Some strange stuff that compiles an JavaScript executable out of the parts mentioned above<br/>
+  <code>|-- workspace</code>: The runtime workspace folder to be opened when the extension starts up, with an example file<br/>
   
-  ##### .vscode/launch.json
+
+#### General Settings as Part of the Root Directory
+    ##### rootDirectory/.vscode/launch.json
   Cf. the [worfklow <code>.vscode/launch.json</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/.vscode/launch.json):
   ```   
 {
@@ -327,32 +332,56 @@ diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType)
       "request": "launch",
       "runtimeExecutable": "${execPath}",
       "args": [
-        "${workspaceFolder}/example/workflow/workspace",
-        "--extensionDevelopmentPath=${workspaceFolder}/example/workflow/extension"
+        "${workspaceFolder}/<yourPathToYourClientConfiguration>/workspace",
+        "--extensionDevelopmentPath=${workspaceFolder}/<yourPathToYourClientConfiguration>/extension"
       ],
       "outFiles": [
-        "${workspaceFolder}/<yourPathToYourClientConfiguration>/*.js",
+        "${workspaceFolder}/<yourPathToYourClientConfiguration>/**/*.js",
         "${workspaceFolder}/vscode-integration/lib/**/*.js"
       ],
       "sourceMaps": true,
       "env": {
         "GLSP_SERVER_DEBUG": "true",
-        "GLSP_SERVER_PORT": "5007" // has to fit to the launch configuration of the server side
+        "GLSP_SERVER_PORT": "5007" // has to fit to the launch configuration arguments of the server side
       }
     }
-  ]
 }  
-    ``` 
+  ``` 
   
-  ##### .vscode/tasks.json
+  ##### rootDirectory/.vscode/tasks.json
   [...to be completed after HDD is restored...]
   
+  ##### rootDirectory/package.json
+  Cf. [workflow example <code>package.json</code>](https://github.com/eclipse-glsp/glsp-client/blob/0.9.0-RC01/examples/workflow-glsp/package.json), important lines:
+``` 
+  "dependencies": {
+    "@eclipse-glsp/client": "0.9.0-RC01",
+    ...
+  "scripts": {
+    ...
+    [to be completed after HDD restored]
+    ...
+ ``` 
+##### rootDirectory/.vscode/tsconfig.json
+  Cf. [workflow example base <code>tsconfig.json</code>](https://github.com/eclipse-glsp/glsp-client/blob/0.9.0-RC01/configs/base.tsconfig.json) and [workflow example <code>tsconfig.json</code>](https://github.com/eclipse-glsp/glsp-client/blob/0.9.0-RC01/examples/workflow-glsp/tsconfig.json)
   
-  ##### VS Code Extension
+  
+  
+  #### Application Core: GLSP Client Diagram Configuration (rootDirectory/configuration)
+  If one looks at the workflow example for the core as part of the [dedicated glue code repository](https://github.com/eclipse-glsp/glsp-vscode-integration/tree/master/example/workflow), the actual core application is downloaded and deployed via Yarn.
+  In contrast, we have to develop for our purposes an own configuration of the application core, cf. the [workflow example client configuration as part of the GLSP client repository](https://github.com/eclipse-glsp/glsp-client/tree/0.9.0-RC01/examples/workflow-glsp).
+  
+  
+diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType).
+  
+
+  
+  
+  ##### VS Code Extension (rootDirectory/extension)
   ...
   ... <yourPathToYourClientConfiguration>/extension/src/... .ts    ...
   
-  ##### Webview
+  ##### Webview (rootDirectory/webview)
   ...
   ... <yourPathToYourClientConfiguration>/webview/src/main.ts ...
   
