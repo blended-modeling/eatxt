@@ -102,7 +102,7 @@ public void register(Injector injector) {
   I added it in the assumption it fixes a problem, but actually I don't know whether it had an effect and was really needed.
   
   
-#### Registering the VS Code Extension
+#### Registering the VS Code Extension <a name="RegisterXtextLSAsVSCodeExtension"></a>
   VS Code extensions can be compared to Eclipse plugins: One develops the extension in the development VS Code and executes it in a runtime VS Code in which the extension is loaded and can be used.
   If packaging the Xtext plugin was done properly (which is not that easy ;-)), registering the VS Code extension is comparably simple.
   There are two possible settings: [Spawn the Xtext LS server as an executable on opening the client extension](https://github.com/itemis/xtext-languageserver-example/tree/master/vscode-extension-self-contained), or [let the client extension communicate with an Xtext LS running in Eclipse via a websockdet](https://github.com/itemis/xtext-languageserver-example/tree/master/vscode-extension) (no experiences with this setting until now, unfortunately, but probably the better starting point for debugging).
@@ -316,7 +316,7 @@ public final class <yourDSML>Types {
   I applied the following directory structure:<br/>
   <code>rootDirectory</code><br/>
   <code>|-- configuration</code> (= the core): The diagram configuration with bindings of the server-side element type IDs (cf. [type mappings](#GLSPServerConfiguration_typeMappings) and [model element type IDs](#GLSPServerConfiguration_modelElementTypes)) to default or custom GLSP shapes<br/>
-  <code>|-- extension</code> (= part of the glue code): Wrapper to bind the core configuration into an extension<br/>
+  <code>|-- extension</code> (= part of the glue code): Wrapper to bind the core configuration into a VS Code extension<br/>
   <code>|-- webview</code> (= part of the glue code): Some strange stuff that compiles an JavaScript executable out of the parts mentioned above<br/>
   <code>|-- workspace</code>: The runtime workspace folder to be opened when the extension starts up, with an example file<br/>
   
@@ -367,11 +367,12 @@ public final class <yourDSML>Types {
   
   
   
-  #### Application Core: GLSP Client Diagram Configuration (rootDirectory/configuration)
+  #### Application Core: GLSP Client Diagram Configuration (\<rootDirectory\>/configuration)
   If one looks at the workflow example for the core as part of the [dedicated glue code repository](https://github.com/eclipse-glsp/glsp-vscode-integration/tree/master/example/workflow), the actual core application is downloaded and deployed via Yarn.
   In contrast, we have to develop for our purposes an own configuration of the application core, cf. the [workflow example client configuration as part of the GLSP client repository](https://github.com/eclipse-glsp/glsp-client/tree/0.9.0-RC01/examples/workflow-glsp).
   
-  ##### CSS (configuration/css/diagram.css)
+  
+  ##### Defining Rendering Properties with CSS (configuration/css/diagram.css)
   For adding, e.g., colors to the quite similar forms. 
   For example, we will have in EAST-ADL several kinds of rectangular components with ports and connectors, which we can enable to easier distinguish (e.g., between AnalysisFunction[Proto-]Types, DesignFunction[Proto-]Types, ...) by means of colors (cf. [CSS class definition in server-side create handlers](#GLSPServerConfiguration_handler) and [workflow <code>diagram.css</code>](https://github.com/eclipse-glsp/glsp-client/blob/0.9.0-RC01/examples/workflow-glsp/css/diagram.css)):
 ``` 
@@ -380,7 +381,7 @@ public final class <yourDSML>Types {
 }
 ``` 
   
-  ##### The Actual Configuration (configuration/src/di.config.ts)
+  ##### The Actual Configuration (configuration/src/di.config.ts\|index.ts)
   Defines for any model type ID specified at server side each a GLSP default or custom node/edge shape type to be rendered by means of a binding.
   
   The frame of the configuration can be borrowed from the [workflow <code>di.config.ts</code>](https://github.com/eclipse-glsp/glsp-client/blob/0.9.0-RC01/examples/workflow-glsp/src/di.config.ts).
@@ -391,21 +392,164 @@ configureModelElement(context, '<uniqueID>', RectangularNode, RectangularNodeVie
   Note, that we cannot reuse the Java constants <code>\<yourDSML\>Types.\<DSML_ModelElement_Type_ID\></code> in the TypeScript-based GLSP client. 
   Instead, we have to refer to their particular String values (i.e., <code>\<uniqueID\></code>; cf. [model element type IDs](#GLSPServerConfiguration_modelElementTypes)).
   
+  Along with further classes (e.g., if one defines custom nodes or edges to be rendered), this diagram configuration gets then imported and exported in a central <code>index.ts</code> (cf. the [workflow example <code>index.ts</code>](https://github.com/eclipse-glsp/glsp-client/blob/0.9.0-RC01/examples/workflow-glsp/src/index.ts)):
   
-???diagram type: cf. [server diagram type ID](#GLSPServerConfiguration_diagramType).
+``` 
+import create<YourDSML>DiagramContainer from './di.config';
   
+export * from './model';  // if custom shapes are defined in model.ts
+export ...;   // if further custom classes are defined 
+
+export { create<YourDSML>DiagramContainer };
+``` 
+  
+  #### The VS Code Extension (\<rootDirectory\>/extension)
+  This code part is responsible to embed the application core into an VS Code extension, which enables to let the application run in a runtime VS Code ([very similar to embed an Xtext LS into an VS Code extension](#RegisterXtextLSAsVSCodeExtension)).
+  
+  ##### extension/package.json
+  The extension's package description, main important lines (cf. also the full [workflow example <code>package.json</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/extension/package.json)):
+```  
+"files": [
+    "lib",
+    "extension",
+    "server",
+    "webview"
+  ],
+  "main": "./lib/<...>",  
+```
+  
+  ##### extension/tsconfig.json
+  See also the [workflow example <code>tsconfig.json</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/extension/tsconfig.json):
+```    
+{
+  "extends": "../../../configs/base.tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+  },
+  "include": [
+    "src",
+    "server",
+    "pack"
+  ]
+}
+```    
+  
+  ##### extension/src/<yourExtensionFilename>.ts <a name="GLSP_Client_Extension"></a>
+  The TypeScript code to configure the extension, most relevant important lines (see also [the workflow example extension code 1](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/extension/src/workflow-extension.ts) and [2](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/extension/src/workflow-glsp-diagram-editor-context.ts) as wall as [the server-side diagram type ID](#GLSPServerConfiguration_diagramType) and the [webpack configuration](#GLSP_Client_Webview_Config))):
+  
+```   
+  export class <YourDSML>GlspDiagramEditorContext extends GlspDiagramEditorContext {
+    ...
+    readonly diagramType = '<server-sideDiagramTypeID>';   
+  
+    let editorContext: GlspDiagramEditorContext;
+
+    export function activate(context: vscode.ExtensionContext): void {
+        editorContext = new WorkflowGlspDiagramEditorContext(context);  
+        ...
+    }
+  
+    export function deactivate(): Thenable<void> {
+        if (!editorContext) {
+            return Promise.resolve(undefined);
+        }
+        return editorContext.deactivateGLSPClient();
+    }
+  
+    createWebview(webviewPanel: vscode.WebviewPanel, identifier: SprottyDiagramIdentifier): GLSPWebView {
+        const webview = new GLSPWebView({
+            editorContext: this,
+            identifier,
+            localResourceRoots: [
+                this.getExtensionFileUri('pack')
+            ],
+            scriptUri: this.getExtensionFileUri('pack', 'webview.js'),
+            webviewPanel
+        });
+        return webview;
+    }  
+  }
+  
+```     
 
   
+  #### Webview (\<rootDirectory\>/webview)
+ Bundling the aforementioned contents together to a so-called webview application seems to be the final step, in which I failed unfortunately.
+  Thus, treat the following documentation with care.
   
-  ##### VS Code Extension (rootDirectory/extension)
-  ...
-  ... <yourPathToYourClientConfiguration>/extension/src/... .ts    ...
+  Bundling the contents together relies on the bundling software [Webpack](https://webpack.js.org/), which has to be configured. 
+  To run the configuration, type <code>webpack</code> in the powershell or configure a corresponding script that can be executed from VS Code.
   
-  ##### Webview (rootDirectory/webview)
-  ...
-  ... <yourPathToYourClientConfiguration>/webview/src/main.ts ...
+  ##### webview/package.json\|tsconfig.json
+  Straightforward, see the workflow example [<code>package.json</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/package.json) and [<code>tsconfig.json</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/tsconfig.json).
   
+  ##### Webpack Configuration File webview/webpack.config.js <a name="GLSP_Client_Webview_Config"></a>
+  Can be probably directly reused from the workflow example [<code>webpack.config.js</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/webpack.config.js).
+  Note that the bundle will be deployed with the following configuration into a folder <code>\<rootDirectory\>/extension/pack</code>.
+  This will be executed as part of the function <code>createWebview</code> (cf. the [extension code](#GLSP_Client_Extension))  
+```     
+// @ts-check
+const path = require('path');
+
+const outputPath = path.resolve(__dirname, '../extension/pack');
+
+/**@type {import('webpack').Configuration}*/
+const config = {
+    target: 'web',
+
+    entry: path.resolve(__dirname, 'src/main.ts'),
+    output: {
+		filename: 'webview.js',
+        path: outputPath
+    },
+    devtool: 'eval-source-map',
+
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js']
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: ['ts-loader']
+            },
+            {
+                test: /\.js$/,
+                use: ['source-map-loader'],
+                enforce: 'pre'
+            },
+            {
+                test: /\.css$/,
+                exclude: /\.useable\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
+    node : { fs: 'empty', net: 'empty' }
+};
+
+module.exports = config;
+```     
   
+  ##### webview/src/main.ts
+  Another TypeScript file, which seems to be the final entry point to be executed (cf. the [workflow example <code>main.ts</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/src/main.ts)):
+``` 
+import '@eclipse-glsp/vscode-integration-webview/css/glsp-vscode.css';
+import 'reflect-metadata';
+
+import { create<YourDSML>DiagramContainer } from 'configuration/lib';
+import { GLSPStarter } from '@eclipse-glsp/vscode-integration-webview';
+import { Container } from 'inversify';
+import { SprottyDiagramIdentifier } from 'sprotty-vscode-webview';
+
+export class <YourDSML>GLSPStarter extends GLSPStarter {
+    createContainer(diagramIdentifier: SprottyDiagramIdentifier): Container {
+        return create<YourDSML>DiagramContainer(diagramIdentifier.clientId);
+    }
+}
+
+new <YourDSML>GLSPStarter();  
+``` 
   
-  #### VS Code Integration Glue Code
-The VS Code glue code for the workflow example can be found in a [dedicated repository](https://github.com/eclipse-glsp/glsp-vscode-integration).
+
