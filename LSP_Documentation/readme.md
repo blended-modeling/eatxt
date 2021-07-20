@@ -479,17 +479,38 @@ export { create<YourDSML>DiagramContainer };
   Thus, treat the following documentation with care.
   
   Bundling the contents together relies on the bundling software [Webpack](https://webpack.js.org/), which has to be configured. 
-  To run the configuration, type <code>webpack</code> in the powershell or configure a corresponding script that can be executed from VS Code.
+  To run the configuration, type <code>webpack</code> in the powershell or configure a corresponding script (e.g., <code>"build": "tsc && webpack --mode=development",</code>) that can be executed from VS Code.
   
   ##### webview/package.json\|tsconfig.json
   Straightforward, see the workflow example [<code>package.json</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/package.json) and [<code>tsconfig.json</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/tsconfig.json).
+	
+  ##### webview/src/main.ts
+  Another TypeScript file (cf. the [workflow example <code>main.ts</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/src/main.ts)):
+``` 
+import '@eclipse-glsp/vscode-integration-webview/css/glsp-vscode.css';
+import 'reflect-metadata';
+
+import { create<YourDSML>DiagramContainer } from '../../configuration/lib';
+import { GLSPStarter } from '@eclipse-glsp/vscode-integration-webview';
+import { Container } from 'inversify';
+import { SprottyDiagramIdentifier } from 'sprotty-vscode-webview';
+
+export class <YourDSML>GLSPStarter extends GLSPStarter {
+    createContainer(diagramIdentifier: SprottyDiagramIdentifier): Container {
+        return create<YourDSML>DiagramContainer(diagramIdentifier.clientId);
+    }
+}
+
+new <YourDSML>GLSPStarter();  
+``` 	
   
   ##### Webpack Configuration File webview/webpack.config.js <a name="GLSP_Client_Webview_Config"></a>
   Can be probably directly reused from the workflow example [<code>webpack.config.js</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/webpack.config.js).
-  Note that the bundle will be deployed with the following configuration into a folder <code>\<rootDirectory\>/extension/pack</code>.
-  This will be executed as part of the function <code>createWebview</code> (cf. the [extension code](#GLSP_Client_Extension))  
+  Note that one huge JavaScript file, bundling everything together and being the actual executable, will be deployed with the following configuration into a <code>\<rootDirectory\>/extension/pack</webview.js</code>.
+  This file is referenced by the function <code>createWebview</code> (cf. the [extension code](#GLSP_Client_Extension))  
 ```     
 // @ts-check
+// eslint-disable-next-line header/header
 const path = require('path');
 
 const outputPath = path.resolve(__dirname, '../extension/pack');
@@ -532,24 +553,6 @@ const config = {
 module.exports = config;
 ```     
   
-  ##### webview/src/main.ts
-  Another TypeScript file, which seems to be the final entry point to be executed (cf. the [workflow example <code>main.ts</code>](https://github.com/eclipse-glsp/glsp-vscode-integration/blob/master/example/workflow/webview/src/main.ts)):
-``` 
-import '@eclipse-glsp/vscode-integration-webview/css/glsp-vscode.css';
-import 'reflect-metadata';
 
-import { create<YourDSML>DiagramContainer } from 'configuration/lib';
-import { GLSPStarter } from '@eclipse-glsp/vscode-integration-webview';
-import { Container } from 'inversify';
-import { SprottyDiagramIdentifier } from 'sprotty-vscode-webview';
-
-export class <YourDSML>GLSPStarter extends GLSPStarter {
-    createContainer(diagramIdentifier: SprottyDiagramIdentifier): Container {
-        return create<YourDSML>DiagramContainer(diagramIdentifier.clientId);
-    }
-}
-
-new <YourDSML>GLSPStarter();  
-``` 
   
 
