@@ -319,6 +319,8 @@ public final class <yourDSML>Types {
   <code>|-- extension</code> (= part of the glue code): Wrapper to bind the core configuration into a VS Code extension<br/>
   <code>|-- webview</code> (= part of the glue code): Some strange stuff that compiles an JavaScript executable out of the parts mentioned above<br/>
   <code>|-- workspace</code>: The runtime workspace folder to be opened when the extension starts up, with an example file<br/>
+	
+In the TypeFox Xtext / Sprotty state machine example however, the people used the directories for the diagram configuration and the webview together in the [webview directory](https://github.com/TypeFox/vscode-xtext-sprotty-example/tree/main/webview), which might help to reduce a complexity overhead.
   
 
 #### General Settings as Part of the Root Directory
