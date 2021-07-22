@@ -556,5 +556,53 @@ module.exports = config;
 ```     
   
 
-  
+## The EMF.cloud Model Server and Tree Editor Framework
+The tree editor framework only partially bases on the actual LSP, but is rather integrated into the [EMF.cloud umbrella project](https://www.eclipse.org/emfcloud/), that also provides the [coffee editor example](https://www.eclipse.org/emfcloud/#coffeeeditoroverview) (which in turn also contains the GLSP part of the workflow example mentioned above).
+	
+As in (G)LSP, we deal here with a server and a client side.
+The server side is represented by the **EMF.cloud model server** component, and the client side by the **EMF.cloud tree editor framework** (also often called the Theia Tree Editor), which are described in more detail in the following.
 
+
+### The Server: The EMF.cloud Model Server
+The model server is another "facade on top of existing technologies to connect web-based clients. It manages the runtime state of loaded models (“shared editing domain”). 
+It allows applying changes using a command pattern and and register for changes. 
+Finally, it provides a Java and JavaScript REST API including multiple formats (JSON or XMI)."
+
+It further uses a so-called EMF-JSON Jackson mapper. 
+This is a "JSON binding for EMF models, that allows serialization and deserialization of EMF Resources in JSON. 
+You can either change the file format to store your model instances or use the JSON serialiation to transfer model data, e.g. to a web client."
+
+The model server can be used through a bunch of Maven-compiled Jars or directly from you Eclipse IDE (which is better for debugging and integrating it with your own DSL), described in the following.
+	
+#### Standalone
+This approach requires a Maven installation.
+	
+##### EMF-JSON Jackson
+The interesting steps from the [README.md](https://github.com/eclipse-emfcloud/emfjson-jackson#readme):	
+	
+1. Clone the [repository](https://github.com/eclipse-emfcloud/emfjson-jackson)
+2. Compile the code with Maven via <code>mvn clean install</code>, which compiles a jar under \<clonedRepo\>\\target\\emfjson-jackson-\<version\>-SNAPSHOT.jar
+
+	
+##### Model Server
+The interesting steps from the [README.md](https://github.com/eclipse-emfcloud/emfcloud-modelserver#readme):	
+	
+1. Clone the [repository](https://github.com/eclipse-emfcloud/emfcloud-modelserver)
+2. Compile the code with Maven via <code>mvn clean install</code>, which compiles a jar under any \<clonedRepo\>\<plugin-x\>\\target\\\<plugin-x\>-\<version\>-SNAPSHOT.jar
+	
+##### Integration and Execution
+1. Copy all the jars from the two steps before together into one directory
+2. Execute in this directory <code>java -jar org.eclipse.emfcloud.modelserver.example-X.X.X-SNAPSHOT-standalone.jar</code> (for execution options see [usage] (https://github.com/eclipse-emfcloud/emfcloud-modelserver#usage))
+3. Try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
+	
+#### Running the Server from Eclipse
+1. Clone the [repository](https://github.com/eclipse-emfcloud/emfcloud-modelserver) and import the projects into Eclipse
+2. Load the target definition of <code>org.eclipse.emfcloud.modelserver.releng.target</code>
+3. If not installed: Get the "m2e - Maven Integration for Eclipse" from the Eclipse marketplace that is proposed by Eclipse due the Maven nature of the plugins. This will lead to errors "Plugin execution not covered by lifecycle configuration: org.eclipse.tycho:tycho-compiler-plugin:\<version\>:compile ...
+", but you don't have to care for it.
+4. Execute as an Eclipse application the <code>org.eclipse.emfcloud.modelserver.example.ExampleServerLauncher</code> if you want to go for the coffee editor example, or your own server launcher for your DSL
+
+### The Client: The EMF.cloud Tree Editor Framework
+uses JSON forms
+
+...
