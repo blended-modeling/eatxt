@@ -592,7 +592,7 @@ The interesting steps from the [README.md](https://github.com/eclipse-emfcloud/e
 	
 ##### Integration and Execution
 1. Copy all the jars from the two steps before together into one directory
-2. Execute in this directory <code>java -jar org.eclipse.emfcloud.modelserver.example-X.X.X-SNAPSHOT-standalone.jar</code> (for execution options see [usage] (https://github.com/eclipse-emfcloud/emfcloud-modelserver#usage))
+2. Execute in this directory <code>java -jar org.eclipse.emfcloud.modelserver.example-X.X.X-SNAPSHOT-standalone.jar</code> (for command line arguments see [usage] (https://github.com/eclipse-emfcloud/emfcloud-modelserver#usage))
 3. Try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
 	
 #### Running the Server from Eclipse
@@ -600,7 +600,8 @@ The interesting steps from the [README.md](https://github.com/eclipse-emfcloud/e
 2. Load the target definition of <code>org.eclipse.emfcloud.modelserver.releng.target</code>
 3. If not installed: Get the "m2e - Maven Integration for Eclipse" from the Eclipse marketplace that is proposed by Eclipse due the Maven nature of the plugins. This will lead to errors "Plugin execution not covered by lifecycle configuration: org.eclipse.tycho:tycho-compiler-plugin:\<version\>:compile ...
 ", but you don't have to care for it.
-4. Execute as an Eclipse application the <code>org.eclipse.emfcloud.modelserver.example.ExampleServerLauncher</code> if you want to go for the coffee editor example, or your own server launcher for your DSL
+4. Execute as an Eclipse application the <code>org.eclipse.emfcloud.modelserver.example.ExampleServerLauncher</code> if you want to go for the coffee editor example (for command line arguments see [usage] (https://github.com/eclipse-emfcloud/emfcloud-modelserver#usage)), or your own server launcher for your DSL
+5. For the coffee editor example, try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
 
 ### The Client: The EMF.cloud Tree Editor Framework
 uses JSON forms
