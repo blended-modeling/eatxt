@@ -604,6 +604,8 @@ The interesting steps from the [README.md](https://github.com/eclipse-emfcloud/e
 5. For the coffee editor example, try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
 
 ### The Client: The EMF.cloud Tree Editor Framework
-uses JSON forms
-
+uses JSON forms	
+	
+If you want to build the (coffee editor IDE example)[https://github.com/eclipse-emfcloud/coffee-editor] (that also encompasses a tree editor), you will need Node.js V10.13.0 installed and no other version...
+	
 ...
