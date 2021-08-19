@@ -10,28 +10,24 @@ EAXML returns EAXML:
     (topLevelPackage+=EAPackage ( "," topLevelPackage+=EAPackage)* )?
     ;
 
-
 Comment returns Comment:
     Comment_Impl | Rationale;
 
 EAPackageableElement returns EAPackageableElement:
-    DesignLevel | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionType_Impl | FunctionalDevice | FunctionClientServerInterface | HardwareFunctionType | LocalDeviceManager | Actuator | ElectricalComponent | HardwareComponentType_Impl | Node | Sensor | ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType;
+    DesignLevel | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionType_Impl | FunctionalDevice | 
+    FunctionClientServerInterface | HardwareFunctionType | LocalDeviceManager | Actuator | ElectricalComponent | 
+    HardwareComponentType_Impl | Node | Sensor | ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | 
+    Enumeration | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType;
 
 TraceableSpecification returns TraceableSpecification:
-    FunctionClientServerInterface | ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | RangeableValueType;
+    FunctionClientServerInterface | ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | 
+    RangeableValueType;
 
 Relationship returns Relationship:
     Realization;
 
-
-
-
-
-
 FunctionPort returns FunctionPort:
     FunctionClientServerPort | FunctionFlowPort | FunctionPowerPort;
-
-
 
 HardwareComponentType returns HardwareComponentType:
     HardwareComponentType_Impl | Actuator | ElectricalComponent | Node | Sensor;
@@ -39,53 +35,53 @@ HardwareComponentType returns HardwareComponentType:
 HardwarePin returns HardwarePin:
     CommunicationHardwarePin | IOHardwarePin | PowerHardwarePin;
 
-
-
 PortConnector returns PortConnector:
     HardwarePortConnector | LogicalPortConnector;
 
 EADatatype returns EADatatype:
     ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | RangeableValueType;
-
-
-    
+ 
 EString returns ecore::EString:
     STRING | ID;
 
-
-
 EAValue returns EAValue:
-    EAArrayValue | EABooleanValue | EACompositeValue | EAEnumerationValue | EAExpression | EANumericalValue | EAStringValue;
-
+    EAArrayValue | EABooleanValue | EACompositeValue | EAEnumerationValue | EAExpression | EANumericalValue | 
+    EAStringValue;
 
 Identifiable returns Identifiable:
-    DesignLevel | Allocation | AnalysisFunctionPrototype | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionPrototype | DesignFunctionType_Impl | FunctionalDevice | FunctionAllocation | FunctionClientServerInterface | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort | HardwareFunctionType | LocalDeviceManager | Operation | PortGroup | Actuator | CommunicationHardwarePin | ElectricalComponent | HardwareComponentPrototype | HardwareComponentType_Impl | HardwareConnector | HardwarePort | HardwarePortConnector | IOHardwarePin | LogicalPortConnector | Node | PowerHardwarePin | Sensor | EAPackage | Realization | ArrayDatatype | CompositeDatatype | EABoolean | EADatatypePrototype | EANumerical | EAString | Enumeration | EnumerationLiteral | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType;
-
-
+    DesignLevel | Allocation | AnalysisFunctionPrototype | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | 
+    DesignFunctionPrototype | DesignFunctionType_Impl | FunctionalDevice | FunctionAllocation | 
+    FunctionClientServerInterface | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort | 
+    HardwareFunctionType | LocalDeviceManager | Operation | PortGroup | Actuator | CommunicationHardwarePin | 
+    ElectricalComponent | HardwareComponentPrototype | HardwareComponentType_Impl | HardwareConnector | HardwarePort | 
+    HardwarePortConnector | IOHardwarePin | LogicalPortConnector | Node | PowerHardwarePin | Sensor | EAPackage | 
+    Realization | ArrayDatatype | CompositeDatatype | EABoolean | EADatatypePrototype | EANumerical | EAString | 
+    Enumeration | EnumerationLiteral | Quantity | RangeableValueType | Unit | UserAttributeDefinition | 
+    UserAttributedElement | UserElementType;
 
 DesignFunctionType returns DesignFunctionType:
     DesignFunctionType_Impl | BasicSoftwareFunctionType | HardwareFunctionType | LocalDeviceManager;
 
-
-
 EAElement returns EAElement:
-    DesignLevel | Allocation | AnalysisFunctionPrototype | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionPrototype | DesignFunctionType_Impl | FunctionalDevice | FunctionAllocation | FunctionClientServerInterface | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort | HardwareFunctionType | LocalDeviceManager | Operation | PortGroup | Actuator | CommunicationHardwarePin | ElectricalComponent | HardwareComponentPrototype | HardwareComponentType_Impl | HardwareConnector | HardwarePort | HardwarePortConnector | IOHardwarePin | LogicalPortConnector | Node | PowerHardwarePin | Sensor | EAPackage | Realization | ArrayDatatype | CompositeDatatype | EABoolean | EADatatypePrototype | EANumerical | EAString | Enumeration | EnumerationLiteral | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType;
+    DesignLevel | Allocation | AnalysisFunctionPrototype | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | 
+    DesignFunctionPrototype | DesignFunctionType_Impl | FunctionalDevice | FunctionAllocation | 
+    FunctionClientServerInterface | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort | 
+    HardwareFunctionType | LocalDeviceManager | Operation | PortGroup | Actuator | CommunicationHardwarePin | 
+    ElectricalComponent | HardwareComponentPrototype | HardwareComponentType_Impl | HardwareConnector | HardwarePort | 
+    HardwarePortConnector | IOHardwarePin | LogicalPortConnector | Node | PowerHardwarePin | Sensor | EAPackage | 
+    Realization | ArrayDatatype | CompositeDatatype | EABoolean | EADatatypePrototype | EANumerical | EAString | 
+    Enumeration | EnumerationLiteral | Quantity | RangeableValueType | Unit | UserAttributeDefinition | 
+    UserAttributedElement | UserElementType;
 
 AnalysisFunctionType returns AnalysisFunctionType:
     AnalysisFunctionType_Impl | FunctionalDevice;
-
-
-
-
-
-
-
 
 AllocateableElement returns AllocateableElement:
     DesignFunctionPrototype | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort;
 
 AllocationTarget returns AllocationTarget:
-    CommunicationHardwarePin | HardwareComponentPrototype | HardwarePort | HardwarePortConnector | IOHardwarePin | LogicalPortConnector | PowerHardwarePin;
+    CommunicationHardwarePin | HardwareComponentPrototype | HardwarePort | HardwarePortConnector | IOHardwarePin | 
+    LogicalPortConnector | PowerHardwarePin;
 
 FunctionPrototype returns FunctionPrototype:
     AnalysisFunctionPrototype | DesignFunctionPrototype;
@@ -585,7 +581,7 @@ FunctionFlowPort returns FunctionFlowPort:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'direction' direction=EADirectionKind
-        'type' type=[EADatatype]
+        'type' type=[EADatatype|EString]
         ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
         ('defaultValue' defaultValue=EAValue)?
     END;
@@ -797,11 +793,17 @@ EAStringValue returns EAStringValue:
         'type' type=[EADatatype|EString]
     END;
 
-Boolean returns Boolean:
-    'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+//Boolean returns Boolean:
+//    'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+Boolean returns ecore::EBoolean: 
+	'true' | 'false';
 
 Numerical returns Numerical:
-    'Numerical' /* TODO: implement this rule and an appropriate IValueConverter */;
+//    'Numerical' /* TODO: implement this rule and an appropriate IValueConverter */;
+	INT;
+//Numerical returns ecore::EEnumerator:
+//	INT
+//;
 
 HardwareConnector_port returns HardwareConnector_port:
     'HardwareConnector_port'

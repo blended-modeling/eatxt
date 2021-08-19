@@ -1356,7 +1356,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *         uuid=String0? 
 	 *         name=String0? 
 	 *         direction=EADirectionKind 
-	 *         type=[EADatatype|ID] 
+	 *         type=[EADatatype|EString] 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         defaultValue=EAValue?
 	 *     )

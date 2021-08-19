@@ -207,8 +207,6 @@ EABoolean : 'EABoolean';
 
 EAPackage : 'EAPackage';
 
-Numerical : 'Numerical';
-
 Operation : 'Operation';
 
 PortGroup : 'PortGroup';
@@ -258,8 +256,6 @@ Quantity_1 : 'quantity';
 Realized : 'realized';
 
 ValidFor : 'validFor';
-
-Boolean : 'Boolean';
 
 Comment : 'Comment';
 

@@ -50,6 +50,7 @@ public class EastAdlSimplifiedParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAllocateableElementAccess().getAlternatives(), "rule__AllocateableElement__Alternatives");
 			builder.put(grammarAccess.getAllocationTargetAccess().getAlternatives(), "rule__AllocationTarget__Alternatives");
 			builder.put(grammarAccess.getFunctionPrototypeAccess().getAlternatives(), "rule__FunctionPrototype__Alternatives");
+			builder.put(grammarAccess.getBooleanAccess().getAlternatives(), "rule__Boolean__Alternatives");
 			builder.put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
 			builder.put(grammarAccess.getOpMultiAssignAccess().getAlternatives(), "rule__OpMultiAssign__Alternatives");
 			builder.put(grammarAccess.getOpEqualityAccess().getAlternatives(), "rule__OpEquality__Alternatives");
