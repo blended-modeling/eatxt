@@ -131,7 +131,6 @@ import org.bumble.eastadl.simplified.services.EastAdlSimplifiedGrammarAccess;
 		tokenNameToValue.put("Target", "'target'");
 		tokenNameToValue.put("Typeof", "'typeof'");
 		tokenNameToValue.put("UaType", "'uaType'");
-		tokenNameToValue.put("Boolean", "'Boolean'");
 		tokenNameToValue.put("Comment", "'Comment'");
 		tokenNameToValue.put("Default", "'default'");
 		tokenNameToValue.put("Digital", "'digital'");
@@ -156,7 +155,6 @@ import org.bumble.eastadl.simplified.services.EastAdlSimplifiedGrammarAccess;
 		tokenNameToValue.put("ValidFor", "'validFor'");
 		tokenNameToValue.put("EABoolean", "'EABoolean'");
 		tokenNameToValue.put("EAPackage", "'EAPackage'");
-		tokenNameToValue.put("Numerical", "'Numerical'");
 		tokenNameToValue.put("Operation", "'Operation'");
 		tokenNameToValue.put("PortGroup", "'PortGroup'");
 		tokenNameToValue.put("Rationale", "'Rationale'");
@@ -2101,9 +2099,9 @@ ruleBoolean
 	}
 	:
 	(
-		{ before(grammarAccess.getBooleanAccess().getBooleanKeyword()); }
-		Boolean
-		{ after(grammarAccess.getBooleanAccess().getBooleanKeyword()); }
+		{ before(grammarAccess.getBooleanAccess().getAlternatives()); }
+		(rule__Boolean__Alternatives)
+		{ after(grammarAccess.getBooleanAccess().getAlternatives()); }
 	)
 ;
 finally {
@@ -2126,9 +2124,9 @@ ruleNumerical
 	}
 	:
 	(
-		{ before(grammarAccess.getNumericalAccess().getNumericalKeyword()); }
-		Numerical
-		{ after(grammarAccess.getNumericalAccess().getNumericalKeyword()); }
+		{ before(grammarAccess.getNumericalAccess().getINTTerminalRuleCall()); }
+		RULE_INT
+		{ after(grammarAccess.getNumericalAccess().getINTTerminalRuleCall()); }
 	)
 ;
 finally {
@@ -4510,6 +4508,27 @@ rule__EAValue__Alternatives
 		{ before(grammarAccess.getEAValueAccess().getEAStringValueParserRuleCall_6()); }
 		ruleEAStringValue
 		{ after(grammarAccess.getEAValueAccess().getEAStringValueParserRuleCall_6()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Boolean__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getBooleanAccess().getTrueKeyword_0()); }
+		True
+		{ after(grammarAccess.getBooleanAccess().getTrueKeyword_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getBooleanAccess().getFalseKeyword_1()); }
+		False
+		{ after(grammarAccess.getBooleanAccess().getFalseKeyword_1()); }
 	)
 ;
 finally {
@@ -81354,9 +81373,9 @@ rule__FunctionFlowPort__TypeAssignment_9
 	(
 		{ before(grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeCrossReference_9_0()); }
 		(
-			{ before(grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeIDTerminalRuleCall_9_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeIDTerminalRuleCall_9_0_1()); }
+			{ before(grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeEStringParserRuleCall_9_0_1()); }
+			ruleEString
+			{ after(grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeEStringParserRuleCall_9_0_1()); }
 		)
 		{ after(grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeCrossReference_9_0()); }
 	)

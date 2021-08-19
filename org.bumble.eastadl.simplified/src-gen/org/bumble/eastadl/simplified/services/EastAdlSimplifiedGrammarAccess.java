@@ -10199,7 +10199,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Keyword cTypeKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final CrossReference cTypeEADatatypeCrossReference_9_0 = (CrossReference)cTypeAssignment_9.eContents().get(0);
-		private final RuleCall cTypeEADatatypeIDTerminalRuleCall_9_0_1 = (RuleCall)cTypeEADatatypeCrossReference_9_0.eContents().get(1);
+		private final RuleCall cTypeEADatatypeEStringParserRuleCall_9_0_1 = (RuleCall)cTypeEADatatypeCrossReference_9_0.eContents().get(1);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
 		private final Keyword cOwnedCommentKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final RuleCall cBEGINTerminalRuleCall_10_1 = (RuleCall)cGroup_10.eContents().get(1);
@@ -10220,13 +10220,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//	'FunctionFlowPort' shortName=Identifier
 		//	BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 		//	'direction' direction=EADirectionKind
-		//	'type' type=[EADatatype] ('ownedComment' BEGIN ownedComment+=Comment ("," ownedComment+=Comment)* END)?
+		//	'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ("," ownedComment+=Comment)* END)?
 		//	('defaultValue' defaultValue=EAValue)?
 		//	END;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionFlowPort' shortName=Identifier BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? 'direction' direction=EADirectionKind 'type' type=[EADatatype] ('ownedComment' BEGIN
+		//name=String0)? 'direction' direction=EADirectionKind 'type' type=[EADatatype|EString] ('ownedComment' BEGIN
 		//ownedComment+=Comment ("," ownedComment+=Comment)* END)? ('defaultValue' defaultValue=EAValue)? END
 		public Group getGroup() { return cGroup; }
 		
@@ -10290,14 +10290,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'type'
 		public Keyword getTypeKeyword_8() { return cTypeKeyword_8; }
 		
-		//type=[EADatatype]
+		//type=[EADatatype|EString]
 		public Assignment getTypeAssignment_9() { return cTypeAssignment_9; }
 		
-		//[EADatatype]
+		//[EADatatype|EString]
 		public CrossReference getTypeEADatatypeCrossReference_9_0() { return cTypeEADatatypeCrossReference_9_0; }
 		
-		//ID
-		public RuleCall getTypeEADatatypeIDTerminalRuleCall_9_0_1() { return cTypeEADatatypeIDTerminalRuleCall_9_0_1; }
+		//EString
+		public RuleCall getTypeEADatatypeEStringParserRuleCall_9_0_1() { return cTypeEADatatypeEStringParserRuleCall_9_0_1; }
 		
 		//('ownedComment' BEGIN ownedComment+=Comment ("," ownedComment+=Comment)* END)?
 		public Group getGroup_10() { return cGroup_10; }
@@ -13205,25 +13205,36 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	}
 	public class BooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
-		private final Keyword cBooleanKeyword = (Keyword)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//Boolean Boolean:
-		//	'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+		////Boolean returns Boolean:
+		////    'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+		//Boolean ecore::EBoolean:
+		//	'true' | 'false';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Boolean'
-		public Keyword getBooleanKeyword() { return cBooleanKeyword; }
+		//'true' | 'false'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'true'
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+		
+		//'false'
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
 	}
 	public class NumericalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Numerical");
-		private final Keyword cNumericalKeyword = (Keyword)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Numerical Numerical:
-		//	'Numerical' /* TODO: implement this rule and an appropriate IValueConverter */;
+		//	INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Numerical'
-		public Keyword getNumericalKeyword() { return cNumericalKeyword; }
+		////    'Numerical' /* TODO: implement this rule and an appropriate IValueConverter */;
+		//INT
+		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
 	}
 	public class HardwareConnector_portElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector_port");
@@ -13241,6 +13252,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cHardwareComponentPrototypeHardwareComponentPrototypeEStringParserRuleCall_4_1_0_1 = (RuleCall)cHardwareComponentPrototypeHardwareComponentPrototypeCrossReference_4_1_0.eContents().get(1);
 		private final RuleCall cENDTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		
+		////Numerical returns ecore::EEnumerator:
+		////	INT
+		////;
 		//HardwareConnector_port:
 		//	'HardwareConnector_port'
 		//	BEGIN
@@ -14665,7 +14679,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'FunctionFlowPort' shortName=Identifier
 	//	BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 	//	'direction' direction=EADirectionKind
-	//	'type' type=[EADatatype] ('ownedComment' BEGIN ownedComment+=Comment ("," ownedComment+=Comment)* END)?
+	//	'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ("," ownedComment+=Comment)* END)?
 	//	('defaultValue' defaultValue=EAValue)?
 	//	END;
 	public FunctionFlowPortElements getFunctionFlowPortAccess() {
@@ -14996,8 +15010,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		return getEAStringValueAccess().getRule();
 	}
 	
-	//Boolean Boolean:
-	//	'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+	////Boolean returns Boolean:
+	////    'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+	//Boolean ecore::EBoolean:
+	//	'true' | 'false';
 	public BooleanElements getBooleanAccess() {
 		return pBoolean;
 	}
@@ -15007,7 +15023,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	}
 	
 	//Numerical Numerical:
-	//	'Numerical' /* TODO: implement this rule and an appropriate IValueConverter */;
+	//	INT;
 	public NumericalElements getNumericalAccess() {
 		return pNumerical;
 	}
@@ -15016,6 +15032,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		return getNumericalAccess().getRule();
 	}
 	
+	////Numerical returns ecore::EEnumerator:
+	////	INT
+	////;
 	//HardwareConnector_port:
 	//	'HardwareConnector_port'
 	//	BEGIN

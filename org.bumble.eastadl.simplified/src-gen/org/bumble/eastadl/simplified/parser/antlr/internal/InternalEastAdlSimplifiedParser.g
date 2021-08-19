@@ -13747,9 +13747,12 @@ ruleFunctionFlowPort returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFunctionFlowPortRule());
 					}
 				}
-				otherlv_12=RULE_ID
 				{
-					newLeafNode(otherlv_12, grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeCrossReference_9_0());
+					newCompositeNode(grammarAccess.getFunctionFlowPortAccess().getTypeEADatatypeCrossReference_9_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -17858,11 +17861,19 @@ ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 @after {
 	leaveRule();
 }:
-	kw=Boolean
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getBooleanAccess().getBooleanKeyword());
-	}
+	(
+		kw=True
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getBooleanAccess().getTrueKeyword_0());
+		}
+		    |
+		kw=False
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getBooleanAccess().getFalseKeyword_1());
+		}
+	)
 ;
 
 // Entry rule entryRuleNumerical
@@ -17880,10 +17891,12 @@ ruleNumerical returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 @after {
 	leaveRule();
 }:
-	kw=Numerical
+	this_INT_0=RULE_INT
 	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getNumericalAccess().getNumericalKeyword());
+		$current.merge(this_INT_0);
+	}
+	{
+		newLeafNode(this_INT_0, grammarAccess.getNumericalAccess().getINTTerminalRuleCall());
 	}
 ;
 

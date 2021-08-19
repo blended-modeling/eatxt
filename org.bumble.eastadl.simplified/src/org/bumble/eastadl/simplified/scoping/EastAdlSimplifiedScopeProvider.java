@@ -6,20 +6,65 @@ package org.bumble.eastadl.simplified.scoping;
 import java.util.List;
 import java.util.function.Predicate;
 
+import org.eclipse.eatop.eastadl22.AllocateableElement;
+import org.eclipse.eatop.eastadl22.AllocationTarget;
+import org.eclipse.eatop.eastadl22.AnalysisFunctionPrototype;
 import org.eclipse.eatop.eastadl22.AnalysisFunctionType;
+import org.eclipse.eatop.eastadl22.ArrayDatatype;
+import org.eclipse.eatop.eastadl22.CompositeDatatype;
+import org.eclipse.eatop.eastadl22.DesignFunctionPrototype;
 import org.eclipse.eatop.eastadl22.DesignFunctionType;
+import org.eclipse.eatop.eastadl22.DesignLevel;
+import org.eclipse.eatop.eastadl22.EAArrayValue;
+import org.eclipse.eatop.eastadl22.EABooleanValue;
+import org.eclipse.eatop.eastadl22.EACompositeValue;
 import org.eclipse.eatop.eastadl22.EADatatype;
+import org.eclipse.eatop.eastadl22.EADatatypePrototype;
+import org.eclipse.eatop.eastadl22.EAElement;
+import org.eclipse.eatop.eastadl22.EAEnumerationValue;
+import org.eclipse.eatop.eastadl22.EAExpression;
+import org.eclipse.eatop.eastadl22.EANumerical;
+import org.eclipse.eatop.eastadl22.EANumericalValue;
+import org.eclipse.eatop.eastadl22.EAStringValue;
+import org.eclipse.eatop.eastadl22.EnumerationLiteral;
+import org.eclipse.eatop.eastadl22.FunctionAllocation_allocatedElement;
+import org.eclipse.eatop.eastadl22.FunctionAllocation_target;
+import org.eclipse.eatop.eastadl22.FunctionClientServerInterface;
+import org.eclipse.eatop.eastadl22.FunctionClientServerPort;
+import org.eclipse.eatop.eastadl22.FunctionConnector_port;
+import org.eclipse.eatop.eastadl22.FunctionFlowPort;
+import org.eclipse.eatop.eastadl22.FunctionPort;
+import org.eclipse.eatop.eastadl22.FunctionPowerPort;
+import org.eclipse.eatop.eastadl22.FunctionPrototype;
+import org.eclipse.eatop.eastadl22.HardwareComponentPrototype;
+import org.eclipse.eatop.eastadl22.HardwareComponentType;
+import org.eclipse.eatop.eastadl22.HardwareConnector_port;
 import org.eclipse.eatop.eastadl22.HardwareFunctionType;
+import org.eclipse.eatop.eastadl22.HardwarePin;
+import org.eclipse.eatop.eastadl22.HardwarePort;
+import org.eclipse.eatop.eastadl22.HardwarePortConnector_port;
+import org.eclipse.eatop.eastadl22.Identifiable;
+import org.eclipse.eatop.eastadl22.PortGroup;
+import org.eclipse.eatop.eastadl22.Quantity;
+import org.eclipse.eatop.eastadl22.RangeableValueType;
+import org.eclipse.eatop.eastadl22.Realization_realized;
+import org.eclipse.eatop.eastadl22.Realization_realizedBy;
 import org.eclipse.eatop.eastadl22.Referrable;
+import org.eclipse.eatop.eastadl22.Unit;
+import org.eclipse.eatop.eastadl22.UserAttributeDefinition;
+import org.eclipse.eatop.eastadl22.UserAttributedElement;
+import org.eclipse.eatop.eastadl22.UserElementType;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 
 import com.google.common.base.Function;
+import com.google.inject.Inject;
 
 /**
  * This class contains custom scoping description.
@@ -30,14 +75,55 @@ import com.google.common.base.Function;
  */
 public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedScopeProvider {
 
+	@Inject
+	IQualifiedNameProvider nameProvider;
+
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
+		EClass contextEClass = context.eClass();
+		String contextClassName = null;
+		
+		// A dedicated process for HardwareComponentPrototype in DesignLevel
+		// Normal case: in class A reference type B, then the context is A and target is B
+		// Special case: in class DesignLevel reference type HardwareComponentType, the context is DesignLevel
+		if (contextEClass.getInstanceTypeName().equals(DesignLevel.class.getName())) {
+			DesignLevel designLevel = (DesignLevel)context;
+			contextClassName = designLevel.getHardwareDesignArchitecture().eClass().getInstanceTypeName();
+		}
+		else {
+			contextClassName = contextEClass.getInstanceTypeName();
+		}		
+		
 		EClass targetEClass = reference.getEReferenceType();
 		String targetClassName = targetEClass.getInstanceTypeName();
-		if (targetClassName.equals(EADatatype.class.getName())
-				|| targetClassName.equals(DesignFunctionType.class.getName())
-				|| targetClassName.equals(HardwareFunctionType.class.getName())
-				|| targetClassName.equals(AnalysisFunctionType.class.getName())) {
+		
+		// The ugly and long if conditions were combined with pairs of context and target, which is used to
+		// limit the automatic proposals by filtering the scopes
+		if ((contextClassName.equals(DesignFunctionPrototype.class.getName()) && targetClassName.equals(DesignFunctionType.class.getName()))
+				|| (contextClassName.equals(RangeableValueType.class.getName()) && targetClassName.equals(EANumerical.class.getName())) 
+				|| ((contextClassName.equals(EANumerical.class.getName()) || contextClassName.equals(Unit.class.getName())) && targetClassName.equals(Unit.class.getName()))
+				|| (contextClassName.equals(Unit.class.getName()) && targetClassName.equals(Quantity.class.getName()))
+				|| (contextClassName.equals(UserAttributedElement.class.getName()) || targetClassName.equals(UserElementType.class.getName()))
+				|| ((contextClassName.equals(HardwareConnector_port.class.getName()) || contextClassName.equals(HardwarePortConnector_port.class.getName())) && targetClassName.equals(HardwareComponentPrototype.class.getName()))
+				|| (contextClassName.equals(Realization_realized.class.getName()) && targetClassName.equals(EAElement.class.getName()))
+				|| ((contextClassName.equals(UserAttributedElement.class.getName()) || contextClassName.equals(Realization_realizedBy.class.getName())) && targetClassName.equals(Identifiable.class.getName()))
+				|| ((contextClassName.equals(HardwareFunctionType.class.getName()) || contextClassName.equals(HardwareComponentPrototype.class.getName())) && targetClassName.equals(HardwareComponentType.class.getName()))
+				|| (contextClassName.equals(AnalysisFunctionPrototype.class.getName()) && targetClassName.equals(AnalysisFunctionType.class.getName()))
+				|| (contextClassName.equals(FunctionClientServerPort.class.getName()) && targetClassName.equals(FunctionClientServerInterface.class.getName()))
+				|| (contextClassName.equals(FunctionPowerPort.class.getName()) && targetClassName.equals(CompositeDatatype.class.getName()))
+				|| ((contextClassName.equals(ArrayDatatype.class.getName()) || contextClassName.equals(UserAttributeDefinition.class.getName())
+						|| contextClassName.equals(FunctionFlowPort.class.getName()) || contextClassName.equals(EADatatypePrototype.class.getName())
+						|| contextClassName.equals(EAArrayValue.class.getName()) || contextClassName.equals(EABooleanValue.class.getName())
+						|| contextClassName.equals(EACompositeValue.class.getName()) || contextClassName.equals(EAEnumerationValue.class.getName())
+						|| contextClassName.equals(EAExpression.class.getName()) || contextClassName.equals(EANumericalValue.class.getName())
+						|| contextClassName.equals(EAStringValue.class.getName())) && targetClassName.equals(EADatatype.class.getName()))
+				|| (contextClassName.equals(FunctionAllocation_allocatedElement.class.getName()) && targetClassName.equals(AllocateableElement.class.getName()))
+				|| (contextClassName.equals(FunctionAllocation_target.class.getName()) && targetClassName.equals(AllocationTarget.class.getName()))
+				|| (contextClassName.equals(FunctionConnector_port.class.getName()) && targetClassName.equals(FunctionPrototype.class.getName()))
+				|| ((contextClassName.equals(PortGroup.class.getName()) || contextClassName.equals(FunctionConnector_port.class.getName())) && targetClassName.equals(FunctionPort.class.getName()))
+				|| ((contextClassName.equals(HardwarePort.class.getName()) || contextClassName.equals(HardwareConnector_port.class.getName())) && targetClassName.equals(HardwarePin.class.getName()))
+				|| (contextClassName.equals(HardwarePortConnector_port.class.getName()) && targetClassName.equals(HardwarePort.class.getName()))
+				|| (contextClassName.equals(EAEnumerationValue.class.getName()) && targetClassName.equals(EnumerationLiteral.class.getName()))) {
 			EObject rootElement = EcoreUtil2.getRootContainer(context);
 			try {
 				Class targetJavaClass = Class.forName(targetEClass.getInstanceTypeName());
@@ -45,7 +131,11 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 						targetJavaClass);
 				Predicate<Referrable> nullShortName = c -> c.getShortName() == null;
 				candidates.removeIf(nullShortName);
-				Function<Referrable, QualifiedName> displayShortNames = x -> QualifiedName.create(x.getShortName());
+				
+				// get the fully qualified name of a display short name, which will be a full path of string
+				Function<Referrable, QualifiedName> displayShortNames = x -> nameProvider.getFullyQualifiedName(x);
+				
+				// return all the fulfilled proposals (which would be proposed automatically in the menu to user)
 				return Scopes.scopeFor(candidates, displayShortNames, IScope.NULLSCOPE);
 			} catch (ClassNotFoundException e) {
 				// won't happen
@@ -58,7 +148,7 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 
 		// FIXME: Does not work for the same name in different namespaces right now!
 
+		// if no judgement condition above is fulfiled, then the program will get here and invoke supertype's getScope method
 		return super.getScope(context, reference);
 	}
-
 }
