@@ -86,7 +86,8 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		// A dedicated process for HardwareComponentPrototype in DesignLevel
 		// Normal case: in class A reference type B, then the context is A and target is B
 		// Special case: in class DesignLevel reference type HardwareComponentType, the context is DesignLevel
-		if (contextEClass.getInstanceTypeName().equals(DesignLevel.class.getName())) {
+		if (contextEClass.getInstanceTypeName().equals(DesignLevel.class.getName()) 
+				&& reference.getContainerClass().getName().equals(HardwareComponentPrototype.class.getName())) {
 			DesignLevel designLevel = (DesignLevel)context;
 			contextClassName = designLevel.getHardwareDesignArchitecture().eClass().getInstanceTypeName();
 		}
