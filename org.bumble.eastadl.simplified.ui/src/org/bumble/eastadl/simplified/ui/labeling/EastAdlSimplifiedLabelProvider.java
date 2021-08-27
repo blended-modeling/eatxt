@@ -3,9 +3,15 @@
  */
 package org.bumble.eastadl.simplified.ui.labeling;
 
-import com.google.inject.Inject;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+
+import com.google.inject.Inject;
 
 /**
  * Provides labels for EObjects.
@@ -19,13 +25,25 @@ public class EastAdlSimplifiedLabelProvider extends DefaultEObjectLabelProvider 
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
-	
-//	String text(Greeting ele) {
-//		return "A greeting to " + ele.getName();
-//	}
-//
-//	String image(Greeting ele) {
-//		return "Greeting.gif";
-//	}
+	@Override
+	protected EStructuralFeature getLabelFeature(EClass eClass) {
+		EAttribute result = null;
+		for (EAttribute eAttribute : eClass.getEAllAttributes()) {
+			if (!eAttribute.isMany() && eAttribute.getEType().getInstanceClass() != FeatureMap.Entry.class) {
+				if ("shortName".equalsIgnoreCase(eAttribute.getName())) {
+					result = eAttribute;
+					break;
+				} else if ("name".equalsIgnoreCase(eAttribute.getName())) {
+					result = eAttribute;
+					break;
+				} else if (result == null) {
+					result = eAttribute;
+				} else if (eAttribute.getEAttributeType().getInstanceClass() == String.class
+						&& result.getEAttributeType().getInstanceClass() != String.class) {
+					result = eAttribute;
+				}
+			}
+		}
+		return result;
+	}
 }
