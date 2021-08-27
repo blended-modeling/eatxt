@@ -5,7 +5,6 @@ package org.bumble.eastadl.simplified.ui.labeling;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -14,7 +13,9 @@ import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 import com.google.inject.Inject;
 
 /**
- * Provides labels for EObjects.
+ * Provides labels for the elements of a simplified EAST-ADL model. In particular, this label
+ * provider uses the <code>shortName</code> attribute as the main source for the label and
+ * falls back on the <code>name</code> attribute if <code>shortName</code> is not available.
  * 
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#label-provider
  */
