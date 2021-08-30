@@ -596,7 +596,7 @@ The interesting steps from the [README.md](https://github.com/eclipse-emfcloud/e
 3. Try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
 	
 #### Running the Server from Eclipse
-1. Clone the [repository](https://github.com/eclipse-emfcloud/emfcloud-modelserver) and import the projects of the <code>backend<\code> directory into Eclipse
+1. Clone the [repository](https://github.com/eclipse-emfcloud/emfcloud-modelserver) and import the projects of the <code>backend</code> directory into Eclipse
 2. Load the target definition of <code>org.eclipse.emfcloud.modelserver.releng.target</code>
 3. I did not need this in my second run, so the following step might be optional (but might not as I copied things from my older machine): If not installed, get the "m2e - Maven Integration for Eclipse" from the Eclipse marketplace that is proposed by Eclipse due the Maven nature of the plugins. This will lead to errors "Plugin execution not covered by lifecycle configuration: org.eclipse.tycho:tycho-compiler-plugin:\<version\>:compile ...
 ", but you don't have to care for it.
