@@ -596,16 +596,20 @@ The interesting steps from the [README.md](https://github.com/eclipse-emfcloud/e
 3. Try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
 	
 #### Running the Server from Eclipse
-1. Clone the [repository](https://github.com/eclipse-emfcloud/emfcloud-modelserver) and import the projects into Eclipse
+1. Clone the [repository](https://github.com/eclipse-emfcloud/emfcloud-modelserver) and import the projects of the <code>backend<\code> directory into Eclipse
 2. Load the target definition of <code>org.eclipse.emfcloud.modelserver.releng.target</code>
-3. If not installed: Get the "m2e - Maven Integration for Eclipse" from the Eclipse marketplace that is proposed by Eclipse due the Maven nature of the plugins. This will lead to errors "Plugin execution not covered by lifecycle configuration: org.eclipse.tycho:tycho-compiler-plugin:\<version\>:compile ...
+3. I did not need this in my second run, so the following step might be optional (but might not as I copied things from my older machine): If not installed, get the "m2e - Maven Integration for Eclipse" from the Eclipse marketplace that is proposed by Eclipse due the Maven nature of the plugins. This will lead to errors "Plugin execution not covered by lifecycle configuration: org.eclipse.tycho:tycho-compiler-plugin:\<version\>:compile ...
 ", but you don't have to care for it.
-4. Execute as an Eclipse application the <code>org.eclipse.emfcloud.modelserver.example.ExampleServerLauncher</code> if you want to go for the coffee editor example (for command line arguments see [usage] (https://github.com/eclipse-emfcloud/emfcloud-modelserver#usage)), or your own server launcher for your DSL
-5. For the coffee editor example, try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
+4. Might be the wrong way: [Execute as an Eclipse application the <code>org.eclipse.emfcloud.modelserver.example.ExampleServerLauncher</code> if you want to go for the coffee editor example (for command line arguments see [usage](https://github.com/eclipse-emfcloud/emfcloud-modelserver#usage)), or your own server launcher for your DSL]
+5. Execute as an Eclipse application the project <code>org.eclipse.emfcloud.coffee.modelserver.app</code>. 
+	This will get you a run configuration. 
+	Adapt this run configuration and extend its program arguements with the String <code>-r=file:///\<pathTo\>/coffee-editor/backend/plugins/org.eclipse.emfcloud.coffee.model/</code>. 
+	This will set the model directory as the root, so that the contained models are directly loaded.
+6. For the coffee editor example, try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
 
 ### The Client: The EMF.cloud Tree Editor Framework
 uses JSON forms	
 	
-If you want to build the (coffee editor IDE example **frontend**)[https://github.com/eclipse-emfcloud/coffee-editor/tree/master/web] (that also encompasses a tree editor), you will need Node.js V10.13.0 installed and no other version...
+If you want to build the [coffee editor IDE example **frontend**](https://github.com/eclipse-emfcloud/coffee-editor/tree/master/web) (that also encompasses a tree editor), you will need Node.js V10.13.0 installed and no other version...
 	
 ...
