@@ -602,8 +602,9 @@ The interesting steps from the [README.md](https://github.com/eclipse-emfcloud/e
 ", but you don't have to care for it.
 4. Might be the wrong way: [Execute as an Eclipse application the <code>org.eclipse.emfcloud.modelserver.example.ExampleServerLauncher</code> if you want to go for the coffee editor example (for command line arguments see [usage](https://github.com/eclipse-emfcloud/emfcloud-modelserver#usage)), or your own server launcher for your DSL]
 5. Execute as an Eclipse application the project <code>org.eclipse.emfcloud.coffee.modelserver.app</code>. 
-	This will get you a run configuration. 
-	Adapt this run configuration and extend its program arguements with the String <code>-r=file:///\<pathTo\>/coffee-editor/backend/plugins/org.eclipse.emfcloud.coffee.model/</code>. 
+	This will get you a run configuration, which you have to adapt as follows:
+	- On the tab <code>Plug-ins</code>, use the button <code>Add Required Plug-ins</code> and <code>Apply</code>
+	- Extend its program arguements with the String <code>-r=file:///\<pathTo\>/coffee-editor/backend/plugins/org.eclipse.emfcloud.coffee.model/</code>. 
 	This will set the model directory as the root, so that the contained models are directly loaded.
 6. For the coffee editor example, try out in a browser: <code>http://localhost:8081/api/v1/models</code> (cf. the [HTTP endpoints](https://github.com/eclipse-emfcloud/emfcloud-modelserver#http-endpoints))
 
