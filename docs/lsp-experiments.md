@@ -8,40 +8,45 @@ The entry point to start this LS implementation is the class <code>org.eclipse.i
 #### LSP Versions
 Before setting up the environment, one should check which LSP versions the client and the server are/shall be compliant to.
 The LSP4J version determines which LSP version is supported, so that the Xtext version with its dependency to a concrete LSP4J version determines the supported protocol version.
-This also means, that you have to install the LSP4J version fitting to the Xtext version, as LSP4J is not shipped with Xtext.
-For example, the current Xtext versions 2.24 and 2.25 [with its dependencies to LSP4J versions 0.10.0-0.12.0 support LSP V3.16](https://www.eclipse.org/Xtext/documentation/340_lsp_support.html#language-features).
+This also means, that you have to install the LSP4J version that fits your Xtext version, as LSP4J is not shipped with Xtext.
+For example, the current Xtext versions 2.24 and 2.25 with their dependencies to LSP4J versions 0.10.0-0.12.0 [support LSP V3.16](https://www.eclipse.org/Xtext/documentation/340_lsp_support.html#language-features).
+
 Regarding such version choices, one should also keep in mind that only the Xtext versions [up to 2.22.0 still natively support Java 8, where 2.23.0 should also be possible](https://www.eclipse.org/Xtext/releasenotes.html#/releasenotes/2020/09/01/version-2-23-0).
 However, this [Gradle build script](https://github.com/itemis/xtext-languageserver-example/blob/master/build.gradle) runs with Xtext V2.23.0 and Java 8.
 Unfortunately, this will only run with LSP V3.15, so that this older LSP version has to be configured in, e.g., VS Code (see below).
 On the other hand, this could be irrelevant to Volvo as they only should care what they experience in VS Code.
 
 #### Undocumented Prerequisites <a name="prerequisitesXtextGeneral"></a> 
-Add the following plugin dependencies to your <code>\<yourXtextPluginsBasicName\>.ide</code> project:
+The following dependencies are required in your <code>\<yourXtextPluginsBasicName\>.ide</code> project:
   -  <code>org.eclipse.lsp4j</code>
   -  <code>org.eclipse.lsp4j.jsonrpc</code>
   -  <code>io.github.classgraph</code>
   -  <code>com.google.gson</code>
+  -  <code>aop.alliance</code>
+
+Commit `e7db3cd` added these dependencies to the target definition and to the respective MANIFEST.MF. If you do not use the target definition, make sure these plugins are available in your Eclipse installation. In order to support Java 8, the commit enforces Xtext version 2.22 and LSP4J version 0.9.0.
 
 
 #### Syntax Highlighting 
   LSP (up to the current version 3.16) does not define syntax highlighting, which is intended to be rendered at client side. 
-  I did not experiment with this, but it should be easily possible to add it by declaratively define the kewywords to be highlighted 
-(cf. the following subsections on links how to define it for the particular contexts).
+  I did not experiment with this, but it should be easily possible to add it by declaratively defining the kewywords to be highlighted 
+(the following subsections contain links to resources that describe how to define syntax highlighting for the particular contexts).
 
 
 
 ### Xtext LSP in Development Eclipse
   This approach is not really needed but can be used optionally to check whether the Xtext LS runs in general before exporting it to other IDEs.
+  It allows opening text files in the DSL right in the development Eclipse. Every time such a file is opened with the *Generic Text Editor*, an LSP instance is spawned and used to provide, e.g., code completion or error markers.
 
 #### Setting up an Xext LS in a Development Eclipse
-  Additionally to LSP4J, this approach requires the installation of [LSP4E](https://projects.eclipse.org/projects/technology.lsp4e).
-  After you also incorporated the [undocumented prerequisites](#prerequisitesXtextGeneral), you can basically follow this [documentation](https://www.eclipse.org/Xtext/documentation/340_lsp_support.html#getting-started).
+  In addition to LSP4J, this approach requires the installation of [LSP4E](https://projects.eclipse.org/projects/technology.lsp4e).
+  After you also incorporated the [undocumented prerequisites](#prerequisitesXtextGeneral), you can follow Step 3 of [this documentation](https://www.eclipse.org/Xtext/documentation/340_lsp_support.html#getting-started).
   Afterward, you are able to create a text file with the corresponding file suffix anywhere in your **development** Eclipse. 
   On opening this text file (I had the best experience with <code>Open with -> Generic Text Editor</code>), an Xtext LS is spawned that looks and feels quite similar to the Xtext IDE for this text file kind in your runtime Eclipse.
 
 
 #### Syntax Highlighting
-  Syntax highlighting can be added by means of [TextMate](https://projects.eclipse.org/projects/technology.tm4e) (e.g., see step 4 of the documentation).
+  Syntax highlighting can be added by means of [TextMate](https://projects.eclipse.org/projects/technology.tm4e) (e.g., see Step 4 of the documentation).
 
 
 
