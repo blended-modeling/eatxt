@@ -19,19 +19,19 @@
             ]
         },
         "linecomment": {
-            "name": "comment.line.double-dash.mydsl",
+            "name": "comment.line.double-dash.east-adl",
             "begin": "(^[ \\t]+)?(?=//)",
 			"end": "(?=$)"
         },
         "blockcomment": {
-            "name": "comment.block.mydsl",
+            "name": "comment.block.east-adl",
             "begin": "/\\*(\\*)?(?!/)",
 			"end": "\\*/"
         },
 
         "keyword": {
-            "name": "keyword.control.mydsl",
-            "match": "\\b(Hello|from)\\b|!"
+            "name": "keyword.control.east-adl",
+            "match": "\\b(Node|accuracy|LogicalPortConnector|identifiable_context|resolution|TimeTriggered|realizedBy|functionPrototype|as|LocalDeviceManager|electricCurrentExp|literal|default|min|HardwareComponentType|HardwareFunctionType|UserAttributedElement|hardwareComponent|PowerHardwarePin|EABoolean|key|typeof|Enumeration|RangeableValueType|validFor|allocateableElement_context|EventTriggered|throw|HardwareComponentPrototype|operation|elementType|HardwareConnector|allocationTarget_context|symbol|hardwareDesignArchitecture|do|significantDigits|EADatatypePrototype|EAExpression|massExp|baseRangeable|hardwarePin|static|isMultiValued|finally|EAArrayValue|lengthExp|luminousIntensityExp|EANumericalValue|extends|port|name|Sensor|DesignLevel|uaType|import|PortGroup|BasicSoftwareFunctionType|for|DesignFunctionPrototype|client|Rationale|factor|FunctionPowerPort|digital|allocation|EAEnumerationValue|CommunicationHardwarePin|false|realized|executionRate|Realization_realized|target|instanceof|identifiable_target|HardwarePortConnector|HardwarePortConnector_port|defaultValue|minLength|isElementary|type|Realization_realizedBy|CompositeDatatype|else|allocateableElement|FunctionAllocation_target|FunctionClientServerInterface|text|catch|if|functionPort|case|val|FunctionClientServerPort|in|var|referencedPin|analog|connector|DesignFunctionType|isGround|FunctionConnector|UserAttributeDefinition|server|ownedComment|IOHardwarePin|extension|other|pwm|out|portGroup|EANumerical|EnumerationLiteral|max|isShield|amountOfSubstanceExp|traceableSpecification|uri|hardwareComponentPrototype|thermodynamicTemperatureExp|functionAllocation|return|synchronized|argument|containedPin|AnalysisFunctionType|body|isActive|Unit|while|uuid|EABooleanValue|reference|functionalDesignArchitecture|FunctionAllocation|pin|FunctionFlowPort|HardwarePort|ElectricalComponent|new|offset|FunctionConnector_port|kind|FunctionalDevice|portConnector|datatypePrototype|EAString|unit|Realization|null|EAPackage|UserElementType|true|try|maxLength|timeExp|HardwareConnector_port|part|busSpeed|Operation|uaDefinition|allocationTarget|ArrayDatatype|switch|Allocation|attributedElement|FunctionAllocation_allocatedElement|allocatedElement|value|Actuator|direction|Comment|containedPort|hardwarePort|TimeAndEventTriggered|quantity|AnalysisFunctionPrototype|ownedRelationship|Quantity|EAStringValue|uaValue|super|inout|category|EACompositeValue)\\b"
 
         }
     },
