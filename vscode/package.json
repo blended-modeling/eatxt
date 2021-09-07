@@ -1,0 +1,72 @@
+{
+    "name": "east-adl-simplified-vscode",
+    "displayName": "VS Code Editor for Simplified EAST-ADL",
+    "description": "Textual editor for the python-like syntax for a subset of EAST-ADL",
+    "version": "0.0.1",
+    "publisher": "itemis",
+    "icon": "images/bumble.png",
+    "license": "EPL-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/blended-modeling/east-adl-simplified.git"
+    },
+    "bugs": {
+        "url": "https://github.com/blended-modeling/east-adl-simplified/issues"
+    },
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:east-adl"
+    ],
+    "main": "out/extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "east-adl",
+                "aliases": [
+                    "east-adl"
+                ],
+                "extensions": [
+                    ".eatxt"
+                ],
+                "configuration": "./east-adl.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "east-adl",
+                "scopeName": "source.east-adl",
+                "path": "./syntaxes/east-adl.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "east-adl.a.proxy",
+                "title": "EAST-ADL Command A"
+            },
+            {
+                "command": "east-adl.b",
+                "title": "EAST-ADL Command B"
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/node": "^13.13.25",
+        "@types/vscode": "^1.49.0",
+        "typescript": "^3.9.7",
+        "vscode-test": "^1.4.0"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^6.1.3"
+    },
+    "scripts": {
+        "prepublish": "tsc -p ./src",
+        "compile": "tsc -p ./src",
+        "watch": "tsc -w -p ./src",
+        "update-vscode": "node ./node_modules/vscode/bin/install"
+    }
+}
