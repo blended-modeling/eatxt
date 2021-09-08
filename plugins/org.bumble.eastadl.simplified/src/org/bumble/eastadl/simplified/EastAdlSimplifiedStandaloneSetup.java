@@ -3,13 +3,26 @@
  */
 package org.bumble.eastadl.simplified;
 
+import org.eclipse.eatop.eastadl22.Eastadl22Package;
+import org.eclipse.emf.ecore.EPackage;
+
+import com.google.inject.Injector;
 
 /**
- * Initialization support for running Xtext languages without Equinox extension registry.
+ * Initialization support for running Xtext languages without Equinox extension
+ * registry.
  */
 public class EastAdlSimplifiedStandaloneSetup extends EastAdlSimplifiedStandaloneSetupGenerated {
 
 	public static void doSetup() {
 		new EastAdlSimplifiedStandaloneSetup().createInjectorAndDoEMFRegistration();
+	}
+
+	@Override
+	public void register(Injector injector) {
+	    if (!EPackage.Registry.INSTANCE.containsKey("http://east-adl.info/2.2.0")) {
+	      EPackage.Registry.INSTANCE.put("http://east-adl.info/2.2.0", Eastadl22Package.eINSTANCE);
+	    }
+	    super.register(injector);
 	}
 }
