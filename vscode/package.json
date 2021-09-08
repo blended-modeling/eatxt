@@ -2,7 +2,7 @@
     "name": "east-adl-simplified-vscode",
     "displayName": "VS Code Editor for Simplified EAST-ADL",
     "description": "Textual editor for the python-like syntax for a subset of EAST-ADL",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "itemis",
     "icon": "images/bumble.png",
     "license": "EPL-2.0",
