@@ -105,8 +105,8 @@ public void register(Injector injector) {
 }	
   ```
   
-  - It might be also the case that you have to [add an EMF-specific property](https://blogs.itemis.com/en/integrating-xtext-language-support-in-visual-studio-code) to the <code>\<yourXtextPluginsBasicName\>.ide/src/plugin.properties</code>, which is <code>_UI_DiagnosticRoot_diagnostic=foo</code> (or some other value of your choice).
-  I added it under the assumption that it fixes a problem, but actually I don't know whether it had an effect and was really needed.
+  - Optional/obsolete: It might be the case that you have to [add an EMF-specific property](https://blogs.itemis.com/en/integrating-xtext-language-support-in-visual-studio-code) to the <code>\<yourXtextPluginsBasicName\>.ide/src/plugin.properties</code>, which is <code>_UI_DiagnosticRoot_diagnostic=foo</code> (or some other value of your choice).
+  However, this does not seem to be required anymore for current EMF versions and hence is listed here only for the sake of completeness in case that further issues occur.
   
   
 #### Registering the VS Code Extension <a name="RegisterXtextLSAsVSCodeExtension"></a>
