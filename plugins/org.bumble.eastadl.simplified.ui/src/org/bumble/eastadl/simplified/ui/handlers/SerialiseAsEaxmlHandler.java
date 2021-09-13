@@ -22,11 +22,11 @@ import org.eclipse.xtext.ui.editor.utils.EditorUtils;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 
 /**
- * Serialises the eatxt file in the current editor as an EAXMI file.
+ * Serialises the eatxt file in the current editor as an EAXML file.
  * 
  * @author Jan-Philipp Steghöfer
  */
-public class SerialiseXmiHandler extends AbstractHandler {
+public class SerialiseAsEaxmlHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -39,7 +39,7 @@ public class SerialiseXmiHandler extends AbstractHandler {
 						// Let user define the path to store the eaxmi file
 						Shell activeShell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 						FileDialog dialog = new FileDialog(activeShell, SWT.SAVE);
-						dialog.setFilterExtensions(new String[] { "*.eaxmi" });
+						dialog.setFilterExtensions(new String[] { "*.eaxml" });
 						String result = dialog.open();
 						if (result != null) {
 							ResourceSet resourceSet = new ResourceSetImpl();
