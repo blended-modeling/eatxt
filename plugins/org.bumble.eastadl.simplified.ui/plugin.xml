@@ -434,7 +434,7 @@
 	<extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="org.bumble.eastadl.simplified.ui.handlers.SerialiseXmiHandler"
+            class="org.bumble.eastadl.simplified.ui.handlers.SerialiseAsEaxmlHandler"
             commandId="org.bumble.eastadl.simplified.ui.handlers.serialiseXmi">
       </handler>
     </extension>
