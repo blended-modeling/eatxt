@@ -4,6 +4,8 @@ import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
 
 var rootPath = ".."
+var testPath = "${rootPath}/../tests/org.bumble.eastadl.simplified.tests"
+var idePath = "${rootPath}/../releng/org.bumble.eastadl.simplified.ide"
 
 Workflow {
 	
@@ -14,12 +16,18 @@ Workflow {
 				rootPath = rootPath
 				runtimeTest = {
 					enabled = true
+					root = testPath
 				}
 				eclipsePlugin = {
 					enabled = true
 				}
 				eclipsePluginTest = {
+					enabled = false
+					root = testPath
+				}
+				genericIde = {
 					enabled = true
+					root = idePath
 				}
 				createEclipseMetaData = true
 			}
