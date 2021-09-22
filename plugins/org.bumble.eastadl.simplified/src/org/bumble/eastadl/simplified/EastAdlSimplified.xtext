@@ -793,17 +793,11 @@ EAStringValue returns EAStringValue:
         'type' type=[EADatatype|EString]
     END;
 
-//Boolean returns Boolean:
-//    'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
-Boolean returns ecore::EBoolean: 
+Boolean returns Boolean: 
 	'true' | 'false';
 
 Numerical returns Numerical:
-//    'Numerical' /* TODO: implement this rule and an appropriate IValueConverter */;
-	INT;
-//Numerical returns ecore::EEnumerator:
-//	INT
-//;
+	ID;
 
 HardwareConnector_port returns HardwareConnector_port:
     'HardwareConnector_port'
