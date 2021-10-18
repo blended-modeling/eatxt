@@ -7,7 +7,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 EAXML returns EAXML:
     {EAXML}
-    (topLevelPackage+=EAPackage ( "," topLevelPackage+=EAPackage)* )?
+    (topLevelPackage+=EAPackage (  topLevelPackage+=EAPackage)* )?
     ;
 
 Comment returns Comment:
@@ -92,9 +92,9 @@ EAPackage returns EAPackage:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        (subPackage+=EAPackage ( "," subPackage+=EAPackage)* )?
-        (element+=EAPackageableElement ( "," element+=EAPackageableElement)* )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
+        (element+=EAPackageableElement (  element+=EAPackageableElement)* )?
     END;
 
 Identifier returns String:
@@ -123,10 +123,10 @@ DesignLevel returns DesignLevel:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('allocation' BEGIN allocation+=Allocation ( "," allocation+=Allocation)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('allocation' BEGIN allocation+=Allocation (  allocation+=Allocation)* END )?
         ('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)?
         ('hardwareDesignArchitecture' hardwareDesignArchitecture=HardwareComponentPrototype)?
     END;
@@ -138,13 +138,13 @@ AnalysisFunctionType_Impl returns AnalysisFunctionType:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('portGroup' BEGIN portGroup+=PortGroup ( "," portGroup+=PortGroup)* END )?
-        ('connector' BEGIN connector+=FunctionConnector ( "," connector+=FunctionConnector)* END )?
-        ('port' BEGIN port+=FunctionPort ( "," port+=FunctionPort)* END )?
-        ('part' BEGIN part+=AnalysisFunctionPrototype ( "," part+=AnalysisFunctionPrototype)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('portGroup' BEGIN portGroup+=PortGroup (  portGroup+=PortGroup)* END )?
+        ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
+        ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
+        ('part' BEGIN part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)* END )?
     END;
 
 BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
@@ -154,13 +154,13 @@ BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('portGroup' BEGIN portGroup+=PortGroup ( "," portGroup+=PortGroup)* END )?
-        ('connector' BEGIN connector+=FunctionConnector ( "," connector+=FunctionConnector)* END )?
-        ('port' BEGIN port+=FunctionPort ( "," port+=FunctionPort)* END )?
-        ('part' BEGIN part+=DesignFunctionPrototype ( "," part+=DesignFunctionPrototype)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('portGroup' BEGIN portGroup+=PortGroup (  portGroup+=PortGroup)* END )?
+        ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
+        ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
+        ('part' BEGIN part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)* END )?
     END;
 
 DesignFunctionType_Impl returns DesignFunctionType:
@@ -170,13 +170,13 @@ DesignFunctionType_Impl returns DesignFunctionType:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('portGroup' BEGIN portGroup+=PortGroup ( "," portGroup+=PortGroup)* END )?
-        ('connector' BEGIN connector+=FunctionConnector ( "," connector+=FunctionConnector)* END )?
-        ('port' BEGIN port+=FunctionPort ( "," port+=FunctionPort)* END )?
-        ('part' BEGIN part+=DesignFunctionPrototype ( "," part+=DesignFunctionPrototype)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('portGroup' BEGIN portGroup+=PortGroup (  portGroup+=PortGroup)* END )?
+        ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
+        ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
+        ('part' BEGIN part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)* END )?
     END;
 
 FunctionalDevice returns FunctionalDevice:
@@ -186,13 +186,13 @@ FunctionalDevice returns FunctionalDevice:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('portGroup' BEGIN portGroup+=PortGroup ( "," portGroup+=PortGroup)* END )?
-        ('connector' BEGIN connector+=FunctionConnector ( "," connector+=FunctionConnector)* END )?
-        ('port' BEGIN port+=FunctionPort ( "," port+=FunctionPort)* END )?
-        ('part' BEGIN part+=AnalysisFunctionPrototype ( "," part+=AnalysisFunctionPrototype)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('portGroup' BEGIN portGroup+=PortGroup (  portGroup+=PortGroup)* END )?
+        ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
+        ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
+        ('part' BEGIN part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)* END )?
     END;
 
 FunctionClientServerInterface returns FunctionClientServerInterface:
@@ -203,8 +203,8 @@ FunctionClientServerInterface returns FunctionClientServerInterface:
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('operation' BEGIN operation+=Operation ( "," operation+=Operation)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('operation' BEGIN operation+=Operation (  operation+=Operation)* END )?
     END;
 
 HardwareFunctionType returns HardwareFunctionType:
@@ -214,14 +214,14 @@ HardwareFunctionType returns HardwareFunctionType:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
         ('hardwareComponent' hardwareComponent=[HardwareComponentType|EString])?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('portGroup' BEGIN portGroup+=PortGroup ( "," portGroup+=PortGroup)* END )?
-        ('connector' BEGIN connector+=FunctionConnector ( "," connector+=FunctionConnector)* END )?
-        ('port' BEGIN port+=FunctionPort ( "," port+=FunctionPort)* END )?
-        ('part' BEGIN part+=DesignFunctionPrototype ( "," part+=DesignFunctionPrototype)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('portGroup' BEGIN portGroup+=PortGroup (  portGroup+=PortGroup)* END )?
+        ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
+        ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
+        ('part' BEGIN part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)* END )?
     END;
 
 LocalDeviceManager returns LocalDeviceManager:
@@ -231,13 +231,13 @@ LocalDeviceManager returns LocalDeviceManager:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('portGroup' BEGIN portGroup+=PortGroup ( "," portGroup+=PortGroup)* END )?
-        ('connector' BEGIN connector+=FunctionConnector ( "," connector+=FunctionConnector)* END )?
-        ('port' BEGIN port+=FunctionPort ( "," port+=FunctionPort)* END )?
-        ('part' BEGIN part+=DesignFunctionPrototype ( "," part+=DesignFunctionPrototype)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('portGroup' BEGIN portGroup+=PortGroup (  portGroup+=PortGroup)* END )?
+        ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
+        ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
+        ('part' BEGIN part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)* END )?
     END;
 
 Actuator returns Actuator:
@@ -246,14 +246,14 @@ Actuator returns Actuator:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('pin' BEGIN pin+=HardwarePin ( "," pin+=HardwarePin)* END )?
-        ('part' BEGIN part+=HardwareComponentPrototype ( "," part+=HardwareComponentPrototype)* END )?
-        ('connector' BEGIN connector+=HardwareConnector ( "," connector+=HardwareConnector)* END )?
-        ('port' BEGIN port+=HardwarePort ( "," port+=HardwarePort)* END )?
-        ('portConnector' BEGIN portConnector+=PortConnector ( "," portConnector+=PortConnector)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('pin' BEGIN pin+=HardwarePin (  pin+=HardwarePin)* END )?
+        ('part' BEGIN part+=HardwareComponentPrototype (  part+=HardwareComponentPrototype)* END )?
+        ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
+        ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
+        ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
     END;
 
 ElectricalComponent returns ElectricalComponent:
@@ -263,14 +263,14 @@ ElectricalComponent returns ElectricalComponent:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('isActive' isActive=Boolean)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('pin' BEGIN pin+=HardwarePin ( "," pin+=HardwarePin)* END )?
-        ('part' BEGIN part+=HardwareComponentPrototype ( "," part+=HardwareComponentPrototype)* END )?
-        ('connector' BEGIN connector+=HardwareConnector ( "," connector+=HardwareConnector)* END )?
-        ('port' BEGIN port+=HardwarePort ( "," port+=HardwarePort)* END )?
-        ('portConnector' BEGIN portConnector+=PortConnector ( "," portConnector+=PortConnector)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('pin' BEGIN pin+=HardwarePin (  pin+=HardwarePin)* END )?
+        ('part' BEGIN part+=HardwareComponentPrototype (  part+=HardwareComponentPrototype)* END )?
+        ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
+        ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
+        ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
     END;
 
 HardwareComponentType_Impl returns HardwareComponentType:
@@ -279,14 +279,14 @@ HardwareComponentType_Impl returns HardwareComponentType:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('pin' BEGIN pin+=HardwarePin ( "," pin+=HardwarePin)* END )?
-        ('part' BEGIN part+=HardwareComponentPrototype ( "," part+=HardwareComponentPrototype)* END )?
-        ('connector' BEGIN connector+=HardwareConnector ( "," connector+=HardwareConnector)* END )?
-        ('port' BEGIN port+=HardwarePort ( "," port+=HardwarePort)* END )?
-        ('portConnector' BEGIN portConnector+=PortConnector ( "," portConnector+=PortConnector)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('pin' BEGIN pin+=HardwarePin (  pin+=HardwarePin)* END )?
+        ('part' BEGIN part+=HardwareComponentPrototype (  part+=HardwareComponentPrototype)* END )?
+        ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
+        ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
+        ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
     END;
 
 Node returns Node:
@@ -296,14 +296,14 @@ Node returns Node:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('executionRate' executionRate=Float)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('pin' BEGIN pin+=HardwarePin ( "," pin+=HardwarePin)* END )?
-        ('part' BEGIN part+=HardwareComponentPrototype ( "," part+=HardwareComponentPrototype)* END )?
-        ('connector' BEGIN connector+=HardwareConnector ( "," connector+=HardwareConnector)* END )?
-        ('port' BEGIN port+=HardwarePort ( "," port+=HardwarePort)* END )?
-        ('portConnector' BEGIN portConnector+=PortConnector ( "," portConnector+=PortConnector)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('pin' BEGIN pin+=HardwarePin (  pin+=HardwarePin)* END )?
+        ('part' BEGIN part+=HardwareComponentPrototype (  part+=HardwareComponentPrototype)* END )?
+        ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
+        ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
+        ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
     END;
 
 Sensor returns Sensor:
@@ -312,14 +312,14 @@ Sensor returns Sensor:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] ( "," traceableSpecification+=[TraceableSpecification|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('ownedRelationship' BEGIN ownedRelationship+=Relationship ( "," ownedRelationship+=Relationship)* END )?
-        ('pin' BEGIN pin+=HardwarePin ( "," pin+=HardwarePin)* END )?
-        ('part' BEGIN part+=HardwareComponentPrototype ( "," part+=HardwareComponentPrototype)* END )?
-        ('connector' BEGIN connector+=HardwareConnector ( "," connector+=HardwareConnector)* END )?
-        ('port' BEGIN port+=HardwarePort ( "," port+=HardwarePort)* END )?
-        ('portConnector' BEGIN portConnector+=PortConnector ( "," portConnector+=PortConnector)* END )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('ownedRelationship' BEGIN ownedRelationship+=Relationship (  ownedRelationship+=Relationship)* END )?
+        ('pin' BEGIN pin+=HardwarePin (  pin+=HardwarePin)* END )?
+        ('part' BEGIN part+=HardwareComponentPrototype (  part+=HardwareComponentPrototype)* END )?
+        ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
+        ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
+        ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
     END;
 
 ArrayDatatype returns ArrayDatatype:
@@ -333,7 +333,7 @@ ArrayDatatype returns ArrayDatatype:
         ('maxLength' maxLength=Integer)?
         ('minLength' minLength=Integer)?
         'elementType' elementType=[EADatatype|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 CompositeDatatype returns CompositeDatatype:
@@ -344,8 +344,8 @@ CompositeDatatype returns CompositeDatatype:
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        'datatypePrototype' BEGIN datatypePrototype+=EADatatypePrototype ( "," datatypePrototype+=EADatatypePrototype)* END 
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        'datatypePrototype' BEGIN datatypePrototype+=EADatatypePrototype (  datatypePrototype+=EADatatypePrototype)* END 
     END;
 
 EABoolean returns EABoolean:
@@ -356,7 +356,7 @@ EABoolean returns EABoolean:
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 EANumerical returns EANumerical:
@@ -370,7 +370,7 @@ EANumerical returns EANumerical:
         ('max' max=Numerical)?
         ('min' min=Numerical)?
         ('unit' unit=[Unit|EString])?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 EAString returns EAString:
@@ -381,7 +381,7 @@ EAString returns EAString:
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 Enumeration returns Enumeration:
@@ -393,8 +393,8 @@ Enumeration returns Enumeration:
         ('text' text=String0)?
         ('uri' uri=String0)?
         'isMultiValued' isMultiValued=Boolean
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        'literal' BEGIN literal+=EnumerationLiteral ( "," literal+=EnumerationLiteral)* END 
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        'literal' BEGIN literal+=EnumerationLiteral (  literal+=EnumerationLiteral)* END 
     END;
 
 Quantity returns Quantity:
@@ -410,7 +410,7 @@ Quantity returns Quantity:
         'massExp' massExp=Integer
         'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer
         'timeExp' timeExp=Integer
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 RangeableValueType returns RangeableValueType:
@@ -425,7 +425,7 @@ RangeableValueType returns RangeableValueType:
         'resolution' resolution=Float
         ('significantDigits' significantDigits=Integer)?
         'baseRangeable' baseRangeable=[EANumerical|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 Unit returns Unit:
@@ -439,7 +439,7 @@ Unit returns Unit:
         'offset' offset=Float
         ('reference' reference=[Unit|EString])?
         ('quantity' quantity=[Quantity|EString])?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 UserAttributeDefinition returns UserAttributeDefinition:
@@ -449,7 +449,7 @@ UserAttributeDefinition returns UserAttributeDefinition:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[EADatatype|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('defaultValue' defaultValue=EAValue)?
     END;
 
@@ -459,10 +459,10 @@ UserAttributedElement returns UserAttributedElement:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('uaType' '(' uaType+=[UserElementType|EString] ( "," uaType+=[UserElementType|EString])* ')' )?
+        ('uaType' '(' uaType+=[UserElementType|EString] (  uaType+=[UserElementType|EString])* ')' )?
         'attributedElement' attributedElement=[Identifiable|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('uaValue' BEGIN uaValue+=EAValue ( "," uaValue+=EAValue)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('uaValue' BEGIN uaValue+=EAValue (  uaValue+=EAValue)* END )?
     END;
 
 UserElementType returns UserElementType:
@@ -473,8 +473,8 @@ UserElementType returns UserElementType:
         ('name' name=String0)?
         ('validFor' validFor=String0)?
         'key' key=String0
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('uaDefinition' BEGIN uaDefinition+=UserAttributeDefinition ( "," uaDefinition+=UserAttributeDefinition)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('uaDefinition' BEGIN uaDefinition+=UserAttributeDefinition (  uaDefinition+=UserAttributeDefinition)* END )?
     END;
 
 Allocation returns Allocation:
@@ -483,8 +483,8 @@ Allocation returns Allocation:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('functionAllocation' BEGIN functionAllocation+=FunctionAllocation ( "," functionAllocation+=FunctionAllocation)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('functionAllocation' BEGIN functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)* END )?
     END;
 
 DesignFunctionPrototype returns DesignFunctionPrototype:
@@ -494,7 +494,7 @@ DesignFunctionPrototype returns DesignFunctionPrototype:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[DesignFunctionType|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 HardwareComponentPrototype returns HardwareComponentPrototype:
@@ -504,7 +504,7 @@ HardwareComponentPrototype returns HardwareComponentPrototype:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[HardwareComponentType|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 Realization returns Realization:
@@ -513,9 +513,9 @@ Realization returns Realization:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        'realized' BEGIN realized+=Realization_realized ( "," realized+=Realization_realized)* END 
-        'realizedBy' BEGIN realizedBy+=Realization_realizedBy ( "," realizedBy+=Realization_realizedBy)* END 
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        'realized' BEGIN realized+=Realization_realized (  realized+=Realization_realized)* END 
+        'realizedBy' BEGIN realizedBy+=Realization_realizedBy (  realizedBy+=Realization_realizedBy)* END 
     END;
 
 Realization_realized returns Realization_realized:
@@ -539,7 +539,7 @@ AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[AnalysisFunctionType|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 FunctionAllocation returns FunctionAllocation:
@@ -548,7 +548,7 @@ FunctionAllocation returns FunctionAllocation:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
         'target' target=FunctionAllocation_target
     END;
@@ -561,7 +561,7 @@ FunctionClientServerPort returns FunctionClientServerPort:
         ('name' name=String0)?
         'kind' kind=ClientServerKind
         'type' type=[FunctionClientServerInterface|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 FunctionConnector returns FunctionConnector:
@@ -570,8 +570,8 @@ FunctionConnector returns FunctionConnector:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        'port' BEGIN port+=FunctionConnector_port ( "," port+=FunctionConnector_port)* END 
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        'port' BEGIN port+=FunctionConnector_port (  port+=FunctionConnector_port)* END 
     END;
 
 FunctionFlowPort returns FunctionFlowPort:
@@ -582,7 +582,7 @@ FunctionFlowPort returns FunctionFlowPort:
         ('name' name=String0)?
         'direction' direction=EADirectionKind
         'type' type=[EADatatype|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('defaultValue' defaultValue=EAValue)?
     END;
 
@@ -593,7 +593,7 @@ FunctionPowerPort returns FunctionPowerPort:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[CompositeDatatype|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 Operation returns Operation:
@@ -602,9 +602,9 @@ Operation returns Operation:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('return' return=EADatatypePrototype)?
-        ('argument' BEGIN argument+=EADatatypePrototype ( "," argument+=EADatatypePrototype)* END )?
+        ('argument' BEGIN argument+=EADatatypePrototype (  argument+=EADatatypePrototype)* END )?
     END;
 
 PortGroup returns PortGroup:
@@ -613,9 +613,9 @@ PortGroup returns PortGroup:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('port' '(' port+=[FunctionPort|EString] ( "," port+=[FunctionPort|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('portGroup' BEGIN portGroup+=PortGroup ( "," portGroup+=PortGroup)* END )?
+        ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('portGroup' BEGIN portGroup+=PortGroup (  portGroup+=PortGroup)* END )?
     END;
 
 CommunicationHardwarePin returns CommunicationHardwarePin:
@@ -626,7 +626,7 @@ CommunicationHardwarePin returns CommunicationHardwarePin:
         ('name' name=String0)?
         ('direction' direction=EADirectionKind)?
         ('isGround' isGround=Boolean)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 HardwareConnector returns HardwareConnector:
@@ -635,8 +635,8 @@ HardwareConnector returns HardwareConnector:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        'port' BEGIN port+=HardwareConnector_port ( "," port+=HardwareConnector_port)* END 
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        'port' BEGIN port+=HardwareConnector_port (  port+=HardwareConnector_port)* END 
     END;
 
 HardwarePort returns HardwarePort:
@@ -646,10 +646,10 @@ HardwarePort returns HardwarePort:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('isShield' isShield=Boolean)?
-        ('referencedPin' '(' referencedPin+=[HardwarePin|EString] ( "," referencedPin+=[HardwarePin|EString])* ')' )?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        ('containedPin' BEGIN containedPin+=HardwarePin ( "," containedPin+=HardwarePin)* END )?
-        ('containedPort' BEGIN containedPort+=HardwarePort ( "," containedPort+=HardwarePort)* END )?
+        ('referencedPin' '(' referencedPin+=[HardwarePin|EString] (  referencedPin+=[HardwarePin|EString])* ')' )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        ('containedPin' BEGIN containedPin+=HardwarePin (  containedPin+=HardwarePin)* END )?
+        ('containedPort' BEGIN containedPort+=HardwarePort (  containedPort+=HardwarePort)* END )?
     END;
 
 HardwarePortConnector returns HardwarePortConnector:
@@ -658,9 +658,9 @@ HardwarePortConnector returns HardwarePortConnector:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        'port' BEGIN port+=HardwarePortConnector_port ( "," port+=HardwarePortConnector_port)* END 
-        ('connector' BEGIN connector+=HardwareConnector ( "," connector+=HardwareConnector)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        'port' BEGIN port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)* END 
+        ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
     END;
 
 IOHardwarePin returns IOHardwarePin:
@@ -672,7 +672,7 @@ IOHardwarePin returns IOHardwarePin:
         ('direction' direction=EADirectionKind)?
         ('isGround' isGround=Boolean)?
         ('kind' kind=IOHardwarePinKind)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 LogicalPortConnector returns LogicalPortConnector:
@@ -683,8 +683,8 @@ LogicalPortConnector returns LogicalPortConnector:
         ('name' name=String0)?
         ('kind' kind=HardwareBusKind)?
         ('busSpeed' busSpeed=Float)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
-        'port' BEGIN port+=HardwarePortConnector_port ( "," port+=HardwarePortConnector_port)* END 
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
+        'port' BEGIN port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)* END 
     END;
 
 PowerHardwarePin returns PowerHardwarePin:
@@ -695,7 +695,7 @@ PowerHardwarePin returns PowerHardwarePin:
         ('name' name=String0)?
         ('direction' direction=EADirectionKind)?
         ('isGround' isGround=Boolean)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 EADatatypePrototype returns EADatatypePrototype:
@@ -705,7 +705,7 @@ EADatatypePrototype returns EADatatypePrototype:
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[EADatatype|EString]
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 EnumerationLiteral returns EnumerationLiteral:
@@ -714,7 +714,7 @@ EnumerationLiteral returns EnumerationLiteral:
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
-        ('ownedComment' BEGIN ownedComment+=Comment ( "," ownedComment+=Comment)* END )?
+        ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
     END;
 
 FunctionAllocation_allocatedElement returns FunctionAllocation_allocatedElement:
@@ -748,7 +748,7 @@ EAArrayValue returns EAArrayValue:
     'EAArrayValue'
     BEGIN
         'type' type=[EADatatype|EString]
-        ('value' BEGIN value+=EAValue ( "," value+=EAValue)* END )?
+        ('value' BEGIN value+=EAValue (  value+=EAValue)* END )?
     END;
 
 EABooleanValue returns EABooleanValue:
@@ -762,21 +762,21 @@ EACompositeValue returns EACompositeValue:
     'EACompositeValue'
     BEGIN
         'type' type=[EADatatype|EString]
-        'value' BEGIN value+=EAValue ( "," value+=EAValue)* END 
+        'value' BEGIN value+=EAValue (  value+=EAValue)* END 
     END;
 
 EAEnumerationValue returns EAEnumerationValue:
     'EAEnumerationValue'
     BEGIN
         'type' type=[EADatatype|EString]
-        'value' '(' value+=[EnumerationLiteral|EString] ( "," value+=[EnumerationLiteral|EString])* ')' 
+        'value' '(' value+=[EnumerationLiteral|EString] (  value+=[EnumerationLiteral|EString])* ')' 
     END;
 
 EAExpression returns EAExpression:
     'EAExpression'
     BEGIN
         'type' type=[EADatatype|EString]
-        ('value' BEGIN value+=EAValue ( "," value+=EAValue)* END )?
+        ('value' BEGIN value+=EAValue (  value+=EAValue)* END )?
     END;
 
 EANumericalValue returns EANumericalValue:

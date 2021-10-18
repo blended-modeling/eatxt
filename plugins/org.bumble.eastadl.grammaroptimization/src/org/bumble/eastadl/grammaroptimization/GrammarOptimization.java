@@ -43,15 +43,15 @@ public class GrammarOptimization {
 		String strEclipseWorkspace = optimizer.getTargetString(directoryName, pattern);
 
 		// Construct name string of xtext text file
-		String xtextFileName = strEclipseWorkspace + "\\" + XTEXT_PROJECT_NAME + GRAMMAR_RELATIVE_PATH
+		String xtextFileName = strEclipseWorkspace + "\\plugins\\" + XTEXT_PROJECT_NAME + GRAMMAR_RELATIVE_PATH
 				+ NEW_LANGUAGE_NAME + ".xtext";
-		String xtendFileName = strEclipseWorkspace + "\\" + XTEXT_PROJECT_NAME + GRAMMAR_RELATIVE_PATH + "formatting2\\"
+		String xtendFileName = strEclipseWorkspace + "\\plugins\\" + XTEXT_PROJECT_NAME + GRAMMAR_RELATIVE_PATH + "formatting2\\"
 				+ NEW_LANGUAGE_NAME + "Formatter" + ".xtend";
 
 		File xtextFile = new File(xtextFileName);
 
 		if (!xtextFile.exists()) {
-			System.err.printf("[Error]*******************File %s.xtext doesn't exist!\n", NEW_LANGUAGE_NAME);
+			System.err.printf("[Error]*******************File %s.xtext doesn't exist!\n", xtextFileName);
 			System.err.println("[Error]**************Place check the name and path of the xtext file!");
 			System.err.println("[Error]**********Please make sure you have generated xtext artifacts!");
 			System.err.println("[Error]**********************************************Stop optimizing!");
@@ -61,7 +61,7 @@ public class GrammarOptimization {
 		File xtendFile = new File(xtendFileName);
 
 		if (!xtendFile.exists()) {
-			System.err.printf("[Error]**********File %sFormatter.xtend doesn't exist!\n", NEW_LANGUAGE_NAME);
+			System.err.printf("[Error]**********File %sFormatter.xtend doesn't exist!\n", xtendFileName);
 			System.err.println("[Error]**************Place check the name and path of the xtend file!");
 			System.err.println("[Error]**********************************************Stop optimizing!");
 			return;
@@ -162,6 +162,10 @@ public class GrammarOptimization {
 			strProcessed = reduceNestDepth(strProcessed);
 			System.out.println("[Info]**********************************Finish reducing nested depth.");
 
+			// 6. Remove commas
+			strProcessed = removeComma(strProcessed);
+			System.out.println("[Info]*********************************Finish removing comma symbols.");
+			
 			// write the optimized grammar back into the xtext file
 			IOHelper.saveFile(file, strProcessed);
 		} catch (IOException e) {
@@ -172,6 +176,22 @@ public class GrammarOptimization {
 		return true;
 	}
 
+	public String removeComma(String strInput) {
+		String strOutput = null;
+		
+		strOutput = replaceString(strInput, "\",\"", "");
+		strOutput = replaceString(strOutput, "\\sallocateableElement_context\\+\\=\\[AllocateableElement\\|EString\\]\\)", 
+				"\\\",\\\"\sallocateableElement_context\\+\\=\\[AllocateableElement\\|EString\\]\\)");
+		strOutput = replaceString(strOutput, "\\sallocationTarget_context\\+\\=\\[AllocationTarget\\|EString\\]\\)",
+				"\\\",\\\"\sallocationTarget_context\\+\\=\\[AllocationTarget\\|EString\\]\\)");
+		strOutput = replaceString(strOutput, "\\sidentifiable_context\\+\\=\\[EAElement\\|EString\\]\\)",
+				"\\\",\\\"\sidentifiable_context\\+\\=\\[EAElement\\|EString\\]\\)");
+		strOutput = replaceString(strOutput, "\\sidentifiable_context\\+\\=\\[Identifiable\\|EString\\]\\)", 
+				"\\\",\\\"\sidentifiable_context\\+\\=\\[Identifiable\\|EString\\]\\)");
+		
+		return strOutput;
+	}
+	
 	public String replaceString(String strInput, String strRegex, String strReplacement) {
 		String strOutput = null;
 		Pattern pattern = Pattern.compile(strRegex);
