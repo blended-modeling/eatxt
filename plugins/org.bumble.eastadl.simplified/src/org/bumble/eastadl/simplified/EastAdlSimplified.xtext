@@ -793,11 +793,30 @@ EAStringValue returns EAStringValue:
         'type' type=[EADatatype|EString]
     END;
 
-Boolean returns Boolean: 
+Boolean returns ecore::EBoolean: 
 	'true' | 'false';
 
 Numerical returns Numerical:
-	ID;
+	EABINARY | EAOCTAL | INT | EAHEX 
+	| EAEXPONENT
+	;
+
+terminal EABINARY:
+	('0b'('0'..'1')*)
+;
+
+terminal EAOCTAL:
+	('0'('1'..'7')('0'..'7')*)
+;
+
+terminal EAHEX:
+	('0x'('0'..'9'|'a'..'f')*)
+;
+
+terminal EAEXPONENT:
+	('0'..'9')+
+	('e'|'E')('+'|'-')?('0'..'9')+
+;
 
 HardwareConnector_port returns HardwareConnector_port:
     'HardwareConnector_port'
@@ -827,7 +846,7 @@ Float returns ecore::EDouble:
 
 //Integer returns Integer:
 //    'Integer' /* TODO: implement this rule and an appropriate IValueConverter */;
-Integer returns ecore::EInt: 
+Integer returns Integer: 
     INT
 ;
 

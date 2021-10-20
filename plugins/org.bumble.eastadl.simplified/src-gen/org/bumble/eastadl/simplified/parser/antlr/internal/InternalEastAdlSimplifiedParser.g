@@ -17003,13 +17003,47 @@ ruleNumerical returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 @after {
 	leaveRule();
 }:
-	this_ID_0=RULE_ID
-	{
-		$current.merge(this_ID_0);
-	}
-	{
-		newLeafNode(this_ID_0, grammarAccess.getNumericalAccess().getIDTerminalRuleCall());
-	}
+	(
+		this_EABINARY_0=RULE_EABINARY
+		{
+			$current.merge(this_EABINARY_0);
+		}
+		{
+			newLeafNode(this_EABINARY_0, grammarAccess.getNumericalAccess().getEABINARYTerminalRuleCall_0());
+		}
+		    |
+		this_EAOCTAL_1=RULE_EAOCTAL
+		{
+			$current.merge(this_EAOCTAL_1);
+		}
+		{
+			newLeafNode(this_EAOCTAL_1, grammarAccess.getNumericalAccess().getEAOCTALTerminalRuleCall_1());
+		}
+		    |
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getNumericalAccess().getINTTerminalRuleCall_2());
+		}
+		    |
+		this_EAHEX_3=RULE_EAHEX
+		{
+			$current.merge(this_EAHEX_3);
+		}
+		{
+			newLeafNode(this_EAHEX_3, grammarAccess.getNumericalAccess().getEAHEXTerminalRuleCall_3());
+		}
+		    |
+		this_EAEXPONENT_4=RULE_EAEXPONENT
+		{
+			$current.merge(this_EAEXPONENT_4);
+		}
+		{
+			newLeafNode(this_EAEXPONENT_4, grammarAccess.getNumericalAccess().getEAEXPONENTTerminalRuleCall_4());
+		}
+	)
 ;
 
 // Entry rule entryRuleHardwareConnector_port

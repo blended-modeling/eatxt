@@ -11990,7 +11990,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//Boolean Boolean:
+		//Boolean ecore::EBoolean:
 		//	'true' | 'false';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -12005,14 +12005,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	}
 	public class NumericalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Numerical");
-		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cEABINARYTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEAOCTALTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cEAHEXTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cEAEXPONENTTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Numerical Numerical:
-		//	ID;
+		//	EABINARY | EAOCTAL | INT | EAHEX
+		//	| EAEXPONENT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID
-		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+		//EABINARY | EAOCTAL | INT | EAHEX | EAEXPONENT
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//EABINARY
+		public RuleCall getEABINARYTerminalRuleCall_0() { return cEABINARYTerminalRuleCall_0; }
+		
+		//EAOCTAL
+		public RuleCall getEAOCTALTerminalRuleCall_1() { return cEAOCTALTerminalRuleCall_1; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+		
+		//EAHEX
+		public RuleCall getEAHEXTerminalRuleCall_3() { return cEAHEXTerminalRuleCall_3; }
+		
+		//EAEXPONENT
+		public RuleCall getEAEXPONENTTerminalRuleCall_4() { return cEAEXPONENTTerminalRuleCall_4; }
 	}
 	public class HardwareConnector_portElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector_port");
@@ -12173,7 +12194,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		////Integer returns Integer:
 		////    'Integer' /* TODO: implement this rule and an appropriate IValueConverter */;
-		//Integer ecore::EInt:
+		//Integer Integer:
 		//	INT;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -12457,6 +12478,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	private final EAStringValueElements pEAStringValue;
 	private final BooleanElements pBoolean;
 	private final NumericalElements pNumerical;
+	private final TerminalRule tEABINARY;
+	private final TerminalRule tEAOCTAL;
+	private final TerminalRule tEAHEX;
+	private final TerminalRule tEAEXPONENT;
 	private final HardwareConnector_portElements pHardwareConnector_port;
 	private final HardwarePortConnector_portElements pHardwarePortConnector_port;
 	private final IOHardwarePinKindElements eIOHardwarePinKind;
@@ -12566,6 +12591,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		this.pEAStringValue = new EAStringValueElements();
 		this.pBoolean = new BooleanElements();
 		this.pNumerical = new NumericalElements();
+		this.tEABINARY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EABINARY");
+		this.tEAOCTAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAOCTAL");
+		this.tEAHEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAHEX");
+		this.tEAEXPONENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAEXPONENT");
 		this.pHardwareConnector_port = new HardwareConnector_portElements();
 		this.pHardwarePortConnector_port = new HardwarePortConnector_portElements();
 		this.eIOHardwarePinKind = new IOHardwarePinKindElements();
@@ -13766,7 +13795,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		return getEAStringValueAccess().getRule();
 	}
 	
-	//Boolean Boolean:
+	//Boolean ecore::EBoolean:
 	//	'true' | 'false';
 	public BooleanElements getBooleanAccess() {
 		return pBoolean;
@@ -13777,13 +13806,40 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	}
 	
 	//Numerical Numerical:
-	//	ID;
+	//	EABINARY | EAOCTAL | INT | EAHEX
+	//	| EAEXPONENT;
 	public NumericalElements getNumericalAccess() {
 		return pNumerical;
 	}
 	
 	public ParserRule getNumericalRule() {
 		return getNumericalAccess().getRule();
+	}
+	
+	//terminal EABINARY:
+	//	'0b' '0'..'1'*;
+	public TerminalRule getEABINARYRule() {
+		return tEABINARY;
+	}
+	
+	//terminal EAOCTAL:
+	//	'0' '1'..'7' '0'..'7'*;
+	public TerminalRule getEAOCTALRule() {
+		return tEAOCTAL;
+	}
+	
+	//terminal EAHEX:
+	//	'0x' ('0'..'9' | 'a'..'f')*;
+	public TerminalRule getEAHEXRule() {
+		return tEAHEX;
+	}
+	
+	//terminal EAEXPONENT:
+	//	'0'..'9'+ ('e' | 'E') ('+' | '-')? '0'..'9'+
+	//	//	(('b'|'B')('i'|'I'|'d'|'D') | ('l'|'L'|'d'|'D'|'f'|'F'))?
+	//;
+	public TerminalRule getEAEXPONENTRule() {
+		return tEAEXPONENT;
 	}
 	
 	//HardwareConnector_port:
@@ -13848,7 +13904,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	////Integer returns Integer:
 	////    'Integer' /* TODO: implement this rule and an appropriate IValueConverter */;
-	//Integer ecore::EInt:
+	//Integer Integer:
 	//	INT;
 	public IntegerElements getIntegerAccess() {
 		return pInteger;
