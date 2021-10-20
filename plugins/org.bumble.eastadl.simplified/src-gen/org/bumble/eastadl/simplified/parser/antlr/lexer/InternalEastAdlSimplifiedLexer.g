@@ -473,6 +473,14 @@ VerticalLine : '|';
 
 RightCurlyBracket : '}';
 
+RULE_EABINARY : '0b' ('0'..'1')*;
+
+RULE_EAOCTAL : '0' '1'..'7' ('0'..'7')*;
+
+RULE_EAHEX : '0x' ('0'..'9'|'a'..'f')*;
+
+RULE_EAEXPONENT : ('0'..'9')+ ('e'|'E') ('+'|'-')? ('0'..'9')+;
+
 fragment RULE_BEGIN : ;
 
 fragment RULE_END : ;

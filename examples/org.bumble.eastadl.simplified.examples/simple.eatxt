@@ -6,14 +6,17 @@ EAPackage Structure_new
 		EAPackage DataTypes_new
 			EABoolean Boolean
 				name sss
+			EANumerical test1020
+				name ssss111
+				max 1E+1
 			EANumerical Numerical
 				name sss1
+				max 074
+				min 0x11
 			EANumerical Integer_uint8
-				category fsd
-				uuid fsdf
 				name s
-				text fsdf
-				uri dfs
+				max 0b11
+				min 0b1
 				unit "Structure_new.DesignPkg_new.test4newtype.testUnit"
 				ownedComment 
 					Comment 
@@ -21,7 +24,7 @@ EAPackage Structure_new
 			RangeableValueType Real_float64
 				name sss3
 				accuracy 0.1
-				resolution 0.1
+				resolution 0.2
 				baseRangeable "Structure_new.DesignPkg_new.DataTypes_new.Integer_uint8"
 		EAPackage FcnDesignArchitecture_new
 			DesignFunctionType FDAWithController_new
@@ -167,7 +170,7 @@ EAPackage Structure_new
 				uaType ("Structure_new.DesignPkg_new.test4newtype.testUserElementType")
 				attributedElement "Structure_new.DesignPkg_new.test"
 			ArrayDatatype testArrayDatatype1019
-				maxLength 12
+				maxLength 1
 				elementType "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
 	DesignLevel DesignLevelWW_new
 		allocation
