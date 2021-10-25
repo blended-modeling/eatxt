@@ -4,6 +4,8 @@
 package org.bumble.eastadl.simplified.tests;
 
 import com.google.inject.Inject;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import org.eclipse.eatop.eastadl22.EAXML;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -11,8 +13,10 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.util.ParseHelper;
+import org.eclipse.xtext.testing.validation.ValidationTestHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,21 +28,68 @@ public class EastAdlSimplifiedParsingTest {
   @Inject
   private ParseHelper<EAXML> parseHelper;
   
+  @Inject
+  private ValidationTestHelper validationTestHelper;
+  
+  public String mydsl = null;
+  
+  public void readDslText() {
+    try {
+      byte[] _readAllBytes = Files.readAllBytes(Paths.get("D:\\Git\\Git_Local\\runtime-EclipseApplication\\test\\test.eatxt"));
+      String _string = new String(_readAllBytes);
+      this.mydsl = _string;
+      Assert.assertTrue((this.mydsl != null));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * Check if the model described in *.eatxt file could be loaded
+   */
   @Test
   public void loadModel() {
     try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
-      _builder.newLine();
-      final EAXML result = this.parseHelper.parse(_builder);
+      this.readDslText();
+      final EAXML result = this.parseHelper.parse(this.mydsl);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("Unexpected errors: ");
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Unexpected errors: ");
       String _join = IterableExtensions.join(errors, ", ");
-      _builder_1.append(_join);
-      Assertions.assertTrue(_isEmpty, _builder_1.toString());
+      _builder.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder.toString());
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * Check if the model described in *.eatxt file could be parsed without issues
+   */
+  @Test
+  public void testValidModel() {
+    try {
+      this.readDslText();
+      final EAXML eaxml = this.parseHelper.parse(this.mydsl);
+      this.validationTestHelper.assertNoIssues(eaxml);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * Check if the model desribed in *.eatxt file contains at least one EAPackage
+   */
+  @Test
+  public void checkEAPackageNumberInProgram() {
+    try {
+      this.readDslText();
+      final EAXML eaxml = this.parseHelper.parse(this.mydsl);
+      int _size = eaxml.getTopLevelPackage().size();
+      boolean _greaterThan = (_size > 0);
+      Assert.assertTrue("The program should have at least one EAPackage", _greaterThan);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
