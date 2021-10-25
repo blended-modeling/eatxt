@@ -4,13 +4,18 @@
 package org.bumble.eastadl.simplified.tests
 
 import com.google.inject.Inject
+import java.nio.file.Files
+import java.nio.file.Paths
 import org.eclipse.eatop.eastadl22.EAXML
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
+import org.eclipse.xtext.testing.validation.ValidationTestHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
+
+import static org.junit.Assert.*
 
 @ExtendWith(InjectionExtension)
 @InjectWith(EastAdlSimplifiedInjectorProvider)
@@ -18,13 +23,48 @@ class EastAdlSimplifiedParsingTest {
 	@Inject
 	ParseHelper<EAXML> parseHelper
 	
+	@Inject ValidationTestHelper validationTestHelper
+	
+	public String mydsl = null
+	
+	def void readDslText() {
+		// Note: Please confirm or reset the code file path before unit testing!!!
+		mydsl = new String(Files.readAllBytes(Paths.get("D:\\Git\\Git_Local\\runtime-EclipseApplication\\test\\test.eatxt")))
+		
+		assertTrue(mydsl !== null)
+	}
+	
+	/**
+	 * Check if the model described in *.eatxt file could be loaded
+	 * */
 	@Test
 	def void loadModel() {
-		val result = parseHelper.parse('''
-			Hello Xtext!
-		''')
+		readDslText()
+		val result = parseHelper.parse(mydsl)
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	
+	/**
+	 * Check if the model described in *.eatxt file could be parsed without issues
+	 * */
+	@Test
+ 	def testValidModel() {
+		readDslText()
+     	val eaxml = parseHelper.parse(mydsl)
+     	validationTestHelper.assertNoIssues(eaxml)
+ 	}
+ 	
+ 	/**
+ 	 * Check if the model desribed in *.eatxt file contains at least one EAPackage
+ 	 * */
+ 	@Test
+	def checkEAPackageNumberInProgram() {
+		readDslText()
+	    val eaxml = parseHelper.parse(mydsl)
+		assertTrue("The program should have at least one EAPackage", 
+			eaxml.topLevelPackage.size() > 0
+		)
 	}
 }
