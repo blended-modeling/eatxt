@@ -140,10 +140,13 @@ public class GrammarOptimization {
 			if (null == strOrigin || strOrigin.isEmpty()) {
 				System.err.printf("[Error]************************Failed to read string from xtext file.\n");
 				return false;
-			}
+			}	
 
+			// 0. Add rule for EString
+			String strProcessed = addDefinitionOfEString(strOrigin);
+			
 			// 1. Remove tab symbols (by replacing with four whitespace)
-			String strProcessed = replaceString(strOrigin, "\t", "\s\s\s\s");
+			strProcessed = replaceString(strProcessed, "\t", "\s\s\s\s");
 			System.out.println("[Info] Finish removing tab symbols by replacing with four whitespace!");
 
 			// 2. Remove brackets by replacing them with BEGIN and END
@@ -166,6 +169,9 @@ public class GrammarOptimization {
 			strProcessed = removeComma(strProcessed);
 			System.out.println("[Info]*********************************Finish removing comma symbols.");
 			
+			// 7. Modify or Add Datatype rules
+			strProcessed = implementRules(strProcessed);
+			
 			// write the optimized grammar back into the xtext file
 			IOHelper.saveFile(file, strProcessed);
 		} catch (IOException e) {
@@ -176,6 +182,57 @@ public class GrammarOptimization {
 		return true;
 	}
 
+	public String implementRules(String strInput) {
+		String strOutput = null;
+		
+		// implement a rule for Integer
+		strOutput = replaceString(strInput, "\\'Integer\\'\\s\\/\\*\\sTODO\\:\\s.*\\s\\*\\/\\;", "INT;");
+
+		// implement a rule for Float
+		strOutput = replaceString(strOutput, "Float returns Float:", "Float returns ecore\\:\\:EDouble\\:");
+		strOutput = replaceString(strOutput, "\\'Float\\'\\s\\/\\*\\sTODO.*\\*\\/", "INT \\'\\.\\' INT");
+		
+		// implement a rule for String0
+		strOutput = replaceString(strOutput, "\\'String\\'\\s\\/\\*\\sTODO.*\\*\\/", "ID");
+		
+		// implement a rule for Identifier
+		strOutput = replaceString(strOutput, "\\'Identifier\\'\\s\\/\\*\\sTODO.*\\*\\/", "ID");
+		
+		// implement a rule for Numerical
+		strOutput = replaceString(strOutput, "\\'Numerical\\'\\s\\/\\*\\sTODO.*\\*\\/", 
+			"EABINARY | EAOCTAL | INT | EAHEX | EAEXPONENT");
+		
+		// implement a rule for Boolean
+		strOutput = replaceString(strOutput, "Boolean\\sreturns\\sBoolean", "Boolean returns ecore::EBoolean");
+		strOutput = replaceString(strOutput, "\\'Boolean\\'\\s\\/\\*\\sTODO.*\\*\\/", "'true' | 'false'");
+		
+		// add a rule for EABINARY
+		String regex = "terminal EABINARY";
+		String strDefinition = "\n\nterminal EABINARY:\n    ('0b'('0'..'1')*);\n";
+		if (!checkExistofString(strOutput, regex))
+			strOutput = strOutput + strDefinition;
+		
+		// add a rule for EAOCTAL
+		regex = "terminal EAOCTAL";
+		strDefinition = "\n\nterminal EAOCTAL:\n    ('0'('1'..'7')('0'..'7')*);\n";
+		if (!checkExistofString(strOutput, regex))
+			strOutput = strOutput + strDefinition;
+		
+		// add a rule for EAHEX
+		regex = "terminal EAHEX";
+		strDefinition = "\n\nterminal EAHEX:\n    ('0x'('0'..'9'|'a'..'f')*);\n";
+		if (!checkExistofString(strOutput, regex))
+			strOutput = strOutput + strDefinition;
+		
+		// add a rule for EAEXPONENT
+		regex = "terminal EAEXPONENT";
+		strDefinition = "\n\nterminal EAEXPONENT:\n    ('0'..'9')+('e'|'E')('+'|'-')?('0'..'9')+;\n";
+		if (!checkExistofString(strOutput, regex))
+			strOutput = strOutput + strDefinition;
+		
+		return strOutput;
+	}
+	
 	public String removeComma(String strInput) {
 		String strOutput = null;
 		
@@ -328,7 +385,7 @@ public class GrammarOptimization {
 		}
 
 		// If doesn't, please add a definition for EString
-		String strDefinition = "EString returns ecore::EString:\n    STRING | ID;\n";
+		String strDefinition = "\n\nEString returns ecore::EString:\n    STRING | ID;\n";
 		strOutput = strInput + strDefinition;
 		return strOutput;
 	}
