@@ -21,7 +21,32 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class EastAdlSimplifiedSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected EastAdlSimplifiedGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
+	protected AbstractElementAlias match_Actuator___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q;
+	protected AbstractElementAlias match_Allocation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_6__q;
+	protected AbstractElementAlias match_AnalysisFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q;
+	protected AbstractElementAlias match_BasicSoftwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q;
+	protected AbstractElementAlias match_CommunicationHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q;
+	protected AbstractElementAlias match_DesignFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q;
+	protected AbstractElementAlias match_DesignLevel___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q;
+	protected AbstractElementAlias match_EABoolean___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q;
+	protected AbstractElementAlias match_EANumerical___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q;
+	protected AbstractElementAlias match_EAPackage___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q;
+	protected AbstractElementAlias match_EAString___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q;
+	protected AbstractElementAlias match_ElectricalComponent___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q;
+	protected AbstractElementAlias match_EnumerationLiteral___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_5__q;
+	protected AbstractElementAlias match_FunctionClientServerInterface___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q;
+	protected AbstractElementAlias match_FunctionalDevice___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q;
+	protected AbstractElementAlias match_HardwareComponentType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q;
+	protected AbstractElementAlias match_HardwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q;
+	protected AbstractElementAlias match_HardwarePort___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_9__q;
+	protected AbstractElementAlias match_IOHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q;
+	protected AbstractElementAlias match_LocalDeviceManager___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q;
+	protected AbstractElementAlias match_Node___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q;
+	protected AbstractElementAlias match_Operation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q;
+	protected AbstractElementAlias match_PortGroup___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q;
+	protected AbstractElementAlias match_PowerHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q;
+	protected AbstractElementAlias match_Sensor___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q;
+	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_1_1_1_q;
 	protected AbstractElementAlias match_XExpressionInClosure_SemicolonKeyword_1_1_q;
 	protected AbstractElementAlias match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q;
 	protected AbstractElementAlias match_XImportDeclaration_SemicolonKeyword_2_q;
@@ -31,7 +56,32 @@ public class EastAdlSimplifiedSyntacticSequencer extends AbstractSyntacticSequen
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (EastAdlSimplifiedGrammarAccess) access;
-		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
+		match_Actuator___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getActuatorAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getActuatorAccess().getENDTerminalRuleCall_2_12()));
+		match_Allocation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_6__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAllocationAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getAllocationAccess().getENDTerminalRuleCall_2_6()));
+		match_AnalysisFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAnalysisFunctionType_ImplAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getAnalysisFunctionType_ImplAccess().getENDTerminalRuleCall_2_12()));
+		match_BasicSoftwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBasicSoftwareFunctionTypeAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getBasicSoftwareFunctionTypeAccess().getENDTerminalRuleCall_2_12()));
+		match_CommunicationHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCommunicationHardwarePinAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getCommunicationHardwarePinAccess().getENDTerminalRuleCall_2_7()));
+		match_DesignFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDesignFunctionType_ImplAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getDesignFunctionType_ImplAccess().getENDTerminalRuleCall_2_12()));
+		match_DesignLevel___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDesignLevelAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getDesignLevelAccess().getENDTerminalRuleCall_2_10()));
+		match_EABoolean___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEABooleanAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getEABooleanAccess().getENDTerminalRuleCall_2_7()));
+		match_EANumerical___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEANumericalAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getEANumericalAccess().getENDTerminalRuleCall_2_10()));
+		match_EAPackage___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEAPackageAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getEAPackageAccess().getENDTerminalRuleCall_2_7()));
+		match_EAString___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEAStringAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getEAStringAccess().getENDTerminalRuleCall_2_7()));
+		match_ElectricalComponent___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getElectricalComponentAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getElectricalComponentAccess().getENDTerminalRuleCall_2_13()));
+		match_EnumerationLiteral___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_5__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEnumerationLiteralAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getEnumerationLiteralAccess().getENDTerminalRuleCall_2_5()));
+		match_FunctionClientServerInterface___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFunctionClientServerInterfaceAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getFunctionClientServerInterfaceAccess().getENDTerminalRuleCall_2_8()));
+		match_FunctionalDevice___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFunctionalDeviceAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getFunctionalDeviceAccess().getENDTerminalRuleCall_2_12()));
+		match_HardwareComponentType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHardwareComponentType_ImplAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getHardwareComponentType_ImplAccess().getENDTerminalRuleCall_2_12()));
+		match_HardwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHardwareFunctionTypeAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getHardwareFunctionTypeAccess().getENDTerminalRuleCall_2_13()));
+		match_HardwarePort___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_9__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHardwarePortAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getHardwarePortAccess().getENDTerminalRuleCall_2_9()));
+		match_IOHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIOHardwarePinAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getIOHardwarePinAccess().getENDTerminalRuleCall_2_8()));
+		match_LocalDeviceManager___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getLocalDeviceManagerAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getLocalDeviceManagerAccess().getENDTerminalRuleCall_2_12()));
+		match_Node___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNodeAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getNodeAccess().getENDTerminalRuleCall_2_13()));
+		match_Operation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getOperationAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getOperationAccess().getENDTerminalRuleCall_2_7()));
+		match_PortGroup___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPortGroupAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getPortGroupAccess().getENDTerminalRuleCall_2_7()));
+		match_PowerHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPowerHardwarePinAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getPowerHardwarePinAccess().getENDTerminalRuleCall_2_7()));
+		match_Sensor___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSensorAccess().getBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getSensorAccess().getENDTerminalRuleCall_2_12()));
+		match_XBlockExpression_SemicolonKeyword_1_1_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_1_1_1());
 		match_XExpressionInClosure_SemicolonKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getXExpressionInClosureAccess().getSemicolonKeyword_1_1());
 		match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2()));
 		match_XImportDeclaration_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getXImportDeclarationAccess().getSemicolonKeyword_2());
@@ -92,8 +142,58 @@ public class EastAdlSimplifiedSyntacticSequencer extends AbstractSyntacticSequen
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
-				emit_XBlockExpression_SemicolonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Actuator___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q.equals(syntax))
+				emit_Actuator___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Allocation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_6__q.equals(syntax))
+				emit_Allocation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_6__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AnalysisFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q.equals(syntax))
+				emit_AnalysisFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_BasicSoftwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q.equals(syntax))
+				emit_BasicSoftwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_CommunicationHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q.equals(syntax))
+				emit_CommunicationHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DesignFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q.equals(syntax))
+				emit_DesignFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DesignLevel___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q.equals(syntax))
+				emit_DesignLevel___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EABoolean___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q.equals(syntax))
+				emit_EABoolean___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EANumerical___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q.equals(syntax))
+				emit_EANumerical___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EAPackage___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q.equals(syntax))
+				emit_EAPackage___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EAString___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q.equals(syntax))
+				emit_EAString___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ElectricalComponent___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q.equals(syntax))
+				emit_ElectricalComponent___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EnumerationLiteral___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_5__q.equals(syntax))
+				emit_EnumerationLiteral___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_5__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FunctionClientServerInterface___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q.equals(syntax))
+				emit_FunctionClientServerInterface___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FunctionalDevice___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q.equals(syntax))
+				emit_FunctionalDevice___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HardwareComponentType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q.equals(syntax))
+				emit_HardwareComponentType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HardwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q.equals(syntax))
+				emit_HardwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HardwarePort___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_9__q.equals(syntax))
+				emit_HardwarePort___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_9__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_IOHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q.equals(syntax))
+				emit_IOHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_LocalDeviceManager___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q.equals(syntax))
+				emit_LocalDeviceManager___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Node___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q.equals(syntax))
+				emit_Node___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Operation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q.equals(syntax))
+				emit_Operation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PortGroup___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q.equals(syntax))
+				emit_PortGroup___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PowerHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q.equals(syntax))
+				emit_PowerHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Sensor___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q.equals(syntax))
+				emit_Sensor___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_XBlockExpression_SemicolonKeyword_1_1_1_q.equals(syntax))
+				emit_XBlockExpression_SemicolonKeyword_1_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_XExpressionInClosure_SemicolonKeyword_1_1_q.equals(syntax))
 				emit_XExpressionInClosure_SemicolonKeyword_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q.equals(syntax))
@@ -110,6 +210,281 @@ public class EastAdlSimplifiedSyntacticSequencer extends AbstractSyntacticSequen
 
 	/**
 	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_Actuator___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_Allocation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_6__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_AnalysisFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_BasicSoftwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_CommunicationHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_DesignFunctionType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_DesignLevel___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_EABoolean___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_EANumerical___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_10__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_EAPackage___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_EAString___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_ElectricalComponent___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_EnumerationLiteral___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_5__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_FunctionClientServerInterface___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_FunctionalDevice___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_HardwareComponentType_Impl___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_HardwareFunctionType___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_HardwarePort___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_9__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_IOHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_8__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_LocalDeviceManager___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_Node___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_13__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_Operation___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_PortGroup___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_PowerHardwarePin___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_7__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (BEGIN END)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     shortName=Identifier (ambiguity) (rule end)
+	 */
+	protected void emit_Sensor___BEGINTerminalRuleCall_2_0_ENDTerminalRuleCall_2_12__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ';'?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -117,7 +492,7 @@ public class EastAdlSimplifiedSyntacticSequencer extends AbstractSyntacticSequen
 	 *     expressions+=XExpressionOrVarDeclaration (ambiguity) END (rule end)
 	 *     expressions+=XExpressionOrVarDeclaration (ambiguity) expressions+=XExpressionOrVarDeclaration
 	 */
-	protected void emit_XBlockExpression_SemicolonKeyword_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_XBlockExpression_SemicolonKeyword_1_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

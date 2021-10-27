@@ -473,6 +473,10 @@ VerticalLine : '|';
 
 RightCurlyBracket : '}';
 
+fragment RULE_BEGIN : ;
+
+fragment RULE_END : ;
+
 RULE_EABINARY : '0b' ('0'..'1')*;
 
 RULE_EAOCTAL : '0' '1'..'7' ('0'..'7')*;
@@ -480,10 +484,6 @@ RULE_EAOCTAL : '0' '1'..'7' ('0'..'7')*;
 RULE_EAHEX : '0x' ('0'..'9'|'a'..'f')*;
 
 RULE_EAEXPONENT : ('0'..'9')+ ('e'|'E') ('+'|'-')? ('0'..'9')+;
-
-fragment RULE_BEGIN : ;
-
-fragment RULE_END : ;
 
 RULE_HEX : ('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F'|'_')+ ('#' (('b'|'B') ('i'|'I')|('l'|'L')))?;
 

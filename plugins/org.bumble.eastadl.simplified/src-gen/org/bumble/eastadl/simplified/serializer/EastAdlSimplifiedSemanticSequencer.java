@@ -748,7 +748,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22Package.eINSTANCE.getComment_Body()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComment_ImplAccess().getBodyString0ParserRuleCall_3_0(), semanticObject.getBody());
+		feeder.accept(grammarAccess.getComment_ImplAccess().getBodyString0ParserRuleCall_1_2_0(), semanticObject.getBody());
 		feeder.finish();
 	}
 	
@@ -911,8 +911,8 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22Package.eINSTANCE.getEAValue_Type()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEABooleanValueAccess().getValueBooleanParserRuleCall_3_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getEABooleanValueAccess().getTypeEADatatypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(Eastadl22Package.eINSTANCE.getEAValue_Type(), false));
+		feeder.accept(grammarAccess.getEABooleanValueAccess().getValueBooleanParserRuleCall_1_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getEABooleanValueAccess().getTypeEADatatypeEStringParserRuleCall_1_4_0_1(), semanticObject.eGet(Eastadl22Package.eINSTANCE.getEAValue_Type(), false));
 		feeder.finish();
 	}
 	
@@ -1018,8 +1018,8 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22Package.eINSTANCE.getEAValue_Type()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEANumericalValueAccess().getValueNumericalParserRuleCall_3_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getEANumericalValueAccess().getTypeEADatatypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(Eastadl22Package.eINSTANCE.getEAValue_Type(), false));
+		feeder.accept(grammarAccess.getEANumericalValueAccess().getValueNumericalParserRuleCall_1_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getEANumericalValueAccess().getTypeEADatatypeEStringParserRuleCall_1_4_0_1(), semanticObject.eGet(Eastadl22Package.eINSTANCE.getEAValue_Type(), false));
 		feeder.finish();
 	}
 	
@@ -1090,8 +1090,8 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22Package.eINSTANCE.getEAValue_Type()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEAStringValueAccess().getValueString0ParserRuleCall_3_0(), semanticObject.getValue());
-		feeder.accept(grammarAccess.getEAStringValueAccess().getTypeEADatatypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(Eastadl22Package.eINSTANCE.getEAValue_Type(), false));
+		feeder.accept(grammarAccess.getEAStringValueAccess().getValueString0ParserRuleCall_1_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getEAStringValueAccess().getTypeEADatatypeEStringParserRuleCall_1_4_0_1(), semanticObject.eGet(Eastadl22Package.eINSTANCE.getEAValue_Type(), false));
 		feeder.finish();
 	}
 	
@@ -1844,7 +1844,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Eastadl22Package.eINSTANCE.getComment_Body()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRationaleAccess().getBodyString0ParserRuleCall_3_0(), semanticObject.getBody());
+		feeder.accept(grammarAccess.getRationaleAccess().getBodyString0ParserRuleCall_1_2_0(), semanticObject.getBody());
 		feeder.finish();
 	}
 	
