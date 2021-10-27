@@ -172,6 +172,9 @@ public class GrammarOptimization {
 			// 7. Modify or Add Datatype rules
 			strProcessed = implementRules(strProcessed);
 			
+			// 8. Allow empty element
+			strProcessed = allowEmptyElement(strProcessed);
+			
 			// write the optimized grammar back into the xtext file
 			IOHelper.saveFile(file, strProcessed);
 		} catch (IOException e) {
@@ -182,6 +185,72 @@ public class GrammarOptimization {
 		return true;
 	}
 
+	public String allowEmptyElement(String strInput) {
+		String strOutput = "";
+		
+		// Split the contents of Xtext file (i.e. string) into lines
+		String lines[] = strInput.split("\r\n|\r|\n");
+		
+		if (lines.length <= 0) {
+			System.err.println("[Error]**********************Failed to split the contents into lines!");
+			return strInput;
+		}
+		
+		// Create a flag for indicating if an element is mandatory
+		boolean bHasLineNotOptional = false;
+		boolean bInBeginEnd = false;
+
+		// Check and process line by line
+		for (int i = 0; i < lines.length; i++) {
+			lines[i] += "\r\n";
+			
+			// We only need consider the BEGIN followed with a linebreak or return
+			// and of course user may type in a whitespace unconsciously
+			if (checkExistofString(lines[i], "(\s|\t)BEGIN(\s)*(\r\n|\r|\n)")) {
+				lines[i] = replaceString(lines[i], "BEGIN", "(BEGIN");
+				bInBeginEnd = true;
+				strOutput += lines[i];
+				continue;
+			}
+			
+			// once we encounter the END with a ';', it's the END for the whole rule
+			if (checkExistofString(lines[i], "END(\s)*;")) {
+				if (bHasLineNotOptional)
+					lines[i] = replaceString(lines[i], "END", "END)");
+				else
+					lines[i] = replaceString(lines[i], "END", "END)?");
+				bHasLineNotOptional = false;
+				strOutput += lines[i];
+				bInBeginEnd = false;
+				continue;
+			}
+			else {
+				// We must check if all elements in a rule are optional or not
+				if (bInBeginEnd) {
+					if (!isLineOptional(lines[i])) {
+						bHasLineNotOptional = true;
+						strOutput += lines[i];
+						continue;
+					}
+				}
+			}
+			
+			strOutput += lines[i];
+		}
+		
+		return strOutput;
+	}
+	
+	public boolean isLineOptional(String strLine) {
+		boolean bRet = false;
+		
+		if (checkExistofString(strLine, ".*\\)(\\s)*\\?")) {
+			bRet = true;
+		}
+		
+		return bRet;
+	}
+	
 	public String implementRules(String strInput) {
 		String strOutput = null;
 		

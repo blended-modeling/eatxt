@@ -40,9 +40,6 @@ PortConnector returns PortConnector:
 
 EADatatype returns EADatatype:
     ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | RangeableValueType;
- 
-EString returns ecore::EString:
-    STRING | ID;
 
 EAValue returns EAValue:
     EAArrayValue | EABooleanValue | EACompositeValue | EAEnumerationValue | EAExpression | EANumericalValue | 
@@ -88,38 +85,36 @@ FunctionPrototype returns FunctionPrototype:
 
 EAPackage returns EAPackage:
     'EAPackage' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
         (element+=EAPackageableElement (  element+=EAPackageableElement)* )?
-    END;
+    END)?;
 
-Identifier returns String:
-//    EString /* TODO: implement this rule and an appropriate IValueConverter */;
+Identifier returns Identifier:
     ID;
-    
+
 String0 returns String:
-//    EString /* TODO: implement this rule and an appropriate IValueConverter */;
     ID;
     
 Comment_Impl returns Comment:
     'Comment'
-    BEGIN
+    (BEGIN
         'body' body=String0
-    END;
+    END);
 
 Rationale returns Rationale:
     'Rationale'
-    BEGIN
+    (BEGIN
         'body' body=String0
-    END;
+    END);
 
 DesignLevel returns DesignLevel:
     'DesignLevel' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -129,11 +124,11 @@ DesignLevel returns DesignLevel:
         ('allocation' BEGIN allocation+=Allocation (  allocation+=Allocation)* END )?
         ('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)?
         ('hardwareDesignArchitecture' hardwareDesignArchitecture=HardwareComponentPrototype)?
-    END;
+    END)?;
 
 AnalysisFunctionType_Impl returns AnalysisFunctionType:
     'AnalysisFunctionType' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -145,11 +140,11 @@ AnalysisFunctionType_Impl returns AnalysisFunctionType:
         ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
         ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
         ('part' BEGIN part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)* END )?
-    END;
+    END)?;
 
 BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
     'BasicSoftwareFunctionType' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -161,11 +156,11 @@ BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
         ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
         ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
         ('part' BEGIN part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)* END )?
-    END;
+    END)?;
 
 DesignFunctionType_Impl returns DesignFunctionType:
     'DesignFunctionType' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -177,11 +172,11 @@ DesignFunctionType_Impl returns DesignFunctionType:
         ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
         ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
         ('part' BEGIN part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)* END )?
-    END;
+    END)?;
 
 FunctionalDevice returns FunctionalDevice:
     'FunctionalDevice' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -193,11 +188,11 @@ FunctionalDevice returns FunctionalDevice:
         ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
         ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
         ('part' BEGIN part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)* END )?
-    END;
+    END)?;
 
 FunctionClientServerInterface returns FunctionClientServerInterface:
     'FunctionClientServerInterface' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -205,11 +200,11 @@ FunctionClientServerInterface returns FunctionClientServerInterface:
         ('uri' uri=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('operation' BEGIN operation+=Operation (  operation+=Operation)* END )?
-    END;
+    END)?;
 
 HardwareFunctionType returns HardwareFunctionType:
     'HardwareFunctionType' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -222,11 +217,11 @@ HardwareFunctionType returns HardwareFunctionType:
         ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
         ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
         ('part' BEGIN part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)* END )?
-    END;
+    END)?;
 
 LocalDeviceManager returns LocalDeviceManager:
     'LocalDeviceManager' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -238,11 +233,11 @@ LocalDeviceManager returns LocalDeviceManager:
         ('connector' BEGIN connector+=FunctionConnector (  connector+=FunctionConnector)* END )?
         ('port' BEGIN port+=FunctionPort (  port+=FunctionPort)* END )?
         ('part' BEGIN part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)* END )?
-    END;
+    END)?;
 
 Actuator returns Actuator:
     'Actuator' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -254,11 +249,11 @@ Actuator returns Actuator:
         ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
         ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
         ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
-    END;
+    END)?;
 
 ElectricalComponent returns ElectricalComponent:
     'ElectricalComponent' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -271,11 +266,11 @@ ElectricalComponent returns ElectricalComponent:
         ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
         ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
         ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
-    END;
+    END)?;
 
 HardwareComponentType_Impl returns HardwareComponentType:
     'HardwareComponentType' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -287,11 +282,11 @@ HardwareComponentType_Impl returns HardwareComponentType:
         ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
         ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
         ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
-    END;
+    END)?;
 
 Node returns Node:
     'Node' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -304,11 +299,11 @@ Node returns Node:
         ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
         ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
         ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
-    END;
+    END)?;
 
 Sensor returns Sensor:
     'Sensor' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -320,11 +315,11 @@ Sensor returns Sensor:
         ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
         ('port' BEGIN port+=HardwarePort (  port+=HardwarePort)* END )?
         ('portConnector' BEGIN portConnector+=PortConnector (  portConnector+=PortConnector)* END )?
-    END;
+    END)?;
 
 ArrayDatatype returns ArrayDatatype:
     'ArrayDatatype' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -334,11 +329,11 @@ ArrayDatatype returns ArrayDatatype:
         ('minLength' minLength=Integer)?
         'elementType' elementType=[EADatatype|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 CompositeDatatype returns CompositeDatatype:
     'CompositeDatatype' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -346,22 +341,22 @@ CompositeDatatype returns CompositeDatatype:
         ('uri' uri=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'datatypePrototype' BEGIN datatypePrototype+=EADatatypePrototype (  datatypePrototype+=EADatatypePrototype)* END 
-    END;
+    END);
 
 EABoolean returns EABoolean:
     'EABoolean' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END)?;
 
 EANumerical returns EANumerical:
     'EANumerical' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -371,22 +366,22 @@ EANumerical returns EANumerical:
         ('min' min=Numerical)?
         ('unit' unit=[Unit|EString])?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END)?;
 
 EAString returns EAString:
     'EAString' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END)?;
 
 Enumeration returns Enumeration:
     'Enumeration' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -395,11 +390,11 @@ Enumeration returns Enumeration:
         'isMultiValued' isMultiValued=Boolean
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'literal' BEGIN literal+=EnumerationLiteral (  literal+=EnumerationLiteral)* END 
-    END;
+    END);
 
 Quantity returns Quantity:
     'Quantity' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -411,11 +406,11 @@ Quantity returns Quantity:
         'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer
         'timeExp' timeExp=Integer
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 RangeableValueType returns RangeableValueType:
     'RangeableValueType' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -426,11 +421,11 @@ RangeableValueType returns RangeableValueType:
         ('significantDigits' significantDigits=Integer)?
         'baseRangeable' baseRangeable=[EANumerical|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 Unit returns Unit:
     'Unit' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -440,22 +435,22 @@ Unit returns Unit:
         ('reference' reference=[Unit|EString])?
         ('quantity' quantity=[Quantity|EString])?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 UserAttributeDefinition returns UserAttributeDefinition:
     'UserAttributeDefinition' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[EADatatype|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('defaultValue' defaultValue=EAValue)?
-    END;
+    END);
 
 UserAttributedElement returns UserAttributedElement:
     'UserAttributedElement' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -463,11 +458,11 @@ UserAttributedElement returns UserAttributedElement:
         'attributedElement' attributedElement=[Identifiable|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('uaValue' BEGIN uaValue+=EAValue (  uaValue+=EAValue)* END )?
-    END;
+    END);
 
 UserElementType returns UserElementType:
     'UserElementType' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -475,108 +470,108 @@ UserElementType returns UserElementType:
         'key' key=String0
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('uaDefinition' BEGIN uaDefinition+=UserAttributeDefinition (  uaDefinition+=UserAttributeDefinition)* END )?
-    END;
+    END);
 
 Allocation returns Allocation:
     'Allocation' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('functionAllocation' BEGIN functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)* END )?
-    END;
+    END)?;
 
 DesignFunctionPrototype returns DesignFunctionPrototype:
     'DesignFunctionPrototype' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[DesignFunctionType|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 HardwareComponentPrototype returns HardwareComponentPrototype:
     'HardwareComponentPrototype' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[HardwareComponentType|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 Realization returns Realization:
     'Realization' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'realized' BEGIN realized+=Realization_realized (  realized+=Realization_realized)* END 
         'realizedBy' BEGIN realizedBy+=Realization_realizedBy (  realizedBy+=Realization_realizedBy)* END 
-    END;
+    END);
 
 Realization_realized returns Realization_realized:
     'Realization_realized'
-    BEGIN
+    (BEGIN
         'identifiable_target' identifiable_target=[EAElement|EString]
         ('identifiable_context' '(' identifiable_context+=[EAElement|EString] ( "," identifiable_context+=[EAElement|EString])* ')' )?
-    END;
+    END);
 
 Realization_realizedBy returns Realization_realizedBy:
     'Realization_realizedBy'
-    BEGIN
+    (BEGIN
         'identifiable_target' identifiable_target=[Identifiable|EString]
         ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
-    END;
+    END);
 
 AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
     'AnalysisFunctionPrototype' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[AnalysisFunctionType|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 FunctionAllocation returns FunctionAllocation:
     'FunctionAllocation' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
         'target' target=FunctionAllocation_target
-    END;
+    END);
 
 FunctionClientServerPort returns FunctionClientServerPort:
     'FunctionClientServerPort' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'kind' kind=ClientServerKind
         'type' type=[FunctionClientServerInterface|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 FunctionConnector returns FunctionConnector:
     'FunctionConnector' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'port' BEGIN port+=FunctionConnector_port (  port+=FunctionConnector_port)* END 
-    END;
+    END);
 
 FunctionFlowPort returns FunctionFlowPort:
     'FunctionFlowPort' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -584,64 +579,64 @@ FunctionFlowPort returns FunctionFlowPort:
         'type' type=[EADatatype|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('defaultValue' defaultValue=EAValue)?
-    END;
+    END);
 
 FunctionPowerPort returns FunctionPowerPort:
     'FunctionPowerPort' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[CompositeDatatype|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 Operation returns Operation:
     'Operation' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('return' return=EADatatypePrototype)?
         ('argument' BEGIN argument+=EADatatypePrototype (  argument+=EADatatypePrototype)* END )?
-    END;
+    END)?;
 
 PortGroup returns PortGroup:
     'PortGroup' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('portGroup' BEGIN portGroup+=PortGroup (  portGroup+=PortGroup)* END )?
-    END;
+    END)?;
 
 CommunicationHardwarePin returns CommunicationHardwarePin:
     'CommunicationHardwarePin' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('direction' direction=EADirectionKind)?
         ('isGround' isGround=Boolean)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END)?;
 
 HardwareConnector returns HardwareConnector:
     'HardwareConnector' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'port' BEGIN port+=HardwareConnector_port (  port+=HardwareConnector_port)* END 
-    END;
+    END);
 
 HardwarePort returns HardwarePort:
     'HardwarePort' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -650,22 +645,22 @@ HardwarePort returns HardwarePort:
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         ('containedPin' BEGIN containedPin+=HardwarePin (  containedPin+=HardwarePin)* END )?
         ('containedPort' BEGIN containedPort+=HardwarePort (  containedPort+=HardwarePort)* END )?
-    END;
+    END)?;
 
 HardwarePortConnector returns HardwarePortConnector:
     'HardwarePortConnector' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'port' BEGIN port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)* END 
         ('connector' BEGIN connector+=HardwareConnector (  connector+=HardwareConnector)* END )?
-    END;
+    END);
 
 IOHardwarePin returns IOHardwarePin:
     'IOHardwarePin' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -673,11 +668,11 @@ IOHardwarePin returns IOHardwarePin:
         ('isGround' isGround=Boolean)?
         ('kind' kind=IOHardwarePinKind)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END)?;
 
 LogicalPortConnector returns LogicalPortConnector:
     'LogicalPortConnector' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
@@ -685,152 +680,133 @@ LogicalPortConnector returns LogicalPortConnector:
         ('busSpeed' busSpeed=Float)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
         'port' BEGIN port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)* END 
-    END;
+    END);
 
 PowerHardwarePin returns PowerHardwarePin:
     'PowerHardwarePin' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('direction' direction=EADirectionKind)?
         ('isGround' isGround=Boolean)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END)?;
 
 EADatatypePrototype returns EADatatypePrototype:
     'EADatatypePrototype' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         'type' type=[EADatatype|EString]
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END);
 
 EnumerationLiteral returns EnumerationLiteral:
     'EnumerationLiteral' shortName=Identifier
-    BEGIN
+    (BEGIN
         ('category' category=Identifier)?
         ('uuid' uuid=String0)?
         ('name' name=String0)?
         ('ownedComment' BEGIN ownedComment+=Comment (  ownedComment+=Comment)* END )?
-    END;
+    END)?;
 
 FunctionAllocation_allocatedElement returns FunctionAllocation_allocatedElement:
     'FunctionAllocation_allocatedElement'
-    BEGIN
+    (BEGIN
         ('allocateableElement_context' '(' allocateableElement_context+=[AllocateableElement|EString] ( "," allocateableElement_context+=[AllocateableElement|EString])* ')' )?
         'allocateableElement' allocateableElement=[AllocateableElement|EString]
-    END;
+    END);
 
 FunctionAllocation_target returns FunctionAllocation_target:
     'FunctionAllocation_target'
-    BEGIN
+    (BEGIN
         ('allocationTarget_context' '(' allocationTarget_context+=[AllocationTarget|EString] ( "," allocationTarget_context+=[AllocationTarget|EString])* ')' )?
         'allocationTarget' allocationTarget=[AllocationTarget|EString]
-    END;
+    END);
 
 enum ClientServerKind returns ClientServerKind:
                 client = 'client' | server = 'server';
 
 FunctionConnector_port returns FunctionConnector_port:
     'FunctionConnector_port'
-    BEGIN
+    (BEGIN
         ('functionPrototype' functionPrototype=[FunctionPrototype|EString])?
         'functionPort' functionPort=[FunctionPort|EString]
-    END;
+    END);
 
 enum EADirectionKind returns EADirectionKind:
                 in = 'in' | inout = 'inout' | out = 'out';
 
 EAArrayValue returns EAArrayValue:
     'EAArrayValue'
-    BEGIN
+    (BEGIN
         'type' type=[EADatatype|EString]
         ('value' BEGIN value+=EAValue (  value+=EAValue)* END )?
-    END;
+    END);
 
 EABooleanValue returns EABooleanValue:
     'EABooleanValue'
-    BEGIN
+    (BEGIN
         'value' value=Boolean
         'type' type=[EADatatype|EString]
-    END;
+    END);
 
 EACompositeValue returns EACompositeValue:
     'EACompositeValue'
-    BEGIN
+    (BEGIN
         'type' type=[EADatatype|EString]
         'value' BEGIN value+=EAValue (  value+=EAValue)* END 
-    END;
+    END);
 
 EAEnumerationValue returns EAEnumerationValue:
     'EAEnumerationValue'
-    BEGIN
+    (BEGIN
         'type' type=[EADatatype|EString]
         'value' '(' value+=[EnumerationLiteral|EString] (  value+=[EnumerationLiteral|EString])* ')' 
-    END;
+    END);
 
 EAExpression returns EAExpression:
     'EAExpression'
-    BEGIN
+    (BEGIN
         'type' type=[EADatatype|EString]
         ('value' BEGIN value+=EAValue (  value+=EAValue)* END )?
-    END;
+    END);
 
 EANumericalValue returns EANumericalValue:
     'EANumericalValue'
-    BEGIN
+    (BEGIN
         'value' value=Numerical
         'type' type=[EADatatype|EString]
-    END;
+    END);
 
 EAStringValue returns EAStringValue:
     'EAStringValue'
-    BEGIN
+    (BEGIN
         'value' value=String0
         'type' type=[EADatatype|EString]
-    END;
+    END);
 
 Boolean returns ecore::EBoolean: 
-	'true' | 'false';
+    'true' | 'false';
 
 Numerical returns Numerical:
-	EABINARY | EAOCTAL | INT | EAHEX 
-	| EAEXPONENT
-	;
-
-terminal EABINARY:
-	('0b'('0'..'1')*)
-;
-
-terminal EAOCTAL:
-	('0'('1'..'7')('0'..'7')*)
-;
-
-terminal EAHEX:
-	('0x'('0'..'9'|'a'..'f')*)
-;
-
-terminal EAEXPONENT:
-	('0'..'9')+
-	('e'|'E')('+'|'-')?('0'..'9')+
-;
+    EABINARY | EAOCTAL | INT | EAHEX | EAEXPONENT;
 
 HardwareConnector_port returns HardwareConnector_port:
     'HardwareConnector_port'
-    BEGIN
+    (BEGIN
         'hardwarePin' hardwarePin=[HardwarePin|EString]
         ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-    END;
+    END);
 
 HardwarePortConnector_port returns HardwarePortConnector_port:
     'HardwarePortConnector_port'
-    BEGIN
+    (BEGIN
         'hardwarePort' hardwarePort=[HardwarePort|EString]
         ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-    END;
+    END);
 
 enum IOHardwarePinKind returns IOHardwarePinKind:
                 digital = 'digital' | analog = 'analog' | pwm = 'pwm' | other = 'other';
@@ -838,26 +814,35 @@ enum IOHardwarePinKind returns IOHardwarePinKind:
 enum HardwareBusKind returns HardwareBusKind:
                 TimeTriggered = 'TimeTriggered' | EventTriggered = 'EventTriggered' | TimeAndEventTriggered = 'TimeAndEventTriggered' | other = 'other';
 
-//Float returns Float:
-//    'Float' /* TODO: implement this rule and an appropriate IValueConverter */;
 Float returns ecore::EDouble:
-    INT '.' INT
-;
+    INT '.' INT;
 
-//Integer returns Integer:
-//    'Integer' /* TODO: implement this rule and an appropriate IValueConverter */;
-Integer returns Integer: 
-    INT
-;
+Integer returns Integer:
+    INT;
 
 // We modify the concrete syntax of the Xbase block expression and make them indentation-aware
 @Override
 XBlockExpression returns xbase::XExpression:
     {xbase::XBlockExpression}
-    BEGIN
+    (BEGIN
         (expressions+=XExpressionOrVarDeclaration ';'?)*
-    END;
+    END);
     
 // The following synthetic tokens are used for the indentation-aware blocks
 terminal BEGIN: 'synthetic:BEGIN';  // increase indentation
 terminal END: 'synthetic:END';      // decrease indentation
+
+EString returns ecore::EString:
+    STRING | ID;
+
+terminal EABINARY:
+    ('0b'('0'..'1')*);
+
+terminal EAOCTAL:
+    ('0'('1'..'7')('0'..'7')*);
+
+terminal EAHEX:
+    ('0x'('0'..'9'|'a'..'f')*);
+
+terminal EAEXPONENT:
+    ('0'..'9')+('e'|'E')('+'|'-')?('0'..'9')+;
