@@ -5,7 +5,8 @@ package org.bumble.eastadl.simplified;
 
 import org.bumble.eastadl.simplified.naming.EastAdlQualifiedShortnameProvider;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
-
+import org.eclipse.xtext.parser.antlr.ISyntaxErrorMessageProvider;
+import org.bumble.eastadl.simplified.parser.antlr.EastAdlSimplifiedSyntaxErrorMessageProvider;
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
@@ -16,4 +17,7 @@ public class EastAdlSimplifiedRuntimeModule extends AbstractEastAdlSimplifiedRun
         return EastAdlQualifiedShortnameProvider.class;
     }
  	
+    public Class<? extends ISyntaxErrorMessageProvider> bindISyntaxErrorMessageProvider() {
+        return EastAdlSimplifiedSyntaxErrorMessageProvider.class;
+    }
 }
