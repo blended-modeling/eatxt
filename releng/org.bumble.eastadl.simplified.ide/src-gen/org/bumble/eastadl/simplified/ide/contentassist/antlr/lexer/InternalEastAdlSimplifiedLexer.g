@@ -97,8 +97,6 @@ RangeableValueType : 'RangeableValueType';
 
 ElectricCurrentExp : 'electricCurrentExp';
 
-FunctionAllocation_1 : 'functionAllocation';
-
 CompositeDatatype : 'CompositeDatatype';
 
 FunctionConnector : 'FunctionConnector';
@@ -109,13 +107,9 @@ HardwareConnector : 'HardwareConnector';
 
 AttributedElement : 'attributedElement';
 
-DatatypePrototype : 'datatypePrototype';
-
 FunctionPrototype : 'functionPrototype';
 
 HardwareComponent : 'hardwareComponent';
-
-OwnedRelationship : 'ownedRelationship';
 
 SignificantDigits : 'significantDigits';
 
@@ -149,13 +143,9 @@ TimeTriggered : 'TimeTriggered';
 
 BaseRangeable : 'baseRangeable';
 
-ContainedPort : 'containedPort';
-
 ExecutionRate : 'executionRate';
 
 IsMultiValued : 'isMultiValued';
-
-PortConnector : 'portConnector';
 
 ReferencedPin : 'referencedPin';
 
@@ -165,8 +155,6 @@ EAExpression : 'EAExpression';
 
 HardwarePort : 'HardwarePort';
 
-ContainedPin : 'containedPin';
-
 DefaultValue : 'defaultValue';
 
 FunctionPort : 'functionPort';
@@ -175,11 +163,7 @@ HardwarePort_1 : 'hardwarePort';
 
 IsElementary : 'isElementary';
 
-OwnedComment : 'ownedComment';
-
 Synchronized : 'synchronized';
-
-UaDefinition : 'uaDefinition';
 
 DesignLevel : 'DesignLevel';
 
@@ -195,11 +179,7 @@ HardwarePin : 'hardwarePin';
 
 Allocation : 'Allocation';
 
-Allocation_1 : 'allocation';
-
 Instanceof : 'instanceof';
-
-RealizedBy : 'realizedBy';
 
 Resolution : 'resolution';
 
@@ -213,8 +193,6 @@ PortGroup : 'PortGroup';
 
 Rationale : 'Rationale';
 
-Connector : 'connector';
-
 Direction : 'direction';
 
 Extension : 'extension';
@@ -225,10 +203,6 @@ MaxLength : 'maxLength';
 
 MinLength : 'minLength';
 
-Operation_1 : 'operation';
-
-PortGroup_1 : 'portGroup';
-
 Reference : 'reference';
 
 Actuator : 'Actuator';
@@ -238,8 +212,6 @@ EAString : 'EAString';
 Quantity : 'Quantity';
 
 Accuracy : 'accuracy';
-
-Argument : 'argument';
 
 BusSpeed : 'busSpeed';
 
@@ -253,8 +225,6 @@ IsShield : 'isShield';
 
 Quantity_1 : 'quantity';
 
-Realized : 'realized';
-
 ValidFor : 'validFor';
 
 Comment : 'Comment';
@@ -267,13 +237,9 @@ Extends : 'extends';
 
 Finally : 'finally';
 
-Literal : 'literal';
-
 MassExp : 'massExp';
 
 TimeExp : 'timeExp';
-
-UaValue : 'uaValue';
 
 Sensor : 'Sensor';
 
@@ -335,8 +301,6 @@ Name : 'name';
 
 Null : 'null';
 
-Part : 'part';
-
 Port : 'port';
 
 Text : 'text';
@@ -366,8 +330,6 @@ Min : 'min';
 New : 'new';
 
 Out : 'out';
-
-Pin : 'pin';
 
 Pwm : 'pwm';
 

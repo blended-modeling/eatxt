@@ -11,6 +11,7 @@ import org.eclipse.eatop.eastadl22.AllocationTarget;
 import org.eclipse.eatop.eastadl22.AnalysisFunctionPrototype;
 import org.eclipse.eatop.eastadl22.AnalysisFunctionType;
 import org.eclipse.eatop.eastadl22.ArrayDatatype;
+import org.eclipse.eatop.eastadl22.BasicSoftwareFunctionType;
 import org.eclipse.eatop.eastadl22.CompositeDatatype;
 import org.eclipse.eatop.eastadl22.DesignFunctionPrototype;
 import org.eclipse.eatop.eastadl22.DesignFunctionType;
@@ -65,6 +66,19 @@ import org.eclipse.xtext.scoping.Scopes;
 
 import com.google.common.base.Function;
 import com.google.inject.Inject;
+import com.google.inject.util.Providers;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
+import java.nio.file.Path;
 
 /**
  * This class contains custom scoping description.
@@ -83,6 +97,22 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		EClass contextEClass = context.eClass();
 		String contextClassName = null;
 		
+//		URI uri = context.eResource().getURI();
+//		String platformString = uri.toPlatformString(true);
+//		String pathString = uri.path();
+//		
+//		// get the relative path of project
+//		String[] segments = uri.segments();
+//		String projectString = uri.scheme() + ":/";
+//		if (segments.length > 0) {
+//			for (int i = 0; i < segments.length; i++) {
+//				if (i != segments.length - 1) {
+//					projectString += segments[i] + "/";
+//				}			
+//			}
+//		}
+		
+		
 		// A dedicated process for HardwareComponentPrototype in DesignLevel
 		// Normal case: in class A reference type B, then the context is A and target is B
 		// Special case: in class DesignLevel reference type HardwareComponentType, the context is DesignLevel
@@ -97,7 +127,7 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		
 		EClass targetEClass = reference.getEReferenceType();
 		String targetClassName = targetEClass.getInstanceTypeName();
-		
+		EList<EObject> test = reference.eCrossReferences();
 		// The ugly and long if conditions were combined with pairs of context and target, which is used to
 		// limit the automatic proposals by filtering the scopes
 		if ((contextClassName.equals(DesignFunctionPrototype.class.getName()) && targetClassName.equals(DesignFunctionType.class.getName()))
@@ -124,7 +154,11 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 				|| ((contextClassName.equals(PortGroup.class.getName()) || contextClassName.equals(FunctionConnector_port.class.getName())) && targetClassName.equals(FunctionPort.class.getName()))
 				|| ((contextClassName.equals(HardwarePort.class.getName()) || contextClassName.equals(HardwareConnector_port.class.getName())) && targetClassName.equals(HardwarePin.class.getName()))
 				|| (contextClassName.equals(HardwarePortConnector_port.class.getName()) && targetClassName.equals(HardwarePort.class.getName()))
-				|| (contextClassName.equals(EAEnumerationValue.class.getName()) && targetClassName.equals(EnumerationLiteral.class.getName()))) {
+				|| (contextClassName.equals(EAEnumerationValue.class.getName()) && targetClassName.equals(EnumerationLiteral.class.getName()))
+				|| (contextClassName.equals(DesignFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
+				|| (contextClassName.equals(BasicSoftwareFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
+				|| (contextClassName.equals(AnalysisFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
+				) {
 			EObject rootElement = EcoreUtil2.getRootContainer(context);
 			try {
 				Class targetJavaClass = Class.forName(targetEClass.getInstanceTypeName());

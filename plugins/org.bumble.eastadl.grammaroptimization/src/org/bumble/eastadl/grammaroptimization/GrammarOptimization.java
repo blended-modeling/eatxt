@@ -185,6 +185,52 @@ public class GrammarOptimization {
 		return true;
 	}
 
+	public String removeUnnecessaryKeywords(String strInput) {
+		String strOutput = "";
+		
+		// Split the contents of Xtext file (i.e. string) into lines
+		String lines[] = strInput.split("\r\n|\r|\n");
+		
+		if (lines.length <= 0) {
+			System.err.println("[Error]**********************Failed to split the contents into lines!");
+			return strInput;
+		}
+		
+		// 
+		for (int i = 0; i < lines.length; i++) {
+			// search if BEGIN and END both exist in the same line
+			if (checkExistofString(lines[i], "BEGIN\s(.*)\sEND")) {
+				Pattern pattern = Pattern.compile("BEGIN\s(.*)\sEND");
+				String subStr = getTargetString(lines[i], pattern);
+				
+				if (subStr.isEmpty() || subStr.isBlank()) {
+					continue;
+				}
+				
+				// if there is any tab or whitespace in the head of the line, then keep it
+				int number = getNumberofWhitespaceatHead(lines[i]);
+				String whitespace = "";				
+				
+				if (number > 0) {
+					for (int j = 0; j < number; j++) {
+						whitespace = whitespace + "\s";
+					}
+				}
+				
+				// if it was an optional element, the question symbol should be kept as before
+				if (checkExistofString(lines[i], "END(\\s)*\\)\\?"))
+					subStr = "(" + subStr + ")?";
+
+				lines[i] = whitespace + subStr;
+			}
+			
+			lines[i] += "\r\n";
+			strOutput += lines[i];
+		}
+		
+		return strOutput;
+	}
+	
 	public String allowEmptyElement(String strInput) {
 		String strOutput = "";
 		
@@ -380,23 +426,24 @@ public class GrammarOptimization {
 		strOutput = replaceString(strOutput, strRegexEnd, strReplaceEnd);
 		System.out.println("[Info]*********************************Finish removing keyword EAXML.");
 
-		// 3. Remove BEGIN and END of all members in classes
-
-		// 2. Remove shortName
+		// 3. Remove shortName
 		strOutput = removeShortName(strOutput);
 		System.out.println("[Info]********************Finish removing shortName from every class.");
 
-		// 3. Remove keyword subPackage
+		// 4. Remove keyword subPackage
 		strOutput = replaceString(strOutput, "'subPackage' BEGIN subPackage", "subPackage");
 		strOutput = replaceString(strOutput, "subPackage\\+=EAPackage\\)\\* END", "subPackage+=EAPackage)*");
 		System.out.println("[Info]****************************Finish removing keyword subPackage.");
 
-		// 4. Remove key element
+		// 5. Remove key element
 		strOutput = replaceString(strOutput, "'element' BEGIN element", "element");
 		strOutput = replaceString(strOutput, "element\\+=EAPackageableElement\\)\\*\\sEND",
 				"element+=EAPackageableElement)*");
 		System.out.println("[Info]*******************************Finish removing keyword element.");
-
+		
+		// 6 Remove other unnecessary keywords
+		strOutput = removeUnnecessaryKeywords(strOutput);
+		
 		return strOutput;
 	}
 
@@ -541,6 +588,28 @@ public class GrammarOptimization {
 		}
 
 		return null;
+	}
+	
+	private int getNumberofWhitespaceatHead(String strInput) {
+		int number = 0;
+		
+		if (!strInput.isBlank() && !strInput.isEmpty()) {
+			char[] cInput = strInput.toCharArray();
+			
+			if (cInput.length != 0) {
+				for (int i = 0; i < cInput.length; i++) {
+					if (cInput[i] == '\s')
+						number++;
+					// one tab symbol = four whitespace
+					else if (cInput[i] == '\t')
+						number += 4;
+					else
+						break;
+				}
+			}
+		}
+		
+		return number;
 	}
 
 	/**

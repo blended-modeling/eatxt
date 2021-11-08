@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
-<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="east-adl-simplified" sequenceNumber="1631523401">
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl --><target name="east-adl-simplified" sequenceNumber="1631523401">
   <locations>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.emf.sdk.feature.group" version="2.22.0.v20200519-1135"/>
       <unit id="org.eclipse.xtext.sdk.feature.group" version="2.22.0.v20200602-1533"/>
       <unit id="org.eclipse.e4.rcp.feature.group" version="4.16.0.v20200604-0951"/>
@@ -11,12 +10,12 @@
       <unit id="org.eclipse.sdk.feature.group" version="4.16.0.v20200604-0951"/>
       <repository id="eclipse-2020-06" location="http://download.eclipse.org/releases/2020-06/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.sphinx.emf.validation.feature.group" version="0.11.0.201706140911"/>
       <unit id="org.eclipse.sphinx.emf.serialization.feature.group" version="0.11.0.201706140911"/>
       <repository id="sphinx" location="http://download.eclipse.org/sphinx/releases/0.11.x"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.junit.jupiter.api" version="5.6.0.v20200203-2009"/>
       <unit id="org.junit.jupiter.engine" version="5.6.0.v20200203-2009"/>
       <unit id="io.github.classgraph" version="4.8.35.v20190528-1517"/>
@@ -24,7 +23,7 @@
       <unit id="org.aopalliance" version="1.0.0.v201105210816"/>
       <repository id="eclipse-orbit-2020-06" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20200529191137/repository"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="org.eclipse.lsp4j" version="0.9.0.v20200229-1009"/>
       <unit id="org.eclipse.lsp4j.jsonrpc" version="0.9.0.v20200229-1009"/>
       <repository id="lsp4j" location="https://download.eclipse.org/lsp4j/updates/releases/0.9.0/"/>
