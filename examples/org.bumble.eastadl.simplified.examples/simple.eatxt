@@ -3,137 +3,117 @@ EAPackage Structure_new
 		EAPackage test
 			FunctionClientServerInterface testFuncClientSvInterf
 				name testFuncClientSvInterf
+		EAPackage fsdfs
+			EAPackage fsdfs
+			EAPackage FSDS
 		EAPackage DataTypes_new
 			EABoolean Boolean
-				name sss
-			EANumerical test1020
+			EANumerical test1026
 				name ssss111
 				max 1E+1
 			EANumerical Numerical
 				name sss1
 				max 074
-				min 0x11
+				min 0x1
+			EABoolean fsdfsd
 			EANumerical Integer_uint8
 				name s
 				max 0b11
 				min 0b1
 				unit "Structure_new.DesignPkg_new.test4newtype.testUnit"
-				ownedComment 
-					Comment 
-						body fsd
+				Comment
+					body fsdfds
 			RangeableValueType Real_float64
 				name sss3
 				accuracy 0.1
-				resolution 0.2
+				resolution 2.1
 				baseRangeable "Structure_new.DesignPkg_new.DataTypes_new.Integer_uint8"
 		EAPackage FcnDesignArchitecture_new
 			DesignFunctionType FDAWithController_new
-				part
-					DesignFunctionPrototype wiperCtrlBasic
-						type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.testtype0819"
-					DesignFunctionPrototype wiperCtrlBasic1018
-						type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.testtype0819"
+				DesignFunctionPrototype wiperCtrlBasic
+					type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.testtype0819"
+				DesignFunctionPrototype wiperCtrlBasic1018
+					type "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic"
 			DesignFunctionType testtype0819
-				part
-					DesignFunctionPrototype testprototype0819
-						type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.testtype0819"
+				DesignFunctionPrototype testprototype0819
+					type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.testtype0819"
 		EAPackage FcnDesignPkg_new
 			DesignFunctionType WiperCtrlBasic
-				isElementary true
-				port
-					FunctionFlowPort bWiperParkStatus
-						direction in
-						type "Structure_new.DesignPkg_new.DataTypes_new.Integer_uint8"
+				isElementary false
+				FunctionFlowPort bWiperParkStatus
+					direction in
+					type "Structure_new.DesignPkg_new.DataTypes_new.Integer_uint8"
 			HardwareFunctionType WiperMotorHWF
-				port
-					FunctionFlowPort bWindScreenWiperParkPosition
-						direction out
+				FunctionFlowPort bWindScreenWiperParkPosition
+					direction out
+					type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+					defaultValue EAEnumerationValue
 						type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
-						defaultValue EAEnumerationValue
-							type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
-							value ("Structure_new.DesignPkg_new.test4newtype.testEnumeration.testEnumLiteral")
-					FunctionPowerPort bTestFuncPowerPort
-						type "Structure_new.DesignPkg_new.test4newtype.testCompositeDataType"
-					FunctionFlowPort test1019
-						direction out
-						type "Structure_new.DesignPkg_new.DataTypes_new.Real_float64"
+						value ("Structure_new.DesignPkg_new.test4newtype.testEnumeration.testEnumLiteral")
+				FunctionPowerPort bTestFuncPowerPort
+					type "Structure_new.DesignPkg_new.test4newtype.testCompositeDataType"
+				FunctionFlowPort test1019
+					direction out
+					type "Structure_new.DesignPkg_new.DataTypes_new.Real_float64"
 			DesignFunctionType fsd
 				isElementary false
-				connector
-					FunctionConnector aaa
-						port
-							FunctionConnector_port
-								functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
-							FunctionConnector_port
-								functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
+				FunctionConnector aaa
+					FunctionConnector_port
+						functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
+					FunctionConnector_port
+						functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
 			HardwareComponentType testhwcomptype0819
 				category sss
 			BasicSoftwareFunctionType WiperMotorBSW
 				isElementary true
-				port
-					FunctionClientServerPort testFuncClientSvPort
-						kind client
-						type "Structure_new.DesignPkg_new.test.testFuncClientSvInterf"
+				FunctionClientServerPort testFuncClientSvPort
+					kind client
+					type "Structure_new.DesignPkg_new.test.testFuncClientSvInterf"
 			AnalysisFunctionType testAnalysisFuncType
-				connector
-					FunctionConnector testFuncConn
-						port
-							FunctionConnector_port
-								functionPrototype "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
-								functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperMotorHWF.bWindScreenWiperParkPosition"
-							FunctionConnector_port
-								functionPrototype "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
-								functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
+				FunctionConnector testFuncConn
+					FunctionConnector_port
+						functionPrototype "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
+						functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperMotorHWF.bWindScreenWiperParkPosition"
+					FunctionConnector_port
+						functionPrototype "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
+						functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperMotorHWF.bTestFuncPowerPort"
 			AnalysisFunctionType testAnalysisFuncType_1
-				ownedRelationship
-					Realization testRealization
-						realized
-							Realization_realized
-								identifiable_target "Structure_new.DesignPkg_new.FcnDesignPkg_new.fsd.aaa"
-						realizedBy
-							Realization_realizedBy
-								identifiable_target "Structure_new.DesignLevelWW_new.FcnAllocations.a1"
-				part
-					AnalysisFunctionPrototype testAnalysisFunctionPrototype
-						type "Structure_new.DesignPkg_new.FcnDesignPkg_new.testAnalysisFuncType"
+				Realization testRealization
+					Realization_realized
+						identifiable_target "Structure_new.DesignPkg_new.FcnDesignPkg_new.fsd.aaa"
+					Realization_realizedBy
+						identifiable_target "Structure_new.DesignLevelWW_new.FcnAllocations.a1"
+				AnalysisFunctionPrototype testAnalysisFunctionPrototype
+					type "Structure_new.DesignPkg_new.FcnDesignPkg_new.testAnalysisFuncType"
 		EAPackage HWDesignPkg_new
 			HardwareComponentType VehicleHDA
-				part
-					HardwareComponentPrototype pWiperSubsystem
-						type "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA"
-				portConnector
-					HardwarePortConnector testHardwarePortConnector
-						port
-							HardwarePortConnector_port
-								hardwarePort "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testHardwarePort1"
-							HardwarePortConnector_port
-								hardwarePort "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testHardwarePort1"
-						connector
-							HardwareConnector testHardwareConnector
-								port
-									HardwareConnector_port
-										hardwarePin "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testIOHardwarePin"
-										hardwareComponentPrototype "Structure_new.DesignLevelWW_new.pHDA"
-									HardwareConnector_port
-										hardwarePin "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testIOHardwarePin"
+				HardwareComponentPrototype pWiperSubsystem
+					type "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA"
+				HardwarePortConnector testHardwarePortConnector
+					HardwarePortConnector_port
+						hardwarePort "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testHardwarePort1"
+					HardwarePortConnector_port
+						hardwarePort "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testHardwarePort1"
+					HardwareConnector testHardwareConnector
+						HardwareConnector_port
+							hardwarePin "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testIOHardwarePin"
+							hardwareComponentPrototype "Structure_new.DesignLevelWW_new.pHDA"
+						HardwareConnector_port
+							hardwarePin "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testIOHardwarePin"
 			HardwareComponentType WiperECU 
 				category sss
-				pin
-					IOHardwarePin testIOHardwarePin
-						category ssss
-						kind analog
-				port
-					HardwarePort testHardwarePort1
-						category sss
+				IOHardwarePin testIOHardwarePin
+					category ssss
+					kind analog
+				HardwarePort testHardwarePort1
+					category sss
 			HardwareComponentType WiperSubsystemHDA
-				part
-					HardwareComponentPrototype pECU
-						type "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU"
+				HardwareComponentPrototype pECU
+					type "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU"
 		EAPackage test4newtype
 			CompositeDatatype testCompositeDataType
-				datatypePrototype
-					EADatatypePrototype testEADataTypeProtoType
-						type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+				EADatatypePrototype testEADataTypeProtoType
+					type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
 			Unit testUnit
 				factor 0.1
 				symbol testSymbol
@@ -156,16 +136,13 @@ EAPackage Structure_new
 				baseRangeable "Structure_new.DesignPkg_new.test4newtype.testEANumerical"
 			Enumeration testEnumeration
 				isMultiValued true
-				literal
-					EnumerationLiteral testEnumLiteral
-						name ssss
-					EnumerationLiteral testEnumLiteral1
-						name dddd
+				EnumerationLiteral testEnumLiteral
+				EnumerationLiteral testEnumLiteral1
+					name dddd
 			UserElementType testUserElementType
 				key testKey
-				uaDefinition
-					UserAttributeDefinition testUserAttr
-						type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+				UserAttributeDefinition testUserAttr
+					type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
 			UserAttributedElement testUserAttributedEle
 				uaType ("Structure_new.DesignPkg_new.test4newtype.testUserElementType")
 				attributedElement "Structure_new.DesignPkg_new.test"
@@ -173,25 +150,22 @@ EAPackage Structure_new
 				maxLength 1
 				elementType "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
 	DesignLevel DesignLevelWW_new
-		allocation
-			Allocation FcnAllocations
-				functionAllocation
-					FunctionAllocation a1
-						allocatedElement FunctionAllocation_allocatedElement
-							allocateableElement_context ("Structure_new.DesignLevelWW_new.pFDA")
-							allocateableElement "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
-						target FunctionAllocation_target
-							allocationTarget_context ("Structure_new.DesignPkg_new.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure_new.DesignLevelWW_new.pHDA")
-							allocationTarget "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA.pECU"
-			Allocation FcnAllocation1018
-				functionAllocation
-					FunctionAllocation a1018
-						allocatedElement FunctionAllocation_allocatedElement
-							allocateableElement_context ("Structure_new.DesignLevelWW_new.pFDA", "Structure_new.DesignPkg_new.FcnDesignPkg_new.fsd.aaa")
-							allocateableElement "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic1018"
-						target FunctionAllocation_target
-							allocationTarget_context ("Structure_new.DesignPkg_new.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure_new.DesignLevelWW_new.pHDA")
-							allocationTarget "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA.pECU"
+		Allocation FcnAllocations
+			FunctionAllocation a1
+				allocatedElement FunctionAllocation_allocatedElement
+					allocateableElement_context ("Structure_new.DesignLevelWW_new.pFDA")
+					allocateableElement "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
+				target FunctionAllocation_target
+					allocationTarget_context ("Structure_new.DesignPkg_new.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure_new.DesignLevelWW_new.pHDA")
+					allocationTarget "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA.pECU"
+		Allocation FcnAllocation1018
+			FunctionAllocation a1018
+				allocatedElement FunctionAllocation_allocatedElement
+					allocateableElement_context ("Structure_new.DesignLevelWW_new.pFDA", "Structure_new.DesignPkg_new.FcnDesignPkg_new.fsd.aaa")
+					allocateableElement "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic1018"
+				target FunctionAllocation_target
+					allocationTarget_context ("Structure_new.DesignPkg_new.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure_new.DesignLevelWW_new.pHDA")
+					allocationTarget "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA.pECU"
 		functionalDesignArchitecture DesignFunctionPrototype pFDA
 			type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new"
 		hardwareDesignArchitecture HardwareComponentPrototype pHDA
