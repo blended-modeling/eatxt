@@ -41,6 +41,16 @@ class EastAdlSimplifiedParsingTest {
 	def void loadModel() {
 		readDslText()
 		val result = parseHelper.parse(mydsl)
+//		val result = parseHelper.parse('''
+//		EAPackage fdsd
+//			EAPackage FcnDesignPkg_new
+//				DesignFunctionType WiperCtrlBasic
+//					isElementary false
+//					port
+//						FunctionFlowPort bWiperParkStatus
+//							direction in
+//							type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+//		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
@@ -53,6 +63,16 @@ class EastAdlSimplifiedParsingTest {
  	def testValidModel() {
 		readDslText()
      	val eaxml = parseHelper.parse(mydsl)
+//     	val eaxml = parseHelper.parse('''
+//		EAPackage fdsd
+//			EAPackage FcnDesignPkg_new
+//				DesignFunctionType WiperCtrlBasic
+//					isElementary false
+//					port
+//						FunctionFlowPort bWiperParkStatus
+//							direction in
+//							type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+//		''')
      	validationTestHelper.assertNoIssues(eaxml)
  	}
  	

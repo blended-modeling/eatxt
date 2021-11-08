@@ -1018,13 +1018,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
 		private final Group cGroup_2_5 = (Group)cGroup_2.eContents().get(5);
 		private final Assignment cSubPackageAssignment_2_5_0 = (Assignment)cGroup_2_5.eContents().get(0);
 		private final RuleCall cSubPackageEAPackageParserRuleCall_2_5_0_0 = (RuleCall)cSubPackageAssignment_2_5_0.eContents().get(0);
@@ -1039,14 +1036,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//EAPackage:
 		//	'EAPackage' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? (subPackage+=EAPackage
-		//	subPackage+=EAPackage*)? (element+=EAPackageableElement element+=EAPackageableElement*)?
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? (subPackage+=EAPackage subPackage+=EAPackage*)?
+		//	(element+=EAPackageableElement element+=EAPackageableElement*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EAPackage' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? (subPackage+=EAPackage
-		//subPackage+=EAPackage*)? (element+=EAPackageableElement element+=EAPackageableElement*)? END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)? (subPackage+=EAPackage subPackage+=EAPackage*)?
+		//(element+=EAPackageableElement element+=EAPackageableElement*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EAPackage'
@@ -1058,9 +1055,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? (subPackage+=EAPackage subPackage+=EAPackage*)?
-		//(element+=EAPackageableElement element+=EAPackageableElement*)? END)?
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? (subPackage+=EAPackage subPackage+=EAPackage*)? (element+=EAPackageableElement
+		//element+=EAPackageableElement*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -1102,29 +1099,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
 		//(subPackage+=EAPackage subPackage+=EAPackage*)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
@@ -1294,29 +1282,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_4_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_4_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_4_4 = (Keyword)cGroup_2_4.eContents().get(4);
 		private final Group cGroup_2_5 = (Group)cGroup_2.eContents().get(5);
-		private final Keyword cOwnedCommentKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_5_1 = (RuleCall)cGroup_2_5.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_5_2 = (Assignment)cGroup_2_5.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_2_0 = (RuleCall)cOwnedCommentAssignment_2_5_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_5_3 = (Assignment)cGroup_2_5.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_3_0 = (RuleCall)cOwnedCommentAssignment_2_5_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_5_4 = (RuleCall)cGroup_2_5.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_5_0 = (Assignment)cGroup_2_5.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_0_0 = (RuleCall)cOwnedCommentAssignment_2_5_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_1_0 = (RuleCall)cOwnedCommentAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedRelationshipKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cAllocationKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cAllocationAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cAllocationAllocationParserRuleCall_2_7_2_0 = (RuleCall)cAllocationAssignment_2_7_2.eContents().get(0);
-		private final Assignment cAllocationAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cAllocationAllocationParserRuleCall_2_7_3_0 = (RuleCall)cAllocationAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cAllocationAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cAllocationAllocationParserRuleCall_2_7_0_0 = (RuleCall)cAllocationAssignment_2_7_0.eContents().get(0);
+		private final Assignment cAllocationAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cAllocationAllocationParserRuleCall_2_7_1_0 = (RuleCall)cAllocationAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
 		private final Keyword cFunctionalDesignArchitectureKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
 		private final Assignment cFunctionalDesignArchitectureAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
@@ -1330,9 +1309,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//DesignLevel:
 		//	'DesignLevel' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//	traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//	ownedRelationship+=Relationship* END)? ('allocation' BEGIN allocation+=Allocation allocation+=Allocation* END)?
+		//	traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (allocation+=Allocation allocation+=Allocation*)?
 		//	('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)? ('hardwareDesignArchitecture'
 		//	hardwareDesignArchitecture=HardwareComponentPrototype)?
 		//	END)?;
@@ -1340,9 +1318,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//'DesignLevel' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('allocation' BEGIN allocation+=Allocation allocation+=Allocation* END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (allocation+=Allocation allocation+=Allocation*)?
 		//('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)? ('hardwareDesignArchitecture'
 		//hardwareDesignArchitecture=HardwareComponentPrototype)? END)?
 		public Group getGroup() { return cGroup; }
@@ -1358,10 +1335,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('allocation' BEGIN allocation+=Allocation
-		//allocation+=Allocation* END)? ('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)?
-		//('hardwareDesignArchitecture' hardwareDesignArchitecture=HardwareComponentPrototype)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (allocation+=Allocation allocation+=Allocation*)? ('functionalDesignArchitecture'
+		//functionalDesignArchitecture=DesignFunctionPrototype)? ('hardwareDesignArchitecture'
+		//hardwareDesignArchitecture=HardwareComponentPrototype)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -1434,77 +1411,50 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_4_4() { return cRightParenthesisKeyword_2_4_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_5_0() { return cOwnedCommentKeyword_2_5_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_5_1() { return cBEGINTerminalRuleCall_2_5_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_5_2() { return cOwnedCommentAssignment_2_5_2; }
+		public Assignment getOwnedCommentAssignment_2_5_0() { return cOwnedCommentAssignment_2_5_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_2_0() { return cOwnedCommentCommentParserRuleCall_2_5_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_0_0() { return cOwnedCommentCommentParserRuleCall_2_5_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_5_3() { return cOwnedCommentAssignment_2_5_3; }
+		public Assignment getOwnedCommentAssignment_2_5_1() { return cOwnedCommentAssignment_2_5_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_3_0() { return cOwnedCommentCommentParserRuleCall_2_5_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_1_0() { return cOwnedCommentCommentParserRuleCall_2_5_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_5_4() { return cENDTerminalRuleCall_2_5_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_6_0() { return cOwnedRelationshipKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_6_2() { return cOwnedRelationshipAssignment_2_6_2; }
+		public Assignment getOwnedRelationshipAssignment_2_6_0() { return cOwnedRelationshipAssignment_2_6_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_6_3() { return cOwnedRelationshipAssignment_2_6_3; }
+		public Assignment getOwnedRelationshipAssignment_2_6_1() { return cOwnedRelationshipAssignment_2_6_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('allocation' BEGIN allocation+=Allocation allocation+=Allocation* END)?
+		//(allocation+=Allocation allocation+=Allocation*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'allocation'
-		public Keyword getAllocationKeyword_2_7_0() { return cAllocationKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//allocation+=Allocation
-		public Assignment getAllocationAssignment_2_7_2() { return cAllocationAssignment_2_7_2; }
+		public Assignment getAllocationAssignment_2_7_0() { return cAllocationAssignment_2_7_0; }
 		
 		//Allocation
-		public RuleCall getAllocationAllocationParserRuleCall_2_7_2_0() { return cAllocationAllocationParserRuleCall_2_7_2_0; }
+		public RuleCall getAllocationAllocationParserRuleCall_2_7_0_0() { return cAllocationAllocationParserRuleCall_2_7_0_0; }
 		
 		//allocation+=Allocation*
-		public Assignment getAllocationAssignment_2_7_3() { return cAllocationAssignment_2_7_3; }
+		public Assignment getAllocationAssignment_2_7_1() { return cAllocationAssignment_2_7_1; }
 		
 		//Allocation
-		public RuleCall getAllocationAllocationParserRuleCall_2_7_3_0() { return cAllocationAllocationParserRuleCall_2_7_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
+		public RuleCall getAllocationAllocationParserRuleCall_2_7_1_0() { return cAllocationAllocationParserRuleCall_2_7_1_0; }
 		
 		//('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
@@ -1568,75 +1518,55 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_5_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_5_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_5_4 = (Keyword)cGroup_2_5.eContents().get(4);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedRelationshipKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPortGroupKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPortGroupAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_2_0 = (RuleCall)cPortGroupAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPortGroupAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_3_0 = (RuleCall)cPortGroupAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPortGroupAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_0_0 = (RuleCall)cPortGroupAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPortGroupAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_1_0 = (RuleCall)cPortGroupAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cConnectorKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_2_0 = (RuleCall)cConnectorAssignment_2_9_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_3_0 = (RuleCall)cConnectorAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_0_0 = (RuleCall)cConnectorAssignment_2_9_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_1_0 = (RuleCall)cConnectorAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cPortKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cPortAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_2_0 = (RuleCall)cPortAssignment_2_10_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_3_0 = (RuleCall)cPortAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cPortAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_0_0 = (RuleCall)cPortAssignment_2_10_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_1_0 = (RuleCall)cPortAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPartKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPartAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_2_0 = (RuleCall)cPartAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_3_0 = (RuleCall)cPartAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPartAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
 		
 		//AnalysisFunctionType_Impl AnalysisFunctionType:
 		//	'AnalysisFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=AnalysisFunctionPrototype
-		//	part+=AnalysisFunctionPrototype* END)?
+		//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=AnalysisFunctionPrototype
+		//	part+=AnalysisFunctionPrototype*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AnalysisFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=AnalysisFunctionPrototype
-		//part+=AnalysisFunctionPrototype* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=AnalysisFunctionPrototype
+		//part+=AnalysisFunctionPrototype*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'AnalysisFunctionType'
@@ -1650,11 +1580,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('isElementary'
 		//isElementary=Boolean)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort
-		//port+=FunctionPort* END)? ('part' BEGIN part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)?
+		//(part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -1739,149 +1668,95 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_5_4() { return cRightParenthesisKeyword_2_5_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_7_0() { return cOwnedRelationshipKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_7_2() { return cOwnedRelationshipAssignment_2_7_2; }
+		public Assignment getOwnedRelationshipAssignment_2_7_0() { return cOwnedRelationshipAssignment_2_7_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_7_3() { return cOwnedRelationshipAssignment_2_7_3; }
+		public Assignment getOwnedRelationshipAssignment_2_7_1() { return cOwnedRelationshipAssignment_2_7_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
+		//(portGroup+=PortGroup portGroup+=PortGroup*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'portGroup'
-		public Keyword getPortGroupKeyword_2_8_0() { return cPortGroupKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//portGroup+=PortGroup
-		public Assignment getPortGroupAssignment_2_8_2() { return cPortGroupAssignment_2_8_2; }
+		public Assignment getPortGroupAssignment_2_8_0() { return cPortGroupAssignment_2_8_0; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_2_0() { return cPortGroupPortGroupParserRuleCall_2_8_2_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_0_0() { return cPortGroupPortGroupParserRuleCall_2_8_0_0; }
 		
 		//portGroup+=PortGroup*
-		public Assignment getPortGroupAssignment_2_8_3() { return cPortGroupAssignment_2_8_3; }
+		public Assignment getPortGroupAssignment_2_8_1() { return cPortGroupAssignment_2_8_1; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_3_0() { return cPortGroupPortGroupParserRuleCall_2_8_3_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_1_0() { return cPortGroupPortGroupParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_9_0() { return cConnectorKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//connector+=FunctionConnector
-		public Assignment getConnectorAssignment_2_9_2() { return cConnectorAssignment_2_9_2; }
+		public Assignment getConnectorAssignment_2_9_0() { return cConnectorAssignment_2_9_0; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_2_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_2_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_0_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_0_0; }
 		
 		//connector+=FunctionConnector*
-		public Assignment getConnectorAssignment_2_9_3() { return cConnectorAssignment_2_9_3; }
+		public Assignment getConnectorAssignment_2_9_1() { return cConnectorAssignment_2_9_1; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_3_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_3_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_1_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)?
+		//(port+=FunctionPort port+=FunctionPort*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_10_0() { return cPortKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//port+=FunctionPort
-		public Assignment getPortAssignment_2_10_2() { return cPortAssignment_2_10_2; }
+		public Assignment getPortAssignment_2_10_0() { return cPortAssignment_2_10_0; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_2_0() { return cPortFunctionPortParserRuleCall_2_10_2_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_0_0() { return cPortFunctionPortParserRuleCall_2_10_0_0; }
 		
 		//port+=FunctionPort*
-		public Assignment getPortAssignment_2_10_3() { return cPortAssignment_2_10_3; }
+		public Assignment getPortAssignment_2_10_1() { return cPortAssignment_2_10_1; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_3_0() { return cPortFunctionPortParserRuleCall_2_10_3_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_1_0() { return cPortFunctionPortParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('part' BEGIN part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype* END)?
+		//(part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_11_0() { return cPartKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//part+=AnalysisFunctionPrototype
-		public Assignment getPartAssignment_2_11_2() { return cPartAssignment_2_11_2; }
+		public Assignment getPartAssignment_2_11_0() { return cPartAssignment_2_11_0; }
 		
 		//AnalysisFunctionPrototype
-		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_2_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_2_0; }
+		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_0_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_0_0; }
 		
 		//part+=AnalysisFunctionPrototype*
-		public Assignment getPartAssignment_2_11_3() { return cPartAssignment_2_11_3; }
+		public Assignment getPartAssignment_2_11_1() { return cPartAssignment_2_11_1; }
 		
 		//AnalysisFunctionPrototype
-		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_3_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
+		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
@@ -1921,75 +1796,55 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_5_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_5_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_5_4 = (Keyword)cGroup_2_5.eContents().get(4);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedRelationshipKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPortGroupKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPortGroupAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_2_0 = (RuleCall)cPortGroupAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPortGroupAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_3_0 = (RuleCall)cPortGroupAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPortGroupAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_0_0 = (RuleCall)cPortGroupAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPortGroupAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_1_0 = (RuleCall)cPortGroupAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cConnectorKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_2_0 = (RuleCall)cConnectorAssignment_2_9_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_3_0 = (RuleCall)cConnectorAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_0_0 = (RuleCall)cConnectorAssignment_2_9_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_1_0 = (RuleCall)cConnectorAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cPortKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cPortAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_2_0 = (RuleCall)cPortAssignment_2_10_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_3_0 = (RuleCall)cPortAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cPortAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_0_0 = (RuleCall)cPortAssignment_2_10_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_1_0 = (RuleCall)cPortAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPartKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPartAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_2_0 = (RuleCall)cPartAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_3_0 = (RuleCall)cPartAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPartAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
 		
 		//BasicSoftwareFunctionType:
 		//	'BasicSoftwareFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 		//	('name' name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-		//	part+=DesignFunctionPrototype* END)?
+		//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+		//	part+=DesignFunctionPrototype*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'BasicSoftwareFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-		//part+=DesignFunctionPrototype* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+		//part+=DesignFunctionPrototype*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'BasicSoftwareFunctionType'
@@ -2003,11 +1858,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('isElementary'
 		//isElementary=Boolean)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort
-		//port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)?
+		//(part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -2092,149 +1946,95 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_5_4() { return cRightParenthesisKeyword_2_5_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_7_0() { return cOwnedRelationshipKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_7_2() { return cOwnedRelationshipAssignment_2_7_2; }
+		public Assignment getOwnedRelationshipAssignment_2_7_0() { return cOwnedRelationshipAssignment_2_7_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_7_3() { return cOwnedRelationshipAssignment_2_7_3; }
+		public Assignment getOwnedRelationshipAssignment_2_7_1() { return cOwnedRelationshipAssignment_2_7_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
+		//(portGroup+=PortGroup portGroup+=PortGroup*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'portGroup'
-		public Keyword getPortGroupKeyword_2_8_0() { return cPortGroupKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//portGroup+=PortGroup
-		public Assignment getPortGroupAssignment_2_8_2() { return cPortGroupAssignment_2_8_2; }
+		public Assignment getPortGroupAssignment_2_8_0() { return cPortGroupAssignment_2_8_0; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_2_0() { return cPortGroupPortGroupParserRuleCall_2_8_2_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_0_0() { return cPortGroupPortGroupParserRuleCall_2_8_0_0; }
 		
 		//portGroup+=PortGroup*
-		public Assignment getPortGroupAssignment_2_8_3() { return cPortGroupAssignment_2_8_3; }
+		public Assignment getPortGroupAssignment_2_8_1() { return cPortGroupAssignment_2_8_1; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_3_0() { return cPortGroupPortGroupParserRuleCall_2_8_3_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_1_0() { return cPortGroupPortGroupParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_9_0() { return cConnectorKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//connector+=FunctionConnector
-		public Assignment getConnectorAssignment_2_9_2() { return cConnectorAssignment_2_9_2; }
+		public Assignment getConnectorAssignment_2_9_0() { return cConnectorAssignment_2_9_0; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_2_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_2_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_0_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_0_0; }
 		
 		//connector+=FunctionConnector*
-		public Assignment getConnectorAssignment_2_9_3() { return cConnectorAssignment_2_9_3; }
+		public Assignment getConnectorAssignment_2_9_1() { return cConnectorAssignment_2_9_1; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_3_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_3_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_1_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)?
+		//(port+=FunctionPort port+=FunctionPort*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_10_0() { return cPortKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//port+=FunctionPort
-		public Assignment getPortAssignment_2_10_2() { return cPortAssignment_2_10_2; }
+		public Assignment getPortAssignment_2_10_0() { return cPortAssignment_2_10_0; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_2_0() { return cPortFunctionPortParserRuleCall_2_10_2_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_0_0() { return cPortFunctionPortParserRuleCall_2_10_0_0; }
 		
 		//port+=FunctionPort*
-		public Assignment getPortAssignment_2_10_3() { return cPortAssignment_2_10_3; }
+		public Assignment getPortAssignment_2_10_1() { return cPortAssignment_2_10_1; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_3_0() { return cPortFunctionPortParserRuleCall_2_10_3_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_1_0() { return cPortFunctionPortParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)?
+		//(part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_11_0() { return cPartKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//part+=DesignFunctionPrototype
-		public Assignment getPartAssignment_2_11_2() { return cPartAssignment_2_11_2; }
+		public Assignment getPartAssignment_2_11_0() { return cPartAssignment_2_11_0; }
 		
 		//DesignFunctionPrototype
-		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_2_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_2_0; }
+		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_0_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0; }
 		
 		//part+=DesignFunctionPrototype*
-		public Assignment getPartAssignment_2_11_3() { return cPartAssignment_2_11_3; }
+		public Assignment getPartAssignment_2_11_1() { return cPartAssignment_2_11_1; }
 		
 		//DesignFunctionPrototype
-		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_3_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
+		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
@@ -2274,75 +2074,55 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_5_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_5_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_5_4 = (Keyword)cGroup_2_5.eContents().get(4);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedRelationshipKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPortGroupKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPortGroupAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_2_0 = (RuleCall)cPortGroupAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPortGroupAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_3_0 = (RuleCall)cPortGroupAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPortGroupAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_0_0 = (RuleCall)cPortGroupAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPortGroupAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_1_0 = (RuleCall)cPortGroupAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cConnectorKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_2_0 = (RuleCall)cConnectorAssignment_2_9_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_3_0 = (RuleCall)cConnectorAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_0_0 = (RuleCall)cConnectorAssignment_2_9_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_1_0 = (RuleCall)cConnectorAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cPortKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cPortAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_2_0 = (RuleCall)cPortAssignment_2_10_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_3_0 = (RuleCall)cPortAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cPortAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_0_0 = (RuleCall)cPortAssignment_2_10_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_1_0 = (RuleCall)cPortAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPartKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPartAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_2_0 = (RuleCall)cPartAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_3_0 = (RuleCall)cPartAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPartAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
 		
 		//DesignFunctionType_Impl DesignFunctionType:
 		//	'DesignFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-		//	part+=DesignFunctionPrototype* END)?
+		//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+		//	part+=DesignFunctionPrototype*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DesignFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-		//part+=DesignFunctionPrototype* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+		//part+=DesignFunctionPrototype*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'DesignFunctionType'
@@ -2356,11 +2136,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('isElementary'
 		//isElementary=Boolean)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort
-		//port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)?
+		//(part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -2445,149 +2224,95 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_5_4() { return cRightParenthesisKeyword_2_5_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_7_0() { return cOwnedRelationshipKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_7_2() { return cOwnedRelationshipAssignment_2_7_2; }
+		public Assignment getOwnedRelationshipAssignment_2_7_0() { return cOwnedRelationshipAssignment_2_7_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_7_3() { return cOwnedRelationshipAssignment_2_7_3; }
+		public Assignment getOwnedRelationshipAssignment_2_7_1() { return cOwnedRelationshipAssignment_2_7_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
+		//(portGroup+=PortGroup portGroup+=PortGroup*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'portGroup'
-		public Keyword getPortGroupKeyword_2_8_0() { return cPortGroupKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//portGroup+=PortGroup
-		public Assignment getPortGroupAssignment_2_8_2() { return cPortGroupAssignment_2_8_2; }
+		public Assignment getPortGroupAssignment_2_8_0() { return cPortGroupAssignment_2_8_0; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_2_0() { return cPortGroupPortGroupParserRuleCall_2_8_2_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_0_0() { return cPortGroupPortGroupParserRuleCall_2_8_0_0; }
 		
 		//portGroup+=PortGroup*
-		public Assignment getPortGroupAssignment_2_8_3() { return cPortGroupAssignment_2_8_3; }
+		public Assignment getPortGroupAssignment_2_8_1() { return cPortGroupAssignment_2_8_1; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_3_0() { return cPortGroupPortGroupParserRuleCall_2_8_3_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_1_0() { return cPortGroupPortGroupParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_9_0() { return cConnectorKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//connector+=FunctionConnector
-		public Assignment getConnectorAssignment_2_9_2() { return cConnectorAssignment_2_9_2; }
+		public Assignment getConnectorAssignment_2_9_0() { return cConnectorAssignment_2_9_0; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_2_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_2_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_0_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_0_0; }
 		
 		//connector+=FunctionConnector*
-		public Assignment getConnectorAssignment_2_9_3() { return cConnectorAssignment_2_9_3; }
+		public Assignment getConnectorAssignment_2_9_1() { return cConnectorAssignment_2_9_1; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_3_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_3_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_1_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)?
+		//(port+=FunctionPort port+=FunctionPort*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_10_0() { return cPortKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//port+=FunctionPort
-		public Assignment getPortAssignment_2_10_2() { return cPortAssignment_2_10_2; }
+		public Assignment getPortAssignment_2_10_0() { return cPortAssignment_2_10_0; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_2_0() { return cPortFunctionPortParserRuleCall_2_10_2_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_0_0() { return cPortFunctionPortParserRuleCall_2_10_0_0; }
 		
 		//port+=FunctionPort*
-		public Assignment getPortAssignment_2_10_3() { return cPortAssignment_2_10_3; }
+		public Assignment getPortAssignment_2_10_1() { return cPortAssignment_2_10_1; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_3_0() { return cPortFunctionPortParserRuleCall_2_10_3_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_1_0() { return cPortFunctionPortParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)?
+		//(part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_11_0() { return cPartKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//part+=DesignFunctionPrototype
-		public Assignment getPartAssignment_2_11_2() { return cPartAssignment_2_11_2; }
+		public Assignment getPartAssignment_2_11_0() { return cPartAssignment_2_11_0; }
 		
 		//DesignFunctionPrototype
-		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_2_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_2_0; }
+		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_0_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0; }
 		
 		//part+=DesignFunctionPrototype*
-		public Assignment getPartAssignment_2_11_3() { return cPartAssignment_2_11_3; }
+		public Assignment getPartAssignment_2_11_1() { return cPartAssignment_2_11_1; }
 		
 		//DesignFunctionPrototype
-		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_3_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
+		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
@@ -2627,75 +2352,55 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_5_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_5_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_5_4 = (Keyword)cGroup_2_5.eContents().get(4);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedRelationshipKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPortGroupKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPortGroupAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_2_0 = (RuleCall)cPortGroupAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPortGroupAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_3_0 = (RuleCall)cPortGroupAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPortGroupAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_0_0 = (RuleCall)cPortGroupAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPortGroupAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_1_0 = (RuleCall)cPortGroupAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cConnectorKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_2_0 = (RuleCall)cConnectorAssignment_2_9_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_3_0 = (RuleCall)cConnectorAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_0_0 = (RuleCall)cConnectorAssignment_2_9_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_1_0 = (RuleCall)cConnectorAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cPortKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cPortAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_2_0 = (RuleCall)cPortAssignment_2_10_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_3_0 = (RuleCall)cPortAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cPortAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_0_0 = (RuleCall)cPortAssignment_2_10_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_1_0 = (RuleCall)cPortAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPartKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPartAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_2_0 = (RuleCall)cPartAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_3_0 = (RuleCall)cPartAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPartAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
 		
 		//FunctionalDevice:
 		//	'FunctionalDevice' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=AnalysisFunctionPrototype
-		//	part+=AnalysisFunctionPrototype* END)?
+		//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=AnalysisFunctionPrototype
+		//	part+=AnalysisFunctionPrototype*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionalDevice' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=AnalysisFunctionPrototype
-		//part+=AnalysisFunctionPrototype* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=AnalysisFunctionPrototype
+		//part+=AnalysisFunctionPrototype*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionalDevice'
@@ -2709,11 +2414,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('isElementary'
 		//isElementary=Boolean)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort
-		//port+=FunctionPort* END)? ('part' BEGIN part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)?
+		//(part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -2798,149 +2502,95 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_5_4() { return cRightParenthesisKeyword_2_5_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_7_0() { return cOwnedRelationshipKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_7_2() { return cOwnedRelationshipAssignment_2_7_2; }
+		public Assignment getOwnedRelationshipAssignment_2_7_0() { return cOwnedRelationshipAssignment_2_7_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_7_3() { return cOwnedRelationshipAssignment_2_7_3; }
+		public Assignment getOwnedRelationshipAssignment_2_7_1() { return cOwnedRelationshipAssignment_2_7_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
+		//(portGroup+=PortGroup portGroup+=PortGroup*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'portGroup'
-		public Keyword getPortGroupKeyword_2_8_0() { return cPortGroupKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//portGroup+=PortGroup
-		public Assignment getPortGroupAssignment_2_8_2() { return cPortGroupAssignment_2_8_2; }
+		public Assignment getPortGroupAssignment_2_8_0() { return cPortGroupAssignment_2_8_0; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_2_0() { return cPortGroupPortGroupParserRuleCall_2_8_2_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_0_0() { return cPortGroupPortGroupParserRuleCall_2_8_0_0; }
 		
 		//portGroup+=PortGroup*
-		public Assignment getPortGroupAssignment_2_8_3() { return cPortGroupAssignment_2_8_3; }
+		public Assignment getPortGroupAssignment_2_8_1() { return cPortGroupAssignment_2_8_1; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_3_0() { return cPortGroupPortGroupParserRuleCall_2_8_3_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_1_0() { return cPortGroupPortGroupParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_9_0() { return cConnectorKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//connector+=FunctionConnector
-		public Assignment getConnectorAssignment_2_9_2() { return cConnectorAssignment_2_9_2; }
+		public Assignment getConnectorAssignment_2_9_0() { return cConnectorAssignment_2_9_0; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_2_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_2_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_0_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_0_0; }
 		
 		//connector+=FunctionConnector*
-		public Assignment getConnectorAssignment_2_9_3() { return cConnectorAssignment_2_9_3; }
+		public Assignment getConnectorAssignment_2_9_1() { return cConnectorAssignment_2_9_1; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_3_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_3_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_1_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)?
+		//(port+=FunctionPort port+=FunctionPort*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_10_0() { return cPortKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//port+=FunctionPort
-		public Assignment getPortAssignment_2_10_2() { return cPortAssignment_2_10_2; }
+		public Assignment getPortAssignment_2_10_0() { return cPortAssignment_2_10_0; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_2_0() { return cPortFunctionPortParserRuleCall_2_10_2_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_0_0() { return cPortFunctionPortParserRuleCall_2_10_0_0; }
 		
 		//port+=FunctionPort*
-		public Assignment getPortAssignment_2_10_3() { return cPortAssignment_2_10_3; }
+		public Assignment getPortAssignment_2_10_1() { return cPortAssignment_2_10_1; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_3_0() { return cPortFunctionPortParserRuleCall_2_10_3_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_1_0() { return cPortFunctionPortParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('part' BEGIN part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype* END)?
+		//(part+=AnalysisFunctionPrototype part+=AnalysisFunctionPrototype*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_11_0() { return cPartKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//part+=AnalysisFunctionPrototype
-		public Assignment getPartAssignment_2_11_2() { return cPartAssignment_2_11_2; }
+		public Assignment getPartAssignment_2_11_0() { return cPartAssignment_2_11_0; }
 		
 		//AnalysisFunctionPrototype
-		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_2_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_2_0; }
+		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_0_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_0_0; }
 		
 		//part+=AnalysisFunctionPrototype*
-		public Assignment getPartAssignment_2_11_3() { return cPartAssignment_2_11_3; }
+		public Assignment getPartAssignment_2_11_1() { return cPartAssignment_2_11_1; }
 		
 		//AnalysisFunctionPrototype
-		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_3_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
+		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
@@ -2974,33 +2624,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cUriAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cUriString0ParserRuleCall_2_5_1_0 = (RuleCall)cUriAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOperationKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOperationAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOperationOperationParserRuleCall_2_7_2_0 = (RuleCall)cOperationAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOperationAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOperationOperationParserRuleCall_2_7_3_0 = (RuleCall)cOperationAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOperationAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOperationOperationParserRuleCall_2_7_0_0 = (RuleCall)cOperationAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOperationAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOperationOperationParserRuleCall_2_7_1_0 = (RuleCall)cOperationAssignment_2_7_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
 		
 		//FunctionClientServerInterface:
 		//	'FunctionClientServerInterface' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
-		//	('name' name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)? ('operation' BEGIN operation+=Operation operation+=Operation* END)?
+		//	('name' name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	(operation+=Operation operation+=Operation*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionClientServerInterface' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
-		//('name' name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('operation' BEGIN operation+=Operation operation+=Operation* END)? END)?
+		//('name' name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(operation+=Operation operation+=Operation*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionClientServerInterface'
@@ -3013,8 +2657,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('text' text=String0)? ('uri'
-		//uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('operation' BEGIN
-		//operation+=Operation operation+=Operation* END)? END)?
+		//uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)? (operation+=Operation operation+=Operation*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -3080,53 +2723,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getUriString0ParserRuleCall_2_5_1_0() { return cUriString0ParserRuleCall_2_5_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('operation' BEGIN operation+=Operation operation+=Operation* END)?
+		//(operation+=Operation operation+=Operation*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'operation'
-		public Keyword getOperationKeyword_2_7_0() { return cOperationKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//operation+=Operation
-		public Assignment getOperationAssignment_2_7_2() { return cOperationAssignment_2_7_2; }
+		public Assignment getOperationAssignment_2_7_0() { return cOperationAssignment_2_7_0; }
 		
 		//Operation
-		public RuleCall getOperationOperationParserRuleCall_2_7_2_0() { return cOperationOperationParserRuleCall_2_7_2_0; }
+		public RuleCall getOperationOperationParserRuleCall_2_7_0_0() { return cOperationOperationParserRuleCall_2_7_0_0; }
 		
 		//operation+=Operation*
-		public Assignment getOperationAssignment_2_7_3() { return cOperationAssignment_2_7_3; }
+		public Assignment getOperationAssignment_2_7_1() { return cOperationAssignment_2_7_1; }
 		
 		//Operation
-		public RuleCall getOperationOperationParserRuleCall_2_7_3_0() { return cOperationOperationParserRuleCall_2_7_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
+		public RuleCall getOperationOperationParserRuleCall_2_7_1_0() { return cOperationOperationParserRuleCall_2_7_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_8() { return cENDTerminalRuleCall_2_8; }
@@ -3171,75 +2796,55 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cHardwareComponentHardwareComponentTypeCrossReference_2_6_1_0 = (CrossReference)cHardwareComponentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cHardwareComponentHardwareComponentTypeEStringParserRuleCall_2_6_1_0_1 = (RuleCall)cHardwareComponentHardwareComponentTypeCrossReference_2_6_1_0.eContents().get(1);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedCommentKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_2_0 = (RuleCall)cOwnedCommentAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_3_0 = (RuleCall)cOwnedCommentAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_0_0 = (RuleCall)cOwnedCommentAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_1_0 = (RuleCall)cOwnedCommentAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cOwnedRelationshipKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_8_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_8_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_8_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_8_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_8_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_8_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cPortGroupKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cPortGroupAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_9_2_0 = (RuleCall)cPortGroupAssignment_2_9_2.eContents().get(0);
-		private final Assignment cPortGroupAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_9_3_0 = (RuleCall)cPortGroupAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cPortGroupAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_9_0_0 = (RuleCall)cPortGroupAssignment_2_9_0.eContents().get(0);
+		private final Assignment cPortGroupAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_9_1_0 = (RuleCall)cPortGroupAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cConnectorKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_10_2_0 = (RuleCall)cConnectorAssignment_2_10_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_10_3_0 = (RuleCall)cConnectorAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_10_0_0 = (RuleCall)cConnectorAssignment_2_10_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_10_1_0 = (RuleCall)cConnectorAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPortKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPortAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_11_2_0 = (RuleCall)cPortAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_11_3_0 = (RuleCall)cPortAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPortAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_11_0_0 = (RuleCall)cPortAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_11_1_0 = (RuleCall)cPortAssignment_2_11_1.eContents().get(0);
 		private final Group cGroup_2_12 = (Group)cGroup_2.eContents().get(12);
-		private final Keyword cPartKeyword_2_12_0 = (Keyword)cGroup_2_12.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_12_1 = (RuleCall)cGroup_2_12.eContents().get(1);
-		private final Assignment cPartAssignment_2_12_2 = (Assignment)cGroup_2_12.eContents().get(2);
-		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_12_2_0 = (RuleCall)cPartAssignment_2_12_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_12_3 = (Assignment)cGroup_2_12.eContents().get(3);
-		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_12_3_0 = (RuleCall)cPartAssignment_2_12_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12_4 = (RuleCall)cGroup_2_12.eContents().get(4);
+		private final Assignment cPartAssignment_2_12_0 = (Assignment)cGroup_2_12.eContents().get(0);
+		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_12_0_0 = (RuleCall)cPartAssignment_2_12_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_12_1 = (Assignment)cGroup_2_12.eContents().get(1);
+		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_12_1_0 = (RuleCall)cPartAssignment_2_12_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
 		
 		//HardwareFunctionType:
 		//	'HardwareFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//	')')? ('hardwareComponent' hardwareComponent=[HardwareComponentType|EString])? ('ownedComment' BEGIN
-		//	ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//	ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-		//	('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort
-		//	port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)?
+		//	')')? ('hardwareComponent' hardwareComponent=[HardwareComponentType|EString])? (ownedComment+=Comment
+		//	ownedComment+=Comment*)? (ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup
+		//	portGroup+=PortGroup*)? (connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort
+		//	port+=FunctionPort*)? (part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('hardwareComponent' hardwareComponent=[HardwareComponentType|EString])? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort
-		//port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)? END)?
+		//')')? ('hardwareComponent' hardwareComponent=[HardwareComponentType|EString])? (ownedComment+=Comment
+		//ownedComment+=Comment*)? (ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup
+		//portGroup+=PortGroup*)? (connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort
+		//port+=FunctionPort*)? (part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareFunctionType'
@@ -3254,11 +2859,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('isElementary'
 		//isElementary=Boolean)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
 		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('hardwareComponent'
-		//hardwareComponent=[HardwareComponentType|EString])? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment*
-		//END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup'
-		//BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector
-		//connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN
-		//part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)? END)?
+		//hardwareComponent=[HardwareComponentType|EString])? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)?
+		//(part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -3358,149 +2962,95 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getHardwareComponentHardwareComponentTypeEStringParserRuleCall_2_6_1_0_1() { return cHardwareComponentHardwareComponentTypeEStringParserRuleCall_2_6_1_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_7_0() { return cOwnedCommentKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_7_2() { return cOwnedCommentAssignment_2_7_2; }
+		public Assignment getOwnedCommentAssignment_2_7_0() { return cOwnedCommentAssignment_2_7_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_2_0() { return cOwnedCommentCommentParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_0_0() { return cOwnedCommentCommentParserRuleCall_2_7_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_7_3() { return cOwnedCommentAssignment_2_7_3; }
+		public Assignment getOwnedCommentAssignment_2_7_1() { return cOwnedCommentAssignment_2_7_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_3_0() { return cOwnedCommentCommentParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_1_0() { return cOwnedCommentCommentParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_8_0() { return cOwnedRelationshipKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_8_2() { return cOwnedRelationshipAssignment_2_8_2; }
+		public Assignment getOwnedRelationshipAssignment_2_8_0() { return cOwnedRelationshipAssignment_2_8_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_8_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_8_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_8_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_8_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_8_3() { return cOwnedRelationshipAssignment_2_8_3; }
+		public Assignment getOwnedRelationshipAssignment_2_8_1() { return cOwnedRelationshipAssignment_2_8_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_8_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_8_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_8_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
+		//(portGroup+=PortGroup portGroup+=PortGroup*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'portGroup'
-		public Keyword getPortGroupKeyword_2_9_0() { return cPortGroupKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//portGroup+=PortGroup
-		public Assignment getPortGroupAssignment_2_9_2() { return cPortGroupAssignment_2_9_2; }
+		public Assignment getPortGroupAssignment_2_9_0() { return cPortGroupAssignment_2_9_0; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_9_2_0() { return cPortGroupPortGroupParserRuleCall_2_9_2_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_9_0_0() { return cPortGroupPortGroupParserRuleCall_2_9_0_0; }
 		
 		//portGroup+=PortGroup*
-		public Assignment getPortGroupAssignment_2_9_3() { return cPortGroupAssignment_2_9_3; }
+		public Assignment getPortGroupAssignment_2_9_1() { return cPortGroupAssignment_2_9_1; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_9_3_0() { return cPortGroupPortGroupParserRuleCall_2_9_3_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_9_1_0() { return cPortGroupPortGroupParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_10_0() { return cConnectorKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//connector+=FunctionConnector
-		public Assignment getConnectorAssignment_2_10_2() { return cConnectorAssignment_2_10_2; }
+		public Assignment getConnectorAssignment_2_10_0() { return cConnectorAssignment_2_10_0; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_10_2_0() { return cConnectorFunctionConnectorParserRuleCall_2_10_2_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_10_0_0() { return cConnectorFunctionConnectorParserRuleCall_2_10_0_0; }
 		
 		//connector+=FunctionConnector*
-		public Assignment getConnectorAssignment_2_10_3() { return cConnectorAssignment_2_10_3; }
+		public Assignment getConnectorAssignment_2_10_1() { return cConnectorAssignment_2_10_1; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_10_3_0() { return cConnectorFunctionConnectorParserRuleCall_2_10_3_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_10_1_0() { return cConnectorFunctionConnectorParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)?
+		//(port+=FunctionPort port+=FunctionPort*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_11_0() { return cPortKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//port+=FunctionPort
-		public Assignment getPortAssignment_2_11_2() { return cPortAssignment_2_11_2; }
+		public Assignment getPortAssignment_2_11_0() { return cPortAssignment_2_11_0; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_11_2_0() { return cPortFunctionPortParserRuleCall_2_11_2_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_11_0_0() { return cPortFunctionPortParserRuleCall_2_11_0_0; }
 		
 		//port+=FunctionPort*
-		public Assignment getPortAssignment_2_11_3() { return cPortAssignment_2_11_3; }
+		public Assignment getPortAssignment_2_11_1() { return cPortAssignment_2_11_1; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_11_3_0() { return cPortFunctionPortParserRuleCall_2_11_3_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_11_1_0() { return cPortFunctionPortParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
-		
-		//('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)?
+		//(part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)?
 		public Group getGroup_2_12() { return cGroup_2_12; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_12_0() { return cPartKeyword_2_12_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_12_1() { return cBEGINTerminalRuleCall_2_12_1; }
-		
 		//part+=DesignFunctionPrototype
-		public Assignment getPartAssignment_2_12_2() { return cPartAssignment_2_12_2; }
+		public Assignment getPartAssignment_2_12_0() { return cPartAssignment_2_12_0; }
 		
 		//DesignFunctionPrototype
-		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_12_2_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_12_2_0; }
+		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_12_0_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_12_0_0; }
 		
 		//part+=DesignFunctionPrototype*
-		public Assignment getPartAssignment_2_12_3() { return cPartAssignment_2_12_3; }
+		public Assignment getPartAssignment_2_12_1() { return cPartAssignment_2_12_1; }
 		
 		//DesignFunctionPrototype
-		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_12_3_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_12_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12_4() { return cENDTerminalRuleCall_2_12_4; }
+		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_12_1_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_12_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
@@ -3540,75 +3090,55 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_5_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_5_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_5_4 = (Keyword)cGroup_2_5.eContents().get(4);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedRelationshipKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPortGroupKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPortGroupAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_2_0 = (RuleCall)cPortGroupAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPortGroupAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_3_0 = (RuleCall)cPortGroupAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPortGroupAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_0_0 = (RuleCall)cPortGroupAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPortGroupAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_8_1_0 = (RuleCall)cPortGroupAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cConnectorKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_2_0 = (RuleCall)cConnectorAssignment_2_9_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_3_0 = (RuleCall)cConnectorAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_0_0 = (RuleCall)cConnectorAssignment_2_9_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cConnectorFunctionConnectorParserRuleCall_2_9_1_0 = (RuleCall)cConnectorAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cPortKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cPortAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_2_0 = (RuleCall)cPortAssignment_2_10_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cPortFunctionPortParserRuleCall_2_10_3_0 = (RuleCall)cPortAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cPortAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_0_0 = (RuleCall)cPortAssignment_2_10_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cPortFunctionPortParserRuleCall_2_10_1_0 = (RuleCall)cPortAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPartKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPartAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_2_0 = (RuleCall)cPartAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_3_0 = (RuleCall)cPartAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPartAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
 		
 		//LocalDeviceManager:
 		//	'LocalDeviceManager' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-		//	part+=DesignFunctionPrototype* END)?
+		//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+		//	part+=DesignFunctionPrototype*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'LocalDeviceManager' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-		//portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-		//part+=DesignFunctionPrototype* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+		//connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+		//part+=DesignFunctionPrototype*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'LocalDeviceManager'
@@ -3622,11 +3152,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('isElementary'
 		//isElementary=Boolean)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort
-		//port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)?
+		//(part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -3711,149 +3240,95 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_5_4() { return cRightParenthesisKeyword_2_5_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_7_0() { return cOwnedRelationshipKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_7_2() { return cOwnedRelationshipAssignment_2_7_2; }
+		public Assignment getOwnedRelationshipAssignment_2_7_0() { return cOwnedRelationshipAssignment_2_7_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_7_3() { return cOwnedRelationshipAssignment_2_7_3; }
+		public Assignment getOwnedRelationshipAssignment_2_7_1() { return cOwnedRelationshipAssignment_2_7_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
+		//(portGroup+=PortGroup portGroup+=PortGroup*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'portGroup'
-		public Keyword getPortGroupKeyword_2_8_0() { return cPortGroupKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//portGroup+=PortGroup
-		public Assignment getPortGroupAssignment_2_8_2() { return cPortGroupAssignment_2_8_2; }
+		public Assignment getPortGroupAssignment_2_8_0() { return cPortGroupAssignment_2_8_0; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_2_0() { return cPortGroupPortGroupParserRuleCall_2_8_2_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_0_0() { return cPortGroupPortGroupParserRuleCall_2_8_0_0; }
 		
 		//portGroup+=PortGroup*
-		public Assignment getPortGroupAssignment_2_8_3() { return cPortGroupAssignment_2_8_3; }
+		public Assignment getPortGroupAssignment_2_8_1() { return cPortGroupAssignment_2_8_1; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_3_0() { return cPortGroupPortGroupParserRuleCall_2_8_3_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_8_1_0() { return cPortGroupPortGroupParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
+		//(connector+=FunctionConnector connector+=FunctionConnector*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_9_0() { return cConnectorKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//connector+=FunctionConnector
-		public Assignment getConnectorAssignment_2_9_2() { return cConnectorAssignment_2_9_2; }
+		public Assignment getConnectorAssignment_2_9_0() { return cConnectorAssignment_2_9_0; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_2_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_2_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_0_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_0_0; }
 		
 		//connector+=FunctionConnector*
-		public Assignment getConnectorAssignment_2_9_3() { return cConnectorAssignment_2_9_3; }
+		public Assignment getConnectorAssignment_2_9_1() { return cConnectorAssignment_2_9_1; }
 		
 		//FunctionConnector
-		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_3_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_3_0; }
+		public RuleCall getConnectorFunctionConnectorParserRuleCall_2_9_1_0() { return cConnectorFunctionConnectorParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('port' BEGIN port+=FunctionPort port+=FunctionPort* END)?
+		//(port+=FunctionPort port+=FunctionPort*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_10_0() { return cPortKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//port+=FunctionPort
-		public Assignment getPortAssignment_2_10_2() { return cPortAssignment_2_10_2; }
+		public Assignment getPortAssignment_2_10_0() { return cPortAssignment_2_10_0; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_2_0() { return cPortFunctionPortParserRuleCall_2_10_2_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_0_0() { return cPortFunctionPortParserRuleCall_2_10_0_0; }
 		
 		//port+=FunctionPort*
-		public Assignment getPortAssignment_2_10_3() { return cPortAssignment_2_10_3; }
+		public Assignment getPortAssignment_2_10_1() { return cPortAssignment_2_10_1; }
 		
 		//FunctionPort
-		public RuleCall getPortFunctionPortParserRuleCall_2_10_3_0() { return cPortFunctionPortParserRuleCall_2_10_3_0; }
+		public RuleCall getPortFunctionPortParserRuleCall_2_10_1_0() { return cPortFunctionPortParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)?
+		//(part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_11_0() { return cPartKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//part+=DesignFunctionPrototype
-		public Assignment getPartAssignment_2_11_2() { return cPartAssignment_2_11_2; }
+		public Assignment getPartAssignment_2_11_0() { return cPartAssignment_2_11_0; }
 		
 		//DesignFunctionPrototype
-		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_2_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_2_0; }
+		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_0_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0; }
 		
 		//part+=DesignFunctionPrototype*
-		public Assignment getPartAssignment_2_11_3() { return cPartAssignment_2_11_3; }
+		public Assignment getPartAssignment_2_11_1() { return cPartAssignment_2_11_1; }
 		
 		//DesignFunctionPrototype
-		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_3_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
+		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
@@ -3889,83 +3364,60 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_4_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_4_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_4_4 = (Keyword)cGroup_2_4.eContents().get(4);
 		private final Group cGroup_2_5 = (Group)cGroup_2.eContents().get(5);
-		private final Keyword cOwnedCommentKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_5_1 = (RuleCall)cGroup_2_5.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_5_2 = (Assignment)cGroup_2_5.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_2_0 = (RuleCall)cOwnedCommentAssignment_2_5_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_5_3 = (Assignment)cGroup_2_5.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_3_0 = (RuleCall)cOwnedCommentAssignment_2_5_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_5_4 = (RuleCall)cGroup_2_5.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_5_0 = (Assignment)cGroup_2_5.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_0_0 = (RuleCall)cOwnedCommentAssignment_2_5_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_1_0 = (RuleCall)cOwnedCommentAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedRelationshipKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cPinKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cPinAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_7_2_0 = (RuleCall)cPinAssignment_2_7_2.eContents().get(0);
-		private final Assignment cPinAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_7_3_0 = (RuleCall)cPinAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cPinAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_7_0_0 = (RuleCall)cPinAssignment_2_7_0.eContents().get(0);
+		private final Assignment cPinAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_7_1_0 = (RuleCall)cPinAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPartKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPartAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_2_0 = (RuleCall)cPartAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_3_0 = (RuleCall)cPartAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPartAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_0_0 = (RuleCall)cPartAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_1_0 = (RuleCall)cPartAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cConnectorKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_2_0 = (RuleCall)cConnectorAssignment_2_9_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_3_0 = (RuleCall)cConnectorAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_0_0 = (RuleCall)cConnectorAssignment_2_9_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_1_0 = (RuleCall)cConnectorAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cPortKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cPortAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_10_2_0 = (RuleCall)cPortAssignment_2_10_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_10_3_0 = (RuleCall)cPortAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cPortAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_10_0_0 = (RuleCall)cPortAssignment_2_10_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_10_1_0 = (RuleCall)cPortAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPortConnectorKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPortConnectorAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_2_0 = (RuleCall)cPortConnectorAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPortConnectorAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_3_0 = (RuleCall)cPortConnectorAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPortConnectorAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_0_0 = (RuleCall)cPortConnectorAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPortConnectorAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_1_0 = (RuleCall)cPortConnectorAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
 		
 		//Actuator:
 		//	'Actuator' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//	traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//	ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-		//	part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//	connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//	END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//	traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+		//	(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+		//	connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+		//	portConnector+=PortConnector*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Actuator' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 		//('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-		//part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+		//connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+		//portConnector+=PortConnector*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Actuator'
@@ -3979,11 +3431,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin*
-		//END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+		//part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+		//port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -4056,173 +3507,110 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_4_4() { return cRightParenthesisKeyword_2_4_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_5_0() { return cOwnedCommentKeyword_2_5_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_5_1() { return cBEGINTerminalRuleCall_2_5_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_5_2() { return cOwnedCommentAssignment_2_5_2; }
+		public Assignment getOwnedCommentAssignment_2_5_0() { return cOwnedCommentAssignment_2_5_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_2_0() { return cOwnedCommentCommentParserRuleCall_2_5_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_0_0() { return cOwnedCommentCommentParserRuleCall_2_5_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_5_3() { return cOwnedCommentAssignment_2_5_3; }
+		public Assignment getOwnedCommentAssignment_2_5_1() { return cOwnedCommentAssignment_2_5_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_3_0() { return cOwnedCommentCommentParserRuleCall_2_5_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_1_0() { return cOwnedCommentCommentParserRuleCall_2_5_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_5_4() { return cENDTerminalRuleCall_2_5_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_6_0() { return cOwnedRelationshipKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_6_2() { return cOwnedRelationshipAssignment_2_6_2; }
+		public Assignment getOwnedRelationshipAssignment_2_6_0() { return cOwnedRelationshipAssignment_2_6_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_6_3() { return cOwnedRelationshipAssignment_2_6_3; }
+		public Assignment getOwnedRelationshipAssignment_2_6_1() { return cOwnedRelationshipAssignment_2_6_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)?
+		//(pin+=HardwarePin pin+=HardwarePin*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'pin'
-		public Keyword getPinKeyword_2_7_0() { return cPinKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//pin+=HardwarePin
-		public Assignment getPinAssignment_2_7_2() { return cPinAssignment_2_7_2; }
+		public Assignment getPinAssignment_2_7_0() { return cPinAssignment_2_7_0; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_7_2_0() { return cPinHardwarePinParserRuleCall_2_7_2_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_7_0_0() { return cPinHardwarePinParserRuleCall_2_7_0_0; }
 		
 		//pin+=HardwarePin*
-		public Assignment getPinAssignment_2_7_3() { return cPinAssignment_2_7_3; }
+		public Assignment getPinAssignment_2_7_1() { return cPinAssignment_2_7_1; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_7_3_0() { return cPinHardwarePinParserRuleCall_2_7_3_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_7_1_0() { return cPinHardwarePinParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_8_0() { return cPartKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//part+=HardwareComponentPrototype
-		public Assignment getPartAssignment_2_8_2() { return cPartAssignment_2_8_2; }
+		public Assignment getPartAssignment_2_8_0() { return cPartAssignment_2_8_0; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_2_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_2_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_0_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_0_0; }
 		
 		//part+=HardwareComponentPrototype*
-		public Assignment getPartAssignment_2_8_3() { return cPartAssignment_2_8_3; }
+		public Assignment getPartAssignment_2_8_1() { return cPartAssignment_2_8_1; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_3_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_3_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_1_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)?
+		//(connector+=HardwareConnector connector+=HardwareConnector*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_9_0() { return cConnectorKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//connector+=HardwareConnector
-		public Assignment getConnectorAssignment_2_9_2() { return cConnectorAssignment_2_9_2; }
+		public Assignment getConnectorAssignment_2_9_0() { return cConnectorAssignment_2_9_0; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_2_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_2_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_0_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_0_0; }
 		
 		//connector+=HardwareConnector*
-		public Assignment getConnectorAssignment_2_9_3() { return cConnectorAssignment_2_9_3; }
+		public Assignment getConnectorAssignment_2_9_1() { return cConnectorAssignment_2_9_1; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_3_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_3_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_1_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('port' BEGIN port+=HardwarePort port+=HardwarePort* END)?
+		//(port+=HardwarePort port+=HardwarePort*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_10_0() { return cPortKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//port+=HardwarePort
-		public Assignment getPortAssignment_2_10_2() { return cPortAssignment_2_10_2; }
+		public Assignment getPortAssignment_2_10_0() { return cPortAssignment_2_10_0; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_10_2_0() { return cPortHardwarePortParserRuleCall_2_10_2_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_10_0_0() { return cPortHardwarePortParserRuleCall_2_10_0_0; }
 		
 		//port+=HardwarePort*
-		public Assignment getPortAssignment_2_10_3() { return cPortAssignment_2_10_3; }
+		public Assignment getPortAssignment_2_10_1() { return cPortAssignment_2_10_1; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_10_3_0() { return cPortHardwarePortParserRuleCall_2_10_3_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_10_1_0() { return cPortHardwarePortParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//(portConnector+=PortConnector portConnector+=PortConnector*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'portConnector'
-		public Keyword getPortConnectorKeyword_2_11_0() { return cPortConnectorKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//portConnector+=PortConnector
-		public Assignment getPortConnectorAssignment_2_11_2() { return cPortConnectorAssignment_2_11_2; }
+		public Assignment getPortConnectorAssignment_2_11_0() { return cPortConnectorAssignment_2_11_0; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_2_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_2_0; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_0_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_0_0; }
 		
 		//portConnector+=PortConnector*
-		public Assignment getPortConnectorAssignment_2_11_3() { return cPortConnectorAssignment_2_11_3; }
+		public Assignment getPortConnectorAssignment_2_11_1() { return cPortConnectorAssignment_2_11_1; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_3_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
@@ -4262,83 +3650,60 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_5_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_5_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_5_4 = (Keyword)cGroup_2_5.eContents().get(4);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedRelationshipKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPinKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPinAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_8_2_0 = (RuleCall)cPinAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPinAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_8_3_0 = (RuleCall)cPinAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPinAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_8_0_0 = (RuleCall)cPinAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPinAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_8_1_0 = (RuleCall)cPinAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cPartKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cPartAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_9_2_0 = (RuleCall)cPartAssignment_2_9_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_9_3_0 = (RuleCall)cPartAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cPartAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_9_0_0 = (RuleCall)cPartAssignment_2_9_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_9_1_0 = (RuleCall)cPartAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cConnectorKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_2_0 = (RuleCall)cConnectorAssignment_2_10_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_3_0 = (RuleCall)cConnectorAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_0_0 = (RuleCall)cConnectorAssignment_2_10_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_1_0 = (RuleCall)cConnectorAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPortKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPortAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_11_2_0 = (RuleCall)cPortAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_11_3_0 = (RuleCall)cPortAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPortAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_11_0_0 = (RuleCall)cPortAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_11_1_0 = (RuleCall)cPortAssignment_2_11_1.eContents().get(0);
 		private final Group cGroup_2_12 = (Group)cGroup_2.eContents().get(12);
-		private final Keyword cPortConnectorKeyword_2_12_0 = (Keyword)cGroup_2_12.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_12_1 = (RuleCall)cGroup_2_12.eContents().get(1);
-		private final Assignment cPortConnectorAssignment_2_12_2 = (Assignment)cGroup_2_12.eContents().get(2);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_2_0 = (RuleCall)cPortConnectorAssignment_2_12_2.eContents().get(0);
-		private final Assignment cPortConnectorAssignment_2_12_3 = (Assignment)cGroup_2_12.eContents().get(3);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_3_0 = (RuleCall)cPortConnectorAssignment_2_12_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12_4 = (RuleCall)cGroup_2_12.eContents().get(4);
+		private final Assignment cPortConnectorAssignment_2_12_0 = (Assignment)cGroup_2_12.eContents().get(0);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_0_0 = (RuleCall)cPortConnectorAssignment_2_12_0.eContents().get(0);
+		private final Assignment cPortConnectorAssignment_2_12_1 = (Assignment)cGroup_2_12.eContents().get(1);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_1_0 = (RuleCall)cPortConnectorAssignment_2_12_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
 		
 		//ElectricalComponent:
 		//	'ElectricalComponent' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('isActive' isActive=Boolean)? ('traceableSpecification' '('
 		//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin
-		//	pin+=HardwarePin* END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
-		//	('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort
-		//	port+=HardwarePort* END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//	ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+		//	part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+		//	port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ElectricalComponent' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('isActive' isActive=Boolean)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin*
-		//END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+		//part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+		//port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'ElectricalComponent'
@@ -4352,12 +3717,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('isActive' isActive=Boolean)?
 		//('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-		//part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+		//connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+		//portConnector+=PortConnector*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -4442,173 +3806,110 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_5_4() { return cRightParenthesisKeyword_2_5_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_7_0() { return cOwnedRelationshipKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_7_2() { return cOwnedRelationshipAssignment_2_7_2; }
+		public Assignment getOwnedRelationshipAssignment_2_7_0() { return cOwnedRelationshipAssignment_2_7_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_7_3() { return cOwnedRelationshipAssignment_2_7_3; }
+		public Assignment getOwnedRelationshipAssignment_2_7_1() { return cOwnedRelationshipAssignment_2_7_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)?
+		//(pin+=HardwarePin pin+=HardwarePin*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'pin'
-		public Keyword getPinKeyword_2_8_0() { return cPinKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//pin+=HardwarePin
-		public Assignment getPinAssignment_2_8_2() { return cPinAssignment_2_8_2; }
+		public Assignment getPinAssignment_2_8_0() { return cPinAssignment_2_8_0; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_8_2_0() { return cPinHardwarePinParserRuleCall_2_8_2_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_8_0_0() { return cPinHardwarePinParserRuleCall_2_8_0_0; }
 		
 		//pin+=HardwarePin*
-		public Assignment getPinAssignment_2_8_3() { return cPinAssignment_2_8_3; }
+		public Assignment getPinAssignment_2_8_1() { return cPinAssignment_2_8_1; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_8_3_0() { return cPinHardwarePinParserRuleCall_2_8_3_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_8_1_0() { return cPinHardwarePinParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_9_0() { return cPartKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//part+=HardwareComponentPrototype
-		public Assignment getPartAssignment_2_9_2() { return cPartAssignment_2_9_2; }
+		public Assignment getPartAssignment_2_9_0() { return cPartAssignment_2_9_0; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_9_2_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_9_2_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_9_0_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_9_0_0; }
 		
 		//part+=HardwareComponentPrototype*
-		public Assignment getPartAssignment_2_9_3() { return cPartAssignment_2_9_3; }
+		public Assignment getPartAssignment_2_9_1() { return cPartAssignment_2_9_1; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_9_3_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_9_3_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_9_1_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)?
+		//(connector+=HardwareConnector connector+=HardwareConnector*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_10_0() { return cConnectorKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//connector+=HardwareConnector
-		public Assignment getConnectorAssignment_2_10_2() { return cConnectorAssignment_2_10_2; }
+		public Assignment getConnectorAssignment_2_10_0() { return cConnectorAssignment_2_10_0; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_2_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_2_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_0_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_0_0; }
 		
 		//connector+=HardwareConnector*
-		public Assignment getConnectorAssignment_2_10_3() { return cConnectorAssignment_2_10_3; }
+		public Assignment getConnectorAssignment_2_10_1() { return cConnectorAssignment_2_10_1; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_3_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_3_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_1_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('port' BEGIN port+=HardwarePort port+=HardwarePort* END)?
+		//(port+=HardwarePort port+=HardwarePort*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_11_0() { return cPortKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//port+=HardwarePort
-		public Assignment getPortAssignment_2_11_2() { return cPortAssignment_2_11_2; }
+		public Assignment getPortAssignment_2_11_0() { return cPortAssignment_2_11_0; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_11_2_0() { return cPortHardwarePortParserRuleCall_2_11_2_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_11_0_0() { return cPortHardwarePortParserRuleCall_2_11_0_0; }
 		
 		//port+=HardwarePort*
-		public Assignment getPortAssignment_2_11_3() { return cPortAssignment_2_11_3; }
+		public Assignment getPortAssignment_2_11_1() { return cPortAssignment_2_11_1; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_11_3_0() { return cPortHardwarePortParserRuleCall_2_11_3_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_11_1_0() { return cPortHardwarePortParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
-		
-		//('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//(portConnector+=PortConnector portConnector+=PortConnector*)?
 		public Group getGroup_2_12() { return cGroup_2_12; }
 		
-		//'portConnector'
-		public Keyword getPortConnectorKeyword_2_12_0() { return cPortConnectorKeyword_2_12_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_12_1() { return cBEGINTerminalRuleCall_2_12_1; }
-		
 		//portConnector+=PortConnector
-		public Assignment getPortConnectorAssignment_2_12_2() { return cPortConnectorAssignment_2_12_2; }
+		public Assignment getPortConnectorAssignment_2_12_0() { return cPortConnectorAssignment_2_12_0; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_2_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_2_0; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_0_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_0_0; }
 		
 		//portConnector+=PortConnector*
-		public Assignment getPortConnectorAssignment_2_12_3() { return cPortConnectorAssignment_2_12_3; }
+		public Assignment getPortConnectorAssignment_2_12_1() { return cPortConnectorAssignment_2_12_1; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_3_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12_4() { return cENDTerminalRuleCall_2_12_4; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
@@ -4644,83 +3945,60 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_4_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_4_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_4_4 = (Keyword)cGroup_2_4.eContents().get(4);
 		private final Group cGroup_2_5 = (Group)cGroup_2.eContents().get(5);
-		private final Keyword cOwnedCommentKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_5_1 = (RuleCall)cGroup_2_5.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_5_2 = (Assignment)cGroup_2_5.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_2_0 = (RuleCall)cOwnedCommentAssignment_2_5_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_5_3 = (Assignment)cGroup_2_5.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_3_0 = (RuleCall)cOwnedCommentAssignment_2_5_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_5_4 = (RuleCall)cGroup_2_5.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_5_0 = (Assignment)cGroup_2_5.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_0_0 = (RuleCall)cOwnedCommentAssignment_2_5_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_1_0 = (RuleCall)cOwnedCommentAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedRelationshipKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cPinKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cPinAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_7_2_0 = (RuleCall)cPinAssignment_2_7_2.eContents().get(0);
-		private final Assignment cPinAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_7_3_0 = (RuleCall)cPinAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cPinAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_7_0_0 = (RuleCall)cPinAssignment_2_7_0.eContents().get(0);
+		private final Assignment cPinAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_7_1_0 = (RuleCall)cPinAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPartKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPartAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_2_0 = (RuleCall)cPartAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_3_0 = (RuleCall)cPartAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPartAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_0_0 = (RuleCall)cPartAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_1_0 = (RuleCall)cPartAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cConnectorKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_2_0 = (RuleCall)cConnectorAssignment_2_9_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_3_0 = (RuleCall)cConnectorAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_0_0 = (RuleCall)cConnectorAssignment_2_9_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_1_0 = (RuleCall)cConnectorAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cPortKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cPortAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_10_2_0 = (RuleCall)cPortAssignment_2_10_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_10_3_0 = (RuleCall)cPortAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cPortAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_10_0_0 = (RuleCall)cPortAssignment_2_10_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_10_1_0 = (RuleCall)cPortAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPortConnectorKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPortConnectorAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_2_0 = (RuleCall)cPortConnectorAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPortConnectorAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_3_0 = (RuleCall)cPortConnectorAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPortConnectorAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_0_0 = (RuleCall)cPortConnectorAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPortConnectorAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_1_0 = (RuleCall)cPortConnectorAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
 		
 		//HardwareComponentType_Impl HardwareComponentType:
 		//	'HardwareComponentType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//	traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//	ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-		//	part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//	connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//	END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//	traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+		//	(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+		//	connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+		//	portConnector+=PortConnector*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareComponentType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-		//part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+		//connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+		//portConnector+=PortConnector*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareComponentType'
@@ -4734,11 +4012,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin*
-		//END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+		//part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+		//port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -4811,173 +4088,110 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_4_4() { return cRightParenthesisKeyword_2_4_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_5_0() { return cOwnedCommentKeyword_2_5_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_5_1() { return cBEGINTerminalRuleCall_2_5_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_5_2() { return cOwnedCommentAssignment_2_5_2; }
+		public Assignment getOwnedCommentAssignment_2_5_0() { return cOwnedCommentAssignment_2_5_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_2_0() { return cOwnedCommentCommentParserRuleCall_2_5_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_0_0() { return cOwnedCommentCommentParserRuleCall_2_5_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_5_3() { return cOwnedCommentAssignment_2_5_3; }
+		public Assignment getOwnedCommentAssignment_2_5_1() { return cOwnedCommentAssignment_2_5_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_3_0() { return cOwnedCommentCommentParserRuleCall_2_5_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_1_0() { return cOwnedCommentCommentParserRuleCall_2_5_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_5_4() { return cENDTerminalRuleCall_2_5_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_6_0() { return cOwnedRelationshipKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_6_2() { return cOwnedRelationshipAssignment_2_6_2; }
+		public Assignment getOwnedRelationshipAssignment_2_6_0() { return cOwnedRelationshipAssignment_2_6_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_6_3() { return cOwnedRelationshipAssignment_2_6_3; }
+		public Assignment getOwnedRelationshipAssignment_2_6_1() { return cOwnedRelationshipAssignment_2_6_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)?
+		//(pin+=HardwarePin pin+=HardwarePin*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'pin'
-		public Keyword getPinKeyword_2_7_0() { return cPinKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//pin+=HardwarePin
-		public Assignment getPinAssignment_2_7_2() { return cPinAssignment_2_7_2; }
+		public Assignment getPinAssignment_2_7_0() { return cPinAssignment_2_7_0; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_7_2_0() { return cPinHardwarePinParserRuleCall_2_7_2_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_7_0_0() { return cPinHardwarePinParserRuleCall_2_7_0_0; }
 		
 		//pin+=HardwarePin*
-		public Assignment getPinAssignment_2_7_3() { return cPinAssignment_2_7_3; }
+		public Assignment getPinAssignment_2_7_1() { return cPinAssignment_2_7_1; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_7_3_0() { return cPinHardwarePinParserRuleCall_2_7_3_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_7_1_0() { return cPinHardwarePinParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_8_0() { return cPartKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//part+=HardwareComponentPrototype
-		public Assignment getPartAssignment_2_8_2() { return cPartAssignment_2_8_2; }
+		public Assignment getPartAssignment_2_8_0() { return cPartAssignment_2_8_0; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_2_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_2_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_0_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_0_0; }
 		
 		//part+=HardwareComponentPrototype*
-		public Assignment getPartAssignment_2_8_3() { return cPartAssignment_2_8_3; }
+		public Assignment getPartAssignment_2_8_1() { return cPartAssignment_2_8_1; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_3_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_3_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_1_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)?
+		//(connector+=HardwareConnector connector+=HardwareConnector*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_9_0() { return cConnectorKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//connector+=HardwareConnector
-		public Assignment getConnectorAssignment_2_9_2() { return cConnectorAssignment_2_9_2; }
+		public Assignment getConnectorAssignment_2_9_0() { return cConnectorAssignment_2_9_0; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_2_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_2_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_0_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_0_0; }
 		
 		//connector+=HardwareConnector*
-		public Assignment getConnectorAssignment_2_9_3() { return cConnectorAssignment_2_9_3; }
+		public Assignment getConnectorAssignment_2_9_1() { return cConnectorAssignment_2_9_1; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_3_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_3_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_1_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('port' BEGIN port+=HardwarePort port+=HardwarePort* END)?
+		//(port+=HardwarePort port+=HardwarePort*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_10_0() { return cPortKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//port+=HardwarePort
-		public Assignment getPortAssignment_2_10_2() { return cPortAssignment_2_10_2; }
+		public Assignment getPortAssignment_2_10_0() { return cPortAssignment_2_10_0; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_10_2_0() { return cPortHardwarePortParserRuleCall_2_10_2_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_10_0_0() { return cPortHardwarePortParserRuleCall_2_10_0_0; }
 		
 		//port+=HardwarePort*
-		public Assignment getPortAssignment_2_10_3() { return cPortAssignment_2_10_3; }
+		public Assignment getPortAssignment_2_10_1() { return cPortAssignment_2_10_1; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_10_3_0() { return cPortHardwarePortParserRuleCall_2_10_3_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_10_1_0() { return cPortHardwarePortParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//(portConnector+=PortConnector portConnector+=PortConnector*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'portConnector'
-		public Keyword getPortConnectorKeyword_2_11_0() { return cPortConnectorKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//portConnector+=PortConnector
-		public Assignment getPortConnectorAssignment_2_11_2() { return cPortConnectorAssignment_2_11_2; }
+		public Assignment getPortConnectorAssignment_2_11_0() { return cPortConnectorAssignment_2_11_0; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_2_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_2_0; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_0_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_0_0; }
 		
 		//portConnector+=PortConnector*
-		public Assignment getPortConnectorAssignment_2_11_3() { return cPortConnectorAssignment_2_11_3; }
+		public Assignment getPortConnectorAssignment_2_11_1() { return cPortConnectorAssignment_2_11_1; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_3_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
@@ -5017,83 +4231,60 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_5_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_5_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_5_4 = (Keyword)cGroup_2_5.eContents().get(4);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedRelationshipKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPinKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPinAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_8_2_0 = (RuleCall)cPinAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPinAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_8_3_0 = (RuleCall)cPinAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPinAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_8_0_0 = (RuleCall)cPinAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPinAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_8_1_0 = (RuleCall)cPinAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cPartKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cPartAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_9_2_0 = (RuleCall)cPartAssignment_2_9_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_9_3_0 = (RuleCall)cPartAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cPartAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_9_0_0 = (RuleCall)cPartAssignment_2_9_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_9_1_0 = (RuleCall)cPartAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cConnectorKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_2_0 = (RuleCall)cConnectorAssignment_2_10_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_3_0 = (RuleCall)cConnectorAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_0_0 = (RuleCall)cConnectorAssignment_2_10_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_1_0 = (RuleCall)cConnectorAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPortKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPortAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_11_2_0 = (RuleCall)cPortAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_11_3_0 = (RuleCall)cPortAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPortAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_11_0_0 = (RuleCall)cPortAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_11_1_0 = (RuleCall)cPortAssignment_2_11_1.eContents().get(0);
 		private final Group cGroup_2_12 = (Group)cGroup_2.eContents().get(12);
-		private final Keyword cPortConnectorKeyword_2_12_0 = (Keyword)cGroup_2_12.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_12_1 = (RuleCall)cGroup_2_12.eContents().get(1);
-		private final Assignment cPortConnectorAssignment_2_12_2 = (Assignment)cGroup_2_12.eContents().get(2);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_2_0 = (RuleCall)cPortConnectorAssignment_2_12_2.eContents().get(0);
-		private final Assignment cPortConnectorAssignment_2_12_3 = (Assignment)cGroup_2_12.eContents().get(3);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_3_0 = (RuleCall)cPortConnectorAssignment_2_12_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12_4 = (RuleCall)cGroup_2_12.eContents().get(4);
+		private final Assignment cPortConnectorAssignment_2_12_0 = (Assignment)cGroup_2_12.eContents().get(0);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_0_0 = (RuleCall)cPortConnectorAssignment_2_12_0.eContents().get(0);
+		private final Assignment cPortConnectorAssignment_2_12_1 = (Assignment)cGroup_2_12.eContents().get(1);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_1_0 = (RuleCall)cPortConnectorAssignment_2_12_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
 		
 		//Node:
 		//	'Node' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 		//	('executionRate' executionRate=Float)? ('traceableSpecification' '('
 		//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin
-		//	pin+=HardwarePin* END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
-		//	('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort
-		//	port+=HardwarePort* END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//	ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+		//	part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+		//	port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Node' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 		//('executionRate' executionRate=Float)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin*
-		//END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+		//part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+		//port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Node'
@@ -5107,12 +4298,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('executionRate'
 		//executionRate=Float)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-		//part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+		//connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+		//portConnector+=PortConnector*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -5197,173 +4387,110 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_5_4() { return cRightParenthesisKeyword_2_5_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_7_0() { return cOwnedRelationshipKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_7_2() { return cOwnedRelationshipAssignment_2_7_2; }
+		public Assignment getOwnedRelationshipAssignment_2_7_0() { return cOwnedRelationshipAssignment_2_7_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_7_3() { return cOwnedRelationshipAssignment_2_7_3; }
+		public Assignment getOwnedRelationshipAssignment_2_7_1() { return cOwnedRelationshipAssignment_2_7_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_7_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)?
+		//(pin+=HardwarePin pin+=HardwarePin*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'pin'
-		public Keyword getPinKeyword_2_8_0() { return cPinKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//pin+=HardwarePin
-		public Assignment getPinAssignment_2_8_2() { return cPinAssignment_2_8_2; }
+		public Assignment getPinAssignment_2_8_0() { return cPinAssignment_2_8_0; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_8_2_0() { return cPinHardwarePinParserRuleCall_2_8_2_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_8_0_0() { return cPinHardwarePinParserRuleCall_2_8_0_0; }
 		
 		//pin+=HardwarePin*
-		public Assignment getPinAssignment_2_8_3() { return cPinAssignment_2_8_3; }
+		public Assignment getPinAssignment_2_8_1() { return cPinAssignment_2_8_1; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_8_3_0() { return cPinHardwarePinParserRuleCall_2_8_3_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_8_1_0() { return cPinHardwarePinParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_9_0() { return cPartKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//part+=HardwareComponentPrototype
-		public Assignment getPartAssignment_2_9_2() { return cPartAssignment_2_9_2; }
+		public Assignment getPartAssignment_2_9_0() { return cPartAssignment_2_9_0; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_9_2_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_9_2_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_9_0_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_9_0_0; }
 		
 		//part+=HardwareComponentPrototype*
-		public Assignment getPartAssignment_2_9_3() { return cPartAssignment_2_9_3; }
+		public Assignment getPartAssignment_2_9_1() { return cPartAssignment_2_9_1; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_9_3_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_9_3_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_9_1_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)?
+		//(connector+=HardwareConnector connector+=HardwareConnector*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_10_0() { return cConnectorKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//connector+=HardwareConnector
-		public Assignment getConnectorAssignment_2_10_2() { return cConnectorAssignment_2_10_2; }
+		public Assignment getConnectorAssignment_2_10_0() { return cConnectorAssignment_2_10_0; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_2_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_2_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_0_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_0_0; }
 		
 		//connector+=HardwareConnector*
-		public Assignment getConnectorAssignment_2_10_3() { return cConnectorAssignment_2_10_3; }
+		public Assignment getConnectorAssignment_2_10_1() { return cConnectorAssignment_2_10_1; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_3_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_3_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_1_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('port' BEGIN port+=HardwarePort port+=HardwarePort* END)?
+		//(port+=HardwarePort port+=HardwarePort*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_11_0() { return cPortKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//port+=HardwarePort
-		public Assignment getPortAssignment_2_11_2() { return cPortAssignment_2_11_2; }
+		public Assignment getPortAssignment_2_11_0() { return cPortAssignment_2_11_0; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_11_2_0() { return cPortHardwarePortParserRuleCall_2_11_2_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_11_0_0() { return cPortHardwarePortParserRuleCall_2_11_0_0; }
 		
 		//port+=HardwarePort*
-		public Assignment getPortAssignment_2_11_3() { return cPortAssignment_2_11_3; }
+		public Assignment getPortAssignment_2_11_1() { return cPortAssignment_2_11_1; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_11_3_0() { return cPortHardwarePortParserRuleCall_2_11_3_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_11_1_0() { return cPortHardwarePortParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
-		
-		//('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//(portConnector+=PortConnector portConnector+=PortConnector*)?
 		public Group getGroup_2_12() { return cGroup_2_12; }
 		
-		//'portConnector'
-		public Keyword getPortConnectorKeyword_2_12_0() { return cPortConnectorKeyword_2_12_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_12_1() { return cBEGINTerminalRuleCall_2_12_1; }
-		
 		//portConnector+=PortConnector
-		public Assignment getPortConnectorAssignment_2_12_2() { return cPortConnectorAssignment_2_12_2; }
+		public Assignment getPortConnectorAssignment_2_12_0() { return cPortConnectorAssignment_2_12_0; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_2_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_2_0; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_0_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_0_0; }
 		
 		//portConnector+=PortConnector*
-		public Assignment getPortConnectorAssignment_2_12_3() { return cPortConnectorAssignment_2_12_3; }
+		public Assignment getPortConnectorAssignment_2_12_1() { return cPortConnectorAssignment_2_12_1; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_3_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12_4() { return cENDTerminalRuleCall_2_12_4; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
@@ -5399,83 +4526,60 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cTraceableSpecificationTraceableSpecificationEStringParserRuleCall_2_4_3_0_1 = (RuleCall)cTraceableSpecificationTraceableSpecificationCrossReference_2_4_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_4_4 = (Keyword)cGroup_2_4.eContents().get(4);
 		private final Group cGroup_2_5 = (Group)cGroup_2.eContents().get(5);
-		private final Keyword cOwnedCommentKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_5_1 = (RuleCall)cGroup_2_5.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_5_2 = (Assignment)cGroup_2_5.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_2_0 = (RuleCall)cOwnedCommentAssignment_2_5_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_5_3 = (Assignment)cGroup_2_5.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_3_0 = (RuleCall)cOwnedCommentAssignment_2_5_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_5_4 = (RuleCall)cGroup_2_5.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_5_0 = (Assignment)cGroup_2_5.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_0_0 = (RuleCall)cOwnedCommentAssignment_2_5_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_1_0 = (RuleCall)cOwnedCommentAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedRelationshipKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedRelationshipAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_2_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedRelationshipAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_3_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedRelationshipAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_0_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedRelationshipAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedRelationshipRelationshipParserRuleCall_2_6_1_0 = (RuleCall)cOwnedRelationshipAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cPinKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cPinAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_7_2_0 = (RuleCall)cPinAssignment_2_7_2.eContents().get(0);
-		private final Assignment cPinAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cPinHardwarePinParserRuleCall_2_7_3_0 = (RuleCall)cPinAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cPinAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_7_0_0 = (RuleCall)cPinAssignment_2_7_0.eContents().get(0);
+		private final Assignment cPinAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cPinHardwarePinParserRuleCall_2_7_1_0 = (RuleCall)cPinAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cPartKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cPartAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_2_0 = (RuleCall)cPartAssignment_2_8_2.eContents().get(0);
-		private final Assignment cPartAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_3_0 = (RuleCall)cPartAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cPartAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_0_0 = (RuleCall)cPartAssignment_2_8_0.eContents().get(0);
+		private final Assignment cPartAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cPartHardwareComponentPrototypeParserRuleCall_2_8_1_0 = (RuleCall)cPartAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cConnectorKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_2_0 = (RuleCall)cConnectorAssignment_2_9_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_3_0 = (RuleCall)cConnectorAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cConnectorAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_0_0 = (RuleCall)cConnectorAssignment_2_9_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_9_1_0 = (RuleCall)cConnectorAssignment_2_9_1.eContents().get(0);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cPortKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cPortAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_10_2_0 = (RuleCall)cPortAssignment_2_10_2.eContents().get(0);
-		private final Assignment cPortAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cPortHardwarePortParserRuleCall_2_10_3_0 = (RuleCall)cPortAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cPortAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_10_0_0 = (RuleCall)cPortAssignment_2_10_0.eContents().get(0);
+		private final Assignment cPortAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cPortHardwarePortParserRuleCall_2_10_1_0 = (RuleCall)cPortAssignment_2_10_1.eContents().get(0);
 		private final Group cGroup_2_11 = (Group)cGroup_2.eContents().get(11);
-		private final Keyword cPortConnectorKeyword_2_11_0 = (Keyword)cGroup_2_11.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_11_1 = (RuleCall)cGroup_2_11.eContents().get(1);
-		private final Assignment cPortConnectorAssignment_2_11_2 = (Assignment)cGroup_2_11.eContents().get(2);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_2_0 = (RuleCall)cPortConnectorAssignment_2_11_2.eContents().get(0);
-		private final Assignment cPortConnectorAssignment_2_11_3 = (Assignment)cGroup_2_11.eContents().get(3);
-		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_3_0 = (RuleCall)cPortConnectorAssignment_2_11_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11_4 = (RuleCall)cGroup_2_11.eContents().get(4);
+		private final Assignment cPortConnectorAssignment_2_11_0 = (Assignment)cGroup_2_11.eContents().get(0);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_0_0 = (RuleCall)cPortConnectorAssignment_2_11_0.eContents().get(0);
+		private final Assignment cPortConnectorAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
+		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_1_0 = (RuleCall)cPortConnectorAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
 		
 		//Sensor:
 		//	'Sensor' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 		//	('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//	traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//	ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-		//	part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//	connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//	END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//	traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+		//	(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+		//	connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+		//	portConnector+=PortConnector*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Sensor' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 		//('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-		//traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-		//ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-		//part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+		//connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+		//portConnector+=PortConnector*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Sensor'
@@ -5489,11 +4593,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('traceableSpecification' '('
 		//traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-		//')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-		//ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin*
-		//END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-		//connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-		//END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)? END)?
+		//')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+		//ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+		//part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+		//port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -5566,173 +4669,110 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_4_4() { return cRightParenthesisKeyword_2_4_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_5_0() { return cOwnedCommentKeyword_2_5_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_5_1() { return cBEGINTerminalRuleCall_2_5_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_5_2() { return cOwnedCommentAssignment_2_5_2; }
+		public Assignment getOwnedCommentAssignment_2_5_0() { return cOwnedCommentAssignment_2_5_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_2_0() { return cOwnedCommentCommentParserRuleCall_2_5_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_0_0() { return cOwnedCommentCommentParserRuleCall_2_5_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_5_3() { return cOwnedCommentAssignment_2_5_3; }
+		public Assignment getOwnedCommentAssignment_2_5_1() { return cOwnedCommentAssignment_2_5_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_3_0() { return cOwnedCommentCommentParserRuleCall_2_5_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_1_0() { return cOwnedCommentCommentParserRuleCall_2_5_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_5_4() { return cENDTerminalRuleCall_2_5_4; }
-		
-		//('ownedRelationship' BEGIN ownedRelationship+=Relationship ownedRelationship+=Relationship* END)?
+		//(ownedRelationship+=Relationship ownedRelationship+=Relationship*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedRelationship'
-		public Keyword getOwnedRelationshipKeyword_2_6_0() { return cOwnedRelationshipKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedRelationship+=Relationship
-		public Assignment getOwnedRelationshipAssignment_2_6_2() { return cOwnedRelationshipAssignment_2_6_2; }
+		public Assignment getOwnedRelationshipAssignment_2_6_0() { return cOwnedRelationshipAssignment_2_6_0; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_2_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_0_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_0_0; }
 		
 		//ownedRelationship+=Relationship*
-		public Assignment getOwnedRelationshipAssignment_2_6_3() { return cOwnedRelationshipAssignment_2_6_3; }
+		public Assignment getOwnedRelationshipAssignment_2_6_1() { return cOwnedRelationshipAssignment_2_6_1; }
 		
 		//Relationship
-		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_3_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedRelationshipRelationshipParserRuleCall_2_6_1_0() { return cOwnedRelationshipRelationshipParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)?
+		//(pin+=HardwarePin pin+=HardwarePin*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'pin'
-		public Keyword getPinKeyword_2_7_0() { return cPinKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//pin+=HardwarePin
-		public Assignment getPinAssignment_2_7_2() { return cPinAssignment_2_7_2; }
+		public Assignment getPinAssignment_2_7_0() { return cPinAssignment_2_7_0; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_7_2_0() { return cPinHardwarePinParserRuleCall_2_7_2_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_7_0_0() { return cPinHardwarePinParserRuleCall_2_7_0_0; }
 		
 		//pin+=HardwarePin*
-		public Assignment getPinAssignment_2_7_3() { return cPinAssignment_2_7_3; }
+		public Assignment getPinAssignment_2_7_1() { return cPinAssignment_2_7_1; }
 		
 		//HardwarePin
-		public RuleCall getPinHardwarePinParserRuleCall_2_7_3_0() { return cPinHardwarePinParserRuleCall_2_7_3_0; }
+		public RuleCall getPinHardwarePinParserRuleCall_2_7_1_0() { return cPinHardwarePinParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
+		//(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'part'
-		public Keyword getPartKeyword_2_8_0() { return cPartKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//part+=HardwareComponentPrototype
-		public Assignment getPartAssignment_2_8_2() { return cPartAssignment_2_8_2; }
+		public Assignment getPartAssignment_2_8_0() { return cPartAssignment_2_8_0; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_2_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_2_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_0_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_0_0; }
 		
 		//part+=HardwareComponentPrototype*
-		public Assignment getPartAssignment_2_8_3() { return cPartAssignment_2_8_3; }
+		public Assignment getPartAssignment_2_8_1() { return cPartAssignment_2_8_1; }
 		
 		//HardwareComponentPrototype
-		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_3_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_3_0; }
+		public RuleCall getPartHardwareComponentPrototypeParserRuleCall_2_8_1_0() { return cPartHardwareComponentPrototypeParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)?
+		//(connector+=HardwareConnector connector+=HardwareConnector*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'connector'
-		public Keyword getConnectorKeyword_2_9_0() { return cConnectorKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//connector+=HardwareConnector
-		public Assignment getConnectorAssignment_2_9_2() { return cConnectorAssignment_2_9_2; }
+		public Assignment getConnectorAssignment_2_9_0() { return cConnectorAssignment_2_9_0; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_2_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_2_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_0_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_0_0; }
 		
 		//connector+=HardwareConnector*
-		public Assignment getConnectorAssignment_2_9_3() { return cConnectorAssignment_2_9_3; }
+		public Assignment getConnectorAssignment_2_9_1() { return cConnectorAssignment_2_9_1; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_3_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_3_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_9_1_0() { return cConnectorHardwareConnectorParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
-		
-		//('port' BEGIN port+=HardwarePort port+=HardwarePort* END)?
+		//(port+=HardwarePort port+=HardwarePort*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'port'
-		public Keyword getPortKeyword_2_10_0() { return cPortKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//port+=HardwarePort
-		public Assignment getPortAssignment_2_10_2() { return cPortAssignment_2_10_2; }
+		public Assignment getPortAssignment_2_10_0() { return cPortAssignment_2_10_0; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_10_2_0() { return cPortHardwarePortParserRuleCall_2_10_2_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_10_0_0() { return cPortHardwarePortParserRuleCall_2_10_0_0; }
 		
 		//port+=HardwarePort*
-		public Assignment getPortAssignment_2_10_3() { return cPortAssignment_2_10_3; }
+		public Assignment getPortAssignment_2_10_1() { return cPortAssignment_2_10_1; }
 		
 		//HardwarePort
-		public RuleCall getPortHardwarePortParserRuleCall_2_10_3_0() { return cPortHardwarePortParserRuleCall_2_10_3_0; }
+		public RuleCall getPortHardwarePortParserRuleCall_2_10_1_0() { return cPortHardwarePortParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+		//(portConnector+=PortConnector portConnector+=PortConnector*)?
 		public Group getGroup_2_11() { return cGroup_2_11; }
 		
-		//'portConnector'
-		public Keyword getPortConnectorKeyword_2_11_0() { return cPortConnectorKeyword_2_11_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11_1() { return cBEGINTerminalRuleCall_2_11_1; }
-		
 		//portConnector+=PortConnector
-		public Assignment getPortConnectorAssignment_2_11_2() { return cPortConnectorAssignment_2_11_2; }
+		public Assignment getPortConnectorAssignment_2_11_0() { return cPortConnectorAssignment_2_11_0; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_2_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_2_0; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_0_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_0_0; }
 		
 		//portConnector+=PortConnector*
-		public Assignment getPortConnectorAssignment_2_11_3() { return cPortConnectorAssignment_2_11_3; }
+		public Assignment getPortConnectorAssignment_2_11_1() { return cPortConnectorAssignment_2_11_1; }
 		
 		//PortConnector
-		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_3_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11_4() { return cENDTerminalRuleCall_2_11_4; }
+		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
@@ -5778,28 +4818,24 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cElementTypeEADatatypeCrossReference_2_9_0 = (CrossReference)cElementTypeAssignment_2_9.eContents().get(0);
 		private final RuleCall cElementTypeEADatatypeEStringParserRuleCall_2_9_0_1 = (RuleCall)cElementTypeEADatatypeCrossReference_2_9_0.eContents().get(1);
 		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cOwnedCommentKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_10_2_0 = (RuleCall)cOwnedCommentAssignment_2_10_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_10_3_0 = (RuleCall)cOwnedCommentAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_10_0 = (Assignment)cGroup_2_10.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_10_0_0 = (RuleCall)cOwnedCommentAssignment_2_10_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_10_1_0 = (RuleCall)cOwnedCommentAssignment_2_10_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_11 = (RuleCall)cGroup_2.eContents().get(11);
 		
 		//ArrayDatatype:
 		//	'ArrayDatatype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('maxLength' maxLength=Integer)? ('minLength'
 		//	minLength=Integer)?
-		//	'elementType' elementType=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment*
-		//	END)?
+		//	'elementType' elementType=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ArrayDatatype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('maxLength' maxLength=Integer)? ('minLength'
-		//minLength=Integer)? 'elementType' elementType=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? END)
+		//minLength=Integer)? 'elementType' elementType=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)?
+		//END)
 		public Group getGroup() { return cGroup; }
 		
 		//'ArrayDatatype'
@@ -5813,7 +4849,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('text' text=String0)? ('uri'
 		//uri=String0)? ('maxLength' maxLength=Integer)? ('minLength' minLength=Integer)? 'elementType'
-		//elementType=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//elementType=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -5915,29 +4951,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getElementTypeEADatatypeEStringParserRuleCall_2_9_0_1() { return cElementTypeEADatatypeEStringParserRuleCall_2_9_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_10() { return cGroup_2_10; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_10_0() { return cOwnedCommentKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_10_2() { return cOwnedCommentAssignment_2_10_2; }
+		public Assignment getOwnedCommentAssignment_2_10_0() { return cOwnedCommentAssignment_2_10_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_10_2_0() { return cOwnedCommentCommentParserRuleCall_2_10_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_10_0_0() { return cOwnedCommentCommentParserRuleCall_2_10_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_10_3() { return cOwnedCommentAssignment_2_10_3; }
+		public Assignment getOwnedCommentAssignment_2_10_1() { return cOwnedCommentAssignment_2_10_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_10_3_0() { return cOwnedCommentCommentParserRuleCall_2_10_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_10_1_0() { return cOwnedCommentCommentParserRuleCall_2_10_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_11() { return cENDTerminalRuleCall_2_11; }
@@ -5971,34 +4998,26 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cUriAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cUriString0ParserRuleCall_2_5_1_0 = (RuleCall)cUriAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
-		private final Keyword cDatatypePrototypeKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
-		private final RuleCall cBEGINTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
-		private final Assignment cDatatypePrototypeAssignment_2_9 = (Assignment)cGroup_2.eContents().get(9);
-		private final RuleCall cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_9_0 = (RuleCall)cDatatypePrototypeAssignment_2_9.eContents().get(0);
-		private final Assignment cDatatypePrototypeAssignment_2_10 = (Assignment)cGroup_2.eContents().get(10);
-		private final RuleCall cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_10_0 = (RuleCall)cDatatypePrototypeAssignment_2_10.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11 = (RuleCall)cGroup_2.eContents().get(11);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
+		private final Assignment cDatatypePrototypeAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
+		private final RuleCall cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_7_0 = (RuleCall)cDatatypePrototypeAssignment_2_7.eContents().get(0);
+		private final Assignment cDatatypePrototypeAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
+		private final RuleCall cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_8_0 = (RuleCall)cDatatypePrototypeAssignment_2_8.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
 		
 		//CompositeDatatype:
 		//	'CompositeDatatype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)?
-		//	'datatypePrototype' BEGIN datatypePrototype+=EADatatypePrototype datatypePrototype+=EADatatypePrototype* END
+		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	datatypePrototype+=EADatatypePrototype datatypePrototype+=EADatatypePrototype*
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'CompositeDatatype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? 'datatypePrototype' BEGIN datatypePrototype+=EADatatypePrototype
-		//datatypePrototype+=EADatatypePrototype* END END)
+		//name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+		//datatypePrototype+=EADatatypePrototype datatypePrototype+=EADatatypePrototype* END)
 		public Group getGroup() { return cGroup; }
 		
 		//'CompositeDatatype'
@@ -6011,8 +5030,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('text' text=String0)? ('uri'
-		//uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? 'datatypePrototype' BEGIN
-		//datatypePrototype+=EADatatypePrototype datatypePrototype+=EADatatypePrototype* END END)
+		//uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)? datatypePrototype+=EADatatypePrototype
+		//datatypePrototype+=EADatatypePrototype* END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -6078,53 +5097,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getUriString0ParserRuleCall_2_5_1_0() { return cUriString0ParserRuleCall_2_5_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//'datatypePrototype'
-		public Keyword getDatatypePrototypeKeyword_2_7() { return cDatatypePrototypeKeyword_2_7; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8() { return cBEGINTerminalRuleCall_2_8; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//datatypePrototype+=EADatatypePrototype
-		public Assignment getDatatypePrototypeAssignment_2_9() { return cDatatypePrototypeAssignment_2_9; }
+		public Assignment getDatatypePrototypeAssignment_2_7() { return cDatatypePrototypeAssignment_2_7; }
 		
 		//EADatatypePrototype
-		public RuleCall getDatatypePrototypeEADatatypePrototypeParserRuleCall_2_9_0() { return cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_9_0; }
+		public RuleCall getDatatypePrototypeEADatatypePrototypeParserRuleCall_2_7_0() { return cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_7_0; }
 		
 		//datatypePrototype+=EADatatypePrototype*
-		public Assignment getDatatypePrototypeAssignment_2_10() { return cDatatypePrototypeAssignment_2_10; }
+		public Assignment getDatatypePrototypeAssignment_2_8() { return cDatatypePrototypeAssignment_2_8; }
 		
 		//EADatatypePrototype
-		public RuleCall getDatatypePrototypeEADatatypePrototypeParserRuleCall_2_10_0() { return cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_10_0; }
+		public RuleCall getDatatypePrototypeEADatatypePrototypeParserRuleCall_2_8_0() { return cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_8_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_2_11() { return cENDTerminalRuleCall_2_11; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
 	}
 	public class EABooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EABoolean");
@@ -6155,25 +5156,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cUriAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cUriString0ParserRuleCall_2_5_1_0 = (RuleCall)cUriAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//EABoolean:
 		//	'EABoolean' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)?
+		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EABoolean' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
-		//('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//END)?
+		//('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EABoolean'
@@ -6186,7 +5182,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('text' text=String0)? ('uri'
-		//uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -6252,29 +5248,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getUriString0ParserRuleCall_2_5_1_0() { return cUriString0ParserRuleCall_2_5_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -6321,25 +5308,22 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cUnitUnitCrossReference_2_8_1_0 = (CrossReference)cUnitAssignment_2_8_1.eContents().get(0);
 		private final RuleCall cUnitUnitEStringParserRuleCall_2_8_1_0_1 = (RuleCall)cUnitUnitCrossReference_2_8_1_0.eContents().get(1);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
-		private final Keyword cOwnedCommentKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_9_1 = (RuleCall)cGroup_2_9.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_9_2 = (Assignment)cGroup_2_9.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_9_2_0 = (RuleCall)cOwnedCommentAssignment_2_9_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_9_3 = (Assignment)cGroup_2_9.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_9_3_0 = (RuleCall)cOwnedCommentAssignment_2_9_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9_4 = (RuleCall)cGroup_2_9.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_9_0 = (Assignment)cGroup_2_9.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_9_0_0 = (RuleCall)cOwnedCommentAssignment_2_9_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_9_1_0 = (RuleCall)cOwnedCommentAssignment_2_9_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_10 = (RuleCall)cGroup_2.eContents().get(10);
 		
 		//EANumerical:
 		//	'EANumerical' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('max' max=Numerical)? ('min' min=Numerical)? ('unit'
-		//	unit=[Unit|EString])? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	unit=[Unit|EString])? (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EANumerical' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('max' max=Numerical)? ('min' min=Numerical)? ('unit'
-		//unit=[Unit|EString])? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//unit=[Unit|EString])? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EANumerical'
@@ -6352,8 +5336,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('text' text=String0)? ('uri'
-		//uri=String0)? ('max' max=Numerical)? ('min' min=Numerical)? ('unit' unit=[Unit|EString])? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//uri=String0)? ('max' max=Numerical)? ('min' min=Numerical)? ('unit' unit=[Unit|EString])? (ownedComment+=Comment
+		//ownedComment+=Comment*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -6458,29 +5442,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getUnitUnitEStringParserRuleCall_2_8_1_0_1() { return cUnitUnitEStringParserRuleCall_2_8_1_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_9_0() { return cOwnedCommentKeyword_2_9_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_9_1() { return cBEGINTerminalRuleCall_2_9_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_9_2() { return cOwnedCommentAssignment_2_9_2; }
+		public Assignment getOwnedCommentAssignment_2_9_0() { return cOwnedCommentAssignment_2_9_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_9_2_0() { return cOwnedCommentCommentParserRuleCall_2_9_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_9_0_0() { return cOwnedCommentCommentParserRuleCall_2_9_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_9_3() { return cOwnedCommentAssignment_2_9_3; }
+		public Assignment getOwnedCommentAssignment_2_9_1() { return cOwnedCommentAssignment_2_9_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_9_3_0() { return cOwnedCommentCommentParserRuleCall_2_9_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9_4() { return cENDTerminalRuleCall_2_9_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_9_1_0() { return cOwnedCommentCommentParserRuleCall_2_9_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_10() { return cENDTerminalRuleCall_2_10; }
@@ -6514,25 +5489,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cUriAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cUriString0ParserRuleCall_2_5_1_0 = (RuleCall)cUriAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//EAString:
 		//	'EAString' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)?
+		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EAString' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
-		//('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//END)?
+		//('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EAString'
@@ -6545,7 +5515,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('text' text=String0)? ('uri'
-		//uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -6611,29 +5581,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getUriString0ParserRuleCall_2_5_1_0() { return cUriString0ParserRuleCall_2_5_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -6670,34 +5631,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cIsMultiValuedAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
 		private final RuleCall cIsMultiValuedBooleanParserRuleCall_2_7_0 = (RuleCall)cIsMultiValuedAssignment_2_7.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cOwnedCommentKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_2_0 = (RuleCall)cOwnedCommentAssignment_2_8_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_3_0 = (RuleCall)cOwnedCommentAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
-		private final Keyword cLiteralKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
-		private final RuleCall cBEGINTerminalRuleCall_2_10 = (RuleCall)cGroup_2.eContents().get(10);
-		private final Assignment cLiteralAssignment_2_11 = (Assignment)cGroup_2.eContents().get(11);
-		private final RuleCall cLiteralEnumerationLiteralParserRuleCall_2_11_0 = (RuleCall)cLiteralAssignment_2_11.eContents().get(0);
-		private final Assignment cLiteralAssignment_2_12 = (Assignment)cGroup_2.eContents().get(12);
-		private final RuleCall cLiteralEnumerationLiteralParserRuleCall_2_12_0 = (RuleCall)cLiteralAssignment_2_12.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
-		private final RuleCall cENDTerminalRuleCall_2_14 = (RuleCall)cGroup_2.eContents().get(14);
+		private final Assignment cOwnedCommentAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_0_0 = (RuleCall)cOwnedCommentAssignment_2_8_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_1_0 = (RuleCall)cOwnedCommentAssignment_2_8_1.eContents().get(0);
+		private final Assignment cLiteralAssignment_2_9 = (Assignment)cGroup_2.eContents().get(9);
+		private final RuleCall cLiteralEnumerationLiteralParserRuleCall_2_9_0 = (RuleCall)cLiteralAssignment_2_9.eContents().get(0);
+		private final Assignment cLiteralAssignment_2_10 = (Assignment)cGroup_2.eContents().get(10);
+		private final RuleCall cLiteralEnumerationLiteralParserRuleCall_2_10_0 = (RuleCall)cLiteralAssignment_2_10.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_2_11 = (RuleCall)cGroup_2.eContents().get(11);
 		
 		//Enumeration:
 		//	'Enumeration' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)?
-		//	'isMultiValued' isMultiValued=Boolean ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//	'literal' BEGIN literal+=EnumerationLiteral literal+=EnumerationLiteral* END
+		//	'isMultiValued' isMultiValued=Boolean (ownedComment+=Comment ownedComment+=Comment*)?
+		//	literal+=EnumerationLiteral literal+=EnumerationLiteral*
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Enumeration' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('text' text=String0)? ('uri' uri=String0)? 'isMultiValued' isMultiValued=Boolean ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? 'literal' BEGIN literal+=EnumerationLiteral
-		//literal+=EnumerationLiteral* END END)
+		//name=String0)? ('text' text=String0)? ('uri' uri=String0)? 'isMultiValued' isMultiValued=Boolean
+		//(ownedComment+=Comment ownedComment+=Comment*)? literal+=EnumerationLiteral literal+=EnumerationLiteral* END)
 		public Group getGroup() { return cGroup; }
 		
 		//'Enumeration'
@@ -6710,8 +5664,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('text' text=String0)? ('uri'
-		//uri=String0)? 'isMultiValued' isMultiValued=Boolean ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment*
-		//END)? 'literal' BEGIN literal+=EnumerationLiteral literal+=EnumerationLiteral* END END)
+		//uri=String0)? 'isMultiValued' isMultiValued=Boolean (ownedComment+=Comment ownedComment+=Comment*)?
+		//literal+=EnumerationLiteral literal+=EnumerationLiteral* END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -6786,53 +5740,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Boolean
 		public RuleCall getIsMultiValuedBooleanParserRuleCall_2_7_0() { return cIsMultiValuedBooleanParserRuleCall_2_7_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_8_0() { return cOwnedCommentKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_8_2() { return cOwnedCommentAssignment_2_8_2; }
+		public Assignment getOwnedCommentAssignment_2_8_0() { return cOwnedCommentAssignment_2_8_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_2_0() { return cOwnedCommentCommentParserRuleCall_2_8_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_0_0() { return cOwnedCommentCommentParserRuleCall_2_8_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_8_3() { return cOwnedCommentAssignment_2_8_3; }
+		public Assignment getOwnedCommentAssignment_2_8_1() { return cOwnedCommentAssignment_2_8_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_3_0() { return cOwnedCommentCommentParserRuleCall_2_8_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
-		
-		//'literal'
-		public Keyword getLiteralKeyword_2_9() { return cLiteralKeyword_2_9; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10() { return cBEGINTerminalRuleCall_2_10; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_1_0() { return cOwnedCommentCommentParserRuleCall_2_8_1_0; }
 		
 		//literal+=EnumerationLiteral
-		public Assignment getLiteralAssignment_2_11() { return cLiteralAssignment_2_11; }
+		public Assignment getLiteralAssignment_2_9() { return cLiteralAssignment_2_9; }
 		
 		//EnumerationLiteral
-		public RuleCall getLiteralEnumerationLiteralParserRuleCall_2_11_0() { return cLiteralEnumerationLiteralParserRuleCall_2_11_0; }
+		public RuleCall getLiteralEnumerationLiteralParserRuleCall_2_9_0() { return cLiteralEnumerationLiteralParserRuleCall_2_9_0; }
 		
 		//literal+=EnumerationLiteral*
-		public Assignment getLiteralAssignment_2_12() { return cLiteralAssignment_2_12; }
+		public Assignment getLiteralAssignment_2_10() { return cLiteralAssignment_2_10; }
 		
 		//EnumerationLiteral
-		public RuleCall getLiteralEnumerationLiteralParserRuleCall_2_12_0() { return cLiteralEnumerationLiteralParserRuleCall_2_12_0; }
+		public RuleCall getLiteralEnumerationLiteralParserRuleCall_2_10_0() { return cLiteralEnumerationLiteralParserRuleCall_2_10_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_14() { return cENDTerminalRuleCall_2_14; }
+		public RuleCall getENDTerminalRuleCall_2_11() { return cENDTerminalRuleCall_2_11; }
 	}
 	public class QuantityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Quantity");
@@ -6876,13 +5812,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cTimeExpAssignment_2_17 = (Assignment)cGroup_2.eContents().get(17);
 		private final RuleCall cTimeExpIntegerParserRuleCall_2_17_0 = (RuleCall)cTimeExpAssignment_2_17.eContents().get(0);
 		private final Group cGroup_2_18 = (Group)cGroup_2.eContents().get(18);
-		private final Keyword cOwnedCommentKeyword_2_18_0 = (Keyword)cGroup_2_18.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_18_1 = (RuleCall)cGroup_2_18.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_18_2 = (Assignment)cGroup_2_18.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_18_2_0 = (RuleCall)cOwnedCommentAssignment_2_18_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_18_3 = (Assignment)cGroup_2_18.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_18_3_0 = (RuleCall)cOwnedCommentAssignment_2_18_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_18_4 = (RuleCall)cGroup_2_18.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_18_0 = (Assignment)cGroup_2_18.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_18_0_0 = (RuleCall)cOwnedCommentAssignment_2_18_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_18_1 = (Assignment)cGroup_2_18.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_18_1_0 = (RuleCall)cOwnedCommentAssignment_2_18_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_19 = (RuleCall)cGroup_2.eContents().get(19);
 		
 		//Quantity:
@@ -6894,15 +5827,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//	'luminousIntensityExp' luminousIntensityExp=Integer
 		//	'massExp' massExp=Integer
 		//	'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer
-		//	'timeExp' timeExp=Integer ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	'timeExp' timeExp=Integer (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Quantity' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 		//'amountOfSubstanceExp' amountOfSubstanceExp=Integer 'electricCurrentExp' electricCurrentExp=Integer 'lengthExp'
 		//lengthExp=Integer 'luminousIntensityExp' luminousIntensityExp=Integer 'massExp' massExp=Integer
-		//'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer 'timeExp' timeExp=Integer ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer 'timeExp' timeExp=Integer (ownedComment+=Comment
+		//ownedComment+=Comment*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'Quantity'
@@ -6917,8 +5850,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'amountOfSubstanceExp'
 		//amountOfSubstanceExp=Integer 'electricCurrentExp' electricCurrentExp=Integer 'lengthExp' lengthExp=Integer
 		//'luminousIntensityExp' luminousIntensityExp=Integer 'massExp' massExp=Integer 'thermodynamicTemperatureExp'
-		//thermodynamicTemperatureExp=Integer 'timeExp' timeExp=Integer ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? END)
+		//thermodynamicTemperatureExp=Integer 'timeExp' timeExp=Integer (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -7023,29 +5955,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Integer
 		public RuleCall getTimeExpIntegerParserRuleCall_2_17_0() { return cTimeExpIntegerParserRuleCall_2_17_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_18() { return cGroup_2_18; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_18_0() { return cOwnedCommentKeyword_2_18_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_18_1() { return cBEGINTerminalRuleCall_2_18_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_18_2() { return cOwnedCommentAssignment_2_18_2; }
+		public Assignment getOwnedCommentAssignment_2_18_0() { return cOwnedCommentAssignment_2_18_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_18_2_0() { return cOwnedCommentCommentParserRuleCall_2_18_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_18_0_0() { return cOwnedCommentCommentParserRuleCall_2_18_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_18_3() { return cOwnedCommentAssignment_2_18_3; }
+		public Assignment getOwnedCommentAssignment_2_18_1() { return cOwnedCommentAssignment_2_18_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_18_3_0() { return cOwnedCommentCommentParserRuleCall_2_18_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_18_4() { return cENDTerminalRuleCall_2_18_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_18_1_0() { return cOwnedCommentCommentParserRuleCall_2_18_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_19() { return cENDTerminalRuleCall_2_19; }
@@ -7093,13 +6016,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cBaseRangeableEANumericalCrossReference_2_12_0 = (CrossReference)cBaseRangeableAssignment_2_12.eContents().get(0);
 		private final RuleCall cBaseRangeableEANumericalEStringParserRuleCall_2_12_0_1 = (RuleCall)cBaseRangeableEANumericalCrossReference_2_12_0.eContents().get(1);
 		private final Group cGroup_2_13 = (Group)cGroup_2.eContents().get(13);
-		private final Keyword cOwnedCommentKeyword_2_13_0 = (Keyword)cGroup_2_13.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_13_1 = (RuleCall)cGroup_2_13.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_13_2 = (Assignment)cGroup_2_13.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_13_2_0 = (RuleCall)cOwnedCommentAssignment_2_13_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_13_3 = (Assignment)cGroup_2_13.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_13_3_0 = (RuleCall)cOwnedCommentAssignment_2_13_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_13_4 = (RuleCall)cGroup_2_13.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_13_0 = (Assignment)cGroup_2_13.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_13_0_0 = (RuleCall)cOwnedCommentAssignment_2_13_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_13_1 = (Assignment)cGroup_2_13.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_13_1_0 = (RuleCall)cOwnedCommentAssignment_2_13_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_14 = (RuleCall)cGroup_2.eContents().get(14);
 		
 		//RangeableValueType:
@@ -7107,15 +6027,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//	name=String0)? ('text' text=String0)? ('uri' uri=String0)?
 		//	'accuracy' accuracy=Float
 		//	'resolution' resolution=Float ('significantDigits' significantDigits=Integer)?
-		//	'baseRangeable' baseRangeable=[EANumerical|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)?
+		//	'baseRangeable' baseRangeable=[EANumerical|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'RangeableValueType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('text' text=String0)? ('uri' uri=String0)? 'accuracy' accuracy=Float 'resolution' resolution=Float
-		//('significantDigits' significantDigits=Integer)? 'baseRangeable' baseRangeable=[EANumerical|EString] ('ownedComment'
-		//BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//('significantDigits' significantDigits=Integer)? 'baseRangeable' baseRangeable=[EANumerical|EString]
+		//(ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'RangeableValueType'
@@ -7129,8 +6048,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('text' text=String0)? ('uri'
 		//uri=String0)? 'accuracy' accuracy=Float 'resolution' resolution=Float ('significantDigits' significantDigits=Integer)?
-		//'baseRangeable' baseRangeable=[EANumerical|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment*
-		//END)? END)
+		//'baseRangeable' baseRangeable=[EANumerical|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -7238,29 +6156,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getBaseRangeableEANumericalEStringParserRuleCall_2_12_0_1() { return cBaseRangeableEANumericalEStringParserRuleCall_2_12_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_13() { return cGroup_2_13; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_13_0() { return cOwnedCommentKeyword_2_13_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_13_1() { return cBEGINTerminalRuleCall_2_13_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_13_2() { return cOwnedCommentAssignment_2_13_2; }
+		public Assignment getOwnedCommentAssignment_2_13_0() { return cOwnedCommentAssignment_2_13_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_13_2_0() { return cOwnedCommentCommentParserRuleCall_2_13_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_13_0_0() { return cOwnedCommentCommentParserRuleCall_2_13_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_13_3() { return cOwnedCommentAssignment_2_13_3; }
+		public Assignment getOwnedCommentAssignment_2_13_1() { return cOwnedCommentAssignment_2_13_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_13_3_0() { return cOwnedCommentCommentParserRuleCall_2_13_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_13_4() { return cENDTerminalRuleCall_2_13_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_13_1_0() { return cOwnedCommentCommentParserRuleCall_2_13_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_14() { return cENDTerminalRuleCall_2_14; }
@@ -7305,13 +6214,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cQuantityQuantityCrossReference_2_11_1_0 = (CrossReference)cQuantityAssignment_2_11_1.eContents().get(0);
 		private final RuleCall cQuantityQuantityEStringParserRuleCall_2_11_1_0_1 = (RuleCall)cQuantityQuantityCrossReference_2_11_1_0.eContents().get(1);
 		private final Group cGroup_2_12 = (Group)cGroup_2.eContents().get(12);
-		private final Keyword cOwnedCommentKeyword_2_12_0 = (Keyword)cGroup_2_12.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_12_1 = (RuleCall)cGroup_2_12.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_12_2 = (Assignment)cGroup_2_12.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_12_2_0 = (RuleCall)cOwnedCommentAssignment_2_12_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_12_3 = (Assignment)cGroup_2_12.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_12_3_0 = (RuleCall)cOwnedCommentAssignment_2_12_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12_4 = (RuleCall)cGroup_2_12.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_12_0 = (Assignment)cGroup_2_12.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_12_0_0 = (RuleCall)cOwnedCommentAssignment_2_12_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_12_1 = (Assignment)cGroup_2_12.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_12_1_0 = (RuleCall)cOwnedCommentAssignment_2_12_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
 		
 		//Unit:
@@ -7319,14 +6225,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//	'factor' factor=Float
 		//	'symbol' symbol=String0
 		//	'offset' offset=Float ('reference' reference=[Unit|EString])? ('quantity' quantity=[Quantity|EString])?
-		//	('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	(ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Unit' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 		//'factor' factor=Float 'symbol' symbol=String0 'offset' offset=Float ('reference' reference=[Unit|EString])?
-		//('quantity' quantity=[Quantity|EString])? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//END)
+		//('quantity' quantity=[Quantity|EString])? (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'Unit'
@@ -7340,7 +6245,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'factor' factor=Float 'symbol'
 		//symbol=String0 'offset' offset=Float ('reference' reference=[Unit|EString])? ('quantity' quantity=[Quantity|EString])?
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//(ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -7439,29 +6344,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getQuantityQuantityEStringParserRuleCall_2_11_1_0_1() { return cQuantityQuantityEStringParserRuleCall_2_11_1_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_12() { return cGroup_2_12; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_12_0() { return cOwnedCommentKeyword_2_12_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_12_1() { return cBEGINTerminalRuleCall_2_12_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_12_2() { return cOwnedCommentAssignment_2_12_2; }
+		public Assignment getOwnedCommentAssignment_2_12_0() { return cOwnedCommentAssignment_2_12_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_12_2_0() { return cOwnedCommentCommentParserRuleCall_2_12_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_12_0_0() { return cOwnedCommentCommentParserRuleCall_2_12_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_12_3() { return cOwnedCommentAssignment_2_12_3; }
+		public Assignment getOwnedCommentAssignment_2_12_1() { return cOwnedCommentAssignment_2_12_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_12_3_0() { return cOwnedCommentCommentParserRuleCall_2_12_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12_4() { return cENDTerminalRuleCall_2_12_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_12_1_0() { return cOwnedCommentCommentParserRuleCall_2_12_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
@@ -7491,13 +6387,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeEADatatypeCrossReference_2_5_0 = (CrossReference)cTypeAssignment_2_5.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_2_5_0_1 = (RuleCall)cTypeEADatatypeCrossReference_2_5_0.eContents().get(1);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
 		private final Keyword cDefaultValueKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
 		private final Assignment cDefaultValueAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
@@ -7507,14 +6400,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//UserAttributeDefinition:
 		//	'UserAttributeDefinition' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 		//	('name' name=String0)?
-		//	'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//	('defaultValue' defaultValue=EAValue)?
+		//	'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? ('defaultValue'
+		//	defaultValue=EAValue)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'UserAttributeDefinition' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? 'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment*
-		//END)? ('defaultValue' defaultValue=EAValue)? END)
+		//name=String0)? 'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? ('defaultValue'
+		//defaultValue=EAValue)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'UserAttributeDefinition'
@@ -7527,7 +6420,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'type' type=[EADatatype|EString]
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('defaultValue' defaultValue=EAValue)? END)
+		//(ownedComment+=Comment ownedComment+=Comment*)? ('defaultValue' defaultValue=EAValue)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -7581,29 +6474,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_2_5_0_1() { return cTypeEADatatypeEStringParserRuleCall_2_5_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//('defaultValue' defaultValue=EAValue)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
@@ -7655,35 +6539,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cAttributedElementIdentifiableCrossReference_2_6_0 = (CrossReference)cAttributedElementAssignment_2_6.eContents().get(0);
 		private final RuleCall cAttributedElementIdentifiableEStringParserRuleCall_2_6_0_1 = (RuleCall)cAttributedElementIdentifiableCrossReference_2_6_0.eContents().get(1);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedCommentKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_2_0 = (RuleCall)cOwnedCommentAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_3_0 = (RuleCall)cOwnedCommentAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_0_0 = (RuleCall)cOwnedCommentAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_1_0 = (RuleCall)cOwnedCommentAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cUaValueKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cUaValueAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cUaValueEAValueParserRuleCall_2_8_2_0 = (RuleCall)cUaValueAssignment_2_8_2.eContents().get(0);
-		private final Assignment cUaValueAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cUaValueEAValueParserRuleCall_2_8_3_0 = (RuleCall)cUaValueAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cUaValueAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cUaValueEAValueParserRuleCall_2_8_0_0 = (RuleCall)cUaValueAssignment_2_8_0.eContents().get(0);
+		private final Assignment cUaValueAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cUaValueEAValueParserRuleCall_2_8_1_0 = (RuleCall)cUaValueAssignment_2_8_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
 		
 		//UserAttributedElement:
 		//	'UserAttributedElement' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('uaType' '(' uaType+=[UserElementType|EString] uaType+=[UserElementType|EString]* ')')?
-		//	'attributedElement' attributedElement=[Identifiable|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)? ('uaValue' BEGIN uaValue+=EAValue uaValue+=EAValue* END)?
+		//	'attributedElement' attributedElement=[Identifiable|EString] (ownedComment+=Comment ownedComment+=Comment*)?
+		//	(uaValue+=EAValue uaValue+=EAValue*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'UserAttributedElement' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('uaType' '(' uaType+=[UserElementType|EString] uaType+=[UserElementType|EString]* ')')?
-		//'attributedElement' attributedElement=[Identifiable|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('uaValue' BEGIN uaValue+=EAValue uaValue+=EAValue* END)? END)
+		//'attributedElement' attributedElement=[Identifiable|EString] (ownedComment+=Comment ownedComment+=Comment*)?
+		//(uaValue+=EAValue uaValue+=EAValue*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'UserAttributedElement'
@@ -7697,8 +6575,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('uaType' '('
 		//uaType+=[UserElementType|EString] uaType+=[UserElementType|EString]* ')')? 'attributedElement'
-		//attributedElement=[Identifiable|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//('uaValue' BEGIN uaValue+=EAValue uaValue+=EAValue* END)? END)
+		//attributedElement=[Identifiable|EString] (ownedComment+=Comment ownedComment+=Comment*)? (uaValue+=EAValue
+		//uaValue+=EAValue*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -7782,53 +6660,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getAttributedElementIdentifiableEStringParserRuleCall_2_6_0_1() { return cAttributedElementIdentifiableEStringParserRuleCall_2_6_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_7_0() { return cOwnedCommentKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_7_2() { return cOwnedCommentAssignment_2_7_2; }
+		public Assignment getOwnedCommentAssignment_2_7_0() { return cOwnedCommentAssignment_2_7_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_2_0() { return cOwnedCommentCommentParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_0_0() { return cOwnedCommentCommentParserRuleCall_2_7_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_7_3() { return cOwnedCommentAssignment_2_7_3; }
+		public Assignment getOwnedCommentAssignment_2_7_1() { return cOwnedCommentAssignment_2_7_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_3_0() { return cOwnedCommentCommentParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_1_0() { return cOwnedCommentCommentParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('uaValue' BEGIN uaValue+=EAValue uaValue+=EAValue* END)?
+		//(uaValue+=EAValue uaValue+=EAValue*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'uaValue'
-		public Keyword getUaValueKeyword_2_8_0() { return cUaValueKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//uaValue+=EAValue
-		public Assignment getUaValueAssignment_2_8_2() { return cUaValueAssignment_2_8_2; }
+		public Assignment getUaValueAssignment_2_8_0() { return cUaValueAssignment_2_8_0; }
 		
 		//EAValue
-		public RuleCall getUaValueEAValueParserRuleCall_2_8_2_0() { return cUaValueEAValueParserRuleCall_2_8_2_0; }
+		public RuleCall getUaValueEAValueParserRuleCall_2_8_0_0() { return cUaValueEAValueParserRuleCall_2_8_0_0; }
 		
 		//uaValue+=EAValue*
-		public Assignment getUaValueAssignment_2_8_3() { return cUaValueAssignment_2_8_3; }
+		public Assignment getUaValueAssignment_2_8_1() { return cUaValueAssignment_2_8_1; }
 		
 		//EAValue
-		public RuleCall getUaValueEAValueParserRuleCall_2_8_3_0() { return cUaValueEAValueParserRuleCall_2_8_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
+		public RuleCall getUaValueEAValueParserRuleCall_2_8_1_0() { return cUaValueEAValueParserRuleCall_2_8_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
@@ -7861,35 +6721,28 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cKeyAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
 		private final RuleCall cKeyString0ParserRuleCall_2_6_0 = (RuleCall)cKeyAssignment_2_6.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedCommentKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_2_0 = (RuleCall)cOwnedCommentAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_3_0 = (RuleCall)cOwnedCommentAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_0_0 = (RuleCall)cOwnedCommentAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_1_0 = (RuleCall)cOwnedCommentAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cUaDefinitionKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cUaDefinitionAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_2_0 = (RuleCall)cUaDefinitionAssignment_2_8_2.eContents().get(0);
-		private final Assignment cUaDefinitionAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_3_0 = (RuleCall)cUaDefinitionAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cUaDefinitionAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_0_0 = (RuleCall)cUaDefinitionAssignment_2_8_0.eContents().get(0);
+		private final Assignment cUaDefinitionAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_1_0 = (RuleCall)cUaDefinitionAssignment_2_8_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
 		
 		//UserElementType:
 		//	'UserElementType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('validFor' validFor=String0)?
-		//	'key' key=String0 ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('uaDefinition' BEGIN
-		//	uaDefinition+=UserAttributeDefinition uaDefinition+=UserAttributeDefinition* END)?
+		//	'key' key=String0 (ownedComment+=Comment ownedComment+=Comment*)? (uaDefinition+=UserAttributeDefinition
+		//	uaDefinition+=UserAttributeDefinition*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'UserElementType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('validFor' validFor=String0)? 'key' key=String0 ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('uaDefinition' BEGIN uaDefinition+=UserAttributeDefinition
-		//uaDefinition+=UserAttributeDefinition* END)? END)
+		//name=String0)? ('validFor' validFor=String0)? 'key' key=String0 (ownedComment+=Comment ownedComment+=Comment*)?
+		//(uaDefinition+=UserAttributeDefinition uaDefinition+=UserAttributeDefinition*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'UserElementType'
@@ -7902,8 +6755,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('validFor' validFor=String0)?
-		//'key' key=String0 ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('uaDefinition' BEGIN
-		//uaDefinition+=UserAttributeDefinition uaDefinition+=UserAttributeDefinition* END)? END)
+		//'key' key=String0 (ownedComment+=Comment ownedComment+=Comment*)? (uaDefinition+=UserAttributeDefinition
+		//uaDefinition+=UserAttributeDefinition*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -7966,53 +6819,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getKeyString0ParserRuleCall_2_6_0() { return cKeyString0ParserRuleCall_2_6_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_7_0() { return cOwnedCommentKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_7_2() { return cOwnedCommentAssignment_2_7_2; }
+		public Assignment getOwnedCommentAssignment_2_7_0() { return cOwnedCommentAssignment_2_7_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_2_0() { return cOwnedCommentCommentParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_0_0() { return cOwnedCommentCommentParserRuleCall_2_7_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_7_3() { return cOwnedCommentAssignment_2_7_3; }
+		public Assignment getOwnedCommentAssignment_2_7_1() { return cOwnedCommentAssignment_2_7_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_3_0() { return cOwnedCommentCommentParserRuleCall_2_7_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_1_0() { return cOwnedCommentCommentParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('uaDefinition' BEGIN uaDefinition+=UserAttributeDefinition uaDefinition+=UserAttributeDefinition* END)?
+		//(uaDefinition+=UserAttributeDefinition uaDefinition+=UserAttributeDefinition*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'uaDefinition'
-		public Keyword getUaDefinitionKeyword_2_8_0() { return cUaDefinitionKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//uaDefinition+=UserAttributeDefinition
-		public Assignment getUaDefinitionAssignment_2_8_2() { return cUaDefinitionAssignment_2_8_2; }
+		public Assignment getUaDefinitionAssignment_2_8_0() { return cUaDefinitionAssignment_2_8_0; }
 		
 		//UserAttributeDefinition
-		public RuleCall getUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_2_0() { return cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_2_0; }
+		public RuleCall getUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_0_0() { return cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_0_0; }
 		
 		//uaDefinition+=UserAttributeDefinition*
-		public Assignment getUaDefinitionAssignment_2_8_3() { return cUaDefinitionAssignment_2_8_3; }
+		public Assignment getUaDefinitionAssignment_2_8_1() { return cUaDefinitionAssignment_2_8_1; }
 		
 		//UserAttributeDefinition
-		public RuleCall getUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_3_0() { return cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
+		public RuleCall getUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_1_0() { return cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
@@ -8038,33 +6873,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
 		private final Group cGroup_2_5 = (Group)cGroup_2.eContents().get(5);
-		private final Keyword cFunctionAllocationKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_5_1 = (RuleCall)cGroup_2_5.eContents().get(1);
-		private final Assignment cFunctionAllocationAssignment_2_5_2 = (Assignment)cGroup_2_5.eContents().get(2);
-		private final RuleCall cFunctionAllocationFunctionAllocationParserRuleCall_2_5_2_0 = (RuleCall)cFunctionAllocationAssignment_2_5_2.eContents().get(0);
-		private final Assignment cFunctionAllocationAssignment_2_5_3 = (Assignment)cGroup_2_5.eContents().get(3);
-		private final RuleCall cFunctionAllocationFunctionAllocationParserRuleCall_2_5_3_0 = (RuleCall)cFunctionAllocationAssignment_2_5_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_5_4 = (RuleCall)cGroup_2_5.eContents().get(4);
+		private final Assignment cFunctionAllocationAssignment_2_5_0 = (Assignment)cGroup_2_5.eContents().get(0);
+		private final RuleCall cFunctionAllocationFunctionAllocationParserRuleCall_2_5_0_0 = (RuleCall)cFunctionAllocationAssignment_2_5_0.eContents().get(0);
+		private final Assignment cFunctionAllocationAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
+		private final RuleCall cFunctionAllocationFunctionAllocationParserRuleCall_2_5_1_0 = (RuleCall)cFunctionAllocationAssignment_2_5_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_6 = (RuleCall)cGroup_2.eContents().get(6);
 		
 		//Allocation:
 		//	'Allocation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('functionAllocation' BEGIN
-		//	functionAllocation+=FunctionAllocation functionAllocation+=FunctionAllocation* END)?
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? (functionAllocation+=FunctionAllocation
+		//	functionAllocation+=FunctionAllocation*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Allocation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('functionAllocation' BEGIN
-		//functionAllocation+=FunctionAllocation functionAllocation+=FunctionAllocation* END)? END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)? (functionAllocation+=FunctionAllocation
+		//functionAllocation+=FunctionAllocation*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Allocation'
@@ -8076,9 +6905,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? ('functionAllocation' BEGIN functionAllocation+=FunctionAllocation
-		//functionAllocation+=FunctionAllocation* END)? END)?
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? (functionAllocation+=FunctionAllocation functionAllocation+=FunctionAllocation*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -8120,53 +6948,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
-		
-		//('functionAllocation' BEGIN functionAllocation+=FunctionAllocation functionAllocation+=FunctionAllocation* END)?
+		//(functionAllocation+=FunctionAllocation functionAllocation+=FunctionAllocation*)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
 		
-		//'functionAllocation'
-		public Keyword getFunctionAllocationKeyword_2_5_0() { return cFunctionAllocationKeyword_2_5_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_5_1() { return cBEGINTerminalRuleCall_2_5_1; }
-		
 		//functionAllocation+=FunctionAllocation
-		public Assignment getFunctionAllocationAssignment_2_5_2() { return cFunctionAllocationAssignment_2_5_2; }
+		public Assignment getFunctionAllocationAssignment_2_5_0() { return cFunctionAllocationAssignment_2_5_0; }
 		
 		//FunctionAllocation
-		public RuleCall getFunctionAllocationFunctionAllocationParserRuleCall_2_5_2_0() { return cFunctionAllocationFunctionAllocationParserRuleCall_2_5_2_0; }
+		public RuleCall getFunctionAllocationFunctionAllocationParserRuleCall_2_5_0_0() { return cFunctionAllocationFunctionAllocationParserRuleCall_2_5_0_0; }
 		
 		//functionAllocation+=FunctionAllocation*
-		public Assignment getFunctionAllocationAssignment_2_5_3() { return cFunctionAllocationAssignment_2_5_3; }
+		public Assignment getFunctionAllocationAssignment_2_5_1() { return cFunctionAllocationAssignment_2_5_1; }
 		
 		//FunctionAllocation
-		public RuleCall getFunctionAllocationFunctionAllocationParserRuleCall_2_5_3_0() { return cFunctionAllocationFunctionAllocationParserRuleCall_2_5_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_5_4() { return cENDTerminalRuleCall_2_5_4; }
+		public RuleCall getFunctionAllocationFunctionAllocationParserRuleCall_2_5_1_0() { return cFunctionAllocationFunctionAllocationParserRuleCall_2_5_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_6() { return cENDTerminalRuleCall_2_6; }
@@ -8196,25 +7006,21 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeDesignFunctionTypeCrossReference_2_5_0 = (CrossReference)cTypeAssignment_2_5.eContents().get(0);
 		private final RuleCall cTypeDesignFunctionTypeEStringParserRuleCall_2_5_0_1 = (RuleCall)cTypeDesignFunctionTypeCrossReference_2_5_0.eContents().get(1);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//DesignFunctionPrototype:
 		//	'DesignFunctionPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 		//	('name' name=String0)?
-		//	'type' type=[DesignFunctionType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	'type' type=[DesignFunctionType|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DesignFunctionPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? 'type' type=[DesignFunctionType|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? END)
+		//name=String0)? 'type' type=[DesignFunctionType|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'DesignFunctionPrototype'
@@ -8227,7 +7033,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'type'
-		//type=[DesignFunctionType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//type=[DesignFunctionType|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -8281,29 +7087,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeDesignFunctionTypeEStringParserRuleCall_2_5_0_1() { return cTypeDesignFunctionTypeEStringParserRuleCall_2_5_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -8333,25 +7130,22 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeHardwareComponentTypeCrossReference_2_5_0 = (CrossReference)cTypeAssignment_2_5.eContents().get(0);
 		private final RuleCall cTypeHardwareComponentTypeEStringParserRuleCall_2_5_0_1 = (RuleCall)cTypeHardwareComponentTypeCrossReference_2_5_0.eContents().get(1);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//HardwareComponentPrototype:
 		//	'HardwareComponentPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 		//	('name' name=String0)?
-		//	'type' type=[HardwareComponentType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	'type' type=[HardwareComponentType|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareComponentPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
-		//('name' name=String0)? 'type' type=[HardwareComponentType|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? END)
+		//('name' name=String0)? 'type' type=[HardwareComponentType|EString] (ownedComment+=Comment ownedComment+=Comment*)?
+		//END)
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareComponentPrototype'
@@ -8364,7 +7158,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'type'
-		//type=[HardwareComponentType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//type=[HardwareComponentType|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -8418,29 +7212,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeHardwareComponentTypeEStringParserRuleCall_2_5_0_1() { return cTypeHardwareComponentTypeEStringParserRuleCall_2_5_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -8466,41 +7251,31 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
-		private final Keyword cRealizedKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
-		private final RuleCall cBEGINTerminalRuleCall_2_6 = (RuleCall)cGroup_2.eContents().get(6);
-		private final Assignment cRealizedAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
-		private final RuleCall cRealizedRealization_realizedParserRuleCall_2_7_0 = (RuleCall)cRealizedAssignment_2_7.eContents().get(0);
-		private final Assignment cRealizedAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
-		private final RuleCall cRealizedRealization_realizedParserRuleCall_2_8_0 = (RuleCall)cRealizedAssignment_2_8.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
+		private final Assignment cRealizedAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
+		private final RuleCall cRealizedRealization_realizedParserRuleCall_2_5_0 = (RuleCall)cRealizedAssignment_2_5.eContents().get(0);
+		private final Assignment cRealizedAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
+		private final RuleCall cRealizedRealization_realizedParserRuleCall_2_6_0 = (RuleCall)cRealizedAssignment_2_6.eContents().get(0);
+		private final Assignment cRealizedByAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
+		private final RuleCall cRealizedByRealization_realizedByParserRuleCall_2_7_0 = (RuleCall)cRealizedByAssignment_2_7.eContents().get(0);
+		private final Assignment cRealizedByAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
+		private final RuleCall cRealizedByRealization_realizedByParserRuleCall_2_8_0 = (RuleCall)cRealizedByAssignment_2_8.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
-		private final Keyword cRealizedByKeyword_2_10 = (Keyword)cGroup_2.eContents().get(10);
-		private final RuleCall cBEGINTerminalRuleCall_2_11 = (RuleCall)cGroup_2.eContents().get(11);
-		private final Assignment cRealizedByAssignment_2_12 = (Assignment)cGroup_2.eContents().get(12);
-		private final RuleCall cRealizedByRealization_realizedByParserRuleCall_2_12_0 = (RuleCall)cRealizedByAssignment_2_12.eContents().get(0);
-		private final Assignment cRealizedByAssignment_2_13 = (Assignment)cGroup_2.eContents().get(13);
-		private final RuleCall cRealizedByRealization_realizedByParserRuleCall_2_13_0 = (RuleCall)cRealizedByAssignment_2_13.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_14 = (RuleCall)cGroup_2.eContents().get(14);
-		private final RuleCall cENDTerminalRuleCall_2_15 = (RuleCall)cGroup_2.eContents().get(15);
 		
 		//Realization:
 		//	'Realization' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//	'realized' BEGIN realized+=Realization_realized realized+=Realization_realized* END
-		//	'realizedBy' BEGIN realizedBy+=Realization_realizedBy realizedBy+=Realization_realizedBy* END
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	realized+=Realization_realized realized+=Realization_realized*
+		//	realizedBy+=Realization_realizedBy realizedBy+=Realization_realizedBy*
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Realization' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? 'realized' BEGIN
-		//realized+=Realization_realized realized+=Realization_realized* END 'realizedBy' BEGIN
-		//realizedBy+=Realization_realizedBy realizedBy+=Realization_realizedBy* END END)
+		//name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? realized+=Realization_realized
+		//realized+=Realization_realized* realizedBy+=Realization_realizedBy realizedBy+=Realization_realizedBy* END)
 		public Group getGroup() { return cGroup; }
 		
 		//'Realization'
@@ -8512,10 +7287,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? 'realized' BEGIN realized+=Realization_realized
-		//realized+=Realization_realized* END 'realizedBy' BEGIN realizedBy+=Realization_realizedBy
-		//realizedBy+=Realization_realizedBy* END END)
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? realized+=Realization_realized realized+=Realization_realized*
+		//realizedBy+=Realization_realizedBy realizedBy+=Realization_realizedBy* END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -8557,74 +7331,47 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
-		
-		//'realized'
-		public Keyword getRealizedKeyword_2_5() { return cRealizedKeyword_2_5; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6() { return cBEGINTerminalRuleCall_2_6; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
 		//realized+=Realization_realized
-		public Assignment getRealizedAssignment_2_7() { return cRealizedAssignment_2_7; }
+		public Assignment getRealizedAssignment_2_5() { return cRealizedAssignment_2_5; }
 		
 		//Realization_realized
-		public RuleCall getRealizedRealization_realizedParserRuleCall_2_7_0() { return cRealizedRealization_realizedParserRuleCall_2_7_0; }
+		public RuleCall getRealizedRealization_realizedParserRuleCall_2_5_0() { return cRealizedRealization_realizedParserRuleCall_2_5_0; }
 		
 		//realized+=Realization_realized*
-		public Assignment getRealizedAssignment_2_8() { return cRealizedAssignment_2_8; }
+		public Assignment getRealizedAssignment_2_6() { return cRealizedAssignment_2_6; }
 		
 		//Realization_realized
-		public RuleCall getRealizedRealization_realizedParserRuleCall_2_8_0() { return cRealizedRealization_realizedParserRuleCall_2_8_0; }
+		public RuleCall getRealizedRealization_realizedParserRuleCall_2_6_0() { return cRealizedRealization_realizedParserRuleCall_2_6_0; }
+		
+		//realizedBy+=Realization_realizedBy
+		public Assignment getRealizedByAssignment_2_7() { return cRealizedByAssignment_2_7; }
+		
+		//Realization_realizedBy
+		public RuleCall getRealizedByRealization_realizedByParserRuleCall_2_7_0() { return cRealizedByRealization_realizedByParserRuleCall_2_7_0; }
+		
+		//realizedBy+=Realization_realizedBy*
+		public Assignment getRealizedByAssignment_2_8() { return cRealizedByAssignment_2_8; }
+		
+		//Realization_realizedBy
+		public RuleCall getRealizedByRealization_realizedByParserRuleCall_2_8_0() { return cRealizedByRealization_realizedByParserRuleCall_2_8_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
-		
-		//'realizedBy'
-		public Keyword getRealizedByKeyword_2_10() { return cRealizedByKeyword_2_10; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_11() { return cBEGINTerminalRuleCall_2_11; }
-		
-		//realizedBy+=Realization_realizedBy
-		public Assignment getRealizedByAssignment_2_12() { return cRealizedByAssignment_2_12; }
-		
-		//Realization_realizedBy
-		public RuleCall getRealizedByRealization_realizedByParserRuleCall_2_12_0() { return cRealizedByRealization_realizedByParserRuleCall_2_12_0; }
-		
-		//realizedBy+=Realization_realizedBy*
-		public Assignment getRealizedByAssignment_2_13() { return cRealizedByAssignment_2_13; }
-		
-		//Realization_realizedBy
-		public RuleCall getRealizedByRealization_realizedByParserRuleCall_2_13_0() { return cRealizedByRealization_realizedByParserRuleCall_2_13_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_14() { return cENDTerminalRuleCall_2_14; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_15() { return cENDTerminalRuleCall_2_15; }
 	}
 	public class Realization_realizedElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Realization_realized");
@@ -8845,25 +7592,21 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeAnalysisFunctionTypeCrossReference_2_5_0 = (CrossReference)cTypeAssignment_2_5.eContents().get(0);
 		private final RuleCall cTypeAnalysisFunctionTypeEStringParserRuleCall_2_5_0_1 = (RuleCall)cTypeAnalysisFunctionTypeCrossReference_2_5_0.eContents().get(1);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//AnalysisFunctionPrototype:
 		//	'AnalysisFunctionPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 		//	('name' name=String0)?
-		//	'type' type=[AnalysisFunctionType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	'type' type=[AnalysisFunctionType|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AnalysisFunctionPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? 'type' type=[AnalysisFunctionType|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? END)
+		//name=String0)? 'type' type=[AnalysisFunctionType|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'AnalysisFunctionPrototype'
@@ -8876,7 +7619,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'type'
-		//type=[AnalysisFunctionType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//type=[AnalysisFunctionType|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -8930,29 +7673,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeAnalysisFunctionTypeEStringParserRuleCall_2_5_0_1() { return cTypeAnalysisFunctionTypeEStringParserRuleCall_2_5_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -8978,13 +7712,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
 		private final Keyword cAllocatedElementKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
 		private final Assignment cAllocatedElementAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
 		private final RuleCall cAllocatedElementFunctionAllocation_allocatedElementParserRuleCall_2_6_0 = (RuleCall)cAllocatedElementAssignment_2_6.eContents().get(0);
@@ -8995,14 +7726,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//FunctionAllocation:
 		//	'FunctionAllocation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
 		//	'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
 		//	'target' target=FunctionAllocation_target
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionAllocation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? 'allocatedElement'
+		//name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? 'allocatedElement'
 		//allocatedElement=FunctionAllocation_allocatedElement 'target' target=FunctionAllocation_target END)
 		public Group getGroup() { return cGroup; }
 		
@@ -9015,9 +7746,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? 'allocatedElement'
-		//allocatedElement=FunctionAllocation_allocatedElement 'target' target=FunctionAllocation_target END)
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? 'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement 'target'
+		//target=FunctionAllocation_target END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -9059,29 +7790,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
 		//'allocatedElement'
 		public Keyword getAllocatedElementKeyword_2_5() { return cAllocatedElementKeyword_2_5; }
@@ -9132,27 +7854,23 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeFunctionClientServerInterfaceCrossReference_2_7_0 = (CrossReference)cTypeAssignment_2_7.eContents().get(0);
 		private final RuleCall cTypeFunctionClientServerInterfaceEStringParserRuleCall_2_7_0_1 = (RuleCall)cTypeFunctionClientServerInterfaceCrossReference_2_7_0.eContents().get(1);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cOwnedCommentKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_2_0 = (RuleCall)cOwnedCommentAssignment_2_8_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_3_0 = (RuleCall)cOwnedCommentAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_0_0 = (RuleCall)cOwnedCommentAssignment_2_8_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_1_0 = (RuleCall)cOwnedCommentAssignment_2_8_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
 		
 		//FunctionClientServerPort:
 		//	'FunctionClientServerPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 		//	('name' name=String0)?
 		//	'kind' kind=ClientServerKind
-		//	'type' type=[FunctionClientServerInterface|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//	ownedComment+=Comment* END)?
+		//	'type' type=[FunctionClientServerInterface|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionClientServerPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? 'kind' kind=ClientServerKind 'type' type=[FunctionClientServerInterface|EString] ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//name=String0)? 'kind' kind=ClientServerKind 'type' type=[FunctionClientServerInterface|EString] (ownedComment+=Comment
+		//ownedComment+=Comment*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionClientServerPort'
@@ -9165,8 +7883,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'kind' kind=ClientServerKind
-		//'type' type=[FunctionClientServerInterface|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment*
-		//END)? END)
+		//'type' type=[FunctionClientServerInterface|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -9229,29 +7946,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeFunctionClientServerInterfaceEStringParserRuleCall_2_7_0_1() { return cTypeFunctionClientServerInterfaceEStringParserRuleCall_2_7_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_8_0() { return cOwnedCommentKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_8_2() { return cOwnedCommentAssignment_2_8_2; }
+		public Assignment getOwnedCommentAssignment_2_8_0() { return cOwnedCommentAssignment_2_8_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_2_0() { return cOwnedCommentCommentParserRuleCall_2_8_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_0_0() { return cOwnedCommentCommentParserRuleCall_2_8_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_8_3() { return cOwnedCommentAssignment_2_8_3; }
+		public Assignment getOwnedCommentAssignment_2_8_1() { return cOwnedCommentAssignment_2_8_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_3_0() { return cOwnedCommentCommentParserRuleCall_2_8_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_1_0() { return cOwnedCommentCommentParserRuleCall_2_8_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
@@ -9277,32 +7985,26 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
-		private final Keyword cPortKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
-		private final RuleCall cBEGINTerminalRuleCall_2_6 = (RuleCall)cGroup_2.eContents().get(6);
-		private final Assignment cPortAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
-		private final RuleCall cPortFunctionConnector_portParserRuleCall_2_7_0 = (RuleCall)cPortAssignment_2_7.eContents().get(0);
-		private final Assignment cPortAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
-		private final RuleCall cPortFunctionConnector_portParserRuleCall_2_8_0 = (RuleCall)cPortAssignment_2_8.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
-		private final RuleCall cENDTerminalRuleCall_2_10 = (RuleCall)cGroup_2.eContents().get(10);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
+		private final Assignment cPortAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
+		private final RuleCall cPortFunctionConnector_portParserRuleCall_2_5_0 = (RuleCall)cPortAssignment_2_5.eContents().get(0);
+		private final Assignment cPortAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
+		private final RuleCall cPortFunctionConnector_portParserRuleCall_2_6_0 = (RuleCall)cPortAssignment_2_6.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//FunctionConnector:
 		//	'FunctionConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//	'port' BEGIN port+=FunctionConnector_port port+=FunctionConnector_port* END
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	port+=FunctionConnector_port port+=FunctionConnector_port*
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? 'port' BEGIN
-		//port+=FunctionConnector_port port+=FunctionConnector_port* END END)
+		//name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? port+=FunctionConnector_port
+		//port+=FunctionConnector_port* END)
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionConnector'
@@ -9314,9 +8016,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? 'port' BEGIN port+=FunctionConnector_port
-		//port+=FunctionConnector_port* END END)
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? port+=FunctionConnector_port port+=FunctionConnector_port* END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -9358,53 +8059,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
-		
-		//'port'
-		public Keyword getPortKeyword_2_5() { return cPortKeyword_2_5; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6() { return cBEGINTerminalRuleCall_2_6; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
 		//port+=FunctionConnector_port
-		public Assignment getPortAssignment_2_7() { return cPortAssignment_2_7; }
+		public Assignment getPortAssignment_2_5() { return cPortAssignment_2_5; }
 		
 		//FunctionConnector_port
-		public RuleCall getPortFunctionConnector_portParserRuleCall_2_7_0() { return cPortFunctionConnector_portParserRuleCall_2_7_0; }
+		public RuleCall getPortFunctionConnector_portParserRuleCall_2_5_0() { return cPortFunctionConnector_portParserRuleCall_2_5_0; }
 		
 		//port+=FunctionConnector_port*
-		public Assignment getPortAssignment_2_8() { return cPortAssignment_2_8; }
+		public Assignment getPortAssignment_2_6() { return cPortAssignment_2_6; }
 		
 		//FunctionConnector_port
-		public RuleCall getPortFunctionConnector_portParserRuleCall_2_8_0() { return cPortFunctionConnector_portParserRuleCall_2_8_0; }
+		public RuleCall getPortFunctionConnector_portParserRuleCall_2_6_0() { return cPortFunctionConnector_portParserRuleCall_2_6_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10() { return cENDTerminalRuleCall_2_10; }
+		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
 	}
 	public class FunctionFlowPortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionFlowPort");
@@ -9434,13 +8117,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeEADatatypeCrossReference_2_7_0 = (CrossReference)cTypeAssignment_2_7.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_2_7_0_1 = (RuleCall)cTypeEADatatypeCrossReference_2_7_0.eContents().get(1);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cOwnedCommentKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_2_0 = (RuleCall)cOwnedCommentAssignment_2_8_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_3_0 = (RuleCall)cOwnedCommentAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_0_0 = (RuleCall)cOwnedCommentAssignment_2_8_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_1_0 = (RuleCall)cOwnedCommentAssignment_2_8_1.eContents().get(0);
 		private final Group cGroup_2_9 = (Group)cGroup_2.eContents().get(9);
 		private final Keyword cDefaultValueKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
 		private final Assignment cDefaultValueAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
@@ -9451,14 +8131,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//	'FunctionFlowPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)?
 		//	'direction' direction=EADirectionKind
-		//	'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//	('defaultValue' defaultValue=EAValue)?
+		//	'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? ('defaultValue'
+		//	defaultValue=EAValue)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionFlowPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? 'direction' direction=EADirectionKind 'type' type=[EADatatype|EString] ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? ('defaultValue' defaultValue=EAValue)? END)
+		//name=String0)? 'direction' direction=EADirectionKind 'type' type=[EADatatype|EString] (ownedComment+=Comment
+		//ownedComment+=Comment*)? ('defaultValue' defaultValue=EAValue)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionFlowPort'
@@ -9471,8 +8151,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'direction'
-		//direction=EADirectionKind 'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('defaultValue' defaultValue=EAValue)? END)
+		//direction=EADirectionKind 'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)?
+		//('defaultValue' defaultValue=EAValue)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -9535,29 +8215,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_2_7_0_1() { return cTypeEADatatypeEStringParserRuleCall_2_7_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_8_0() { return cOwnedCommentKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_8_2() { return cOwnedCommentAssignment_2_8_2; }
+		public Assignment getOwnedCommentAssignment_2_8_0() { return cOwnedCommentAssignment_2_8_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_2_0() { return cOwnedCommentCommentParserRuleCall_2_8_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_0_0() { return cOwnedCommentCommentParserRuleCall_2_8_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_8_3() { return cOwnedCommentAssignment_2_8_3; }
+		public Assignment getOwnedCommentAssignment_2_8_1() { return cOwnedCommentAssignment_2_8_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_3_0() { return cOwnedCommentCommentParserRuleCall_2_8_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_1_0() { return cOwnedCommentCommentParserRuleCall_2_8_1_0; }
 		
 		//('defaultValue' defaultValue=EAValue)?
 		public Group getGroup_2_9() { return cGroup_2_9; }
@@ -9599,25 +8270,21 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeCompositeDatatypeCrossReference_2_5_0 = (CrossReference)cTypeAssignment_2_5.eContents().get(0);
 		private final RuleCall cTypeCompositeDatatypeEStringParserRuleCall_2_5_0_1 = (RuleCall)cTypeCompositeDatatypeCrossReference_2_5_0.eContents().get(1);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//FunctionPowerPort:
 		//	'FunctionPowerPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)?
-		//	'type' type=[CompositeDatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	'type' type=[CompositeDatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionPowerPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? 'type' type=[CompositeDatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? END)
+		//name=String0)? 'type' type=[CompositeDatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionPowerPort'
@@ -9630,7 +8297,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'type'
-		//type=[CompositeDatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//type=[CompositeDatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -9684,29 +8351,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeCompositeDatatypeEStringParserRuleCall_2_5_0_1() { return cTypeCompositeDatatypeEStringParserRuleCall_2_5_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -9732,37 +8390,31 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
 		private final Group cGroup_2_5 = (Group)cGroup_2.eContents().get(5);
 		private final Keyword cReturnKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
 		private final Assignment cReturnAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cReturnEADatatypePrototypeParserRuleCall_2_5_1_0 = (RuleCall)cReturnAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cArgumentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cArgumentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cArgumentEADatatypePrototypeParserRuleCall_2_6_2_0 = (RuleCall)cArgumentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cArgumentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cArgumentEADatatypePrototypeParserRuleCall_2_6_3_0 = (RuleCall)cArgumentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cArgumentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cArgumentEADatatypePrototypeParserRuleCall_2_6_0_0 = (RuleCall)cArgumentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cArgumentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cArgumentEADatatypePrototypeParserRuleCall_2_6_1_0 = (RuleCall)cArgumentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//Operation:
 		//	'Operation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('return'
-		//	return=EADatatypePrototype)? ('argument' BEGIN argument+=EADatatypePrototype argument+=EADatatypePrototype* END)?
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? ('return' return=EADatatypePrototype)?
+		//	(argument+=EADatatypePrototype argument+=EADatatypePrototype*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Operation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('return' return=EADatatypePrototype)?
-		//('argument' BEGIN argument+=EADatatypePrototype argument+=EADatatypePrototype* END)? END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)? ('return' return=EADatatypePrototype)? (argument+=EADatatypePrototype
+		//argument+=EADatatypePrototype*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Operation'
@@ -9774,9 +8426,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? ('return' return=EADatatypePrototype)? ('argument' BEGIN
-		//argument+=EADatatypePrototype argument+=EADatatypePrototype* END)? END)?
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? ('return' return=EADatatypePrototype)? (argument+=EADatatypePrototype
+		//argument+=EADatatypePrototype*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -9818,29 +8470,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
 		//('return' return=EADatatypePrototype)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
@@ -9854,29 +8497,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EADatatypePrototype
 		public RuleCall getReturnEADatatypePrototypeParserRuleCall_2_5_1_0() { return cReturnEADatatypePrototypeParserRuleCall_2_5_1_0; }
 		
-		//('argument' BEGIN argument+=EADatatypePrototype argument+=EADatatypePrototype* END)?
+		//(argument+=EADatatypePrototype argument+=EADatatypePrototype*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'argument'
-		public Keyword getArgumentKeyword_2_6_0() { return cArgumentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//argument+=EADatatypePrototype
-		public Assignment getArgumentAssignment_2_6_2() { return cArgumentAssignment_2_6_2; }
+		public Assignment getArgumentAssignment_2_6_0() { return cArgumentAssignment_2_6_0; }
 		
 		//EADatatypePrototype
-		public RuleCall getArgumentEADatatypePrototypeParserRuleCall_2_6_2_0() { return cArgumentEADatatypePrototypeParserRuleCall_2_6_2_0; }
+		public RuleCall getArgumentEADatatypePrototypeParserRuleCall_2_6_0_0() { return cArgumentEADatatypePrototypeParserRuleCall_2_6_0_0; }
 		
 		//argument+=EADatatypePrototype*
-		public Assignment getArgumentAssignment_2_6_3() { return cArgumentAssignment_2_6_3; }
+		public Assignment getArgumentAssignment_2_6_1() { return cArgumentAssignment_2_6_1; }
 		
 		//EADatatypePrototype
-		public RuleCall getArgumentEADatatypePrototypeParserRuleCall_2_6_3_0() { return cArgumentEADatatypePrototypeParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getArgumentEADatatypePrototypeParserRuleCall_2_6_1_0() { return cArgumentEADatatypePrototypeParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -9912,35 +8546,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortFunctionPortEStringParserRuleCall_2_4_3_0_1 = (RuleCall)cPortFunctionPortCrossReference_2_4_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_4_4 = (Keyword)cGroup_2_4.eContents().get(4);
 		private final Group cGroup_2_5 = (Group)cGroup_2.eContents().get(5);
-		private final Keyword cOwnedCommentKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_5_1 = (RuleCall)cGroup_2_5.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_5_2 = (Assignment)cGroup_2_5.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_2_0 = (RuleCall)cOwnedCommentAssignment_2_5_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_5_3 = (Assignment)cGroup_2_5.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_3_0 = (RuleCall)cOwnedCommentAssignment_2_5_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_5_4 = (RuleCall)cGroup_2_5.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_5_0 = (Assignment)cGroup_2_5.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_0_0 = (RuleCall)cOwnedCommentAssignment_2_5_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_5_1_0 = (RuleCall)cOwnedCommentAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cPortGroupKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cPortGroupAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_6_2_0 = (RuleCall)cPortGroupAssignment_2_6_2.eContents().get(0);
-		private final Assignment cPortGroupAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cPortGroupPortGroupParserRuleCall_2_6_3_0 = (RuleCall)cPortGroupAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cPortGroupAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_6_0_0 = (RuleCall)cPortGroupAssignment_2_6_0.eContents().get(0);
+		private final Assignment cPortGroupAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cPortGroupPortGroupParserRuleCall_2_6_1_0 = (RuleCall)cPortGroupAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//PortGroup:
 		//	'PortGroup' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('port' '(' port+=[FunctionPort|EString] port+=[FunctionPort|EString]* ')')? ('ownedComment' BEGIN
-		//	ownedComment+=Comment ownedComment+=Comment* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup*
-		//	END)?
+		//	name=String0)? ('port' '(' port+=[FunctionPort|EString] port+=[FunctionPort|EString]* ')')? (ownedComment+=Comment
+		//	ownedComment+=Comment*)? (portGroup+=PortGroup portGroup+=PortGroup*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PortGroup' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
-		//('port' '(' port+=[FunctionPort|EString] port+=[FunctionPort|EString]* ')')? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-		//END)?
+		//('port' '(' port+=[FunctionPort|EString] port+=[FunctionPort|EString]* ')')? (ownedComment+=Comment
+		//ownedComment+=Comment*)? (portGroup+=PortGroup portGroup+=PortGroup*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'PortGroup'
@@ -9953,8 +8579,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('port' '('
-		//port+=[FunctionPort|EString] port+=[FunctionPort|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)? END)?
+		//port+=[FunctionPort|EString] port+=[FunctionPort|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//(portGroup+=PortGroup portGroup+=PortGroup*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -10026,53 +8652,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_4_4() { return cRightParenthesisKeyword_2_4_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_5() { return cGroup_2_5; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_5_0() { return cOwnedCommentKeyword_2_5_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_5_1() { return cBEGINTerminalRuleCall_2_5_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_5_2() { return cOwnedCommentAssignment_2_5_2; }
+		public Assignment getOwnedCommentAssignment_2_5_0() { return cOwnedCommentAssignment_2_5_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_2_0() { return cOwnedCommentCommentParserRuleCall_2_5_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_0_0() { return cOwnedCommentCommentParserRuleCall_2_5_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_5_3() { return cOwnedCommentAssignment_2_5_3; }
+		public Assignment getOwnedCommentAssignment_2_5_1() { return cOwnedCommentAssignment_2_5_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_3_0() { return cOwnedCommentCommentParserRuleCall_2_5_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_5_1_0() { return cOwnedCommentCommentParserRuleCall_2_5_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_5_4() { return cENDTerminalRuleCall_2_5_4; }
-		
-		//('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
+		//(portGroup+=PortGroup portGroup+=PortGroup*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'portGroup'
-		public Keyword getPortGroupKeyword_2_6_0() { return cPortGroupKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//portGroup+=PortGroup
-		public Assignment getPortGroupAssignment_2_6_2() { return cPortGroupAssignment_2_6_2; }
+		public Assignment getPortGroupAssignment_2_6_0() { return cPortGroupAssignment_2_6_0; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_6_2_0() { return cPortGroupPortGroupParserRuleCall_2_6_2_0; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_6_0_0() { return cPortGroupPortGroupParserRuleCall_2_6_0_0; }
 		
 		//portGroup+=PortGroup*
-		public Assignment getPortGroupAssignment_2_6_3() { return cPortGroupAssignment_2_6_3; }
+		public Assignment getPortGroupAssignment_2_6_1() { return cPortGroupAssignment_2_6_1; }
 		
 		//PortGroup
-		public RuleCall getPortGroupPortGroupParserRuleCall_2_6_3_0() { return cPortGroupPortGroupParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getPortGroupPortGroupParserRuleCall_2_6_1_0() { return cPortGroupPortGroupParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -10106,25 +8714,22 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cIsGroundAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cIsGroundBooleanParserRuleCall_2_5_1_0 = (RuleCall)cIsGroundAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//CommunicationHardwarePin:
 		//	'CommunicationHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
-		//	('name' name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('ownedComment' BEGIN
-		//	ownedComment+=Comment ownedComment+=Comment* END)?
+		//	('name' name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? (ownedComment+=Comment
+		//	ownedComment+=Comment*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'CommunicationHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'CommunicationHardwarePin'
@@ -10137,8 +8742,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('direction'
-		//direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? END)?
+		//direction=EADirectionKind)? ('isGround' isGround=Boolean)? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -10204,29 +8808,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Boolean
 		public RuleCall getIsGroundBooleanParserRuleCall_2_5_1_0() { return cIsGroundBooleanParserRuleCall_2_5_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -10252,32 +8847,26 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
-		private final Keyword cPortKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
-		private final RuleCall cBEGINTerminalRuleCall_2_6 = (RuleCall)cGroup_2.eContents().get(6);
-		private final Assignment cPortAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
-		private final RuleCall cPortHardwareConnector_portParserRuleCall_2_7_0 = (RuleCall)cPortAssignment_2_7.eContents().get(0);
-		private final Assignment cPortAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
-		private final RuleCall cPortHardwareConnector_portParserRuleCall_2_8_0 = (RuleCall)cPortAssignment_2_8.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
-		private final RuleCall cENDTerminalRuleCall_2_10 = (RuleCall)cGroup_2.eContents().get(10);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
+		private final Assignment cPortAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
+		private final RuleCall cPortHardwareConnector_portParserRuleCall_2_5_0 = (RuleCall)cPortAssignment_2_5.eContents().get(0);
+		private final Assignment cPortAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
+		private final RuleCall cPortHardwareConnector_portParserRuleCall_2_6_0 = (RuleCall)cPortAssignment_2_6.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//HardwareConnector:
 		//	'HardwareConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//	'port' BEGIN port+=HardwareConnector_port port+=HardwareConnector_port* END
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	port+=HardwareConnector_port port+=HardwareConnector_port*
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? 'port' BEGIN
-		//port+=HardwareConnector_port port+=HardwareConnector_port* END END)
+		//name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? port+=HardwareConnector_port
+		//port+=HardwareConnector_port* END)
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareConnector'
@@ -10289,9 +8878,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? 'port' BEGIN port+=HardwareConnector_port
-		//port+=HardwareConnector_port* END END)
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? port+=HardwareConnector_port port+=HardwareConnector_port* END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -10333,53 +8921,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
-		
-		//'port'
-		public Keyword getPortKeyword_2_5() { return cPortKeyword_2_5; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6() { return cBEGINTerminalRuleCall_2_6; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
 		//port+=HardwareConnector_port
-		public Assignment getPortAssignment_2_7() { return cPortAssignment_2_7; }
+		public Assignment getPortAssignment_2_5() { return cPortAssignment_2_5; }
 		
 		//HardwareConnector_port
-		public RuleCall getPortHardwareConnector_portParserRuleCall_2_7_0() { return cPortHardwareConnector_portParserRuleCall_2_7_0; }
+		public RuleCall getPortHardwareConnector_portParserRuleCall_2_5_0() { return cPortHardwareConnector_portParserRuleCall_2_5_0; }
 		
 		//port+=HardwareConnector_port*
-		public Assignment getPortAssignment_2_8() { return cPortAssignment_2_8; }
+		public Assignment getPortAssignment_2_6() { return cPortAssignment_2_6; }
 		
 		//HardwareConnector_port
-		public RuleCall getPortHardwareConnector_portParserRuleCall_2_8_0() { return cPortHardwareConnector_portParserRuleCall_2_8_0; }
+		public RuleCall getPortHardwareConnector_portParserRuleCall_2_6_0() { return cPortHardwareConnector_portParserRuleCall_2_6_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10() { return cENDTerminalRuleCall_2_10; }
+		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
 	}
 	public class HardwarePortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
@@ -10416,45 +8986,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cReferencedPinHardwarePinEStringParserRuleCall_2_5_3_0_1 = (RuleCall)cReferencedPinHardwarePinCrossReference_2_5_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2_5_4 = (Keyword)cGroup_2_5.eContents().get(4);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cContainedPinKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cContainedPinAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cContainedPinHardwarePinParserRuleCall_2_7_2_0 = (RuleCall)cContainedPinAssignment_2_7_2.eContents().get(0);
-		private final Assignment cContainedPinAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cContainedPinHardwarePinParserRuleCall_2_7_3_0 = (RuleCall)cContainedPinAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cContainedPinAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cContainedPinHardwarePinParserRuleCall_2_7_0_0 = (RuleCall)cContainedPinAssignment_2_7_0.eContents().get(0);
+		private final Assignment cContainedPinAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cContainedPinHardwarePinParserRuleCall_2_7_1_0 = (RuleCall)cContainedPinAssignment_2_7_1.eContents().get(0);
 		private final Group cGroup_2_8 = (Group)cGroup_2.eContents().get(8);
-		private final Keyword cContainedPortKeyword_2_8_0 = (Keyword)cGroup_2_8.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_8_1 = (RuleCall)cGroup_2_8.eContents().get(1);
-		private final Assignment cContainedPortAssignment_2_8_2 = (Assignment)cGroup_2_8.eContents().get(2);
-		private final RuleCall cContainedPortHardwarePortParserRuleCall_2_8_2_0 = (RuleCall)cContainedPortAssignment_2_8_2.eContents().get(0);
-		private final Assignment cContainedPortAssignment_2_8_3 = (Assignment)cGroup_2_8.eContents().get(3);
-		private final RuleCall cContainedPortHardwarePortParserRuleCall_2_8_3_0 = (RuleCall)cContainedPortAssignment_2_8_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8_4 = (RuleCall)cGroup_2_8.eContents().get(4);
+		private final Assignment cContainedPortAssignment_2_8_0 = (Assignment)cGroup_2_8.eContents().get(0);
+		private final RuleCall cContainedPortHardwarePortParserRuleCall_2_8_0_0 = (RuleCall)cContainedPortAssignment_2_8_0.eContents().get(0);
+		private final Assignment cContainedPortAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
+		private final RuleCall cContainedPortHardwarePortParserRuleCall_2_8_1_0 = (RuleCall)cContainedPortAssignment_2_8_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
 		
 		//HardwarePort:
 		//	'HardwarePort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('isShield' isShield=Boolean)? ('referencedPin' '(' referencedPin+=[HardwarePin|EString]
-		//	referencedPin+=[HardwarePin|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//	('containedPin' BEGIN containedPin+=HardwarePin containedPin+=HardwarePin* END)? ('containedPort' BEGIN
-		//	containedPort+=HardwarePort containedPort+=HardwarePort* END)?
+		//	referencedPin+=[HardwarePin|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	(containedPin+=HardwarePin containedPin+=HardwarePin*)? (containedPort+=HardwarePort containedPort+=HardwarePort*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwarePort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('isShield' isShield=Boolean)? ('referencedPin' '(' referencedPin+=[HardwarePin|EString]
-		//referencedPin+=[HardwarePin|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//('containedPin' BEGIN containedPin+=HardwarePin containedPin+=HardwarePin* END)? ('containedPort' BEGIN
-		//containedPort+=HardwarePort containedPort+=HardwarePort* END)? END)?
+		//referencedPin+=[HardwarePin|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)? (containedPin+=HardwarePin
+		//containedPin+=HardwarePin*)? (containedPort+=HardwarePort containedPort+=HardwarePort*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwarePort'
@@ -10467,10 +9026,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('isShield' isShield=Boolean)?
-		//('referencedPin' '(' referencedPin+=[HardwarePin|EString] referencedPin+=[HardwarePin|EString]* ')')? ('ownedComment'
-		//BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('containedPin' BEGIN containedPin+=HardwarePin
-		//containedPin+=HardwarePin* END)? ('containedPort' BEGIN containedPort+=HardwarePort containedPort+=HardwarePort* END)?
-		//END)?
+		//('referencedPin' '(' referencedPin+=[HardwarePin|EString] referencedPin+=[HardwarePin|EString]* ')')?
+		//(ownedComment+=Comment ownedComment+=Comment*)? (containedPin+=HardwarePin containedPin+=HardwarePin*)?
+		//(containedPort+=HardwarePort containedPort+=HardwarePort*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -10554,77 +9112,50 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_2_5_4() { return cRightParenthesisKeyword_2_5_4; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//('containedPin' BEGIN containedPin+=HardwarePin containedPin+=HardwarePin* END)?
+		//(containedPin+=HardwarePin containedPin+=HardwarePin*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'containedPin'
-		public Keyword getContainedPinKeyword_2_7_0() { return cContainedPinKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//containedPin+=HardwarePin
-		public Assignment getContainedPinAssignment_2_7_2() { return cContainedPinAssignment_2_7_2; }
+		public Assignment getContainedPinAssignment_2_7_0() { return cContainedPinAssignment_2_7_0; }
 		
 		//HardwarePin
-		public RuleCall getContainedPinHardwarePinParserRuleCall_2_7_2_0() { return cContainedPinHardwarePinParserRuleCall_2_7_2_0; }
+		public RuleCall getContainedPinHardwarePinParserRuleCall_2_7_0_0() { return cContainedPinHardwarePinParserRuleCall_2_7_0_0; }
 		
 		//containedPin+=HardwarePin*
-		public Assignment getContainedPinAssignment_2_7_3() { return cContainedPinAssignment_2_7_3; }
+		public Assignment getContainedPinAssignment_2_7_1() { return cContainedPinAssignment_2_7_1; }
 		
 		//HardwarePin
-		public RuleCall getContainedPinHardwarePinParserRuleCall_2_7_3_0() { return cContainedPinHardwarePinParserRuleCall_2_7_3_0; }
+		public RuleCall getContainedPinHardwarePinParserRuleCall_2_7_1_0() { return cContainedPinHardwarePinParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
-		
-		//('containedPort' BEGIN containedPort+=HardwarePort containedPort+=HardwarePort* END)?
+		//(containedPort+=HardwarePort containedPort+=HardwarePort*)?
 		public Group getGroup_2_8() { return cGroup_2_8; }
 		
-		//'containedPort'
-		public Keyword getContainedPortKeyword_2_8_0() { return cContainedPortKeyword_2_8_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8_1() { return cBEGINTerminalRuleCall_2_8_1; }
-		
 		//containedPort+=HardwarePort
-		public Assignment getContainedPortAssignment_2_8_2() { return cContainedPortAssignment_2_8_2; }
+		public Assignment getContainedPortAssignment_2_8_0() { return cContainedPortAssignment_2_8_0; }
 		
 		//HardwarePort
-		public RuleCall getContainedPortHardwarePortParserRuleCall_2_8_2_0() { return cContainedPortHardwarePortParserRuleCall_2_8_2_0; }
+		public RuleCall getContainedPortHardwarePortParserRuleCall_2_8_0_0() { return cContainedPortHardwarePortParserRuleCall_2_8_0_0; }
 		
 		//containedPort+=HardwarePort*
-		public Assignment getContainedPortAssignment_2_8_3() { return cContainedPortAssignment_2_8_3; }
+		public Assignment getContainedPortAssignment_2_8_1() { return cContainedPortAssignment_2_8_1; }
 		
 		//HardwarePort
-		public RuleCall getContainedPortHardwarePortParserRuleCall_2_8_3_0() { return cContainedPortHardwarePortParserRuleCall_2_8_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8_4() { return cENDTerminalRuleCall_2_8_4; }
+		public RuleCall getContainedPortHardwarePortParserRuleCall_2_8_1_0() { return cContainedPortHardwarePortParserRuleCall_2_8_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
@@ -10650,42 +9181,32 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
-		private final Keyword cPortKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
-		private final RuleCall cBEGINTerminalRuleCall_2_6 = (RuleCall)cGroup_2.eContents().get(6);
-		private final Assignment cPortAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
-		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_7_0 = (RuleCall)cPortAssignment_2_7.eContents().get(0);
-		private final Assignment cPortAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
-		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_8_0 = (RuleCall)cPortAssignment_2_8.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
-		private final Group cGroup_2_10 = (Group)cGroup_2.eContents().get(10);
-		private final Keyword cConnectorKeyword_2_10_0 = (Keyword)cGroup_2_10.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_10_1 = (RuleCall)cGroup_2_10.eContents().get(1);
-		private final Assignment cConnectorAssignment_2_10_2 = (Assignment)cGroup_2_10.eContents().get(2);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_2_0 = (RuleCall)cConnectorAssignment_2_10_2.eContents().get(0);
-		private final Assignment cConnectorAssignment_2_10_3 = (Assignment)cGroup_2_10.eContents().get(3);
-		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_10_3_0 = (RuleCall)cConnectorAssignment_2_10_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10_4 = (RuleCall)cGroup_2_10.eContents().get(4);
-		private final RuleCall cENDTerminalRuleCall_2_11 = (RuleCall)cGroup_2.eContents().get(11);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
+		private final Assignment cPortAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
+		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_5_0 = (RuleCall)cPortAssignment_2_5.eContents().get(0);
+		private final Assignment cPortAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
+		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_6_0 = (RuleCall)cPortAssignment_2_6.eContents().get(0);
+		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
+		private final Assignment cConnectorAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_7_0_0 = (RuleCall)cConnectorAssignment_2_7_0.eContents().get(0);
+		private final Assignment cConnectorAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_7_1_0 = (RuleCall)cConnectorAssignment_2_7_1.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
 		
 		//HardwarePortConnector:
 		//	'HardwarePortConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-		//	'port' BEGIN port+=HardwarePortConnector_port port+=HardwarePortConnector_port* END ('connector' BEGIN
-		//	connector+=HardwareConnector connector+=HardwareConnector* END)?
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+		//	port+=HardwarePortConnector_port port+=HardwarePortConnector_port* (connector+=HardwareConnector
+		//	connector+=HardwareConnector*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwarePortConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? 'port' BEGIN
-		//port+=HardwarePortConnector_port port+=HardwarePortConnector_port* END ('connector' BEGIN connector+=HardwareConnector
-		//connector+=HardwareConnector* END)? END)
+		//name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? port+=HardwarePortConnector_port
+		//port+=HardwarePortConnector_port* (connector+=HardwareConnector connector+=HardwareConnector*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwarePortConnector'
@@ -10697,10 +9218,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? 'port' BEGIN port+=HardwarePortConnector_port
-		//port+=HardwarePortConnector_port* END ('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector*
-		//END)? END)
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? port+=HardwarePortConnector_port port+=HardwarePortConnector_port*
+		//(connector+=HardwareConnector connector+=HardwareConnector*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -10742,77 +9262,50 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
-		
-		//'port'
-		public Keyword getPortKeyword_2_5() { return cPortKeyword_2_5; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6() { return cBEGINTerminalRuleCall_2_6; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
 		//port+=HardwarePortConnector_port
-		public Assignment getPortAssignment_2_7() { return cPortAssignment_2_7; }
+		public Assignment getPortAssignment_2_5() { return cPortAssignment_2_5; }
 		
 		//HardwarePortConnector_port
-		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_7_0() { return cPortHardwarePortConnector_portParserRuleCall_2_7_0; }
+		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_5_0() { return cPortHardwarePortConnector_portParserRuleCall_2_5_0; }
 		
 		//port+=HardwarePortConnector_port*
-		public Assignment getPortAssignment_2_8() { return cPortAssignment_2_8; }
+		public Assignment getPortAssignment_2_6() { return cPortAssignment_2_6; }
 		
 		//HardwarePortConnector_port
-		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_8_0() { return cPortHardwarePortConnector_portParserRuleCall_2_8_0; }
+		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_6_0() { return cPortHardwarePortConnector_portParserRuleCall_2_6_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
-		
-		//('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)?
-		public Group getGroup_2_10() { return cGroup_2_10; }
-		
-		//'connector'
-		public Keyword getConnectorKeyword_2_10_0() { return cConnectorKeyword_2_10_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_10_1() { return cBEGINTerminalRuleCall_2_10_1; }
+		//(connector+=HardwareConnector connector+=HardwareConnector*)?
+		public Group getGroup_2_7() { return cGroup_2_7; }
 		
 		//connector+=HardwareConnector
-		public Assignment getConnectorAssignment_2_10_2() { return cConnectorAssignment_2_10_2; }
+		public Assignment getConnectorAssignment_2_7_0() { return cConnectorAssignment_2_7_0; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_2_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_2_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_7_0_0() { return cConnectorHardwareConnectorParserRuleCall_2_7_0_0; }
 		
 		//connector+=HardwareConnector*
-		public Assignment getConnectorAssignment_2_10_3() { return cConnectorAssignment_2_10_3; }
+		public Assignment getConnectorAssignment_2_7_1() { return cConnectorAssignment_2_7_1; }
 		
 		//HardwareConnector
-		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_10_3_0() { return cConnectorHardwareConnectorParserRuleCall_2_10_3_0; }
+		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_7_1_0() { return cConnectorHardwareConnectorParserRuleCall_2_7_1_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_2_10_4() { return cENDTerminalRuleCall_2_10_4; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11() { return cENDTerminalRuleCall_2_11; }
+		public RuleCall getENDTerminalRuleCall_2_8() { return cENDTerminalRuleCall_2_8; }
 	}
 	public class IOHardwarePinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.IOHardwarePin");
@@ -10847,25 +9340,22 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cKindAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cKindIOHardwarePinKindEnumRuleCall_2_6_1_0 = (RuleCall)cKindAssignment_2_6_1.eContents().get(0);
 		private final Group cGroup_2_7 = (Group)cGroup_2.eContents().get(7);
-		private final Keyword cOwnedCommentKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_7_1 = (RuleCall)cGroup_2_7.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_2_0 = (RuleCall)cOwnedCommentAssignment_2_7_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_7_3 = (Assignment)cGroup_2_7.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_3_0 = (RuleCall)cOwnedCommentAssignment_2_7_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7_4 = (RuleCall)cGroup_2_7.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_7_0 = (Assignment)cGroup_2_7.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_0_0 = (RuleCall)cOwnedCommentAssignment_2_7_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_1_0 = (RuleCall)cOwnedCommentAssignment_2_7_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
 		
 		//IOHardwarePin:
 		//	'IOHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('kind'
-		//	kind=IOHardwarePinKind)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	kind=IOHardwarePinKind)? (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'IOHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('kind'
-		//kind=IOHardwarePinKind)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//kind=IOHardwarePinKind)? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'IOHardwarePin'
@@ -10878,8 +9368,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('direction'
-		//direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('kind' kind=IOHardwarePinKind)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('kind' kind=IOHardwarePinKind)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -10957,29 +9447,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//IOHardwarePinKind
 		public RuleCall getKindIOHardwarePinKindEnumRuleCall_2_6_1_0() { return cKindIOHardwarePinKindEnumRuleCall_2_6_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_7() { return cGroup_2_7; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_7_0() { return cOwnedCommentKeyword_2_7_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_7_1() { return cBEGINTerminalRuleCall_2_7_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_7_2() { return cOwnedCommentAssignment_2_7_2; }
+		public Assignment getOwnedCommentAssignment_2_7_0() { return cOwnedCommentAssignment_2_7_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_2_0() { return cOwnedCommentCommentParserRuleCall_2_7_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_0_0() { return cOwnedCommentCommentParserRuleCall_2_7_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_7_3() { return cOwnedCommentAssignment_2_7_3; }
+		public Assignment getOwnedCommentAssignment_2_7_1() { return cOwnedCommentAssignment_2_7_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_3_0() { return cOwnedCommentCommentParserRuleCall_2_7_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7_4() { return cENDTerminalRuleCall_2_7_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_1_0() { return cOwnedCommentCommentParserRuleCall_2_7_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_8() { return cENDTerminalRuleCall_2_8; }
@@ -11013,33 +9494,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cBusSpeedAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cBusSpeedFloatParserRuleCall_2_5_1_0 = (RuleCall)cBusSpeedAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
-		private final Keyword cPortKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
-		private final RuleCall cBEGINTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
-		private final Assignment cPortAssignment_2_9 = (Assignment)cGroup_2.eContents().get(9);
-		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_9_0 = (RuleCall)cPortAssignment_2_9.eContents().get(0);
-		private final Assignment cPortAssignment_2_10 = (Assignment)cGroup_2.eContents().get(10);
-		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_10_0 = (RuleCall)cPortAssignment_2_10.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11 = (RuleCall)cGroup_2.eContents().get(11);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
+		private final Assignment cPortAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
+		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_7_0 = (RuleCall)cPortAssignment_2_7.eContents().get(0);
+		private final Assignment cPortAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
+		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_8_0 = (RuleCall)cPortAssignment_2_8.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
 		
 		//LogicalPortConnector:
 		//	'LogicalPortConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('kind' kind=HardwareBusKind)? ('busSpeed' busSpeed=Float)? ('ownedComment' BEGIN
-		//	ownedComment+=Comment ownedComment+=Comment* END)?
-		//	'port' BEGIN port+=HardwarePortConnector_port port+=HardwarePortConnector_port* END
+		//	name=String0)? ('kind' kind=HardwareBusKind)? ('busSpeed' busSpeed=Float)? (ownedComment+=Comment
+		//	ownedComment+=Comment*)?
+		//	port+=HardwarePortConnector_port port+=HardwarePortConnector_port*
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'LogicalPortConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('kind' kind=HardwareBusKind)? ('busSpeed' busSpeed=Float)? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? 'port' BEGIN port+=HardwarePortConnector_port port+=HardwarePortConnector_port* END END)
+		//name=String0)? ('kind' kind=HardwareBusKind)? ('busSpeed' busSpeed=Float)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? port+=HardwarePortConnector_port port+=HardwarePortConnector_port* END)
 		public Group getGroup() { return cGroup; }
 		
 		//'LogicalPortConnector'
@@ -11052,8 +9527,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('kind' kind=HardwareBusKind)?
-		//('busSpeed' busSpeed=Float)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? 'port' BEGIN
-		//port+=HardwarePortConnector_port port+=HardwarePortConnector_port* END END)
+		//('busSpeed' busSpeed=Float)? (ownedComment+=Comment ownedComment+=Comment*)? port+=HardwarePortConnector_port
+		//port+=HardwarePortConnector_port* END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -11119,53 +9594,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Float
 		public RuleCall getBusSpeedFloatParserRuleCall_2_5_1_0() { return cBusSpeedFloatParserRuleCall_2_5_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
-		
-		//'port'
-		public Keyword getPortKeyword_2_7() { return cPortKeyword_2_7; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_8() { return cBEGINTerminalRuleCall_2_8; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//port+=HardwarePortConnector_port
-		public Assignment getPortAssignment_2_9() { return cPortAssignment_2_9; }
+		public Assignment getPortAssignment_2_7() { return cPortAssignment_2_7; }
 		
 		//HardwarePortConnector_port
-		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_9_0() { return cPortHardwarePortConnector_portParserRuleCall_2_9_0; }
+		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_7_0() { return cPortHardwarePortConnector_portParserRuleCall_2_7_0; }
 		
 		//port+=HardwarePortConnector_port*
-		public Assignment getPortAssignment_2_10() { return cPortAssignment_2_10; }
+		public Assignment getPortAssignment_2_8() { return cPortAssignment_2_8; }
 		
 		//HardwarePortConnector_port
-		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_10_0() { return cPortHardwarePortConnector_portParserRuleCall_2_10_0; }
+		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_8_0() { return cPortHardwarePortConnector_portParserRuleCall_2_8_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_2_11() { return cENDTerminalRuleCall_2_11; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
 	}
 	public class PowerHardwarePinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.PowerHardwarePin");
@@ -11196,25 +9653,22 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cIsGroundAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cIsGroundBooleanParserRuleCall_2_5_1_0 = (RuleCall)cIsGroundAssignment_2_5_1.eContents().get(0);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//PowerHardwarePin:
 		//	'PowerHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('ownedComment' BEGIN
-		//	ownedComment+=Comment ownedComment+=Comment* END)?
+		//	name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? (ownedComment+=Comment
+		//	ownedComment+=Comment*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PowerHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'PowerHardwarePin'
@@ -11227,8 +9681,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('direction'
-		//direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('ownedComment' BEGIN ownedComment+=Comment
-		//ownedComment+=Comment* END)? END)?
+		//direction=EADirectionKind)? ('isGround' isGround=Boolean)? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -11294,29 +9747,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Boolean
 		public RuleCall getIsGroundBooleanParserRuleCall_2_5_1_0() { return cIsGroundBooleanParserRuleCall_2_5_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -11346,25 +9790,21 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeEADatatypeCrossReference_2_5_0 = (CrossReference)cTypeAssignment_2_5.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_2_5_0_1 = (RuleCall)cTypeEADatatypeCrossReference_2_5_0.eContents().get(1);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final Keyword cOwnedCommentKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_6_1 = (RuleCall)cGroup_2_6.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_2_0 = (RuleCall)cOwnedCommentAssignment_2_6_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_6_3 = (Assignment)cGroup_2_6.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_3_0 = (RuleCall)cOwnedCommentAssignment_2_6_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6_4 = (RuleCall)cGroup_2_6.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_6_0 = (Assignment)cGroup_2_6.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
 		
 		//EADatatypePrototype:
 		//	'EADatatypePrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 		//	name=String0)?
-		//	'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EADatatypePrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? 'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment*
-		//END)? END)
+		//name=String0)? 'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'EADatatypePrototype'
@@ -11377,7 +9817,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
 		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? 'type' type=[EADatatype|EString]
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)
+		//(ownedComment+=Comment ownedComment+=Comment*)? END)
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -11431,29 +9871,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_2_5_0_1() { return cTypeEADatatypeEStringParserRuleCall_2_5_0_1; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_6_0() { return cOwnedCommentKeyword_2_6_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_6_1() { return cBEGINTerminalRuleCall_2_6_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_6_2() { return cOwnedCommentAssignment_2_6_2; }
+		public Assignment getOwnedCommentAssignment_2_6_0() { return cOwnedCommentAssignment_2_6_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_2_0() { return cOwnedCommentCommentParserRuleCall_2_6_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_0_0() { return cOwnedCommentCommentParserRuleCall_2_6_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_6_3() { return cOwnedCommentAssignment_2_6_3; }
+		public Assignment getOwnedCommentAssignment_2_6_1() { return cOwnedCommentAssignment_2_6_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_3_0() { return cOwnedCommentCommentParserRuleCall_2_6_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6_4() { return cENDTerminalRuleCall_2_6_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
@@ -11479,23 +9910,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
 		private final RuleCall cNameString0ParserRuleCall_2_3_1_0 = (RuleCall)cNameAssignment_2_3_1.eContents().get(0);
 		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cOwnedCommentKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		private final Assignment cOwnedCommentAssignment_2_4_2 = (Assignment)cGroup_2_4.eContents().get(2);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_2_0 = (RuleCall)cOwnedCommentAssignment_2_4_2.eContents().get(0);
-		private final Assignment cOwnedCommentAssignment_2_4_3 = (Assignment)cGroup_2_4.eContents().get(3);
-		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_3_0 = (RuleCall)cOwnedCommentAssignment_2_4_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_4_4 = (RuleCall)cGroup_2_4.eContents().get(4);
+		private final Assignment cOwnedCommentAssignment_2_4_0 = (Assignment)cGroup_2_4.eContents().get(0);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
+		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_2_5 = (RuleCall)cGroup_2.eContents().get(5);
 		
 		//EnumerationLiteral:
 		//	'EnumerationLiteral' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
 		//	END)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EnumerationLiteral' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-		//name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? END)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EnumerationLiteral'
@@ -11507,8 +9935,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? ('ownedComment' BEGIN
-		//ownedComment+=Comment ownedComment+=Comment* END)? END)?
+		//(BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)? (ownedComment+=Comment
+		//ownedComment+=Comment*)? END)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//BEGIN
@@ -11550,29 +9978,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getNameString0ParserRuleCall_2_3_1_0() { return cNameString0ParserRuleCall_2_3_1_0; }
 		
-		//('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+		//(ownedComment+=Comment ownedComment+=Comment*)?
 		public Group getGroup_2_4() { return cGroup_2_4; }
 		
-		//'ownedComment'
-		public Keyword getOwnedCommentKeyword_2_4_0() { return cOwnedCommentKeyword_2_4_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_4_1() { return cBEGINTerminalRuleCall_2_4_1; }
-		
 		//ownedComment+=Comment
-		public Assignment getOwnedCommentAssignment_2_4_2() { return cOwnedCommentAssignment_2_4_2; }
+		public Assignment getOwnedCommentAssignment_2_4_0() { return cOwnedCommentAssignment_2_4_0; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_2_0() { return cOwnedCommentCommentParserRuleCall_2_4_2_0; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_0_0() { return cOwnedCommentCommentParserRuleCall_2_4_0_0; }
 		
 		//ownedComment+=Comment*
-		public Assignment getOwnedCommentAssignment_2_4_3() { return cOwnedCommentAssignment_2_4_3; }
+		public Assignment getOwnedCommentAssignment_2_4_1() { return cOwnedCommentAssignment_2_4_1; }
 		
 		//Comment
-		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_3_0() { return cOwnedCommentCommentParserRuleCall_2_4_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_4_4() { return cENDTerminalRuleCall_2_4_4; }
+		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_2_5() { return cENDTerminalRuleCall_2_5; }
@@ -11853,28 +10272,25 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeEADatatypeCrossReference_1_2_0 = (CrossReference)cTypeAssignment_1_2.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_1_2_0_1 = (RuleCall)cTypeEADatatypeCrossReference_1_2_0.eContents().get(1);
 		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
-		private final Keyword cValueKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_1_3_1 = (RuleCall)cGroup_1_3.eContents().get(1);
-		private final Assignment cValueAssignment_1_3_2 = (Assignment)cGroup_1_3.eContents().get(2);
-		private final RuleCall cValueEAValueParserRuleCall_1_3_2_0 = (RuleCall)cValueAssignment_1_3_2.eContents().get(0);
-		private final Assignment cValueAssignment_1_3_3 = (Assignment)cGroup_1_3.eContents().get(3);
-		private final RuleCall cValueEAValueParserRuleCall_1_3_3_0 = (RuleCall)cValueAssignment_1_3_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_3_4 = (RuleCall)cGroup_1_3.eContents().get(4);
+		private final Assignment cValueAssignment_1_3_0 = (Assignment)cGroup_1_3.eContents().get(0);
+		private final RuleCall cValueEAValueParserRuleCall_1_3_0_0 = (RuleCall)cValueAssignment_1_3_0.eContents().get(0);
+		private final Assignment cValueAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
+		private final RuleCall cValueEAValueParserRuleCall_1_3_1_0 = (RuleCall)cValueAssignment_1_3_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
 		
 		//EAArrayValue:
 		//	'EAArrayValue' (BEGIN
-		//	'type' type=[EADatatype|EString] ('value' BEGIN value+=EAValue value+=EAValue* END)?
+		//	'type' type=[EADatatype|EString] (value+=EAValue value+=EAValue*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'EAArrayValue' (BEGIN 'type' type=[EADatatype|EString] ('value' BEGIN value+=EAValue value+=EAValue* END)? END)
+		//'EAArrayValue' (BEGIN 'type' type=[EADatatype|EString] (value+=EAValue value+=EAValue*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'EAArrayValue'
 		public Keyword getEAArrayValueKeyword_0() { return cEAArrayValueKeyword_0; }
 		
-		//(BEGIN 'type' type=[EADatatype|EString] ('value' BEGIN value+=EAValue value+=EAValue* END)? END)
+		//(BEGIN 'type' type=[EADatatype|EString] (value+=EAValue value+=EAValue*)? END)
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//BEGIN
@@ -11892,29 +10308,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_1_2_0_1() { return cTypeEADatatypeEStringParserRuleCall_1_2_0_1; }
 		
-		//('value' BEGIN value+=EAValue value+=EAValue* END)?
+		//(value+=EAValue value+=EAValue*)?
 		public Group getGroup_1_3() { return cGroup_1_3; }
 		
-		//'value'
-		public Keyword getValueKeyword_1_3_0() { return cValueKeyword_1_3_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_3_1() { return cBEGINTerminalRuleCall_1_3_1; }
-		
 		//value+=EAValue
-		public Assignment getValueAssignment_1_3_2() { return cValueAssignment_1_3_2; }
+		public Assignment getValueAssignment_1_3_0() { return cValueAssignment_1_3_0; }
 		
 		//EAValue
-		public RuleCall getValueEAValueParserRuleCall_1_3_2_0() { return cValueEAValueParserRuleCall_1_3_2_0; }
+		public RuleCall getValueEAValueParserRuleCall_1_3_0_0() { return cValueEAValueParserRuleCall_1_3_0_0; }
 		
 		//value+=EAValue*
-		public Assignment getValueAssignment_1_3_3() { return cValueAssignment_1_3_3; }
+		public Assignment getValueAssignment_1_3_1() { return cValueAssignment_1_3_1; }
 		
 		//EAValue
-		public RuleCall getValueEAValueParserRuleCall_1_3_3_0() { return cValueEAValueParserRuleCall_1_3_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_3_4() { return cENDTerminalRuleCall_1_3_4; }
+		public RuleCall getValueEAValueParserRuleCall_1_3_1_0() { return cValueEAValueParserRuleCall_1_3_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
@@ -11986,29 +10393,25 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cTypeEADatatypeCrossReference_1_2_0 = (CrossReference)cTypeAssignment_1_2.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_1_2_0_1 = (RuleCall)cTypeEADatatypeCrossReference_1_2_0.eContents().get(1);
-		private final Keyword cValueKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
-		private final RuleCall cBEGINTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
-		private final Assignment cValueAssignment_1_5 = (Assignment)cGroup_1.eContents().get(5);
-		private final RuleCall cValueEAValueParserRuleCall_1_5_0 = (RuleCall)cValueAssignment_1_5.eContents().get(0);
-		private final Assignment cValueAssignment_1_6 = (Assignment)cGroup_1.eContents().get(6);
-		private final RuleCall cValueEAValueParserRuleCall_1_6_0 = (RuleCall)cValueAssignment_1_6.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_7 = (RuleCall)cGroup_1.eContents().get(7);
-		private final RuleCall cENDTerminalRuleCall_1_8 = (RuleCall)cGroup_1.eContents().get(8);
+		private final Assignment cValueAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cValueEAValueParserRuleCall_1_3_0 = (RuleCall)cValueAssignment_1_3.eContents().get(0);
+		private final Assignment cValueAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cValueEAValueParserRuleCall_1_4_0 = (RuleCall)cValueAssignment_1_4.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
 		
 		//EACompositeValue:
 		//	'EACompositeValue' (BEGIN
-		//	'type' type=[EADatatype|EString]
-		//	'value' BEGIN value+=EAValue value+=EAValue* END
+		//	'type' type=[EADatatype|EString] value+=EAValue value+=EAValue*
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'EACompositeValue' (BEGIN 'type' type=[EADatatype|EString] 'value' BEGIN value+=EAValue value+=EAValue* END END)
+		//'EACompositeValue' (BEGIN 'type' type=[EADatatype|EString] value+=EAValue value+=EAValue* END)
 		public Group getGroup() { return cGroup; }
 		
 		//'EACompositeValue'
 		public Keyword getEACompositeValueKeyword_0() { return cEACompositeValueKeyword_0; }
 		
-		//(BEGIN 'type' type=[EADatatype|EString] 'value' BEGIN value+=EAValue value+=EAValue* END END)
+		//(BEGIN 'type' type=[EADatatype|EString] value+=EAValue value+=EAValue* END)
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//BEGIN
@@ -12026,29 +10429,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_1_2_0_1() { return cTypeEADatatypeEStringParserRuleCall_1_2_0_1; }
 		
-		//'value'
-		public Keyword getValueKeyword_1_3() { return cValueKeyword_1_3; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_4() { return cBEGINTerminalRuleCall_1_4; }
-		
 		//value+=EAValue
-		public Assignment getValueAssignment_1_5() { return cValueAssignment_1_5; }
+		public Assignment getValueAssignment_1_3() { return cValueAssignment_1_3; }
 		
 		//EAValue
-		public RuleCall getValueEAValueParserRuleCall_1_5_0() { return cValueEAValueParserRuleCall_1_5_0; }
+		public RuleCall getValueEAValueParserRuleCall_1_3_0() { return cValueEAValueParserRuleCall_1_3_0; }
 		
 		//value+=EAValue*
-		public Assignment getValueAssignment_1_6() { return cValueAssignment_1_6; }
+		public Assignment getValueAssignment_1_4() { return cValueAssignment_1_4; }
 		
 		//EAValue
-		public RuleCall getValueEAValueParserRuleCall_1_6_0() { return cValueEAValueParserRuleCall_1_6_0; }
+		public RuleCall getValueEAValueParserRuleCall_1_4_0() { return cValueEAValueParserRuleCall_1_4_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_1_7() { return cENDTerminalRuleCall_1_7; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_8() { return cENDTerminalRuleCall_1_8; }
+		public RuleCall getENDTerminalRuleCall_1_5() { return cENDTerminalRuleCall_1_5; }
 	}
 	public class EAEnumerationValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAEnumerationValue");
@@ -12145,28 +10539,25 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cTypeEADatatypeCrossReference_1_2_0 = (CrossReference)cTypeAssignment_1_2.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_1_2_0_1 = (RuleCall)cTypeEADatatypeCrossReference_1_2_0.eContents().get(1);
 		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
-		private final Keyword cValueKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_1_3_1 = (RuleCall)cGroup_1_3.eContents().get(1);
-		private final Assignment cValueAssignment_1_3_2 = (Assignment)cGroup_1_3.eContents().get(2);
-		private final RuleCall cValueEAValueParserRuleCall_1_3_2_0 = (RuleCall)cValueAssignment_1_3_2.eContents().get(0);
-		private final Assignment cValueAssignment_1_3_3 = (Assignment)cGroup_1_3.eContents().get(3);
-		private final RuleCall cValueEAValueParserRuleCall_1_3_3_0 = (RuleCall)cValueAssignment_1_3_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_3_4 = (RuleCall)cGroup_1_3.eContents().get(4);
+		private final Assignment cValueAssignment_1_3_0 = (Assignment)cGroup_1_3.eContents().get(0);
+		private final RuleCall cValueEAValueParserRuleCall_1_3_0_0 = (RuleCall)cValueAssignment_1_3_0.eContents().get(0);
+		private final Assignment cValueAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
+		private final RuleCall cValueEAValueParserRuleCall_1_3_1_0 = (RuleCall)cValueAssignment_1_3_1.eContents().get(0);
 		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
 		
 		//EAExpression:
 		//	'EAExpression' (BEGIN
-		//	'type' type=[EADatatype|EString] ('value' BEGIN value+=EAValue value+=EAValue* END)?
+		//	'type' type=[EADatatype|EString] (value+=EAValue value+=EAValue*)?
 		//	END);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'EAExpression' (BEGIN 'type' type=[EADatatype|EString] ('value' BEGIN value+=EAValue value+=EAValue* END)? END)
+		//'EAExpression' (BEGIN 'type' type=[EADatatype|EString] (value+=EAValue value+=EAValue*)? END)
 		public Group getGroup() { return cGroup; }
 		
 		//'EAExpression'
 		public Keyword getEAExpressionKeyword_0() { return cEAExpressionKeyword_0; }
 		
-		//(BEGIN 'type' type=[EADatatype|EString] ('value' BEGIN value+=EAValue value+=EAValue* END)? END)
+		//(BEGIN 'type' type=[EADatatype|EString] (value+=EAValue value+=EAValue*)? END)
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//BEGIN
@@ -12184,29 +10575,20 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_1_2_0_1() { return cTypeEADatatypeEStringParserRuleCall_1_2_0_1; }
 		
-		//('value' BEGIN value+=EAValue value+=EAValue* END)?
+		//(value+=EAValue value+=EAValue*)?
 		public Group getGroup_1_3() { return cGroup_1_3; }
 		
-		//'value'
-		public Keyword getValueKeyword_1_3_0() { return cValueKeyword_1_3_0; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_3_1() { return cBEGINTerminalRuleCall_1_3_1; }
-		
 		//value+=EAValue
-		public Assignment getValueAssignment_1_3_2() { return cValueAssignment_1_3_2; }
+		public Assignment getValueAssignment_1_3_0() { return cValueAssignment_1_3_0; }
 		
 		//EAValue
-		public RuleCall getValueEAValueParserRuleCall_1_3_2_0() { return cValueEAValueParserRuleCall_1_3_2_0; }
+		public RuleCall getValueEAValueParserRuleCall_1_3_0_0() { return cValueEAValueParserRuleCall_1_3_0_0; }
 		
 		//value+=EAValue*
-		public Assignment getValueAssignment_1_3_3() { return cValueAssignment_1_3_3; }
+		public Assignment getValueAssignment_1_3_1() { return cValueAssignment_1_3_1; }
 		
 		//EAValue
-		public RuleCall getValueEAValueParserRuleCall_1_3_3_0() { return cValueEAValueParserRuleCall_1_3_3_0; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_3_4() { return cENDTerminalRuleCall_1_3_4; }
+		public RuleCall getValueEAValueParserRuleCall_1_3_1_0() { return cValueEAValueParserRuleCall_1_3_1_0; }
 		
 		//END
 		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
@@ -13210,8 +11592,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAPackage:
 	//	'EAPackage' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? (subPackage+=EAPackage
-	//	subPackage+=EAPackage*)? (element+=EAPackageableElement element+=EAPackageableElement*)?
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? (subPackage+=EAPackage subPackage+=EAPackage*)?
+	//	(element+=EAPackageableElement element+=EAPackageableElement*)?
 	//	END)?;
 	public EAPackageElements getEAPackageAccess() {
 		return pEAPackage;
@@ -13268,9 +11650,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//DesignLevel:
 	//	'DesignLevel' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-	//	traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-	//	ownedRelationship+=Relationship* END)? ('allocation' BEGIN allocation+=Allocation allocation+=Allocation* END)?
+	//	traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (allocation+=Allocation allocation+=Allocation*)?
 	//	('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)? ('hardwareDesignArchitecture'
 	//	hardwareDesignArchitecture=HardwareComponentPrototype)?
 	//	END)?;
@@ -13286,11 +11667,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'AnalysisFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 	//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-	//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-	//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-	//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-	//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=AnalysisFunctionPrototype
-	//	part+=AnalysisFunctionPrototype* END)?
+	//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+	//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+	//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=AnalysisFunctionPrototype
+	//	part+=AnalysisFunctionPrototype*)?
 	//	END)?;
 	public AnalysisFunctionType_ImplElements getAnalysisFunctionType_ImplAccess() {
 		return pAnalysisFunctionType_Impl;
@@ -13304,11 +11684,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'BasicSoftwareFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 	//	('name' name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 	//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-	//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-	//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-	//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-	//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-	//	part+=DesignFunctionPrototype* END)?
+	//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+	//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+	//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+	//	part+=DesignFunctionPrototype*)?
 	//	END)?;
 	public BasicSoftwareFunctionTypeElements getBasicSoftwareFunctionTypeAccess() {
 		return pBasicSoftwareFunctionType;
@@ -13322,11 +11701,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'DesignFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 	//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-	//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-	//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-	//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-	//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-	//	part+=DesignFunctionPrototype* END)?
+	//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+	//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+	//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+	//	part+=DesignFunctionPrototype*)?
 	//	END)?;
 	public DesignFunctionType_ImplElements getDesignFunctionType_ImplAccess() {
 		return pDesignFunctionType_Impl;
@@ -13340,11 +11718,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'FunctionalDevice' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 	//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-	//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-	//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-	//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-	//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=AnalysisFunctionPrototype
-	//	part+=AnalysisFunctionPrototype* END)?
+	//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+	//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+	//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=AnalysisFunctionPrototype
+	//	part+=AnalysisFunctionPrototype*)?
 	//	END)?;
 	public FunctionalDeviceElements getFunctionalDeviceAccess() {
 		return pFunctionalDevice;
@@ -13356,8 +11733,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionClientServerInterface:
 	//	'FunctionClientServerInterface' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
-	//	('name' name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)? ('operation' BEGIN operation+=Operation operation+=Operation* END)?
+	//	('name' name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	(operation+=Operation operation+=Operation*)?
 	//	END)?;
 	public FunctionClientServerInterfaceElements getFunctionClientServerInterfaceAccess() {
 		return pFunctionClientServerInterface;
@@ -13371,11 +11748,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'HardwareFunctionType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 	//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-	//	')')? ('hardwareComponent' hardwareComponent=[HardwareComponentType|EString])? ('ownedComment' BEGIN
-	//	ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-	//	ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup* END)?
-	//	('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)? ('port' BEGIN port+=FunctionPort
-	//	port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype part+=DesignFunctionPrototype* END)?
+	//	')')? ('hardwareComponent' hardwareComponent=[HardwareComponentType|EString])? (ownedComment+=Comment
+	//	ownedComment+=Comment*)? (ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (portGroup+=PortGroup
+	//	portGroup+=PortGroup*)? (connector+=FunctionConnector connector+=FunctionConnector*)? (port+=FunctionPort
+	//	port+=FunctionPort*)? (part+=DesignFunctionPrototype part+=DesignFunctionPrototype*)?
 	//	END)?;
 	public HardwareFunctionTypeElements getHardwareFunctionTypeAccess() {
 		return pHardwareFunctionType;
@@ -13389,11 +11765,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'LocalDeviceManager' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('isElementary' isElementary=Boolean)? ('traceableSpecification' '('
 	//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-	//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-	//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('portGroup' BEGIN portGroup+=PortGroup
-	//	portGroup+=PortGroup* END)? ('connector' BEGIN connector+=FunctionConnector connector+=FunctionConnector* END)?
-	//	('port' BEGIN port+=FunctionPort port+=FunctionPort* END)? ('part' BEGIN part+=DesignFunctionPrototype
-	//	part+=DesignFunctionPrototype* END)?
+	//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+	//	ownedRelationship+=Relationship*)? (portGroup+=PortGroup portGroup+=PortGroup*)? (connector+=FunctionConnector
+	//	connector+=FunctionConnector*)? (port+=FunctionPort port+=FunctionPort*)? (part+=DesignFunctionPrototype
+	//	part+=DesignFunctionPrototype*)?
 	//	END)?;
 	public LocalDeviceManagerElements getLocalDeviceManagerAccess() {
 		return pLocalDeviceManager;
@@ -13406,12 +11781,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//Actuator:
 	//	'Actuator' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-	//	traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-	//	ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-	//	part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-	//	connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-	//	END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+	//	traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+	//	(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+	//	connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+	//	portConnector+=PortConnector*)?
 	//	END)?;
 	public ActuatorElements getActuatorAccess() {
 		return pActuator;
@@ -13425,11 +11799,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'ElectricalComponent' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('isActive' isActive=Boolean)? ('traceableSpecification' '('
 	//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-	//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-	//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin
-	//	pin+=HardwarePin* END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
-	//	('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort
-	//	port+=HardwarePort* END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+	//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+	//	ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+	//	part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+	//	port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)?
 	//	END)?;
 	public ElectricalComponentElements getElectricalComponentAccess() {
 		return pElectricalComponent;
@@ -13442,12 +11815,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//HardwareComponentType_Impl HardwareComponentType:
 	//	'HardwareComponentType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-	//	traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-	//	ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-	//	part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-	//	connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-	//	END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+	//	traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+	//	(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+	//	connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+	//	portConnector+=PortConnector*)?
 	//	END)?;
 	public HardwareComponentType_ImplElements getHardwareComponentType_ImplAccess() {
 		return pHardwareComponentType_Impl;
@@ -13461,11 +11833,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'Node' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 	//	('executionRate' executionRate=Float)? ('traceableSpecification' '('
 	//	traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*
-	//	')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('ownedRelationship' BEGIN
-	//	ownedRelationship+=Relationship ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin
-	//	pin+=HardwarePin* END)? ('part' BEGIN part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)?
-	//	('connector' BEGIN connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort
-	//	port+=HardwarePort* END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+	//	')')? (ownedComment+=Comment ownedComment+=Comment*)? (ownedRelationship+=Relationship
+	//	ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)? (part+=HardwareComponentPrototype
+	//	part+=HardwareComponentPrototype*)? (connector+=HardwareConnector connector+=HardwareConnector*)? (port+=HardwarePort
+	//	port+=HardwarePort*)? (portConnector+=PortConnector portConnector+=PortConnector*)?
 	//	END)?;
 	public NodeElements getNodeAccess() {
 		return pNode;
@@ -13478,12 +11849,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//Sensor:
 	//	'Sensor' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name' name=String0)?
 	//	('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString]
-	//	traceableSpecification+=[TraceableSpecification|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)? ('ownedRelationship' BEGIN ownedRelationship+=Relationship
-	//	ownedRelationship+=Relationship* END)? ('pin' BEGIN pin+=HardwarePin pin+=HardwarePin* END)? ('part' BEGIN
-	//	part+=HardwareComponentPrototype part+=HardwareComponentPrototype* END)? ('connector' BEGIN
-	//	connector+=HardwareConnector connector+=HardwareConnector* END)? ('port' BEGIN port+=HardwarePort port+=HardwarePort*
-	//	END)? ('portConnector' BEGIN portConnector+=PortConnector portConnector+=PortConnector* END)?
+	//	traceableSpecification+=[TraceableSpecification|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	(ownedRelationship+=Relationship ownedRelationship+=Relationship*)? (pin+=HardwarePin pin+=HardwarePin*)?
+	//	(part+=HardwareComponentPrototype part+=HardwareComponentPrototype*)? (connector+=HardwareConnector
+	//	connector+=HardwareConnector*)? (port+=HardwarePort port+=HardwarePort*)? (portConnector+=PortConnector
+	//	portConnector+=PortConnector*)?
 	//	END)?;
 	public SensorElements getSensorAccess() {
 		return pSensor;
@@ -13497,8 +11867,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'ArrayDatatype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('maxLength' maxLength=Integer)? ('minLength'
 	//	minLength=Integer)?
-	//	'elementType' elementType=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment*
-	//	END)?
+	//	'elementType' elementType=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public ArrayDatatypeElements getArrayDatatypeAccess() {
 		return pArrayDatatype;
@@ -13510,9 +11879,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//CompositeDatatype:
 	//	'CompositeDatatype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)?
-	//	'datatypePrototype' BEGIN datatypePrototype+=EADatatypePrototype datatypePrototype+=EADatatypePrototype* END
+	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	datatypePrototype+=EADatatypePrototype datatypePrototype+=EADatatypePrototype*
 	//	END);
 	public CompositeDatatypeElements getCompositeDatatypeAccess() {
 		return pCompositeDatatype;
@@ -13524,8 +11892,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EABoolean:
 	//	'EABoolean' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)?
+	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END)?;
 	public EABooleanElements getEABooleanAccess() {
 		return pEABoolean;
@@ -13538,7 +11905,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//EANumerical:
 	//	'EANumerical' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('max' max=Numerical)? ('min' min=Numerical)? ('unit'
-	//	unit=[Unit|EString])? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	unit=[Unit|EString])? (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END)?;
 	public EANumericalElements getEANumericalAccess() {
 		return pEANumerical;
@@ -13550,8 +11917,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAString:
 	//	'EAString' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)?
+	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END)?;
 	public EAStringElements getEAStringAccess() {
 		return pEAString;
@@ -13564,8 +11930,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//Enumeration:
 	//	'Enumeration' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)?
-	//	'isMultiValued' isMultiValued=Boolean ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-	//	'literal' BEGIN literal+=EnumerationLiteral literal+=EnumerationLiteral* END
+	//	'isMultiValued' isMultiValued=Boolean (ownedComment+=Comment ownedComment+=Comment*)?
+	//	literal+=EnumerationLiteral literal+=EnumerationLiteral*
 	//	END);
 	public EnumerationElements getEnumerationAccess() {
 		return pEnumeration;
@@ -13584,7 +11950,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'luminousIntensityExp' luminousIntensityExp=Integer
 	//	'massExp' massExp=Integer
 	//	'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer
-	//	'timeExp' timeExp=Integer ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	'timeExp' timeExp=Integer (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public QuantityElements getQuantityAccess() {
 		return pQuantity;
@@ -13599,8 +11965,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	name=String0)? ('text' text=String0)? ('uri' uri=String0)?
 	//	'accuracy' accuracy=Float
 	//	'resolution' resolution=Float ('significantDigits' significantDigits=Integer)?
-	//	'baseRangeable' baseRangeable=[EANumerical|EString] ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)?
+	//	'baseRangeable' baseRangeable=[EANumerical|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public RangeableValueTypeElements getRangeableValueTypeAccess() {
 		return pRangeableValueType;
@@ -13615,7 +11980,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'factor' factor=Float
 	//	'symbol' symbol=String0
 	//	'offset' offset=Float ('reference' reference=[Unit|EString])? ('quantity' quantity=[Quantity|EString])?
-	//	('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	(ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public UnitElements getUnitAccess() {
 		return pUnit;
@@ -13628,8 +11993,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//UserAttributeDefinition:
 	//	'UserAttributeDefinition' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 	//	('name' name=String0)?
-	//	'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-	//	('defaultValue' defaultValue=EAValue)?
+	//	'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? ('defaultValue'
+	//	defaultValue=EAValue)?
 	//	END);
 	public UserAttributeDefinitionElements getUserAttributeDefinitionAccess() {
 		return pUserAttributeDefinition;
@@ -13642,8 +12007,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//UserAttributedElement:
 	//	'UserAttributedElement' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('uaType' '(' uaType+=[UserElementType|EString] uaType+=[UserElementType|EString]* ')')?
-	//	'attributedElement' attributedElement=[Identifiable|EString] ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)? ('uaValue' BEGIN uaValue+=EAValue uaValue+=EAValue* END)?
+	//	'attributedElement' attributedElement=[Identifiable|EString] (ownedComment+=Comment ownedComment+=Comment*)?
+	//	(uaValue+=EAValue uaValue+=EAValue*)?
 	//	END);
 	public UserAttributedElementElements getUserAttributedElementAccess() {
 		return pUserAttributedElement;
@@ -13656,8 +12021,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//UserElementType:
 	//	'UserElementType' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('validFor' validFor=String0)?
-	//	'key' key=String0 ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('uaDefinition' BEGIN
-	//	uaDefinition+=UserAttributeDefinition uaDefinition+=UserAttributeDefinition* END)?
+	//	'key' key=String0 (ownedComment+=Comment ownedComment+=Comment*)? (uaDefinition+=UserAttributeDefinition
+	//	uaDefinition+=UserAttributeDefinition*)?
 	//	END);
 	public UserElementTypeElements getUserElementTypeAccess() {
 		return pUserElementType;
@@ -13669,8 +12034,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Allocation:
 	//	'Allocation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('functionAllocation' BEGIN
-	//	functionAllocation+=FunctionAllocation functionAllocation+=FunctionAllocation* END)?
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? (functionAllocation+=FunctionAllocation
+	//	functionAllocation+=FunctionAllocation*)?
 	//	END)?;
 	public AllocationElements getAllocationAccess() {
 		return pAllocation;
@@ -13683,7 +12048,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//DesignFunctionPrototype:
 	//	'DesignFunctionPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 	//	('name' name=String0)?
-	//	'type' type=[DesignFunctionType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	'type' type=[DesignFunctionType|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public DesignFunctionPrototypeElements getDesignFunctionPrototypeAccess() {
 		return pDesignFunctionPrototype;
@@ -13696,7 +12061,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//HardwareComponentPrototype:
 	//	'HardwareComponentPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 	//	('name' name=String0)?
-	//	'type' type=[HardwareComponentType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	'type' type=[HardwareComponentType|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public HardwareComponentPrototypeElements getHardwareComponentPrototypeAccess() {
 		return pHardwareComponentPrototype;
@@ -13708,9 +12073,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Realization:
 	//	'Realization' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-	//	'realized' BEGIN realized+=Realization_realized realized+=Realization_realized* END
-	//	'realizedBy' BEGIN realizedBy+=Realization_realizedBy realizedBy+=Realization_realizedBy* END
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	realized+=Realization_realized realized+=Realization_realized*
+	//	realizedBy+=Realization_realizedBy realizedBy+=Realization_realizedBy*
 	//	END);
 	public RealizationElements getRealizationAccess() {
 		return pRealization;
@@ -13749,7 +12114,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//AnalysisFunctionPrototype:
 	//	'AnalysisFunctionPrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 	//	('name' name=String0)?
-	//	'type' type=[AnalysisFunctionType|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	'type' type=[AnalysisFunctionType|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public AnalysisFunctionPrototypeElements getAnalysisFunctionPrototypeAccess() {
 		return pAnalysisFunctionPrototype;
@@ -13761,7 +12126,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionAllocation:
 	//	'FunctionAllocation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
 	//	'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
 	//	'target' target=FunctionAllocation_target
 	//	END);
@@ -13777,8 +12142,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'FunctionClientServerPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
 	//	('name' name=String0)?
 	//	'kind' kind=ClientServerKind
-	//	'type' type=[FunctionClientServerInterface|EString] ('ownedComment' BEGIN ownedComment+=Comment
-	//	ownedComment+=Comment* END)?
+	//	'type' type=[FunctionClientServerInterface|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public FunctionClientServerPortElements getFunctionClientServerPortAccess() {
 		return pFunctionClientServerPort;
@@ -13790,8 +12154,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionConnector:
 	//	'FunctionConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-	//	'port' BEGIN port+=FunctionConnector_port port+=FunctionConnector_port* END
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	port+=FunctionConnector_port port+=FunctionConnector_port*
 	//	END);
 	public FunctionConnectorElements getFunctionConnectorAccess() {
 		return pFunctionConnector;
@@ -13805,8 +12169,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//	'FunctionFlowPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)?
 	//	'direction' direction=EADirectionKind
-	//	'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-	//	('defaultValue' defaultValue=EAValue)?
+	//	'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)? ('defaultValue'
+	//	defaultValue=EAValue)?
 	//	END);
 	public FunctionFlowPortElements getFunctionFlowPortAccess() {
 		return pFunctionFlowPort;
@@ -13819,7 +12183,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//FunctionPowerPort:
 	//	'FunctionPowerPort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)?
-	//	'type' type=[CompositeDatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	'type' type=[CompositeDatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public FunctionPowerPortElements getFunctionPowerPortAccess() {
 		return pFunctionPowerPort;
@@ -13831,8 +12195,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Operation:
 	//	'Operation' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)? ('return'
-	//	return=EADatatypePrototype)? ('argument' BEGIN argument+=EADatatypePrototype argument+=EADatatypePrototype* END)?
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)? ('return' return=EADatatypePrototype)?
+	//	(argument+=EADatatypePrototype argument+=EADatatypePrototype*)?
 	//	END)?;
 	public OperationElements getOperationAccess() {
 		return pOperation;
@@ -13844,9 +12208,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//PortGroup:
 	//	'PortGroup' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('port' '(' port+=[FunctionPort|EString] port+=[FunctionPort|EString]* ')')? ('ownedComment' BEGIN
-	//	ownedComment+=Comment ownedComment+=Comment* END)? ('portGroup' BEGIN portGroup+=PortGroup portGroup+=PortGroup*
-	//	END)?
+	//	name=String0)? ('port' '(' port+=[FunctionPort|EString] port+=[FunctionPort|EString]* ')')? (ownedComment+=Comment
+	//	ownedComment+=Comment*)? (portGroup+=PortGroup portGroup+=PortGroup*)?
 	//	END)?;
 	public PortGroupElements getPortGroupAccess() {
 		return pPortGroup;
@@ -13858,8 +12221,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//CommunicationHardwarePin:
 	//	'CommunicationHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)?
-	//	('name' name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('ownedComment' BEGIN
-	//	ownedComment+=Comment ownedComment+=Comment* END)?
+	//	('name' name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? (ownedComment+=Comment
+	//	ownedComment+=Comment*)?
 	//	END)?;
 	public CommunicationHardwarePinElements getCommunicationHardwarePinAccess() {
 		return pCommunicationHardwarePin;
@@ -13871,8 +12234,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwareConnector:
 	//	'HardwareConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-	//	'port' BEGIN port+=HardwareConnector_port port+=HardwareConnector_port* END
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	port+=HardwareConnector_port port+=HardwareConnector_port*
 	//	END);
 	public HardwareConnectorElements getHardwareConnectorAccess() {
 		return pHardwareConnector;
@@ -13885,9 +12248,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//HardwarePort:
 	//	'HardwarePort' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('isShield' isShield=Boolean)? ('referencedPin' '(' referencedPin+=[HardwarePin|EString]
-	//	referencedPin+=[HardwarePin|EString]* ')')? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-	//	('containedPin' BEGIN containedPin+=HardwarePin containedPin+=HardwarePin* END)? ('containedPort' BEGIN
-	//	containedPort+=HardwarePort containedPort+=HardwarePort* END)?
+	//	referencedPin+=[HardwarePin|EString]* ')')? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	(containedPin+=HardwarePin containedPin+=HardwarePin*)? (containedPort+=HardwarePort containedPort+=HardwarePort*)?
 	//	END)?;
 	public HardwarePortElements getHardwarePortAccess() {
 		return pHardwarePort;
@@ -13899,9 +12261,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwarePortConnector:
 	//	'HardwarePortConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
-	//	'port' BEGIN port+=HardwarePortConnector_port port+=HardwarePortConnector_port* END ('connector' BEGIN
-	//	connector+=HardwareConnector connector+=HardwareConnector* END)?
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
+	//	port+=HardwarePortConnector_port port+=HardwarePortConnector_port* (connector+=HardwareConnector
+	//	connector+=HardwareConnector*)?
 	//	END);
 	public HardwarePortConnectorElements getHardwarePortConnectorAccess() {
 		return pHardwarePortConnector;
@@ -13914,7 +12276,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//IOHardwarePin:
 	//	'IOHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('kind'
-	//	kind=IOHardwarePinKind)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	kind=IOHardwarePinKind)? (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END)?;
 	public IOHardwarePinElements getIOHardwarePinAccess() {
 		return pIOHardwarePin;
@@ -13926,9 +12288,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//LogicalPortConnector:
 	//	'LogicalPortConnector' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('kind' kind=HardwareBusKind)? ('busSpeed' busSpeed=Float)? ('ownedComment' BEGIN
-	//	ownedComment+=Comment ownedComment+=Comment* END)?
-	//	'port' BEGIN port+=HardwarePortConnector_port port+=HardwarePortConnector_port* END
+	//	name=String0)? ('kind' kind=HardwareBusKind)? ('busSpeed' busSpeed=Float)? (ownedComment+=Comment
+	//	ownedComment+=Comment*)?
+	//	port+=HardwarePortConnector_port port+=HardwarePortConnector_port*
 	//	END);
 	public LogicalPortConnectorElements getLogicalPortConnectorAccess() {
 		return pLogicalPortConnector;
@@ -13940,8 +12302,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//PowerHardwarePin:
 	//	'PowerHardwarePin' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? ('ownedComment' BEGIN
-	//	ownedComment+=Comment ownedComment+=Comment* END)?
+	//	name=String0)? ('direction' direction=EADirectionKind)? ('isGround' isGround=Boolean)? (ownedComment+=Comment
+	//	ownedComment+=Comment*)?
 	//	END)?;
 	public PowerHardwarePinElements getPowerHardwarePinAccess() {
 		return pPowerHardwarePin;
@@ -13954,7 +12316,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//EADatatypePrototype:
 	//	'EADatatypePrototype' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
 	//	name=String0)?
-	//	'type' type=[EADatatype|EString] ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	'type' type=[EADatatype|EString] (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END);
 	public EADatatypePrototypeElements getEADatatypePrototypeAccess() {
 		return pEADatatypePrototype;
@@ -13966,7 +12328,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EnumerationLiteral:
 	//	'EnumerationLiteral' shortName=Identifier (BEGIN ('category' category=Identifier)? ('uuid' uuid=String0)? ('name'
-	//	name=String0)? ('ownedComment' BEGIN ownedComment+=Comment ownedComment+=Comment* END)?
+	//	name=String0)? (ownedComment+=Comment ownedComment+=Comment*)?
 	//	END)?;
 	public EnumerationLiteralElements getEnumerationLiteralAccess() {
 		return pEnumerationLiteral;
@@ -14035,7 +12397,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAArrayValue:
 	//	'EAArrayValue' (BEGIN
-	//	'type' type=[EADatatype|EString] ('value' BEGIN value+=EAValue value+=EAValue* END)?
+	//	'type' type=[EADatatype|EString] (value+=EAValue value+=EAValue*)?
 	//	END);
 	public EAArrayValueElements getEAArrayValueAccess() {
 		return pEAArrayValue;
@@ -14059,8 +12421,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EACompositeValue:
 	//	'EACompositeValue' (BEGIN
-	//	'type' type=[EADatatype|EString]
-	//	'value' BEGIN value+=EAValue value+=EAValue* END
+	//	'type' type=[EADatatype|EString] value+=EAValue value+=EAValue*
 	//	END);
 	public EACompositeValueElements getEACompositeValueAccess() {
 		return pEACompositeValue;
@@ -14085,7 +12446,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAExpression:
 	//	'EAExpression' (BEGIN
-	//	'type' type=[EADatatype|EString] ('value' BEGIN value+=EAValue value+=EAValue* END)?
+	//	'type' type=[EADatatype|EString] (value+=EAValue value+=EAValue*)?
 	//	END);
 	public EAExpressionElements getEAExpressionAccess() {
 		return pEAExpression;
