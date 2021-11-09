@@ -19,8 +19,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.GrammarUtil;
 
 public class EastAdlSimplifiedSyntaxErrorMessageProvider extends SyntaxErrorMessageProvider {
-	public static String INCOMPLETE_UNORDERED_GROUP = "INCOMPLETE_UNORDERED_GROUP";
-	public static String USED_RESERVED_KEYWORD = "USED_RESERVED_KEYWORD";
 	public static String SYNTAX_DIAGNOSTIC = "org.eclipse.xtext.diagnostics.Diagnostic.Syntax";
 	
 	@Inject IGrammarAccess grammarAccess;
@@ -82,7 +80,7 @@ public class EastAdlSimplifiedSyntaxErrorMessageProvider extends SyntaxErrorMess
 			}
 			
 			if (tokenName.equals("RULE_BEGIN"))
-				msg = "Mandatory element(s) is missing or the intendation is incorrct!";
+				msg = "Mandatory element(s) is missing or the intendation is incorrct or the order of elements is incorrect!";
 			else if (tokenName.equals("RULE_END")) {
 				if (!e.token.getText().isEmpty() && e.token.getText().charAt(0) == 46)
 					msg = "The end of the previous code block is missing, possibly due to the wrong form of the value.";
