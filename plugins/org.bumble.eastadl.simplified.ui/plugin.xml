@@ -435,7 +435,7 @@
          point="org.eclipse.ui.handlers">
       <handler
             class="org.bumble.eastadl.simplified.ui.handlers.SerialiseAsEaxmlHandler"
-            commandId="org.bumble.eastadl.simplified.ui.handlers.serialiseXmi">
+            commandId="org.bumble.eastadl.simplified.ui.handlers.serialiseEaxml">
       </handler>
       <handler
         	class="org.bumble.eastadl.simplified.ui.EastAdlSimplifiedExecutableExtensionFactory:org.bumble.eastadl.simplified.ui.handlers.ImportFromEaxmlHandler"
@@ -445,8 +445,8 @@
     <extension
          point="org.eclipse.ui.commands">
       <command
-			id="org.bumble.eastadl.simplified.ui.handlers.serialiseXmi"
-            name="Serialise file as XMI...">
+			id="org.bumble.eastadl.simplified.ui.handlers.serialiseEaxml"
+            name="Serialise file as EAXML...">
       </command>
       <command
 			id="org.bumble.eastadl.simplified.ui.handlers.importFromEaxml"
@@ -456,7 +456,7 @@
     <extension point="org.eclipse.ui.menus">
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
-			<command commandId="org.bumble.eastadl.simplified.ui.handlers.serialiseXmi"
+			<command commandId="org.bumble.eastadl.simplified.ui.handlers.serialiseEaxml"
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
