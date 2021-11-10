@@ -33,24 +33,17 @@ public class EastAdlSimplifiedParsingTest {
   
   public String mydsl = null;
   
-  public void readDslText() {
-    try {
-      byte[] _readAllBytes = Files.readAllBytes(Paths.get("D:\\Git\\Git_Local\\runtime-EclipseApplication\\test\\test.eatxt"));
-      String _string = new String(_readAllBytes);
-      this.mydsl = _string;
-      Assert.assertTrue((this.mydsl != null));
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
   /**
    * Check if the model described in *.eatxt file could be loaded
    */
   @Test
   public void loadModel() {
     try {
-      this.readDslText();
+      String _projectAbsolutePath = FileOperateHelper.getProjectAbsolutePath();
+      String _plus = (_projectAbsolutePath + "texts_001.txt");
+      byte[] _readAllBytes = Files.readAllBytes(Paths.get(_plus));
+      String _string = new String(_readAllBytes);
+      this.mydsl = _string;
       final EAXML result = this.parseHelper.parse(this.mydsl);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
@@ -71,7 +64,11 @@ public class EastAdlSimplifiedParsingTest {
   @Test
   public void testValidModel() {
     try {
-      this.readDslText();
+      String _rootDirectoryAbsolutePath = FileOperateHelper.getRootDirectoryAbsolutePath();
+      String _plus = (_rootDirectoryAbsolutePath + "simple.eatxt");
+      byte[] _readAllBytes = Files.readAllBytes(Paths.get(_plus));
+      String _string = new String(_readAllBytes);
+      this.mydsl = _string;
       final EAXML eaxml = this.parseHelper.parse(this.mydsl);
       this.validationTestHelper.assertNoIssues(eaxml);
     } catch (Throwable _e) {
@@ -85,7 +82,11 @@ public class EastAdlSimplifiedParsingTest {
   @Test
   public void checkEAPackageNumberInProgram() {
     try {
-      this.readDslText();
+      String _rootDirectoryAbsolutePath = FileOperateHelper.getRootDirectoryAbsolutePath();
+      String _plus = (_rootDirectoryAbsolutePath + "simple.eatxt");
+      byte[] _readAllBytes = Files.readAllBytes(Paths.get(_plus));
+      String _string = new String(_readAllBytes);
+      this.mydsl = _string;
       final EAXML eaxml = this.parseHelper.parse(this.mydsl);
       int _size = eaxml.getTopLevelPackage().size();
       boolean _greaterThan = (_size > 0);

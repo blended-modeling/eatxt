@@ -14,8 +14,9 @@ import org.eclipse.xtext.testing.validation.ValidationTestHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
-
 import static org.junit.Assert.*
+
+import org.bumble.eastadl.simplified.tests.FileOperateHelper
 
 @ExtendWith(InjectionExtension)
 @InjectWith(EastAdlSimplifiedInjectorProvider)
@@ -27,30 +28,13 @@ class EastAdlSimplifiedParsingTest {
 	
 	public String mydsl = null
 	
-	def void readDslText() {
-		// Note: Please confirm or reset the code file path before unit testing!!!
-		mydsl = new String(Files.readAllBytes(Paths.get("D:\\Git\\Git_Local\\runtime-EclipseApplication\\test\\test.eatxt")))
-		
-		assertTrue(mydsl !== null)
-	}
-	
 	/**
 	 * Check if the model described in *.eatxt file could be loaded
 	 * */
 	@Test
 	def void loadModel() {
-		readDslText()
+		mydsl = new String(Files.readAllBytes(Paths.get(FileOperateHelper.getProjectAbsolutePath() + "texts_001.txt")))
 		val result = parseHelper.parse(mydsl)
-//		val result = parseHelper.parse('''
-//		EAPackage fdsd
-//			EAPackage FcnDesignPkg_new
-//				DesignFunctionType WiperCtrlBasic
-//					isElementary false
-//					port
-//						FunctionFlowPort bWiperParkStatus
-//							direction in
-//							type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
-//		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
@@ -61,18 +45,8 @@ class EastAdlSimplifiedParsingTest {
 	 * */
 	@Test
  	def testValidModel() {
-		readDslText()
+		mydsl = new String(Files.readAllBytes(Paths.get(FileOperateHelper.getRootDirectoryAbsolutePath() + "simple.eatxt")))
      	val eaxml = parseHelper.parse(mydsl)
-//     	val eaxml = parseHelper.parse('''
-//		EAPackage fdsd
-//			EAPackage FcnDesignPkg_new
-//				DesignFunctionType WiperCtrlBasic
-//					isElementary false
-//					port
-//						FunctionFlowPort bWiperParkStatus
-//							direction in
-//							type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
-//		''')
      	validationTestHelper.assertNoIssues(eaxml)
  	}
  	
@@ -81,7 +55,7 @@ class EastAdlSimplifiedParsingTest {
  	 * */
  	@Test
 	def checkEAPackageNumberInProgram() {
-		readDslText()
+		mydsl = new String(Files.readAllBytes(Paths.get(FileOperateHelper.getRootDirectoryAbsolutePath() + "simple.eatxt")))
 	    val eaxml = parseHelper.parse(mydsl)
 		assertTrue("The program should have at least one EAPackage", 
 			eaxml.topLevelPackage.size() > 0

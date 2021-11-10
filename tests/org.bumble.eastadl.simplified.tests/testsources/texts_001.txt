@@ -1,0 +1,7 @@
+EAPackage fdsd
+	EAPackage FcnDesignPkg_new
+		DesignFunctionType WiperCtrlBasic
+			isElementary false
+			FunctionFlowPort bWiperParkStatus
+				direction in
+				type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
