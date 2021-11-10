@@ -20,6 +20,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceFactory;
+import org.eclipse.xtext.resource.XtextResourceSet;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -34,6 +35,9 @@ public class ImportFromEaxmlHandler extends AbstractHandler {
 	
 	@Inject
 	private Provider<XtextResource> resourceProvider;
+	
+	@Inject
+	private XtextResourceSet resourceSet;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -44,7 +48,6 @@ public class ImportFromEaxmlHandler extends AbstractHandler {
 		openDialog.setFilterExtensions(new String[] { "*.eaxml" });
 		String openResult = openDialog.open();
 		if (openResult != null) {
-			ResourceSet resourceSet = new ResourceSetImpl();
 			// We need to make sure that EMF knows where to find the right resource factory
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eaxml", new Eastadl22ResourceFactoryImpl());
 			resourceSet.getPackageRegistry().put(Eastadl22Package.eNS_URI, Eastadl22Package.eINSTANCE);
