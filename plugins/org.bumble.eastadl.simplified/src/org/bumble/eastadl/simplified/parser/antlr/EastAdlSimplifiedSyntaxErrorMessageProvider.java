@@ -48,7 +48,11 @@ public class EastAdlSimplifiedSyntaxErrorMessageProvider extends SyntaxErrorMess
 			else {
 				tokenName = tokenNames[ute.expecting];
 			}
-			msg = "extraneous input "+ute.getUnexpectedToken().getText()+" expecting "+tokenName;
+			
+			if (tokenName.equals("RULE_BEGIN")) 
+				msg = "The intendation is incorrect!";
+			else
+				msg = "extraneous input "+ute.getUnexpectedToken().getText()+" expecting "+tokenName;
 		}
 		else if ( e instanceof MissingTokenException ) {
 			MissingTokenException mte = (MissingTokenException)e;
