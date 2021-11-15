@@ -4,6 +4,7 @@
 package org.bumble.eastadl.simplified.scoping;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.function.Predicate;
 
 import org.eclipse.eatop.eastadl22.AllocateableElement;
@@ -63,22 +64,18 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
-
 import com.google.common.base.Function;
 import com.google.inject.Inject;
-import com.google.inject.util.Providers;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IPath;
-import java.nio.file.Path;
+import org.eclipse.core.runtime.CoreException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.io.IOException;
+import org.eclipse.xtext.testing.util.ParseHelper;
 
 /**
  * This class contains custom scoping description.
@@ -92,26 +89,19 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 	@Inject
 	IQualifiedNameProvider nameProvider;
 
+	@Inject
+	ParseHelper<EObject> parseHelper;
+	
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
 		EClass contextEClass = context.eClass();
 		String contextClassName = null;
+
+		// Get the raw paths of all the eatxt file in the same project
+		List<String> fileRawPaths = getAllFiles(context);
 		
-//		URI uri = context.eResource().getURI();
-//		String platformString = uri.toPlatformString(true);
-//		String pathString = uri.path();
-//		
-//		// get the relative path of project
-//		String[] segments = uri.segments();
-//		String projectString = uri.scheme() + ":/";
-//		if (segments.length > 0) {
-//			for (int i = 0; i < segments.length; i++) {
-//				if (i != segments.length - 1) {
-//					projectString += segments[i] + "/";
-//				}			
-//			}
-//		}
-		
+		// Get the root element of all the eatxt files in the same project
+		List<EObject> rootElements = getAllRootElements(fileRawPaths);
 		
 		// A dedicated process for HardwareComponentPrototype in DesignLevel
 		// Normal case: in class A reference type B, then the context is A and target is B
@@ -127,7 +117,7 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		
 		EClass targetEClass = reference.getEReferenceType();
 		String targetClassName = targetEClass.getInstanceTypeName();
-		EList<EObject> test = reference.eCrossReferences();
+
 		// The ugly and long if conditions were combined with pairs of context and target, which is used to
 		// limit the automatic proposals by filtering the scopes
 		if ((contextClassName.equals(DesignFunctionPrototype.class.getName()) && targetClassName.equals(DesignFunctionType.class.getName()))
@@ -159,22 +149,33 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 				|| (contextClassName.equals(BasicSoftwareFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
 				|| (contextClassName.equals(AnalysisFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
 				) {
-			EObject rootElement = EcoreUtil2.getRootContainer(context);
-			try {
-				Class targetJavaClass = Class.forName(targetEClass.getInstanceTypeName());
-				List<Referrable> candidates = (List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElement,
-						targetJavaClass);
+			List<Referrable> globalCandidates = new ArrayList<Referrable>();
+			for (int n = 0; n < rootElements.size(); n++) {
+				try {
+					Class targetJavaClass = Class.forName(targetEClass.getInstanceTypeName());
+					List<Referrable> candidates = (List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElements.get(n), targetJavaClass);
+					
+					if (candidates.size() > 0) {
+						for (int k = 0; k < candidates.size(); k++) {							
+							globalCandidates.add(candidates.get(k));							
+						}
+					}
+				}
+				catch (ClassNotFoundException e) {
+					// won't happen
+					e.printStackTrace();
+				}
+			}
+			
+			if (globalCandidates.size() > 0) {
 				Predicate<Referrable> nullShortName = c -> c.getShortName() == null;
-				candidates.removeIf(nullShortName);
+				globalCandidates.removeIf(nullShortName);
 				
 				// get the fully qualified name of a display short name, which will be a full path of string
 				Function<Referrable, QualifiedName> displayShortNames = x -> nameProvider.getFullyQualifiedName(x);
 				
 				// return all the fulfilled proposals (which would be proposed automatically in the menu to user)
-				return Scopes.scopeFor(candidates, displayShortNames, IScope.NULLSCOPE);
-			} catch (ClassNotFoundException e) {
-				// won't happen
-				e.printStackTrace();
+				return Scopes.scopeFor(globalCandidates, displayShortNames, IScope.NULLSCOPE);
 			}
 		}
 		// TODO: generalize the procedure so that it works as above also for all
@@ -185,5 +186,85 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 
 		// if no judgement condition above is fulfiled, then the program will get here and invoke supertype's getScope method
 		return super.getScope(context, reference);
+	}
+	
+//	private boolean isAncestor(EObject context, EObject candidate) {
+//		boolean bFlag = false;
+//
+//		if (context != null && candidate != null && context.eContainer() != null) {
+//			if (context.eContainer().eClass().getInstanceTypeName().equals("org.eclipse.eatop.eastadl22.DesignFunctionType")) {
+//				boolean bIndicate = true;
+//				
+//				while (context.eContainer() != null) {
+//					
+//					context = context.eContainer();
+//				}
+//			}
+//		}
+//
+//		return bFlag;
+//	}
+	
+	private List<EObject> getAllRootElements(List<String> fileRawPaths) {
+		List<EObject> output = new ArrayList<EObject>();
+		
+		if (fileRawPaths.size() > 0) {
+			for (int m = 0; m < fileRawPaths.size(); m++) {
+				try {
+					String dslContents = new String(Files.readAllBytes(Paths.get(fileRawPaths.get(m))));
+					try {
+						EObject eaxml = parseHelper.parse(dslContents);
+						
+						if (eaxml != null) {
+							output.add(eaxml);
+						}
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return output;
+	}
+	
+	private List<String> getAllFiles(EObject context) {
+		List<String> output = new ArrayList<String>();
+		URI uri = context.eResource().getURI();
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IProject[] projects = workspace.getRoot().getProjects();
+		// get the relative path of project
+		String[] segments = uri.segments();
+		String projectName = "";
+		
+		if (segments.length > 1) {
+			projectName = segments[1];
+		}
+		for (int i = 0; i < projects.length; i++) {
+			if (projects[i].getName().equals(projectName)) {
+				try {
+					IResource[] resources = projects[i].members();
+					
+					if (resources.length > 0) {
+						for (int j = 0; j < resources.length; j++) {
+							String ext = resources[j].getFileExtension();
+							String path = resources[j].getRawLocation().toOSString();
+							if (ext.equals("eatxt")) {
+								output.add(path);
+							}
+						}
+					}
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}				
+		}
+		
+		return output;
 	}
 }
