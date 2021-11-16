@@ -109,7 +109,7 @@ public class EastAdlSimplifiedSyntaxErrorMessageProvider extends SyntaxErrorMess
 		}
 		else if ( e instanceof NoViableAltException ) {
 
-			if (e.token.getText().isEmpty() || e.token.getText().isBlank() || e.token.getText() == null)
+			if (e.token.getText().isEmpty() || e.token.getText() == null)
 				msg = "Value is missing in this line or last line.";
 			else {
 				if (GrammarUtil.getAllKeywords(grammarAccess.getGrammar()).contains(e.token.getText()))
