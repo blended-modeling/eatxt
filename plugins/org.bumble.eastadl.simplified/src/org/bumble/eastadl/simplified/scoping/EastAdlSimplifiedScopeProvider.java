@@ -253,7 +253,7 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 						for (int j = 0; j < resources.length; j++) {
 							String ext = resources[j].getFileExtension();
 							String path = resources[j].getRawLocation().toOSString();
-							if (ext.equals("eatxt")) {
+							if ("eatxt".equals(ext)) {
 								output.add(path);
 							}
 						}
