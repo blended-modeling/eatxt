@@ -450,7 +450,7 @@
       </command>
       <command
 			id="org.bumble.eastadl.simplified.ui.handlers.importFromEaxml"
-            name="Convert EAXML file to EAtxt...">
+            name="Convert to EAtxt...">
       </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -466,15 +466,22 @@
 			</command>
 		</menuContribution>
 		<menuContribution
-			locationURI="popup:#TextEditorContext?after=group.edit">
-			<command commandId="org.bumble.eastadl.simplified.ui.handlers.importFromEaxml"
-				style="push">
-				<visibleWhen checkEnabled="false">
-					<reference
-						definitionId="org.bumble.eastadl.simplified.EastAdlSimplified.Editor.opened">
-					</reference>
-				</visibleWhen>
-			</command>
-		</menuContribution>
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+            <command commandId="org.bumble.eastadl.simplified.ui.handlers.importFromEaxml">
+               <visibleWhen
+                     checkEnabled="false">
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="eaxml">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </visibleWhen>
+            </command>
+      </menuContribution>
 	</extension>
 </plugin>
