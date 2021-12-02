@@ -28,6 +28,7 @@ import org.eclipse.eatop.eastadl22.EAExpression;
 import org.eclipse.eatop.eastadl22.EANumerical;
 import org.eclipse.eatop.eastadl22.EANumericalValue;
 import org.eclipse.eatop.eastadl22.EAStringValue;
+import org.eclipse.eatop.eastadl22.Eastadl22Package;
 import org.eclipse.eatop.eastadl22.EnumerationLiteral;
 import org.eclipse.eatop.eastadl22.FunctionAllocation_allocatedElement;
 import org.eclipse.eatop.eastadl22.FunctionAllocation_target;
@@ -56,6 +57,7 @@ import org.eclipse.eatop.eastadl22.Unit;
 import org.eclipse.eatop.eastadl22.UserAttributeDefinition;
 import org.eclipse.eatop.eastadl22.UserAttributedElement;
 import org.eclipse.eatop.eastadl22.UserElementType;
+import org.eclipse.eatop.eastadl22.util.Eastadl22Factory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -150,20 +152,21 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 				|| (contextClassName.equals(AnalysisFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
 				) {
 			List<Referrable> globalCandidates = new ArrayList<Referrable>();
-			for (int n = 0; n < rootElements.size(); n++) {
-				try {
-					Class targetJavaClass = Class.forName(targetEClass.getInstanceTypeName());
-					List<Referrable> candidates = (List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElements.get(n), targetJavaClass);
-					
-					if (candidates.size() > 0) {
-						for (int k = 0; k < candidates.size(); k++) {							
-							globalCandidates.add(candidates.get(k));							
-						}
-					}
+			Class targetJavaClass = null;
+			try {
+				targetJavaClass = Class.forName(targetEClass.getInstanceTypeName());
+				if (targetJavaClass != null) {
+					EObject rootElement = EcoreUtil2.getRootContainer(context);
+					globalCandidates.addAll((List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElement, targetJavaClass));
 				}
-				catch (ClassNotFoundException e) {
-					// won't happen
-					e.printStackTrace();
+			} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			for (int n = 0; n < rootElements.size(); n++) {
+				if (targetJavaClass != null) {
+					List<Referrable> candidates = (List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElements.get(n), targetJavaClass);
+					globalCandidates.addAll(candidates);
 				}
 			}
 			
