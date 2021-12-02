@@ -6,18 +6,42 @@ package org.bumble.eastadl.simplified;
 import org.bumble.eastadl.simplified.naming.EastAdlQualifiedShortnameProvider;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.parser.antlr.ISyntaxErrorMessageProvider;
+import org.eclipse.xtext.scoping.IScopeProvider;
+
+import com.google.inject.Binder;
+
 import org.bumble.eastadl.simplified.parser.antlr.EastAdlSimplifiedSyntaxErrorMessageProvider;
+import org.bumble.eastadl.simplified.scoping.EastAdlSimplifiedScopeProvider;
+
 /**
- * Use this class to register components to be used at runtime / without the Equinox extension registry.
+ * Use this class to register components to be used at runtime / without the
+ * Equinox extension registry.
  */
 public class EastAdlSimplifiedRuntimeModule extends AbstractEastAdlSimplifiedRuntimeModule {
-	
-    @Override
-    public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
-        return EastAdlQualifiedShortnameProvider.class;
-    }
- 	
-    public Class<? extends ISyntaxErrorMessageProvider> bindISyntaxErrorMessageProvider() {
-        return EastAdlSimplifiedSyntaxErrorMessageProvider.class;
-    }
+
+	@Override
+	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return EastAdlQualifiedShortnameProvider.class;
+	}
+
+	public Class<? extends ISyntaxErrorMessageProvider> bindISyntaxErrorMessageProvider() {
+		return EastAdlSimplifiedSyntaxErrorMessageProvider.class;
+	}
+
+	/*
+	 * Added to override the default scope provider to allow cross-references and include
+	 * standard EAST-ADL types.
+	 * https://www.eclipse.org/forums/index.php/t/357707/
+	 */
+	@Override
+	public Class<? extends IScopeProvider> bindIScopeProvider() {
+		return EastAdlSimplifiedScopeProvider.class;
+	}
+
+	@Override
+	public void configureSerializerIScopeProvider(Binder binder) {
+		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class)
+				.annotatedWith(org.eclipse.xtext.serializer.tokens.SerializerScopeProviderBinding.class)
+				.to(EastAdlSimplifiedScopeProvider.class);
+	}
 }
