@@ -57,11 +57,8 @@ import org.eclipse.eatop.eastadl22.Unit;
 import org.eclipse.eatop.eastadl22.UserAttributeDefinition;
 import org.eclipse.eatop.eastadl22.UserAttributedElement;
 import org.eclipse.eatop.eastadl22.UserElementType;
-<<<<<<< Updated upstream
 import org.eclipse.eatop.eastadl22.util.Eastadl22Factory;
-=======
 import org.eclipse.eatop.eastadl22.util.Eastadl22ResourceFactoryImpl;
->>>>>>> Stashed changes
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
