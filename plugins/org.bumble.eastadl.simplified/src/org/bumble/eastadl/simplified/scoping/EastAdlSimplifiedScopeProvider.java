@@ -57,13 +57,20 @@ import org.eclipse.eatop.eastadl22.Unit;
 import org.eclipse.eatop.eastadl22.UserAttributeDefinition;
 import org.eclipse.eatop.eastadl22.UserAttributedElement;
 import org.eclipse.eatop.eastadl22.UserElementType;
+<<<<<<< Updated upstream
 import org.eclipse.eatop.eastadl22.util.Eastadl22Factory;
+=======
+import org.eclipse.eatop.eastadl22.util.Eastadl22ResourceFactoryImpl;
+>>>>>>> Stashed changes
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
+import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import com.google.common.base.Function;
@@ -76,9 +83,12 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.io.File;
 import java.io.IOException;
 import org.eclipse.xtext.testing.util.ParseHelper;
-
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.eatop.common.resource.impl.EastADLResourceFactoryImpl;
 /**
  * This class contains custom scoping description.
  * 
@@ -94,6 +104,9 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 	@Inject
 	ParseHelper<EObject> parseHelper;
 	
+	@Inject
+	private XtextResourceSet resourceSet;
+	
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
 		EClass contextEClass = context.eClass();
@@ -101,9 +114,13 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 
 		// Get the raw paths of all the eatxt file in the same project
 		List<String> fileRawPaths = getAllFiles(context);
+		List<String> eaxmlFileRawPaths = getAllEaxmlFiles(context);
 		
-		// Get the root element of all the eatxt files in the same project
+		// Get the root elements of all the eatxt files in the same project
 		List<EObject> rootElements = getAllRootElements(fileRawPaths);
+		
+		// Get the root elements of all the eaxml files in the same project
+		List<EObject> rootElementList = getAllEaxmlRootElements(rootElements, eaxmlFileRawPaths);
 		
 		// A dedicated process for HardwareComponentPrototype in DesignLevel
 		// Normal case: in class A reference type B, then the context is A and target is B
@@ -115,7 +132,7 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		}
 		else {
 			contextClassName = contextEClass.getInstanceTypeName();
-		}		
+		}
 		
 		EClass targetEClass = reference.getEReferenceType();
 		String targetClassName = targetEClass.getInstanceTypeName();
@@ -191,22 +208,45 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		return super.getScope(context, reference);
 	}
 	
-//	private boolean isAncestor(EObject context, EObject candidate) {
-//		boolean bFlag = false;
-//
-//		if (context != null && candidate != null && context.eContainer() != null) {
-//			if (context.eContainer().eClass().getInstanceTypeName().equals("org.eclipse.eatop.eastadl22.DesignFunctionType")) {
-//				boolean bIndicate = true;
-//				
-//				while (context.eContainer() != null) {
-//					
-//					context = context.eContainer();
-//				}
-//			}
-//		}
-//
-//		return bFlag;
-//	}
+	public EObject GetEMFModel(String filePath, Shell activeShell, XtextResourceSet xtextResourceSet) {
+		// We need to make sure that EMF knows where to find the right resource factory
+		xtextResourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eaxml", new Eastadl22ResourceFactoryImpl());
+		xtextResourceSet.getPackageRegistry().put(Eastadl22Package.eNS_URI, Eastadl22Package.eINSTANCE);
+		URI openUri = URI.createFileURI(new File(filePath).getAbsolutePath());
+		
+		// We are now getting an instance of Eastadl22ResourceImpl here
+		Resource xmlResource = xtextResourceSet.getResource(openUri, true);
+		
+		// And calling load() will deserialise the EAXML into an in-memory model
+		try {
+			xmlResource.load(null);
+		} catch (IOException e) {
+			MessageDialog.openError(activeShell, "Error loading EAXML file", "The EAXML file could not be loaded: " + e.getMessage());
+			e.printStackTrace();
+			return null;
+		}
+		
+		EObject topLevelObject = xmlResource.getContents().get(0);
+					
+		return topLevelObject;
+	}
+	
+	private List<EObject> getAllEaxmlRootElements(List<EObject> currentElementList, List<String> eaxmlFileRawPaths) {
+		
+		if (eaxmlFileRawPaths.size() > 0) {
+			Shell activeShell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+			for (String path : eaxmlFileRawPaths) {
+				EObject rootElement = GetEMFModel(path, activeShell, resourceSet);
+				
+				if (rootElement == null)
+					continue;
+				
+				currentElementList.add(rootElement);
+			}
+		}		
+		
+		return currentElementList;
+	}
 	
 	private List<EObject> getAllRootElements(List<String> fileRawPaths) {
 		List<EObject> output = new ArrayList<EObject>();
@@ -257,6 +297,42 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 							String ext = resources[j].getFileExtension();
 							String path = resources[j].getRawLocation().toOSString();
 							if ("eatxt".equals(ext)) {
+								output.add(path);
+							}
+						}
+					}
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}				
+		}
+		
+		return output;
+	}
+	
+	private List<String> getAllEaxmlFiles(EObject context) {
+		List<String> output = new ArrayList<String>();
+		URI uri = context.eResource().getURI();
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IProject[] projects = workspace.getRoot().getProjects();
+		// get the relative path of project
+		String[] segments = uri.segments();
+		String projectName = "";
+		
+		if (segments.length > 1) {
+			projectName = segments[1];
+		}
+		for (int i = 0; i < projects.length; i++) {
+			if (projects[i].getName().equals(projectName)) {
+				try {
+					IResource[] resources = projects[i].members();
+					
+					if (resources.length > 0) {
+						for (int j = 0; j < resources.length; j++) {
+							String ext = resources[j].getFileExtension();
+							String path = resources[j].getRawLocation().toOSString();
+							if (ext.equals("eaxml")) {
 								output.add(path);
 							}
 						}
