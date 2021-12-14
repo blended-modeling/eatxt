@@ -86,6 +86,7 @@ import org.eclipse.xtext.testing.util.ParseHelper;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.eatop.common.resource.impl.EastADLResourceFactoryImpl;
+
 /**
  * This class contains custom scoping description.
  * 
@@ -100,98 +101,136 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 
 	@Inject
 	ParseHelper<EObject> parseHelper;
-	
+
 	@Inject
 	private XtextResourceSet resourceSet;
-	
+
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
 		EClass contextEClass = context.eClass();
 		String contextClassName = null;
 
 		// Get the raw paths of all the eatxt file in the same project
-		List<String> fileRawPaths = getAllFiles(context);
-		List<String> eaxmlFileRawPaths = getAllEaxmlFiles(context);
-		
+		List<String> eatxtFileRawPaths = getAllFilesForEObjectProject(context, "eatxt");
+		List<String> eaxmlFileRawPaths = getAllFilesForEObjectProject(context, "eaxml");
+
 		// Get the root elements of all the eatxt files in the same project
-		List<EObject> rootElements = getAllRootElements(fileRawPaths);
-		
-		// Get the root elements of all the eaxml files in the same project
-		List<EObject> rootElementList = getAllEaxmlRootElements(rootElements, eaxmlFileRawPaths);
-		
+		List<EObject> rootElements = getAllEatxtRootElements(eatxtFileRawPaths);
+
+		// Add the root elements of all the eaxml files in the same project to the list
+		getAllEaxmlRootElements(rootElements, eaxmlFileRawPaths);
+
 		// A dedicated process for HardwareComponentPrototype in DesignLevel
-		// Normal case: in class A reference type B, then the context is A and target is B
-		// Special case: in class DesignLevel reference type HardwareComponentType, the context is DesignLevel
-		if (contextEClass.getInstanceTypeName().equals(DesignLevel.class.getName()) 
+		// Normal case: in class A reference type B, then the context is A and target is
+		// B
+		// Special case: in class DesignLevel reference type HardwareComponentType, the
+		// context is DesignLevel
+		if (contextEClass.getInstanceTypeName().equals(DesignLevel.class.getName())
 				&& reference.getContainerClass().getName().equals(HardwareComponentPrototype.class.getName())) {
-			DesignLevel designLevel = (DesignLevel)context;
+			DesignLevel designLevel = (DesignLevel) context;
 			contextClassName = designLevel.getHardwareDesignArchitecture().eClass().getInstanceTypeName();
-		}
-		else {
+		} else {
 			contextClassName = contextEClass.getInstanceTypeName();
 		}
-		
+
 		EClass targetEClass = reference.getEReferenceType();
 		String targetClassName = targetEClass.getInstanceTypeName();
 
-		// The ugly and long if conditions were combined with pairs of context and target, which is used to
+		// The ugly and long if conditions were combined with pairs of context and
+		// target, which is used to
 		// limit the automatic proposals by filtering the scopes
-		if ((contextClassName.equals(DesignFunctionPrototype.class.getName()) && targetClassName.equals(DesignFunctionType.class.getName()))
-				|| (contextClassName.equals(RangeableValueType.class.getName()) && targetClassName.equals(EANumerical.class.getName())) 
-				|| ((contextClassName.equals(EANumerical.class.getName()) || contextClassName.equals(Unit.class.getName())) && targetClassName.equals(Unit.class.getName()))
+		if ((contextClassName.equals(DesignFunctionPrototype.class.getName())
+				&& targetClassName.equals(DesignFunctionType.class.getName()))
+				|| (contextClassName.equals(RangeableValueType.class.getName())
+						&& targetClassName.equals(EANumerical.class.getName()))
+				|| ((contextClassName.equals(EANumerical.class.getName())
+						|| contextClassName.equals(Unit.class.getName()))
+						&& targetClassName.equals(Unit.class.getName()))
 				|| (contextClassName.equals(Unit.class.getName()) && targetClassName.equals(Quantity.class.getName()))
-				|| (contextClassName.equals(UserAttributedElement.class.getName()) || targetClassName.equals(UserElementType.class.getName()))
-				|| ((contextClassName.equals(HardwareConnector_port.class.getName()) || contextClassName.equals(HardwarePortConnector_port.class.getName())) && targetClassName.equals(HardwareComponentPrototype.class.getName()))
-				|| (contextClassName.equals(Realization_realized.class.getName()) && targetClassName.equals(EAElement.class.getName()))
-				|| ((contextClassName.equals(UserAttributedElement.class.getName()) || contextClassName.equals(Realization_realizedBy.class.getName())) && targetClassName.equals(Identifiable.class.getName()))
-				|| ((contextClassName.equals(HardwareFunctionType.class.getName()) || contextClassName.equals(HardwareComponentPrototype.class.getName())) && targetClassName.equals(HardwareComponentType.class.getName()))
-				|| (contextClassName.equals(AnalysisFunctionPrototype.class.getName()) && targetClassName.equals(AnalysisFunctionType.class.getName()))
-				|| (contextClassName.equals(FunctionClientServerPort.class.getName()) && targetClassName.equals(FunctionClientServerInterface.class.getName()))
-				|| (contextClassName.equals(FunctionPowerPort.class.getName()) && targetClassName.equals(CompositeDatatype.class.getName()))
-				|| ((contextClassName.equals(ArrayDatatype.class.getName()) || contextClassName.equals(UserAttributeDefinition.class.getName())
-						|| contextClassName.equals(FunctionFlowPort.class.getName()) || contextClassName.equals(EADatatypePrototype.class.getName())
-						|| contextClassName.equals(EAArrayValue.class.getName()) || contextClassName.equals(EABooleanValue.class.getName())
-						|| contextClassName.equals(EACompositeValue.class.getName()) || contextClassName.equals(EAEnumerationValue.class.getName())
-						|| contextClassName.equals(EAExpression.class.getName()) || contextClassName.equals(EANumericalValue.class.getName())
-						|| contextClassName.equals(EAStringValue.class.getName())) && targetClassName.equals(EADatatype.class.getName()))
-				|| (contextClassName.equals(FunctionAllocation_allocatedElement.class.getName()) && targetClassName.equals(AllocateableElement.class.getName()))
-				|| (contextClassName.equals(FunctionAllocation_target.class.getName()) && targetClassName.equals(AllocationTarget.class.getName()))
-				|| (contextClassName.equals(FunctionConnector_port.class.getName()) && targetClassName.equals(FunctionPrototype.class.getName()))
-				|| ((contextClassName.equals(PortGroup.class.getName()) || contextClassName.equals(FunctionConnector_port.class.getName())) && targetClassName.equals(FunctionPort.class.getName()))
-				|| ((contextClassName.equals(HardwarePort.class.getName()) || contextClassName.equals(HardwareConnector_port.class.getName())) && targetClassName.equals(HardwarePin.class.getName()))
-				|| (contextClassName.equals(HardwarePortConnector_port.class.getName()) && targetClassName.equals(HardwarePort.class.getName()))
-				|| (contextClassName.equals(EAEnumerationValue.class.getName()) && targetClassName.equals(EnumerationLiteral.class.getName()))
-				|| (contextClassName.equals(DesignFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
-				|| (contextClassName.equals(BasicSoftwareFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
-				|| (contextClassName.equals(AnalysisFunctionType.class.getName()) && targetClassName.equals(EADatatype.class.getName()))
-				) {
+				|| (contextClassName.equals(UserAttributedElement.class.getName())
+						|| targetClassName.equals(UserElementType.class.getName()))
+				|| ((contextClassName.equals(HardwareConnector_port.class.getName())
+						|| contextClassName.equals(HardwarePortConnector_port.class.getName()))
+						&& targetClassName.equals(HardwareComponentPrototype.class.getName()))
+				|| (contextClassName.equals(Realization_realized.class.getName())
+						&& targetClassName.equals(EAElement.class.getName()))
+				|| ((contextClassName.equals(UserAttributedElement.class.getName())
+						|| contextClassName.equals(Realization_realizedBy.class.getName()))
+						&& targetClassName.equals(Identifiable.class.getName()))
+				|| ((contextClassName.equals(HardwareFunctionType.class.getName())
+						|| contextClassName.equals(HardwareComponentPrototype.class.getName()))
+						&& targetClassName.equals(HardwareComponentType.class.getName()))
+				|| (contextClassName.equals(AnalysisFunctionPrototype.class.getName())
+						&& targetClassName.equals(AnalysisFunctionType.class.getName()))
+				|| (contextClassName.equals(FunctionClientServerPort.class.getName())
+						&& targetClassName.equals(FunctionClientServerInterface.class.getName()))
+				|| (contextClassName.equals(FunctionPowerPort.class.getName())
+						&& targetClassName.equals(CompositeDatatype.class.getName()))
+				|| ((contextClassName.equals(ArrayDatatype.class.getName())
+						|| contextClassName.equals(UserAttributeDefinition.class.getName())
+						|| contextClassName.equals(FunctionFlowPort.class.getName())
+						|| contextClassName.equals(EADatatypePrototype.class.getName())
+						|| contextClassName.equals(EAArrayValue.class.getName())
+						|| contextClassName.equals(EABooleanValue.class.getName())
+						|| contextClassName.equals(EACompositeValue.class.getName())
+						|| contextClassName.equals(EAEnumerationValue.class.getName())
+						|| contextClassName.equals(EAExpression.class.getName())
+						|| contextClassName.equals(EANumericalValue.class.getName())
+						|| contextClassName.equals(EAStringValue.class.getName()))
+						&& targetClassName.equals(EADatatype.class.getName()))
+				|| (contextClassName.equals(FunctionAllocation_allocatedElement.class.getName())
+						&& targetClassName.equals(AllocateableElement.class.getName()))
+				|| (contextClassName.equals(FunctionAllocation_target.class.getName())
+						&& targetClassName.equals(AllocationTarget.class.getName()))
+				|| (contextClassName.equals(FunctionConnector_port.class.getName())
+						&& targetClassName.equals(FunctionPrototype.class.getName()))
+				|| ((contextClassName.equals(PortGroup.class.getName())
+						|| contextClassName.equals(FunctionConnector_port.class.getName()))
+						&& targetClassName.equals(FunctionPort.class.getName()))
+				|| ((contextClassName.equals(HardwarePort.class.getName())
+						|| contextClassName.equals(HardwareConnector_port.class.getName()))
+						&& targetClassName.equals(HardwarePin.class.getName()))
+				|| (contextClassName.equals(HardwarePortConnector_port.class.getName())
+						&& targetClassName.equals(HardwarePort.class.getName()))
+				|| (contextClassName.equals(EAEnumerationValue.class.getName())
+						&& targetClassName.equals(EnumerationLiteral.class.getName()))
+				|| (contextClassName.equals(DesignFunctionType.class.getName())
+						&& targetClassName.equals(EADatatype.class.getName()))
+				|| (contextClassName.equals(BasicSoftwareFunctionType.class.getName())
+						&& targetClassName.equals(EADatatype.class.getName()))
+				|| (contextClassName.equals(AnalysisFunctionType.class.getName())
+						&& targetClassName.equals(EADatatype.class.getName()))) {
 			List<Referrable> globalCandidates = new ArrayList<Referrable>();
 			Class targetJavaClass = null;
 			try {
 				targetJavaClass = Class.forName(targetEClass.getInstanceTypeName());
 				if (targetJavaClass != null) {
 					EObject rootElement = EcoreUtil2.getRootContainer(context);
-					globalCandidates.addAll((List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElement, targetJavaClass));
+					globalCandidates
+							.addAll((List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElement, targetJavaClass));
 				}
 			} catch (ClassNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			for (int n = 0; n < rootElements.size(); n++) {
+			for (EObject rootElement : rootElements) {
 				if (targetJavaClass != null) {
-					List<Referrable> candidates = (List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElements.get(n), targetJavaClass);
+					List<Referrable> candidates = (List<Referrable>) EcoreUtil2.getAllContentsOfType(rootElement,
+							targetJavaClass);
 					globalCandidates.addAll(candidates);
 				}
 			}
-			
+
 			if (globalCandidates.size() > 0) {
 				Predicate<Referrable> nullShortName = c -> c.getShortName() == null;
 				globalCandidates.removeIf(nullShortName);
-				
-				// get the fully qualified name of a display short name, which will be a full path of string
+
+				// get the fully qualified name of a display short name, which will be a full
+				// path of string
 				Function<Referrable, QualifiedName> displayShortNames = x -> nameProvider.getFullyQualifiedName(x);
-				
-				// return all the fulfilled proposals (which would be proposed automatically in the menu to user)
+
+				// return all the fulfilled proposals (which would be proposed automatically in
+				// the menu to user)
 				return Scopes.scopeFor(globalCandidates, displayShortNames, IScope.NULLSCOPE);
 			}
 		}
@@ -201,146 +240,114 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 
 		// FIXME: Does not work for the same name in different namespaces right now!
 
-		// if no judgement condition above is fulfiled, then the program will get here and invoke supertype's getScope method
+		// if no judgement condition above is fulfiled, then the program will get here
+		// and invoke supertype's getScope method
 		return super.getScope(context, reference);
 	}
-	
-	public EObject GetEMFModel(String filePath, Shell activeShell, XtextResourceSet xtextResourceSet) {
+
+	public EObject getEMFModel(String filePath, XtextResourceSet xtextResourceSet) {
 		// We need to make sure that EMF knows where to find the right resource factory
-		xtextResourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eaxml", new Eastadl22ResourceFactoryImpl());
+		xtextResourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eaxml",
+				new Eastadl22ResourceFactoryImpl());
 		xtextResourceSet.getPackageRegistry().put(Eastadl22Package.eNS_URI, Eastadl22Package.eINSTANCE);
 		URI openUri = URI.createFileURI(new File(filePath).getAbsolutePath());
-		
+
 		// We are now getting an instance of Eastadl22ResourceImpl here
 		Resource xmlResource = xtextResourceSet.getResource(openUri, true);
-		
+
 		// And calling load() will deserialise the EAXML into an in-memory model
 		try {
 			xmlResource.load(null);
 		} catch (IOException e) {
-			MessageDialog.openError(activeShell, "Error loading EAXML file", "The EAXML file could not be loaded: " + e.getMessage());
+			Shell activeShell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+			MessageDialog.openError(activeShell, "Error loading EAXML file",
+					"The EAXML file could not be loaded: " + e.getMessage());
 			e.printStackTrace();
 			return null;
 		}
-		
+
 		EObject topLevelObject = xmlResource.getContents().get(0);
-					
+
 		return topLevelObject;
 	}
-	
-	private List<EObject> getAllEaxmlRootElements(List<EObject> currentElementList, List<String> eaxmlFileRawPaths) {
-		
-		if (eaxmlFileRawPaths.size() > 0) {
-			Shell activeShell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-			for (String path : eaxmlFileRawPaths) {
-				EObject rootElement = GetEMFModel(path, activeShell, resourceSet);
-				
-				if (rootElement == null)
-					continue;
-				
-				currentElementList.add(rootElement);
-			}
-		}		
-		
-		return currentElementList;
+
+	private void getAllEaxmlRootElements(List<EObject> currentElementList, List<String> eaxmlFileRawPaths) {
+		for (String path : eaxmlFileRawPaths) {
+			EObject rootElement = getEMFModel(path, resourceSet);
+
+			if (rootElement == null)
+				continue;
+
+			currentElementList.add(rootElement);
+		}
 	}
-	
-	private List<EObject> getAllRootElements(List<String> fileRawPaths) {
+
+	private List<EObject> getAllEatxtRootElements(List<String> fileRawPaths) {
 		List<EObject> output = new ArrayList<EObject>();
-		
-		if (fileRawPaths.size() > 0) {
-			for (int m = 0; m < fileRawPaths.size(); m++) {
+
+		for (String filePath : fileRawPaths) {
+			try {
+				String dslContents = new String(Files.readAllBytes(Paths.get(filePath)));
 				try {
-					String dslContents = new String(Files.readAllBytes(Paths.get(fileRawPaths.get(m))));
-					try {
-						EObject eaxml = parseHelper.parse(dslContents);
-						
-						if (eaxml != null) {
-							output.add(eaxml);
-						}
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					EObject eaxml = parseHelper.parse(dslContents);
+
+					if (eaxml != null) {
+						output.add(eaxml);
 					}
-				} catch (IOException e) {
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return output;
+	}
+
+	/**
+	 * Retrieves the project the {@code context} is stored in and retrieves all
+	 * other files with the given {@code extension} in it.
+	 * 
+	 * @param context   the {@link EObject} whose project files should be retrieved
+	 * @param extension the extension of the files of interest
+	 * @return a list of OS paths to files with the given extension in the
+	 *         {@code context}'s project
+	 */
+	private List<String> getAllFilesForEObjectProject(EObject context, String extension) {
+		if (extension == null) {
+			throw new IllegalArgumentException("Extension cannot be null");
+		}
+		List<String> output = new ArrayList<String>();
+		URI uri = context.eResource().getURI();
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IProject[] projects = workspace.getRoot().getProjects();
+		// get the relative path of project
+		String[] segments = uri.segments();
+		String projectName = "";
+
+		if (segments.length > 1) {
+			projectName = segments[1];
+		}
+		for (IProject project : projects) {
+			if (project.getName().equals(projectName)) {
+				try {
+					for (IResource resource : project.members()) {
+						String path = resource.getRawLocation().toOSString();
+						if (extension.equals(resource.getFileExtension())) {
+							output.add(path);
+						}
+					}
+				} catch (CoreException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		}
-		
+
 		return output;
 	}
-	
-	private List<String> getAllFiles(EObject context) {
-		List<String> output = new ArrayList<String>();
-		URI uri = context.eResource().getURI();
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IProject[] projects = workspace.getRoot().getProjects();
-		// get the relative path of project
-		String[] segments = uri.segments();
-		String projectName = "";
-		
-		if (segments.length > 1) {
-			projectName = segments[1];
-		}
-		for (int i = 0; i < projects.length; i++) {
-			if (projects[i].getName().equals(projectName)) {
-				try {
-					IResource[] resources = projects[i].members();
-					
-					if (resources.length > 0) {
-						for (int j = 0; j < resources.length; j++) {
-							String ext = resources[j].getFileExtension();
-							String path = resources[j].getRawLocation().toOSString();
-							if ("eatxt".equals(ext)) {
-								output.add(path);
-							}
-						}
-					}
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}				
-		}
-		
-		return output;
-	}
-	
-	private List<String> getAllEaxmlFiles(EObject context) {
-		List<String> output = new ArrayList<String>();
-		URI uri = context.eResource().getURI();
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IProject[] projects = workspace.getRoot().getProjects();
-		// get the relative path of project
-		String[] segments = uri.segments();
-		String projectName = "";
-		
-		if (segments.length > 1) {
-			projectName = segments[1];
-		}
-		for (int i = 0; i < projects.length; i++) {
-			if (projects[i].getName().equals(projectName)) {
-				try {
-					IResource[] resources = projects[i].members();
-					
-					if (resources.length > 0) {
-						for (int j = 0; j < resources.length; j++) {
-							String ext = resources[j].getFileExtension();
-							String path = resources[j].getRawLocation().toOSString();
-							if ("eaxml".equals(ext)) {
-								output.add(path);
-							}
-						}
-					}
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}				
-		}
-		
-		return output;
-	}
+
 }
