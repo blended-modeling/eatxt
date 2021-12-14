@@ -3,6 +3,8 @@ package org.bumble.eastadl.simplified.ui.handlers;
 import java.io.File;
 import java.io.IOException;
 
+import org.bumble.eastadl.simplified.common.resource.EatxtResource;
+import org.bumble.eastadl.simplified.common.resource.EatxtResourceFactory;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -24,8 +26,6 @@ import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceFactory;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -40,7 +40,7 @@ import com.google.inject.Provider;
 public class ImportFromEaxmlHandler extends AbstractHandler {
 
 	@Inject
-	private Provider<XtextResource> resourceProvider;
+	private Provider<EatxtResource> resourceProvider;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -61,7 +61,8 @@ public class ImportFromEaxmlHandler extends AbstractHandler {
 
 				// We need to make sure that EMF uses the right resource for our eatxt file...
 				resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eatxt",
-						new XtextResourceFactory(resourceProvider));
+						new EatxtResourceFactory(resourceProvider));
+				// TODO: Figure out how to get a resource provider for Eatxt resources
 				// ... and for anything that is referenced with an "ea:/" protocol.
 				resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("ea",
 						new Eastadl22ResourceFactoryImpl());
@@ -97,6 +98,7 @@ public class ImportFromEaxmlHandler extends AbstractHandler {
 					
 					// We add the top-level object from the EMF model to the resource
 					xtextResource.getContents().add(EcoreUtil.copy(topLevelObject));
+
 					// And calling save() will now write out the eatxt file
 					try {
 						xtextResource.save(null);
