@@ -6,6 +6,9 @@ location "http://download.eclipse.org/releases/2020-06/" eclipse-2020-06 {
 	org.eclipse.e4.rcp.feature.group
 	org.eclipse.lsp4e
 	org.eclipse.sdk.feature.group
+	org.eclipse.equinox.executable.feature.group
+	org.eclipse.equinox.simpleconfigurator
+	org.eclipse.core.runtime.feature.feature.group
 }
 
 location "http://download.eclipse.org/sphinx/releases/0.11.x" sphinx {
