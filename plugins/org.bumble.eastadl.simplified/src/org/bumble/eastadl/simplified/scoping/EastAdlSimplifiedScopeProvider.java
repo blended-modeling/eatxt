@@ -3,10 +3,21 @@
  */
 package org.bumble.eastadl.simplified.scoping;
 
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.ILog;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.eatop.eastadl22.AllocateableElement;
 import org.eclipse.eatop.eastadl22.AllocationTarget;
 import org.eclipse.eatop.eastadl22.AnalysisFunctionPrototype;
@@ -57,35 +68,22 @@ import org.eclipse.eatop.eastadl22.Unit;
 import org.eclipse.eatop.eastadl22.UserAttributeDefinition;
 import org.eclipse.eatop.eastadl22.UserAttributedElement;
 import org.eclipse.eatop.eastadl22.UserElementType;
-import org.eclipse.eatop.eastadl22.util.Eastadl22Factory;
 import org.eclipse.eatop.eastadl22.util.Eastadl22ResourceFactoryImpl;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
+import org.eclipse.xtext.testing.util.ParseHelper;
+
 import com.google.common.base.Function;
 import com.google.inject.Inject;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.io.File;
-import java.io.IOException;
-import org.eclipse.xtext.testing.util.ParseHelper;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.eatop.common.resource.impl.EastADLResourceFactoryImpl;
 
 /**
  * This class contains custom scoping description.
@@ -95,6 +93,8 @@ import org.eclipse.eatop.common.resource.impl.EastADLResourceFactoryImpl;
  * on how and when to use it.
  */
 public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedScopeProvider {
+	
+	private ILog logger = Platform.getLog(getClass());
 
 	@Inject
 	IQualifiedNameProvider nameProvider;
@@ -259,10 +259,7 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		try {
 			xmlResource.load(null);
 		} catch (IOException e) {
-			Shell activeShell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-			MessageDialog.openError(activeShell, "Error loading EAXML file",
-					"The EAXML file could not be loaded: " + e.getMessage());
-			e.printStackTrace();
+			logger.warn("EAXML file " + filePath + " could not be loaded.", e);
 			return null;
 		}
 
