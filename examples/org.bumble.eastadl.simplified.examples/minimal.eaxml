@@ -1,0 +1,57 @@
+<EAXML xmlns="http://east-adl.info/2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://east-adl.info/2.2.0 eastadl_2-2-0.xsd">
+  <TOP-LEVEL-PACKAGES>
+    <EA-PACKAGE UUID="03">
+      <SHORT-NAME>DataTypesPackage</SHORT-NAME>
+      <CATEGORY></CATEGORY>
+      <NAME></NAME>
+      <OWNED-COMMENTS/>
+      <SUB-PACKAGES/>
+      <ELEMENTS>
+        <RANGEABLE-VALUE-TYPE UUID="ac61934c-8851-4742-acde-2f41e401febb">
+          <SHORT-NAME>AA_PercentType</SHORT-NAME>
+          <CATEGORY></CATEGORY>
+          <NAME></NAME>
+          <OWNED-COMMENTS/>
+          <TEXT></TEXT>
+          <ACCURACY>1.0</ACCURACY>
+          <RESOLUTION>1.0</RESOLUTION>
+          <SIGNIFICANT-DIGITS>3</SIGNIFICANT-DIGITS>
+          <BASE-RANGEABLE-REF TYPE="EA-NUMERICAL">/DataTypesPackage/MyFloatDatatype</BASE-RANGEABLE-REF>
+        </RANGEABLE-VALUE-TYPE>
+        <EA-NUMERICAL UUID="7767d152-b6f0-411d-1">
+          <SHORT-NAME>MyFloatDatatype</SHORT-NAME>
+          <CATEGORY></CATEGORY>
+          <NAME></NAME>
+          <OWNED-COMMENTS/>
+          <TEXT></TEXT>
+          <MAX></MAX>
+          <MIN></MIN>
+          <UNIT-REF TYPE="UNIT">/DataTypesPackage/MyTimeUnit</UNIT-REF>
+        </EA-NUMERICAL>
+        <UNIT UUID="7767d152-b6f0-411d-3">
+          <SHORT-NAME>MyTimeUnit</SHORT-NAME>
+          <CATEGORY></CATEGORY>
+          <NAME></NAME>
+          <OWNED-COMMENTS/>
+          <FACTOR>1.0</FACTOR>
+          <SYMBOL>ms</SYMBOL>
+          <OFFSET>0.0</OFFSET>
+          <QUANTITY-REF TYPE="QUANTITY">/DataTypesPackage/MyTimeQuantity</QUANTITY-REF>
+        </UNIT>
+        <QUANTITY UUID="7767d152-b6f0-411d-4">
+          <SHORT-NAME>MyTimeQuantity</SHORT-NAME>
+          <CATEGORY></CATEGORY>
+          <NAME></NAME>
+          <OWNED-COMMENTS/>
+          <AMOUNT-OF-SUBSTANCE-EXP>0</AMOUNT-OF-SUBSTANCE-EXP>
+          <ELECTRIC-CURRENT-EXP>0</ELECTRIC-CURRENT-EXP>
+          <LENGTH-EXP>0</LENGTH-EXP>
+          <LUMINOUS-INTENSITY-EXP>0</LUMINOUS-INTENSITY-EXP>
+          <MASS-EXP>0</MASS-EXP>
+          <THERMODYNAMIC-TEMPERATURE-EXP>0</THERMODYNAMIC-TEMPERATURE-EXP>
+          <TIME-EXP>1</TIME-EXP>
+        </QUANTITY>
+      </ELEMENTS>
+    </EA-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</EAXML>
