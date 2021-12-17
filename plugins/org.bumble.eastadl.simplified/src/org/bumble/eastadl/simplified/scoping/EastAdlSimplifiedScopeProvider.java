@@ -80,6 +80,7 @@ import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
+import org.eclipse.xtext.scoping.impl.SimpleScope;
 import org.eclipse.xtext.testing.util.ParseHelper;
 
 import com.google.common.base.Function;
@@ -229,9 +230,8 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 				// path of string
 				Function<Referrable, QualifiedName> displayShortNames = x -> nameProvider.getFullyQualifiedName(x);
 
-				// return all the fulfilled proposals (which would be proposed automatically in
-				// the menu to user)
-				return Scopes.scopeFor(globalCandidates, displayShortNames, IScope.NULLSCOPE);
+				// return all the fulfilled proposals using our own scope implementation that is aware of "ea" URIs
+				return new EastAdlSimplifiedScope(IScope.NULLSCOPE,Scopes.scopedElementsFor(globalCandidates, displayShortNames));
 			}
 		}
 		// TODO: generalize the procedure so that it works as above also for all
