@@ -62,7 +62,7 @@ public class ImportFromEaxmlHandler extends AbstractHandler {
 				// We need to make sure that EMF uses the right resource for our eatxt file...
 				resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eatxt",
 						new EatxtResourceFactory(resourceProvider));
-				// TODO: Figure out how to get a resource provider for Eatxt resources
+				
 				// ... and for anything that is referenced with an "ea:/" protocol.
 				resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("ea",
 						new Eastadl22ResourceFactoryImpl());
