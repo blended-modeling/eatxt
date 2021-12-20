@@ -3,9 +3,10 @@
  */
 package org.bumble.eastadl.simplified.ide;
 
-
 /**
  * Use this class to register ide components.
  */
 public class EastAdlSimplifiedIdeModule extends AbstractEastAdlSimplifiedIdeModule {
+	
+
 }

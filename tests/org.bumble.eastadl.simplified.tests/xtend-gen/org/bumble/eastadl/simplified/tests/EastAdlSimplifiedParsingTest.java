@@ -34,7 +34,8 @@ public class EastAdlSimplifiedParsingTest {
   public String mydsl = null;
   
   /**
-   * Check if the model described in *.eatxt file could be loaded
+   * Check if the model described in testsource/texts_001.txt file could be loaded
+   * For the concrete contents, please take a look at the testsource/texts_001.txt file
    */
   @Test
   public void loadModel() {
@@ -59,7 +60,7 @@ public class EastAdlSimplifiedParsingTest {
   }
   
   /**
-   * Check if the model described in *.eatxt file could be parsed without issues
+   * Check if the model described in example file could be parsed without issues
    */
   @Test
   public void testValidModel() {
@@ -77,7 +78,7 @@ public class EastAdlSimplifiedParsingTest {
   }
   
   /**
-   * Check if the model desribed in *.eatxt file contains at least one EAPackage
+   * Check if the model desribed in example file contains at least one EAPackage
    */
   @Test
   public void checkEAPackageNumberInProgram() {
