@@ -3,17 +3,16 @@
  */
 package org.bumble.eastadl.simplified.scoping;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-import org.eclipse.core.resources.IProject;
+import org.bumble.eastadl.simplified.common.resource.EatxtResource;
+import org.bumble.eastadl.simplified.common.resource.EatxtResourceFactory;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.ILog;
@@ -74,27 +73,29 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
-import org.eclipse.xtext.scoping.impl.SimpleScope;
 import org.eclipse.xtext.testing.util.ParseHelper;
 
 import com.google.common.base.Function;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 
 /**
- * This class contains custom scoping description.
- * 
+ * This class contains custom scoping description. In particular, it constructs
+ * a global scope of all East-ADL models, regardless or concrete syntax.
+ * <p>
  * See
  * https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
  * on how and when to use it.
  */
 public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedScopeProvider {
-	
+
 	private ILog logger = Platform.getLog(getClass());
 
 	@Inject
@@ -104,6 +105,9 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 	ParseHelper<EObject> parseHelper;
 
 	@Inject
+	private Provider<EatxtResource> resourceProvider;
+
+	@Inject
 	private XtextResourceSet resourceSet;
 
 	@Override
@@ -111,15 +115,15 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		EClass contextEClass = context.eClass();
 		String contextClassName = null;
 
-		// Get the raw paths of all the eatxt file in the same project
-		List<String> eatxtFileRawPaths = getAllFilesForEObjectProject(context, "eatxt");
-		List<String> eaxmlFileRawPaths = getAllFilesForEObjectProject(context, "eaxml");
+		// Get the raw paths of all the relevant files in the workspace
+		List<URI> fileUris = getAllFilesInWorkspace(Arrays.asList("eatxt", "eaxml"));
 
-		// Get the root elements of all the eatxt files in the same project
-		List<EObject> rootElements = getAllEatxtRootElements(eatxtFileRawPaths);
+		// Get the root elements of all relevant files
+		List<EObject> rootElements = new ArrayList<>();
 
-		// Add the root elements of all the eaxml files in the same project to the list
-		getAllEaxmlRootElements(rootElements, eaxmlFileRawPaths);
+		for (URI uri : fileUris) {
+			rootElements.add(getEMFModel(uri, resourceSet));
+		}
 
 		// A dedicated process for HardwareComponentPrototype in DesignLevel
 		// Normal case: in class A reference type B, then the context is A and target is
@@ -230,8 +234,10 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 				// path of string
 				Function<Referrable, QualifiedName> displayShortNames = x -> nameProvider.getFullyQualifiedName(x);
 
-				// return all the fulfilled proposals using our own scope implementation that is aware of "ea" URIs
-				return new EastAdlSimplifiedScope(IScope.NULLSCOPE,Scopes.scopedElementsFor(globalCandidates, displayShortNames));
+				// return all the fulfilled proposals using our own scope implementation that is
+				// aware of "ea" URIs
+				return new EastAdlSimplifiedScope(IScope.NULLSCOPE,
+						Scopes.scopedElementsFor(globalCandidates, displayShortNames));
 			}
 		}
 		// TODO: generalize the procedure so that it works as above also for all
@@ -245,106 +251,93 @@ public class EastAdlSimplifiedScopeProvider extends AbstractEastAdlSimplifiedSco
 		return super.getScope(context, reference);
 	}
 
-	public EObject getEMFModel(String filePath, XtextResourceSet xtextResourceSet) {
+	public EObject getEMFModel(URI fileUri, ResourceSet resourceSet) {
 		// We need to make sure that EMF knows where to find the right resource factory
-		xtextResourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eaxml",
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eaxml",
 				new Eastadl22ResourceFactoryImpl());
-		xtextResourceSet.getPackageRegistry().put(Eastadl22Package.eNS_URI, Eastadl22Package.eINSTANCE);
-		URI openUri = URI.createFileURI(new File(filePath).getAbsolutePath());
+		resourceSet.getPackageRegistry().put(Eastadl22Package.eNS_URI, Eastadl22Package.eINSTANCE);
 
-		// We are now getting an instance of Eastadl22ResourceImpl here
-		Resource xmlResource = xtextResourceSet.getResource(openUri, true);
+		// We need to make sure that EMF uses the right resource for our eatxt file...
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eatxt",
+				new EatxtResourceFactory(resourceProvider));
 
-		// And calling load() will deserialise the EAXML into an in-memory model
+		// ... and for anything that is referenced with an "ea:/" protocol.
+		resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("ea",
+				new Eastadl22ResourceFactoryImpl());
+
+		// We are now getting an instance of the correct resource implementation here
+		Resource resource = resourceSet.getResource(fileUri, true);
+
 		try {
-			xmlResource.load(null);
+			if (resource.getContents() == null || resource.getContents().isEmpty()) {
+				resource.load(null);
+			}
 		} catch (IOException e) {
-			logger.warn("EAXML file " + filePath + " could not be loaded.", e);
+			logger.warn("File " + fileUri.toString() + " could not be loaded.", e);
 			return null;
 		}
 
-		EObject topLevelObject = xmlResource.getContents().get(0);
-
-		return topLevelObject;
-	}
-
-	private void getAllEaxmlRootElements(List<EObject> currentElementList, List<String> eaxmlFileRawPaths) {
-		for (String path : eaxmlFileRawPaths) {
-			EObject rootElement = getEMFModel(path, resourceSet);
-
-			if (rootElement == null)
-				continue;
-
-			currentElementList.add(rootElement);
+		if (resource.getContents() == null || resource.getContents().isEmpty()) {
+			logger.info("File " + fileUri.toString() + " did not contain any contents");
 		}
+
+		return resource.getContents().get(0);
 	}
 
-	private List<EObject> getAllEatxtRootElements(List<String> fileRawPaths) {
-		List<EObject> output = new ArrayList<EObject>();
+	class Visitor implements IResourceVisitor {
 
-		for (String filePath : fileRawPaths) {
-			try {
-				String dslContents = new String(Files.readAllBytes(Paths.get(filePath)));
-				try {
-					EObject eaxml = parseHelper.parse(dslContents);
+		private List<String> exclusionList = Arrays.asList(new String[] { "bin", "target" });
 
-					if (eaxml != null) {
-						output.add(eaxml);
-					}
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		private List<URI> fileUris = new ArrayList<>();
+
+		private List<String> extensions;
+
+		public Visitor(List<String> extensions) {
+			if (extensions == null) {
+				throw new IllegalArgumentException("Extensions cannot be null");
 			}
+			this.extensions = extensions;
 		}
 
-		return output;
+		public boolean visit(IResource resource) {
+			if (resource.exists() && (resource.isHidden() || !resource.isAccessible())) {
+				return false;
+			}
+			if (exclusionList.contains(resource.getName())) {
+				return false;
+			}
+
+			if (resource != null && resource.getType() == IResource.FILE
+					&& this.extensions.contains(resource.getFileExtension()))
+				fileUris.add(URI.createPlatformResourceURI(resource.getFullPath().toOSString(), true));
+			return true;
+		}
+
+		public List<URI> getFileUris() {
+			return this.fileUris;
+		}
 	}
 
 	/**
-	 * Retrieves the project the {@code context} is stored in and retrieves all
-	 * other files with the given {@code extension} in it.
+	 * Retrieves all files with the given {@code extensions} in the workspace.
 	 * 
-	 * @param context   the {@link EObject} whose project files should be retrieved
-	 * @param extension the extension of the files of interest
-	 * @return a list of OS paths to files with the given extension in the
-	 *         {@code context}'s project
+	 * @param extensions the extensions of the files of interest
+	 * @return a list of platform URIs for the files with the given extension in the
+	 *         workspace
 	 */
-	private List<String> getAllFilesForEObjectProject(EObject context, String extension) {
-		if (extension == null) {
-			throw new IllegalArgumentException("Extension cannot be null");
+	private List<URI> getAllFilesInWorkspace(List<String> extensions) {
+		if (extensions == null) {
+			throw new IllegalArgumentException("Extensions cannot be null");
 		}
-		List<String> output = new ArrayList<String>();
-		URI uri = context.eResource().getURI();
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IProject[] projects = workspace.getRoot().getProjects();
-		// get the relative path of project
-		String[] segments = uri.segments();
-		String projectName = "";
+		Visitor visitor = new Visitor(extensions);
 
-		if (segments.length > 1) {
-			projectName = segments[1];
-		}
-		for (IProject project : projects) {
-			if (project.getName().equals(projectName)) {
-				try {
-					for (IResource resource : project.members()) {
-						String path = resource.getRawLocation().toOSString();
-						if (extension.equals(resource.getFileExtension())) {
-							output.add(path);
-						}
-					}
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+		try {
+			ResourcesPlugin.getWorkspace().getRoot().accept(visitor);
+		} catch (CoreException e) {
+			logger.warn("Could not visit all resources", e);
 		}
 
-		return output;
+		return visitor.getFileUris();
 	}
 
 }
