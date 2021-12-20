@@ -37,6 +37,7 @@ public class EastAdlSimplifiedScope extends SimpleScope {
 				if (uri.equals(input.getEObjectURI())) {
 					return canBeFoundByNameAndShadowingKey(input);
 				}
+				// This is the hack that allows us to find elements based on the "ea:/" URI
 				if (uri.scheme().equals("ea") && uri.fragment().equals(input.getEObjectURI().fragment())) {
 					return canBeFoundByNameAndShadowingKey(input);
 				}
