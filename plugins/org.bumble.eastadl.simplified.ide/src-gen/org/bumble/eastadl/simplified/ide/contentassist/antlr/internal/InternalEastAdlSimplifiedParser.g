@@ -539,31 +539,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleString1
-entryRuleString1
-:
-{ before(grammarAccess.getString1Rule()); }
-	 ruleString1
-{ after(grammarAccess.getString1Rule()); } 
-	 EOF 
-;
-
-// Rule String1
-ruleString1 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getString1Access().getEAUUIDTerminalRuleCall()); }
-		RULE_EAUUID
-		{ after(grammarAccess.getString1Access().getEAUUIDTerminalRuleCall()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleComment_Impl
 entryRuleComment_Impl
 :
@@ -2208,6 +2183,31 @@ ruleInteger
 		{ before(grammarAccess.getIntegerAccess().getINTTerminalRuleCall()); }
 		RULE_INT
 		{ after(grammarAccess.getIntegerAccess().getINTTerminalRuleCall()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleUUID
+entryRuleUUID
+:
+{ before(grammarAccess.getUUIDRule()); }
+	 ruleUUID
+{ after(grammarAccess.getUUIDRule()); } 
+	 EOF 
+;
+
+// Rule UUID
+ruleUUID 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getUUIDAccess().getSTRINGTerminalRuleCall()); }
+		RULE_STRING
+		{ after(grammarAccess.getUUIDAccess().getSTRINGTerminalRuleCall()); }
 	)
 ;
 finally {
@@ -57792,9 +57792,9 @@ rule__EAPackage__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getEAPackageAccess().getUuidString1ParserRuleCall_2_2_1_0()); }
-		ruleString1
-		{ after(grammarAccess.getEAPackageAccess().getUuidString1ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getEAPackageAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getEAPackageAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -57972,9 +57972,9 @@ rule__DesignLevel__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getDesignLevelAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getDesignLevelAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getDesignLevelAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getDesignLevelAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -58190,9 +58190,9 @@ rule__AnalysisFunctionType_Impl__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getAnalysisFunctionType_ImplAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getAnalysisFunctionType_ImplAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getAnalysisFunctionType_ImplAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getAnalysisFunctionType_ImplAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -58483,9 +58483,9 @@ rule__BasicSoftwareFunctionType__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getBasicSoftwareFunctionTypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getBasicSoftwareFunctionTypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getBasicSoftwareFunctionTypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getBasicSoftwareFunctionTypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -58776,9 +58776,9 @@ rule__DesignFunctionType_Impl__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getDesignFunctionType_ImplAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getDesignFunctionType_ImplAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getDesignFunctionType_ImplAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getDesignFunctionType_ImplAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -59069,9 +59069,9 @@ rule__FunctionalDevice__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionalDeviceAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getFunctionalDeviceAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getFunctionalDeviceAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getFunctionalDeviceAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -59362,9 +59362,9 @@ rule__FunctionClientServerInterface__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionClientServerInterfaceAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getFunctionClientServerInterfaceAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getFunctionClientServerInterfaceAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getFunctionClientServerInterfaceAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -59512,9 +59512,9 @@ rule__HardwareFunctionType__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getHardwareFunctionTypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getHardwareFunctionTypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getHardwareFunctionTypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getHardwareFunctionTypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -59824,9 +59824,9 @@ rule__LocalDeviceManager__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getLocalDeviceManagerAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getLocalDeviceManagerAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getLocalDeviceManagerAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getLocalDeviceManagerAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -60117,9 +60117,9 @@ rule__Actuator__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getActuatorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getActuatorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getActuatorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getActuatorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -60425,9 +60425,9 @@ rule__ElectricalComponent__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getElectricalComponentAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getElectricalComponentAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getElectricalComponentAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getElectricalComponentAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -60748,9 +60748,9 @@ rule__HardwareComponentType_Impl__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getHardwareComponentType_ImplAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getHardwareComponentType_ImplAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getHardwareComponentType_ImplAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getHardwareComponentType_ImplAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -61056,9 +61056,9 @@ rule__Node__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getNodeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getNodeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getNodeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getNodeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -61379,9 +61379,9 @@ rule__Sensor__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getSensorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getSensorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getSensorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getSensorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -61687,9 +61687,9 @@ rule__ArrayDatatype__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getArrayDatatypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getArrayDatatypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getArrayDatatypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getArrayDatatypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -61856,9 +61856,9 @@ rule__CompositeDatatype__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getCompositeDatatypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getCompositeDatatypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getCompositeDatatypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getCompositeDatatypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -62006,9 +62006,9 @@ rule__EABoolean__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getEABooleanAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getEABooleanAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getEABooleanAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getEABooleanAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -62126,9 +62126,9 @@ rule__EANumerical__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getEANumericalAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getEANumericalAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getEANumericalAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getEANumericalAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -62295,9 +62295,9 @@ rule__EAString__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getEAStringAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getEAStringAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getEAStringAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getEAStringAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -62415,9 +62415,9 @@ rule__Enumeration__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getEnumerationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getEnumerationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getEnumerationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getEnumerationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -62580,9 +62580,9 @@ rule__Quantity__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getQuantityAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getQuantityAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getQuantityAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getQuantityAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -62775,9 +62775,9 @@ rule__RangeableValueType__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getRangeableValueTypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getRangeableValueTypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getRangeableValueTypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getRangeableValueTypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -62959,9 +62959,9 @@ rule__Unit__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getUnitAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getUnitAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getUnitAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getUnitAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -63132,9 +63132,9 @@ rule__UserAttributeDefinition__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getUserAttributeDefinitionAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getUserAttributeDefinitionAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getUserAttributeDefinitionAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getUserAttributeDefinitionAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -63256,9 +63256,9 @@ rule__UserAttributedElement__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getUserAttributedElementAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getUserAttributedElementAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getUserAttributedElementAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getUserAttributedElementAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -63433,9 +63433,9 @@ rule__UserElementType__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getUserElementTypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getUserElementTypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getUserElementTypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getUserElementTypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -63583,9 +63583,9 @@ rule__Allocation__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getAllocationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getAllocationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getAllocationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getAllocationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -63703,9 +63703,9 @@ rule__DesignFunctionPrototype__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getDesignFunctionPrototypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getDesignFunctionPrototypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getDesignFunctionPrototypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getDesignFunctionPrototypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -63812,9 +63812,9 @@ rule__HardwareComponentPrototype__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getHardwareComponentPrototypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getHardwareComponentPrototypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getHardwareComponentPrototypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getHardwareComponentPrototypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -63921,9 +63921,9 @@ rule__Realization__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getRealizationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getRealizationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getRealizationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getRealizationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -64185,9 +64185,9 @@ rule__AnalysisFunctionPrototype__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getAnalysisFunctionPrototypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getAnalysisFunctionPrototypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getAnalysisFunctionPrototypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getAnalysisFunctionPrototypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -64294,9 +64294,9 @@ rule__FunctionAllocation__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionAllocationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getFunctionAllocationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getFunctionAllocationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getFunctionAllocationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -64414,9 +64414,9 @@ rule__FunctionClientServerPort__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionClientServerPortAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getFunctionClientServerPortAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getFunctionClientServerPortAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getFunctionClientServerPortAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -64538,9 +64538,9 @@ rule__FunctionConnector__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionConnectorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getFunctionConnectorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getFunctionConnectorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getFunctionConnectorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -64658,9 +64658,9 @@ rule__FunctionFlowPort__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionFlowPortAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getFunctionFlowPortAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getFunctionFlowPortAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getFunctionFlowPortAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -64797,9 +64797,9 @@ rule__FunctionPowerPort__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionPowerPortAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getFunctionPowerPortAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getFunctionPowerPortAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getFunctionPowerPortAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -64906,9 +64906,9 @@ rule__Operation__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getOperationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getOperationAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getOperationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getOperationAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -65041,9 +65041,9 @@ rule__PortGroup__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getPortGroupAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getPortGroupAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getPortGroupAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getPortGroupAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -65199,9 +65199,9 @@ rule__CommunicationHardwarePin__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getCommunicationHardwarePinAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getCommunicationHardwarePinAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getCommunicationHardwarePinAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getCommunicationHardwarePinAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -65319,9 +65319,9 @@ rule__HardwareConnector__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getHardwareConnectorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getHardwareConnectorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getHardwareConnectorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getHardwareConnectorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -65439,9 +65439,9 @@ rule__HardwarePort__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getHardwarePortAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getHardwarePortAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getHardwarePortAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getHardwarePortAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -65642,9 +65642,9 @@ rule__HardwarePortConnector__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getHardwarePortConnectorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getHardwarePortConnectorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getHardwarePortConnectorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getHardwarePortConnectorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -65792,9 +65792,9 @@ rule__IOHardwarePin__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getIOHardwarePinAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getIOHardwarePinAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getIOHardwarePinAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getIOHardwarePinAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -65927,9 +65927,9 @@ rule__LogicalPortConnector__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getLogicalPortConnectorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getLogicalPortConnectorAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getLogicalPortConnectorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getLogicalPortConnectorAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -66077,9 +66077,9 @@ rule__PowerHardwarePin__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getPowerHardwarePinAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getPowerHardwarePinAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getPowerHardwarePinAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getPowerHardwarePinAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -66197,9 +66197,9 @@ rule__EADatatypePrototype__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getEADatatypePrototypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getEADatatypePrototypeAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getEADatatypePrototypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getEADatatypePrototypeAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
@@ -66306,9 +66306,9 @@ rule__EnumerationLiteral__UuidAssignment_2_2_1
 	}
 :
 	(
-		{ before(grammarAccess.getEnumerationLiteralAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
-		ruleString0
-		{ after(grammarAccess.getEnumerationLiteralAccess().getUuidString0ParserRuleCall_2_2_1_0()); }
+		{ before(grammarAccess.getEnumerationLiteralAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
+		ruleUUID
+		{ after(grammarAccess.getEnumerationLiteralAccess().getUuidUUIDParserRuleCall_2_2_1_0()); }
 	)
 ;
 finally {
