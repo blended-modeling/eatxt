@@ -588,7 +588,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
@@ -615,7 +615,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         (functionAllocation+=FunctionAllocation functionAllocation+=FunctionAllocation*)?
@@ -637,7 +637,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         type=[AnalysisFunctionType|EString] 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)?
@@ -660,7 +660,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         isElementary=Boolean? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
@@ -690,7 +690,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         text=String0? 
 	 *         uri=String0? 
@@ -717,7 +717,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         isElementary=Boolean? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
@@ -765,7 +765,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         direction=EADirectionKind? 
 	 *         isGround=Boolean? 
@@ -790,7 +790,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         text=String0? 
 	 *         uri=String0? 
@@ -816,7 +816,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         type=[DesignFunctionType|EString] 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)?
@@ -839,7 +839,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         isElementary=Boolean? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
@@ -867,7 +867,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
@@ -930,7 +930,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         text=String0? 
 	 *         uri=String0? 
@@ -965,7 +965,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         type=[EADatatype|EString] 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)?
@@ -1037,7 +1037,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         text=String0? 
 	 *         uri=String0? 
@@ -1062,7 +1062,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String1? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         (subPackage+=EAPackage subPackage+=EAPackage*)? 
@@ -1109,7 +1109,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         text=String0? 
 	 *         uri=String0? 
@@ -1145,7 +1145,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         isActive=Boolean? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
@@ -1170,7 +1170,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     EnumerationLiteral returns EnumerationLiteral
 	 *
 	 * Constraint:
-	 *     (shortName=Identifier category=Identifier? uuid=String0? name=String0? (ownedComment+=Comment ownedComment+=Comment*)?)
+	 *     (shortName=Identifier category=Identifier? uuid=UUID? name=String0? (ownedComment+=Comment ownedComment+=Comment*)?)
 	 */
 	protected void sequence_EnumerationLiteral(ISerializationContext context, EnumerationLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1190,7 +1190,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         text=String0? 
 	 *         uri=String0? 
@@ -1215,7 +1215,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         allocatedElement=FunctionAllocation_allocatedElement 
@@ -1269,7 +1269,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         text=String0? 
 	 *         uri=String0? 
@@ -1294,7 +1294,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         kind=ClientServerKind 
 	 *         type=[FunctionClientServerInterface|EString] 
@@ -1317,7 +1317,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         port+=FunctionConnector_port 
@@ -1353,7 +1353,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         direction=EADirectionKind 
 	 *         type=[EADatatype|EString] 
@@ -1378,7 +1378,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         type=[CompositeDatatype|EString] 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)?
@@ -1401,7 +1401,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         isElementary=Boolean? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
@@ -1429,7 +1429,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         type=[HardwareComponentType|EString] 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)?
@@ -1452,7 +1452,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
@@ -1479,7 +1479,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         port+=HardwareConnector_port 
@@ -1515,7 +1515,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         isElementary=Boolean? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
@@ -1545,7 +1545,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         port+=HardwarePortConnector_port 
@@ -1581,7 +1581,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         isShield=Boolean? 
 	 *         (referencedPin+=[HardwarePin|EString] referencedPin+=[HardwarePin|EString]*)? 
@@ -1607,7 +1607,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         direction=EADirectionKind? 
 	 *         isGround=Boolean? 
@@ -1632,7 +1632,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         isElementary=Boolean? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
@@ -1661,7 +1661,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         kind=HardwareBusKind? 
 	 *         busSpeed=Float? 
@@ -1687,7 +1687,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         executionRate=Float? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
@@ -1715,7 +1715,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         return=EADatatypePrototype? 
@@ -1737,7 +1737,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (port+=[FunctionPort|EString] port+=[FunctionPort|EString]*)? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
@@ -1761,7 +1761,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         direction=EADirectionKind? 
 	 *         isGround=Boolean? 
@@ -1784,7 +1784,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         amountOfSubstanceExp=Integer 
 	 *         electricCurrentExp=Integer 
@@ -1814,7 +1814,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         text=String0? 
 	 *         uri=String0? 
@@ -1860,7 +1860,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
 	 *         realized+=Realization_realized 
@@ -1910,7 +1910,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (traceableSpecification+=[TraceableSpecification|EString] traceableSpecification+=[TraceableSpecification|EString]*)? 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
@@ -1938,7 +1938,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         factor=Float 
 	 *         symbol=String0 
@@ -1964,7 +1964,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         type=[EADatatype|EString] 
 	 *         (ownedComment+=Comment ownedComment+=Comment*)? 
@@ -1987,7 +1987,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         (uaType+=[UserElementType|EString] uaType+=[UserElementType|EString]*)? 
 	 *         attributedElement=[Identifiable|EString] 
@@ -2011,7 +2011,7 @@ public class EastAdlSimplifiedSemanticSequencer extends XbaseSemanticSequencer {
 	 *     (
 	 *         shortName=Identifier 
 	 *         category=Identifier? 
-	 *         uuid=String0? 
+	 *         uuid=UUID? 
 	 *         name=String0? 
 	 *         validFor=String0? 
 	 *         key=String0 

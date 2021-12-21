@@ -3,15 +3,16 @@
  */
 package org.bumble.eastadl.simplified;
 
+import org.bumble.eastadl.simplified.converter.UUID2XtextConverter;
 import org.bumble.eastadl.simplified.naming.EastAdlQualifiedShortnameProvider;
+import org.bumble.eastadl.simplified.parser.antlr.EastAdlSimplifiedSyntaxErrorMessageProvider;
+import org.bumble.eastadl.simplified.scoping.EastAdlSimplifiedScopeProvider;
+import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.parser.antlr.ISyntaxErrorMessageProvider;
 import org.eclipse.xtext.scoping.IScopeProvider;
 
 import com.google.inject.Binder;
-
-import org.bumble.eastadl.simplified.parser.antlr.EastAdlSimplifiedSyntaxErrorMessageProvider;
-import org.bumble.eastadl.simplified.scoping.EastAdlSimplifiedScopeProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the
@@ -43,5 +44,11 @@ public class EastAdlSimplifiedRuntimeModule extends AbstractEastAdlSimplifiedRun
 		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class)
 				.annotatedWith(org.eclipse.xtext.serializer.tokens.SerializerScopeProviderBinding.class)
 				.to(EastAdlSimplifiedScopeProvider.class);
+	}
+	
+
+	@Override
+	public Class<? extends IValueConverterService> bindIValueConverterService() {
+		return UUID2XtextConverter.class;
 	}
 }

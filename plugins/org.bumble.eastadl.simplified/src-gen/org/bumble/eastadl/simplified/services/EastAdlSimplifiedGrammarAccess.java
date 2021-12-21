@@ -1015,7 +1015,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString1ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -1041,7 +1041,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'EAPackage' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String1)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
@@ -1052,7 +1052,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'EAPackage' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String1)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
@@ -1071,7 +1071,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String1)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
@@ -1094,17 +1094,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String1)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String1
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String1
-		public RuleCall getUuidString1ParserRuleCall_2_2_1_0() { return cUuidString1ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -1187,17 +1187,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//ID
 		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
-	}
-	public class String1Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.String1");
-		private final RuleCall cEAUUIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//String1 returns String:
-		//    EAUUID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//EAUUID
-		public RuleCall getEAUUIDTerminalRuleCall() { return cEAUUIDTerminalRuleCall; }
 	}
 	public class Comment_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Comment_Impl");
@@ -1308,7 +1297,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -1352,7 +1341,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'DesignLevel' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -1366,7 +1355,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'DesignLevel' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -1388,7 +1377,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -1414,17 +1403,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -1555,7 +1544,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -1610,7 +1599,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'AnalysisFunctionType' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('isElementary' isElementary=Boolean)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -1626,7 +1615,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'AnalysisFunctionType' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -1650,7 +1639,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -1678,17 +1667,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -1852,7 +1841,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -1907,7 +1896,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'BasicSoftwareFunctionType' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('isElementary' isElementary=Boolean)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -1923,7 +1912,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'BasicSoftwareFunctionType' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -1947,7 +1936,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -1975,17 +1964,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -2149,7 +2138,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -2204,7 +2193,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'DesignFunctionType' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('isElementary' isElementary=Boolean)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -2220,7 +2209,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'DesignFunctionType' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -2244,7 +2233,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -2272,17 +2261,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -2446,7 +2435,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -2501,7 +2490,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'FunctionalDevice' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('isElementary' isElementary=Boolean)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -2517,7 +2506,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'FunctionalDevice' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -2541,7 +2530,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -2569,17 +2558,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -2743,7 +2732,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -2772,7 +2761,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'FunctionClientServerInterface' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
@@ -2784,7 +2773,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'FunctionClientServerInterface' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -2804,7 +2793,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -2828,17 +2817,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -2924,7 +2913,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -2984,7 +2973,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'HardwareFunctionType' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('isElementary' isElementary=Boolean)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3001,7 +2990,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'HardwareFunctionType' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3026,7 +3015,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3055,17 +3044,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -3244,7 +3233,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -3299,7 +3288,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'LocalDeviceManager' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('isElementary' isElementary=Boolean)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3315,7 +3304,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'LocalDeviceManager' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3339,7 +3328,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isElementary' isElementary=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3367,17 +3356,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -3541,7 +3530,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -3597,7 +3586,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Actuator' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -3613,7 +3602,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Actuator' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -3637,7 +3626,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -3665,17 +3654,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -3842,7 +3831,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -3902,7 +3891,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'ElectricalComponent' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('isActive' isActive=Boolean)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3919,7 +3908,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'ElectricalComponent' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isActive' isActive=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3944,7 +3933,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isActive' isActive=Boolean)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -3973,17 +3962,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -4162,7 +4151,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -4218,7 +4207,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'HardwareComponentType' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -4234,7 +4223,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'HardwareComponentType' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -4258,7 +4247,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -4286,17 +4275,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -4463,7 +4452,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -4523,7 +4512,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Node' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('executionRate' executionRate=Float)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -4540,7 +4529,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Node' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('executionRate' executionRate=Float)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -4565,7 +4554,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('executionRate' executionRate=Float)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -4594,17 +4583,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -4783,7 +4772,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -4839,7 +4828,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Sensor' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -4855,7 +4844,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Sensor' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -4879,7 +4868,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -4907,17 +4896,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -5084,7 +5073,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -5120,7 +5109,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'ArrayDatatype' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
@@ -5134,7 +5123,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'ArrayDatatype' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5156,7 +5145,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5182,17 +5171,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -5299,7 +5288,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -5327,7 +5316,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'CompositeDatatype' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
@@ -5339,7 +5328,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'CompositeDatatype' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5359,7 +5348,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5383,17 +5372,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -5476,7 +5465,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -5500,7 +5489,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'EABoolean' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
@@ -5511,7 +5500,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'EABoolean' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5530,7 +5519,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5553,17 +5542,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -5634,7 +5623,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -5671,7 +5660,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'EANumerical' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
@@ -5685,7 +5674,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'EANumerical' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5707,7 +5696,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5733,17 +5722,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -5853,7 +5842,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -5877,7 +5866,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'EAString' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
@@ -5888,7 +5877,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'EAString' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5907,7 +5896,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -5930,17 +5919,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -6011,7 +6000,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -6042,7 +6031,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Enumeration' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
@@ -6055,7 +6044,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Enumeration' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -6076,7 +6065,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -6101,17 +6090,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -6203,7 +6192,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -6240,7 +6229,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Quantity' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'amountOfSubstanceExp' amountOfSubstanceExp=Integer
 		//        'electricCurrentExp' electricCurrentExp=Integer
@@ -6256,7 +6245,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Quantity' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'amountOfSubstanceExp' amountOfSubstanceExp=Integer
 		//    'electricCurrentExp' electricCurrentExp=Integer
@@ -6280,7 +6269,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'amountOfSubstanceExp' amountOfSubstanceExp=Integer
 		//    'electricCurrentExp' electricCurrentExp=Integer
@@ -6308,17 +6297,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -6428,7 +6417,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -6466,7 +6455,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'RangeableValueType' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
@@ -6481,7 +6470,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'RangeableValueType' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -6504,7 +6493,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
@@ -6531,17 +6520,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -6654,7 +6643,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -6689,7 +6678,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Unit' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'factor' factor=Float
 		//        'symbol' symbol=String0
@@ -6703,7 +6692,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Unit' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'factor' factor=Float
 		//    'symbol' symbol=String0
@@ -6725,7 +6714,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'factor' factor=Float
 		//    'symbol' symbol=String0
@@ -6751,17 +6740,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -6865,7 +6854,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -6889,7 +6878,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'UserAttributeDefinition' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[EADatatype|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -6900,7 +6889,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'UserAttributeDefinition' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -6919,7 +6908,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -6942,17 +6931,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -7023,7 +7012,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -7058,7 +7047,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'UserAttributedElement' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('uaType' '(' uaType+=[UserElementType|EString] (  uaType+=[UserElementType|EString])* ')' )?
 		//        'attributedElement' attributedElement=[Identifiable|EString]
@@ -7070,7 +7059,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'UserAttributedElement' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('uaType' '(' uaType+=[UserElementType|EString] (  uaType+=[UserElementType|EString])* ')' )?
 		//    'attributedElement' attributedElement=[Identifiable|EString]
@@ -7090,7 +7079,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('uaType' '(' uaType+=[UserElementType|EString] (  uaType+=[UserElementType|EString])* ')' )?
 		//    'attributedElement' attributedElement=[Identifiable|EString]
@@ -7114,17 +7103,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -7228,7 +7217,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -7256,7 +7245,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'UserElementType' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('validFor' validFor=String0)?
 		//        'key' key=String0
@@ -7268,7 +7257,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'UserElementType' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('validFor' validFor=String0)?
 		//    'key' key=String0
@@ -7288,7 +7277,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('validFor' validFor=String0)?
 		//    'key' key=String0
@@ -7312,17 +7301,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -7405,7 +7394,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -7426,7 +7415,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Allocation' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
@@ -7436,7 +7425,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Allocation' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
@@ -7454,7 +7443,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
@@ -7476,17 +7465,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -7548,7 +7537,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -7568,7 +7557,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'DesignFunctionPrototype' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[DesignFunctionType|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -7578,7 +7567,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'DesignFunctionPrototype' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[DesignFunctionType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -7596,7 +7585,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[DesignFunctionType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -7618,17 +7607,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -7687,7 +7676,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -7707,7 +7696,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'HardwareComponentPrototype' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[HardwareComponentType|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -7717,7 +7706,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'HardwareComponentPrototype' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[HardwareComponentType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -7735,7 +7724,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[HardwareComponentType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -7757,17 +7746,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -7826,7 +7815,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -7850,7 +7839,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Realization' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        realized+=Realization_realized (  realized+=Realization_realized)*
@@ -7861,7 +7850,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Realization' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    realized+=Realization_realized (  realized+=Realization_realized)*
@@ -7880,7 +7869,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    realized+=Realization_realized (  realized+=Realization_realized)*
@@ -7903,17 +7892,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -8188,7 +8177,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -8208,7 +8197,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'AnalysisFunctionPrototype' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[AnalysisFunctionType|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -8218,7 +8207,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'AnalysisFunctionPrototype' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[AnalysisFunctionType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -8236,7 +8225,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[AnalysisFunctionType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -8258,17 +8247,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -8327,7 +8316,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -8349,7 +8338,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'FunctionAllocation' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
@@ -8360,7 +8349,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'FunctionAllocation' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
@@ -8379,7 +8368,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
@@ -8402,17 +8391,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -8477,7 +8466,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -8500,7 +8489,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'FunctionClientServerPort' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'kind' kind=ClientServerKind
 		//        'type' type=[FunctionClientServerInterface|EString]
@@ -8511,7 +8500,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'FunctionClientServerPort' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'kind' kind=ClientServerKind
 		//    'type' type=[FunctionClientServerInterface|EString]
@@ -8530,7 +8519,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'kind' kind=ClientServerKind
 		//    'type' type=[FunctionClientServerInterface|EString]
@@ -8553,17 +8542,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -8631,7 +8620,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -8651,7 +8640,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'FunctionConnector' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        port+=FunctionConnector_port (  port+=FunctionConnector_port)*
@@ -8661,7 +8650,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'FunctionConnector' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=FunctionConnector_port (  port+=FunctionConnector_port)*
@@ -8679,7 +8668,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=FunctionConnector_port (  port+=FunctionConnector_port)*
@@ -8701,17 +8690,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -8770,7 +8759,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -8797,7 +8786,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'FunctionFlowPort' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'direction' direction=EADirectionKind
 		//        'type' type=[EADatatype|EString]
@@ -8809,7 +8798,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'FunctionFlowPort' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'direction' direction=EADirectionKind
 		//    'type' type=[EADatatype|EString]
@@ -8829,7 +8818,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'direction' direction=EADirectionKind
 		//    'type' type=[EADatatype|EString]
@@ -8853,17 +8842,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -8943,7 +8932,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -8963,7 +8952,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'FunctionPowerPort' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[CompositeDatatype|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -8973,7 +8962,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'FunctionPowerPort' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[CompositeDatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -8991,7 +8980,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[CompositeDatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -9013,17 +9002,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -9082,7 +9071,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -9107,7 +9096,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'Operation' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        ('return' return=EADatatypePrototype)?
@@ -9118,7 +9107,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'Operation' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    ('return' return=EADatatypePrototype)?
@@ -9137,7 +9126,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    ('return' return=EADatatypePrototype)?
@@ -9160,17 +9149,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -9244,7 +9233,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -9275,7 +9264,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'PortGroup' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -9286,7 +9275,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'PortGroup' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -9305,7 +9294,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -9328,17 +9317,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -9430,7 +9419,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -9454,7 +9443,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'CommunicationHardwarePin' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('direction' direction=EADirectionKind)?
 		//        ('isGround' isGround=Boolean)?
@@ -9465,7 +9454,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'CommunicationHardwarePin' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
@@ -9484,7 +9473,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
@@ -9507,17 +9496,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -9588,7 +9577,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -9608,7 +9597,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'HardwareConnector' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        port+=HardwareConnector_port (  port+=HardwareConnector_port)*
@@ -9618,7 +9607,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'HardwareConnector' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwareConnector_port (  port+=HardwareConnector_port)*
@@ -9636,7 +9625,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwareConnector_port (  port+=HardwareConnector_port)*
@@ -9658,17 +9647,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -9727,7 +9716,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -9767,7 +9756,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'HardwarePort' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('isShield' isShield=Boolean)?
 		//        ('referencedPin' '(' referencedPin+=[HardwarePin|EString] (  referencedPin+=[HardwarePin|EString])* ')' )?
@@ -9780,7 +9769,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'HardwarePort' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isShield' isShield=Boolean)?
 		//    ('referencedPin' '(' referencedPin+=[HardwarePin|EString] (  referencedPin+=[HardwarePin|EString])* ')' )?
@@ -9801,7 +9790,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('isShield' isShield=Boolean)?
 		//    ('referencedPin' '(' referencedPin+=[HardwarePin|EString] (  referencedPin+=[HardwarePin|EString])* ')' )?
@@ -9826,17 +9815,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -9955,7 +9944,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -9980,7 +9969,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'HardwarePortConnector' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
@@ -9991,7 +9980,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'HardwarePortConnector' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
@@ -10010,7 +9999,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
@@ -10033,17 +10022,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -10117,7 +10106,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -10145,7 +10134,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'IOHardwarePin' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('direction' direction=EADirectionKind)?
 		//        ('isGround' isGround=Boolean)?
@@ -10157,7 +10146,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'IOHardwarePin' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
@@ -10177,7 +10166,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
@@ -10201,17 +10190,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -10294,7 +10283,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -10322,7 +10311,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'LogicalPortConnector' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('kind' kind=HardwareBusKind)?
 		//        ('busSpeed' busSpeed=Float)?
@@ -10334,7 +10323,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'LogicalPortConnector' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('kind' kind=HardwareBusKind)?
 		//    ('busSpeed' busSpeed=Float)?
@@ -10354,7 +10343,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('kind' kind=HardwareBusKind)?
 		//    ('busSpeed' busSpeed=Float)?
@@ -10378,17 +10367,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -10471,7 +10460,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -10495,7 +10484,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'PowerHardwarePin' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('direction' direction=EADirectionKind)?
 		//        ('isGround' isGround=Boolean)?
@@ -10506,7 +10495,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'PowerHardwarePin' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
@@ -10525,7 +10514,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
@@ -10548,17 +10537,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -10629,7 +10618,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -10649,7 +10638,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'EADatatypePrototype' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[EADatatype|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -10659,7 +10648,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'EADatatypePrototype' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -10677,7 +10666,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -10699,17 +10688,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -10768,7 +10757,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cUuidKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cUuidAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cUuidString0ParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cUuidUUIDParserRuleCall_2_2_1_0 = (RuleCall)cUuidAssignment_2_2_1.eContents().get(0);
 		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
 		private final Keyword cNameKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
 		private final Assignment cNameAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
@@ -10784,7 +10773,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'EnumerationLiteral' shortName=Identifier
 		//    (BEGIN
 		//        ('category' category=Identifier)?
-		//        ('uuid' uuid=String0)?
+		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    END)?;
@@ -10793,7 +10782,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//'EnumerationLiteral' shortName=Identifier
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//END)?
@@ -10810,7 +10799,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		
 		//(BEGIN
 		//    ('category' category=Identifier)?
-		//    ('uuid' uuid=String0)?
+		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//END)?
@@ -10831,17 +10820,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getCategoryIdentifierParserRuleCall_2_1_1_0() { return cCategoryIdentifierParserRuleCall_2_1_1_0; }
 		
-		//('uuid' uuid=String0)?
+		//('uuid' uuid=UUID)?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
 		//'uuid'
 		public Keyword getUuidKeyword_2_2_0() { return cUuidKeyword_2_2_0; }
 		
-		//uuid=String0
+		//uuid=UUID
 		public Assignment getUuidAssignment_2_2_1() { return cUuidAssignment_2_2_1; }
 		
-		//String0
-		public RuleCall getUuidString0ParserRuleCall_2_2_1_0() { return cUuidString0ParserRuleCall_2_2_1_0; }
+		//UUID
+		public RuleCall getUuidUUIDParserRuleCall_2_2_1_0() { return cUuidUUIDParserRuleCall_2_2_1_0; }
 		
 		//('name' name=String0)?
 		public Group getGroup_2_3() { return cGroup_2_3; }
@@ -11889,6 +11878,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//INT
 		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
 	}
+	public class UUIDElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.UUID");
+		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//UUID returns ecore::EString:
+		//    STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+	}
 	public class XBlockExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.XBlockExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -12133,7 +12133,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	private final EAPackageElements pEAPackage;
 	private final IdentifierElements pIdentifier;
 	private final String0Elements pString0;
-	private final String1Elements pString1;
 	private final Comment_ImplElements pComment_Impl;
 	private final RationaleElements pRationale;
 	private final DesignLevelElements pDesignLevel;
@@ -12204,6 +12203,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	private final HardwareBusKindElements eHardwareBusKind;
 	private final FloatElements pFloat;
 	private final IntegerElements pInteger;
+	private final UUIDElements pUUID;
 	private final XBlockExpressionElements pXBlockExpression;
 	private final TerminalRule tBEGIN;
 	private final TerminalRule tEND;
@@ -12212,7 +12212,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	private final TerminalRule tEAOCTAL;
 	private final TerminalRule tEAHEX;
 	private final TerminalRule tEAEXPONENT;
-	private final TerminalRule tEAUUID;
 	
 	private final Grammar grammar;
 	
@@ -12248,7 +12247,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		this.pEAPackage = new EAPackageElements();
 		this.pIdentifier = new IdentifierElements();
 		this.pString0 = new String0Elements();
-		this.pString1 = new String1Elements();
 		this.pComment_Impl = new Comment_ImplElements();
 		this.pRationale = new RationaleElements();
 		this.pDesignLevel = new DesignLevelElements();
@@ -12319,6 +12317,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		this.eHardwareBusKind = new HardwareBusKindElements();
 		this.pFloat = new FloatElements();
 		this.pInteger = new IntegerElements();
+		this.pUUID = new UUIDElements();
 		this.pXBlockExpression = new XBlockExpressionElements();
 		this.tBEGIN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.BEGIN");
 		this.tEND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.END");
@@ -12327,7 +12326,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		this.tEAOCTAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAOCTAL");
 		this.tEAHEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAHEX");
 		this.tEAEXPONENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAEXPONENT");
-		this.tEAUUID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAUUID");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -12569,7 +12567,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'EAPackage' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String1)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
@@ -12603,16 +12601,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		return getString0Access().getRule();
 	}
 	
-	//String1 returns String:
-	//    EAUUID;
-	public String1Elements getString1Access() {
-		return pString1;
-	}
-	
-	public ParserRule getString1Rule() {
-		return getString1Access().getRule();
-	}
-	
 	//Comment_Impl returns Comment:
 	//    'Comment'
 	//    (BEGIN
@@ -12643,7 +12631,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'DesignLevel' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -12664,7 +12652,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'AnalysisFunctionType' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('isElementary' isElementary=Boolean)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -12687,7 +12675,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'BasicSoftwareFunctionType' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('isElementary' isElementary=Boolean)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -12710,7 +12698,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'DesignFunctionType' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('isElementary' isElementary=Boolean)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -12733,7 +12721,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'FunctionalDevice' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('isElementary' isElementary=Boolean)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -12756,7 +12744,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'FunctionClientServerInterface' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
@@ -12775,7 +12763,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'HardwareFunctionType' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('isElementary' isElementary=Boolean)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -12799,7 +12787,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'LocalDeviceManager' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('isElementary' isElementary=Boolean)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -12822,7 +12810,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Actuator' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -12845,7 +12833,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'ElectricalComponent' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('isActive' isActive=Boolean)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -12869,7 +12857,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'HardwareComponentType' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -12892,7 +12880,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Node' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('executionRate' executionRate=Float)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -12916,7 +12904,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Sensor' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -12939,7 +12927,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'ArrayDatatype' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
@@ -12960,7 +12948,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'CompositeDatatype' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
@@ -12979,7 +12967,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'EABoolean' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
@@ -12997,7 +12985,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'EANumerical' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
@@ -13018,7 +13006,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'EAString' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
@@ -13036,7 +13024,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Enumeration' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
@@ -13056,7 +13044,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Quantity' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'amountOfSubstanceExp' amountOfSubstanceExp=Integer
 	//        'electricCurrentExp' electricCurrentExp=Integer
@@ -13079,7 +13067,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'RangeableValueType' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
@@ -13101,7 +13089,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Unit' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'factor' factor=Float
 	//        'symbol' symbol=String0
@@ -13122,7 +13110,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'UserAttributeDefinition' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[EADatatype|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -13140,7 +13128,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'UserAttributedElement' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('uaType' '(' uaType+=[UserElementType|EString] (  uaType+=[UserElementType|EString])* ')' )?
 	//        'attributedElement' attributedElement=[Identifiable|EString]
@@ -13159,7 +13147,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'UserElementType' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('validFor' validFor=String0)?
 	//        'key' key=String0
@@ -13178,7 +13166,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Allocation' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
@@ -13195,7 +13183,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'DesignFunctionPrototype' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[DesignFunctionType|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -13212,7 +13200,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'HardwareComponentPrototype' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[HardwareComponentType|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -13229,7 +13217,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Realization' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        realized+=Realization_realized (  realized+=Realization_realized)*
@@ -13275,7 +13263,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'AnalysisFunctionPrototype' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[AnalysisFunctionType|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -13292,7 +13280,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'FunctionAllocation' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
@@ -13310,7 +13298,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'FunctionClientServerPort' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'kind' kind=ClientServerKind
 	//        'type' type=[FunctionClientServerInterface|EString]
@@ -13328,7 +13316,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'FunctionConnector' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        port+=FunctionConnector_port (  port+=FunctionConnector_port)*
@@ -13345,7 +13333,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'FunctionFlowPort' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'direction' direction=EADirectionKind
 	//        'type' type=[EADatatype|EString]
@@ -13364,7 +13352,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'FunctionPowerPort' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[CompositeDatatype|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -13381,7 +13369,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'Operation' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        ('return' return=EADatatypePrototype)?
@@ -13399,7 +13387,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'PortGroup' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -13417,7 +13405,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'CommunicationHardwarePin' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('direction' direction=EADirectionKind)?
 	//        ('isGround' isGround=Boolean)?
@@ -13435,7 +13423,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'HardwareConnector' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        port+=HardwareConnector_port (  port+=HardwareConnector_port)*
@@ -13452,7 +13440,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'HardwarePort' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('isShield' isShield=Boolean)?
 	//        ('referencedPin' '(' referencedPin+=[HardwarePin|EString] (  referencedPin+=[HardwarePin|EString])* ')' )?
@@ -13472,7 +13460,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'HardwarePortConnector' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
@@ -13490,7 +13478,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'IOHardwarePin' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('direction' direction=EADirectionKind)?
 	//        ('isGround' isGround=Boolean)?
@@ -13509,7 +13497,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'LogicalPortConnector' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('kind' kind=HardwareBusKind)?
 	//        ('busSpeed' busSpeed=Float)?
@@ -13528,7 +13516,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'PowerHardwarePin' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('direction' direction=EADirectionKind)?
 	//        ('isGround' isGround=Boolean)?
@@ -13546,7 +13534,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'EADatatypePrototype' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[EADatatype|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -13563,7 +13551,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    'EnumerationLiteral' shortName=Identifier
 	//    (BEGIN
 	//        ('category' category=Identifier)?
-	//        ('uuid' uuid=String0)?
+	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//    END)?;
@@ -13823,6 +13811,16 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		return getIntegerAccess().getRule();
 	}
 	
+	//UUID returns ecore::EString:
+	//    STRING;
+	public UUIDElements getUUIDAccess() {
+		return pUUID;
+	}
+	
+	public ParserRule getUUIDRule() {
+		return getUUIDAccess().getRule();
+	}
+	
 	//// We modify the concrete syntax of the Xbase block expression and make them indentation-aware
 	//@Override
 	//XBlockExpression returns xbase::XExpression:
@@ -13883,12 +13881,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//    ('0'..'9')+('e'|'E')('+'|'-')?('0'..'9')+;
 	public TerminalRule getEAEXPONENTRule() {
 		return tEAEXPONENT;
-	}
-	
-	//terminal EAUUID:
-	//    '^'? ('a'..'f'|'A'..'F'|'$'|'_'|'0'..'9') ('a'..'f'|'A'..'F'|'$'|'_'|'0'..'9'|'-')*;
-	public TerminalRule getEAUUIDRule() {
-		return tEAUUID;
 	}
 	
 	//XExpression returns XExpression :

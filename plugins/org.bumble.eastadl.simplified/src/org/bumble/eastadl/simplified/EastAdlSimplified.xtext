@@ -87,7 +87,7 @@ EAPackage returns EAPackage:
     'EAPackage' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
@@ -116,7 +116,7 @@ DesignLevel returns DesignLevel:
     'DesignLevel' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -130,7 +130,7 @@ AnalysisFunctionType_Impl returns AnalysisFunctionType:
     'AnalysisFunctionType' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -146,7 +146,7 @@ BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
     'BasicSoftwareFunctionType' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -162,7 +162,7 @@ DesignFunctionType_Impl returns DesignFunctionType:
     'DesignFunctionType' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -178,7 +178,7 @@ FunctionalDevice returns FunctionalDevice:
     'FunctionalDevice' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -194,7 +194,7 @@ FunctionClientServerInterface returns FunctionClientServerInterface:
     'FunctionClientServerInterface' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
@@ -206,7 +206,7 @@ HardwareFunctionType returns HardwareFunctionType:
     'HardwareFunctionType' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -223,7 +223,7 @@ LocalDeviceManager returns LocalDeviceManager:
     'LocalDeviceManager' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('isElementary' isElementary=Boolean)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -239,7 +239,7 @@ Actuator returns Actuator:
     'Actuator' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -255,7 +255,7 @@ ElectricalComponent returns ElectricalComponent:
     'ElectricalComponent' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('isActive' isActive=Boolean)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -272,7 +272,7 @@ HardwareComponentType_Impl returns HardwareComponentType:
     'HardwareComponentType' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -288,7 +288,7 @@ Node returns Node:
     'Node' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('executionRate' executionRate=Float)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
@@ -305,7 +305,7 @@ Sensor returns Sensor:
     'Sensor' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -321,7 +321,7 @@ ArrayDatatype returns ArrayDatatype:
     'ArrayDatatype' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
@@ -335,7 +335,7 @@ CompositeDatatype returns CompositeDatatype:
     'CompositeDatatype' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
@@ -347,7 +347,7 @@ EABoolean returns EABoolean:
     'EABoolean' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
@@ -358,7 +358,7 @@ EANumerical returns EANumerical:
     'EANumerical' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
@@ -372,7 +372,7 @@ EAString returns EAString:
     'EAString' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
@@ -383,7 +383,7 @@ Enumeration returns Enumeration:
     'Enumeration' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
@@ -396,7 +396,7 @@ Quantity returns Quantity:
     'Quantity' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'amountOfSubstanceExp' amountOfSubstanceExp=Integer
         'electricCurrentExp' electricCurrentExp=Integer
@@ -412,7 +412,7 @@ RangeableValueType returns RangeableValueType:
     'RangeableValueType' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('text' text=String0)?
         ('uri' uri=String0)?
@@ -427,7 +427,7 @@ Unit returns Unit:
     'Unit' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'factor' factor=Float
         'symbol' symbol=String0
@@ -441,7 +441,7 @@ UserAttributeDefinition returns UserAttributeDefinition:
     'UserAttributeDefinition' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'type' type=[EADatatype|EString]
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -452,7 +452,7 @@ UserAttributedElement returns UserAttributedElement:
     'UserAttributedElement' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('uaType' '(' uaType+=[UserElementType|EString] (  uaType+=[UserElementType|EString])* ')' )?
         'attributedElement' attributedElement=[Identifiable|EString]
@@ -464,7 +464,7 @@ UserElementType returns UserElementType:
     'UserElementType' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('validFor' validFor=String0)?
         'key' key=String0
@@ -476,7 +476,7 @@ Allocation returns Allocation:
     'Allocation' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
@@ -486,7 +486,7 @@ DesignFunctionPrototype returns DesignFunctionPrototype:
     'DesignFunctionPrototype' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'type' type=[DesignFunctionType|EString]
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -496,7 +496,7 @@ HardwareComponentPrototype returns HardwareComponentPrototype:
     'HardwareComponentPrototype' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'type' type=[HardwareComponentType|EString]
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -506,7 +506,7 @@ Realization returns Realization:
     'Realization' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         realized+=Realization_realized (  realized+=Realization_realized)*
@@ -531,7 +531,7 @@ AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
     'AnalysisFunctionPrototype' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'type' type=[AnalysisFunctionType|EString]
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -541,7 +541,7 @@ FunctionAllocation returns FunctionAllocation:
     'FunctionAllocation' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
@@ -552,7 +552,7 @@ FunctionClientServerPort returns FunctionClientServerPort:
     'FunctionClientServerPort' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'kind' kind=ClientServerKind
         'type' type=[FunctionClientServerInterface|EString]
@@ -563,7 +563,7 @@ FunctionConnector returns FunctionConnector:
     'FunctionConnector' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         port+=FunctionConnector_port (  port+=FunctionConnector_port)*
@@ -573,7 +573,7 @@ FunctionFlowPort returns FunctionFlowPort:
     'FunctionFlowPort' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'direction' direction=EADirectionKind
         'type' type=[EADatatype|EString]
@@ -585,7 +585,7 @@ FunctionPowerPort returns FunctionPowerPort:
     'FunctionPowerPort' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'type' type=[CompositeDatatype|EString]
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -595,7 +595,7 @@ Operation returns Operation:
     'Operation' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         ('return' return=EADatatypePrototype)?
@@ -606,7 +606,7 @@ PortGroup returns PortGroup:
     'PortGroup' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -617,7 +617,7 @@ CommunicationHardwarePin returns CommunicationHardwarePin:
     'CommunicationHardwarePin' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)? 
         ('name' name=String0)?
         ('direction' direction=EADirectionKind)?
         ('isGround' isGround=Boolean)?
@@ -628,7 +628,7 @@ HardwareConnector returns HardwareConnector:
     'HardwareConnector' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         port+=HardwareConnector_port (  port+=HardwareConnector_port)*
@@ -638,7 +638,7 @@ HardwarePort returns HardwarePort:
     'HardwarePort' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('isShield' isShield=Boolean)?
         ('referencedPin' '(' referencedPin+=[HardwarePin|EString] (  referencedPin+=[HardwarePin|EString])* ')' )?
@@ -651,7 +651,7 @@ HardwarePortConnector returns HardwarePortConnector:
     'HardwarePortConnector' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
@@ -662,7 +662,7 @@ IOHardwarePin returns IOHardwarePin:
     'IOHardwarePin' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('direction' direction=EADirectionKind)?
         ('isGround' isGround=Boolean)?
@@ -674,7 +674,7 @@ LogicalPortConnector returns LogicalPortConnector:
     'LogicalPortConnector' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('kind' kind=HardwareBusKind)?
         ('busSpeed' busSpeed=Float)?
@@ -686,7 +686,7 @@ PowerHardwarePin returns PowerHardwarePin:
     'PowerHardwarePin' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         ('direction' direction=EADirectionKind)?
         ('isGround' isGround=Boolean)?
@@ -697,7 +697,7 @@ EADatatypePrototype returns EADatatypePrototype:
     'EADatatypePrototype' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         'type' type=[EADatatype|EString]
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -707,7 +707,7 @@ EnumerationLiteral returns EnumerationLiteral:
     'EnumerationLiteral' shortName=Identifier
     (BEGIN
         ('category' category=Identifier)?
-        ('uuid' uuid=String0)?
+        ('uuid' uuid=UUID)?
         ('name' name=String0)?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     END)?;
@@ -819,6 +819,9 @@ Float returns ecore::EDouble:
 
 Integer returns Integer:
     INT;
+
+UUID returns ecore::EString:
+	STRING;
 
 // We modify the concrete syntax of the Xbase block expression and make them indentation-aware
 @Override
