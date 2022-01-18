@@ -21,11 +21,16 @@ Require-Bundle: org.bumble.eastadl.simplified,
  org.eclipse.xtext.xbase.ui,
  org.eclipse.jdt.debug.ui,
  org.eclipse.xtext.common.types.ui,
- org.bumble.eastadl.simplified.common
+ org.bumble.eastadl.simplified.common,
+ org.eclipse.xtend.lib,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui.forms
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.bumble.eastadl.simplified.ui.contentassist,
  org.bumble.eastadl.simplified.ui.internal,
  org.bumble.eastadl.simplified.ui.quickfix,
- org.bumble.eastadl.simplified.ui.editor
+ org.bumble.eastadl.simplified.ui.editor,
+ org.bumble.eastadl.simplified.ui.wizard
 Bundle-Activator: org.bumble.eastadl.simplified.ui.internal.SimplifiedActivator
