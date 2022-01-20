@@ -142,24 +142,26 @@ public class GrammarOptimization {
 				return false;
 			}	
 
-			// 0. Add rule for EString
+			// 0.1 Add rule for EString
 			String strProcessed = addDefinitionOfEString(strOrigin);
+			// 0.2 Modify or Add Datatype rules
+			strProcessed = implementRules(strProcessed);
 			
 			// 1. Remove tab symbols (by replacing with four whitespace)
-			strProcessed = replaceString(strProcessed, "\t", "\s\s\s\s");
+			strProcessed = replaceString(strProcessed, "\t", "    ");
 			System.out.println("[Info] Finish removing tab symbols by replacing with four whitespace!");
 
 			// 2. Remove brackets by replacing them with BEGIN and END
 			strProcessed = removeBrackets(strProcessed);
 			System.out.println("[Info]******Finish removing brackets by replacing with BEGIN and END.");
 
-			// 3. Clarify BEGIN and END
-			strProcessed = clarifyBeginAndEnd(strProcessed, directoryName);
-			System.out.println("[Info]*****************Finish clarifying BEGIN and END in xtext file.");
-
-			// 4. Add import
-			strProcessed = addImport(strProcessed);
-			System.out.println("[Info]***********Finish adding import to the beginning of xtext file.");
+//			// 3. Clarify BEGIN and END
+//			strProcessed = clarifyBeginAndEnd(strProcessed, directoryName);
+//			System.out.println("[Info]*****************Finish clarifying BEGIN and END in xtext file.");
+//
+//			// 4. Add import
+//			strProcessed = addImport(strProcessed);
+//			System.out.println("[Info]***********Finish adding import to the beginning of xtext file.");
 
 			// 5. Reduce nesting
 			strProcessed = reduceNestDepth(strProcessed);
@@ -169,11 +171,11 @@ public class GrammarOptimization {
 			strProcessed = removeComma(strProcessed);
 			System.out.println("[Info]*********************************Finish removing comma symbols.");
 			
-			// 7. Modify or Add Datatype rules
-			strProcessed = implementRules(strProcessed);
-			
-			// 8. Allow empty element
+			// 7. Allow empty element
 			strProcessed = allowEmptyElement(strProcessed);
+			
+			// 8. Add brackets back
+			strProcessed = cancelWhiteSpaceSensitive(strProcessed);
 			
 			// write the optimized grammar back into the xtext file
 			IOHelper.saveFile(file, strProcessed);
@@ -185,6 +187,17 @@ public class GrammarOptimization {
 		return true;
 	}
 
+	public String cancelWhiteSpaceSensitive(String strInput) {
+		String strOutput = "";
+		
+		String regex1 = "BEGIN";
+		String strTemp2 = strInput.replaceAll(regex1, "\'{\'");
+		String regex2 = "END";
+		strOutput = strTemp2.replaceAll(regex2, "\'}\'");
+		
+		return strOutput;
+	}
+	
 	public String removeUnnecessaryKeywords(String strInput) {
 		String strOutput = "";
 		
@@ -199,8 +212,8 @@ public class GrammarOptimization {
 		// 
 		for (int i = 0; i < lines.length; i++) {
 			// search if BEGIN and END both exist in the same line
-			if (checkExistofString(lines[i], "BEGIN\s(.*)\sEND")) {
-				Pattern pattern = Pattern.compile("BEGIN\s(.*)\sEND");
+			if (checkExistofString(lines[i], "BEGIN\\s(.*)\\sEND")) {
+				Pattern pattern = Pattern.compile("BEGIN\\s(.*)\\sEND");
 				String subStr = getTargetString(lines[i], pattern);
 				
 				if (subStr.isEmpty() || subStr.isBlank()) {
@@ -213,7 +226,7 @@ public class GrammarOptimization {
 				
 				if (number > 0) {
 					for (int j = 0; j < number; j++) {
-						whitespace = whitespace + "\s";
+						whitespace = whitespace + " ";
 					}
 				}
 				
@@ -252,7 +265,7 @@ public class GrammarOptimization {
 			
 			// We only need consider the BEGIN followed with a linebreak or return
 			// and of course user may type in a whitespace unconsciously
-			if (checkExistofString(lines[i], "(\s|\t)BEGIN(\s)*(\r\n|\r|\n)")) {
+			if (checkExistofString(lines[i], "(\\s|\t)BEGIN(\\s)*(\r\n|\r|\n)")) {
 				lines[i] = replaceString(lines[i], "BEGIN", "(BEGIN");
 				bInBeginEnd = true;
 				strOutput += lines[i];
@@ -260,7 +273,7 @@ public class GrammarOptimization {
 			}
 			
 			// once we encounter the END with a ';', it's the END for the whole rule
-			if (checkExistofString(lines[i], "END(\s)*;")) {
+			if (checkExistofString(lines[i], "END(\\s)*;")) {
 				if (bHasLineNotOptional)
 					lines[i] = replaceString(lines[i], "END", "END)");
 				else
@@ -353,13 +366,13 @@ public class GrammarOptimization {
 		
 		strOutput = replaceString(strInput, "\",\"", "");
 		strOutput = replaceString(strOutput, "\\sallocateableElement_context\\+\\=\\[AllocateableElement\\|EString\\]\\)", 
-				"\\\",\\\"\sallocateableElement_context\\+\\=\\[AllocateableElement\\|EString\\]\\)");
+				"\\\",\\\" allocateableElement_context\\+\\=\\[AllocateableElement\\|EString\\]\\)");
 		strOutput = replaceString(strOutput, "\\sallocationTarget_context\\+\\=\\[AllocationTarget\\|EString\\]\\)",
-				"\\\",\\\"\sallocationTarget_context\\+\\=\\[AllocationTarget\\|EString\\]\\)");
+				"\\\",\\\" allocationTarget_context\\+\\=\\[AllocationTarget\\|EString\\]\\)");
 		strOutput = replaceString(strOutput, "\\sidentifiable_context\\+\\=\\[EAElement\\|EString\\]\\)",
-				"\\\",\\\"\sidentifiable_context\\+\\=\\[EAElement\\|EString\\]\\)");
+				"\\\",\\\" identifiable_context\\+\\=\\[EAElement\\|EString\\]\\)");
 		strOutput = replaceString(strOutput, "\\sidentifiable_context\\+\\=\\[Identifiable\\|EString\\]\\)", 
-				"\\\",\\\"\sidentifiable_context\\+\\=\\[Identifiable\\|EString\\]\\)");
+				"\\\",\\\" identifiable_context\\+\\=\\[Identifiable\\|EString\\]\\)");
 		
 		return strOutput;
 	}
@@ -402,7 +415,7 @@ public class GrammarOptimization {
 		String strOutput = "";
 
 		String strRegex = "\\'(\\n|\\r)\\s*BEGIN(\\r|\\n)\\s*\\'shortName\\'\\sshortName=Identifier(\\n|\\s)";
-		String strReplacement = "'\sshortName=Identifier\n    BEGIN";
+		String strReplacement = "' shortName=Identifier\n    BEGIN";
 
 		strOutput = replaceString(strInput, strRegex, strReplacement);
 
@@ -598,7 +611,7 @@ public class GrammarOptimization {
 			
 			if (cInput.length != 0) {
 				for (int i = 0; i < cInput.length; i++) {
-					if (cInput[i] == '\s')
+					if (cInput[i] == ' ')
 						number++;
 					// one tab symbol = four whitespace
 					else if (cInput[i] == '\t')
@@ -627,13 +640,13 @@ public class GrammarOptimization {
 		// print the text after replacing tab symbol into whitespace
 		Pattern replace1 = Pattern.compile("\t");
 		Matcher matcher1 = replace1.matcher(EXAMPLE_TEST);
-		System.out.print(Integer.toString(nLine) + matcher1.replaceAll("\s\s\s\s").toString() + "\n");
+		System.out.print(Integer.toString(nLine) + matcher1.replaceAll("\\s\\s\\s\\s").toString() + "\n");
 		nLine++;
 
 		// print the text after removing '{'
 		String regex = "([\'])([{])([\'])";
 		System.out.print(Integer.toString(nLine));
-		System.out.println(EXAMPLE_TEST.replaceAll(regex, "\s"));
+		System.out.println(EXAMPLE_TEST.replaceAll(regex, " "));
 		nLine++;
 	}
 }
