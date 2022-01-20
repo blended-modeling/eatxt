@@ -484,4 +484,32 @@
             </command>
       </menuContribution>
 	</extension>
+	<extension
+		point="org.eclipse.ui.newWizards">
+		<category id="org.bumble.eastadl.simplified.ui.category" name="EastAdlSimplified">
+		</category>
+		<wizard
+			category="org.bumble.eastadl.simplified.ui.category"
+			class="org.bumble.eastadl.simplified.ui.EastAdlSimplifiedExecutableExtensionFactory:org.eclipse.xtext.ui.wizard.template.TemplateNewFileWizard"
+			id="org.bumble.eastadl.simplified.ui.wizard.EastAdlSimplifiedNewFileWizard"
+			name="EastAdlSimplified File"
+			icon="icons/new_EastAdlSimplified_file.png">
+		</wizard>
+	</extension>
+	<extension
+		point="org.eclipse.xtext.ui.fileTemplate">
+		<fileTemplateProvider
+			class="org.bumble.eastadl.simplified.ui.EastAdlSimplifiedExecutableExtensionFactory:org.bumble.eastadl.simplified.ui.wizard.EastAdlSimplifiedFileTemplateProvider"
+			grammarName="org.bumble.eastadl.simplified.EastAdlSimplified">
+		</fileTemplateProvider>
+	</extension>
+	<extension
+		point="org.eclipse.ui.perspectiveExtensions">
+		<perspectiveExtension targetID="org.eclipse.ui.resourcePerspective">
+			<newWizardShortcut id="org.bumble.eastadl.simplified.ui.wizard.EastAdlSimplifiedNewFileWizard"/>
+		</perspectiveExtension>
+		<perspectiveExtension targetID="org.eclipse.jdt.ui.JavaPerspective">
+			<newWizardShortcut id="org.bumble.eastadl.simplified.ui.wizard.EastAdlSimplifiedNewFileWizard"/>
+		</perspectiveExtension>
+	</extension>
 </plugin>
