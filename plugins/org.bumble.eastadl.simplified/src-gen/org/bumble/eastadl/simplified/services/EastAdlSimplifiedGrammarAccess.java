@@ -19,10 +19,9 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 import org.eclipse.xtext.service.AbstractElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
-import org.eclipse.xtext.xbase.services.XbaseGrammarAccess;
-import org.eclipse.xtext.xbase.services.XtypeGrammarAccess;
 
 @Singleton
 public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
@@ -1007,7 +1006,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -1035,29 +1034,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cElementEAPackageableElementParserRuleCall_2_6_0_0 = (RuleCall)cElementAssignment_2_6_0.eContents().get(0);
 		private final Assignment cElementAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cElementEAPackageableElementParserRuleCall_2_6_1_0 = (RuleCall)cElementAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//EAPackage returns EAPackage:
 		//    'EAPackage' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
 		//        (element+=EAPackageableElement (  element+=EAPackageableElement)* )?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EAPackage' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
 		//    (element+=EAPackageableElement (  element+=EAPackageableElement)* )?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'EAPackage'
@@ -1069,18 +1068,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
 		//    (element+=EAPackageableElement (  element+=EAPackageableElement)* )?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -1163,8 +1162,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EAPackageableElement
 		public RuleCall getElementEAPackageableElementParserRuleCall_2_6_1_0() { return cElementEAPackageableElementParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class IdentifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Identifier");
@@ -1193,35 +1192,35 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCommentKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cBodyKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cBodyAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cBodyString0ParserRuleCall_1_2_0 = (RuleCall)cBodyAssignment_1_2.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
 		//Comment_Impl returns Comment:
 		//    'Comment'
-		//    (BEGIN
+		//    ('{'
 		//        'body' body=String0
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Comment'
-		//(BEGIN
+		//('{'
 		//    'body' body=String0
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'Comment'
 		public Keyword getCommentKeyword_0() { return cCommentKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'body' body=String0
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'body'
 		public Keyword getBodyKeyword_1_1() { return cBodyKeyword_1_1; }
@@ -1232,43 +1231,43 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getBodyString0ParserRuleCall_1_2_0() { return cBodyString0ParserRuleCall_1_2_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_3() { return cENDTerminalRuleCall_1_3; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_3() { return cRightCurlyBracketKeyword_1_3; }
 	}
 	public class RationaleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Rationale");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRationaleKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cBodyKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cBodyAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cBodyString0ParserRuleCall_1_2_0 = (RuleCall)cBodyAssignment_1_2.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
 		//Rationale returns Rationale:
 		//    'Rationale'
-		//    (BEGIN
+		//    ('{'
 		//        'body' body=String0
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Rationale'
-		//(BEGIN
+		//('{'
 		//    'body' body=String0
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'Rationale'
 		public Keyword getRationaleKeyword_0() { return cRationaleKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'body' body=String0
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'body'
 		public Keyword getBodyKeyword_1_1() { return cBodyKeyword_1_1; }
@@ -1279,8 +1278,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//String0
 		public RuleCall getBodyString0ParserRuleCall_1_2_0() { return cBodyString0ParserRuleCall_1_2_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_3() { return cENDTerminalRuleCall_1_3; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_3() { return cRightCurlyBracketKeyword_1_3; }
 	}
 	public class DesignLevelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.DesignLevel");
@@ -1289,7 +1288,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -1335,11 +1334,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Keyword cHardwareDesignArchitectureKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
 		private final Assignment cHardwareDesignArchitectureAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
 		private final RuleCall cHardwareDesignArchitectureHardwareComponentPrototypeParserRuleCall_2_9_1_0 = (RuleCall)cHardwareDesignArchitectureAssignment_2_9_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10 = (RuleCall)cGroup_2.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_2_10 = (Keyword)cGroup_2.eContents().get(10);
 		
 		//DesignLevel returns DesignLevel:
 		//    'DesignLevel' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -1349,11 +1348,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (allocation+=Allocation (  allocation+=Allocation)*)?
 		//        ('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)?
 		//        ('hardwareDesignArchitecture' hardwareDesignArchitecture=HardwareComponentPrototype)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DesignLevel' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -1363,7 +1362,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (allocation+=Allocation (  allocation+=Allocation)*)?
 		//    ('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)?
 		//    ('hardwareDesignArchitecture' hardwareDesignArchitecture=HardwareComponentPrototype)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'DesignLevel'
@@ -1375,7 +1374,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -1385,11 +1384,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (allocation+=Allocation (  allocation+=Allocation)*)?
 		//    ('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)?
 		//    ('hardwareDesignArchitecture' hardwareDesignArchitecture=HardwareComponentPrototype)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -1526,8 +1525,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//HardwareComponentPrototype
 		public RuleCall getHardwareDesignArchitectureHardwareComponentPrototypeParserRuleCall_2_9_1_0() { return cHardwareDesignArchitectureHardwareComponentPrototypeParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10() { return cENDTerminalRuleCall_2_10; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_10() { return cRightCurlyBracketKeyword_2_10; }
 	}
 	public class AnalysisFunctionType_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.AnalysisFunctionType_Impl");
@@ -1536,7 +1535,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -1593,11 +1592,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
 		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
 		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		
 		//AnalysisFunctionType_Impl returns AnalysisFunctionType:
 		//    'AnalysisFunctionType' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -1609,11 +1608,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//        (port+=FunctionPort (  port+=FunctionPort)*)?
 		//        (part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AnalysisFunctionType' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -1625,7 +1624,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'AnalysisFunctionType'
@@ -1637,7 +1636,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -1649,11 +1648,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -1823,8 +1822,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//AnalysisFunctionPrototype
 		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_12() { return cRightCurlyBracketKeyword_2_12; }
 	}
 	public class BasicSoftwareFunctionTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.BasicSoftwareFunctionType");
@@ -1833,7 +1832,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -1890,11 +1889,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
 		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
 		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		
 		//BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
 		//    'BasicSoftwareFunctionType' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -1906,11 +1905,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//        (port+=FunctionPort (  port+=FunctionPort)*)?
 		//        (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'BasicSoftwareFunctionType' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -1922,7 +1921,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'BasicSoftwareFunctionType'
@@ -1934,7 +1933,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -1946,11 +1945,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -2120,8 +2119,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//DesignFunctionPrototype
 		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_12() { return cRightCurlyBracketKeyword_2_12; }
 	}
 	public class DesignFunctionType_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionType_Impl");
@@ -2130,7 +2129,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -2187,11 +2186,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
 		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
 		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		
 		//DesignFunctionType_Impl returns DesignFunctionType:
 		//    'DesignFunctionType' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -2203,11 +2202,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//        (port+=FunctionPort (  port+=FunctionPort)*)?
 		//        (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DesignFunctionType' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -2219,7 +2218,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'DesignFunctionType'
@@ -2231,7 +2230,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -2243,11 +2242,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -2417,8 +2416,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//DesignFunctionPrototype
 		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_12() { return cRightCurlyBracketKeyword_2_12; }
 	}
 	public class FunctionalDeviceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionalDevice");
@@ -2427,7 +2426,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -2484,11 +2483,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
 		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
 		private final RuleCall cPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		
 		//FunctionalDevice returns FunctionalDevice:
 		//    'FunctionalDevice' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -2500,11 +2499,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//        (port+=FunctionPort (  port+=FunctionPort)*)?
 		//        (part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionalDevice' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -2516,7 +2515,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionalDevice'
@@ -2528,7 +2527,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -2540,11 +2539,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -2714,8 +2713,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//AnalysisFunctionPrototype
 		public RuleCall getPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartAnalysisFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_12() { return cRightCurlyBracketKeyword_2_12; }
 	}
 	public class FunctionClientServerInterfaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionClientServerInterface");
@@ -2724,7 +2723,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -2755,11 +2754,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOperationOperationParserRuleCall_2_7_0_0 = (RuleCall)cOperationAssignment_2_7_0.eContents().get(0);
 		private final Assignment cOperationAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
 		private final RuleCall cOperationOperationParserRuleCall_2_7_1_0 = (RuleCall)cOperationAssignment_2_7_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
 		
 		//FunctionClientServerInterface returns FunctionClientServerInterface:
 		//    'FunctionClientServerInterface' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -2767,11 +2766,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        ('uri' uri=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (operation+=Operation (  operation+=Operation)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionClientServerInterface' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -2779,7 +2778,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('uri' uri=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (operation+=Operation (  operation+=Operation)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionClientServerInterface'
@@ -2791,7 +2790,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -2799,11 +2798,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('uri' uri=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (operation+=Operation (  operation+=Operation)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -2895,8 +2894,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Operation
 		public RuleCall getOperationOperationParserRuleCall_2_7_1_0() { return cOperationOperationParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8() { return cENDTerminalRuleCall_2_8; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_8() { return cRightCurlyBracketKeyword_2_8; }
 	}
 	public class HardwareFunctionTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwareFunctionType");
@@ -2905,7 +2904,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -2967,11 +2966,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_12_0_0 = (RuleCall)cPartAssignment_2_12_0.eContents().get(0);
 		private final Assignment cPartAssignment_2_12_1 = (Assignment)cGroup_2_12.eContents().get(1);
 		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_12_1_0 = (RuleCall)cPartAssignment_2_12_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
+		private final Keyword cRightCurlyBracketKeyword_2_13 = (Keyword)cGroup_2.eContents().get(13);
 		
 		//HardwareFunctionType returns HardwareFunctionType:
 		//    'HardwareFunctionType' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -2984,11 +2983,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//        (port+=FunctionPort (  port+=FunctionPort)*)?
 		//        (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareFunctionType' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -3001,7 +3000,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareFunctionType'
@@ -3013,7 +3012,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -3026,11 +3025,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -3215,8 +3214,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//DesignFunctionPrototype
 		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_12_1_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_12_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_13() { return cRightCurlyBracketKeyword_2_13; }
 	}
 	public class LocalDeviceManagerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.LocalDeviceManager");
@@ -3225,7 +3224,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -3282,11 +3281,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_0_0 = (RuleCall)cPartAssignment_2_11_0.eContents().get(0);
 		private final Assignment cPartAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
 		private final RuleCall cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0 = (RuleCall)cPartAssignment_2_11_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		
 		//LocalDeviceManager returns LocalDeviceManager:
 		//    'LocalDeviceManager' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -3298,11 +3297,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//        (port+=FunctionPort (  port+=FunctionPort)*)?
 		//        (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'LocalDeviceManager' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -3314,7 +3313,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'LocalDeviceManager'
@@ -3326,7 +3325,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -3338,11 +3337,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 		//    (port+=FunctionPort (  port+=FunctionPort)*)?
 		//    (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -3512,8 +3511,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//DesignFunctionPrototype
 		public RuleCall getPartDesignFunctionPrototypeParserRuleCall_2_11_1_0() { return cPartDesignFunctionPrototypeParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_12() { return cRightCurlyBracketKeyword_2_12; }
 	}
 	public class ActuatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Actuator");
@@ -3522,7 +3521,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -3580,11 +3579,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_0_0 = (RuleCall)cPortConnectorAssignment_2_11_0.eContents().get(0);
 		private final Assignment cPortConnectorAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_1_0 = (RuleCall)cPortConnectorAssignment_2_11_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		
 		//Actuator returns Actuator:
 		//    'Actuator' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -3596,11 +3595,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//        (port+=HardwarePort (  port+=HardwarePort)*)?
 		//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Actuator' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -3612,7 +3611,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'Actuator'
@@ -3624,7 +3623,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -3636,11 +3635,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -3813,8 +3812,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//PortConnector
 		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_12() { return cRightCurlyBracketKeyword_2_12; }
 	}
 	public class ElectricalComponentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.ElectricalComponent");
@@ -3823,7 +3822,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -3885,11 +3884,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_0_0 = (RuleCall)cPortConnectorAssignment_2_12_0.eContents().get(0);
 		private final Assignment cPortConnectorAssignment_2_12_1 = (Assignment)cGroup_2_12.eContents().get(1);
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_1_0 = (RuleCall)cPortConnectorAssignment_2_12_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
+		private final Keyword cRightCurlyBracketKeyword_2_13 = (Keyword)cGroup_2.eContents().get(13);
 		
 		//ElectricalComponent returns ElectricalComponent:
 		//    'ElectricalComponent' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -3902,11 +3901,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//        (port+=HardwarePort (  port+=HardwarePort)*)?
 		//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ElectricalComponent' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -3919,7 +3918,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'ElectricalComponent'
@@ -3931,7 +3930,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -3944,11 +3943,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -4133,8 +4132,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//PortConnector
 		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_13() { return cRightCurlyBracketKeyword_2_13; }
 	}
 	public class HardwareComponentType_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentType_Impl");
@@ -4143,7 +4142,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -4201,11 +4200,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_0_0 = (RuleCall)cPortConnectorAssignment_2_11_0.eContents().get(0);
 		private final Assignment cPortConnectorAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_1_0 = (RuleCall)cPortConnectorAssignment_2_11_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		
 		//HardwareComponentType_Impl returns HardwareComponentType:
 		//    'HardwareComponentType' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -4217,11 +4216,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//        (port+=HardwarePort (  port+=HardwarePort)*)?
 		//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareComponentType' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -4233,7 +4232,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareComponentType'
@@ -4245,7 +4244,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -4257,11 +4256,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -4434,8 +4433,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//PortConnector
 		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_12() { return cRightCurlyBracketKeyword_2_12; }
 	}
 	public class NodeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Node");
@@ -4444,7 +4443,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -4506,11 +4505,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_0_0 = (RuleCall)cPortConnectorAssignment_2_12_0.eContents().get(0);
 		private final Assignment cPortConnectorAssignment_2_12_1 = (Assignment)cGroup_2_12.eContents().get(1);
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_12_1_0 = (RuleCall)cPortConnectorAssignment_2_12_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
+		private final Keyword cRightCurlyBracketKeyword_2_13 = (Keyword)cGroup_2.eContents().get(13);
 		
 		//Node returns Node:
 		//    'Node' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -4523,11 +4522,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//        (port+=HardwarePort (  port+=HardwarePort)*)?
 		//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Node' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -4540,7 +4539,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'Node'
@@ -4552,7 +4551,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -4565,11 +4564,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -4754,8 +4753,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//PortConnector
 		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_12_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_12_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_13() { return cRightCurlyBracketKeyword_2_13; }
 	}
 	public class SensorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Sensor");
@@ -4764,7 +4763,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -4822,11 +4821,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_0_0 = (RuleCall)cPortConnectorAssignment_2_11_0.eContents().get(0);
 		private final Assignment cPortConnectorAssignment_2_11_1 = (Assignment)cGroup_2_11.eContents().get(1);
 		private final RuleCall cPortConnectorPortConnectorParserRuleCall_2_11_1_0 = (RuleCall)cPortConnectorAssignment_2_11_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cGroup_2.eContents().get(12);
 		
 		//Sensor returns Sensor:
 		//    'Sensor' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -4838,11 +4837,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//        (port+=HardwarePort (  port+=HardwarePort)*)?
 		//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Sensor' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -4854,7 +4853,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'Sensor'
@@ -4866,7 +4865,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -4878,11 +4877,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 		//    (port+=HardwarePort (  port+=HardwarePort)*)?
 		//    (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -5055,8 +5054,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//PortConnector
 		public RuleCall getPortConnectorPortConnectorParserRuleCall_2_11_1_0() { return cPortConnectorPortConnectorParserRuleCall_2_11_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_12() { return cENDTerminalRuleCall_2_12; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_12() { return cRightCurlyBracketKeyword_2_12; }
 	}
 	public class ArrayDatatypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.ArrayDatatype");
@@ -5065,7 +5064,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -5103,11 +5102,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_10_0_0 = (RuleCall)cOwnedCommentAssignment_2_10_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_10_1 = (Assignment)cGroup_2_10.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_10_1_0 = (RuleCall)cOwnedCommentAssignment_2_10_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11 = (RuleCall)cGroup_2.eContents().get(11);
+		private final Keyword cRightCurlyBracketKeyword_2_11 = (Keyword)cGroup_2.eContents().get(11);
 		
 		//ArrayDatatype returns ArrayDatatype:
 		//    'ArrayDatatype' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -5117,11 +5116,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        ('minLength' minLength=Integer)?
 		//        'elementType' elementType=[EADatatype|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ArrayDatatype' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -5131,7 +5130,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('minLength' minLength=Integer)?
 		//    'elementType' elementType=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'ArrayDatatype'
@@ -5143,7 +5142,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -5153,11 +5152,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('minLength' minLength=Integer)?
 		//    'elementType' elementType=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -5270,8 +5269,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_10_1_0() { return cOwnedCommentCommentParserRuleCall_2_10_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11() { return cENDTerminalRuleCall_2_11; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_11() { return cRightCurlyBracketKeyword_2_11; }
 	}
 	public class CompositeDatatypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.CompositeDatatype");
@@ -5280,7 +5279,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -5310,11 +5309,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_7_0 = (RuleCall)cDatatypePrototypeAssignment_2_7.eContents().get(0);
 		private final Assignment cDatatypePrototypeAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
 		private final RuleCall cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_8_0 = (RuleCall)cDatatypePrototypeAssignment_2_8.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
 		//CompositeDatatype returns CompositeDatatype:
 		//    'CompositeDatatype' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -5322,11 +5321,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        ('uri' uri=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        datatypePrototype+=EADatatypePrototype (  datatypePrototype+=EADatatypePrototype)*
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'CompositeDatatype' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -5334,7 +5333,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('uri' uri=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    datatypePrototype+=EADatatypePrototype (  datatypePrototype+=EADatatypePrototype)*
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'CompositeDatatype'
@@ -5346,7 +5345,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -5354,11 +5353,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('uri' uri=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    datatypePrototype+=EADatatypePrototype (  datatypePrototype+=EADatatypePrototype)*
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -5447,8 +5446,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EADatatypePrototype
 		public RuleCall getDatatypePrototypeEADatatypePrototypeParserRuleCall_2_8_0() { return cDatatypePrototypeEADatatypePrototypeParserRuleCall_2_8_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9() { return cRightCurlyBracketKeyword_2_9; }
 	}
 	public class EABooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EABoolean");
@@ -5457,7 +5456,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -5483,29 +5482,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//EABoolean returns EABoolean:
 		//    'EABoolean' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EABoolean' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'EABoolean'
@@ -5517,18 +5516,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -5605,8 +5604,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class EANumericalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EANumerical");
@@ -5615,7 +5614,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -5654,11 +5653,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_9_0_0 = (RuleCall)cOwnedCommentAssignment_2_9_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_9_1_0 = (RuleCall)cOwnedCommentAssignment_2_9_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10 = (RuleCall)cGroup_2.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_2_10 = (Keyword)cGroup_2.eContents().get(10);
 		
 		//EANumerical returns EANumerical:
 		//    'EANumerical' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -5668,11 +5667,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        ('min' min=Numerical)?
 		//        ('unit' unit=[Unit|EString])?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EANumerical' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -5682,7 +5681,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('min' min=Numerical)?
 		//    ('unit' unit=[Unit|EString])?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'EANumerical'
@@ -5694,7 +5693,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -5704,11 +5703,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('min' min=Numerical)?
 		//    ('unit' unit=[Unit|EString])?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -5824,8 +5823,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_9_1_0() { return cOwnedCommentCommentParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10() { return cENDTerminalRuleCall_2_10; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_10() { return cRightCurlyBracketKeyword_2_10; }
 	}
 	public class EAStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAString");
@@ -5834,7 +5833,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -5860,29 +5859,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//EAString returns EAString:
 		//    'EAString' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('text' text=String0)?
 		//        ('uri' uri=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EAString' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'EAString'
@@ -5894,18 +5893,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('text' text=String0)?
 		//    ('uri' uri=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -5982,8 +5981,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class EnumerationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Enumeration");
@@ -5992,7 +5991,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -6025,11 +6024,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cLiteralEnumerationLiteralParserRuleCall_2_9_0 = (RuleCall)cLiteralAssignment_2_9.eContents().get(0);
 		private final Assignment cLiteralAssignment_2_10 = (Assignment)cGroup_2.eContents().get(10);
 		private final RuleCall cLiteralEnumerationLiteralParserRuleCall_2_10_0 = (RuleCall)cLiteralAssignment_2_10.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_11 = (RuleCall)cGroup_2.eContents().get(11);
+		private final Keyword cRightCurlyBracketKeyword_2_11 = (Keyword)cGroup_2.eContents().get(11);
 		
 		//Enumeration returns Enumeration:
 		//    'Enumeration' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -6038,11 +6037,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        'isMultiValued' isMultiValued=Boolean
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        literal+=EnumerationLiteral (  literal+=EnumerationLiteral)*
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Enumeration' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -6051,7 +6050,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'isMultiValued' isMultiValued=Boolean
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    literal+=EnumerationLiteral (  literal+=EnumerationLiteral)*
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'Enumeration'
@@ -6063,7 +6062,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -6072,11 +6071,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'isMultiValued' isMultiValued=Boolean
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    literal+=EnumerationLiteral (  literal+=EnumerationLiteral)*
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -6174,8 +6173,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EnumerationLiteral
 		public RuleCall getLiteralEnumerationLiteralParserRuleCall_2_10_0() { return cLiteralEnumerationLiteralParserRuleCall_2_10_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_11() { return cENDTerminalRuleCall_2_11; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_11() { return cRightCurlyBracketKeyword_2_11; }
 	}
 	public class QuantityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Quantity");
@@ -6184,7 +6183,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -6223,11 +6222,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_18_0_0 = (RuleCall)cOwnedCommentAssignment_2_18_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_18_1 = (Assignment)cGroup_2_18.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_18_1_0 = (RuleCall)cOwnedCommentAssignment_2_18_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_19 = (RuleCall)cGroup_2.eContents().get(19);
+		private final Keyword cRightCurlyBracketKeyword_2_19 = (Keyword)cGroup_2.eContents().get(19);
 		
 		//Quantity returns Quantity:
 		//    'Quantity' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -6239,11 +6238,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer
 		//        'timeExp' timeExp=Integer
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Quantity' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -6255,7 +6254,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer
 		//    'timeExp' timeExp=Integer
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'Quantity'
@@ -6267,7 +6266,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -6279,11 +6278,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer
 		//    'timeExp' timeExp=Integer
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -6399,8 +6398,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_18_1_0() { return cOwnedCommentCommentParserRuleCall_2_18_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_19() { return cENDTerminalRuleCall_2_19; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_19() { return cRightCurlyBracketKeyword_2_19; }
 	}
 	public class RangeableValueTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.RangeableValueType");
@@ -6409,7 +6408,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -6449,11 +6448,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_13_0_0 = (RuleCall)cOwnedCommentAssignment_2_13_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_13_1 = (Assignment)cGroup_2_13.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_13_1_0 = (RuleCall)cOwnedCommentAssignment_2_13_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_14 = (RuleCall)cGroup_2.eContents().get(14);
+		private final Keyword cRightCurlyBracketKeyword_2_14 = (Keyword)cGroup_2.eContents().get(14);
 		
 		//RangeableValueType returns RangeableValueType:
 		//    'RangeableValueType' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -6464,11 +6463,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        ('significantDigits' significantDigits=Integer)?
 		//        'baseRangeable' baseRangeable=[EANumerical|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'RangeableValueType' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -6479,7 +6478,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('significantDigits' significantDigits=Integer)?
 		//    'baseRangeable' baseRangeable=[EANumerical|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'RangeableValueType'
@@ -6491,7 +6490,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -6502,11 +6501,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('significantDigits' significantDigits=Integer)?
 		//    'baseRangeable' baseRangeable=[EANumerical|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -6625,8 +6624,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_13_1_0() { return cOwnedCommentCommentParserRuleCall_2_13_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_14() { return cENDTerminalRuleCall_2_14; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_14() { return cRightCurlyBracketKeyword_2_14; }
 	}
 	public class UnitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Unit");
@@ -6635,7 +6634,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -6672,11 +6671,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_12_0_0 = (RuleCall)cOwnedCommentAssignment_2_12_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_12_1 = (Assignment)cGroup_2_12.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_12_1_0 = (RuleCall)cOwnedCommentAssignment_2_12_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_13 = (RuleCall)cGroup_2.eContents().get(13);
+		private final Keyword cRightCurlyBracketKeyword_2_13 = (Keyword)cGroup_2.eContents().get(13);
 		
 		//Unit returns Unit:
 		//    'Unit' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -6686,11 +6685,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        ('reference' reference=[Unit|EString])?
 		//        ('quantity' quantity=[Quantity|EString])?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Unit' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -6700,7 +6699,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('reference' reference=[Unit|EString])?
 		//    ('quantity' quantity=[Quantity|EString])?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'Unit'
@@ -6712,7 +6711,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -6722,11 +6721,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('reference' reference=[Unit|EString])?
 		//    ('quantity' quantity=[Quantity|EString])?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -6836,8 +6835,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_12_1_0() { return cOwnedCommentCommentParserRuleCall_2_12_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_13() { return cENDTerminalRuleCall_2_13; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_13() { return cRightCurlyBracketKeyword_2_13; }
 	}
 	public class UserAttributeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.UserAttributeDefinition");
@@ -6846,7 +6845,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -6872,29 +6871,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Keyword cDefaultValueKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
 		private final Assignment cDefaultValueAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
 		private final RuleCall cDefaultValueEAValueParserRuleCall_2_7_1_0 = (RuleCall)cDefaultValueAssignment_2_7_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
 		
 		//UserAttributeDefinition returns UserAttributeDefinition:
 		//    'UserAttributeDefinition' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[EADatatype|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        ('defaultValue' defaultValue=EAValue)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'UserAttributeDefinition' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    ('defaultValue' defaultValue=EAValue)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'UserAttributeDefinition'
@@ -6906,18 +6905,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    ('defaultValue' defaultValue=EAValue)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -6994,8 +6993,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EAValue
 		public RuleCall getDefaultValueEAValueParserRuleCall_2_7_1_0() { return cDefaultValueEAValueParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8() { return cENDTerminalRuleCall_2_8; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_8() { return cRightCurlyBracketKeyword_2_8; }
 	}
 	public class UserAttributedElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.UserAttributedElement");
@@ -7004,7 +7003,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -7041,11 +7040,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cUaValueEAValueParserRuleCall_2_8_0_0 = (RuleCall)cUaValueAssignment_2_8_0.eContents().get(0);
 		private final Assignment cUaValueAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
 		private final RuleCall cUaValueEAValueParserRuleCall_2_8_1_0 = (RuleCall)cUaValueAssignment_2_8_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
 		//UserAttributedElement returns UserAttributedElement:
 		//    'UserAttributedElement' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -7053,11 +7052,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        'attributedElement' attributedElement=[Identifiable|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (uaValue+=EAValue (  uaValue+=EAValue)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'UserAttributedElement' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -7065,7 +7064,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'attributedElement' attributedElement=[Identifiable|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (uaValue+=EAValue (  uaValue+=EAValue)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'UserAttributedElement'
@@ -7077,7 +7076,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -7085,11 +7084,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'attributedElement' attributedElement=[Identifiable|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (uaValue+=EAValue (  uaValue+=EAValue)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -7199,8 +7198,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EAValue
 		public RuleCall getUaValueEAValueParserRuleCall_2_8_1_0() { return cUaValueEAValueParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9() { return cRightCurlyBracketKeyword_2_9; }
 	}
 	public class UserElementTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.UserElementType");
@@ -7209,7 +7208,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -7239,11 +7238,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_0_0 = (RuleCall)cUaDefinitionAssignment_2_8_0.eContents().get(0);
 		private final Assignment cUaDefinitionAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
 		private final RuleCall cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_1_0 = (RuleCall)cUaDefinitionAssignment_2_8_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
 		//UserElementType returns UserElementType:
 		//    'UserElementType' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -7251,11 +7250,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        'key' key=String0
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (uaDefinition+=UserAttributeDefinition (  uaDefinition+=UserAttributeDefinition)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'UserElementType' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -7263,7 +7262,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'key' key=String0
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (uaDefinition+=UserAttributeDefinition (  uaDefinition+=UserAttributeDefinition)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'UserElementType'
@@ -7275,7 +7274,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -7283,11 +7282,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'key' key=String0
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (uaDefinition+=UserAttributeDefinition (  uaDefinition+=UserAttributeDefinition)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -7376,8 +7375,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//UserAttributeDefinition
 		public RuleCall getUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_1_0() { return cUaDefinitionUserAttributeDefinitionParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9() { return cRightCurlyBracketKeyword_2_9; }
 	}
 	public class AllocationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Allocation");
@@ -7386,7 +7385,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -7409,27 +7408,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cFunctionAllocationFunctionAllocationParserRuleCall_2_5_0_0 = (RuleCall)cFunctionAllocationAssignment_2_5_0.eContents().get(0);
 		private final Assignment cFunctionAllocationAssignment_2_5_1 = (Assignment)cGroup_2_5.eContents().get(1);
 		private final RuleCall cFunctionAllocationFunctionAllocationParserRuleCall_2_5_1_0 = (RuleCall)cFunctionAllocationAssignment_2_5_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_6 = (RuleCall)cGroup_2.eContents().get(6);
+		private final Keyword cRightCurlyBracketKeyword_2_6 = (Keyword)cGroup_2.eContents().get(6);
 		
 		//Allocation returns Allocation:
 		//    'Allocation' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Allocation' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'Allocation'
@@ -7441,17 +7440,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -7519,8 +7518,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//FunctionAllocation
 		public RuleCall getFunctionAllocationFunctionAllocationParserRuleCall_2_5_1_0() { return cFunctionAllocationFunctionAllocationParserRuleCall_2_5_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_6() { return cENDTerminalRuleCall_2_6; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_6() { return cRightCurlyBracketKeyword_2_6; }
 	}
 	public class DesignFunctionPrototypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.DesignFunctionPrototype");
@@ -7529,7 +7528,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -7551,27 +7550,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//DesignFunctionPrototype returns DesignFunctionPrototype:
 		//    'DesignFunctionPrototype' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[DesignFunctionType|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'DesignFunctionPrototype' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[DesignFunctionType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'DesignFunctionPrototype'
@@ -7583,17 +7582,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[DesignFunctionType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -7658,8 +7657,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class HardwareComponentPrototypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwareComponentPrototype");
@@ -7668,7 +7667,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -7690,27 +7689,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//HardwareComponentPrototype returns HardwareComponentPrototype:
 		//    'HardwareComponentPrototype' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[HardwareComponentType|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareComponentPrototype' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[HardwareComponentType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareComponentPrototype'
@@ -7722,17 +7721,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[HardwareComponentType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -7797,8 +7796,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class RealizationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Realization");
@@ -7807,7 +7806,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -7833,29 +7832,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cRealizedByRealization_realizedByParserRuleCall_2_7_0 = (RuleCall)cRealizedByAssignment_2_7.eContents().get(0);
 		private final Assignment cRealizedByAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
 		private final RuleCall cRealizedByRealization_realizedByParserRuleCall_2_8_0 = (RuleCall)cRealizedByAssignment_2_8.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
 		//Realization returns Realization:
 		//    'Realization' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        realized+=Realization_realized (  realized+=Realization_realized)*
 		//        realizedBy+=Realization_realizedBy (  realizedBy+=Realization_realizedBy)*
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Realization' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    realized+=Realization_realized (  realized+=Realization_realized)*
 		//    realizedBy+=Realization_realizedBy (  realizedBy+=Realization_realizedBy)*
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'Realization'
@@ -7867,18 +7866,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    realized+=Realization_realized (  realized+=Realization_realized)*
 		//    realizedBy+=Realization_realizedBy (  realizedBy+=Realization_realizedBy)*
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -7955,15 +7954,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Realization_realizedBy
 		public RuleCall getRealizedByRealization_realizedByParserRuleCall_2_8_0() { return cRealizedByRealization_realizedByParserRuleCall_2_8_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9() { return cRightCurlyBracketKeyword_2_9; }
 	}
 	public class Realization_realizedElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Realization_realized");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRealization_realizedKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cIdentifiable_targetKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cIdentifiable_targetAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cIdentifiable_targetEAElementCrossReference_1_2_0 = (CrossReference)cIdentifiable_targetAssignment_1_2.eContents().get(0);
@@ -7980,34 +7979,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cIdentifiable_contextEAElementCrossReference_1_3_3_1_0 = (CrossReference)cIdentifiable_contextAssignment_1_3_3_1.eContents().get(0);
 		private final RuleCall cIdentifiable_contextEAElementEStringParserRuleCall_1_3_3_1_0_1 = (RuleCall)cIdentifiable_contextEAElementCrossReference_1_3_3_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_1_3_4 = (Keyword)cGroup_1_3.eContents().get(4);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//Realization_realized returns Realization_realized:
 		//    'Realization_realized'
-		//    (BEGIN
+		//    ('{'
 		//        'identifiable_target' identifiable_target=[EAElement|EString]
 		//        ('identifiable_context' '(' identifiable_context+=[EAElement|EString] ( "," identifiable_context+=[EAElement|EString])* ')' )?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Realization_realized'
-		//(BEGIN
+		//('{'
 		//    'identifiable_target' identifiable_target=[EAElement|EString]
 		//    ('identifiable_context' '(' identifiable_context+=[EAElement|EString] ( "," identifiable_context+=[EAElement|EString])* ')' )?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'Realization_realized'
 		public Keyword getRealization_realizedKeyword_0() { return cRealization_realizedKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'identifiable_target' identifiable_target=[EAElement|EString]
 		//    ('identifiable_context' '(' identifiable_context+=[EAElement|EString] ( "," identifiable_context+=[EAElement|EString])* ')' )?
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'identifiable_target'
 		public Keyword getIdentifiable_targetKeyword_1_1() { return cIdentifiable_targetKeyword_1_1; }
@@ -8057,15 +8056,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_1_3_4() { return cRightParenthesisKeyword_1_3_4; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class Realization_realizedByElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Realization_realizedBy");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRealization_realizedByKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cIdentifiable_targetKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cIdentifiable_targetAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cIdentifiable_targetIdentifiableCrossReference_1_2_0 = (CrossReference)cIdentifiable_targetAssignment_1_2.eContents().get(0);
@@ -8082,34 +8081,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cIdentifiable_contextIdentifiableCrossReference_1_3_3_1_0 = (CrossReference)cIdentifiable_contextAssignment_1_3_3_1.eContents().get(0);
 		private final RuleCall cIdentifiable_contextIdentifiableEStringParserRuleCall_1_3_3_1_0_1 = (RuleCall)cIdentifiable_contextIdentifiableCrossReference_1_3_3_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_1_3_4 = (Keyword)cGroup_1_3.eContents().get(4);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//Realization_realizedBy returns Realization_realizedBy:
 		//    'Realization_realizedBy'
-		//    (BEGIN
+		//    ('{'
 		//        'identifiable_target' identifiable_target=[Identifiable|EString]
 		//        ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Realization_realizedBy'
-		//(BEGIN
+		//('{'
 		//    'identifiable_target' identifiable_target=[Identifiable|EString]
 		//    ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'Realization_realizedBy'
 		public Keyword getRealization_realizedByKeyword_0() { return cRealization_realizedByKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'identifiable_target' identifiable_target=[Identifiable|EString]
 		//    ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'identifiable_target'
 		public Keyword getIdentifiable_targetKeyword_1_1() { return cIdentifiable_targetKeyword_1_1; }
@@ -8159,8 +8158,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_1_3_4() { return cRightParenthesisKeyword_1_3_4; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class AnalysisFunctionPrototypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.AnalysisFunctionPrototype");
@@ -8169,7 +8168,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -8191,27 +8190,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
 		//    'AnalysisFunctionPrototype' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[AnalysisFunctionType|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'AnalysisFunctionPrototype' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[AnalysisFunctionType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'AnalysisFunctionPrototype'
@@ -8223,17 +8222,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[AnalysisFunctionType|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -8298,8 +8297,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class FunctionAllocationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionAllocation");
@@ -8308,7 +8307,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -8332,29 +8331,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Keyword cTargetKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		private final Assignment cTargetAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
 		private final RuleCall cTargetFunctionAllocation_targetParserRuleCall_2_8_0 = (RuleCall)cTargetAssignment_2_8.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
 		//FunctionAllocation returns FunctionAllocation:
 		//    'FunctionAllocation' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
 		//        'target' target=FunctionAllocation_target
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionAllocation' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
 		//    'target' target=FunctionAllocation_target
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionAllocation'
@@ -8366,18 +8365,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
 		//    'target' target=FunctionAllocation_target
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -8448,8 +8447,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//FunctionAllocation_target
 		public RuleCall getTargetFunctionAllocation_targetParserRuleCall_2_8_0() { return cTargetFunctionAllocation_targetParserRuleCall_2_8_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9() { return cRightCurlyBracketKeyword_2_9; }
 	}
 	public class FunctionClientServerPortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionClientServerPort");
@@ -8458,7 +8457,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -8483,29 +8482,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_0_0 = (RuleCall)cOwnedCommentAssignment_2_8_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_8_1_0 = (RuleCall)cOwnedCommentAssignment_2_8_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
 		//FunctionClientServerPort returns FunctionClientServerPort:
 		//    'FunctionClientServerPort' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'kind' kind=ClientServerKind
 		//        'type' type=[FunctionClientServerInterface|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionClientServerPort' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'kind' kind=ClientServerKind
 		//    'type' type=[FunctionClientServerInterface|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionClientServerPort'
@@ -8517,18 +8516,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'kind' kind=ClientServerKind
 		//    'type' type=[FunctionClientServerInterface|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -8602,8 +8601,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_8_1_0() { return cOwnedCommentCommentParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9() { return cRightCurlyBracketKeyword_2_9; }
 	}
 	public class FunctionConnectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector");
@@ -8612,7 +8611,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -8634,27 +8633,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortFunctionConnector_portParserRuleCall_2_5_0 = (RuleCall)cPortAssignment_2_5.eContents().get(0);
 		private final Assignment cPortAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
 		private final RuleCall cPortFunctionConnector_portParserRuleCall_2_6_0 = (RuleCall)cPortAssignment_2_6.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//FunctionConnector returns FunctionConnector:
 		//    'FunctionConnector' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        port+=FunctionConnector_port (  port+=FunctionConnector_port)*
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionConnector' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=FunctionConnector_port (  port+=FunctionConnector_port)*
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionConnector'
@@ -8666,17 +8665,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=FunctionConnector_port (  port+=FunctionConnector_port)*
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -8741,8 +8740,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//FunctionConnector_port
 		public RuleCall getPortFunctionConnector_portParserRuleCall_2_6_0() { return cPortFunctionConnector_portParserRuleCall_2_6_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class FunctionFlowPortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionFlowPort");
@@ -8751,7 +8750,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -8780,11 +8779,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Keyword cDefaultValueKeyword_2_9_0 = (Keyword)cGroup_2_9.eContents().get(0);
 		private final Assignment cDefaultValueAssignment_2_9_1 = (Assignment)cGroup_2_9.eContents().get(1);
 		private final RuleCall cDefaultValueEAValueParserRuleCall_2_9_1_0 = (RuleCall)cDefaultValueAssignment_2_9_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_10 = (RuleCall)cGroup_2.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_2_10 = (Keyword)cGroup_2.eContents().get(10);
 		
 		//FunctionFlowPort returns FunctionFlowPort:
 		//    'FunctionFlowPort' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -8792,11 +8791,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        'type' type=[EADatatype|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        ('defaultValue' defaultValue=EAValue)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionFlowPort' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -8804,7 +8803,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    ('defaultValue' defaultValue=EAValue)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionFlowPort'
@@ -8816,7 +8815,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -8824,11 +8823,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    ('defaultValue' defaultValue=EAValue)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -8914,8 +8913,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EAValue
 		public RuleCall getDefaultValueEAValueParserRuleCall_2_9_1_0() { return cDefaultValueEAValueParserRuleCall_2_9_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_10() { return cENDTerminalRuleCall_2_10; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_10() { return cRightCurlyBracketKeyword_2_10; }
 	}
 	public class FunctionPowerPortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionPowerPort");
@@ -8924,7 +8923,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -8946,27 +8945,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//FunctionPowerPort returns FunctionPowerPort:
 		//    'FunctionPowerPort' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[CompositeDatatype|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionPowerPort' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[CompositeDatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionPowerPort'
@@ -8978,17 +8977,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[CompositeDatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -9053,8 +9052,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class OperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Operation");
@@ -9063,7 +9062,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -9090,29 +9089,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cArgumentEADatatypePrototypeParserRuleCall_2_6_0_0 = (RuleCall)cArgumentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cArgumentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cArgumentEADatatypePrototypeParserRuleCall_2_6_1_0 = (RuleCall)cArgumentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//Operation returns Operation:
 		//    'Operation' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        ('return' return=EADatatypePrototype)?
 		//        (argument+=EADatatypePrototype (  argument+=EADatatypePrototype)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Operation' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    ('return' return=EADatatypePrototype)?
 		//    (argument+=EADatatypePrototype (  argument+=EADatatypePrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'Operation'
@@ -9124,18 +9123,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    ('return' return=EADatatypePrototype)?
 		//    (argument+=EADatatypePrototype (  argument+=EADatatypePrototype)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -9215,8 +9214,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EADatatypePrototype
 		public RuleCall getArgumentEADatatypePrototypeParserRuleCall_2_6_1_0() { return cArgumentEADatatypePrototypeParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class PortGroupElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.PortGroup");
@@ -9225,7 +9224,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -9258,29 +9257,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortGroupPortGroupParserRuleCall_2_6_0_0 = (RuleCall)cPortGroupAssignment_2_6_0.eContents().get(0);
 		private final Assignment cPortGroupAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cPortGroupPortGroupParserRuleCall_2_6_1_0 = (RuleCall)cPortGroupAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//PortGroup returns PortGroup:
 		//    'PortGroup' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (portGroup+=PortGroup (  portGroup+=PortGroup)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PortGroup' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (portGroup+=PortGroup (  portGroup+=PortGroup)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'PortGroup'
@@ -9292,18 +9291,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (portGroup+=PortGroup (  portGroup+=PortGroup)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -9401,8 +9400,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//PortGroup
 		public RuleCall getPortGroupPortGroupParserRuleCall_2_6_1_0() { return cPortGroupPortGroupParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class CommunicationHardwarePinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.CommunicationHardwarePin");
@@ -9411,7 +9410,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -9437,29 +9436,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//CommunicationHardwarePin returns CommunicationHardwarePin:
 		//    'CommunicationHardwarePin' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('direction' direction=EADirectionKind)?
 		//        ('isGround' isGround=Boolean)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'CommunicationHardwarePin' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'CommunicationHardwarePin'
@@ -9471,18 +9470,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -9559,8 +9558,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class HardwareConnectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwareConnector");
@@ -9569,7 +9568,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -9591,27 +9590,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortHardwareConnector_portParserRuleCall_2_5_0 = (RuleCall)cPortAssignment_2_5.eContents().get(0);
 		private final Assignment cPortAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
 		private final RuleCall cPortHardwareConnector_portParserRuleCall_2_6_0 = (RuleCall)cPortAssignment_2_6.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//HardwareConnector returns HardwareConnector:
 		//    'HardwareConnector' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        port+=HardwareConnector_port (  port+=HardwareConnector_port)*
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareConnector' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwareConnector_port (  port+=HardwareConnector_port)*
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareConnector'
@@ -9623,17 +9622,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwareConnector_port (  port+=HardwareConnector_port)*
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -9698,8 +9697,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//HardwareConnector_port
 		public RuleCall getPortHardwareConnector_portParserRuleCall_2_6_0() { return cPortHardwareConnector_portParserRuleCall_2_6_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class HardwarePortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePort");
@@ -9708,7 +9707,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -9750,11 +9749,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cContainedPortHardwarePortParserRuleCall_2_8_0_0 = (RuleCall)cContainedPortAssignment_2_8_0.eContents().get(0);
 		private final Assignment cContainedPortAssignment_2_8_1 = (Assignment)cGroup_2_8.eContents().get(1);
 		private final RuleCall cContainedPortHardwarePortParserRuleCall_2_8_1_0 = (RuleCall)cContainedPortAssignment_2_8_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
 		//HardwarePort returns HardwarePort:
 		//    'HardwarePort' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -9763,11 +9762,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        (containedPin+=HardwarePin (  containedPin+=HardwarePin)*)?
 		//        (containedPort+=HardwarePort (  containedPort+=HardwarePort)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwarePort' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -9776,7 +9775,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (containedPin+=HardwarePin (  containedPin+=HardwarePin)*)?
 		//    (containedPort+=HardwarePort (  containedPort+=HardwarePort)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwarePort'
@@ -9788,7 +9787,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -9797,11 +9796,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    (containedPin+=HardwarePin (  containedPin+=HardwarePin)*)?
 		//    (containedPort+=HardwarePort (  containedPort+=HardwarePort)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -9926,8 +9925,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//HardwarePort
 		public RuleCall getContainedPortHardwarePortParserRuleCall_2_8_1_0() { return cContainedPortHardwarePortParserRuleCall_2_8_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9() { return cRightCurlyBracketKeyword_2_9; }
 	}
 	public class HardwarePortConnectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePortConnector");
@@ -9936,7 +9935,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -9963,29 +9962,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_7_0_0 = (RuleCall)cConnectorAssignment_2_7_0.eContents().get(0);
 		private final Assignment cConnectorAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
 		private final RuleCall cConnectorHardwareConnectorParserRuleCall_2_7_1_0 = (RuleCall)cConnectorAssignment_2_7_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
 		
 		//HardwarePortConnector returns HardwarePortConnector:
 		//    'HardwarePortConnector' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
 		//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwarePortConnector' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwarePortConnector'
@@ -9997,18 +9996,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
 		//    (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -10088,8 +10087,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//HardwareConnector
 		public RuleCall getConnectorHardwareConnectorParserRuleCall_2_7_1_0() { return cConnectorHardwareConnectorParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8() { return cENDTerminalRuleCall_2_8; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_8() { return cRightCurlyBracketKeyword_2_8; }
 	}
 	public class IOHardwarePinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.IOHardwarePin");
@@ -10098,7 +10097,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -10128,11 +10127,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_0_0 = (RuleCall)cOwnedCommentAssignment_2_7_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_7_1 = (Assignment)cGroup_2_7.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_7_1_0 = (RuleCall)cOwnedCommentAssignment_2_7_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_8 = (RuleCall)cGroup_2.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
 		
 		//IOHardwarePin returns IOHardwarePin:
 		//    'IOHardwarePin' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -10140,11 +10139,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        ('isGround' isGround=Boolean)?
 		//        ('kind' kind=IOHardwarePinKind)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'IOHardwarePin' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -10152,7 +10151,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('isGround' isGround=Boolean)?
 		//    ('kind' kind=IOHardwarePinKind)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'IOHardwarePin'
@@ -10164,7 +10163,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -10172,11 +10171,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('isGround' isGround=Boolean)?
 		//    ('kind' kind=IOHardwarePinKind)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -10265,8 +10264,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_7_1_0() { return cOwnedCommentCommentParserRuleCall_2_7_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_8() { return cENDTerminalRuleCall_2_8; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_8() { return cRightCurlyBracketKeyword_2_8; }
 	}
 	public class LogicalPortConnectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.LogicalPortConnector");
@@ -10275,7 +10274,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -10305,11 +10304,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_7_0 = (RuleCall)cPortAssignment_2_7.eContents().get(0);
 		private final Assignment cPortAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
 		private final RuleCall cPortHardwarePortConnector_portParserRuleCall_2_8_0 = (RuleCall)cPortAssignment_2_8.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Keyword cRightCurlyBracketKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
 		
 		//LogicalPortConnector returns LogicalPortConnector:
 		//    'LogicalPortConnector' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
@@ -10317,11 +10316,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//        ('busSpeed' busSpeed=Float)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//        port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'LogicalPortConnector' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -10329,7 +10328,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('busSpeed' busSpeed=Float)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'LogicalPortConnector'
@@ -10341,7 +10340,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
@@ -10349,11 +10348,11 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//    ('busSpeed' busSpeed=Float)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
 		//    port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -10442,8 +10441,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//HardwarePortConnector_port
 		public RuleCall getPortHardwarePortConnector_portParserRuleCall_2_8_0() { return cPortHardwarePortConnector_portParserRuleCall_2_8_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_9() { return cENDTerminalRuleCall_2_9; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_9() { return cRightCurlyBracketKeyword_2_9; }
 	}
 	public class PowerHardwarePinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.PowerHardwarePin");
@@ -10452,7 +10451,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -10478,29 +10477,29 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//PowerHardwarePin returns PowerHardwarePin:
 		//    'PowerHardwarePin' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        ('direction' direction=EADirectionKind)?
 		//        ('isGround' isGround=Boolean)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'PowerHardwarePin' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'PowerHardwarePin'
@@ -10512,18 +10511,18 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    ('direction' direction=EADirectionKind)?
 		//    ('isGround' isGround=Boolean)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -10600,8 +10599,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class EADatatypePrototypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EADatatypePrototype");
@@ -10610,7 +10609,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -10632,27 +10631,27 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_0_0 = (RuleCall)cOwnedCommentAssignment_2_6_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_6_1_0 = (RuleCall)cOwnedCommentAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
 		
 		//EADatatypePrototype returns EADatatypePrototype:
 		//    'EADatatypePrototype' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        'type' type=[EADatatype|EString]
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EADatatypePrototype' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'EADatatypePrototype'
@@ -10664,17 +10663,17 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    'type' type=[EADatatype|EString]
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)
+		//'}')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -10739,8 +10738,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_6_1_0() { return cOwnedCommentCommentParserRuleCall_2_6_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_7() { return cENDTerminalRuleCall_2_7; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class EnumerationLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EnumerationLiteral");
@@ -10749,7 +10748,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cShortNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cShortNameIdentifierParserRuleCall_1_0 = (RuleCall)cShortNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cCategoryAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
@@ -10767,25 +10766,25 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_0_0 = (RuleCall)cOwnedCommentAssignment_2_4_0.eContents().get(0);
 		private final Assignment cOwnedCommentAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
 		private final RuleCall cOwnedCommentCommentParserRuleCall_2_4_1_0 = (RuleCall)cOwnedCommentAssignment_2_4_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_2_5 = (RuleCall)cGroup_2.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
 		
 		//EnumerationLiteral returns EnumerationLiteral:
 		//    'EnumerationLiteral' shortName=Identifier
-		//    (BEGIN
+		//    ('{'
 		//        ('category' category=Identifier)?
 		//        ('uuid' uuid=UUID)?
 		//        ('name' name=String0)?
 		//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//    END)?;
+		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EnumerationLiteral' shortName=Identifier
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'EnumerationLiteral'
@@ -10797,16 +10796,16 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Identifier
 		public RuleCall getShortNameIdentifierParserRuleCall_1_0() { return cShortNameIdentifierParserRuleCall_1_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('category' category=Identifier)?
 		//    ('uuid' uuid=UUID)?
 		//    ('name' name=String0)?
 		//    (ownedComment+=Comment (  ownedComment+=Comment)*)?
-		//END)?
+		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_2_0() { return cBEGINTerminalRuleCall_2_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
 		//('category' category=Identifier)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -10859,15 +10858,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//Comment
 		public RuleCall getOwnedCommentCommentParserRuleCall_2_4_1_0() { return cOwnedCommentCommentParserRuleCall_2_4_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_2_5() { return cENDTerminalRuleCall_2_5; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_5() { return cRightCurlyBracketKeyword_2_5; }
 	}
 	public class FunctionAllocation_allocatedElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionAllocation_allocatedElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFunctionAllocation_allocatedElementKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
 		private final Keyword cAllocateableElement_contextKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
@@ -10884,34 +10883,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cAllocateableElementAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
 		private final CrossReference cAllocateableElementAllocateableElementCrossReference_1_3_0 = (CrossReference)cAllocateableElementAssignment_1_3.eContents().get(0);
 		private final RuleCall cAllocateableElementAllocateableElementEStringParserRuleCall_1_3_0_1 = (RuleCall)cAllocateableElementAllocateableElementCrossReference_1_3_0.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//FunctionAllocation_allocatedElement returns FunctionAllocation_allocatedElement:
 		//    'FunctionAllocation_allocatedElement'
-		//    (BEGIN
+		//    ('{'
 		//        ('allocateableElement_context' '(' allocateableElement_context+=[AllocateableElement|EString] ( "," allocateableElement_context+=[AllocateableElement|EString])* ')' )?
 		//        'allocateableElement' allocateableElement=[AllocateableElement|EString]
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionAllocation_allocatedElement'
-		//(BEGIN
+		//('{'
 		//    ('allocateableElement_context' '(' allocateableElement_context+=[AllocateableElement|EString] ( "," allocateableElement_context+=[AllocateableElement|EString])* ')' )?
 		//    'allocateableElement' allocateableElement=[AllocateableElement|EString]
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionAllocation_allocatedElement'
 		public Keyword getFunctionAllocation_allocatedElementKeyword_0() { return cFunctionAllocation_allocatedElementKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('allocateableElement_context' '(' allocateableElement_context+=[AllocateableElement|EString] ( "," allocateableElement_context+=[AllocateableElement|EString])* ')' )?
 		//    'allocateableElement' allocateableElement=[AllocateableElement|EString]
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//('allocateableElement_context' '(' allocateableElement_context+=[AllocateableElement|EString] ( "," allocateableElement_context+=[AllocateableElement|EString])* ')' )?
 		public Group getGroup_1_1() { return cGroup_1_1; }
@@ -10961,15 +10960,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getAllocateableElementAllocateableElementEStringParserRuleCall_1_3_0_1() { return cAllocateableElementAllocateableElementEStringParserRuleCall_1_3_0_1; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class FunctionAllocation_targetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionAllocation_target");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFunctionAllocation_targetKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
 		private final Keyword cAllocationTarget_contextKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
@@ -10986,34 +10985,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cAllocationTargetAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
 		private final CrossReference cAllocationTargetAllocationTargetCrossReference_1_3_0 = (CrossReference)cAllocationTargetAssignment_1_3.eContents().get(0);
 		private final RuleCall cAllocationTargetAllocationTargetEStringParserRuleCall_1_3_0_1 = (RuleCall)cAllocationTargetAllocationTargetCrossReference_1_3_0.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//FunctionAllocation_target returns FunctionAllocation_target:
 		//    'FunctionAllocation_target'
-		//    (BEGIN
+		//    ('{'
 		//        ('allocationTarget_context' '(' allocationTarget_context+=[AllocationTarget|EString] ( "," allocationTarget_context+=[AllocationTarget|EString])* ')' )?
 		//        'allocationTarget' allocationTarget=[AllocationTarget|EString]
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionAllocation_target'
-		//(BEGIN
+		//('{'
 		//    ('allocationTarget_context' '(' allocationTarget_context+=[AllocationTarget|EString] ( "," allocationTarget_context+=[AllocationTarget|EString])* ')' )?
 		//    'allocationTarget' allocationTarget=[AllocationTarget|EString]
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionAllocation_target'
 		public Keyword getFunctionAllocation_targetKeyword_0() { return cFunctionAllocation_targetKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('allocationTarget_context' '(' allocationTarget_context+=[AllocationTarget|EString] ( "," allocationTarget_context+=[AllocationTarget|EString])* ')' )?
 		//    'allocationTarget' allocationTarget=[AllocationTarget|EString]
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//('allocationTarget_context' '(' allocationTarget_context+=[AllocationTarget|EString] ( "," allocationTarget_context+=[AllocationTarget|EString])* ')' )?
 		public Group getGroup_1_1() { return cGroup_1_1; }
@@ -11063,15 +11062,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getAllocationTargetAllocationTargetEStringParserRuleCall_1_3_0_1() { return cAllocationTargetAllocationTargetEStringParserRuleCall_1_3_0_1; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class FunctionConnector_portElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.FunctionConnector_port");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFunctionConnector_portKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
 		private final Keyword cFunctionPrototypeKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
 		private final Assignment cFunctionPrototypeAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
@@ -11081,34 +11080,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cFunctionPortAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
 		private final CrossReference cFunctionPortFunctionPortCrossReference_1_3_0 = (CrossReference)cFunctionPortAssignment_1_3.eContents().get(0);
 		private final RuleCall cFunctionPortFunctionPortEStringParserRuleCall_1_3_0_1 = (RuleCall)cFunctionPortFunctionPortCrossReference_1_3_0.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//FunctionConnector_port returns FunctionConnector_port:
 		//    'FunctionConnector_port'
-		//    (BEGIN
+		//    ('{'
 		//        ('functionPrototype' functionPrototype=[FunctionPrototype|EString])?
 		//        'functionPort' functionPort=[FunctionPort|EString]
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'FunctionConnector_port'
-		//(BEGIN
+		//('{'
 		//    ('functionPrototype' functionPrototype=[FunctionPrototype|EString])?
 		//    'functionPort' functionPort=[FunctionPort|EString]
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'FunctionConnector_port'
 		public Keyword getFunctionConnector_portKeyword_0() { return cFunctionConnector_portKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    ('functionPrototype' functionPrototype=[FunctionPrototype|EString])?
 		//    'functionPort' functionPort=[FunctionPort|EString]
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//('functionPrototype' functionPrototype=[FunctionPrototype|EString])?
 		public Group getGroup_1_1() { return cGroup_1_1; }
@@ -11137,15 +11136,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getFunctionPortFunctionPortEStringParserRuleCall_1_3_0_1() { return cFunctionPortFunctionPortEStringParserRuleCall_1_3_0_1; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class EAArrayValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAArrayValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEAArrayValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cTypeKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cTypeEADatatypeCrossReference_1_2_0 = (CrossReference)cTypeAssignment_1_2.eContents().get(0);
@@ -11155,34 +11154,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cValueEAValueParserRuleCall_1_3_0_0 = (RuleCall)cValueAssignment_1_3_0.eContents().get(0);
 		private final Assignment cValueAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
 		private final RuleCall cValueEAValueParserRuleCall_1_3_1_0 = (RuleCall)cValueAssignment_1_3_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//EAArrayValue returns EAArrayValue:
 		//    'EAArrayValue'
-		//    (BEGIN
+		//    ('{'
 		//        'type' type=[EADatatype|EString]
 		//        (value+=EAValue (  value+=EAValue)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EAArrayValue'
-		//(BEGIN
+		//('{'
 		//    'type' type=[EADatatype|EString]
 		//    (value+=EAValue (  value+=EAValue)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'EAArrayValue'
 		public Keyword getEAArrayValueKeyword_0() { return cEAArrayValueKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'type' type=[EADatatype|EString]
 		//    (value+=EAValue (  value+=EAValue)*)?
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'type'
 		public Keyword getTypeKeyword_1_1() { return cTypeKeyword_1_1; }
@@ -11211,15 +11210,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EAValue
 		public RuleCall getValueEAValueParserRuleCall_1_3_1_0() { return cValueEAValueParserRuleCall_1_3_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class EABooleanValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EABooleanValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEABooleanValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cValueKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cValueBooleanParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
@@ -11227,34 +11226,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cTypeAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
 		private final CrossReference cTypeEADatatypeCrossReference_1_4_0 = (CrossReference)cTypeAssignment_1_4.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_1_4_0_1 = (RuleCall)cTypeEADatatypeCrossReference_1_4_0.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
 		
 		//EABooleanValue returns EABooleanValue:
 		//    'EABooleanValue'
-		//    (BEGIN
+		//    ('{'
 		//        'value' value=Boolean
 		//        'type' type=[EADatatype|EString]
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EABooleanValue'
-		//(BEGIN
+		//('{'
 		//    'value' value=Boolean
 		//    'type' type=[EADatatype|EString]
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'EABooleanValue'
 		public Keyword getEABooleanValueKeyword_0() { return cEABooleanValueKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'value' value=Boolean
 		//    'type' type=[EADatatype|EString]
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'value'
 		public Keyword getValueKeyword_1_1() { return cValueKeyword_1_1; }
@@ -11277,15 +11276,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_1_4_0_1() { return cTypeEADatatypeEStringParserRuleCall_1_4_0_1; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_5() { return cENDTerminalRuleCall_1_5; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_5() { return cRightCurlyBracketKeyword_1_5; }
 	}
 	public class EACompositeValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EACompositeValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEACompositeValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cTypeKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cTypeEADatatypeCrossReference_1_2_0 = (CrossReference)cTypeAssignment_1_2.eContents().get(0);
@@ -11294,34 +11293,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cValueEAValueParserRuleCall_1_3_0 = (RuleCall)cValueAssignment_1_3.eContents().get(0);
 		private final Assignment cValueAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
 		private final RuleCall cValueEAValueParserRuleCall_1_4_0 = (RuleCall)cValueAssignment_1_4.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
 		
 		//EACompositeValue returns EACompositeValue:
 		//    'EACompositeValue'
-		//    (BEGIN
+		//    ('{'
 		//        'type' type=[EADatatype|EString]
 		//        value+=EAValue (  value+=EAValue)*
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EACompositeValue'
-		//(BEGIN
+		//('{'
 		//    'type' type=[EADatatype|EString]
 		//    value+=EAValue (  value+=EAValue)*
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'EACompositeValue'
 		public Keyword getEACompositeValueKeyword_0() { return cEACompositeValueKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'type' type=[EADatatype|EString]
 		//    value+=EAValue (  value+=EAValue)*
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'type'
 		public Keyword getTypeKeyword_1_1() { return cTypeKeyword_1_1; }
@@ -11347,15 +11346,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EAValue
 		public RuleCall getValueEAValueParserRuleCall_1_4_0() { return cValueEAValueParserRuleCall_1_4_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_5() { return cENDTerminalRuleCall_1_5; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_5() { return cRightCurlyBracketKeyword_1_5; }
 	}
 	public class EAEnumerationValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAEnumerationValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEAEnumerationValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cTypeKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cTypeEADatatypeCrossReference_1_2_0 = (CrossReference)cTypeAssignment_1_2.eContents().get(0);
@@ -11369,34 +11368,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final CrossReference cValueEnumerationLiteralCrossReference_1_6_0 = (CrossReference)cValueAssignment_1_6.eContents().get(0);
 		private final RuleCall cValueEnumerationLiteralEStringParserRuleCall_1_6_0_1 = (RuleCall)cValueEnumerationLiteralCrossReference_1_6_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_1_7 = (Keyword)cGroup_1.eContents().get(7);
-		private final RuleCall cENDTerminalRuleCall_1_8 = (RuleCall)cGroup_1.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_1_8 = (Keyword)cGroup_1.eContents().get(8);
 		
 		//EAEnumerationValue returns EAEnumerationValue:
 		//    'EAEnumerationValue'
-		//    (BEGIN
+		//    ('{'
 		//        'type' type=[EADatatype|EString]
 		//        'value' '(' value+=[EnumerationLiteral|EString] (  value+=[EnumerationLiteral|EString])* ')'
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EAEnumerationValue'
-		//(BEGIN
+		//('{'
 		//    'type' type=[EADatatype|EString]
 		//    'value' '(' value+=[EnumerationLiteral|EString] (  value+=[EnumerationLiteral|EString])* ')'
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'EAEnumerationValue'
 		public Keyword getEAEnumerationValueKeyword_0() { return cEAEnumerationValueKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'type' type=[EADatatype|EString]
 		//    'value' '(' value+=[EnumerationLiteral|EString] (  value+=[EnumerationLiteral|EString])* ')'
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'type'
 		public Keyword getTypeKeyword_1_1() { return cTypeKeyword_1_1; }
@@ -11437,15 +11436,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//')'
 		public Keyword getRightParenthesisKeyword_1_7() { return cRightParenthesisKeyword_1_7; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_8() { return cENDTerminalRuleCall_1_8; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_8() { return cRightCurlyBracketKeyword_1_8; }
 	}
 	public class EAExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEAExpressionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cTypeKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cTypeEADatatypeCrossReference_1_2_0 = (CrossReference)cTypeAssignment_1_2.eContents().get(0);
@@ -11455,34 +11454,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final RuleCall cValueEAValueParserRuleCall_1_3_0_0 = (RuleCall)cValueAssignment_1_3_0.eContents().get(0);
 		private final Assignment cValueAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
 		private final RuleCall cValueEAValueParserRuleCall_1_3_1_0 = (RuleCall)cValueAssignment_1_3_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//EAExpression returns EAExpression:
 		//    'EAExpression'
-		//    (BEGIN
+		//    ('{'
 		//        'type' type=[EADatatype|EString]
 		//        (value+=EAValue (  value+=EAValue)*)?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EAExpression'
-		//(BEGIN
+		//('{'
 		//    'type' type=[EADatatype|EString]
 		//    (value+=EAValue (  value+=EAValue)*)?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'EAExpression'
 		public Keyword getEAExpressionKeyword_0() { return cEAExpressionKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'type' type=[EADatatype|EString]
 		//    (value+=EAValue (  value+=EAValue)*)?
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'type'
 		public Keyword getTypeKeyword_1_1() { return cTypeKeyword_1_1; }
@@ -11511,15 +11510,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EAValue
 		public RuleCall getValueEAValueParserRuleCall_1_3_1_0() { return cValueEAValueParserRuleCall_1_3_1_0; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class EANumericalValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EANumericalValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEANumericalValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cValueKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cValueNumericalParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
@@ -11527,34 +11526,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cTypeAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
 		private final CrossReference cTypeEADatatypeCrossReference_1_4_0 = (CrossReference)cTypeAssignment_1_4.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_1_4_0_1 = (RuleCall)cTypeEADatatypeCrossReference_1_4_0.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
 		
 		//EANumericalValue returns EANumericalValue:
 		//    'EANumericalValue'
-		//    (BEGIN
+		//    ('{'
 		//        'value' value=Numerical
 		//        'type' type=[EADatatype|EString]
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EANumericalValue'
-		//(BEGIN
+		//('{'
 		//    'value' value=Numerical
 		//    'type' type=[EADatatype|EString]
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'EANumericalValue'
 		public Keyword getEANumericalValueKeyword_0() { return cEANumericalValueKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'value' value=Numerical
 		//    'type' type=[EADatatype|EString]
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'value'
 		public Keyword getValueKeyword_1_1() { return cValueKeyword_1_1; }
@@ -11577,15 +11576,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_1_4_0_1() { return cTypeEADatatypeEStringParserRuleCall_1_4_0_1; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_5() { return cENDTerminalRuleCall_1_5; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_5() { return cRightCurlyBracketKeyword_1_5; }
 	}
 	public class EAStringValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAStringValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEAStringValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cValueKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cValueString0ParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
@@ -11593,34 +11592,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cTypeAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
 		private final CrossReference cTypeEADatatypeCrossReference_1_4_0 = (CrossReference)cTypeAssignment_1_4.eContents().get(0);
 		private final RuleCall cTypeEADatatypeEStringParserRuleCall_1_4_0_1 = (RuleCall)cTypeEADatatypeCrossReference_1_4_0.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
 		
 		//EAStringValue returns EAStringValue:
 		//    'EAStringValue'
-		//    (BEGIN
+		//    ('{'
 		//        'value' value=String0
 		//        'type' type=[EADatatype|EString]
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EAStringValue'
-		//(BEGIN
+		//('{'
 		//    'value' value=String0
 		//    'type' type=[EADatatype|EString]
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'EAStringValue'
 		public Keyword getEAStringValueKeyword_0() { return cEAStringValueKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'value' value=String0
 		//    'type' type=[EADatatype|EString]
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'value'
 		public Keyword getValueKeyword_1_1() { return cValueKeyword_1_1; }
@@ -11643,8 +11642,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getTypeEADatatypeEStringParserRuleCall_1_4_0_1() { return cTypeEADatatypeEStringParserRuleCall_1_4_0_1; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_5() { return cENDTerminalRuleCall_1_5; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_5() { return cRightCurlyBracketKeyword_1_5; }
 	}
 	public class BooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Boolean");
@@ -11701,7 +11700,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHardwareConnector_portKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cHardwarePinKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cHardwarePinAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cHardwarePinHardwarePinCrossReference_1_2_0 = (CrossReference)cHardwarePinAssignment_1_2.eContents().get(0);
@@ -11711,34 +11710,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cHardwareComponentPrototypeAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
 		private final CrossReference cHardwareComponentPrototypeHardwareComponentPrototypeCrossReference_1_3_1_0 = (CrossReference)cHardwareComponentPrototypeAssignment_1_3_1.eContents().get(0);
 		private final RuleCall cHardwareComponentPrototypeHardwareComponentPrototypeEStringParserRuleCall_1_3_1_0_1 = (RuleCall)cHardwareComponentPrototypeHardwareComponentPrototypeCrossReference_1_3_1_0.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//HardwareConnector_port returns HardwareConnector_port:
 		//    'HardwareConnector_port'
-		//    (BEGIN
+		//    ('{'
 		//        'hardwarePin' hardwarePin=[HardwarePin|EString]
 		//        ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwareConnector_port'
-		//(BEGIN
+		//('{'
 		//    'hardwarePin' hardwarePin=[HardwarePin|EString]
 		//    ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwareConnector_port'
 		public Keyword getHardwareConnector_portKeyword_0() { return cHardwareConnector_portKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'hardwarePin' hardwarePin=[HardwarePin|EString]
 		//    ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'hardwarePin'
 		public Keyword getHardwarePinKeyword_1_1() { return cHardwarePinKeyword_1_1; }
@@ -11767,15 +11766,15 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getHardwareComponentPrototypeHardwareComponentPrototypeEStringParserRuleCall_1_3_1_0_1() { return cHardwareComponentPrototypeHardwareComponentPrototypeEStringParserRuleCall_1_3_1_0_1; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class HardwarePortConnector_portElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.HardwarePortConnector_port");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHardwarePortConnector_portKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cHardwarePortKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cHardwarePortAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cHardwarePortHardwarePortCrossReference_1_2_0 = (CrossReference)cHardwarePortAssignment_1_2.eContents().get(0);
@@ -11785,34 +11784,34 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		private final Assignment cHardwareComponentPrototypeAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
 		private final CrossReference cHardwareComponentPrototypeHardwareComponentPrototypeCrossReference_1_3_1_0 = (CrossReference)cHardwareComponentPrototypeAssignment_1_3_1.eContents().get(0);
 		private final RuleCall cHardwareComponentPrototypeHardwareComponentPrototypeEStringParserRuleCall_1_3_1_0_1 = (RuleCall)cHardwareComponentPrototypeHardwareComponentPrototypeCrossReference_1_3_1_0.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//HardwarePortConnector_port returns HardwarePortConnector_port:
 		//    'HardwarePortConnector_port'
-		//    (BEGIN
+		//    ('{'
 		//        'hardwarePort' hardwarePort=[HardwarePort|EString]
 		//        ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-		//    END);
+		//    '}');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'HardwarePortConnector_port'
-		//(BEGIN
+		//('{'
 		//    'hardwarePort' hardwarePort=[HardwarePort|EString]
 		//    ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-		//END)
+		//'}')
 		public Group getGroup() { return cGroup; }
 		
 		//'HardwarePortConnector_port'
 		public Keyword getHardwarePortConnector_portKeyword_0() { return cHardwarePortConnector_portKeyword_0; }
 		
-		//(BEGIN
+		//('{'
 		//    'hardwarePort' hardwarePort=[HardwarePort|EString]
 		//    ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-		//END)
+		//'}')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//'hardwarePort'
 		public Keyword getHardwarePortKeyword_1_1() { return cHardwarePortKeyword_1_1; }
@@ -11841,8 +11840,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//EString
 		public RuleCall getHardwareComponentPrototypeHardwareComponentPrototypeEStringParserRuleCall_1_3_1_0_1() { return cHardwareComponentPrototypeHardwareComponentPrototypeEStringParserRuleCall_1_3_1_0_1; }
 		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_4() { return cENDTerminalRuleCall_1_4; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 	}
 	public class FloatElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.Float");
@@ -11889,66 +11888,12 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		//STRING
 		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
 	}
-	public class XBlockExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.XBlockExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cXBlockExpressionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
-		private final Assignment cExpressionsAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
-		private final RuleCall cExpressionsXExpressionOrVarDeclarationParserRuleCall_1_1_0_0 = (RuleCall)cExpressionsAssignment_1_1_0.eContents().get(0);
-		private final Keyword cSemicolonKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
-		private final RuleCall cENDTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
-		
-		//// We modify the concrete syntax of the Xbase block expression and make them indentation-aware
-		//@Override
-		//XBlockExpression returns xbase::XExpression:
-		//    {xbase::XBlockExpression}
-		//    (BEGIN
-		//        (expressions+=XExpressionOrVarDeclaration ';'?)*
-		//    END);
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{xbase::XBlockExpression}
-		//(BEGIN
-		//    (expressions+=XExpressionOrVarDeclaration ';'?)*
-		//END)
-		public Group getGroup() { return cGroup; }
-		
-		//{xbase::XBlockExpression}
-		public Action getXBlockExpressionAction_0() { return cXBlockExpressionAction_0; }
-		
-		//(BEGIN
-		//    (expressions+=XExpressionOrVarDeclaration ';'?)*
-		//END)
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_0() { return cBEGINTerminalRuleCall_1_0; }
-		
-		//(expressions+=XExpressionOrVarDeclaration ';'?)*
-		public Group getGroup_1_1() { return cGroup_1_1; }
-		
-		//expressions+=XExpressionOrVarDeclaration
-		public Assignment getExpressionsAssignment_1_1_0() { return cExpressionsAssignment_1_1_0; }
-		
-		//XExpressionOrVarDeclaration
-		public RuleCall getExpressionsXExpressionOrVarDeclarationParserRuleCall_1_1_0_0() { return cExpressionsXExpressionOrVarDeclarationParserRuleCall_1_1_0_0; }
-		
-		//';'?
-		public Keyword getSemicolonKeyword_1_1_1() { return cSemicolonKeyword_1_1_1; }
-		
-		//END
-		public RuleCall getENDTerminalRuleCall_1_2() { return cENDTerminalRuleCall_1_2; }
-	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EString");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//      // decrease indentation
 		//EString returns ecore::EString:
 		//    STRING | ID;
 		@Override public ParserRule getRule() { return rule; }
@@ -12204,9 +12149,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	private final FloatElements pFloat;
 	private final IntegerElements pInteger;
 	private final UUIDElements pUUID;
-	private final XBlockExpressionElements pXBlockExpression;
-	private final TerminalRule tBEGIN;
-	private final TerminalRule tEND;
 	private final EStringElements pEString;
 	private final TerminalRule tEABINARY;
 	private final TerminalRule tEAOCTAL;
@@ -12215,17 +12157,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	private final Grammar grammar;
 	
-	private final XbaseGrammarAccess gaXbase;
-	
-	private final XtypeGrammarAccess gaXtype;
+	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
 	public EastAdlSimplifiedGrammarAccess(GrammarProvider grammarProvider,
-			XbaseGrammarAccess gaXbase,
-			XtypeGrammarAccess gaXtype) {
+			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.gaXbase = gaXbase;
-		this.gaXtype = gaXtype;
+		this.gaTerminals = gaTerminals;
 		this.pEAXML = new EAXMLElements();
 		this.pComment = new CommentElements();
 		this.pEAPackageableElement = new EAPackageableElementElements();
@@ -12318,9 +12256,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		this.pFloat = new FloatElements();
 		this.pInteger = new IntegerElements();
 		this.pUUID = new UUIDElements();
-		this.pXBlockExpression = new XBlockExpressionElements();
-		this.tBEGIN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.BEGIN");
-		this.tEND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.END");
 		this.pEString = new EStringElements();
 		this.tEABINARY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EABINARY");
 		this.tEAOCTAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.bumble.eastadl.simplified.EastAdlSimplified.EAOCTAL");
@@ -12350,12 +12285,8 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	}
 	
 	
-	public XbaseGrammarAccess getXbaseGrammarAccess() {
-		return gaXbase;
-	}
-	
-	public XtypeGrammarAccess getXtypeGrammarAccess() {
-		return gaXtype;
+	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
+		return gaTerminals;
 	}
 
 	
@@ -12565,14 +12496,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAPackage returns EAPackage:
 	//    'EAPackage' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (subPackage+=EAPackage (  subPackage+=EAPackage)* )?
 	//        (element+=EAPackageableElement (  element+=EAPackageableElement)* )?
-	//    END)?;
+	//    '}')?;
 	public EAPackageElements getEAPackageAccess() {
 		return pEAPackage;
 	}
@@ -12603,9 +12534,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Comment_Impl returns Comment:
 	//    'Comment'
-	//    (BEGIN
+	//    ('{'
 	//        'body' body=String0
-	//    END);
+	//    '}');
 	public Comment_ImplElements getComment_ImplAccess() {
 		return pComment_Impl;
 	}
@@ -12616,9 +12547,9 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Rationale returns Rationale:
 	//    'Rationale'
-	//    (BEGIN
+	//    ('{'
 	//        'body' body=String0
-	//    END);
+	//    '}');
 	public RationaleElements getRationaleAccess() {
 		return pRationale;
 	}
@@ -12629,7 +12560,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//DesignLevel returns DesignLevel:
 	//    'DesignLevel' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12639,7 +12570,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (allocation+=Allocation (  allocation+=Allocation)*)?
 	//        ('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype)?
 	//        ('hardwareDesignArchitecture' hardwareDesignArchitecture=HardwareComponentPrototype)?
-	//    END)?;
+	//    '}')?;
 	public DesignLevelElements getDesignLevelAccess() {
 		return pDesignLevel;
 	}
@@ -12650,7 +12581,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//AnalysisFunctionType_Impl returns AnalysisFunctionType:
 	//    'AnalysisFunctionType' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12662,7 +12593,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 	//        (port+=FunctionPort (  port+=FunctionPort)*)?
 	//        (part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)*)?
-	//    END)?;
+	//    '}')?;
 	public AnalysisFunctionType_ImplElements getAnalysisFunctionType_ImplAccess() {
 		return pAnalysisFunctionType_Impl;
 	}
@@ -12673,7 +12604,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//BasicSoftwareFunctionType returns BasicSoftwareFunctionType:
 	//    'BasicSoftwareFunctionType' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12685,7 +12616,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 	//        (port+=FunctionPort (  port+=FunctionPort)*)?
 	//        (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-	//    END)?;
+	//    '}')?;
 	public BasicSoftwareFunctionTypeElements getBasicSoftwareFunctionTypeAccess() {
 		return pBasicSoftwareFunctionType;
 	}
@@ -12696,7 +12627,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//DesignFunctionType_Impl returns DesignFunctionType:
 	//    'DesignFunctionType' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12708,7 +12639,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 	//        (port+=FunctionPort (  port+=FunctionPort)*)?
 	//        (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-	//    END)?;
+	//    '}')?;
 	public DesignFunctionType_ImplElements getDesignFunctionType_ImplAccess() {
 		return pDesignFunctionType_Impl;
 	}
@@ -12719,7 +12650,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionalDevice returns FunctionalDevice:
 	//    'FunctionalDevice' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12731,7 +12662,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 	//        (port+=FunctionPort (  port+=FunctionPort)*)?
 	//        (part+=AnalysisFunctionPrototype (  part+=AnalysisFunctionPrototype)*)?
-	//    END)?;
+	//    '}')?;
 	public FunctionalDeviceElements getFunctionalDeviceAccess() {
 		return pFunctionalDevice;
 	}
@@ -12742,7 +12673,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionClientServerInterface returns FunctionClientServerInterface:
 	//    'FunctionClientServerInterface' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12750,7 +12681,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        ('uri' uri=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (operation+=Operation (  operation+=Operation)*)?
-	//    END)?;
+	//    '}')?;
 	public FunctionClientServerInterfaceElements getFunctionClientServerInterfaceAccess() {
 		return pFunctionClientServerInterface;
 	}
@@ -12761,7 +12692,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwareFunctionType returns HardwareFunctionType:
 	//    'HardwareFunctionType' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12774,7 +12705,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 	//        (port+=FunctionPort (  port+=FunctionPort)*)?
 	//        (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-	//    END)?;
+	//    '}')?;
 	public HardwareFunctionTypeElements getHardwareFunctionTypeAccess() {
 		return pHardwareFunctionType;
 	}
@@ -12785,7 +12716,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//LocalDeviceManager returns LocalDeviceManager:
 	//    'LocalDeviceManager' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12797,7 +12728,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=FunctionConnector (  connector+=FunctionConnector)*)?
 	//        (port+=FunctionPort (  port+=FunctionPort)*)?
 	//        (part+=DesignFunctionPrototype (  part+=DesignFunctionPrototype)*)?
-	//    END)?;
+	//    '}')?;
 	public LocalDeviceManagerElements getLocalDeviceManagerAccess() {
 		return pLocalDeviceManager;
 	}
@@ -12808,7 +12739,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Actuator returns Actuator:
 	//    'Actuator' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12820,7 +12751,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 	//        (port+=HardwarePort (  port+=HardwarePort)*)?
 	//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-	//    END)?;
+	//    '}')?;
 	public ActuatorElements getActuatorAccess() {
 		return pActuator;
 	}
@@ -12831,7 +12762,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//ElectricalComponent returns ElectricalComponent:
 	//    'ElectricalComponent' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12844,7 +12775,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 	//        (port+=HardwarePort (  port+=HardwarePort)*)?
 	//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-	//    END)?;
+	//    '}')?;
 	public ElectricalComponentElements getElectricalComponentAccess() {
 		return pElectricalComponent;
 	}
@@ -12855,7 +12786,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwareComponentType_Impl returns HardwareComponentType:
 	//    'HardwareComponentType' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12867,7 +12798,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 	//        (port+=HardwarePort (  port+=HardwarePort)*)?
 	//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-	//    END)?;
+	//    '}')?;
 	public HardwareComponentType_ImplElements getHardwareComponentType_ImplAccess() {
 		return pHardwareComponentType_Impl;
 	}
@@ -12878,7 +12809,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Node returns Node:
 	//    'Node' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12891,7 +12822,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 	//        (port+=HardwarePort (  port+=HardwarePort)*)?
 	//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-	//    END)?;
+	//    '}')?;
 	public NodeElements getNodeAccess() {
 		return pNode;
 	}
@@ -12902,7 +12833,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Sensor returns Sensor:
 	//    'Sensor' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12914,7 +12845,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
 	//        (port+=HardwarePort (  port+=HardwarePort)*)?
 	//        (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
-	//    END)?;
+	//    '}')?;
 	public SensorElements getSensorAccess() {
 		return pSensor;
 	}
@@ -12925,7 +12856,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//ArrayDatatype returns ArrayDatatype:
 	//    'ArrayDatatype' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12935,7 +12866,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        ('minLength' minLength=Integer)?
 	//        'elementType' elementType=[EADatatype|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public ArrayDatatypeElements getArrayDatatypeAccess() {
 		return pArrayDatatype;
 	}
@@ -12946,7 +12877,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//CompositeDatatype returns CompositeDatatype:
 	//    'CompositeDatatype' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12954,7 +12885,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        ('uri' uri=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        datatypePrototype+=EADatatypePrototype (  datatypePrototype+=EADatatypePrototype)*
-	//    END);
+	//    '}');
 	public CompositeDatatypeElements getCompositeDatatypeAccess() {
 		return pCompositeDatatype;
 	}
@@ -12965,14 +12896,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EABoolean returns EABoolean:
 	//    'EABoolean' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END)?;
+	//    '}')?;
 	public EABooleanElements getEABooleanAccess() {
 		return pEABoolean;
 	}
@@ -12983,7 +12914,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EANumerical returns EANumerical:
 	//    'EANumerical' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -12993,7 +12924,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        ('min' min=Numerical)?
 	//        ('unit' unit=[Unit|EString])?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END)?;
+	//    '}')?;
 	public EANumericalElements getEANumericalAccess() {
 		return pEANumerical;
 	}
@@ -13004,14 +12935,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAString returns EAString:
 	//    'EAString' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('text' text=String0)?
 	//        ('uri' uri=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END)?;
+	//    '}')?;
 	public EAStringElements getEAStringAccess() {
 		return pEAString;
 	}
@@ -13022,7 +12953,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Enumeration returns Enumeration:
 	//    'Enumeration' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13031,7 +12962,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        'isMultiValued' isMultiValued=Boolean
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        literal+=EnumerationLiteral (  literal+=EnumerationLiteral)*
-	//    END);
+	//    '}');
 	public EnumerationElements getEnumerationAccess() {
 		return pEnumeration;
 	}
@@ -13042,7 +12973,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Quantity returns Quantity:
 	//    'Quantity' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13054,7 +12985,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer
 	//        'timeExp' timeExp=Integer
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public QuantityElements getQuantityAccess() {
 		return pQuantity;
 	}
@@ -13065,7 +12996,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//RangeableValueType returns RangeableValueType:
 	//    'RangeableValueType' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13076,7 +13007,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        ('significantDigits' significantDigits=Integer)?
 	//        'baseRangeable' baseRangeable=[EANumerical|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public RangeableValueTypeElements getRangeableValueTypeAccess() {
 		return pRangeableValueType;
 	}
@@ -13087,7 +13018,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Unit returns Unit:
 	//    'Unit' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13097,7 +13028,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        ('reference' reference=[Unit|EString])?
 	//        ('quantity' quantity=[Quantity|EString])?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public UnitElements getUnitAccess() {
 		return pUnit;
 	}
@@ -13108,14 +13039,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//UserAttributeDefinition returns UserAttributeDefinition:
 	//    'UserAttributeDefinition' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[EADatatype|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        ('defaultValue' defaultValue=EAValue)?
-	//    END);
+	//    '}');
 	public UserAttributeDefinitionElements getUserAttributeDefinitionAccess() {
 		return pUserAttributeDefinition;
 	}
@@ -13126,7 +13057,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//UserAttributedElement returns UserAttributedElement:
 	//    'UserAttributedElement' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13134,7 +13065,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        'attributedElement' attributedElement=[Identifiable|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (uaValue+=EAValue (  uaValue+=EAValue)*)?
-	//    END);
+	//    '}');
 	public UserAttributedElementElements getUserAttributedElementAccess() {
 		return pUserAttributedElement;
 	}
@@ -13145,7 +13076,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//UserElementType returns UserElementType:
 	//    'UserElementType' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13153,7 +13084,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        'key' key=String0
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (uaDefinition+=UserAttributeDefinition (  uaDefinition+=UserAttributeDefinition)*)?
-	//    END);
+	//    '}');
 	public UserElementTypeElements getUserElementTypeAccess() {
 		return pUserElementType;
 	}
@@ -13164,13 +13095,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Allocation returns Allocation:
 	//    'Allocation' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
-	//    END)?;
+	//    '}')?;
 	public AllocationElements getAllocationAccess() {
 		return pAllocation;
 	}
@@ -13181,13 +13112,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//DesignFunctionPrototype returns DesignFunctionPrototype:
 	//    'DesignFunctionPrototype' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[DesignFunctionType|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public DesignFunctionPrototypeElements getDesignFunctionPrototypeAccess() {
 		return pDesignFunctionPrototype;
 	}
@@ -13198,13 +13129,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwareComponentPrototype returns HardwareComponentPrototype:
 	//    'HardwareComponentPrototype' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[HardwareComponentType|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public HardwareComponentPrototypeElements getHardwareComponentPrototypeAccess() {
 		return pHardwareComponentPrototype;
 	}
@@ -13215,14 +13146,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Realization returns Realization:
 	//    'Realization' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        realized+=Realization_realized (  realized+=Realization_realized)*
 	//        realizedBy+=Realization_realizedBy (  realizedBy+=Realization_realizedBy)*
-	//    END);
+	//    '}');
 	public RealizationElements getRealizationAccess() {
 		return pRealization;
 	}
@@ -13233,10 +13164,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Realization_realized returns Realization_realized:
 	//    'Realization_realized'
-	//    (BEGIN
+	//    ('{'
 	//        'identifiable_target' identifiable_target=[EAElement|EString]
 	//        ('identifiable_context' '(' identifiable_context+=[EAElement|EString] ( "," identifiable_context+=[EAElement|EString])* ')' )?
-	//    END);
+	//    '}');
 	public Realization_realizedElements getRealization_realizedAccess() {
 		return pRealization_realized;
 	}
@@ -13247,10 +13178,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Realization_realizedBy returns Realization_realizedBy:
 	//    'Realization_realizedBy'
-	//    (BEGIN
+	//    ('{'
 	//        'identifiable_target' identifiable_target=[Identifiable|EString]
 	//        ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
-	//    END);
+	//    '}');
 	public Realization_realizedByElements getRealization_realizedByAccess() {
 		return pRealization_realizedBy;
 	}
@@ -13261,13 +13192,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
 	//    'AnalysisFunctionPrototype' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[AnalysisFunctionType|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public AnalysisFunctionPrototypeElements getAnalysisFunctionPrototypeAccess() {
 		return pAnalysisFunctionPrototype;
 	}
@@ -13278,14 +13209,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionAllocation returns FunctionAllocation:
 	//    'FunctionAllocation' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement
 	//        'target' target=FunctionAllocation_target
-	//    END);
+	//    '}');
 	public FunctionAllocationElements getFunctionAllocationAccess() {
 		return pFunctionAllocation;
 	}
@@ -13296,14 +13227,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionClientServerPort returns FunctionClientServerPort:
 	//    'FunctionClientServerPort' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'kind' kind=ClientServerKind
 	//        'type' type=[FunctionClientServerInterface|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public FunctionClientServerPortElements getFunctionClientServerPortAccess() {
 		return pFunctionClientServerPort;
 	}
@@ -13314,13 +13245,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionConnector returns FunctionConnector:
 	//    'FunctionConnector' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        port+=FunctionConnector_port (  port+=FunctionConnector_port)*
-	//    END);
+	//    '}');
 	public FunctionConnectorElements getFunctionConnectorAccess() {
 		return pFunctionConnector;
 	}
@@ -13331,7 +13262,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionFlowPort returns FunctionFlowPort:
 	//    'FunctionFlowPort' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13339,7 +13270,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        'type' type=[EADatatype|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        ('defaultValue' defaultValue=EAValue)?
-	//    END);
+	//    '}');
 	public FunctionFlowPortElements getFunctionFlowPortAccess() {
 		return pFunctionFlowPort;
 	}
@@ -13350,13 +13281,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionPowerPort returns FunctionPowerPort:
 	//    'FunctionPowerPort' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[CompositeDatatype|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public FunctionPowerPortElements getFunctionPowerPortAccess() {
 		return pFunctionPowerPort;
 	}
@@ -13367,14 +13298,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//Operation returns Operation:
 	//    'Operation' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        ('return' return=EADatatypePrototype)?
 	//        (argument+=EADatatypePrototype (  argument+=EADatatypePrototype)*)?
-	//    END)?;
+	//    '}')?;
 	public OperationElements getOperationAccess() {
 		return pOperation;
 	}
@@ -13385,14 +13316,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//PortGroup returns PortGroup:
 	//    'PortGroup' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (portGroup+=PortGroup (  portGroup+=PortGroup)*)?
-	//    END)?;
+	//    '}')?;
 	public PortGroupElements getPortGroupAccess() {
 		return pPortGroup;
 	}
@@ -13403,14 +13334,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//CommunicationHardwarePin returns CommunicationHardwarePin:
 	//    'CommunicationHardwarePin' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('direction' direction=EADirectionKind)?
 	//        ('isGround' isGround=Boolean)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END)?;
+	//    '}')?;
 	public CommunicationHardwarePinElements getCommunicationHardwarePinAccess() {
 		return pCommunicationHardwarePin;
 	}
@@ -13421,13 +13352,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwareConnector returns HardwareConnector:
 	//    'HardwareConnector' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        port+=HardwareConnector_port (  port+=HardwareConnector_port)*
-	//    END);
+	//    '}');
 	public HardwareConnectorElements getHardwareConnectorAccess() {
 		return pHardwareConnector;
 	}
@@ -13438,7 +13369,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwarePort returns HardwarePort:
 	//    'HardwarePort' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13447,7 +13378,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        (containedPin+=HardwarePin (  containedPin+=HardwarePin)*)?
 	//        (containedPort+=HardwarePort (  containedPort+=HardwarePort)*)?
-	//    END)?;
+	//    '}')?;
 	public HardwarePortElements getHardwarePortAccess() {
 		return pHardwarePort;
 	}
@@ -13458,14 +13389,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwarePortConnector returns HardwarePortConnector:
 	//    'HardwarePortConnector' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
 	//        (connector+=HardwareConnector (  connector+=HardwareConnector)*)?
-	//    END);
+	//    '}');
 	public HardwarePortConnectorElements getHardwarePortConnectorAccess() {
 		return pHardwarePortConnector;
 	}
@@ -13476,7 +13407,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//IOHardwarePin returns IOHardwarePin:
 	//    'IOHardwarePin' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13484,7 +13415,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        ('isGround' isGround=Boolean)?
 	//        ('kind' kind=IOHardwarePinKind)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END)?;
+	//    '}')?;
 	public IOHardwarePinElements getIOHardwarePinAccess() {
 		return pIOHardwarePin;
 	}
@@ -13495,7 +13426,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//LogicalPortConnector returns LogicalPortConnector:
 	//    'LogicalPortConnector' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
@@ -13503,7 +13434,7 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	//        ('busSpeed' busSpeed=Float)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
 	//        port+=HardwarePortConnector_port (  port+=HardwarePortConnector_port)*
-	//    END);
+	//    '}');
 	public LogicalPortConnectorElements getLogicalPortConnectorAccess() {
 		return pLogicalPortConnector;
 	}
@@ -13514,14 +13445,14 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//PowerHardwarePin returns PowerHardwarePin:
 	//    'PowerHardwarePin' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        ('direction' direction=EADirectionKind)?
 	//        ('isGround' isGround=Boolean)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END)?;
+	//    '}')?;
 	public PowerHardwarePinElements getPowerHardwarePinAccess() {
 		return pPowerHardwarePin;
 	}
@@ -13532,13 +13463,13 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EADatatypePrototype returns EADatatypePrototype:
 	//    'EADatatypePrototype' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        'type' type=[EADatatype|EString]
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END);
+	//    '}');
 	public EADatatypePrototypeElements getEADatatypePrototypeAccess() {
 		return pEADatatypePrototype;
 	}
@@ -13549,12 +13480,12 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EnumerationLiteral returns EnumerationLiteral:
 	//    'EnumerationLiteral' shortName=Identifier
-	//    (BEGIN
+	//    ('{'
 	//        ('category' category=Identifier)?
 	//        ('uuid' uuid=UUID)?
 	//        ('name' name=String0)?
 	//        (ownedComment+=Comment (  ownedComment+=Comment)*)?
-	//    END)?;
+	//    '}')?;
 	public EnumerationLiteralElements getEnumerationLiteralAccess() {
 		return pEnumerationLiteral;
 	}
@@ -13565,10 +13496,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionAllocation_allocatedElement returns FunctionAllocation_allocatedElement:
 	//    'FunctionAllocation_allocatedElement'
-	//    (BEGIN
+	//    ('{'
 	//        ('allocateableElement_context' '(' allocateableElement_context+=[AllocateableElement|EString] ( "," allocateableElement_context+=[AllocateableElement|EString])* ')' )?
 	//        'allocateableElement' allocateableElement=[AllocateableElement|EString]
-	//    END);
+	//    '}');
 	public FunctionAllocation_allocatedElementElements getFunctionAllocation_allocatedElementAccess() {
 		return pFunctionAllocation_allocatedElement;
 	}
@@ -13579,10 +13510,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionAllocation_target returns FunctionAllocation_target:
 	//    'FunctionAllocation_target'
-	//    (BEGIN
+	//    ('{'
 	//        ('allocationTarget_context' '(' allocationTarget_context+=[AllocationTarget|EString] ( "," allocationTarget_context+=[AllocationTarget|EString])* ')' )?
 	//        'allocationTarget' allocationTarget=[AllocationTarget|EString]
-	//    END);
+	//    '}');
 	public FunctionAllocation_targetElements getFunctionAllocation_targetAccess() {
 		return pFunctionAllocation_target;
 	}
@@ -13603,10 +13534,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//FunctionConnector_port returns FunctionConnector_port:
 	//    'FunctionConnector_port'
-	//    (BEGIN
+	//    ('{'
 	//        ('functionPrototype' functionPrototype=[FunctionPrototype|EString])?
 	//        'functionPort' functionPort=[FunctionPort|EString]
-	//    END);
+	//    '}');
 	public FunctionConnector_portElements getFunctionConnector_portAccess() {
 		return pFunctionConnector_port;
 	}
@@ -13627,10 +13558,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAArrayValue returns EAArrayValue:
 	//    'EAArrayValue'
-	//    (BEGIN
+	//    ('{'
 	//        'type' type=[EADatatype|EString]
 	//        (value+=EAValue (  value+=EAValue)*)?
-	//    END);
+	//    '}');
 	public EAArrayValueElements getEAArrayValueAccess() {
 		return pEAArrayValue;
 	}
@@ -13641,10 +13572,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EABooleanValue returns EABooleanValue:
 	//    'EABooleanValue'
-	//    (BEGIN
+	//    ('{'
 	//        'value' value=Boolean
 	//        'type' type=[EADatatype|EString]
-	//    END);
+	//    '}');
 	public EABooleanValueElements getEABooleanValueAccess() {
 		return pEABooleanValue;
 	}
@@ -13655,10 +13586,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EACompositeValue returns EACompositeValue:
 	//    'EACompositeValue'
-	//    (BEGIN
+	//    ('{'
 	//        'type' type=[EADatatype|EString]
 	//        value+=EAValue (  value+=EAValue)*
-	//    END);
+	//    '}');
 	public EACompositeValueElements getEACompositeValueAccess() {
 		return pEACompositeValue;
 	}
@@ -13669,10 +13600,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAEnumerationValue returns EAEnumerationValue:
 	//    'EAEnumerationValue'
-	//    (BEGIN
+	//    ('{'
 	//        'type' type=[EADatatype|EString]
 	//        'value' '(' value+=[EnumerationLiteral|EString] (  value+=[EnumerationLiteral|EString])* ')'
-	//    END);
+	//    '}');
 	public EAEnumerationValueElements getEAEnumerationValueAccess() {
 		return pEAEnumerationValue;
 	}
@@ -13683,10 +13614,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAExpression returns EAExpression:
 	//    'EAExpression'
-	//    (BEGIN
+	//    ('{'
 	//        'type' type=[EADatatype|EString]
 	//        (value+=EAValue (  value+=EAValue)*)?
-	//    END);
+	//    '}');
 	public EAExpressionElements getEAExpressionAccess() {
 		return pEAExpression;
 	}
@@ -13697,10 +13628,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EANumericalValue returns EANumericalValue:
 	//    'EANumericalValue'
-	//    (BEGIN
+	//    ('{'
 	//        'value' value=Numerical
 	//        'type' type=[EADatatype|EString]
-	//    END);
+	//    '}');
 	public EANumericalValueElements getEANumericalValueAccess() {
 		return pEANumericalValue;
 	}
@@ -13711,10 +13642,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//EAStringValue returns EAStringValue:
 	//    'EAStringValue'
-	//    (BEGIN
+	//    ('{'
 	//        'value' value=String0
 	//        'type' type=[EADatatype|EString]
-	//    END);
+	//    '}');
 	public EAStringValueElements getEAStringValueAccess() {
 		return pEAStringValue;
 	}
@@ -13745,10 +13676,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwareConnector_port returns HardwareConnector_port:
 	//    'HardwareConnector_port'
-	//    (BEGIN
+	//    ('{'
 	//        'hardwarePin' hardwarePin=[HardwarePin|EString]
 	//        ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-	//    END);
+	//    '}');
 	public HardwareConnector_portElements getHardwareConnector_portAccess() {
 		return pHardwareConnector_port;
 	}
@@ -13759,10 +13690,10 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 	
 	//HardwarePortConnector_port returns HardwarePortConnector_port:
 	//    'HardwarePortConnector_port'
-	//    (BEGIN
+	//    ('{'
 	//        'hardwarePort' hardwarePort=[HardwarePort|EString]
 	//        ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString])?
-	//    END);
+	//    '}');
 	public HardwarePortConnector_portElements getHardwarePortConnector_portAccess() {
 		return pHardwarePortConnector_port;
 	}
@@ -13821,34 +13752,6 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		return getUUIDAccess().getRule();
 	}
 	
-	//// We modify the concrete syntax of the Xbase block expression and make them indentation-aware
-	//@Override
-	//XBlockExpression returns xbase::XExpression:
-	//    {xbase::XBlockExpression}
-	//    (BEGIN
-	//        (expressions+=XExpressionOrVarDeclaration ';'?)*
-	//    END);
-	public XBlockExpressionElements getXBlockExpressionAccess() {
-		return pXBlockExpression;
-	}
-	
-	public ParserRule getXBlockExpressionRule() {
-		return getXBlockExpressionAccess().getRule();
-	}
-	
-	//// The following synthetic tokens are used for the indentation-aware blocks
-	//terminal BEGIN: 'synthetic:BEGIN';
-	public TerminalRule getBEGINRule() {
-		return tBEGIN;
-	}
-	
-	//  // increase indentation
-	//terminal END: 'synthetic:END';
-	public TerminalRule getENDRule() {
-		return tEND;
-	}
-	
-	//      // decrease indentation
 	//EString returns ecore::EString:
 	//    STRING | ID;
 	public EStringElements getEStringAccess() {
@@ -13883,963 +13786,41 @@ public class EastAdlSimplifiedGrammarAccess extends AbstractElementFinder.Abstra
 		return tEAEXPONENT;
 	}
 	
-	//XExpression returns XExpression :
-	//    XAssignment;
-	public XbaseGrammarAccess.XExpressionElements getXExpressionAccess() {
-		return gaXbase.getXExpressionAccess();
-	}
-	
-	public ParserRule getXExpressionRule() {
-		return getXExpressionAccess().getRule();
-	}
-	
-	//XAssignment returns XExpression :
-	//    {XAssignment} feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign value=XAssignment |
-	//    XOrExpression (
-	//        =>({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMultiAssign]) rightOperand=XAssignment
-	//    )?;
-	public XbaseGrammarAccess.XAssignmentElements getXAssignmentAccess() {
-		return gaXbase.getXAssignmentAccess();
-	}
-	
-	public ParserRule getXAssignmentRule() {
-		return getXAssignmentAccess().getRule();
-	}
-	
-	//OpSingleAssign:
-	//    '='
-	//;
-	public XbaseGrammarAccess.OpSingleAssignElements getOpSingleAssignAccess() {
-		return gaXbase.getOpSingleAssignAccess();
-	}
-	
-	public ParserRule getOpSingleAssignRule() {
-		return getOpSingleAssignAccess().getRule();
-	}
-	
-	//OpMultiAssign:
-	//    '+=' | '-=' | '*=' | '/=' | '%=' |
-	//    '<' '<' '=' |
-	//    '>' '>'? '>=';
-	public XbaseGrammarAccess.OpMultiAssignElements getOpMultiAssignAccess() {
-		return gaXbase.getOpMultiAssignAccess();
-	}
-	
-	public ParserRule getOpMultiAssignRule() {
-		return getOpMultiAssignAccess().getRule();
-	}
-	
-	//XOrExpression returns XExpression:
-	//    XAndExpression (=>({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOr]) rightOperand=XAndExpression)*;
-	public XbaseGrammarAccess.XOrExpressionElements getXOrExpressionAccess() {
-		return gaXbase.getXOrExpressionAccess();
-	}
-	
-	public ParserRule getXOrExpressionRule() {
-		return getXOrExpressionAccess().getRule();
-	}
-	
-	//OpOr:
-	//    '||';
-	public XbaseGrammarAccess.OpOrElements getOpOrAccess() {
-		return gaXbase.getOpOrAccess();
-	}
-	
-	public ParserRule getOpOrRule() {
-		return getOpOrAccess().getRule();
-	}
-	
-	//XAndExpression returns XExpression:
-	//    XEqualityExpression (=>({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAnd]) rightOperand=XEqualityExpression)*;
-	public XbaseGrammarAccess.XAndExpressionElements getXAndExpressionAccess() {
-		return gaXbase.getXAndExpressionAccess();
-	}
-	
-	public ParserRule getXAndExpressionRule() {
-		return getXAndExpressionAccess().getRule();
-	}
-	
-	//OpAnd:
-	//    '&&';
-	public XbaseGrammarAccess.OpAndElements getOpAndAccess() {
-		return gaXbase.getOpAndAccess();
-	}
-	
-	public ParserRule getOpAndRule() {
-		return getOpAndAccess().getRule();
-	}
-	
-	//XEqualityExpression returns XExpression:
-	//    XRelationalExpression (=>({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpEquality])
-	//    rightOperand=XRelationalExpression)*;
-	public XbaseGrammarAccess.XEqualityExpressionElements getXEqualityExpressionAccess() {
-		return gaXbase.getXEqualityExpressionAccess();
-	}
-	
-	public ParserRule getXEqualityExpressionRule() {
-		return getXEqualityExpressionAccess().getRule();
-	}
-	
-	//OpEquality:
-	//    '==' | '!=' | '===' | '!==';
-	public XbaseGrammarAccess.OpEqualityElements getOpEqualityAccess() {
-		return gaXbase.getOpEqualityAccess();
-	}
-	
-	public ParserRule getOpEqualityRule() {
-		return getOpEqualityAccess().getRule();
-	}
-	
-	//XRelationalExpression returns XExpression:
-	//    XOtherOperatorExpression
-	//    (=>({XInstanceOfExpression.expression=current} 'instanceof') type=JvmTypeReference |
-	//     =>({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpCompare]) rightOperand=XOtherOperatorExpression)*;
-	public XbaseGrammarAccess.XRelationalExpressionElements getXRelationalExpressionAccess() {
-		return gaXbase.getXRelationalExpressionAccess();
-	}
-	
-	public ParserRule getXRelationalExpressionRule() {
-		return getXRelationalExpressionAccess().getRule();
-	}
-	
-	//OpCompare:
-	//    '>=' | '<' '=' | '>' | '<' ;
-	public XbaseGrammarAccess.OpCompareElements getOpCompareAccess() {
-		return gaXbase.getOpCompareAccess();
-	}
-	
-	public ParserRule getOpCompareRule() {
-		return getOpCompareAccess().getRule();
-	}
-	
-	//XOtherOperatorExpression returns XExpression:
-	//    XAdditiveExpression (=>({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOther])
-	//    rightOperand=XAdditiveExpression)*;
-	public XbaseGrammarAccess.XOtherOperatorExpressionElements getXOtherOperatorExpressionAccess() {
-		return gaXbase.getXOtherOperatorExpressionAccess();
-	}
-	
-	public ParserRule getXOtherOperatorExpressionRule() {
-		return getXOtherOperatorExpressionAccess().getRule();
-	}
-	
-	//OpOther:
-	//      '->'
-	//    | '..<'
-	//    | '>' '..'
-	//    | '..'
-	//    | '=>'
-	//    | '>' (=>('>' '>') | '>')
-	//    | '<' (=>('<' '<') | '<' | '=>')
-	//    | '<>'
-	//    | '?:';
-	public XbaseGrammarAccess.OpOtherElements getOpOtherAccess() {
-		return gaXbase.getOpOtherAccess();
-	}
-	
-	public ParserRule getOpOtherRule() {
-		return getOpOtherAccess().getRule();
-	}
-	
-	//XAdditiveExpression returns XExpression:
-	//    XMultiplicativeExpression (=>({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAdd])
-	//    rightOperand=XMultiplicativeExpression)*;
-	public XbaseGrammarAccess.XAdditiveExpressionElements getXAdditiveExpressionAccess() {
-		return gaXbase.getXAdditiveExpressionAccess();
-	}
-	
-	public ParserRule getXAdditiveExpressionRule() {
-		return getXAdditiveExpressionAccess().getRule();
-	}
-	
-	//OpAdd:
-	//    '+' | '-';
-	public XbaseGrammarAccess.OpAddElements getOpAddAccess() {
-		return gaXbase.getOpAddAccess();
-	}
-	
-	public ParserRule getOpAddRule() {
-		return getOpAddAccess().getRule();
-	}
-	
-	//XMultiplicativeExpression returns XExpression:
-	//    XUnaryOperation (=>({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMulti]) rightOperand=XUnaryOperation)*;
-	public XbaseGrammarAccess.XMultiplicativeExpressionElements getXMultiplicativeExpressionAccess() {
-		return gaXbase.getXMultiplicativeExpressionAccess();
-	}
-	
-	public ParserRule getXMultiplicativeExpressionRule() {
-		return getXMultiplicativeExpressionAccess().getRule();
-	}
-	
-	//OpMulti:
-	//    '*' | '**' | '/' | '%';
-	public XbaseGrammarAccess.OpMultiElements getOpMultiAccess() {
-		return gaXbase.getOpMultiAccess();
-	}
-	
-	public ParserRule getOpMultiRule() {
-		return getOpMultiAccess().getRule();
-	}
-	
-	//XUnaryOperation returns XExpression:
-	//    {XUnaryOperation} feature=[types::JvmIdentifiableElement|OpUnary] operand=XUnaryOperation
-	//    | XCastedExpression;
-	public XbaseGrammarAccess.XUnaryOperationElements getXUnaryOperationAccess() {
-		return gaXbase.getXUnaryOperationAccess();
-	}
-	
-	public ParserRule getXUnaryOperationRule() {
-		return getXUnaryOperationAccess().getRule();
-	}
-	
-	//OpUnary:
-	//    "!" | "-" | "+";
-	public XbaseGrammarAccess.OpUnaryElements getOpUnaryAccess() {
-		return gaXbase.getOpUnaryAccess();
-	}
-	
-	public ParserRule getOpUnaryRule() {
-		return getOpUnaryAccess().getRule();
-	}
-	
-	//XCastedExpression returns XExpression:
-	//    XPostfixOperation (=>({XCastedExpression.target=current} 'as') type=JvmTypeReference)*
-	//;
-	public XbaseGrammarAccess.XCastedExpressionElements getXCastedExpressionAccess() {
-		return gaXbase.getXCastedExpressionAccess();
-	}
-	
-	public ParserRule getXCastedExpressionRule() {
-		return getXCastedExpressionAccess().getRule();
-	}
-	
-	//XPostfixOperation returns XExpression:
-	//    XMemberFeatureCall =>({XPostfixOperation.operand=current} feature=[types::JvmIdentifiableElement|OpPostfix])?
-	//;
-	public XbaseGrammarAccess.XPostfixOperationElements getXPostfixOperationAccess() {
-		return gaXbase.getXPostfixOperationAccess();
-	}
-	
-	public ParserRule getXPostfixOperationRule() {
-		return getXPostfixOperationAccess().getRule();
-	}
-	
-	//OpPostfix:
-	//    "++" | "--"
-	//;
-	public XbaseGrammarAccess.OpPostfixElements getOpPostfixAccess() {
-		return gaXbase.getOpPostfixAccess();
-	}
-	
-	public ParserRule getOpPostfixRule() {
-		return getOpPostfixAccess().getRule();
-	}
-	
-	//XMemberFeatureCall returns XExpression:
-	//    XPrimaryExpression
-	//    (=>({XAssignment.assignable=current} ('.'|explicitStatic?="::") feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment
-	//    |=>({XMemberFeatureCall.memberCallTarget=current} ("."|nullSafe?="?."|explicitStatic?="::"))
-	//        ('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//        feature=[types::JvmIdentifiableElement|IdOrSuper] (
-	//            =>explicitOperationCall?='('
-	//                (
-	//                    memberCallArguments+=XShortClosure
-	//                  | memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*
-	//                )?
-	//            ')')?
-	//            memberCallArguments+=XClosure?
-	//        )*;
-	public XbaseGrammarAccess.XMemberFeatureCallElements getXMemberFeatureCallAccess() {
-		return gaXbase.getXMemberFeatureCallAccess();
-	}
-	
-	public ParserRule getXMemberFeatureCallRule() {
-		return getXMemberFeatureCallAccess().getRule();
-	}
-	
-	//XPrimaryExpression returns XExpression:
-	//    XConstructorCall |
-	//    XBlockExpression |
-	//    XSwitchExpression |
-	//    XSynchronizedExpression |
-	//    XFeatureCall |
-	//    XLiteral |
-	//    XIfExpression |
-	//    XForLoopExpression |
-	//    XBasicForLoopExpression |
-	//    XWhileExpression |
-	//    XDoWhileExpression |
-	//    XThrowExpression |
-	//    XReturnExpression |
-	//    XTryCatchFinallyExpression |
-	//    XParenthesizedExpression;
-	public XbaseGrammarAccess.XPrimaryExpressionElements getXPrimaryExpressionAccess() {
-		return gaXbase.getXPrimaryExpressionAccess();
-	}
-	
-	public ParserRule getXPrimaryExpressionRule() {
-		return getXPrimaryExpressionAccess().getRule();
-	}
-	
-	//XLiteral returns XExpression:
-	//    XCollectionLiteral |
-	//    XClosure |
-	//    XBooleanLiteral |
-	//    XNumberLiteral |
-	//    XNullLiteral |
-	//    XStringLiteral |
-	//    XTypeLiteral
-	//;
-	public XbaseGrammarAccess.XLiteralElements getXLiteralAccess() {
-		return gaXbase.getXLiteralAccess();
-	}
-	
-	public ParserRule getXLiteralRule() {
-		return getXLiteralAccess().getRule();
-	}
-	
-	//XCollectionLiteral:
-	//    XSetLiteral | XListLiteral
-	//;
-	public XbaseGrammarAccess.XCollectionLiteralElements getXCollectionLiteralAccess() {
-		return gaXbase.getXCollectionLiteralAccess();
-	}
-	
-	public ParserRule getXCollectionLiteralRule() {
-		return getXCollectionLiteralAccess().getRule();
-	}
-	
-	//XSetLiteral:
-	//    {XSetLiteral} '#' '{' (elements+=XExpression (',' elements+=XExpression )*)? '}'
-	//;
-	public XbaseGrammarAccess.XSetLiteralElements getXSetLiteralAccess() {
-		return gaXbase.getXSetLiteralAccess();
-	}
-	
-	public ParserRule getXSetLiteralRule() {
-		return getXSetLiteralAccess().getRule();
-	}
-	
-	//XListLiteral:
-	//    {XListLiteral} '#' '[' (elements+=XExpression (',' elements+=XExpression )*)? ']'
-	//;
-	public XbaseGrammarAccess.XListLiteralElements getXListLiteralAccess() {
-		return gaXbase.getXListLiteralAccess();
-	}
-	
-	public ParserRule getXListLiteralRule() {
-		return getXListLiteralAccess().getRule();
-	}
-	
-	//XClosure returns XExpression:
-	//    =>({XClosure}
-	//    '[')
-	//        =>((declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|')?
-	//        expression=XExpressionInClosure
-	//    ']';
-	public XbaseGrammarAccess.XClosureElements getXClosureAccess() {
-		return gaXbase.getXClosureAccess();
-	}
-	
-	public ParserRule getXClosureRule() {
-		return getXClosureAccess().getRule();
-	}
-	
-	//XExpressionInClosure returns XExpression:
-	//    {XBlockExpression}
-	//    (expressions+=XExpressionOrVarDeclaration ';'?)*
-	//;
-	public XbaseGrammarAccess.XExpressionInClosureElements getXExpressionInClosureAccess() {
-		return gaXbase.getXExpressionInClosureAccess();
-	}
-	
-	public ParserRule getXExpressionInClosureRule() {
-		return getXExpressionInClosureAccess().getRule();
-	}
-	
-	//XShortClosure returns XExpression:
-	//    =>({XClosure} (declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|') expression=XExpression;
-	public XbaseGrammarAccess.XShortClosureElements getXShortClosureAccess() {
-		return gaXbase.getXShortClosureAccess();
-	}
-	
-	public ParserRule getXShortClosureRule() {
-		return getXShortClosureAccess().getRule();
-	}
-	
-	//XParenthesizedExpression returns XExpression:
-	//    '(' XExpression ')';
-	public XbaseGrammarAccess.XParenthesizedExpressionElements getXParenthesizedExpressionAccess() {
-		return gaXbase.getXParenthesizedExpressionAccess();
-	}
-	
-	public ParserRule getXParenthesizedExpressionRule() {
-		return getXParenthesizedExpressionAccess().getRule();
-	}
-	
-	//XIfExpression returns XExpression:
-	//    {XIfExpression}
-	//    'if' '(' if=XExpression ')'
-	//    then=XExpression
-	//    (=>'else' else=XExpression)?;
-	public XbaseGrammarAccess.XIfExpressionElements getXIfExpressionAccess() {
-		return gaXbase.getXIfExpressionAccess();
-	}
-	
-	public ParserRule getXIfExpressionRule() {
-		return getXIfExpressionAccess().getRule();
-	}
-	
-	//XSwitchExpression returns XExpression:
-	//    {XSwitchExpression}
-	//    'switch' (=>('(' declaredParam=JvmFormalParameter ':') switch=XExpression ')'
-	//        | =>(declaredParam=JvmFormalParameter ':')? switch=XExpression) '{'
-	//    (cases+=XCasePart)*
-	//    ('default' ':' default=XExpression )?
-	//    '}';
-	public XbaseGrammarAccess.XSwitchExpressionElements getXSwitchExpressionAccess() {
-		return gaXbase.getXSwitchExpressionAccess();
-	}
-	
-	public ParserRule getXSwitchExpressionRule() {
-		return getXSwitchExpressionAccess().getRule();
-	}
-	
-	//XCasePart:
-	//    {XCasePart}
-	//    typeGuard=JvmTypeReference? ('case' case=XExpression)?
-	//        (':' then=XExpression | fallThrough?=',') ;
-	public XbaseGrammarAccess.XCasePartElements getXCasePartAccess() {
-		return gaXbase.getXCasePartAccess();
-	}
-	
-	public ParserRule getXCasePartRule() {
-		return getXCasePartAccess().getRule();
-	}
-	
-	//XForLoopExpression returns XExpression:
-	//    =>({XForLoopExpression}
-	//    'for' '(' declaredParam=JvmFormalParameter ':') forExpression=XExpression ')'
-	//        eachExpression=XExpression;
-	public XbaseGrammarAccess.XForLoopExpressionElements getXForLoopExpressionAccess() {
-		return gaXbase.getXForLoopExpressionAccess();
-	}
-	
-	public ParserRule getXForLoopExpressionRule() {
-		return getXForLoopExpressionAccess().getRule();
-	}
-	
-	//XBasicForLoopExpression returns XExpression:
-	//    {XBasicForLoopExpression}
-	//    'for' '('(initExpressions+=XExpressionOrVarDeclaration (',' initExpressions+=XExpressionOrVarDeclaration)*)? ';'
-	//        expression=XExpression? ';'
-	//        (updateExpressions+=XExpression (',' updateExpressions+=XExpression)*)? ')'
-	//        eachExpression=XExpression;
-	public XbaseGrammarAccess.XBasicForLoopExpressionElements getXBasicForLoopExpressionAccess() {
-		return gaXbase.getXBasicForLoopExpressionAccess();
-	}
-	
-	public ParserRule getXBasicForLoopExpressionRule() {
-		return getXBasicForLoopExpressionAccess().getRule();
-	}
-	
-	//XWhileExpression returns XExpression:
-	//    {XWhileExpression}
-	//    'while' '(' predicate=XExpression ')'
-	//        body=XExpression;
-	public XbaseGrammarAccess.XWhileExpressionElements getXWhileExpressionAccess() {
-		return gaXbase.getXWhileExpressionAccess();
-	}
-	
-	public ParserRule getXWhileExpressionRule() {
-		return getXWhileExpressionAccess().getRule();
-	}
-	
-	//XDoWhileExpression returns XExpression:
-	//    {XDoWhileExpression}
-	//    'do'
-	//        body=XExpression
-	//    'while' '(' predicate=XExpression ')';
-	public XbaseGrammarAccess.XDoWhileExpressionElements getXDoWhileExpressionAccess() {
-		return gaXbase.getXDoWhileExpressionAccess();
-	}
-	
-	public ParserRule getXDoWhileExpressionRule() {
-		return getXDoWhileExpressionAccess().getRule();
-	}
-	
-	//XExpressionOrVarDeclaration returns XExpression:
-	//    XVariableDeclaration | XExpression;
-	public XbaseGrammarAccess.XExpressionOrVarDeclarationElements getXExpressionOrVarDeclarationAccess() {
-		return gaXbase.getXExpressionOrVarDeclarationAccess();
-	}
-	
-	public ParserRule getXExpressionOrVarDeclarationRule() {
-		return getXExpressionOrVarDeclarationAccess().getRule();
-	}
-	
-	//XVariableDeclaration returns XExpression:
-	//    {XVariableDeclaration}
-	//    (writeable?='var'|'val') (=>(type=JvmTypeReference name=ValidID) | name=ValidID) ('=' right=XExpression)?;
-	public XbaseGrammarAccess.XVariableDeclarationElements getXVariableDeclarationAccess() {
-		return gaXbase.getXVariableDeclarationAccess();
-	}
-	
-	public ParserRule getXVariableDeclarationRule() {
-		return getXVariableDeclarationAccess().getRule();
-	}
-	
-	//JvmFormalParameter returns types::JvmFormalParameter:
-	//    (parameterType=JvmTypeReference)? name=ValidID;
-	public XbaseGrammarAccess.JvmFormalParameterElements getJvmFormalParameterAccess() {
-		return gaXbase.getJvmFormalParameterAccess();
-	}
-	
-	public ParserRule getJvmFormalParameterRule() {
-		return getJvmFormalParameterAccess().getRule();
-	}
-	
-	//FullJvmFormalParameter returns types::JvmFormalParameter:
-	//    parameterType=JvmTypeReference name=ValidID;
-	public XbaseGrammarAccess.FullJvmFormalParameterElements getFullJvmFormalParameterAccess() {
-		return gaXbase.getFullJvmFormalParameterAccess();
-	}
-	
-	public ParserRule getFullJvmFormalParameterRule() {
-		return getFullJvmFormalParameterAccess().getRule();
-	}
-	
-	//XFeatureCall returns XExpression:
-	//    {XFeatureCall}
-	//    ('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//    feature=[types::JvmIdentifiableElement|IdOrSuper]
-	//    (=>explicitOperationCall?='('
-	//        (
-	//            featureCallArguments+=XShortClosure
-	//          | featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*
-	//        )?
-	//    ')')?
-	//    featureCallArguments+=XClosure?;
-	public XbaseGrammarAccess.XFeatureCallElements getXFeatureCallAccess() {
-		return gaXbase.getXFeatureCallAccess();
-	}
-	
-	public ParserRule getXFeatureCallRule() {
-		return getXFeatureCallAccess().getRule();
-	}
-	
-	//FeatureCallID:
-	//    ValidID | 'extends' | 'static' | 'import' | 'extension'
-	//;
-	public XbaseGrammarAccess.FeatureCallIDElements getFeatureCallIDAccess() {
-		return gaXbase.getFeatureCallIDAccess();
-	}
-	
-	public ParserRule getFeatureCallIDRule() {
-		return getFeatureCallIDAccess().getRule();
-	}
-	
-	//IdOrSuper :
-	//    FeatureCallID | 'super'
-	//;
-	public XbaseGrammarAccess.IdOrSuperElements getIdOrSuperAccess() {
-		return gaXbase.getIdOrSuperAccess();
-	}
-	
-	public ParserRule getIdOrSuperRule() {
-		return getIdOrSuperAccess().getRule();
-	}
-	
-	//XConstructorCall returns XExpression:
-	//    {XConstructorCall}
-	//    'new' constructor=[types::JvmConstructor|QualifiedName]
-	//    (=>'<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	//    (=>explicitConstructorCall?='('
-	//        (
-	//            arguments+=XShortClosure
-	//          | arguments+=XExpression (',' arguments+=XExpression)*
-	//        )?
-	//    ')')?
-	//    arguments+=XClosure?;
-	public XbaseGrammarAccess.XConstructorCallElements getXConstructorCallAccess() {
-		return gaXbase.getXConstructorCallAccess();
-	}
-	
-	public ParserRule getXConstructorCallRule() {
-		return getXConstructorCallAccess().getRule();
-	}
-	
-	//XBooleanLiteral returns XExpression :
-	//    {XBooleanLiteral} ('false' | isTrue?='true');
-	public XbaseGrammarAccess.XBooleanLiteralElements getXBooleanLiteralAccess() {
-		return gaXbase.getXBooleanLiteralAccess();
-	}
-	
-	public ParserRule getXBooleanLiteralRule() {
-		return getXBooleanLiteralAccess().getRule();
-	}
-	
-	//XNullLiteral returns XExpression :
-	//    {XNullLiteral} 'null';
-	public XbaseGrammarAccess.XNullLiteralElements getXNullLiteralAccess() {
-		return gaXbase.getXNullLiteralAccess();
-	}
-	
-	public ParserRule getXNullLiteralRule() {
-		return getXNullLiteralAccess().getRule();
-	}
-	
-	//XNumberLiteral returns XExpression :
-	//    {XNumberLiteral} value=Number;
-	public XbaseGrammarAccess.XNumberLiteralElements getXNumberLiteralAccess() {
-		return gaXbase.getXNumberLiteralAccess();
-	}
-	
-	public ParserRule getXNumberLiteralRule() {
-		return getXNumberLiteralAccess().getRule();
-	}
-	
-	//XStringLiteral returns XExpression:
-	//    {XStringLiteral} value=STRING;
-	public XbaseGrammarAccess.XStringLiteralElements getXStringLiteralAccess() {
-		return gaXbase.getXStringLiteralAccess();
-	}
-	
-	public ParserRule getXStringLiteralRule() {
-		return getXStringLiteralAccess().getRule();
-	}
-	
-	//XTypeLiteral returns XExpression :
-	//    {XTypeLiteral} 'typeof' '(' type=[types::JvmType|QualifiedName] (arrayDimensions+=ArrayBrackets)* ')'
-	//;
-	public XbaseGrammarAccess.XTypeLiteralElements getXTypeLiteralAccess() {
-		return gaXbase.getXTypeLiteralAccess();
-	}
-	
-	public ParserRule getXTypeLiteralRule() {
-		return getXTypeLiteralAccess().getRule();
-	}
-	
-	//XThrowExpression returns XExpression :
-	//    {XThrowExpression} 'throw' expression=XExpression;
-	public XbaseGrammarAccess.XThrowExpressionElements getXThrowExpressionAccess() {
-		return gaXbase.getXThrowExpressionAccess();
-	}
-	
-	public ParserRule getXThrowExpressionRule() {
-		return getXThrowExpressionAccess().getRule();
-	}
-	
-	//XReturnExpression returns XExpression :
-	//    {XReturnExpression} 'return' (->expression=XExpression)?;
-	public XbaseGrammarAccess.XReturnExpressionElements getXReturnExpressionAccess() {
-		return gaXbase.getXReturnExpressionAccess();
-	}
-	
-	public ParserRule getXReturnExpressionRule() {
-		return getXReturnExpressionAccess().getRule();
-	}
-	
-	//XTryCatchFinallyExpression returns XExpression:
-	//    {XTryCatchFinallyExpression}
-	//    'try'
-	//        expression=XExpression
-	//    (
-	//        catchClauses+=XCatchClause+
-	//        (=>'finally' finallyExpression=XExpression)?
-	//    |    'finally' finallyExpression=XExpression
-	//    );
-	public XbaseGrammarAccess.XTryCatchFinallyExpressionElements getXTryCatchFinallyExpressionAccess() {
-		return gaXbase.getXTryCatchFinallyExpressionAccess();
-	}
-	
-	public ParserRule getXTryCatchFinallyExpressionRule() {
-		return getXTryCatchFinallyExpressionAccess().getRule();
-	}
-	
-	//XSynchronizedExpression returns XExpression:
-	//    =>({XSynchronizedExpression}
-	//    'synchronized' '(') param=XExpression ')' expression=XExpression;
-	public XbaseGrammarAccess.XSynchronizedExpressionElements getXSynchronizedExpressionAccess() {
-		return gaXbase.getXSynchronizedExpressionAccess();
-	}
-	
-	public ParserRule getXSynchronizedExpressionRule() {
-		return getXSynchronizedExpressionAccess().getRule();
-	}
-	
-	//XCatchClause :
-	//    =>'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
-	public XbaseGrammarAccess.XCatchClauseElements getXCatchClauseAccess() {
-		return gaXbase.getXCatchClauseAccess();
-	}
-	
-	public ParserRule getXCatchClauseRule() {
-		return getXCatchClauseAccess().getRule();
-	}
-	
-	//@Override
-	//QualifiedName:
-	//    ValidID (=>'.' ValidID)*;
-	public XbaseGrammarAccess.QualifiedNameElements getQualifiedNameAccess() {
-		return gaXbase.getQualifiedNameAccess();
-	}
-	
-	public ParserRule getQualifiedNameRule() {
-		return getQualifiedNameAccess().getRule();
-	}
-	
-	//Number hidden():
-	//    HEX | (INT | DECIMAL) ('.' (INT | DECIMAL))?;
-	public XbaseGrammarAccess.NumberElements getNumberAccess() {
-		return gaXbase.getNumberAccess();
-	}
-	
-	public ParserRule getNumberRule() {
-		return getNumberAccess().getRule();
-	}
-	
-	///**
-	// * Dummy rule, for "better" downwards compatibility, since GrammarAccess generates non-static inner classes,
-	// * which makes downstream grammars break on classloading, when a rule is removed.
-	// */
-	//StaticQualifier:
-	//    (ValidID '::')+
-	//;
-	public XbaseGrammarAccess.StaticQualifierElements getStaticQualifierAccess() {
-		return gaXbase.getStaticQualifierAccess();
-	}
-	
-	public ParserRule getStaticQualifierRule() {
-		return getStaticQualifierAccess().getRule();
-	}
-	
-	//terminal HEX:
-	//    ('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F'|'_')+
-	//    ('#' (('b'|'B')('i'|'I') | ('l'|'L')))?;
-	public TerminalRule getHEXRule() {
-		return gaXbase.getHEXRule();
-	}
-	
-	//terminal INT returns ecore::EInt:
-	//    '0'..'9' ('0'..'9'|'_')*;
-	public TerminalRule getINTRule() {
-		return gaXbase.getINTRule();
-	}
-	
-	//terminal DECIMAL:
-	//    INT
-	//    (('e'|'E') ('+'|'-')? INT)?
-	//    (('b'|'B')('i'|'I'|'d'|'D') | ('l'|'L'|'d'|'D'|'f'|'F'))?;
-	public TerminalRule getDECIMALRule() {
-		return gaXbase.getDECIMALRule();
-	}
-	
-	//JvmTypeReference:
-	//    JvmParameterizedTypeReference =>({JvmGenericArrayTypeReference.componentType=current} ArrayBrackets)*
-	//    | XFunctionTypeRef;
-	public XtypeGrammarAccess.JvmTypeReferenceElements getJvmTypeReferenceAccess() {
-		return gaXtype.getJvmTypeReferenceAccess();
-	}
-	
-	public ParserRule getJvmTypeReferenceRule() {
-		return getJvmTypeReferenceAccess().getRule();
-	}
-	
-	//ArrayBrackets :
-	//    '[' ']'
-	//;
-	public XtypeGrammarAccess.ArrayBracketsElements getArrayBracketsAccess() {
-		return gaXtype.getArrayBracketsAccess();
-	}
-	
-	public ParserRule getArrayBracketsRule() {
-		return getArrayBracketsAccess().getRule();
-	}
-	
-	//XFunctionTypeRef:
-	//    ('(' (paramTypes+=JvmTypeReference (',' paramTypes+=JvmTypeReference)*)? ')')? '=>' returnType=JvmTypeReference;
-	public XtypeGrammarAccess.XFunctionTypeRefElements getXFunctionTypeRefAccess() {
-		return gaXtype.getXFunctionTypeRefAccess();
-	}
-	
-	public ParserRule getXFunctionTypeRefRule() {
-		return getXFunctionTypeRefAccess().getRule();
-	}
-	
-	//JvmParameterizedTypeReference:
-	//    type=[JvmType|QualifiedName] (
-	//        =>'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>'
-	//        (=>({JvmInnerTypeReference.outer=current} '.') type=[JvmType|ValidID] (=>'<' arguments+=JvmArgumentTypeReference (',' arguments+=JvmArgumentTypeReference)* '>')?)*
-	//    )?;
-	public XtypeGrammarAccess.JvmParameterizedTypeReferenceElements getJvmParameterizedTypeReferenceAccess() {
-		return gaXtype.getJvmParameterizedTypeReferenceAccess();
-	}
-	
-	public ParserRule getJvmParameterizedTypeReferenceRule() {
-		return getJvmParameterizedTypeReferenceAccess().getRule();
-	}
-	
-	//JvmArgumentTypeReference returns JvmTypeReference:
-	//    JvmTypeReference | JvmWildcardTypeReference;
-	public XtypeGrammarAccess.JvmArgumentTypeReferenceElements getJvmArgumentTypeReferenceAccess() {
-		return gaXtype.getJvmArgumentTypeReferenceAccess();
-	}
-	
-	public ParserRule getJvmArgumentTypeReferenceRule() {
-		return getJvmArgumentTypeReferenceAccess().getRule();
-	}
-	
-	//JvmWildcardTypeReference:
-	//    {JvmWildcardTypeReference} '?' (
-	//      constraints+=JvmUpperBound (constraints+=JvmUpperBoundAnded)*
-	//    | constraints+=JvmLowerBound (constraints+=JvmLowerBoundAnded)*
-	//    )?;
-	public XtypeGrammarAccess.JvmWildcardTypeReferenceElements getJvmWildcardTypeReferenceAccess() {
-		return gaXtype.getJvmWildcardTypeReferenceAccess();
-	}
-	
-	public ParserRule getJvmWildcardTypeReferenceRule() {
-		return getJvmWildcardTypeReferenceAccess().getRule();
-	}
-	
-	//JvmUpperBound :
-	//    'extends' typeReference=JvmTypeReference;
-	public XtypeGrammarAccess.JvmUpperBoundElements getJvmUpperBoundAccess() {
-		return gaXtype.getJvmUpperBoundAccess();
-	}
-	
-	public ParserRule getJvmUpperBoundRule() {
-		return getJvmUpperBoundAccess().getRule();
-	}
-	
-	//JvmUpperBoundAnded returns JvmUpperBound:
-	//    '&' typeReference=JvmTypeReference;
-	public XtypeGrammarAccess.JvmUpperBoundAndedElements getJvmUpperBoundAndedAccess() {
-		return gaXtype.getJvmUpperBoundAndedAccess();
-	}
-	
-	public ParserRule getJvmUpperBoundAndedRule() {
-		return getJvmUpperBoundAndedAccess().getRule();
-	}
-	
-	//JvmLowerBound :
-	//    'super' typeReference=JvmTypeReference;
-	public XtypeGrammarAccess.JvmLowerBoundElements getJvmLowerBoundAccess() {
-		return gaXtype.getJvmLowerBoundAccess();
-	}
-	
-	public ParserRule getJvmLowerBoundRule() {
-		return getJvmLowerBoundAccess().getRule();
-	}
-	
-	//JvmLowerBoundAnded returns JvmLowerBound:
-	//    '&' typeReference=JvmTypeReference;
-	public XtypeGrammarAccess.JvmLowerBoundAndedElements getJvmLowerBoundAndedAccess() {
-		return gaXtype.getJvmLowerBoundAndedAccess();
-	}
-	
-	public ParserRule getJvmLowerBoundAndedRule() {
-		return getJvmLowerBoundAndedAccess().getRule();
-	}
-	
-	//JvmTypeParameter :
-	//    name=ValidID
-	//    (constraints+=JvmUpperBound (constraints+=JvmUpperBoundAnded)*)?;
-	public XtypeGrammarAccess.JvmTypeParameterElements getJvmTypeParameterAccess() {
-		return gaXtype.getJvmTypeParameterAccess();
-	}
-	
-	public ParserRule getJvmTypeParameterRule() {
-		return getJvmTypeParameterAccess().getRule();
-	}
-	
-	//QualifiedNameWithWildcard :
-	//    QualifiedName  '.' '*';
-	public XtypeGrammarAccess.QualifiedNameWithWildcardElements getQualifiedNameWithWildcardAccess() {
-		return gaXtype.getQualifiedNameWithWildcardAccess();
-	}
-	
-	public ParserRule getQualifiedNameWithWildcardRule() {
-		return getQualifiedNameWithWildcardAccess().getRule();
-	}
-	
-	//ValidID:
-	//    ID;
-	public XtypeGrammarAccess.ValidIDElements getValidIDAccess() {
-		return gaXtype.getValidIDAccess();
-	}
-	
-	public ParserRule getValidIDRule() {
-		return getValidIDAccess().getRule();
-	}
-	
-	//XImportSection:
-	//    importDeclarations+=XImportDeclaration+;
-	public XtypeGrammarAccess.XImportSectionElements getXImportSectionAccess() {
-		return gaXtype.getXImportSectionAccess();
-	}
-	
-	public ParserRule getXImportSectionRule() {
-		return getXImportSectionAccess().getRule();
-	}
-	
-	//XImportDeclaration:
-	//    'import' (
-	//        (static?='static' extension?='extension'? importedType=[JvmDeclaredType|QualifiedNameInStaticImport] (wildcard?='*' | memberName=ValidID))
-	//        | importedType=[JvmDeclaredType|QualifiedName]
-	//        | importedNamespace=QualifiedNameWithWildcard) ';'?
-	//;
-	public XtypeGrammarAccess.XImportDeclarationElements getXImportDeclarationAccess() {
-		return gaXtype.getXImportDeclarationAccess();
-	}
-	
-	public ParserRule getXImportDeclarationRule() {
-		return getXImportDeclarationAccess().getRule();
-	}
-	
-	//QualifiedNameInStaticImport:
-	//    (ValidID '.')+
-	//;
-	public XtypeGrammarAccess.QualifiedNameInStaticImportElements getQualifiedNameInStaticImportAccess() {
-		return gaXtype.getQualifiedNameInStaticImportAccess();
-	}
-	
-	public ParserRule getQualifiedNameInStaticImportRule() {
-		return getQualifiedNameInStaticImportAccess().getRule();
-	}
-	
-	//terminal ID:
-	//    '^'? ('a'..'z'|'A'..'Z'|'$'|'_') ('a'..'z'|'A'..'Z'|'$'|'_'|'0'..'9')*;
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
-		return gaXtype.getIDRule();
+		return gaTerminals.getIDRule();
+	}
+	
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
+	public TerminalRule getINTRule() {
+		return gaTerminals.getINTRule();
 	}
 	
 	//terminal STRING:
-	//            '"' ( '\\' . /* ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') */ | !('\\'|'"') )* '"'? |
-	//            "'" ( '\\' . /* ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') */ | !('\\'|"'") )* "'"?;
+	//            '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//            "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//        ;
 	public TerminalRule getSTRINGRule() {
-		return gaXtype.getSTRINGRule();
+		return gaTerminals.getSTRINGRule();
 	}
 	
-	//terminal ML_COMMENT: '/*' -> '*/';
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
-		return gaXtype.getML_COMMENTRule();
+		return gaTerminals.getML_COMMENTRule();
 	}
 	
-	//terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaXtype.getSL_COMMENTRule();
+		return gaTerminals.getSL_COMMENTRule();
 	}
 	
-	//terminal WS: (' '|'\t'|'\r'|'\n')+;
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
-		return gaXtype.getWSRule();
+		return gaTerminals.getWSRule();
 	}
 	
 	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
-		return gaXtype.getANY_OTHERRule();
+		return gaTerminals.getANY_OTHERRule();
 	}
 }

@@ -3,8 +3,12 @@
  */
 package org.bumble.eastadl.simplified.formatting2;
 
-import com.google.common.base.Objects;
 import java.util.Arrays;
+import java.util.function.Consumer;
+import org.eclipse.eatop.eastadl22.EAElement;
+import org.eclipse.eatop.eastadl22.EAPackageableElement;
+import org.eclipse.eatop.eastadl22.Eastadl22Package;
+import org.eclipse.eatop.eastadl22.Identifiable;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
@@ -15,7 +19,6 @@ import org.eclipse.xtext.common.types.JvmTypeParameter;
 import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.formatting2.IHiddenRegionFormatter;
-import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.XAssignment;
 import org.eclipse.xtext.xbase.XBasicForLoopExpression;
@@ -43,7 +46,6 @@ import org.eclipse.xtext.xbase.XVariableDeclaration;
 import org.eclipse.xtext.xbase.XWhileExpression;
 import org.eclipse.xtext.xbase.formatting2.XbaseFormatter;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xtype.XFunctionTypeRef;
 import org.eclipse.xtext.xtype.XImportDeclaration;
@@ -60,30 +62,10 @@ public class EastAdlSimplifiedFormatter extends XbaseFormatter {
     EList<XExpression> _expressions = expr.getExpressions();
     for (final XExpression child : _expressions) {
       {
-        final ISemanticRegion sem = this.textRegionExtensions.immediatelyFollowing(child).keyword(";");
-        if ((sem != null)) {
-          final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-            it.noSpace();
-          };
-          document.prepend(sem, _function_1);
-          XExpression _last = IterableExtensions.<XExpression>last(expr.getExpressions());
-          boolean _notEquals = (!Objects.equal(child, _last));
-          if (_notEquals) {
-            final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
-              it.newLine();
-            };
-            document.append(sem, _function_2);
-          }
-        } else {
-          XExpression _last_1 = IterableExtensions.<XExpression>last(expr.getExpressions());
-          boolean _notEquals_1 = (!Objects.equal(child, _last_1));
-          if (_notEquals_1) {
-            final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
-              it.newLine();
-            };
-            document.<XExpression>append(child, _function_3);
-          }
-        }
+        final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.<XExpression>append(child, _function_1);
         document.<XExpression>format(child);
       }
     }
@@ -169,122 +151,182 @@ public class EastAdlSimplifiedFormatter extends XbaseFormatter {
     doc.<XExpression>format(expr);
   }
   
+  protected void _format(final EAElement obj, @Extension final IFormattableDocument doc) {
+    if ((obj == null)) {
+      return;
+    }
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    doc.<EAElement>append(obj, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    doc.append(doc.surround(this.textRegionExtensions.regionFor(obj).feature(Eastadl22Package.eINSTANCE.getEAElement_Name()), _function_1), _function_2);
+    if ((obj instanceof Identifiable)) {
+      final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+        it.indent();
+      };
+      final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+        it.newLine();
+      };
+      doc.append(doc.surround(this.textRegionExtensions.regionFor(obj).feature(Eastadl22Package.eINSTANCE.getIdentifiable_Category()), _function_3), _function_4);
+      final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+        it.indent();
+      };
+      final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+        it.newLine();
+      };
+      doc.append(doc.surround(this.textRegionExtensions.regionFor(obj).feature(Eastadl22Package.eINSTANCE.getIdentifiable_Uuid()), _function_5), _function_6);
+    }
+    final Consumer<EObject> _function_7 = (EObject it) -> {
+      doc.<EObject>format(it);
+    };
+    obj.eContents().forEach(_function_7);
+  }
+  
+  protected void _format(final EAPackageableElement obj, @Extension final IFormattableDocument doc) {
+    if ((obj == null)) {
+      return;
+    }
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    doc.<EAPackageableElement>prepend(doc.<EAPackageableElement>surround(obj, _function), _function_1);
+    final Consumer<EObject> _function_2 = (EObject it) -> {
+      doc.<EObject>format(it);
+    };
+    obj.eContents().forEach(_function_2);
+  }
+  
   @Override
-  public void format(final Object expr, final IFormattableDocument document) {
-    if (expr instanceof JvmTypeParameter) {
-      _format((JvmTypeParameter)expr, document);
+  public void format(final Object obj, final IFormattableDocument doc) {
+    if (obj instanceof EAPackageableElement) {
+      _format((EAPackageableElement)obj, doc);
       return;
-    } else if (expr instanceof JvmFormalParameter) {
-      _format((JvmFormalParameter)expr, document);
+    } else if (obj instanceof EAElement) {
+      _format((EAElement)obj, doc);
       return;
-    } else if (expr instanceof XtextResource) {
-      _format((XtextResource)expr, document);
+    } else if (obj instanceof JvmTypeParameter) {
+      _format((JvmTypeParameter)obj, doc);
       return;
-    } else if (expr instanceof XAssignment) {
-      _format((XAssignment)expr, document);
+    } else if (obj instanceof JvmFormalParameter) {
+      _format((JvmFormalParameter)obj, doc);
       return;
-    } else if (expr instanceof XBinaryOperation) {
-      _format((XBinaryOperation)expr, document);
+    } else if (obj instanceof XtextResource) {
+      _format((XtextResource)obj, doc);
       return;
-    } else if (expr instanceof XDoWhileExpression) {
-      _format((XDoWhileExpression)expr, document);
+    } else if (obj instanceof XAssignment) {
+      _format((XAssignment)obj, doc);
       return;
-    } else if (expr instanceof XFeatureCall) {
-      _format((XFeatureCall)expr, document);
+    } else if (obj instanceof XBinaryOperation) {
+      _format((XBinaryOperation)obj, doc);
       return;
-    } else if (expr instanceof XMemberFeatureCall) {
-      _format((XMemberFeatureCall)expr, document);
+    } else if (obj instanceof XDoWhileExpression) {
+      _format((XDoWhileExpression)obj, doc);
       return;
-    } else if (expr instanceof XPostfixOperation) {
-      _format((XPostfixOperation)expr, document);
+    } else if (obj instanceof XFeatureCall) {
+      _format((XFeatureCall)obj, doc);
       return;
-    } else if (expr instanceof XWhileExpression) {
-      _format((XWhileExpression)expr, document);
+    } else if (obj instanceof XMemberFeatureCall) {
+      _format((XMemberFeatureCall)obj, doc);
       return;
-    } else if (expr instanceof XFunctionTypeRef) {
-      _format((XFunctionTypeRef)expr, document);
+    } else if (obj instanceof XPostfixOperation) {
+      _format((XPostfixOperation)obj, doc);
       return;
-    } else if (expr instanceof JvmGenericArrayTypeReference) {
-      _format((JvmGenericArrayTypeReference)expr, document);
+    } else if (obj instanceof XWhileExpression) {
+      _format((XWhileExpression)obj, doc);
       return;
-    } else if (expr instanceof JvmParameterizedTypeReference) {
-      _format((JvmParameterizedTypeReference)expr, document);
+    } else if (obj instanceof XFunctionTypeRef) {
+      _format((XFunctionTypeRef)obj, doc);
       return;
-    } else if (expr instanceof JvmWildcardTypeReference) {
-      _format((JvmWildcardTypeReference)expr, document);
+    } else if (obj instanceof JvmGenericArrayTypeReference) {
+      _format((JvmGenericArrayTypeReference)obj, doc);
       return;
-    } else if (expr instanceof XBasicForLoopExpression) {
-      _format((XBasicForLoopExpression)expr, document);
+    } else if (obj instanceof JvmParameterizedTypeReference) {
+      _format((JvmParameterizedTypeReference)obj, doc);
       return;
-    } else if (expr instanceof XBlockExpression) {
-      _format((XBlockExpression)expr, document);
+    } else if (obj instanceof JvmWildcardTypeReference) {
+      _format((JvmWildcardTypeReference)obj, doc);
       return;
-    } else if (expr instanceof XCastedExpression) {
-      _format((XCastedExpression)expr, document);
+    } else if (obj instanceof XBasicForLoopExpression) {
+      _format((XBasicForLoopExpression)obj, doc);
       return;
-    } else if (expr instanceof XClosure) {
-      _format((XClosure)expr, document);
+    } else if (obj instanceof XBlockExpression) {
+      _format((XBlockExpression)obj, doc);
       return;
-    } else if (expr instanceof XCollectionLiteral) {
-      _format((XCollectionLiteral)expr, document);
+    } else if (obj instanceof XCastedExpression) {
+      _format((XCastedExpression)obj, doc);
       return;
-    } else if (expr instanceof XConstructorCall) {
-      _format((XConstructorCall)expr, document);
+    } else if (obj instanceof XClosure) {
+      _format((XClosure)obj, doc);
       return;
-    } else if (expr instanceof XForLoopExpression) {
-      _format((XForLoopExpression)expr, document);
+    } else if (obj instanceof XCollectionLiteral) {
+      _format((XCollectionLiteral)obj, doc);
       return;
-    } else if (expr instanceof XIfExpression) {
-      _format((XIfExpression)expr, document);
+    } else if (obj instanceof XConstructorCall) {
+      _format((XConstructorCall)obj, doc);
       return;
-    } else if (expr instanceof XInstanceOfExpression) {
-      _format((XInstanceOfExpression)expr, document);
+    } else if (obj instanceof XForLoopExpression) {
+      _format((XForLoopExpression)obj, doc);
       return;
-    } else if (expr instanceof XReturnExpression) {
-      _format((XReturnExpression)expr, document);
+    } else if (obj instanceof XIfExpression) {
+      _format((XIfExpression)obj, doc);
       return;
-    } else if (expr instanceof XSwitchExpression) {
-      _format((XSwitchExpression)expr, document);
+    } else if (obj instanceof XInstanceOfExpression) {
+      _format((XInstanceOfExpression)obj, doc);
       return;
-    } else if (expr instanceof XSynchronizedExpression) {
-      _format((XSynchronizedExpression)expr, document);
+    } else if (obj instanceof XReturnExpression) {
+      _format((XReturnExpression)obj, doc);
       return;
-    } else if (expr instanceof XThrowExpression) {
-      _format((XThrowExpression)expr, document);
+    } else if (obj instanceof XSwitchExpression) {
+      _format((XSwitchExpression)obj, doc);
       return;
-    } else if (expr instanceof XTryCatchFinallyExpression) {
-      _format((XTryCatchFinallyExpression)expr, document);
+    } else if (obj instanceof XSynchronizedExpression) {
+      _format((XSynchronizedExpression)obj, doc);
       return;
-    } else if (expr instanceof XTypeLiteral) {
-      _format((XTypeLiteral)expr, document);
+    } else if (obj instanceof XThrowExpression) {
+      _format((XThrowExpression)obj, doc);
       return;
-    } else if (expr instanceof XVariableDeclaration) {
-      _format((XVariableDeclaration)expr, document);
+    } else if (obj instanceof XTryCatchFinallyExpression) {
+      _format((XTryCatchFinallyExpression)obj, doc);
       return;
-    } else if (expr instanceof JvmTypeConstraint) {
-      _format((JvmTypeConstraint)expr, document);
+    } else if (obj instanceof XTypeLiteral) {
+      _format((XTypeLiteral)obj, doc);
       return;
-    } else if (expr instanceof XExpression) {
-      _format((XExpression)expr, document);
+    } else if (obj instanceof XVariableDeclaration) {
+      _format((XVariableDeclaration)obj, doc);
       return;
-    } else if (expr instanceof XImportDeclaration) {
-      _format((XImportDeclaration)expr, document);
+    } else if (obj instanceof JvmTypeConstraint) {
+      _format((JvmTypeConstraint)obj, doc);
       return;
-    } else if (expr instanceof XImportSection) {
-      _format((XImportSection)expr, document);
+    } else if (obj instanceof XExpression) {
+      _format((XExpression)obj, doc);
       return;
-    } else if (expr instanceof EObject) {
-      _format((EObject)expr, document);
+    } else if (obj instanceof XImportDeclaration) {
+      _format((XImportDeclaration)obj, doc);
       return;
-    } else if (expr == null) {
-      _format((Void)null, document);
+    } else if (obj instanceof XImportSection) {
+      _format((XImportSection)obj, doc);
       return;
-    } else if (expr != null) {
-      _format(expr, document);
+    } else if (obj instanceof EObject) {
+      _format((EObject)obj, doc);
+      return;
+    } else if (obj == null) {
+      _format((Void)null, doc);
+      return;
+    } else if (obj != null) {
+      _format(obj, doc);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(expr, document).toString());
+        Arrays.<Object>asList(obj, doc).toString());
     }
   }
 }

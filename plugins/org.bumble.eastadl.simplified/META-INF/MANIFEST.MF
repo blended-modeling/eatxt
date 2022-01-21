@@ -31,6 +31,5 @@ Export-Package: org.bumble.eastadl.simplified.serializer,
  org.bumble.eastadl.simplified,
  org.bumble.eastadl.simplified.services,
  org.bumble.eastadl.simplified.scoping,
- org.bumble.eastadl.simplified.jvmmodel,
- org.bumble.eastadl.simplified.parser.antlr.lexer
+ org.bumble.eastadl.simplified.jvmmodel
 Import-Package: org.apache.log4j

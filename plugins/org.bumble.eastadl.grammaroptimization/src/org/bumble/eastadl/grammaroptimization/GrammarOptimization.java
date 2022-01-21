@@ -73,11 +73,11 @@ public class GrammarOptimization {
 			return;
 		}
 
-		// 2. Modify the formatting xtend file
-		if (!optimizer.modifyFormatter(xtendFile, directoryName)) {
-			System.err.println("[Error]**********************Failed to modify xtend file, so stopped!");
-			return;
-		}
+//		// 2. Modify the formatting xtend file
+//		if (!optimizer.modifyFormatter(xtendFile, directoryName)) {
+//			System.err.println("[Error]**********************Failed to modify xtend file, so stopped!");
+//			return;
+//		}
 
 		System.out.println("[Info]*************************Stop optimizing grammar! Successfully!");
 	}

@@ -1,128 +1,240 @@
-EAPackage Structure_new
-	EAPackage DesignPkg_new
+EAPackage Structure
+{
+	EAPackage DesignPkg
+	{
 		EAPackage test
+		{
 			FunctionClientServerInterface testFuncClientSvInterf
+			{
 				name testFuncClientSvInterf
+			}
+		}
 		EAPackage fsdfs
+		{
 			EAPackage fsdfs
 			EAPackage FSDS
+		}
 		EAPackage DataTypes_new
+		{
 			EABoolean Boolean
 			EANumerical test1026
+			{
 				name ssss111
 				max 1E+1
+			}
 			EANumerical Numerical
+			{
 				name sss1
 				max 074
 				min 0x1
+			}
 			EABoolean fsdfsd
 			EANumerical Integer_uint8
+			{
 				name s
 				max 0b11
 				min 0b1
-				unit "Structure_new.DesignPkg_new.test4newtype.testUnit"
-				Comment
-					body fsdfds
+			}
 			RangeableValueType Real_float64
+			{
 				name sss3
 				accuracy 0.1
 				resolution 2.1
-				baseRangeable "Structure_new.DesignPkg_new.DataTypes_new.Integer_uint8"
+				baseRangeable "Structure.DesignPkg.DataTypes_new.Integer_uint8"
+			}
+		}
 		EAPackage FcnDesignArchitecture_new
+		{
 			DesignFunctionType FDAWithController_new
+			{
 				DesignFunctionPrototype wiperCtrlBasic
-					type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.testtype0819"
+				{
+					type "Structure.DesignPkg.FcnDesignArchitecture_new.testtype0819"
+				}
 				DesignFunctionPrototype wiperCtrlBasic1018
-					type "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic"
+				{
+					type "Structure.DesignPkg.FcnDesignPkg_new.WiperCtrlBasic"
+				}
+			}
 			DesignFunctionType testtype0819
+			{
 				DesignFunctionPrototype testprototype0819
-					type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.testtype0819"
+				{
+					type "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new"
+				}
+			}
+		}
 		EAPackage FcnDesignPkg_new
+		{
 			DesignFunctionType WiperCtrlBasic
+			{
 				isElementary false
 				FunctionFlowPort bWiperParkStatus
+				{
 					direction in
-					type "Structure_new.DesignPkg_new.DataTypes_new.Integer_uint8"
+					type "Structure.DesignPkg.DataTypes_new.Boolean"
+				}
+			}
 			HardwareFunctionType WiperMotorHWF
+			{
 				FunctionFlowPort bWindScreenWiperParkPosition
+				{
 					direction out
-					type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+					type "Structure.DesignPkg.DataTypes_new.Boolean"
 					defaultValue EAEnumerationValue
-						type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
-						value ("Structure_new.DesignPkg_new.test4newtype.testEnumeration.testEnumLiteral")
+					{
+						type "Structure.DesignPkg.DataTypes_new.Boolean"
+						value ("Structure.DesignPkg.test4newtype.testEnumeration.testEnumLiteral")
+					}
+				}
 				FunctionPowerPort bTestFuncPowerPort
-					type "Structure_new.DesignPkg_new.test4newtype.testCompositeDataType"
+				{
+					type "Structure.DesignPkg.test4newtype.testCompositeDataType"
+				}
 				FunctionFlowPort test1019
+				{
 					direction out
-					type "Structure_new.DesignPkg_new.DataTypes_new.Real_float64"
+					type "Structure.DesignPkg.DataTypes_new.Boolean"
+				}
+			}
 			DesignFunctionType fsd
+			{
 				isElementary false
 				FunctionConnector aaa
+				{
 					FunctionConnector_port
-						functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
+					{
+						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
+					}
 					FunctionConnector_port
-						functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
+					{
+						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.test1019"
+					}
+				}
+			}
 			HardwareComponentType testhwcomptype0819
+			{
 				category sss
+			}
 			BasicSoftwareFunctionType WiperMotorBSW
+			{
 				isElementary true
 				FunctionClientServerPort testFuncClientSvPort
+				{
 					kind client
-					type "Structure_new.DesignPkg_new.test.testFuncClientSvInterf"
+					type "Structure.DesignPkg.test.testFuncClientSvInterf"
+				}
+			}
 			AnalysisFunctionType testAnalysisFuncType
+			{
 				FunctionConnector testFuncConn
+				{
 					FunctionConnector_port
-						functionPrototype "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
-						functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperMotorHWF.bWindScreenWiperParkPosition"
+					{
+						functionPrototype "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
+						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.bWindScreenWiperParkPosition"
+					}
 					FunctionConnector_port
-						functionPrototype "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
-						functionPort "Structure_new.DesignPkg_new.FcnDesignPkg_new.WiperMotorHWF.bTestFuncPowerPort"
+					{
+						functionPrototype "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
+						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.bTestFuncPowerPort"
+					}
+				}
+			}
 			AnalysisFunctionType testAnalysisFuncType_1
+			{
 				Realization testRealization
+				{
 					Realization_realized
-						identifiable_target "Structure_new.DesignPkg_new.FcnDesignPkg_new.fsd.aaa"
+					{
+						identifiable_target "Structure.DesignPkg.FcnDesignPkg_new.fsd.aaa"
+					}
 					Realization_realizedBy
-						identifiable_target "Structure_new.DesignLevelWW_new.FcnAllocations.a1"
+					{
+						identifiable_target "Structure.DesignLevelWW_new.FcnAllocations.a1"
+					}
+				}
 				AnalysisFunctionPrototype testAnalysisFunctionPrototype
-					type "Structure_new.DesignPkg_new.FcnDesignPkg_new.testAnalysisFuncType"
+				{
+					type "Structure.DesignPkg.FcnDesignPkg_new.testAnalysisFuncType"
+				}
+			}
+		}
 		EAPackage HWDesignPkg_new
+		{
 			HardwareComponentType VehicleHDA
+			{
 				HardwareComponentPrototype pWiperSubsystem
-					type "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA"
+				{
+					type "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA"
+				}
 				HardwarePortConnector testHardwarePortConnector
+				{
 					HardwarePortConnector_port
-						hardwarePort "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testHardwarePort1"
+					{
+						hardwarePort "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testHardwarePort1"
+					}
 					HardwarePortConnector_port
-						hardwarePort "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testHardwarePort1"
+					{
+						hardwarePort "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testHardwarePort1"
+					}
 					HardwareConnector testHardwareConnector
+					{
 						HardwareConnector_port
-							hardwarePin "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testIOHardwarePin"
-							hardwareComponentPrototype "Structure_new.DesignLevelWW_new.pHDA"
+						{
+							hardwarePin "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testIOHardwarePin"
+							hardwareComponentPrototype "Structure.DesignLevelWW_new.pHDA"
+						}
 						HardwareConnector_port
-							hardwarePin "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU.testIOHardwarePin"
-			HardwareComponentType WiperECU 
+						{
+							hardwarePin "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testIOHardwarePin"
+						}
+					}
+				}
+			}
+			HardwareComponentType WiperECU
+			{
 				category sss
 				IOHardwarePin testIOHardwarePin
+				{
 					category ssss
 					kind analog
+				}
 				HardwarePort testHardwarePort1
+				{
 					category sss
+				}
+			}
 			HardwareComponentType WiperSubsystemHDA
+			{
 				HardwareComponentPrototype pECU
-					type "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperECU"
+				{
+					type "Structure.DesignPkg.HWDesignPkg_new.WiperECU"
+				}
+			}
+		}
 		EAPackage test4newtype
+		{
 			CompositeDatatype testCompositeDataType
+			{
 				EADatatypePrototype testEADataTypeProtoType
-					type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+				{
+					type "Structure.DesignPkg.DataTypes_new.Boolean"
+				}
+			}
 			Unit testUnit
+			{
 				factor 0.1
 				symbol testSymbol
 				offset 0.2
-				quantity "Structure_new.DesignPkg_new.test4newtype.testQuantity"
+				quantity "Structure.DesignPkg.test4newtype.testQuantity"
+			}
 			EANumerical testEANumerical
+			{
 				category sfdsaf
-				unit "Structure_new.DesignPkg_new.test4newtype.testUnit"
+			}
 			Quantity testQuantity
+			{
 				amountOfSubstanceExp 1
 				electricCurrentExp 2
 				lengthExp 3
@@ -130,43 +242,83 @@ EAPackage Structure_new
 				massExp 5
 				thermodynamicTemperatureExp 6
 				timeExp 7
+			}
 			RangeableValueType testRangeableValueType
+			{
 				accuracy 0.1
 				resolution 0.2
-				baseRangeable "Structure_new.DesignPkg_new.test4newtype.testEANumerical"
+				baseRangeable "Structure.DesignPkg.test4newtype.testEANumerical"
+			}
 			Enumeration testEnumeration
+			{
 				isMultiValued true
 				EnumerationLiteral testEnumLiteral
 				EnumerationLiteral testEnumLiteral1
+				{
 					name dddd
+				}
+			}
 			UserElementType testUserElementType
+			{
 				key testKey
 				UserAttributeDefinition testUserAttr
-					type "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+				{
+					type "Structure.DesignPkg.DataTypes_new.Boolean"
+				}
+			}
 			UserAttributedElement testUserAttributedEle
-				uaType ("Structure_new.DesignPkg_new.test4newtype.testUserElementType")
-				attributedElement "Structure_new.DesignPkg_new.test"
+			{
+				uaType ("Structure.DesignPkg.test4newtype.testUserElementType")
+				attributedElement "Structure.DesignPkg.test"
+			}
 			ArrayDatatype testArrayDatatype1019
+			{
 				maxLength 1
-				elementType "Structure_new.DesignPkg_new.DataTypes_new.Boolean"
+				elementType "Structure.DesignPkg.DataTypes_new.Boolean"
+			}
+		}
+	}
 	DesignLevel DesignLevelWW_new
+	{
 		Allocation FcnAllocations
+		{
 			FunctionAllocation a1
+			{
 				allocatedElement FunctionAllocation_allocatedElement
-					allocateableElement_context ("Structure_new.DesignLevelWW_new.pFDA")
-					allocateableElement "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
+				{
+					allocateableElement_context ("Structure.DesignLevelWW_new.pFDA")
+					allocateableElement "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
+				}
 				target FunctionAllocation_target
-					allocationTarget_context ("Structure_new.DesignPkg_new.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure_new.DesignLevelWW_new.pHDA")
-					allocationTarget "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA.pECU"
+				{
+					allocationTarget_context ("Structure.DesignPkg.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure.DesignLevelWW_new.pHDA")
+					allocationTarget "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA.pECU"	
+				}
+			}
+		}
 		Allocation FcnAllocation1018
+		{
 			FunctionAllocation a1018
+			{
 				allocatedElement FunctionAllocation_allocatedElement
-					allocateableElement_context ("Structure_new.DesignLevelWW_new.pFDA", "Structure_new.DesignPkg_new.FcnDesignPkg_new.fsd.aaa")
-					allocateableElement "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic1018"
+				{
+					allocateableElement_context ("Structure.DesignLevelWW_new.pFDA", "Structure.DesignPkg.FcnDesignPkg_new.fsd.aaa")
+					allocateableElement "Structure.DesignPkg.FcnDesignArchitecture_new.testtype0819.testprototype0819"
+				}
 				target FunctionAllocation_target
-					allocationTarget_context ("Structure_new.DesignPkg_new.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure_new.DesignLevelWW_new.pHDA")
-					allocationTarget "Structure_new.DesignPkg_new.HWDesignPkg_new.WiperSubsystemHDA.pECU"
+				{
+					allocationTarget_context ("Structure.DesignPkg.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure.DesignLevelWW_new.pHDA")
+					allocationTarget "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA.pECU"
+				}
+			}
+		}
 		functionalDesignArchitecture DesignFunctionPrototype pFDA
-			type "Structure_new.DesignPkg_new.FcnDesignArchitecture_new.FDAWithController_new"
+		{
+			type "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new"
+		}
 		hardwareDesignArchitecture HardwareComponentPrototype pHDA
-			type "Structure_new.DesignPkg_new.HWDesignPkg_new.VehicleHDA"
+		{
+			type "Structure.DesignPkg.HWDesignPkg_new.VehicleHDA"
+		}
+	}
+}

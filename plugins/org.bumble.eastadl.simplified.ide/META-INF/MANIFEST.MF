@@ -18,5 +18,4 @@ Require-Bundle: org.bumble.eastadl.simplified,
  com.google.gson
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.bumble.eastadl.simplified.ide.contentassist.antlr.internal,
- org.bumble.eastadl.simplified.ide.contentassist.antlr,
- org.bumble.eastadl.simplified.ide.contentassist.antlr.lexer
+ org.bumble.eastadl.simplified.ide.contentassist.antlr

@@ -31,6 +31,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.bumble.eastadl.simplified.ui.contentassist,
  org.bumble.eastadl.simplified.ui.internal,
  org.bumble.eastadl.simplified.ui.quickfix,
- org.bumble.eastadl.simplified.ui.editor,
  org.bumble.eastadl.simplified.ui.wizard
 Bundle-Activator: org.bumble.eastadl.simplified.ui.internal.SimplifiedActivator
