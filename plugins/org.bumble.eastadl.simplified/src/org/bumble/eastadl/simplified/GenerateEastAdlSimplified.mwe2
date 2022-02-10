@@ -46,11 +46,17 @@ Workflow {
 			referencedResource = "platform:/resource/eastadl22/model/eastadl22.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
-
-			formatter = {
+			fragment = formatting2.EastAdlSimplifiedFormatter2Fragment auto-inject {
 				generateStub = true
 				generateXtendStub = true
 			}
+
+			formatter = {
+				generateStub = false
+				generateXtendStub = true
+			}
+			
+			
 
 			serializer = {
 				generateStub = false

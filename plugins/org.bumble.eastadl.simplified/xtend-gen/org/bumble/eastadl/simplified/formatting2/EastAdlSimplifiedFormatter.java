@@ -3,330 +3,2579 @@
  */
 package org.bumble.eastadl.simplified.formatting2;
 
+import com.google.inject.Inject;
 import java.util.Arrays;
-import java.util.function.Consumer;
-import org.eclipse.eatop.eastadl22.EAElement;
+import org.bumble.eastadl.simplified.services.EastAdlSimplifiedGrammarAccess;
+import org.eclipse.eatop.eastadl22.Actuator;
+import org.eclipse.eatop.eastadl22.Allocation;
+import org.eclipse.eatop.eastadl22.AnalysisFunctionPrototype;
+import org.eclipse.eatop.eastadl22.AnalysisFunctionType;
+import org.eclipse.eatop.eastadl22.ArrayDatatype;
+import org.eclipse.eatop.eastadl22.BasicSoftwareFunctionType;
+import org.eclipse.eatop.eastadl22.Comment;
+import org.eclipse.eatop.eastadl22.CommunicationHardwarePin;
+import org.eclipse.eatop.eastadl22.CompositeDatatype;
+import org.eclipse.eatop.eastadl22.DesignFunctionPrototype;
+import org.eclipse.eatop.eastadl22.DesignFunctionType;
+import org.eclipse.eatop.eastadl22.DesignLevel;
+import org.eclipse.eatop.eastadl22.EAArrayValue;
+import org.eclipse.eatop.eastadl22.EABoolean;
+import org.eclipse.eatop.eastadl22.EACompositeValue;
+import org.eclipse.eatop.eastadl22.EADatatypePrototype;
+import org.eclipse.eatop.eastadl22.EAExpression;
+import org.eclipse.eatop.eastadl22.EANumerical;
+import org.eclipse.eatop.eastadl22.EAPackage;
 import org.eclipse.eatop.eastadl22.EAPackageableElement;
-import org.eclipse.eatop.eastadl22.Eastadl22Package;
-import org.eclipse.eatop.eastadl22.Identifiable;
+import org.eclipse.eatop.eastadl22.EAString;
+import org.eclipse.eatop.eastadl22.EAValue;
+import org.eclipse.eatop.eastadl22.EAXML;
+import org.eclipse.eatop.eastadl22.ElectricalComponent;
+import org.eclipse.eatop.eastadl22.Enumeration;
+import org.eclipse.eatop.eastadl22.EnumerationLiteral;
+import org.eclipse.eatop.eastadl22.FunctionAllocation;
+import org.eclipse.eatop.eastadl22.FunctionAllocation_allocatedElement;
+import org.eclipse.eatop.eastadl22.FunctionAllocation_target;
+import org.eclipse.eatop.eastadl22.FunctionClientServerInterface;
+import org.eclipse.eatop.eastadl22.FunctionClientServerPort;
+import org.eclipse.eatop.eastadl22.FunctionConnector;
+import org.eclipse.eatop.eastadl22.FunctionConnector_port;
+import org.eclipse.eatop.eastadl22.FunctionFlowPort;
+import org.eclipse.eatop.eastadl22.FunctionPort;
+import org.eclipse.eatop.eastadl22.FunctionPowerPort;
+import org.eclipse.eatop.eastadl22.FunctionalDevice;
+import org.eclipse.eatop.eastadl22.HardwareComponentPrototype;
+import org.eclipse.eatop.eastadl22.HardwareComponentType;
+import org.eclipse.eatop.eastadl22.HardwareConnector;
+import org.eclipse.eatop.eastadl22.HardwareConnector_port;
+import org.eclipse.eatop.eastadl22.HardwareFunctionType;
+import org.eclipse.eatop.eastadl22.HardwarePin;
+import org.eclipse.eatop.eastadl22.HardwarePort;
+import org.eclipse.eatop.eastadl22.HardwarePortConnector;
+import org.eclipse.eatop.eastadl22.HardwarePortConnector_port;
+import org.eclipse.eatop.eastadl22.IOHardwarePin;
+import org.eclipse.eatop.eastadl22.LocalDeviceManager;
+import org.eclipse.eatop.eastadl22.LogicalPortConnector;
+import org.eclipse.eatop.eastadl22.Node;
+import org.eclipse.eatop.eastadl22.Operation;
+import org.eclipse.eatop.eastadl22.PortConnector;
+import org.eclipse.eatop.eastadl22.PortGroup;
+import org.eclipse.eatop.eastadl22.PowerHardwarePin;
+import org.eclipse.eatop.eastadl22.Quantity;
+import org.eclipse.eatop.eastadl22.RangeableValueType;
+import org.eclipse.eatop.eastadl22.Realization;
+import org.eclipse.eatop.eastadl22.Realization_realized;
+import org.eclipse.eatop.eastadl22.Realization_realizedBy;
+import org.eclipse.eatop.eastadl22.Relationship;
+import org.eclipse.eatop.eastadl22.Sensor;
+import org.eclipse.eatop.eastadl22.Unit;
+import org.eclipse.eatop.eastadl22.UserAttributeDefinition;
+import org.eclipse.eatop.eastadl22.UserAttributedElement;
+import org.eclipse.eatop.eastadl22.UserElementType;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.common.types.JvmFormalParameter;
-import org.eclipse.xtext.common.types.JvmGenericArrayTypeReference;
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
-import org.eclipse.xtext.common.types.JvmTypeConstraint;
-import org.eclipse.xtext.common.types.JvmTypeParameter;
-import org.eclipse.xtext.common.types.JvmWildcardTypeReference;
+import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.formatting2.IHiddenRegionFormatter;
+import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion;
 import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.xbase.XAssignment;
-import org.eclipse.xtext.xbase.XBasicForLoopExpression;
-import org.eclipse.xtext.xbase.XBinaryOperation;
-import org.eclipse.xtext.xbase.XBlockExpression;
-import org.eclipse.xtext.xbase.XCastedExpression;
-import org.eclipse.xtext.xbase.XClosure;
-import org.eclipse.xtext.xbase.XCollectionLiteral;
-import org.eclipse.xtext.xbase.XConstructorCall;
-import org.eclipse.xtext.xbase.XDoWhileExpression;
-import org.eclipse.xtext.xbase.XExpression;
-import org.eclipse.xtext.xbase.XFeatureCall;
-import org.eclipse.xtext.xbase.XForLoopExpression;
-import org.eclipse.xtext.xbase.XIfExpression;
-import org.eclipse.xtext.xbase.XInstanceOfExpression;
-import org.eclipse.xtext.xbase.XMemberFeatureCall;
-import org.eclipse.xtext.xbase.XPostfixOperation;
-import org.eclipse.xtext.xbase.XReturnExpression;
-import org.eclipse.xtext.xbase.XSwitchExpression;
-import org.eclipse.xtext.xbase.XSynchronizedExpression;
-import org.eclipse.xtext.xbase.XThrowExpression;
-import org.eclipse.xtext.xbase.XTryCatchFinallyExpression;
-import org.eclipse.xtext.xbase.XTypeLiteral;
-import org.eclipse.xtext.xbase.XVariableDeclaration;
-import org.eclipse.xtext.xbase.XWhileExpression;
-import org.eclipse.xtext.xbase.formatting2.XbaseFormatter;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.eclipse.xtext.xtype.XFunctionTypeRef;
-import org.eclipse.xtext.xtype.XImportDeclaration;
-import org.eclipse.xtext.xtype.XImportSection;
 
 @SuppressWarnings("all")
-public class EastAdlSimplifiedFormatter extends XbaseFormatter {
-  @Override
-  protected void _format(final XBlockExpression expr, @Extension final IFormattableDocument document) {
-    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.indent();
-    };
-    document.<XBlockExpression>surround(expr, _function);
-    EList<XExpression> _expressions = expr.getExpressions();
-    for (final XExpression child : _expressions) {
-      {
-        final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-          it.newLine();
-        };
-        document.<XExpression>append(child, _function_1);
-        document.<XExpression>format(child);
-      }
-    }
-  }
+public class EastAdlSimplifiedFormatter extends AbstractFormatter2 {
+  @Inject
+  @Extension
+  private EastAdlSimplifiedGrammarAccess _eastAdlSimplifiedGrammarAccess;
   
-  @Override
-  protected void formatBody(final XExpression expr, final boolean forceMultiline, @Extension final IFormattableDocument doc) {
-    if ((expr == null)) {
-      return;
-    }
-    if ((expr instanceof XBlockExpression)) {
-      final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-        it.newLine();
-      };
-      doc.<XBlockExpression>prepend(((XBlockExpression)expr), _function);
-    } else {
-      if ((forceMultiline || this.textRegionExtensions.previousHiddenRegion(expr).isMultiline())) {
-        final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-          it.newLine();
-        };
-        final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
-          it.indent();
-        };
-        doc.<XExpression>surround(doc.<XExpression>prepend(expr, _function_1), _function_2);
-      } else {
-        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
-          it.oneSpace();
-        };
-        doc.<XExpression>prepend(expr, _function_3);
-      }
-    }
-    doc.<XExpression>format(expr);
-  }
-  
-  @Override
-  protected void formatBodyInline(final XExpression expr, final boolean forceMultiline, @Extension final IFormattableDocument doc) {
-    if ((expr == null)) {
-      return;
-    }
-    if ((expr instanceof XBlockExpression)) {
-      final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-        it.newLine();
-      };
-      doc.<XBlockExpression>surround(((XBlockExpression)expr), _function);
-    } else {
-      if ((forceMultiline || this.textRegionExtensions.previousHiddenRegion(expr).isMultiline())) {
-        final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-          it.newLine();
-        };
-        final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
-          it.indent();
-        };
-        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
-          it.newLine();
-        };
-        doc.<XExpression>append(doc.<XExpression>surround(doc.<XExpression>prepend(expr, _function_1), _function_2), _function_3);
-      } else {
-        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
-          it.oneSpace();
-        };
-        doc.<XExpression>surround(expr, _function_4);
-      }
-    }
-    doc.<XExpression>format(expr);
-  }
-  
-  @Override
-  protected void formatBodyParagraph(final XExpression expr, @Extension final IFormattableDocument doc) {
-    if ((expr == null)) {
-      return;
-    }
-    if ((expr instanceof XBlockExpression)) {
-      final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-        it.newLine();
-      };
-      doc.<XBlockExpression>surround(((XBlockExpression)expr), _function);
-    } else {
-      final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-        it.oneSpace();
-      };
-      doc.<XExpression>surround(expr, _function_1);
-    }
-    doc.<XExpression>format(expr);
-  }
-  
-  protected void _format(final EAElement obj, @Extension final IFormattableDocument doc) {
-    if ((obj == null)) {
-      return;
-    }
+  protected void _format(final EAXML eAXML, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eAXML).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eAXML).keyword("}");
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    doc.<EAElement>append(obj, _function);
+    document.append(open, _function);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-      it.indent();
+      it.newLine();
     };
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    doc.append(doc.surround(this.textRegionExtensions.regionFor(obj).feature(Eastadl22Package.eINSTANCE.getEAElement_Name()), _function_1), _function_2);
-    if ((obj instanceof Identifiable)) {
-      final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
-        it.indent();
-      };
-      final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
-        it.newLine();
-      };
-      doc.append(doc.surround(this.textRegionExtensions.regionFor(obj).feature(Eastadl22Package.eINSTANCE.getIdentifiable_Category()), _function_3), _function_4);
-      final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
-        it.indent();
-      };
-      final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
-        it.newLine();
-      };
-      doc.append(doc.surround(this.textRegionExtensions.regionFor(obj).feature(Eastadl22Package.eINSTANCE.getIdentifiable_Uuid()), _function_5), _function_6);
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eAXML.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eAXML).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
     }
-    final Consumer<EObject> _function_7 = (EObject it) -> {
-      doc.<EObject>format(it);
-    };
-    obj.eContents().forEach(_function_7);
-  }
-  
-  protected void _format(final EAPackageableElement obj, @Extension final IFormattableDocument doc) {
-    if ((obj == null)) {
-      return;
-    }
-    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
       it.indent();
     };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<EAPackage> _topLevelPackage = eAXML.getTopLevelPackage();
+    for (final EAPackage eAPackage : _topLevelPackage) {
+      document.<EAPackage>format(eAPackage);
+    }
+  }
+  
+  protected void _format(final EAPackage eAPackage, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eAPackage).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eAPackage).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    doc.<EAPackageableElement>prepend(doc.<EAPackageableElement>surround(obj, _function), _function_1);
-    final Consumer<EObject> _function_2 = (EObject it) -> {
-      doc.<EObject>format(it);
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
     };
-    obj.eContents().forEach(_function_2);
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eAPackage.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eAPackage).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = eAPackage.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<EAPackage> _subPackage = eAPackage.getSubPackage();
+    for (final EAPackage _eAPackage : _subPackage) {
+      document.<EAPackage>format(_eAPackage);
+    }
+    EList<EAPackageableElement> _element = eAPackage.getElement();
+    for (final EAPackageableElement eAPackageableElement : _element) {
+      document.<EAPackageableElement>format(eAPackageableElement);
+    }
   }
   
-  @Override
-  public void format(final Object obj, final IFormattableDocument doc) {
-    if (obj instanceof EAPackageableElement) {
-      _format((EAPackageableElement)obj, doc);
+  protected void _format(final DesignLevel designLevel, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(designLevel).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(designLevel).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = designLevel.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(designLevel).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = designLevel.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = designLevel.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<Allocation> _allocation = designLevel.getAllocation();
+    for (final Allocation allocation : _allocation) {
+      document.<Allocation>format(allocation);
+    }
+    document.<DesignFunctionPrototype>format(designLevel.getFunctionalDesignArchitecture());
+    document.<HardwareComponentPrototype>format(designLevel.getHardwareDesignArchitecture());
+  }
+  
+  protected void _format(final AnalysisFunctionType analysisFunctionType, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(analysisFunctionType).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(analysisFunctionType).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = analysisFunctionType.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(analysisFunctionType).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = analysisFunctionType.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = analysisFunctionType.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<PortGroup> _portGroup = analysisFunctionType.getPortGroup();
+    for (final PortGroup portGroup : _portGroup) {
+      document.<PortGroup>format(portGroup);
+    }
+    EList<FunctionConnector> _connector = analysisFunctionType.getConnector();
+    for (final FunctionConnector functionConnector : _connector) {
+      document.<FunctionConnector>format(functionConnector);
+    }
+    EList<FunctionPort> _port = analysisFunctionType.getPort();
+    for (final FunctionPort functionPort : _port) {
+      document.<FunctionPort>format(functionPort);
+    }
+    EList<AnalysisFunctionPrototype> _part = analysisFunctionType.getPart();
+    for (final AnalysisFunctionPrototype analysisFunctionPrototype : _part) {
+      document.<AnalysisFunctionPrototype>format(analysisFunctionPrototype);
+    }
+  }
+  
+  protected void _format(final BasicSoftwareFunctionType basicSoftwareFunctionType, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(basicSoftwareFunctionType).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(basicSoftwareFunctionType).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = basicSoftwareFunctionType.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(basicSoftwareFunctionType).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = basicSoftwareFunctionType.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = basicSoftwareFunctionType.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<PortGroup> _portGroup = basicSoftwareFunctionType.getPortGroup();
+    for (final PortGroup portGroup : _portGroup) {
+      document.<PortGroup>format(portGroup);
+    }
+    EList<FunctionConnector> _connector = basicSoftwareFunctionType.getConnector();
+    for (final FunctionConnector functionConnector : _connector) {
+      document.<FunctionConnector>format(functionConnector);
+    }
+    EList<FunctionPort> _port = basicSoftwareFunctionType.getPort();
+    for (final FunctionPort functionPort : _port) {
+      document.<FunctionPort>format(functionPort);
+    }
+    EList<DesignFunctionPrototype> _part = basicSoftwareFunctionType.getPart();
+    for (final DesignFunctionPrototype designFunctionPrototype : _part) {
+      document.<DesignFunctionPrototype>format(designFunctionPrototype);
+    }
+  }
+  
+  protected void _format(final DesignFunctionType designFunctionType, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(designFunctionType).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(designFunctionType).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = designFunctionType.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(designFunctionType).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = designFunctionType.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = designFunctionType.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<PortGroup> _portGroup = designFunctionType.getPortGroup();
+    for (final PortGroup portGroup : _portGroup) {
+      document.<PortGroup>format(portGroup);
+    }
+    EList<FunctionConnector> _connector = designFunctionType.getConnector();
+    for (final FunctionConnector functionConnector : _connector) {
+      document.<FunctionConnector>format(functionConnector);
+    }
+    EList<FunctionPort> _port = designFunctionType.getPort();
+    for (final FunctionPort functionPort : _port) {
+      document.<FunctionPort>format(functionPort);
+    }
+    EList<DesignFunctionPrototype> _part = designFunctionType.getPart();
+    for (final DesignFunctionPrototype designFunctionPrototype : _part) {
+      document.<DesignFunctionPrototype>format(designFunctionPrototype);
+    }
+  }
+  
+  protected void _format(final FunctionalDevice functionalDevice, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(functionalDevice).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(functionalDevice).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = functionalDevice.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(functionalDevice).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = functionalDevice.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = functionalDevice.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<PortGroup> _portGroup = functionalDevice.getPortGroup();
+    for (final PortGroup portGroup : _portGroup) {
+      document.<PortGroup>format(portGroup);
+    }
+    EList<FunctionConnector> _connector = functionalDevice.getConnector();
+    for (final FunctionConnector functionConnector : _connector) {
+      document.<FunctionConnector>format(functionConnector);
+    }
+    EList<FunctionPort> _port = functionalDevice.getPort();
+    for (final FunctionPort functionPort : _port) {
+      document.<FunctionPort>format(functionPort);
+    }
+    EList<AnalysisFunctionPrototype> _part = functionalDevice.getPart();
+    for (final AnalysisFunctionPrototype analysisFunctionPrototype : _part) {
+      document.<AnalysisFunctionPrototype>format(analysisFunctionPrototype);
+    }
+  }
+  
+  protected void _format(final FunctionClientServerInterface functionClientServerInterface, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(functionClientServerInterface).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(functionClientServerInterface).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = functionClientServerInterface.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(functionClientServerInterface).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = functionClientServerInterface.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Operation> _operation = functionClientServerInterface.getOperation();
+    for (final Operation operation : _operation) {
+      document.<Operation>format(operation);
+    }
+  }
+  
+  protected void _format(final HardwareFunctionType hardwareFunctionType, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(hardwareFunctionType).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(hardwareFunctionType).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = hardwareFunctionType.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(hardwareFunctionType).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = hardwareFunctionType.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = hardwareFunctionType.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<PortGroup> _portGroup = hardwareFunctionType.getPortGroup();
+    for (final PortGroup portGroup : _portGroup) {
+      document.<PortGroup>format(portGroup);
+    }
+    EList<FunctionConnector> _connector = hardwareFunctionType.getConnector();
+    for (final FunctionConnector functionConnector : _connector) {
+      document.<FunctionConnector>format(functionConnector);
+    }
+    EList<FunctionPort> _port = hardwareFunctionType.getPort();
+    for (final FunctionPort functionPort : _port) {
+      document.<FunctionPort>format(functionPort);
+    }
+    EList<DesignFunctionPrototype> _part = hardwareFunctionType.getPart();
+    for (final DesignFunctionPrototype designFunctionPrototype : _part) {
+      document.<DesignFunctionPrototype>format(designFunctionPrototype);
+    }
+  }
+  
+  protected void _format(final LocalDeviceManager localDeviceManager, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(localDeviceManager).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(localDeviceManager).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = localDeviceManager.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(localDeviceManager).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = localDeviceManager.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = localDeviceManager.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<PortGroup> _portGroup = localDeviceManager.getPortGroup();
+    for (final PortGroup portGroup : _portGroup) {
+      document.<PortGroup>format(portGroup);
+    }
+    EList<FunctionConnector> _connector = localDeviceManager.getConnector();
+    for (final FunctionConnector functionConnector : _connector) {
+      document.<FunctionConnector>format(functionConnector);
+    }
+    EList<FunctionPort> _port = localDeviceManager.getPort();
+    for (final FunctionPort functionPort : _port) {
+      document.<FunctionPort>format(functionPort);
+    }
+    EList<DesignFunctionPrototype> _part = localDeviceManager.getPart();
+    for (final DesignFunctionPrototype designFunctionPrototype : _part) {
+      document.<DesignFunctionPrototype>format(designFunctionPrototype);
+    }
+  }
+  
+  protected void _format(final Actuator actuator, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(actuator).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(actuator).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = actuator.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(actuator).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = actuator.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = actuator.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<HardwarePin> _pin = actuator.getPin();
+    for (final HardwarePin hardwarePin : _pin) {
+      document.<HardwarePin>format(hardwarePin);
+    }
+    EList<HardwareComponentPrototype> _part = actuator.getPart();
+    for (final HardwareComponentPrototype hardwareComponentPrototype : _part) {
+      document.<HardwareComponentPrototype>format(hardwareComponentPrototype);
+    }
+    EList<HardwareConnector> _connector = actuator.getConnector();
+    for (final HardwareConnector hardwareConnector : _connector) {
+      document.<HardwareConnector>format(hardwareConnector);
+    }
+    EList<HardwarePort> _port = actuator.getPort();
+    for (final HardwarePort hardwarePort : _port) {
+      document.<HardwarePort>format(hardwarePort);
+    }
+    EList<PortConnector> _portConnector = actuator.getPortConnector();
+    for (final PortConnector portConnector : _portConnector) {
+      document.<PortConnector>format(portConnector);
+    }
+  }
+  
+  protected void _format(final ElectricalComponent electricalComponent, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(electricalComponent).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(electricalComponent).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = electricalComponent.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(electricalComponent).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = electricalComponent.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = electricalComponent.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<HardwarePin> _pin = electricalComponent.getPin();
+    for (final HardwarePin hardwarePin : _pin) {
+      document.<HardwarePin>format(hardwarePin);
+    }
+    EList<HardwareComponentPrototype> _part = electricalComponent.getPart();
+    for (final HardwareComponentPrototype hardwareComponentPrototype : _part) {
+      document.<HardwareComponentPrototype>format(hardwareComponentPrototype);
+    }
+    EList<HardwareConnector> _connector = electricalComponent.getConnector();
+    for (final HardwareConnector hardwareConnector : _connector) {
+      document.<HardwareConnector>format(hardwareConnector);
+    }
+    EList<HardwarePort> _port = electricalComponent.getPort();
+    for (final HardwarePort hardwarePort : _port) {
+      document.<HardwarePort>format(hardwarePort);
+    }
+    EList<PortConnector> _portConnector = electricalComponent.getPortConnector();
+    for (final PortConnector portConnector : _portConnector) {
+      document.<PortConnector>format(portConnector);
+    }
+  }
+  
+  protected void _format(final HardwareComponentType hardwareComponentType, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(hardwareComponentType).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(hardwareComponentType).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = hardwareComponentType.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(hardwareComponentType).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = hardwareComponentType.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = hardwareComponentType.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<HardwarePin> _pin = hardwareComponentType.getPin();
+    for (final HardwarePin hardwarePin : _pin) {
+      document.<HardwarePin>format(hardwarePin);
+    }
+    EList<HardwareComponentPrototype> _part = hardwareComponentType.getPart();
+    for (final HardwareComponentPrototype hardwareComponentPrototype : _part) {
+      document.<HardwareComponentPrototype>format(hardwareComponentPrototype);
+    }
+    EList<HardwareConnector> _connector = hardwareComponentType.getConnector();
+    for (final HardwareConnector hardwareConnector : _connector) {
+      document.<HardwareConnector>format(hardwareConnector);
+    }
+    EList<HardwarePort> _port = hardwareComponentType.getPort();
+    for (final HardwarePort hardwarePort : _port) {
+      document.<HardwarePort>format(hardwarePort);
+    }
+    EList<PortConnector> _portConnector = hardwareComponentType.getPortConnector();
+    for (final PortConnector portConnector : _portConnector) {
+      document.<PortConnector>format(portConnector);
+    }
+  }
+  
+  protected void _format(final Node node, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(node).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(node).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = node.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(node).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = node.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = node.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<HardwarePin> _pin = node.getPin();
+    for (final HardwarePin hardwarePin : _pin) {
+      document.<HardwarePin>format(hardwarePin);
+    }
+    EList<HardwareComponentPrototype> _part = node.getPart();
+    for (final HardwareComponentPrototype hardwareComponentPrototype : _part) {
+      document.<HardwareComponentPrototype>format(hardwareComponentPrototype);
+    }
+    EList<HardwareConnector> _connector = node.getConnector();
+    for (final HardwareConnector hardwareConnector : _connector) {
+      document.<HardwareConnector>format(hardwareConnector);
+    }
+    EList<HardwarePort> _port = node.getPort();
+    for (final HardwarePort hardwarePort : _port) {
+      document.<HardwarePort>format(hardwarePort);
+    }
+    EList<PortConnector> _portConnector = node.getPortConnector();
+    for (final PortConnector portConnector : _portConnector) {
+      document.<PortConnector>format(portConnector);
+    }
+  }
+  
+  protected void _format(final Sensor sensor, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(sensor).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(sensor).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = sensor.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(sensor).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = sensor.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Relationship> _ownedRelationship = sensor.getOwnedRelationship();
+    for (final Relationship relationship : _ownedRelationship) {
+      document.<Relationship>format(relationship);
+    }
+    EList<HardwarePin> _pin = sensor.getPin();
+    for (final HardwarePin hardwarePin : _pin) {
+      document.<HardwarePin>format(hardwarePin);
+    }
+    EList<HardwareComponentPrototype> _part = sensor.getPart();
+    for (final HardwareComponentPrototype hardwareComponentPrototype : _part) {
+      document.<HardwareComponentPrototype>format(hardwareComponentPrototype);
+    }
+    EList<HardwareConnector> _connector = sensor.getConnector();
+    for (final HardwareConnector hardwareConnector : _connector) {
+      document.<HardwareConnector>format(hardwareConnector);
+    }
+    EList<HardwarePort> _port = sensor.getPort();
+    for (final HardwarePort hardwarePort : _port) {
+      document.<HardwarePort>format(hardwarePort);
+    }
+    EList<PortConnector> _portConnector = sensor.getPortConnector();
+    for (final PortConnector portConnector : _portConnector) {
+      document.<PortConnector>format(portConnector);
+    }
+  }
+  
+  protected void _format(final ArrayDatatype arrayDatatype, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(arrayDatatype).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(arrayDatatype).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = arrayDatatype.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(arrayDatatype).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = arrayDatatype.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final CompositeDatatype compositeDatatype, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(compositeDatatype).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(compositeDatatype).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = compositeDatatype.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(compositeDatatype).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = compositeDatatype.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<EADatatypePrototype> _datatypePrototype = compositeDatatype.getDatatypePrototype();
+    for (final EADatatypePrototype eADatatypePrototype : _datatypePrototype) {
+      document.<EADatatypePrototype>format(eADatatypePrototype);
+    }
+  }
+  
+  protected void _format(final EABoolean eABoolean, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eABoolean).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eABoolean).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eABoolean.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eABoolean).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = eABoolean.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final EANumerical eANumerical, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eANumerical).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eANumerical).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eANumerical.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eANumerical).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = eANumerical.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final EAString eAString, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eAString).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eAString).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eAString.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eAString).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = eAString.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final Enumeration enumeration, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(enumeration).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(enumeration).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = enumeration.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(enumeration).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = enumeration.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<EnumerationLiteral> _literal = enumeration.getLiteral();
+    for (final EnumerationLiteral enumerationLiteral : _literal) {
+      document.<EnumerationLiteral>format(enumerationLiteral);
+    }
+  }
+  
+  protected void _format(final Quantity quantity, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(quantity).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(quantity).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = quantity.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(quantity).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = quantity.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final RangeableValueType rangeableValueType, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(rangeableValueType).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(rangeableValueType).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = rangeableValueType.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(rangeableValueType).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = rangeableValueType.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final Unit unit, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(unit).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(unit).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = unit.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(unit).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = unit.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final UserAttributeDefinition userAttributeDefinition, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(userAttributeDefinition).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(userAttributeDefinition).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = userAttributeDefinition.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(userAttributeDefinition).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = userAttributeDefinition.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    document.<EAValue>format(userAttributeDefinition.getDefaultValue());
+  }
+  
+  protected void _format(final UserAttributedElement userAttributedElement, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(userAttributedElement).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(userAttributedElement).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = userAttributedElement.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(userAttributedElement).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = userAttributedElement.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<EAValue> _uaValue = userAttributedElement.getUaValue();
+    for (final EAValue eAValue : _uaValue) {
+      document.<EAValue>format(eAValue);
+    }
+  }
+  
+  protected void _format(final UserElementType userElementType, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(userElementType).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(userElementType).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = userElementType.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(userElementType).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = userElementType.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<UserAttributeDefinition> _uaDefinition = userElementType.getUaDefinition();
+    for (final UserAttributeDefinition userAttributeDefinition : _uaDefinition) {
+      document.<UserAttributeDefinition>format(userAttributeDefinition);
+    }
+  }
+  
+  protected void _format(final Allocation allocation, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(allocation).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(allocation).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = allocation.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(allocation).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = allocation.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<FunctionAllocation> _functionAllocation = allocation.getFunctionAllocation();
+    for (final FunctionAllocation functionAllocation : _functionAllocation) {
+      document.<FunctionAllocation>format(functionAllocation);
+    }
+  }
+  
+  protected void _format(final DesignFunctionPrototype designFunctionPrototype, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(designFunctionPrototype).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(designFunctionPrototype).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = designFunctionPrototype.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(designFunctionPrototype).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = designFunctionPrototype.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final HardwareComponentPrototype hardwareComponentPrototype, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(hardwareComponentPrototype).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(hardwareComponentPrototype).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = hardwareComponentPrototype.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(hardwareComponentPrototype).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = hardwareComponentPrototype.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final Realization realization, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(realization).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(realization).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = realization.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(realization).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = realization.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<Realization_realized> _realized = realization.getRealized();
+    for (final Realization_realized realization_realized : _realized) {
+      document.<Realization_realized>format(realization_realized);
+    }
+    EList<Realization_realizedBy> _realizedBy = realization.getRealizedBy();
+    for (final Realization_realizedBy realization_realizedBy : _realizedBy) {
+      document.<Realization_realizedBy>format(realization_realizedBy);
+    }
+  }
+  
+  protected void _format(final AnalysisFunctionPrototype analysisFunctionPrototype, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(analysisFunctionPrototype).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(analysisFunctionPrototype).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = analysisFunctionPrototype.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(analysisFunctionPrototype).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = analysisFunctionPrototype.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final FunctionAllocation functionAllocation, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(functionAllocation).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(functionAllocation).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = functionAllocation.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(functionAllocation).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = functionAllocation.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    document.<FunctionAllocation_allocatedElement>format(functionAllocation.getAllocatedElement());
+    document.<FunctionAllocation_target>format(functionAllocation.getTarget());
+  }
+  
+  protected void _format(final FunctionClientServerPort functionClientServerPort, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(functionClientServerPort).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(functionClientServerPort).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = functionClientServerPort.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(functionClientServerPort).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = functionClientServerPort.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final FunctionConnector functionConnector, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(functionConnector).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(functionConnector).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = functionConnector.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(functionConnector).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = functionConnector.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<FunctionConnector_port> _port = functionConnector.getPort();
+    for (final FunctionConnector_port functionConnector_port : _port) {
+      document.<FunctionConnector_port>format(functionConnector_port);
+    }
+  }
+  
+  protected void _format(final FunctionFlowPort functionFlowPort, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(functionFlowPort).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(functionFlowPort).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = functionFlowPort.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(functionFlowPort).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = functionFlowPort.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    document.<EAValue>format(functionFlowPort.getDefaultValue());
+  }
+  
+  protected void _format(final FunctionPowerPort functionPowerPort, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(functionPowerPort).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(functionPowerPort).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = functionPowerPort.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(functionPowerPort).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = functionPowerPort.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final Operation operation, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(operation).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(operation).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = operation.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(operation).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = operation.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<EADatatypePrototype> _argument = operation.getArgument();
+    for (final EADatatypePrototype eADatatypePrototype : _argument) {
+      document.<EADatatypePrototype>format(eADatatypePrototype);
+    }
+  }
+  
+  protected void _format(final PortGroup portGroup, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(portGroup).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(portGroup).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = portGroup.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(portGroup).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = portGroup.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<PortGroup> _portGroup = portGroup.getPortGroup();
+    for (final PortGroup _portGroup_1 : _portGroup) {
+      document.<PortGroup>format(_portGroup_1);
+    }
+  }
+  
+  protected void _format(final CommunicationHardwarePin communicationHardwarePin, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(communicationHardwarePin).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(communicationHardwarePin).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = communicationHardwarePin.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(communicationHardwarePin).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = communicationHardwarePin.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final HardwareConnector hardwareConnector, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(hardwareConnector).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(hardwareConnector).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = hardwareConnector.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(hardwareConnector).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = hardwareConnector.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<HardwareConnector_port> _port = hardwareConnector.getPort();
+    for (final HardwareConnector_port hardwareConnector_port : _port) {
+      document.<HardwareConnector_port>format(hardwareConnector_port);
+    }
+  }
+  
+  protected void _format(final HardwarePort hardwarePort, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(hardwarePort).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(hardwarePort).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = hardwarePort.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(hardwarePort).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = hardwarePort.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<HardwarePin> _containedPin = hardwarePort.getContainedPin();
+    for (final HardwarePin hardwarePin : _containedPin) {
+      document.<HardwarePin>format(hardwarePin);
+    }
+    EList<HardwarePort> _containedPort = hardwarePort.getContainedPort();
+    for (final HardwarePort _hardwarePort : _containedPort) {
+      document.<HardwarePort>format(_hardwarePort);
+    }
+  }
+  
+  protected void _format(final HardwarePortConnector hardwarePortConnector, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(hardwarePortConnector).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(hardwarePortConnector).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = hardwarePortConnector.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(hardwarePortConnector).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = hardwarePortConnector.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<HardwarePortConnector_port> _port = hardwarePortConnector.getPort();
+    for (final HardwarePortConnector_port hardwarePortConnector_port : _port) {
+      document.<HardwarePortConnector_port>format(hardwarePortConnector_port);
+    }
+    EList<HardwareConnector> _connector = hardwarePortConnector.getConnector();
+    for (final HardwareConnector hardwareConnector : _connector) {
+      document.<HardwareConnector>format(hardwareConnector);
+    }
+  }
+  
+  protected void _format(final IOHardwarePin iOHardwarePin, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(iOHardwarePin).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(iOHardwarePin).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = iOHardwarePin.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(iOHardwarePin).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = iOHardwarePin.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final LogicalPortConnector logicalPortConnector, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(logicalPortConnector).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(logicalPortConnector).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = logicalPortConnector.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(logicalPortConnector).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = logicalPortConnector.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+    EList<HardwarePortConnector_port> _port = logicalPortConnector.getPort();
+    for (final HardwarePortConnector_port hardwarePortConnector_port : _port) {
+      document.<HardwarePortConnector_port>format(hardwarePortConnector_port);
+    }
+  }
+  
+  protected void _format(final PowerHardwarePin powerHardwarePin, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(powerHardwarePin).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(powerHardwarePin).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = powerHardwarePin.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(powerHardwarePin).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = powerHardwarePin.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final EADatatypePrototype eADatatypePrototype, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eADatatypePrototype).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eADatatypePrototype).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eADatatypePrototype.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eADatatypePrototype).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = eADatatypePrototype.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final EnumerationLiteral enumerationLiteral, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(enumerationLiteral).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(enumerationLiteral).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = enumerationLiteral.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(enumerationLiteral).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<Comment> _ownedComment = enumerationLiteral.getOwnedComment();
+    for (final Comment comment : _ownedComment) {
+      document.<Comment>format(comment);
+    }
+  }
+  
+  protected void _format(final EAArrayValue eAArrayValue, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eAArrayValue).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eAArrayValue).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eAArrayValue.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eAArrayValue).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<EAValue> _value = eAArrayValue.getValue();
+    for (final EAValue eAValue : _value) {
+      document.<EAValue>format(eAValue);
+    }
+  }
+  
+  protected void _format(final EACompositeValue eACompositeValue, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eACompositeValue).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eACompositeValue).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eACompositeValue.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eACompositeValue).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<EAValue> _value = eACompositeValue.getValue();
+    for (final EAValue eAValue : _value) {
+      document.<EAValue>format(eAValue);
+    }
+  }
+  
+  protected void _format(final EAExpression eAExpression, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(eAExpression).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(eAExpression).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(document.prepend(close, _function_1), _function_2);
+    EList<EAttribute> _eAllAttributes = eAExpression.eClass().getEAllAttributes();
+    for (final EAttribute attr : _eAllAttributes) {
+      {
+        final ISemanticRegion attrRegion = this.textRegionExtensions.regionFor(eAExpression).keyword(attr.getName());
+        if ((attrRegion != null)) {
+          final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+            it.noSpace();
+          };
+          final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+            it.newLine();
+          };
+          document.append(document.surround(attrRegion.getNextSemanticRegion().getNextSemanticRegion(), _function_3), _function_4);
+        }
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_3);
+    EList<EAValue> _value = eAExpression.getValue();
+    for (final EAValue eAValue : _value) {
+      document.<EAValue>format(eAValue);
+    }
+  }
+  
+  public void format(final Object basicSoftwareFunctionType, final IFormattableDocument document) {
+    if (basicSoftwareFunctionType instanceof BasicSoftwareFunctionType) {
+      _format((BasicSoftwareFunctionType)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof EAElement) {
-      _format((EAElement)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof FunctionalDevice) {
+      _format((FunctionalDevice)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof JvmTypeParameter) {
-      _format((JvmTypeParameter)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof HardwareFunctionType) {
+      _format((HardwareFunctionType)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof JvmFormalParameter) {
-      _format((JvmFormalParameter)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof LocalDeviceManager) {
+      _format((LocalDeviceManager)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XtextResource) {
-      _format((XtextResource)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof Actuator) {
+      _format((Actuator)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XAssignment) {
-      _format((XAssignment)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof AnalysisFunctionType) {
+      _format((AnalysisFunctionType)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XBinaryOperation) {
-      _format((XBinaryOperation)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof ArrayDatatype) {
+      _format((ArrayDatatype)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XDoWhileExpression) {
-      _format((XDoWhileExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof CompositeDatatype) {
+      _format((CompositeDatatype)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XFeatureCall) {
-      _format((XFeatureCall)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof DesignFunctionType) {
+      _format((DesignFunctionType)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XMemberFeatureCall) {
-      _format((XMemberFeatureCall)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof EABoolean) {
+      _format((EABoolean)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XPostfixOperation) {
-      _format((XPostfixOperation)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof EANumerical) {
+      _format((EANumerical)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XWhileExpression) {
-      _format((XWhileExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof EAString) {
+      _format((EAString)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XFunctionTypeRef) {
-      _format((XFunctionTypeRef)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof ElectricalComponent) {
+      _format((ElectricalComponent)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof JvmGenericArrayTypeReference) {
-      _format((JvmGenericArrayTypeReference)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof Enumeration) {
+      _format((Enumeration)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof JvmParameterizedTypeReference) {
-      _format((JvmParameterizedTypeReference)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof Node) {
+      _format((Node)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof JvmWildcardTypeReference) {
-      _format((JvmWildcardTypeReference)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof RangeableValueType) {
+      _format((RangeableValueType)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XBasicForLoopExpression) {
-      _format((XBasicForLoopExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof Sensor) {
+      _format((Sensor)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XBlockExpression) {
-      _format((XBlockExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof CommunicationHardwarePin) {
+      _format((CommunicationHardwarePin)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XCastedExpression) {
-      _format((XCastedExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof DesignLevel) {
+      _format((DesignLevel)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XClosure) {
-      _format((XClosure)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof FunctionClientServerInterface) {
+      _format((FunctionClientServerInterface)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XCollectionLiteral) {
-      _format((XCollectionLiteral)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof HardwareComponentType) {
+      _format((HardwareComponentType)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XConstructorCall) {
-      _format((XConstructorCall)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof HardwarePortConnector) {
+      _format((HardwarePortConnector)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XForLoopExpression) {
-      _format((XForLoopExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof IOHardwarePin) {
+      _format((IOHardwarePin)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XIfExpression) {
-      _format((XIfExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof LogicalPortConnector) {
+      _format((LogicalPortConnector)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XInstanceOfExpression) {
-      _format((XInstanceOfExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof PowerHardwarePin) {
+      _format((PowerHardwarePin)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XReturnExpression) {
-      _format((XReturnExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof AnalysisFunctionPrototype) {
+      _format((AnalysisFunctionPrototype)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XSwitchExpression) {
-      _format((XSwitchExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof DesignFunctionPrototype) {
+      _format((DesignFunctionPrototype)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XSynchronizedExpression) {
-      _format((XSynchronizedExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof FunctionClientServerPort) {
+      _format((FunctionClientServerPort)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XThrowExpression) {
-      _format((XThrowExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof FunctionFlowPort) {
+      _format((FunctionFlowPort)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XTryCatchFinallyExpression) {
-      _format((XTryCatchFinallyExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof FunctionPowerPort) {
+      _format((FunctionPowerPort)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XTypeLiteral) {
-      _format((XTypeLiteral)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof HardwareComponentPrototype) {
+      _format((HardwareComponentPrototype)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XVariableDeclaration) {
-      _format((XVariableDeclaration)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof HardwarePort) {
+      _format((HardwarePort)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof JvmTypeConstraint) {
-      _format((JvmTypeConstraint)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof Quantity) {
+      _format((Quantity)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XExpression) {
-      _format((XExpression)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof Realization) {
+      _format((Realization)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XImportDeclaration) {
-      _format((XImportDeclaration)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof Unit) {
+      _format((Unit)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof XImportSection) {
-      _format((XImportSection)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof UserAttributeDefinition) {
+      _format((UserAttributeDefinition)basicSoftwareFunctionType, document);
       return;
-    } else if (obj instanceof EObject) {
-      _format((EObject)obj, doc);
+    } else if (basicSoftwareFunctionType instanceof UserAttributedElement) {
+      _format((UserAttributedElement)basicSoftwareFunctionType, document);
       return;
-    } else if (obj == null) {
-      _format((Void)null, doc);
+    } else if (basicSoftwareFunctionType instanceof UserElementType) {
+      _format((UserElementType)basicSoftwareFunctionType, document);
       return;
-    } else if (obj != null) {
-      _format(obj, doc);
+    } else if (basicSoftwareFunctionType instanceof Allocation) {
+      _format((Allocation)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof EADatatypePrototype) {
+      _format((EADatatypePrototype)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof EAPackage) {
+      _format((EAPackage)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof EnumerationLiteral) {
+      _format((EnumerationLiteral)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof FunctionAllocation) {
+      _format((FunctionAllocation)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof FunctionConnector) {
+      _format((FunctionConnector)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof HardwareConnector) {
+      _format((HardwareConnector)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof Operation) {
+      _format((Operation)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof PortGroup) {
+      _format((PortGroup)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof XtextResource) {
+      _format((XtextResource)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof EAArrayValue) {
+      _format((EAArrayValue)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof EACompositeValue) {
+      _format((EACompositeValue)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof EAExpression) {
+      _format((EAExpression)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof EAXML) {
+      _format((EAXML)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType instanceof EObject) {
+      _format((EObject)basicSoftwareFunctionType, document);
+      return;
+    } else if (basicSoftwareFunctionType == null) {
+      _format((Void)null, document);
+      return;
+    } else if (basicSoftwareFunctionType != null) {
+      _format(basicSoftwareFunctionType, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(obj, doc).toString());
+        Arrays.<Object>asList(basicSoftwareFunctionType, document).toString());
     }
   }
 }
