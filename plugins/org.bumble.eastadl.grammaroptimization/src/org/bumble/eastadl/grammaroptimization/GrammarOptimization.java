@@ -415,12 +415,12 @@ public class GrammarOptimization {
 		if (!checkExistofString(strOutput, regex))
 			strOutput = strOutput + strDefinition;
 		
-//		strOutput = replaceString(strOutput, "String0", "UUID");
-//		
-//		if (!checkExistofString(strOutput, "UUID returns")) {			
-//			strDefinition = "\n\nUUID returns ecore::EString:\n    STRING;\n";
-//			strOutput = strOutput + strDefinition;
-//		}
+		strOutput = replaceString(strOutput, "uuid\\=String0", "uuid=UUID");
+		
+		if (!checkExistofString(strOutput, "UUID returns")) {			
+			strDefinition = "\n\nUUID returns ecore::EString:\n    STRING;\n";
+			strOutput = strOutput + strDefinition;
+		}
 		
 		return strOutput;
 	}
