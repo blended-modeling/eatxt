@@ -7,9 +7,11 @@ import org.bumble.eastadl.simplified.converter.UUID2XtextConverter;
 import org.bumble.eastadl.simplified.naming.EastAdlQualifiedShortnameProvider;
 import org.bumble.eastadl.simplified.parser.antlr.EastAdlSimplifiedSyntaxErrorMessageProvider;
 import org.bumble.eastadl.simplified.scoping.EastAdlSimplifiedScopeProvider;
+import org.bumble.eastadl.simplified.sequencer.EastAdlSimplifiedTransientValueService;
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.parser.antlr.ISyntaxErrorMessageProvider;
+import org.eclipse.xtext.parsetree.reconstr.ITransientValueService;
 import org.eclipse.xtext.scoping.IScopeProvider;
 
 import com.google.inject.Binder;
@@ -50,5 +52,10 @@ public class EastAdlSimplifiedRuntimeModule extends AbstractEastAdlSimplifiedRun
 	@Override
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 		return UUID2XtextConverter.class;
+	}
+	
+	@Override
+	public Class<? extends ITransientValueService> bindITransientValueService() {
+		return EastAdlSimplifiedTransientValueService.class;
 	}
 }
