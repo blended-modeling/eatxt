@@ -22,6 +22,9 @@ public class GrammarOptimization {
 	private static final String NEW_LANGUAGE_NAME = "EastAdlSimplified";
 	private static final String GRAMMAR_RELATIVE_PATH = "\\src\\org\\bumble\\eastadl\\simplified\\";
 
+	public class GrammarRule {
+		public List<String> lines;
+	}
 	// public String testFileName = "E:\\02.Work relevant\\Bumble
 	// Project\\EAST-ADL\\Examples\\temp new xtext.txt";
 	/**
@@ -142,8 +145,10 @@ public class GrammarOptimization {
 				return false;
 			}	
 
+			// 0.0 Add ';' to the end of each attribute in a rule
+			String strProcessed = addSemicolonToAllAttribute(strOrigin);
 			// 0.1 Add rule for EString
-			String strProcessed = addDefinitionOfEString(strOrigin);
+			strProcessed = addDefinitionOfEString(strProcessed);
 			// 0.2 Modify or Add Datatype rules
 			strProcessed = implementRules(strProcessed);
 			
@@ -187,6 +192,56 @@ public class GrammarOptimization {
 		return true;
 	}
 
+	public String addSemicolonToAllAttribute(String input) {
+		String output = "";
+		String lines[] = input.split("\r\n|\r|\n");
+		
+		if (lines.length == 0) {
+			System.err.println("Encounter errors when spliting the whole grammar string");
+			return input;
+		}
+		
+		for (int i = 0; i < lines.length; i++) {
+			if (!checkExistofString(lines[i], "\\=")) {
+				output += lines[i] + "\r\n";
+				continue;
+			}
+			
+			if (i <= 1) {
+				output += lines[i] + "\r\n";
+				continue;
+			}
+			
+			if (checkExistofString(lines[i - 1], "enum") || checkExistofString(lines[i - 1], "terminal")) {
+				output += lines[i] + "\r\n";
+				continue;
+			}
+			
+			if (checkExistofString(lines[i], "shortName")) {
+				output += lines[i] + "\r\n";
+				continue;
+			}
+			
+			if (checkExistofString(lines[i], "\\+\\=")) {
+				output += lines[i] + "\r\n";
+				continue;
+			}
+			
+			//lines[i] += "';'";
+			if (checkExistofString(lines[i], "\\)\\?")) {
+				if (!checkExistofString(lines[i], "\'\\;\'\\s*\\)\\?")) {
+					lines[i] = replaceString(lines[i], "\\)\\?", "';' )?");
+				}
+			}
+			else {
+				if (!checkExistofString(lines[i], "\\w.*(\\+)*\\=.*\\w.*\'\\;\'"))
+					lines[i] += "';'";
+			}
+			output += lines[i] + "\r\n";
+		}
+		
+		return output;
+	}
 	public String cancelWhiteSpaceSensitive(String strInput) {
 		String strOutput = "";
 		
@@ -233,6 +288,8 @@ public class GrammarOptimization {
 				// if it was an optional element, the question symbol should be kept as before
 				if (checkExistofString(lines[i], "END(\\s)*\\)\\?"))
 					subStr = "(" + subStr + ")?";
+				if (checkExistofString(lines[i], "END.*\'\\;\'"))
+					subStr += "';'";
 
 				lines[i] = whitespace + subStr;
 			}
@@ -358,6 +415,13 @@ public class GrammarOptimization {
 		if (!checkExistofString(strOutput, regex))
 			strOutput = strOutput + strDefinition;
 		
+//		strOutput = replaceString(strOutput, "String0", "UUID");
+//		
+//		if (!checkExistofString(strOutput, "UUID returns")) {			
+//			strDefinition = "\n\nUUID returns ecore::EString:\n    STRING;\n";
+//			strOutput = strOutput + strDefinition;
+//		}
+		
 		return strOutput;
 	}
 	
@@ -434,7 +498,7 @@ public class GrammarOptimization {
 		String strRegexBegin = "'EAXML'(\\r|\\n)\\s*BEGIN(\\r|\\n)\\s*\\(topLevelPackage";
 		String strReplaceBegin = "(topLevelPackage";
 		strOutput = replaceString(strOutput, strRegexBegin, strReplaceBegin);
-		String strRegexEnd = "topLevelPackage\\+=EAPackage\\)\\*\\s\\)\\?(\\r|\\n)\\s*END";
+		String strRegexEnd = "topLevelPackage\\+=EAPackage\\)\\*\\s\\).*(\\r|\\n)\\s*END";
 		String strReplaceEnd = "topLevelPackage+=EAPackage)* )?\n    ";
 		strOutput = replaceString(strOutput, strRegexEnd, strReplaceEnd);
 		System.out.println("[Info]*********************************Finish removing keyword EAXML.");
