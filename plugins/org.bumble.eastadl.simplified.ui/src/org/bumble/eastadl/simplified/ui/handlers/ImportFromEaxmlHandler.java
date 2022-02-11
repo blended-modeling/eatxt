@@ -9,8 +9,13 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.eatop.eastadl22.Eastadl22Package;
 import org.eclipse.eatop.eastadl22.util.Eastadl22ResourceFactoryImpl;
+import org.eclipse.emf.common.CommonPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -50,7 +55,7 @@ public class ImportFromEaxmlHandler extends AbstractHandler {
 			IStructuredSelection strucSelection = (IStructuredSelection) selection;
 			if (strucSelection.getFirstElement() instanceof IFile) {
 				IFile eaxmlFile = (IFile) strucSelection.getFirstElement();
-				
+
 				// We are using a resource set implementation from Sphinx. Don't ask me why...
 				ResourceSet resourceSet = new ScopingResourceSetImpl();
 
@@ -62,7 +67,7 @@ public class ImportFromEaxmlHandler extends AbstractHandler {
 				// We need to make sure that EMF uses the right resource for our eatxt file...
 				resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eatxt",
 						new EatxtResourceFactory(resourceProvider));
-				
+
 				// ... and for anything that is referenced with an "ea:/" protocol.
 				resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().put("ea",
 						new Eastadl22ResourceFactoryImpl());
@@ -95,19 +100,30 @@ public class ImportFromEaxmlHandler extends AbstractHandler {
 					Resource xtextResource = resourceSet.createResource(saveUri);
 
 					EObject topLevelObject = xmlResource.getContents().get(0);
-					
+
 					// We add the top-level object from the EMF model to the resource
 					xtextResource.getContents().add(EcoreUtil.copy(topLevelObject));
 
 					// And calling save() will now write out the eatxt file
 					try {
 						xtextResource.save(null);
+						
+						@SuppressWarnings("deprecation")
+						IFile[] files = ResourcesPlugin.getWorkspace().getRoot().findFilesForLocation(new Path(saveUri.toFileString()));
+						try {
+							if (files.length > 0 && files[0] != null)
+								files[0].refreshLocal(IResource.DEPTH_INFINITE, null);
+						} catch (CoreException e) {
+							e.printStackTrace();
+							MessageDialog.openError(activeShell, "Error refreshing workspace after save",
+									"The EAtxt file was saved, but the workspace could not be refreshed: "
+											+ e.getMessage());
+						}
 					} catch (IOException e) {
 						e.printStackTrace();
 						MessageDialog.openError(activeShell, "Error saving EAtxt file",
 								"The EAtxt file could not be saved: " + e.getMessage());
 					}
-
 				}
 			}
 		}
