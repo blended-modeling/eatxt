@@ -107,13 +107,13 @@ String0 returns String:
 Comment_Impl returns Comment:
     'Comment'
     ('{'
-        'body' body=String0';'';'
+        'body' body=String0';'
     '}');
 
 Rationale returns Rationale:
     'Rationale'
     ('{'
-        'body' body=String0';'';'
+        'body' body=String0';'
     '}');
 
 DesignLevel returns DesignLevel:
@@ -331,7 +331,7 @@ ArrayDatatype returns ArrayDatatype:
         ('uri' uri=String0';' )?
         ('maxLength' maxLength=Integer';' )?
         ('minLength' minLength=Integer';' )?
-        'elementType' elementType=[EADatatype|EString]';'';'
+        'elementType' elementType=[EADatatype|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -391,7 +391,7 @@ Enumeration returns Enumeration:
         ('name' name=String0';' )?
         ('text' text=String0';' )?
         ('uri' uri=String0';' )?
-        'isMultiValued' isMultiValued=Boolean';'';'
+        'isMultiValued' isMultiValued=Boolean';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         literal+=EnumerationLiteral (  literal+=EnumerationLiteral)*
     '}');
@@ -402,13 +402,13 @@ Quantity returns Quantity:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'amountOfSubstanceExp' amountOfSubstanceExp=Integer';'';'
-        'electricCurrentExp' electricCurrentExp=Integer';'';'
-        'lengthExp' lengthExp=Integer';'';'
-        'luminousIntensityExp' luminousIntensityExp=Integer';'';'
-        'massExp' massExp=Integer';'';'
-        'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer';'';'
-        'timeExp' timeExp=Integer';'';'
+        'amountOfSubstanceExp' amountOfSubstanceExp=Integer';'
+        'electricCurrentExp' electricCurrentExp=Integer';'
+        'lengthExp' lengthExp=Integer';'
+        'luminousIntensityExp' luminousIntensityExp=Integer';'
+        'massExp' massExp=Integer';'
+        'thermodynamicTemperatureExp' thermodynamicTemperatureExp=Integer';'
+        'timeExp' timeExp=Integer';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -420,10 +420,10 @@ RangeableValueType returns RangeableValueType:
         ('name' name=String0';' )?
         ('text' text=String0';' )?
         ('uri' uri=String0';' )?
-        'accuracy' accuracy=Float';'';'
-        'resolution' resolution=Float';'';'
+        'accuracy' accuracy=Float';'
+        'resolution' resolution=Float';'
         ('significantDigits' significantDigits=Integer';' )?
-        'baseRangeable' baseRangeable=[EANumerical|EString]';'';'
+        'baseRangeable' baseRangeable=[EANumerical|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -433,9 +433,9 @@ Unit returns Unit:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'factor' factor=Float';'';'
-        'symbol' symbol=String0';'';'
-        'offset' offset=Float';'';'
+        'factor' factor=Float';'
+        'symbol' symbol=String0';'
+        'offset' offset=Float';'
         ('reference' reference=[Unit|EString]';' )?
         ('quantity' quantity=[Quantity|EString]';' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
@@ -447,7 +447,7 @@ UserAttributeDefinition returns UserAttributeDefinition:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'type' type=[EADatatype|EString]';'';'
+        'type' type=[EADatatype|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         ('defaultValue' defaultValue=EAValue';' )?
     '}');
@@ -459,7 +459,7 @@ UserAttributedElement returns UserAttributedElement:
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
         ('uaType' '(' uaType+=[UserElementType|EString] (  uaType+=[UserElementType|EString])* ')' )?
-        'attributedElement' attributedElement=[Identifiable|EString]';'';'
+        'attributedElement' attributedElement=[Identifiable|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         (uaValue+=EAValue (  uaValue+=EAValue)*)?
     '}');
@@ -471,7 +471,7 @@ UserElementType returns UserElementType:
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
         ('validFor' validFor=String0';' )?
-        'key' key=String0';'';'
+        'key' key=String0';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         (uaDefinition+=UserAttributeDefinition (  uaDefinition+=UserAttributeDefinition)*)?
     '}');
@@ -492,7 +492,7 @@ DesignFunctionPrototype returns DesignFunctionPrototype:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'type' type=[DesignFunctionType|EString]';'';'
+        'type' type=[DesignFunctionType|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -502,7 +502,7 @@ HardwareComponentPrototype returns HardwareComponentPrototype:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'type' type=[HardwareComponentType|EString]';'';'
+        'type' type=[HardwareComponentType|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -520,14 +520,14 @@ Realization returns Realization:
 Realization_realized returns Realization_realized:
     'Realization_realized'
     ('{'
-        'identifiable_target' identifiable_target=[EAElement|EString]';'';'
+        'identifiable_target' identifiable_target=[EAElement|EString]';'
         ('identifiable_context' '(' identifiable_context+=[EAElement|EString] ( "," identifiable_context+=[EAElement|EString])* ')' )?
     '}');
 
 Realization_realizedBy returns Realization_realizedBy:
     'Realization_realizedBy'
     ('{'
-        'identifiable_target' identifiable_target=[Identifiable|EString]';'';'
+        'identifiable_target' identifiable_target=[Identifiable|EString]';'
         ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
     '}');
 
@@ -537,7 +537,7 @@ AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'type' type=[AnalysisFunctionType|EString]';'';'
+        'type' type=[AnalysisFunctionType|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -548,8 +548,8 @@ FunctionAllocation returns FunctionAllocation:
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
-        'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement';'';'
-        'target' target=FunctionAllocation_target';'';'
+        'allocatedElement' allocatedElement=FunctionAllocation_allocatedElement';'
+        'target' target=FunctionAllocation_target';'
     '}');
 
 FunctionClientServerPort returns FunctionClientServerPort:
@@ -558,8 +558,8 @@ FunctionClientServerPort returns FunctionClientServerPort:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'kind' kind=ClientServerKind';'';'
-        'type' type=[FunctionClientServerInterface|EString]';'';'
+        'kind' kind=ClientServerKind';'
+        'type' type=[FunctionClientServerInterface|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -579,8 +579,8 @@ FunctionFlowPort returns FunctionFlowPort:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'direction' direction=EADirectionKind';'';'
-        'type' type=[EADatatype|EString]';'';'
+        'direction' direction=EADirectionKind';'
+        'type' type=[EADatatype|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
         ('defaultValue' defaultValue=EAValue';' )?
     '}');
@@ -591,7 +591,7 @@ FunctionPowerPort returns FunctionPowerPort:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'type' type=[CompositeDatatype|EString]';'';'
+        'type' type=[CompositeDatatype|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -703,7 +703,7 @@ EADatatypePrototype returns EADatatypePrototype:
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'type' type=[EADatatype|EString]';'';'
+        'type' type=[EADatatype|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -720,14 +720,14 @@ FunctionAllocation_allocatedElement returns FunctionAllocation_allocatedElement:
     'FunctionAllocation_allocatedElement'
     ('{'
         ('allocateableElement_context' '(' allocateableElement_context+=[AllocateableElement|EString] ( "," allocateableElement_context+=[AllocateableElement|EString])* ')' )?
-        'allocateableElement' allocateableElement=[AllocateableElement|EString]';'';'
+        'allocateableElement' allocateableElement=[AllocateableElement|EString]';'
     '}');
 
 FunctionAllocation_target returns FunctionAllocation_target:
     'FunctionAllocation_target'
     ('{'
         ('allocationTarget_context' '(' allocationTarget_context+=[AllocationTarget|EString] ( "," allocationTarget_context+=[AllocationTarget|EString])* ')' )?
-        'allocationTarget' allocationTarget=[AllocationTarget|EString]';'';'
+        'allocationTarget' allocationTarget=[AllocationTarget|EString]';'
     '}');
 
 enum ClientServerKind returns ClientServerKind:
@@ -737,7 +737,7 @@ FunctionConnector_port returns FunctionConnector_port:
     'FunctionConnector_port'
     ('{'
         ('functionPrototype' functionPrototype=[FunctionPrototype|EString]';' )?
-        'functionPort' functionPort=[FunctionPort|EString]';'';'
+        'functionPort' functionPort=[FunctionPort|EString]';'
     '}');
 
 enum EADirectionKind returns EADirectionKind:
@@ -746,50 +746,50 @@ enum EADirectionKind returns EADirectionKind:
 EAArrayValue returns EAArrayValue:
     'EAArrayValue'
     ('{'
-        'type' type=[EADatatype|EString]';'';'
+        'type' type=[EADatatype|EString]';'
         (value+=EAValue (  value+=EAValue)*)?
     '}');
 
 EABooleanValue returns EABooleanValue:
     'EABooleanValue'
     ('{'
-        'value' value=Boolean';'';'
-        'type' type=[EADatatype|EString]';'';'
+        'value' value=Boolean';'
+        'type' type=[EADatatype|EString]';'
     '}');
 
 EACompositeValue returns EACompositeValue:
     'EACompositeValue'
     ('{'
-        'type' type=[EADatatype|EString]';'';'
+        'type' type=[EADatatype|EString]';'
         value+=EAValue (  value+=EAValue)*
     '}');
 
 EAEnumerationValue returns EAEnumerationValue:
     'EAEnumerationValue'
     ('{'
-        'type' type=[EADatatype|EString]';'';'
+        'type' type=[EADatatype|EString]';'
         'value' '(' value+=[EnumerationLiteral|EString] (  value+=[EnumerationLiteral|EString])* ')' 
     '}');
 
 EAExpression returns EAExpression:
     'EAExpression'
     ('{'
-        'type' type=[EADatatype|EString]';'';'
+        'type' type=[EADatatype|EString]';'
         (value+=EAValue (  value+=EAValue)*)?
     '}');
 
 EANumericalValue returns EANumericalValue:
     'EANumericalValue'
     ('{'
-        'value' value=Numerical';'';'
-        'type' type=[EADatatype|EString]';'';'
+        'value' value=Numerical';'
+        'type' type=[EADatatype|EString]';'
     '}');
 
 EAStringValue returns EAStringValue:
     'EAStringValue'
     ('{'
-        'value' value=String0';'';'
-        'type' type=[EADatatype|EString]';'';'
+        'value' value=String0';'
+        'type' type=[EADatatype|EString]';'
     '}');
 
 Boolean returns ecore::EBoolean:
@@ -801,14 +801,14 @@ Numerical returns Numerical:
 HardwareConnector_port returns HardwareConnector_port:
     'HardwareConnector_port'
     ('{'
-        'hardwarePin' hardwarePin=[HardwarePin|EString]';'';'
+        'hardwarePin' hardwarePin=[HardwarePin|EString]';'
         ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString]';' )?
     '}');
 
 HardwarePortConnector_port returns HardwarePortConnector_port:
     'HardwarePortConnector_port'
     ('{'
-        'hardwarePort' hardwarePort=[HardwarePort|EString]';'';'
+        'hardwarePort' hardwarePort=[HardwarePort|EString]';'
         ('hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString]';' )?
     '}');
 
