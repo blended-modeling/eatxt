@@ -22,7 +22,7 @@ Workflow {
 					enabled = true
 				}
 				eclipsePluginTest = {
-					enabled = false
+					enabled = true
 					root = testPath
 				}
 				genericIde = {
