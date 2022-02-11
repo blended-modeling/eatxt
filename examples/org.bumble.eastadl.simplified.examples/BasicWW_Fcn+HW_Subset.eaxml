@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EAXML xmlns="http://east-adl.info/2.1.12" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://east-adl.info/2.1.12 eastadl_2-1-12.xsd">
+  <TOP-LEVEL-PACKAGES>
+    <EA-PACKAGE>
+      <SHORT-NAME>CoreFcnHw</SHORT-NAME>
+      <CATEGORY></CATEGORY>
+      <NAME></NAME>
+      <OWNED-COMMENTS/>
+      <SUB-PACKAGES>
+        <EA-PACKAGE>
+          <SHORT-NAME>Structure</SHORT-NAME>
+          <CATEGORY></CATEGORY>
+          <NAME></NAME>
+          <OWNED-COMMENTS/>
+          <SUB-PACKAGES>
+            <EA-PACKAGE>
+              <SHORT-NAME>DesignPkg</SHORT-NAME>
+              <CATEGORY></CATEGORY>
+              <NAME></NAME>
+              <OWNED-COMMENTS/>
+              <SUB-PACKAGES>
+                <EA-PACKAGE>
+                  <SHORT-NAME>FcnDesignPkg</SHORT-NAME>
+                  <CATEGORY></CATEGORY>
+                  <NAME></NAME>
+                  <OWNED-COMMENTS/>
+                  <SUB-PACKAGES/>
+                  <ELEMENTS>
+                    <DESIGN-FUNCTION-TYPE>
+                      <SHORT-NAME>StalkHWFLDM</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>false</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT UUID="">
+                          <SHORT-NAME>stalkPositionPhys</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT UUID="">
+                          <SHORT-NAME>wipingHMI_rqst</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS/>
+                      <PARTS/>
+                    </DESIGN-FUNCTION-TYPE>
+                    <BASIC-SOFTWARE-FUNCTION-TYPE>
+                      <SHORT-NAME>WiperMotorBSW</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>true</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wiperMotorHighSpeed</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wiperMotorLowSpeed</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT UUID="">
+                          <SHORT-NAME>Digital_WiperHi</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT UUID="">
+                          <SHORT-NAME>Digital_WiperLo</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS/>
+                      <PARTS/>
+                    </BASIC-SOFTWARE-FUNCTION-TYPE>
+                    <HARDWARE-FUNCTION-TYPE UUID="848b7e2a-102e-479f-9fd5-956e98c7a7cf">
+                      <SHORT-NAME>WiperMotorHWF</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>true</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>bWindScreenWiperParkPosition</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>bWiperMotorHighSpeed</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>bWiperMotorLowSpeed</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>WiperMotorAngle</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="RANGEABLE-VALUE-TYPE">/CoreFcnHw/Structure/DesignPkg/DataTypes/Real_float64</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>WiperMotorSpeed</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="RANGEABLE-VALUE-TYPE">/CoreFcnHw/Structure/DesignPkg/DataTypes/Real_float64</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS/>
+                      <PARTS/>
+                      <HARDWARE-COMPONENT-REF TYPE="NODE">/Structure/DesignPkg/HardwarePkg/WiperMotor</HARDWARE-COMPONENT-REF>
+                    </HARDWARE-FUNCTION-TYPE>
+                    <LOCAL-DEVICE-MANAGER>
+                      <SHORT-NAME>WiperMotorLDM</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>true</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wipingCommand</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>Digital_WiperLo</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT UUID="">
+                          <SHORT-NAME>Digital_WiperHi</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS/>
+                      <PARTS/>
+                    </LOCAL-DEVICE-MANAGER>
+                    <HARDWARE-FUNCTION-TYPE UUID="766f9e0e-1c0c-4162-8853-a256c4e3d21e">
+                      <SHORT-NAME>WiperMotorRelayHWF</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>true</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wiperMotorHighSpeedOut</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wiperMotorLowSpeedOut</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wiperMotorHighSpeedIn</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wiperMotorLowSpeedIn</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS/>
+                      <PARTS/>
+                    </HARDWARE-FUNCTION-TYPE>
+                    <LOCAL-DEVICE-MANAGER>
+                      <SHORT-NAME>WiperParkPositionLDM</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>true</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wiperParkStatusIn</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-BOOLEAN">/CoreFcnHw/Structure/DesignPkg/DataTypes/Boolean</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>wiperParkStatusOut</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS/>
+                      <PARTS/>
+                    </LOCAL-DEVICE-MANAGER>
+                    <DESIGN-FUNCTION-TYPE>
+                      <SHORT-NAME>WiperVisualizationHWFLDM</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>false</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT UUID="">
+                          <SHORT-NAME>WiperAngle</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="RANGEABLE-VALUE-TYPE">/CoreFcnHw/Structure/DesignPkg/DataTypes/Real_float64</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS/>
+                      <PARTS/>
+                    </DESIGN-FUNCTION-TYPE>
+                    <DESIGN-FUNCTION-TYPE>
+                      <SHORT-NAME>WiperCtrlBasic</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>true</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>bWiperParkStatus</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME>bWiperParkStatus</NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>Wiping_HMI_rqst</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME>Wiping_HMI_rqst</NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>WiperParkStatus_Global</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME>WiperParkStatus_Global</NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT UUID="">
+                          <SHORT-NAME>WipingCmd</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME>WipingCmd</NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS/>
+                      <PARTS/>
+                    </DESIGN-FUNCTION-TYPE>
+                    <BEHAVIOR>
+                      <SHORT-NAME>BehaviorFMU</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME>BehaviorFMU</NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <MODE-GROUPS/>
+                      <BEHAVIORS>
+                        <FUNCTION-BEHAVIOR>
+                          <SHORT-NAME>WiperMotorHWFFMU</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TRACEABLE-SPECIFICATION-REFS/>
+                          <OWNED-RELATIONSHIPS/>
+                          <PATH>FMU/WiperMotorHWF.fmu</PATH>
+                          <REPRESENTATION>OTHER</REPRESENTATION>
+                          <MODE-REFS/>
+                          <FUNCTION-REF TYPE="HARDWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF</FUNCTION-REF>
+                        </FUNCTION-BEHAVIOR>
+                        <FUNCTION-BEHAVIOR>
+                          <SHORT-NAME>WiperMotorBSWFMU</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TRACEABLE-SPECIFICATION-REFS/>
+                          <OWNED-RELATIONSHIPS/>
+                          <PATH>FMU/WiperMotorBSW.fmu</PATH>
+                          <REPRESENTATION>OTHER</REPRESENTATION>
+                          <MODE-REFS/>
+                          <FUNCTION-REF TYPE="BASIC-SOFTWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW</FUNCTION-REF>
+                        </FUNCTION-BEHAVIOR>
+                        <FUNCTION-BEHAVIOR>
+                          <SHORT-NAME>WiperMotorRelayHWFFMU</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TRACEABLE-SPECIFICATION-REFS/>
+                          <OWNED-RELATIONSHIPS/>
+                          <PATH>FMU/WiperMotorRelayHWF.fmu</PATH>
+                          <REPRESENTATION>OTHER</REPRESENTATION>
+                          <MODE-REFS/>
+                          <FUNCTION-REF TYPE="HARDWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF</FUNCTION-REF>
+                        </FUNCTION-BEHAVIOR>
+                        <FUNCTION-BEHAVIOR>
+                          <SHORT-NAME>WiperParkPositionLDMFMU</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TRACEABLE-SPECIFICATION-REFS/>
+                          <OWNED-RELATIONSHIPS/>
+                          <PATH>FMU/WiperParkPositionLDM.fmu</PATH>
+                          <REPRESENTATION>OTHER</REPRESENTATION>
+                          <MODE-REFS/>
+                          <FUNCTION-REF TYPE="LOCAL-DEVICE-MANAGER">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperParkPositionLDM</FUNCTION-REF>
+                        </FUNCTION-BEHAVIOR>
+                        <FUNCTION-BEHAVIOR>
+                          <SHORT-NAME>WiperMotorLDMFMU</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TRACEABLE-SPECIFICATION-REFS/>
+                          <OWNED-RELATIONSHIPS/>
+                          <PATH>FMU/WiperMotorLDM.fmu</PATH>
+                          <REPRESENTATION>OTHER</REPRESENTATION>
+                          <MODE-REFS/>
+                          <FUNCTION-REF TYPE="LOCAL-DEVICE-MANAGER">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorLDM</FUNCTION-REF>
+                        </FUNCTION-BEHAVIOR>
+                        <FUNCTION-BEHAVIOR>
+                          <SHORT-NAME>FuncBehaviorWiperCtrlBasic</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TRACEABLE-SPECIFICATION-REFS/>
+                          <OWNED-RELATIONSHIPS/>
+                          <PATH>/FMU/WiperCtrlBasic.fmu</PATH>
+                          <REPRESENTATION>OTHER</REPRESENTATION>
+                          <MODE-REFS/>
+                          <FUNCTION-REF TYPE="DESIGN-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperCtrlBasic</FUNCTION-REF>
+                        </FUNCTION-BEHAVIOR>
+                      </BEHAVIORS>
+                      <FUNCTION-TRIGGERS/>
+                    </BEHAVIOR>
+                  </ELEMENTS>
+                </EA-PACKAGE>
+                <EA-PACKAGE UUID="3caef442-a383-4f3c-bdba-9bf55d2f672b">
+                  <SHORT-NAME>DataTypes</SHORT-NAME>
+                  <CATEGORY></CATEGORY>
+                  <NAME></NAME>
+                  <OWNED-COMMENTS/>
+                  <SUB-PACKAGES/>
+                  <ELEMENTS>
+                    <EA-BOOLEAN>
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME>Boolean</NAME>
+                      <OWNED-COMMENTS/>
+                      <TEXT></TEXT>
+                    </EA-BOOLEAN>
+                    <EA-NUMERICAL>
+                      <SHORT-NAME>Numerical</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME>Numerical</NAME>
+                      <OWNED-COMMENTS/>
+                      <TEXT></TEXT>
+                      <MAX></MAX>
+                      <MIN></MIN>
+                    </EA-NUMERICAL>
+                    <EA-NUMERICAL>
+                      <SHORT-NAME>Integer_uint8</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TEXT></TEXT>
+                      <MAX></MAX>
+                      <MIN></MIN>
+                    </EA-NUMERICAL>
+                    <RANGEABLE-VALUE-TYPE>
+                      <SHORT-NAME>Real_float64</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TEXT></TEXT>
+                      <ACCURACY>0.0</ACCURACY>
+                      <RESOLUTION>0.0</RESOLUTION>
+                      <SIGNIFICANT-DIGITS>0</SIGNIFICANT-DIGITS>
+                    </RANGEABLE-VALUE-TYPE>
+                    <FUNCTION-CLIENT-SERVER-INTERFACE>
+                      <SHORT-NAME>WipingCommandCSI</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TEXT></TEXT>
+                      <OPERATIONS/>
+                    </FUNCTION-CLIENT-SERVER-INTERFACE>
+                  </ELEMENTS>
+                </EA-PACKAGE>
+                <EA-PACKAGE>
+                  <SHORT-NAME>FcnDesignArchitecture</SHORT-NAME>
+                  <CATEGORY></CATEGORY>
+                  <NAME></NAME>
+                  <OWNED-COMMENTS/>
+                  <SUB-PACKAGES/>
+                  <ELEMENTS>
+                    <DESIGN-FUNCTION-TYPE>
+                      <SHORT-NAME>FDAWithController</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>false</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>Wiping_HMI_rqst</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME>Wiping_HMI_rqst</NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                        </FUNCTION-FLOW-PORT>
+                        <FUNCTION-FLOW-PORT>
+                          <SHORT-NAME>WiperParkStatus_Global</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME>WiperParkStatus_Global</NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>OUT</DIRECTION>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperHighCommandC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorRelayHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF/wiperMotorHighSpeedOut</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF/bWiperMotorHighSpeed</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperHighCommandC2</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorBSW</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW/wiperMotorHighSpeed</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorRelayHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF/wiperMotorHighSpeedIn</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperLowCommandC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorRelayHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF/wiperMotorLowSpeedOut</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF/bWiperMotorLowSpeed</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperLowCommandC2</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorRelayHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF/wiperMotorLowSpeedIn</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorBSW</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW/wiperMotorLowSpeed</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>WiperParkStatusC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperParkPositionLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperParkPositionLDM/wiperParkStatusIn</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF/bWindScreenWiperParkPosition</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wipingCommandHiC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorBSW</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW/Digital_WiperHi</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorLDM/Digital_WiperHi</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wipingCommandLoC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorBSW</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW/Digital_WiperLo</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorLDM/Digital_WiperLo</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>WiperAngle</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperVizualizationHWFLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperVisualizationHWFLDM/WiperAngle</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF/WiperMotorAngle</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperCtrlBasic_WipingCmd_to_wiperMotorLDM_wipingCommand</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperCtrlBasic</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperCtrlBasic/WipingCmd</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperMotorLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorLDM/wipingCommand</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperParkPositionLDM_wiperParkStatusOut_to_wiperCtrlBasic_bWiperParkStatus</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperCtrlBasic</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperCtrlBasic/bWiperParkStatus</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperParkPositionLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperParkPositionLDM/wiperParkStatusOut</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>WiperParkStatus_Global_delegate_wiperCtrlBasic_WiperParkStatus_Global</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperCtrlBasic</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperCtrlBasic/WiperParkStatus_Global</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/WiperParkStatus_Global</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>Wiping_HMI_rqst_delegate_wiperCtrlBasic_Wiping_HMI_rqst</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperCtrlBasic</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperCtrlBasic/Wiping_HMI_rqst</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/Wiping_HMI_rqst</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                      </CONNECTORS>
+                      <PARTS>
+                        <DESIGN-FUNCTION-PROTOTYPE>
+                          <SHORT-NAME>wiperMotorBSW</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="BASIC-SOFTWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE>
+                          <SHORT-NAME>wiperMotorHWF</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="HARDWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE>
+                          <SHORT-NAME>wiperMotorLDM</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="LOCAL-DEVICE-MANAGER">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorLDM</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE UUID="">
+                          <SHORT-NAME>wiperMotorRelayHWF</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="HARDWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE UUID="">
+                          <SHORT-NAME>wiperParkPositionLDM</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="LOCAL-DEVICE-MANAGER">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperParkPositionLDM</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE UUID="">
+                          <SHORT-NAME>wiperVizualizationHWFLDM</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="DESIGN-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperVisualizationHWFLDM</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE UUID="">
+                          <SHORT-NAME>wiperCtrlBasic</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="DESIGN-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperCtrlBasic</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                      </PARTS>
+                    </DESIGN-FUNCTION-TYPE>
+                    <DESIGN-FUNCTION-TYPE>
+                      <SHORT-NAME>FDAWithoutController</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <IS-ELEMENTARY>false</IS-ELEMENTARY>
+                      <PORTS>
+                        <FUNCTION-FLOW-PORT UUID="">
+                          <SHORT-NAME>stalkPositionPhysical</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <DIRECTION>IN</DIRECTION>
+                          <TYPE-TREF TYPE="EA-NUMERICAL">/CoreFcnHw/Structure/DesignPkg/DataTypes/Integer_uint8</TYPE-TREF>
+                        </FUNCTION-FLOW-PORT>
+                      </PORTS>
+                      <PORT-GROUPS/>
+                      <CONNECTORS>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperHighCommandC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorRelayHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF/wiperMotorHighSpeedOut</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF/bWiperMotorHighSpeed</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperHighCommandC2</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorBSW</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW/wiperMotorHighSpeed</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorRelayHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF/wiperMotorHighSpeedIn</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperLowCommandC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorRelayHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF/wiperMotorLowSpeedOut</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF/bWiperMotorLowSpeed</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wiperLowCommandC2</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorRelayHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF/wiperMotorLowSpeedIn</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorBSW</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW/wiperMotorLowSpeed</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>WiperParkStatusC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperParkPositionLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperParkPositionLDM/wiperParkStatusIn</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF/bWindScreenWiperParkPosition</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wipingCommandHiC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorBSW</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW/Digital_WiperHi</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorLDM/Digital_WiperHi</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>wipingCommandLoC</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorBSW</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW/Digital_WiperLo</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorLDM/Digital_WiperLo</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                        <FUNCTION-CONNECTOR>
+                          <SHORT-NAME>WiperAngle</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <PORT-IREFS>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperVizualizationHWFLDM</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperVisualizationHWFLDM/WiperAngle</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                            <PORT-IREF>
+                              <FUNCTION-PROTOTYPE-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorHWF</FUNCTION-PROTOTYPE-REF>
+                              <FUNCTION-PORT-REF TYPE="FUNCTION-FLOW-PORT">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF/WiperMotorAngle</FUNCTION-PORT-REF>
+                            </PORT-IREF>
+                          </PORT-IREFS>
+                        </FUNCTION-CONNECTOR>
+                      </CONNECTORS>
+                      <PARTS>
+                        <DESIGN-FUNCTION-PROTOTYPE>
+                          <SHORT-NAME>wiperMotorBSW</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="BASIC-SOFTWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorBSW</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE>
+                          <SHORT-NAME>wiperMotorHWF</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="HARDWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorHWF</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE>
+                          <SHORT-NAME>wiperMotorLDM</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="LOCAL-DEVICE-MANAGER">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorLDM</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE UUID="">
+                          <SHORT-NAME>wiperMotorRelayHWF</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="HARDWARE-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperMotorRelayHWF</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE UUID="">
+                          <SHORT-NAME>wiperParkPositionLDM</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="LOCAL-DEVICE-MANAGER">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperParkPositionLDM</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                        <DESIGN-FUNCTION-PROTOTYPE UUID="">
+                          <SHORT-NAME>wiperVizualizationHWFLDM</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="DESIGN-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignPkg/WiperVisualizationHWFLDM</TYPE-TREF>
+                        </DESIGN-FUNCTION-PROTOTYPE>
+                      </PARTS>
+                    </DESIGN-FUNCTION-TYPE>
+                  </ELEMENTS>
+                </EA-PACKAGE>
+                <EA-PACKAGE>
+                  <SHORT-NAME>HWDesignPkg</SHORT-NAME>
+                  <CATEGORY></CATEGORY>
+                  <NAME></NAME>
+                  <OWNED-COMMENTS/>
+                  <SUB-PACKAGES/>
+                  <ELEMENTS>
+                    <HARDWARE-COMPONENT-TYPE>
+                      <SHORT-NAME>WiperECU</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <CONNECTORS/>
+                      <PINS/>
+                      <PARTS/>
+                      <PORTS/>
+                      <PORT-CONNECTORS/>
+                    </HARDWARE-COMPONENT-TYPE>
+                    <HARDWARE-COMPONENT-TYPE>
+                      <SHORT-NAME>WiperSubsystemHDA</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <CONNECTORS/>
+                      <PINS/>
+                      <PARTS>
+                        <HARDWARE-COMPONENT-PROTOTYPE>
+                          <SHORT-NAME>pECU</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="HARDWARE-COMPONENT-TYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/WiperECU</TYPE-TREF>
+                        </HARDWARE-COMPONENT-PROTOTYPE>
+                      </PARTS>
+                      <PORTS/>
+                      <PORT-CONNECTORS/>
+                    </HARDWARE-COMPONENT-TYPE>
+                    <HARDWARE-COMPONENT-TYPE>
+                      <SHORT-NAME>VehicleHDA</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <TRACEABLE-SPECIFICATION-REFS/>
+                      <OWNED-RELATIONSHIPS/>
+                      <CONNECTORS/>
+                      <PINS/>
+                      <PARTS>
+                        <HARDWARE-COMPONENT-PROTOTYPE>
+                          <SHORT-NAME>pWiperSubsystem</SHORT-NAME>
+                          <CATEGORY></CATEGORY>
+                          <NAME></NAME>
+                          <OWNED-COMMENTS/>
+                          <TYPE-TREF TYPE="HARDWARE-COMPONENT-TYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/WiperSubsystemHDA</TYPE-TREF>
+                        </HARDWARE-COMPONENT-PROTOTYPE>
+                      </PARTS>
+                      <PORTS/>
+                      <PORT-CONNECTORS/>
+                    </HARDWARE-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </EA-PACKAGE>
+              </SUB-PACKAGES>
+              <ELEMENTS/>
+            </EA-PACKAGE>
+          </SUB-PACKAGES>
+          <ELEMENTS>
+            <DESIGN-LEVEL>
+              <SHORT-NAME>DesignLevelWW</SHORT-NAME>
+              <CATEGORY></CATEGORY>
+              <NAME></NAME>
+              <OWNED-COMMENTS/>
+              <TRACEABLE-SPECIFICATION-REFS/>
+              <OWNED-RELATIONSHIPS/>
+              <ALLOCATIONS>
+                <ALLOCATION>
+                  <SHORT-NAME>FcnAllocations</SHORT-NAME>
+                  <CATEGORY></CATEGORY>
+                  <NAME></NAME>
+                  <OWNED-COMMENTS/>
+                  <FUNCTION-ALLOCATIONS>
+                    <FUNCTION-ALLOCATION>
+                      <SHORT-NAME>a1</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <ALLOCATED-ELEMENT-IREF>
+                        <ALLOCATEABLE-ELEMENT-CONTEXT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pFDA</ALLOCATEABLE-ELEMENT-CONTEXT-REF>
+                        <ALLOCATEABLE-ELEMENT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController/wiperCtrlBasic</ALLOCATEABLE-ELEMENT-REF>
+                      </ALLOCATED-ELEMENT-IREF>
+                      <TARGET-IREF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/VehicleHDA/pWiperSubsystem</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pHDA</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/WiperSubsystemHDA/pECU</ALLOCATION-TARGET-REF>
+                      </TARGET-IREF>
+                    </FUNCTION-ALLOCATION>
+                    <FUNCTION-ALLOCATION>
+                      <SHORT-NAME>a2</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <ALLOCATED-ELEMENT-IREF>
+                        <ALLOCATEABLE-ELEMENT-CONTEXT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pFDA</ALLOCATEABLE-ELEMENT-CONTEXT-REF>
+                        <ALLOCATEABLE-ELEMENT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorLDM</ALLOCATEABLE-ELEMENT-REF>
+                      </ALLOCATED-ELEMENT-IREF>
+                      <TARGET-IREF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/VehicleHDA/pWiperSubsystem</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pHDA</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/WiperSubsystemHDA/pECU</ALLOCATION-TARGET-REF>
+                      </TARGET-IREF>
+                    </FUNCTION-ALLOCATION>
+                    <FUNCTION-ALLOCATION>
+                      <SHORT-NAME>a3</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <ALLOCATED-ELEMENT-IREF>
+                        <ALLOCATEABLE-ELEMENT-CONTEXT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pFDA</ALLOCATEABLE-ELEMENT-CONTEXT-REF>
+                        <ALLOCATEABLE-ELEMENT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperMotorBSW</ALLOCATEABLE-ELEMENT-REF>
+                      </ALLOCATED-ELEMENT-IREF>
+                      <TARGET-IREF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/VehicleHDA/pWiperSubsystem</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pHDA</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/WiperSubsystemHDA/pECU</ALLOCATION-TARGET-REF>
+                      </TARGET-IREF>
+                    </FUNCTION-ALLOCATION>
+                    <FUNCTION-ALLOCATION>
+                      <SHORT-NAME>a4</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <ALLOCATED-ELEMENT-IREF>
+                        <ALLOCATEABLE-ELEMENT-CONTEXT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pFDA</ALLOCATEABLE-ELEMENT-CONTEXT-REF>
+                        <ALLOCATEABLE-ELEMENT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperParkPositionLDM</ALLOCATEABLE-ELEMENT-REF>
+                      </ALLOCATED-ELEMENT-IREF>
+                      <TARGET-IREF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/VehicleHDA/pWiperSubsystem</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pHDA</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/WiperSubsystemHDA/pECU</ALLOCATION-TARGET-REF>
+                      </TARGET-IREF>
+                    </FUNCTION-ALLOCATION>
+                    <FUNCTION-ALLOCATION>
+                      <SHORT-NAME>a5</SHORT-NAME>
+                      <CATEGORY></CATEGORY>
+                      <NAME></NAME>
+                      <OWNED-COMMENTS/>
+                      <ALLOCATED-ELEMENT-IREF>
+                        <ALLOCATEABLE-ELEMENT-CONTEXT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pFDA</ALLOCATEABLE-ELEMENT-CONTEXT-REF>
+                        <ALLOCATEABLE-ELEMENT-REF TYPE="DESIGN-FUNCTION-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithoutController/wiperVizualizationHWFLDM</ALLOCATEABLE-ELEMENT-REF>
+                      </ALLOCATED-ELEMENT-IREF>
+                      <TARGET-IREF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/VehicleHDA/pWiperSubsystem</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-CONTEXT-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignLevelWW/pHDA</ALLOCATION-TARGET-CONTEXT-REF>
+                        <ALLOCATION-TARGET-REF TYPE="HARDWARE-COMPONENT-PROTOTYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/WiperSubsystemHDA/pECU</ALLOCATION-TARGET-REF>
+                      </TARGET-IREF>
+                    </FUNCTION-ALLOCATION>
+                  </FUNCTION-ALLOCATIONS>
+                </ALLOCATION>
+              </ALLOCATIONS>
+              <FUNCTIONAL-DESIGN-ARCHITECTURE>
+                <SHORT-NAME>pFDA</SHORT-NAME>
+                <CATEGORY></CATEGORY>
+                <NAME></NAME>
+                <OWNED-COMMENTS/>
+                <TYPE-TREF TYPE="DESIGN-FUNCTION-TYPE">/CoreFcnHw/Structure/DesignPkg/FcnDesignArchitecture/FDAWithController</TYPE-TREF>
+              </FUNCTIONAL-DESIGN-ARCHITECTURE>
+              <HARDWARE-DESIGN-ARCHITECTURE>
+                <SHORT-NAME>pHDA</SHORT-NAME>
+                <CATEGORY></CATEGORY>
+                <NAME></NAME>
+                <OWNED-COMMENTS/>
+                <TYPE-TREF TYPE="HARDWARE-COMPONENT-TYPE">/CoreFcnHw/Structure/DesignPkg/HWDesignPkg/VehicleHDA</TYPE-TREF>
+              </HARDWARE-DESIGN-ARCHITECTURE>
+            </DESIGN-LEVEL>
+          </ELEMENTS>
+        </EA-PACKAGE>
+      </SUB-PACKAGES>
+      <ELEMENTS/>
+    </EA-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</EAXML>
