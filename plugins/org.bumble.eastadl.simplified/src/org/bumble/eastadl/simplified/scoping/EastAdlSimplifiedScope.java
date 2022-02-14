@@ -25,6 +25,23 @@ public class EastAdlSimplifiedScope extends SimpleScope {
 		super(parent, descriptions);
 	}
 
+	/**
+	 * Removes the query part (i.e., everything after the first "?") from a
+	 * uriFragment.
+	 * 
+	 * We need to do this here, since {@link URI} does not do this reliably.
+	 * 
+	 * @param uriFragment the fragment whose query should be trimmed
+	 * @return a String representation of a URI without a query if it contained one;
+	 *         <code>uriFragment</code> otherwise
+	 */
+	private String trimQuery(String uriFragment) {
+		if (uriFragment == null || uriFragment.indexOf("?") == -1) {
+			return uriFragment;
+		}
+		return uriFragment.substring(0, uriFragment.indexOf("?"));
+	}
+
 	@Override
 	protected Iterable<IEObjectDescription> getLocalElementsByEObject(final EObject object, final URI uri) {
 		Iterable<IEObjectDescription> localElements = getAllLocalElements();
@@ -38,7 +55,10 @@ public class EastAdlSimplifiedScope extends SimpleScope {
 					return canBeFoundByNameAndShadowingKey(input);
 				}
 				// This is the hack that allows us to find elements based on the "ea:/" URI
-				if (uri.scheme().equals("ea") && uri.fragment().equals(input.getEObjectURI().fragment())) {
+				// We need to trim the query since the "type" parameter is different when
+				// serialising.
+				if (uri.scheme().equals("ea")
+						&& trimQuery(uri.fragment()).equals(trimQuery(input.getEObjectURI().fragment()))) {
 					return canBeFoundByNameAndShadowingKey(input);
 				}
 				return false;
@@ -55,7 +75,8 @@ public class EastAdlSimplifiedScope extends SimpleScope {
 							return true;
 						if (uri.equals(other.getEObjectURI()))
 							return true;
-						if (uri.scheme().equals("ea") && uri.fragment().equals(input.getEObjectURI().fragment()))
+						if (uri.scheme().equals("ea")
+								&& trimQuery(uri.fragment()).equals(trimQuery(input.getEObjectURI().fragment())))
 							return true;
 						return false;
 					}
