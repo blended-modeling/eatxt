@@ -6,7 +6,7 @@ EAPackage Structure
 		{
 			FunctionClientServerInterface testFuncClientSvInterf
 			{
-				name testFuncClientSvInterf
+				name testFuncClientSvInterf;
 			}
 		}
 		EAPackage fsdfs
@@ -19,28 +19,28 @@ EAPackage Structure
 			EABoolean Boolean
 			EANumerical test1026
 			{
-				name ssss111
-				max 1E+1
+				name ssss111;
+				max 1E+1;
 			}
 			EANumerical Numerical
 			{
-				name sss1
-				max 074
-				min 0x1
+				name sss1;
+				max 074;
+				min 0x1;
 			}
 			EABoolean fsdfsd
 			EANumerical Integer_uint8
 			{
-				name s
-				max 0b11
-				min 0b1
+				name s;
+				max 0b11;
+				min 0b1;
 			}
 			RangeableValueType Real_float64
 			{
-				name sss3
-				accuracy 0.1
-				resolution 2.1
-				baseRangeable "Structure.DesignPkg.DataTypes_new.Integer_uint8"
+				name sss3;
+				accuracy 0.1;
+				resolution 2.1;
+				baseRangeable "Structure.DesignPkg.DataTypes_new.Integer_uint8";
 			}
 		}
 		EAPackage FcnDesignArchitecture_new
@@ -49,18 +49,18 @@ EAPackage Structure
 			{
 				DesignFunctionPrototype wiperCtrlBasic
 				{
-					type "Structure.DesignPkg.FcnDesignArchitecture_new.testtype0819"
+					type "Structure.DesignPkg.FcnDesignArchitecture_new.testtype0819";
 				}
 				DesignFunctionPrototype wiperCtrlBasic1018
 				{
-					type "Structure.DesignPkg.FcnDesignPkg_new.WiperCtrlBasic"
+					type "Structure.DesignPkg.FcnDesignPkg_new.WiperCtrlBasic";
 				}
 			}
 			DesignFunctionType testtype0819
 			{
 				DesignFunctionPrototype testprototype0819
 				{
-					type "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new"
+					type "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new";
 				}
 			}
 		}
@@ -68,61 +68,61 @@ EAPackage Structure
 		{
 			DesignFunctionType WiperCtrlBasic
 			{
-				isElementary false
+				isElementary false;
 				FunctionFlowPort bWiperParkStatus
 				{
-					direction in
-					type "Structure.DesignPkg.DataTypes_new.Boolean"
+					direction in;
+					type "Structure.DesignPkg.DataTypes_new.Boolean";
 				}
 			}
 			HardwareFunctionType WiperMotorHWF
 			{
 				FunctionFlowPort bWindScreenWiperParkPosition
 				{
-					direction out
-					type "Structure.DesignPkg.DataTypes_new.Boolean"
+					direction out;
+					type "Structure.DesignPkg.DataTypes_new.Boolean";
 					defaultValue EAEnumerationValue
 					{
-						type "Structure.DesignPkg.DataTypes_new.Boolean"
+						type "Structure.DesignPkg.DataTypes_new.Boolean";
 						value ("Structure.DesignPkg.test4newtype.testEnumeration.testEnumLiteral")
-					}
+					};
 				}
 				FunctionPowerPort bTestFuncPowerPort
 				{
-					type "Structure.DesignPkg.test4newtype.testCompositeDataType"
+					type "Structure.DesignPkg.test4newtype.testCompositeDataType";
 				}
 				FunctionFlowPort test1019
 				{
-					direction out
-					type "Structure.DesignPkg.DataTypes_new.Boolean"
+					direction out;
+					type "Structure.DesignPkg.DataTypes_new.Boolean";
 				}
 			}
 			DesignFunctionType fsd
 			{
-				isElementary false
+				isElementary false;
 				FunctionConnector aaa
 				{
 					FunctionConnector_port
 					{
-						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus"
+						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperCtrlBasic.bWiperParkStatus";
 					}
 					FunctionConnector_port
 					{
-						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.test1019"
+						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.test1019";
 					}
 				}
 			}
 			HardwareComponentType testhwcomptype0819
 			{
-				category sss
+				category sss;
 			}
 			BasicSoftwareFunctionType WiperMotorBSW
 			{
-				isElementary true
+				isElementary true;
 				FunctionClientServerPort testFuncClientSvPort
 				{
-					kind client
-					type "Structure.DesignPkg.test.testFuncClientSvInterf"
+					kind client;
+					type "Structure.DesignPkg.test.testFuncClientSvInterf";
 				}
 			}
 			AnalysisFunctionType testAnalysisFuncType
@@ -131,13 +131,13 @@ EAPackage Structure
 				{
 					FunctionConnector_port
 					{
-						functionPrototype "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
-						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.bWindScreenWiperParkPosition"
+						functionPrototype "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic";
+						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.bWindScreenWiperParkPosition";
 					}
 					FunctionConnector_port
 					{
-						functionPrototype "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
-						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.bTestFuncPowerPort"
+						functionPrototype "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic";
+						functionPort "Structure.DesignPkg.FcnDesignPkg_new.WiperMotorHWF.bTestFuncPowerPort";
 					}
 				}
 			}
@@ -147,16 +147,16 @@ EAPackage Structure
 				{
 					Realization_realized
 					{
-						identifiable_target "Structure.DesignPkg.FcnDesignPkg_new.fsd.aaa"
+						identifiable_target "Structure.DesignPkg.FcnDesignPkg_new.fsd.aaa";
 					}
 					Realization_realizedBy
 					{
-						identifiable_target "Structure.DesignLevelWW_new.FcnAllocations.a1"
+						identifiable_target "Structure.DesignLevelWW_new.FcnAllocations.a1";
 					}
 				}
 				AnalysisFunctionPrototype testAnalysisFunctionPrototype
 				{
-					type "Structure.DesignPkg.FcnDesignPkg_new.testAnalysisFuncType"
+					type "Structure.DesignPkg.FcnDesignPkg_new.testAnalysisFuncType";
 				}
 			}
 		}
@@ -166,50 +166,50 @@ EAPackage Structure
 			{
 				HardwareComponentPrototype pWiperSubsystem
 				{
-					type "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA"
+					type "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA";
 				}
 				HardwarePortConnector testHardwarePortConnector
 				{
 					HardwarePortConnector_port
 					{
-						hardwarePort "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testHardwarePort1"
+						hardwarePort "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testHardwarePort1";
 					}
 					HardwarePortConnector_port
 					{
-						hardwarePort "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testHardwarePort1"
+						hardwarePort "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testHardwarePort1";
 					}
 					HardwareConnector testHardwareConnector
 					{
 						HardwareConnector_port
 						{
-							hardwarePin "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testIOHardwarePin"
-							hardwareComponentPrototype "Structure.DesignLevelWW_new.pHDA"
+							hardwarePin "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testIOHardwarePin";
+							hardwareComponentPrototype "Structure.DesignLevelWW_new.pHDA";
 						}
 						HardwareConnector_port
 						{
-							hardwarePin "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testIOHardwarePin"
+							hardwarePin "Structure.DesignPkg.HWDesignPkg_new.WiperECU.testIOHardwarePin";
 						}
 					}
 				}
 			}
 			HardwareComponentType WiperECU
 			{
-				category sss
+				category sss;
 				IOHardwarePin testIOHardwarePin
 				{
-					category ssss
-					kind analog
+					category ssss;
+					kind analog;
 				}
 				HardwarePort testHardwarePort1
 				{
-					category sss
+					category sss;
 				}
 			}
 			HardwareComponentType WiperSubsystemHDA
 			{
 				HardwareComponentPrototype pECU
 				{
-					type "Structure.DesignPkg.HWDesignPkg_new.WiperECU"
+					type "Structure.DesignPkg.HWDesignPkg_new.WiperECU";
 				}
 			}
 		}
@@ -219,62 +219,62 @@ EAPackage Structure
 			{
 				EADatatypePrototype testEADataTypeProtoType
 				{
-					type "Structure.DesignPkg.DataTypes_new.Boolean"
+					type "Structure.DesignPkg.DataTypes_new.Boolean";
 				}
 			}
 			Unit testUnit
 			{
-				factor 0.1
-				symbol testSymbol
-				offset 0.2
-				quantity "Structure.DesignPkg.test4newtype.testQuantity"
+				factor 0.1;
+				symbol testSymbol;
+				offset 0.2;
+				quantity "Structure.DesignPkg.test4newtype.testQuantity";
 			}
 			EANumerical testEANumerical
 			{
-				category sfdsaf
+				category sfdsaf;
 			}
 			Quantity testQuantity
 			{
-				amountOfSubstanceExp 1
-				electricCurrentExp 2
-				lengthExp 3
-				luminousIntensityExp 4
-				massExp 5
-				thermodynamicTemperatureExp 6
-				timeExp 7
+				amountOfSubstanceExp 1;
+				electricCurrentExp 2;
+				lengthExp 3;
+				luminousIntensityExp 4;
+				massExp 5;
+				thermodynamicTemperatureExp 6;
+				timeExp 7;
 			}
 			RangeableValueType testRangeableValueType
 			{
-				accuracy 0.1
-				resolution 0.2
-				baseRangeable "Structure.DesignPkg.test4newtype.testEANumerical"
+				accuracy 0.1;
+				resolution 0.2;
+				baseRangeable "Structure.DesignPkg.test4newtype.testEANumerical";
 			}
 			Enumeration testEnumeration
 			{
-				isMultiValued true
+				isMultiValued true;
 				EnumerationLiteral testEnumLiteral
 				EnumerationLiteral testEnumLiteral1
 				{
-					name dddd
+					name dddd;
 				}
 			}
 			UserElementType testUserElementType
 			{
-				key testKey
+				key testKey;
 				UserAttributeDefinition testUserAttr
 				{
-					type "Structure.DesignPkg.DataTypes_new.Boolean"
+					type "Structure.DesignPkg.DataTypes_new.Boolean";
 				}
 			}
 			UserAttributedElement testUserAttributedEle
 			{
 				uaType ("Structure.DesignPkg.test4newtype.testUserElementType")
-				attributedElement "Structure.DesignPkg.test"
+				attributedElement "Structure.DesignPkg.test";
 			}
 			ArrayDatatype testArrayDatatype1019
 			{
-				maxLength 1
-				elementType "Structure.DesignPkg.DataTypes_new.Boolean"
+				maxLength 1;
+				elementType "Structure.DesignPkg.DataTypes_new.Boolean";
 			}
 		}
 	}
@@ -287,13 +287,13 @@ EAPackage Structure
 				allocatedElement FunctionAllocation_allocatedElement
 				{
 					allocateableElement_context ("Structure.DesignLevelWW_new.pFDA")
-					allocateableElement "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic"
-				}
+					allocateableElement "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new.wiperCtrlBasic";
+				};
 				target FunctionAllocation_target
 				{
 					allocationTarget_context ("Structure.DesignPkg.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure.DesignLevelWW_new.pHDA")
-					allocationTarget "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA.pECU"	
-				}
+					allocationTarget "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA.pECU";
+				};
 			}
 		}
 		Allocation FcnAllocation1018
@@ -303,22 +303,22 @@ EAPackage Structure
 				allocatedElement FunctionAllocation_allocatedElement
 				{
 					allocateableElement_context ("Structure.DesignLevelWW_new.pFDA", "Structure.DesignPkg.FcnDesignPkg_new.fsd.aaa")
-					allocateableElement "Structure.DesignPkg.FcnDesignArchitecture_new.testtype0819.testprototype0819"
-				}
+					allocateableElement "Structure.DesignPkg.FcnDesignArchitecture_new.testtype0819.testprototype0819";
+				};
 				target FunctionAllocation_target
 				{
 					allocationTarget_context ("Structure.DesignPkg.HWDesignPkg_new.VehicleHDA.pWiperSubsystem", "Structure.DesignLevelWW_new.pHDA")
-					allocationTarget "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA.pECU"
-				}
+					allocationTarget "Structure.DesignPkg.HWDesignPkg_new.WiperSubsystemHDA.pECU";
+				};
 			}
 		}
 		functionalDesignArchitecture DesignFunctionPrototype pFDA
 		{
-			type "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new"
-		}
+			type "Structure.DesignPkg.FcnDesignArchitecture_new.FDAWithController_new";
+		};
 		hardwareDesignArchitecture HardwareComponentPrototype pHDA
 		{
-			type "Structure.DesignPkg.HWDesignPkg_new.VehicleHDA"
-		}
+			type "Structure.DesignPkg.HWDesignPkg_new.VehicleHDA";
+		};
 	}
 }
