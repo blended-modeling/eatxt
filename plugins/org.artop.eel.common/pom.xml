@@ -8,9 +8,9 @@
 	<packaging>eclipse-plugin</packaging>
 
 	<parent>
-		<groupId>org.bumble.eastadl.simplified</groupId>
-		<artifactId>org.bumble.eastadl.simplified.parent</artifactId>
+		<groupId>org.bumble.eatxt</groupId>
+		<artifactId>org.bumble.eatxt.parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../../releng/org.bumble.eastadl.simplified.parent/pom.xml</relativePath>
+		<relativePath>../../releng/org.bumble.eatxt.parent/pom.xml</relativePath>
 	</parent>
 </project>
