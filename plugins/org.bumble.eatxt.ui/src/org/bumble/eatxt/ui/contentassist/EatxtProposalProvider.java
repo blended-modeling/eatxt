@@ -3,9 +3,531 @@
  */
 package org.bumble.eatxt.ui.contentassist;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import java.lang.Math;
+
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
  * on how to customize the content assistant.
  */
 public class EatxtProposalProvider extends AbstractEatxtProposalProvider {
+	@Override
+	public void completeEAPackage_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeEAPackage_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "EAPackage_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeDesignLevel_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeDesignLevel_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "DesignLevel_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeAnalysisFunctionType_Impl_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeAnalysisFunctionType_Impl_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "AnalysisFunctionType_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeBasicSoftwareFunctionType_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeBasicSoftwareFunctionType_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "BasicSoftwareFunctionType_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeDesignFunctionType_Impl_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeDesignFunctionType_Impl_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "DesignFunctionType_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeFunctionalDevice_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeFunctionalDevice_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "FunctionalDevice_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeFunctionClientServerInterface_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeFunctionClientServerInterface_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "FunctionClientServerInterface_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeHardwareFunctionType_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeHardwareFunctionType_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "HardwareFunctionType_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeLocalDeviceManager_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeLocalDeviceManager_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "LocalDeviceManager_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeActuator_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeActuator_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Actuator_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeElectricalComponent_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeElectricalComponent_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "ElectricalComponent_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeHardwareComponentType_Impl_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeHardwareComponentType_Impl_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "HardwareComponentType_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeNode_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeNode_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Node_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeSensor_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeSensor_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Sensor_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeArrayDatatype_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeArrayDatatype_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "ArrayDatatype_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeCompositeDatatype_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeCompositeDatatype_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "CompositeDatatype_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeEABoolean_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeEABoolean_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "EABoolean_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeEANumerical_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeEANumerical_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "EANumerical_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeEAString_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeEAString_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "EAString_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeEnumeration_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeEnumeration_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Enumeration_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeQuantity_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeQuantity_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Quantity_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeRangeableValueType_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeRangeableValueType_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "RangeableValueType_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeUnit_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeUnit_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Unit_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeUserAttributeDefinition_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeUserAttributeDefinition_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "UserAttributeDefinition_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeUserAttributedElement_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeUserAttributedElement_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "UserAttributedElement_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeUserElementType_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeUserElementType_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "UserElementType_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeAllocation_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeAllocation_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Allocation_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeDesignFunctionPrototype_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeDesignFunctionPrototype_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "DesignFunctionPrototype_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeHardwareComponentPrototype_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeHardwareComponentPrototype_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "HardwareComponentPrototype_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeRealization_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeRealization_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Realization_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeAnalysisFunctionPrototype_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeAnalysisFunctionPrototype_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "AnalysisFunctionPrototype_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeFunctionAllocation_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeFunctionAllocation_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "FunctionAllocation_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeFunctionClientServerPort_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeFunctionClientServerPort_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "FunctionClientServerPort_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeFunctionConnector_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeFunctionConnector_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "FunctionConnector_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeFunctionFlowPort_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeFunctionFlowPort_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "FunctionFlowPort_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeFunctionPowerPort_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeFunctionPowerPort_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "FunctionPowerPort_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeOperation_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeOperation_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "Operation_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completePortGroup_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completePortGroup_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "PortGroup_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeCommunicationHardwarePin_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeCommunicationHardwarePin_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "CommunicationHardwarePin_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeHardwareConnector_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeHardwareConnector_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "HardwareConnector_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeHardwarePort_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeHardwarePort_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "HardwarePort_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeHardwarePortConnector_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeHardwarePortConnector_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "HardwarePortConnector_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeIOHardwarePin_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeIOHardwarePin_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "IOHardwarePin_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeLogicalPortConnector_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeLogicalPortConnector_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "LogicalPortConnector_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completePowerHardwarePin_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completePowerHardwarePin_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "PowerHardwarePin_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeEADatatypePrototype_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeEADatatypePrototype_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "EADatatypePrototype_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
+	
+	@Override
+	public void completeEnumerationLiteral_ShortName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeEnumerationLiteral_ShortName(model, assignment, context, acceptor);
+		
+		long suffix = Math.round(Math.random() * 1000);
+		String strSuffix = Long.toString(suffix);
+		String proposal = "EnumerationLiteral_" + strSuffix;
+		
+		acceptor.accept(createCompletionProposal(proposal, context));
+	}
 }
