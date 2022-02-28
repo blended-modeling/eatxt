@@ -34,7 +34,8 @@ class EatxtParsingTest {
 	 * */
 	@Test
 	def void loadModel() {
-		mydsl = new String(Files.readAllBytes(Paths.get(FileOperateHelper.getProjectAbsolutePath() + "texts_001.txt")))
+		mydsl = FileOperateHelper.getFileContentAsString("texts_001.txt");
+		Assertions.assertFalse(mydsl.isEmpty());
 		val result = parseHelper.parse(mydsl)
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
@@ -46,7 +47,8 @@ class EatxtParsingTest {
 	 * */
 	@Test
  	def testValidModel() {
-		mydsl = new String(Files.readAllBytes(Paths.get(FileOperateHelper.getRootDirectoryAbsolutePath() + "simple.eatxt")))
+		mydsl = FileOperateHelper.getFileContentAsString("simple.eatxt");
+		Assertions.assertFalse(mydsl.isEmpty());
      	val eaxml = parseHelper.parse(mydsl)
      	validationTestHelper.assertNoIssues(eaxml)
  	}
@@ -56,7 +58,8 @@ class EatxtParsingTest {
  	 * */
  	@Test
 	def checkEAPackageNumberInProgram() {
-		mydsl = new String(Files.readAllBytes(Paths.get(FileOperateHelper.getRootDirectoryAbsolutePath() + "simple.eatxt")))
+		mydsl = FileOperateHelper.getFileContentAsString("simple.eatxt");
+		Assertions.assertFalse(mydsl.isEmpty());
 	    val eaxml = parseHelper.parse(mydsl)
 		assertTrue("The program should have at least one EAPackage", 
 			eaxml.topLevelPackage.size() > 0
