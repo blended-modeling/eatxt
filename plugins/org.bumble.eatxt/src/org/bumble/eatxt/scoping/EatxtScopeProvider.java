@@ -7,9 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 
-import org.bumble.eatxt.scoping.AbstractEatxtScopeProvider;
+import org.bumble.eatxt.Activator;
 import org.bumble.eatxt.common.resource.EatxtResource;
 import org.bumble.eatxt.common.resource.EatxtResourceFactory;
 import org.eclipse.core.resources.IResource;
@@ -18,56 +19,8 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.eatop.eastadl22.AllocateableElement;
-import org.eclipse.eatop.eastadl22.AllocationTarget;
-import org.eclipse.eatop.eastadl22.AnalysisFunctionPrototype;
-import org.eclipse.eatop.eastadl22.AnalysisFunctionType;
-import org.eclipse.eatop.eastadl22.ArrayDatatype;
-import org.eclipse.eatop.eastadl22.BasicSoftwareFunctionType;
-import org.eclipse.eatop.eastadl22.CompositeDatatype;
-import org.eclipse.eatop.eastadl22.DesignFunctionPrototype;
-import org.eclipse.eatop.eastadl22.DesignFunctionType;
-import org.eclipse.eatop.eastadl22.DesignLevel;
-import org.eclipse.eatop.eastadl22.EAArrayValue;
-import org.eclipse.eatop.eastadl22.EABooleanValue;
-import org.eclipse.eatop.eastadl22.EACompositeValue;
-import org.eclipse.eatop.eastadl22.EADatatype;
-import org.eclipse.eatop.eastadl22.EADatatypePrototype;
-import org.eclipse.eatop.eastadl22.EAElement;
-import org.eclipse.eatop.eastadl22.EAEnumerationValue;
-import org.eclipse.eatop.eastadl22.EAExpression;
-import org.eclipse.eatop.eastadl22.EANumerical;
-import org.eclipse.eatop.eastadl22.EANumericalValue;
-import org.eclipse.eatop.eastadl22.EAStringValue;
 import org.eclipse.eatop.eastadl22.Eastadl22Package;
-import org.eclipse.eatop.eastadl22.EnumerationLiteral;
-import org.eclipse.eatop.eastadl22.FunctionAllocation_allocatedElement;
-import org.eclipse.eatop.eastadl22.FunctionAllocation_target;
-import org.eclipse.eatop.eastadl22.FunctionClientServerInterface;
-import org.eclipse.eatop.eastadl22.FunctionClientServerPort;
-import org.eclipse.eatop.eastadl22.FunctionConnector_port;
-import org.eclipse.eatop.eastadl22.FunctionFlowPort;
-import org.eclipse.eatop.eastadl22.FunctionPort;
-import org.eclipse.eatop.eastadl22.FunctionPowerPort;
-import org.eclipse.eatop.eastadl22.FunctionPrototype;
-import org.eclipse.eatop.eastadl22.HardwareComponentPrototype;
-import org.eclipse.eatop.eastadl22.HardwareComponentType;
-import org.eclipse.eatop.eastadl22.HardwareConnector_port;
-import org.eclipse.eatop.eastadl22.HardwareFunctionType;
-import org.eclipse.eatop.eastadl22.HardwarePin;
-import org.eclipse.eatop.eastadl22.HardwarePort;
-import org.eclipse.eatop.eastadl22.HardwarePortConnector_port;
-import org.eclipse.eatop.eastadl22.Identifiable;
-import org.eclipse.eatop.eastadl22.PortGroup;
-import org.eclipse.eatop.eastadl22.Quantity;
-import org.eclipse.eatop.eastadl22.RangeableValueType;
-import org.eclipse.eatop.eastadl22.Realization_realized;
-import org.eclipse.eatop.eastadl22.Realization_realizedBy;
 import org.eclipse.eatop.eastadl22.Referrable;
-import org.eclipse.eatop.eastadl22.Unit;
-import org.eclipse.eatop.eastadl22.UserAttributeDefinition;
-import org.eclipse.eatop.eastadl22.UserAttributedElement;
-import org.eclipse.eatop.eastadl22.UserElementType;
 import org.eclipse.eatop.eastadl22.util.Eastadl22ResourceFactoryImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -114,98 +67,11 @@ public class EatxtScopeProvider extends AbstractEatxtScopeProvider {
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
 		EClass contextEClass = context.eClass();
-		String contextClassName = null;
-
-		// Get the raw paths of all the relevant files in the workspace
-		List<URI> fileUris = getAllFilesInWorkspace(Arrays.asList("eatxt", "eaxml"));
-
-		// Get the root elements of all relevant files
-		List<EObject> rootElements = new ArrayList<>();
-
-		for (URI uri : fileUris) {
-			rootElements.add(getEMFModel(uri, resourceSet));
-		}
-
-		// A dedicated process for HardwareComponentPrototype in DesignLevel
-		// Normal case: in class A reference type B, then the context is A and target is
-		// B
-		// Special case: in class DesignLevel reference type HardwareComponentType, the
-		// context is DesignLevel
-		if (contextEClass.getInstanceTypeName().equals(DesignLevel.class.getName())
-				&& reference.getContainerClass().getName().equals(HardwareComponentPrototype.class.getName())) {
-			DesignLevel designLevel = (DesignLevel) context;
-			contextClassName = designLevel.getHardwareDesignArchitecture().eClass().getInstanceTypeName();
-		} else {
-			contextClassName = contextEClass.getInstanceTypeName();
-		}
-
 		EClass targetEClass = reference.getEReferenceType();
-		String targetClassName = targetEClass.getInstanceTypeName();
 
-		// The ugly and long if conditions were combined with pairs of context and
-		// target, which is used to
-		// limit the automatic proposals by filtering the scopes
-		if ((contextClassName.equals(DesignFunctionPrototype.class.getName())
-				&& targetClassName.equals(DesignFunctionType.class.getName()))
-				|| (contextClassName.equals(RangeableValueType.class.getName())
-						&& targetClassName.equals(EANumerical.class.getName()))
-				|| ((contextClassName.equals(EANumerical.class.getName())
-						|| contextClassName.equals(Unit.class.getName()))
-						&& targetClassName.equals(Unit.class.getName()))
-				|| (contextClassName.equals(Unit.class.getName()) && targetClassName.equals(Quantity.class.getName()))
-				|| (contextClassName.equals(UserAttributedElement.class.getName())
-						|| targetClassName.equals(UserElementType.class.getName()))
-				|| ((contextClassName.equals(HardwareConnector_port.class.getName())
-						|| contextClassName.equals(HardwarePortConnector_port.class.getName()))
-						&& targetClassName.equals(HardwareComponentPrototype.class.getName()))
-				|| (contextClassName.equals(Realization_realized.class.getName())
-						&& targetClassName.equals(EAElement.class.getName()))
-				|| ((contextClassName.equals(UserAttributedElement.class.getName())
-						|| contextClassName.equals(Realization_realizedBy.class.getName()))
-						&& targetClassName.equals(Identifiable.class.getName()))
-				|| ((contextClassName.equals(HardwareFunctionType.class.getName())
-						|| contextClassName.equals(HardwareComponentPrototype.class.getName()))
-						&& targetClassName.equals(HardwareComponentType.class.getName()))
-				|| (contextClassName.equals(AnalysisFunctionPrototype.class.getName())
-						&& targetClassName.equals(AnalysisFunctionType.class.getName()))
-				|| (contextClassName.equals(FunctionClientServerPort.class.getName())
-						&& targetClassName.equals(FunctionClientServerInterface.class.getName()))
-				|| (contextClassName.equals(FunctionPowerPort.class.getName())
-						&& targetClassName.equals(CompositeDatatype.class.getName()))
-				|| ((contextClassName.equals(ArrayDatatype.class.getName())
-						|| contextClassName.equals(UserAttributeDefinition.class.getName())
-						|| contextClassName.equals(FunctionFlowPort.class.getName())
-						|| contextClassName.equals(EADatatypePrototype.class.getName())
-						|| contextClassName.equals(EAArrayValue.class.getName())
-						|| contextClassName.equals(EABooleanValue.class.getName())
-						|| contextClassName.equals(EACompositeValue.class.getName())
-						|| contextClassName.equals(EAEnumerationValue.class.getName())
-						|| contextClassName.equals(EAExpression.class.getName())
-						|| contextClassName.equals(EANumericalValue.class.getName())
-						|| contextClassName.equals(EAStringValue.class.getName()))
-						&& targetClassName.equals(EADatatype.class.getName()))
-				|| (contextClassName.equals(FunctionAllocation_allocatedElement.class.getName())
-						&& targetClassName.equals(AllocateableElement.class.getName()))
-				|| (contextClassName.equals(FunctionAllocation_target.class.getName())
-						&& targetClassName.equals(AllocationTarget.class.getName()))
-				|| (contextClassName.equals(FunctionConnector_port.class.getName())
-						&& targetClassName.equals(FunctionPrototype.class.getName()))
-				|| ((contextClassName.equals(PortGroup.class.getName())
-						|| contextClassName.equals(FunctionConnector_port.class.getName()))
-						&& targetClassName.equals(FunctionPort.class.getName()))
-				|| ((contextClassName.equals(HardwarePort.class.getName())
-						|| contextClassName.equals(HardwareConnector_port.class.getName()))
-						&& targetClassName.equals(HardwarePin.class.getName()))
-				|| (contextClassName.equals(HardwarePortConnector_port.class.getName())
-						&& targetClassName.equals(HardwarePort.class.getName()))
-				|| (contextClassName.equals(EAEnumerationValue.class.getName())
-						&& targetClassName.equals(EnumerationLiteral.class.getName()))
-				|| (contextClassName.equals(DesignFunctionType.class.getName())
-						&& targetClassName.equals(EADatatype.class.getName()))
-				|| (contextClassName.equals(BasicSoftwareFunctionType.class.getName())
-						&& targetClassName.equals(EADatatype.class.getName()))
-				|| (contextClassName.equals(AnalysisFunctionType.class.getName())
-						&& targetClassName.equals(EADatatype.class.getName()))) {
+		Map<EClass, List<EClass>> lookupCrossReferenceMap = Activator.getDefault().getEastadlMMCrossReferenceMap();
+		if (lookupCrossReferenceMap.containsKey(contextEClass)
+				&& lookupCrossReferenceMap.get(contextEClass).contains(targetEClass)) {
 			List<Referrable> globalCandidates = new ArrayList<Referrable>();
 			Class targetJavaClass = null;
 			try {
@@ -218,6 +84,14 @@ public class EatxtScopeProvider extends AbstractEatxtScopeProvider {
 			} catch (ClassNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
+			}
+
+			// Get the raw paths of all the relevant files in the workspace
+			List<URI> fileUris = getAllFilesInWorkspace(Arrays.asList("eatxt", "eaxml"));
+			// Get the root elements of all relevant files
+			List<EObject> rootElements = new ArrayList<>();
+			for (URI uri : fileUris) {
+				rootElements.add(getEMFModel(uri, resourceSet));
 			}
 			for (EObject rootElement : rootElements) {
 				if (targetJavaClass != null) {
@@ -237,15 +111,9 @@ public class EatxtScopeProvider extends AbstractEatxtScopeProvider {
 
 				// return all the fulfilled proposals using our own scope implementation that is
 				// aware of "ea" URIs
-				return new EatxtScope(IScope.NULLSCOPE,
-						Scopes.scopedElementsFor(globalCandidates, displayShortNames));
+				return new EatxtScope(IScope.NULLSCOPE, Scopes.scopedElementsFor(globalCandidates, displayShortNames));
 			}
 		}
-		// TODO: generalize the procedure so that it works as above also for all
-		// Allocations. As this is more complicated, probably an extra if-block has to
-		// be implemented for this
-
-		// FIXME: Does not work for the same name in different namespaces right now!
 
 		// if no judgement condition above is fulfiled, then the program will get here
 		// and invoke supertype's getScope method
