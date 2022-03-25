@@ -17,10 +17,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GrammarOptimization {
-	private static final String ECLIPSE_WORKSPACE_PATH = "(.*\\\\east-adl-simplified)";
-	private static final String XTEXT_PROJECT_NAME = "org.bumble.eastadl.simplified";
+	private static final String ECLIPSE_WORKSPACE_PATH = "(.*\\\\eatxt)";
+	private static final String XTEXT_PROJECT_NAME = "org.bumble.eatxt";
 	private static final String NEW_LANGUAGE_NAME = "Eatxt";
-	private static final String GRAMMAR_RELATIVE_PATH = "\\src\\org\\bumble\\eastadl\\simplified\\";
+	private static final String GRAMMAR_RELATIVE_PATH = "\\src\\org\\bumble\\eatxt\\";
 
 	public class GrammarRule {
 		public List<String> lines;
