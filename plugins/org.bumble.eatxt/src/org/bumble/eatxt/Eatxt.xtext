@@ -14,13 +14,31 @@ Comment returns Comment:
     Comment_Impl | Rationale;
 
 EAPackageableElement returns EAPackageableElement:
-    DesignLevel | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionType_Impl | FunctionalDevice | FunctionClientServerInterface | HardwareFunctionType | LocalDeviceManager | Actuator | ElectricalComponent | HardwareComponentType_Impl | Node | Sensor | ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType;
+    VehicleLevel | SystemModel | AnalysisLevel | DesignLevel | ImplementationLevel | Feature_Impl | FeatureGroup | FeatureModel | VehicleFeature | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionType_Impl | FunctionalDevice | FunctionClientServerInterface | HardwareFunctionType | LocalDeviceManager | Actuator | ElectricalComponent | HardwareComponentType_Impl | Node | Sensor | Environment | Behavior | ModeGroup | FunctionBehavior | ReuseMetaInformation | Variability | Situation | RequirementsModel | Requirement_Impl | RequirementsHierarchy_Impl | RequirementsRelationshipGroup | QualityRequirement | Actor | UseCase | VerificationValidation | VVActualOutcome | VVCase | VVIntendedOutcome | VVLog | VVProcedure | VVStimuli | VVTarget | Timing | Dependability | FeatureFlaw | Hazard | HazardousEvent | Item | FaultFailure | QuantitativeSafetyConstraint | SafetyConstraint | ErrorModelType | FunctionalSafetyConcept | TechnicalSafetyConcept | Claim | Ground | SafetyCase | Warrant | GenericConstraint_Impl | GenericConstraintSet | TakeRateConstraint | ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType | BehaviorConstraintPrototype | BehaviorConstraintType | Stakeholder | StakeholderNeed | BusinessOpportunity | ProblemStatement | ProductPositioning;
 
 TraceableSpecification returns TraceableSpecification:
-    FunctionClientServerInterface | ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | RangeableValueType;
+    FunctionClientServerInterface | ModeGroup | ReuseMetaInformation | Situation | Requirement_Impl | RequirementsHierarchy_Impl | RequirementsRelationshipGroup | QualityRequirement | Actor | UseCase | VVActualOutcome | VVCase | VVIntendedOutcome | VVLog | VVProcedure | VVStimuli | VVTarget | FeatureFlaw | Hazard | HazardousEvent | Item | FaultFailure | QuantitativeSafetyConstraint | SafetyConstraint | ErrorModelType | FunctionalSafetyConcept | TechnicalSafetyConcept | Claim | Ground | SafetyCase | Warrant | GenericConstraint_Impl | TakeRateConstraint | ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | RangeableValueType | BehaviorConstraintPrototype | Stakeholder | StakeholderNeed | BusinessOpportunity | ProblemStatement | ProductPositioning;
 
 Relationship returns Relationship:
-    Realization;
+    FeatureLink | DeriveRequirement | Refine | Satisfy | RequirementsLink | Extend | Include | Interact | Verify | Realization | BehaviorConstraintTargetBinding | BehaviorAttributeBinding;
+
+
+
+
+
+
+
+
+
+
+EAValue returns EAValue:
+    FunctionTrigger | SelectionCriterion | TimingExpression | EventFunctionClientServerPort | EventFunctionFlowPort | EAArrayValue | EABooleanValue | EACompositeValue | EAEnumerationValue | EAExpression_Impl | EANumericalValue | EAStringValue | LogicalEvent | Quantification_Impl;
+
+FeatureTreeNode returns FeatureTreeNode:
+    Feature_Impl | FeatureGroup | VehicleFeature;
+
+Feature returns Feature:
+    Feature_Impl | VehicleFeature;
 
 
 
@@ -29,7 +47,6 @@ Relationship returns Relationship:
 
 FunctionPort returns FunctionPort:
     FunctionClientServerPort | FunctionFlowPort | FunctionPowerPort;
-
 
 
 HardwareComponentType returns HardwareComponentType:
@@ -43,6 +60,66 @@ HardwarePin returns HardwarePin:
 PortConnector returns PortConnector:
     HardwarePortConnector | LogicalPortConnector;
 
+
+FunctionPrototype returns FunctionPrototype:
+    AnalysisFunctionPrototype | DesignFunctionPrototype;
+
+
+
+
+
+FunctionType returns FunctionType:
+    AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionType_Impl | FunctionalDevice | HardwareFunctionType | LocalDeviceManager;
+
+
+
+
+
+
+
+
+RequirementsHierarchy returns RequirementsHierarchy:
+    RequirementsHierarchy_Impl | FunctionalSafetyConcept | TechnicalSafetyConcept;
+
+Requirement returns Requirement:
+    Requirement_Impl | QualityRequirement;
+
+
+
+RequirementsRelationship returns RequirementsRelationship:
+    DeriveRequirement | Refine | Satisfy | RequirementsLink | Verify;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TimingDescription returns TimingDescription:
+    EventChain | AUTOSAREvent | EventFaultFailure | EventFeatureFlaw | EventFunction | EventFunctionClientServerPort | EventFunctionFlowPort | ExternalEvent | ModeEvent | StateEvent;
+
+TimingConstraint returns TimingConstraint:
+    NonConcurrenceConstraint | NonPreemptiveConstraint | PrecedenceConstraint | AgeConstraint | ArbitraryConstraint | BurstConstraint | DelayConstraint | ExecutionTimeConstraint | InputSynchronizationConstraint | OrderConstraint | OutputSynchronizationConstraint | PatternConstraint | PeriodicConstraint | ReactionConstraint | RepetitionConstraint | SporadicConstraint | StrongDelayConstraint | StrongSynchronizationConstraint | SynchronizationConstraint;
+
+
+
+
+
+
+
+
+
+
+
+
 EADatatype returns EADatatype:
     ArrayDatatype | CompositeDatatype | EABoolean | EANumerical | EAString | Enumeration | RangeableValueType;
 
@@ -51,28 +128,113 @@ EADatatype returns EADatatype:
 
 
 
-EAValue returns EAValue:
-    EAArrayValue | EABooleanValue | EACompositeValue | EAEnumerationValue | EAExpression | EANumericalValue | EAStringValue;
+
+
+
+
+
+
 
 
 Identifiable returns Identifiable:
-    DesignLevel | Allocation | AnalysisFunctionPrototype | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionPrototype | DesignFunctionType_Impl | FunctionalDevice | FunctionAllocation | FunctionClientServerInterface | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort | HardwareFunctionType | LocalDeviceManager | Operation | PortGroup | Actuator | CommunicationHardwarePin | ElectricalComponent | HardwareComponentPrototype | HardwareComponentType_Impl | HardwareConnector | HardwarePort | HardwarePortConnector | IOHardwarePin | LogicalPortConnector | Node | PowerHardwarePin | Sensor | EAPackage | Realization | ArrayDatatype | CompositeDatatype | EABoolean | EADatatypePrototype | EANumerical | EAString | Enumeration | EnumerationLiteral | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType;
+    VehicleLevel | SystemModel | AnalysisLevel | DesignLevel | ImplementationLevel | Feature_Impl | FeatureConstraint | FeatureGroup | FeatureLink | FeatureModel | DeviationAttributeSet | VehicleFeature | Allocation | AnalysisFunctionPrototype | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionPrototype | DesignFunctionType_Impl | FunctionalDevice | FunctionAllocation | FunctionClientServerInterface | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort | HardwareFunctionType | LocalDeviceManager | Operation | PortGroup | Actuator | CommunicationHardwarePin | ElectricalComponent | HardwareComponentPrototype | HardwareComponentType_Impl | HardwareConnector | HardwarePort | HardwarePortConnector | IOHardwarePin | LogicalPortConnector | Node | PowerHardwarePin | Sensor | ClampConnector | Environment | Behavior | Mode | ModeGroup | FunctionBehavior | FunctionTrigger | ConfigurableContainer | ConfigurationDecision | ConfigurationDecisionFolder | ContainerConfiguration | FeatureConfiguration | InternalBinding | PrivateContent | ReuseMetaInformation | Variability | VariableElement | VariationGroup | VehicleLevelBinding | DeriveRequirement | Situation | RequirementsModel | Requirement_Impl | RequirementsHierarchy_Impl | Refine | Satisfy | RequirementsLink | RequirementsRelationshipGroup | QualityRequirement | Actor | Extend | ExtensionPoint | Include | Interact | UseCase | VerificationValidation | Verify | VVActualOutcome | VVCase | VVIntendedOutcome | VVLog | VVProcedure | VVStimuli | VVTarget | EventChain | NonConcurrenceConstraint | NonPreemptiveConstraint | PrecedenceConstraint | Timing | AUTOSAREvent | EventFaultFailure | EventFeatureFlaw | EventFunction | EventFunctionClientServerPort | EventFunctionFlowPort | ExternalEvent | ModeEvent | AgeConstraint | ArbitraryConstraint | BurstConstraint | DelayConstraint | ExecutionTimeConstraint | InputSynchronizationConstraint | OrderConstraint | OutputSynchronizationConstraint | PatternConstraint | PeriodicConstraint | ReactionConstraint | RepetitionConstraint | SporadicConstraint | StrongDelayConstraint | StrongSynchronizationConstraint | SynchronizationConstraint | Dependability | FeatureFlaw | Hazard | HazardousEvent | Item | FaultFailure | QuantitativeSafetyConstraint | SafetyConstraint | ErrorBehavior | ErrorModelPrototype | ErrorModelType | FailureOutPort | FaultFailurePropagationLink | FaultInPort | InternalFaultPrototype | ProcessFaultPrototype | FunctionalSafetyConcept | SafetyGoal | TechnicalSafetyConcept | Claim | Ground | SafetyCase | Warrant | GenericConstraint_Impl | GenericConstraintSet | TakeRateConstraint | EAPackage | Realization | ArrayDatatype | CompositeDatatype | EABoolean | EADatatypePrototype | EANumerical | EAString | Enumeration | EnumerationLiteral | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType | BehaviorConstraintBindingAttribute | BehaviorConstraintBindingEvent | BehaviorConstraintPrototype | BehaviorConstraintTargetBinding | BehaviorConstraintType | Attribute_Impl | AttributeQuantificationConstraint | BehaviorAttributeBinding | LogicalEvent | Quantification_Impl | ComputationConstraint | LogicalPath | LogicalTransformation | TransformationOccurrence | LogicalTimeCondition | State | StateEvent | SynchronousTransition | TemporalConstraint | Transition_Impl | TransitionEvent_Impl | ArchitecturalDescription | ArchitecturalModel | Architecture | Mission | VehicleSystem | Stakeholder | StakeholderNeed | BusinessOpportunity | ProblemStatement | ProductPositioning;
 
 
+GenericConstraint returns GenericConstraint:
+    GenericConstraint_Impl | TakeRateConstraint;
+
+
+
+
+
+
+
+
+BehaviorConstraintInternalBinding returns BehaviorConstraintInternalBinding:
+    BehaviorConstraintBindingAttribute | BehaviorConstraintBindingEvent;
+
+
+
+
+
+BehaviorConstraintParameter returns BehaviorConstraintParameter:
+    BehaviorConstraintBindingAttribute | BehaviorConstraintBindingEvent | Attribute_Impl | TransitionEvent_Impl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Attribute returns Attribute:
+    Attribute_Impl | BehaviorConstraintBindingAttribute;
+
+Anomaly returns Anomaly:
+    FailureOutPort | FaultInPort | InternalFaultPrototype | ProcessFaultPrototype;
+
+
+AnalysisFunctionType returns AnalysisFunctionType:
+    AnalysisFunctionType_Impl | FunctionalDevice;
 
 DesignFunctionType returns DesignFunctionType:
     DesignFunctionType_Impl | BasicSoftwareFunctionType | HardwareFunctionType | LocalDeviceManager;
 
 
 
-EAElement returns EAElement:
-    DesignLevel | Allocation | AnalysisFunctionPrototype | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionPrototype | DesignFunctionType_Impl | FunctionalDevice | FunctionAllocation | FunctionClientServerInterface | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort | HardwareFunctionType | LocalDeviceManager | Operation | PortGroup | Actuator | CommunicationHardwarePin | ElectricalComponent | HardwareComponentPrototype | HardwareComponentType_Impl | HardwareConnector | HardwarePort | HardwarePortConnector | IOHardwarePin | LogicalPortConnector | Node | PowerHardwarePin | Sensor | EAPackage | Realization | ArrayDatatype | CompositeDatatype | EABoolean | EADatatypePrototype | EANumerical | EAString | Enumeration | EnumerationLiteral | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType;
-
-AnalysisFunctionType returns AnalysisFunctionType:
-    AnalysisFunctionType_Impl | FunctionalDevice;
 
 
 
+
+
+
+
+
+
+
+ConfigurationDecisionModelEntry returns ConfigurationDecisionModelEntry:
+    ConfigurationDecision | ConfigurationDecisionFolder;
+
+
+
+Event returns Event:
+    AUTOSAREvent | EventFaultFailure | EventFeatureFlaw | EventFunction | EventFunctionClientServerPort | EventFunctionFlowPort | ExternalEvent | ModeEvent | StateEvent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quantification returns Quantification:
+    Quantification_Impl | LogicalEvent;
+
+
+
+
+
+EAExpression returns EAExpression:
+    EAExpression_Impl | FunctionTrigger | SelectionCriterion | TimingExpression | EventFunctionClientServerPort | EventFunctionFlowPort | LogicalEvent | Quantification_Impl;
+
+TransitionEvent returns TransitionEvent:
+    TransitionEvent_Impl | BehaviorConstraintBindingEvent;
+
+
+Transition returns Transition:
+    Transition_Impl | SynchronousTransition;
 
 
 
@@ -84,8 +246,13 @@ AllocateableElement returns AllocateableElement:
 AllocationTarget returns AllocationTarget:
     CommunicationHardwarePin | HardwareComponentPrototype | HardwarePort | HardwarePortConnector | IOHardwarePin | LogicalPortConnector | PowerHardwarePin;
 
-FunctionPrototype returns FunctionPrototype:
-    AnalysisFunctionPrototype | DesignFunctionPrototype;
+
+
+FaultFailurePort returns FaultFailurePort:
+    FailureOutPort | FaultInPort;
+
+EAElement returns EAElement:
+    VehicleLevel | SystemModel | AnalysisLevel | DesignLevel | ImplementationLevel | Feature_Impl | FeatureConstraint | FeatureGroup | FeatureLink | FeatureModel | DeviationAttributeSet | VehicleFeature | Allocation | AnalysisFunctionPrototype | AnalysisFunctionType_Impl | BasicSoftwareFunctionType | DesignFunctionPrototype | DesignFunctionType_Impl | FunctionalDevice | FunctionAllocation | FunctionClientServerInterface | FunctionClientServerPort | FunctionConnector | FunctionFlowPort | FunctionPowerPort | HardwareFunctionType | LocalDeviceManager | Operation | PortGroup | Actuator | CommunicationHardwarePin | ElectricalComponent | HardwareComponentPrototype | HardwareComponentType_Impl | HardwareConnector | HardwarePort | HardwarePortConnector | IOHardwarePin | LogicalPortConnector | Node | PowerHardwarePin | Sensor | ClampConnector | Environment | Behavior | Mode | ModeGroup | FunctionBehavior | FunctionTrigger | ConfigurableContainer | ConfigurationDecision | ConfigurationDecisionFolder | ContainerConfiguration | FeatureConfiguration | InternalBinding | PrivateContent | ReuseMetaInformation | Variability | VariableElement | VariationGroup | VehicleLevelBinding | DeriveRequirement | Situation | RequirementsModel | Requirement_Impl | RequirementsHierarchy_Impl | Refine | Satisfy | RequirementsLink | RequirementsRelationshipGroup | QualityRequirement | Actor | Extend | ExtensionPoint | Include | Interact | UseCase | VerificationValidation | Verify | VVActualOutcome | VVCase | VVIntendedOutcome | VVLog | VVProcedure | VVStimuli | VVTarget | EventChain | NonConcurrenceConstraint | NonPreemptiveConstraint | PrecedenceConstraint | Timing | AUTOSAREvent | EventFaultFailure | EventFeatureFlaw | EventFunction | EventFunctionClientServerPort | EventFunctionFlowPort | ExternalEvent | ModeEvent | AgeConstraint | ArbitraryConstraint | BurstConstraint | DelayConstraint | ExecutionTimeConstraint | InputSynchronizationConstraint | OrderConstraint | OutputSynchronizationConstraint | PatternConstraint | PeriodicConstraint | ReactionConstraint | RepetitionConstraint | SporadicConstraint | StrongDelayConstraint | StrongSynchronizationConstraint | SynchronizationConstraint | Dependability | FeatureFlaw | Hazard | HazardousEvent | Item | FaultFailure | QuantitativeSafetyConstraint | SafetyConstraint | ErrorBehavior | ErrorModelPrototype | ErrorModelType | FailureOutPort | FaultFailurePropagationLink | FaultInPort | InternalFaultPrototype | ProcessFaultPrototype | FunctionalSafetyConcept | SafetyGoal | TechnicalSafetyConcept | Claim | Ground | SafetyCase | Warrant | GenericConstraint_Impl | GenericConstraintSet | TakeRateConstraint | EAPackage | Realization | ArrayDatatype | CompositeDatatype | EABoolean | EADatatypePrototype | EANumerical | EAString | Enumeration | EnumerationLiteral | Quantity | RangeableValueType | Unit | UserAttributeDefinition | UserAttributedElement | UserElementType | BehaviorConstraintBindingAttribute | BehaviorConstraintBindingEvent | BehaviorConstraintPrototype | BehaviorConstraintTargetBinding | BehaviorConstraintType | Attribute_Impl | AttributeQuantificationConstraint | BehaviorAttributeBinding | LogicalEvent | Quantification_Impl | ComputationConstraint | LogicalPath | LogicalTransformation | TransformationOccurrence | LogicalTimeCondition | State | StateEvent | SynchronousTransition | TemporalConstraint | Transition_Impl | TransitionEvent_Impl | ArchitecturalDescription | ArchitecturalModel | Architecture | Mission | VehicleSystem | Stakeholder | StakeholderNeed | BusinessOpportunity | ProblemStatement | ProductPositioning;
 
 EAPackage returns EAPackage:
     'EAPackage' shortName=Identifier
@@ -116,6 +283,45 @@ Rationale returns Rationale:
         'body' body=String0';'
     '}');
 
+VehicleLevel returns VehicleLevel:
+    'VehicleLevel' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (technicalFeatureModel+=FeatureModel (  technicalFeatureModel+=FeatureModel)*)?
+    '}')?;
+
+SystemModel returns SystemModel:
+    'SystemModel' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        ('vehicleLevel' vehicleLevel=VehicleLevel';' )?
+        ('analysisLevel' analysisLevel=AnalysisLevel';' )?
+        ('designLevel' designLevel=DesignLevel';' )?
+        ('implementationLevel' implementationLevel=ImplementationLevel';' )?
+    '}')?;
+
+AnalysisLevel returns AnalysisLevel:
+    'AnalysisLevel' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        ('functionalAnalysisArchitecture' functionalAnalysisArchitecture=AnalysisFunctionPrototype';' )?
+    '}')?;
+
 DesignLevel returns DesignLevel:
     'DesignLevel' shortName=Identifier
     ('{'
@@ -129,6 +335,80 @@ DesignLevel returns DesignLevel:
         ('functionalDesignArchitecture' functionalDesignArchitecture=DesignFunctionPrototype';' )?
         ('hardwareDesignArchitecture' hardwareDesignArchitecture=HardwareComponentPrototype';' )?
     '}')?;
+
+ImplementationLevel returns ImplementationLevel:
+    'ImplementationLevel' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+    '}')?;
+
+Feature_Impl returns Feature:
+    'Feature' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'cardinality' cardinality=String0';'
+        ('actualBindingTime' actualBindingTime=BindingTimeKind';' )?
+        ('requiredBindingTime' requiredBindingTime=BindingTimeKind';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('featureParameter' featureParameter=[EAValue|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (childNode+=FeatureTreeNode (  childNode+=FeatureTreeNode)*)?
+    '}');
+
+FeatureGroup returns FeatureGroup:
+    'FeatureGroup' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'cardinality' cardinality=String0';'
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        childFeature+=Feature (  childFeature+=Feature)*
+    '}');
+
+FeatureModel returns FeatureModel:
+    'FeatureModel' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (rootFeature+=Feature (  rootFeature+=Feature)*)?
+        (featureConstraint+=FeatureConstraint (  featureConstraint+=FeatureConstraint)*)?
+        (featureLink+=FeatureLink (  featureLink+=FeatureLink)*)?
+    '}')?;
+
+VehicleFeature returns VehicleFeature:
+    'VehicleFeature' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'cardinality' cardinality=String0';'
+        ('actualBindingTime' actualBindingTime=BindingTimeKind';' )?
+        ('requiredBindingTime' requiredBindingTime=BindingTimeKind';' )?
+        'isCustomerVisible' isCustomerVisible=Boolean';'
+        'isDesignVariabilityRationale' isDesignVariabilityRationale=Boolean';'
+        'isRemoved' isRemoved=Boolean';'
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('featureParameter' featureParameter=[EAValue|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (childNode+=FeatureTreeNode (  childNode+=FeatureTreeNode)*)?
+        ('deviationAttributeSet' deviationAttributeSet=DeviationAttributeSet';' )?
+    '}');
 
 AnalysisFunctionType_Impl returns AnalysisFunctionType:
     'AnalysisFunctionType' shortName=Identifier
@@ -321,6 +601,591 @@ Sensor returns Sensor:
         (portConnector+=PortConnector (  portConnector+=PortConnector)*)?
     '}')?;
 
+Environment returns Environment:
+    'Environment' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (clampConnector+=ClampConnector (  clampConnector+=ClampConnector)*)?
+        ('environmentModel' environmentModel=FunctionPrototype';' )?
+    '}')?;
+
+Behavior returns Behavior:
+    'Behavior' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (modeGroup+=ModeGroup (  modeGroup+=ModeGroup)*)?
+        (behavior+=FunctionBehavior (  behavior+=FunctionBehavior)*)?
+        (functionTrigger+=FunctionTrigger (  functionTrigger+=FunctionTrigger)*)?
+    '}')?;
+
+ModeGroup returns ModeGroup:
+    'ModeGroup' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'precondition' precondition=String0';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        mode+=Mode (  mode+=Mode)*
+    '}');
+
+FunctionBehavior returns FunctionBehavior:
+    'FunctionBehavior' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'path' path=String0';'
+        'representation' representation=FunctionBehaviorKind';'
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('mode' '(' mode+=[Mode|EString] (  mode+=[Mode|EString])* ')' )?
+        ('function' function=[FunctionType|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+    '}');
+
+ReuseMetaInformation returns ReuseMetaInformation:
+    'ReuseMetaInformation' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'information' information=String0';'
+        'isReusable' isReusable=Boolean';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Variability returns Variability:
+    'Variability' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (productFeatureModel+=FeatureModel (  productFeatureModel+=FeatureModel)*)?
+        (configurableContainer+=ConfigurableContainer (  configurableContainer+=ConfigurableContainer)*)?
+        (variableElement+=VariableElement (  variableElement+=VariableElement)*)?
+        (configuration+=FeatureConfiguration (  configuration+=FeatureConfiguration)*)?
+        (decisionModel+=VehicleLevelBinding (  decisionModel+=VehicleLevelBinding)*)?
+        (containerConfiguration+=ContainerConfiguration (  containerConfiguration+=ContainerConfiguration)*)?
+    '}')?;
+
+Situation returns Situation:
+    'Situation' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+RequirementsModel returns RequirementsModel:
+    'RequirementsModel' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (useCase+=UseCase (  useCase+=UseCase)*)?
+        (operationalSituation+=Situation (  operationalSituation+=Situation)*)?
+        (requirementsHierarchy+=RequirementsHierarchy (  requirementsHierarchy+=RequirementsHierarchy)*)?
+        (requirement+=Requirement (  requirement+=Requirement)*)?
+        (requirementsRelationshipGroup+=RequirementsRelationshipGroup (  requirementsRelationshipGroup+=RequirementsRelationshipGroup)*)?
+        (requirementType+=UserElementType (  requirementType+=UserElementType)*)?
+    '}')?;
+
+Requirement_Impl returns Requirement:
+    'Requirement' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('formalism' formalism=String0';' )?
+        ('mode' '(' mode+=[Mode|EString] (  mode+=[Mode|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+RequirementsHierarchy_Impl returns RequirementsHierarchy:
+    'RequirementsHierarchy' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('containedRequirement' '(' containedRequirement+=[Requirement|EString] (  containedRequirement+=[Requirement|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (childHierarchy+=RequirementsHierarchy (  childHierarchy+=RequirementsHierarchy)*)?
+    '}')?;
+
+RequirementsRelationshipGroup returns RequirementsRelationshipGroup:
+    'RequirementsRelationshipGroup' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'requirementsRelationship' '(' requirementsRelationship+=[RequirementsRelationship|EString] (  requirementsRelationship+=[RequirementsRelationship|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+QualityRequirement returns QualityRequirement:
+    'QualityRequirement' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('formalism' formalism=String0';' )?
+        'kind' kind=QualityRequirementKind';'
+        ('mode' '(' mode+=[Mode|EString] (  mode+=[Mode|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Actor returns Actor:
+    'Actor' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+UseCase returns UseCase:
+    'UseCase' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (interact+=Interact (  interact+=Interact)*)?
+        (extend+=Extend (  extend+=Extend)*)?
+        (include+=Include (  include+=Include)*)?
+        (extensionPoint+=ExtensionPoint (  extensionPoint+=ExtensionPoint)*)?
+    '}')?;
+
+VerificationValidation returns VerificationValidation:
+    'VerificationValidation' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (verify+=Verify (  verify+=Verify)*)?
+        (vvCase+=VVCase (  vvCase+=VVCase)*)?
+        (vvTarget+=VVTarget (  vvTarget+=VVTarget)*)?
+    '}')?;
+
+VVActualOutcome returns VVActualOutcome:
+    'VVActualOutcome' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('intendedOutcome' intendedOutcome=[VVIntendedOutcome|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+VVCase returns VVCase:
+    'VVCase' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('abstractVVCase' abstractVVCase=[VVCase|EString]';' )?
+        ('vvTarget' '(' vvTarget+=[VVTarget|EString] (  vvTarget+=[VVTarget|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (vvLog+=VVLog (  vvLog+=VVLog)*)?
+        (vvProcedure+=VVProcedure (  vvProcedure+=VVProcedure)*)?
+        (vvSubject+=VVCase_vvSubject (  vvSubject+=VVCase_vvSubject)*)?
+    '}')?;
+
+VVIntendedOutcome returns VVIntendedOutcome:
+    'VVIntendedOutcome' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+VVLog returns VVLog:
+    'VVLog' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'date' date=String0';'
+        'performedVVProcedure' performedVVProcedure=[VVProcedure|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (vvActualOutcome+=VVActualOutcome (  vvActualOutcome+=VVActualOutcome)*)?
+    '}');
+
+VVProcedure returns VVProcedure:
+    'VVProcedure' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('abstractVVProcedure' abstractVVProcedure=[VVProcedure|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (vvIntendedOutcome+=VVIntendedOutcome (  vvIntendedOutcome+=VVIntendedOutcome)*)?
+        (vvStimuli+=VVStimuli (  vvStimuli+=VVStimuli)*)?
+    '}')?;
+
+VVStimuli returns VVStimuli:
+    'VVStimuli' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+VVTarget returns VVTarget:
+    'VVTarget' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (element+=VVTarget_element (  element+=VVTarget_element)* '}' )?
+    '}')?;
+
+Timing returns Timing:
+    'Timing' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (description+=TimingDescription (  description+=TimingDescription)*)?
+        (constraint+=TimingConstraint (  constraint+=TimingConstraint)*)?
+    '}')?;
+
+Dependability returns Dependability:
+    'Dependability' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (hazardousEvent+=HazardousEvent (  hazardousEvent+=HazardousEvent)*)?
+        (safetyConstraint+=SafetyConstraint (  safetyConstraint+=SafetyConstraint)*)?
+        (safetyGoal+=SafetyGoal (  safetyGoal+=SafetyGoal)*)?
+        (item+=Item (  item+=Item)*)?
+        (featureFlaw+=FeatureFlaw (  featureFlaw+=FeatureFlaw)*)?
+        (errorModelType+=ErrorModelType (  errorModelType+=ErrorModelType)*)?
+        (faultFailure+=FaultFailure (  faultFailure+=FaultFailure)*)?
+        (functionalSafetyConcept+=FunctionalSafetyConcept (  functionalSafetyConcept+=FunctionalSafetyConcept)*)?
+        (hazard+=Hazard (  hazard+=Hazard)*)?
+        (quantitativeSafetyConstraint+=QuantitativeSafetyConstraint (  quantitativeSafetyConstraint+=QuantitativeSafetyConstraint)*)?
+        (safetyCase+=SafetyCase (  safetyCase+=SafetyCase)*)?
+        (eaDatatype+=EADatatype (  eaDatatype+=EADatatype)*)?
+        (technicalSafetyConcept+=TechnicalSafetyConcept (  technicalSafetyConcept+=TechnicalSafetyConcept)*)?
+    '}')?;
+
+FeatureFlaw returns FeatureFlaw:
+    'FeatureFlaw' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'item' '(' item+=[Item|EString] (  item+=[Item|EString])* ')' 
+        ('nonFulfilledRequirement' '(' nonFulfilledRequirement+=[Requirement|EString] (  nonFulfilledRequirement+=[Requirement|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Hazard returns Hazard:
+    'Hazard' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'malfunction' '(' malfunction+=[FeatureFlaw|EString] (  malfunction+=[FeatureFlaw|EString])* ')' 
+        'item' '(' item+=[Item|EString] (  item+=[Item|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+HazardousEvent returns HazardousEvent:
+    'HazardousEvent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('classificationAssumptions' classificationAssumptions=String0';' )?
+        'controllability' controllability=ControllabilityClassKind';'
+        'exposure' exposure=ExposureClassKind';'
+        'hazardClassification' hazardClassification=ASILKind';'
+        'severity' severity=SeverityClassKind';'
+        'hazard' '(' hazard+=[Hazard|EString] (  hazard+=[Hazard|EString])* ')' 
+        'useCase' '(' useCase+=[UseCase|EString] (  useCase+=[UseCase|EString])* ')' 
+        ('environment' '(' environment+=[Situation|EString] (  environment+=[Situation|EString])* ')' )?
+        ('traffic' '(' traffic+=[Situation|EString] (  traffic+=[Situation|EString])* ')' )?
+        ('externalMeasures' '(' externalMeasures+=[RequirementsRelationship|EString] (  externalMeasures+=[RequirementsRelationship|EString])* ')' )?
+        ('operatingMode' '(' operatingMode+=[Mode|EString] (  operatingMode+=[Mode|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Item returns Item:
+    'Item' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'developmentCategory' developmentCategory=DevelopmentCategoryKind';'
+        'vehicleFeature' '(' vehicleFeature+=[VehicleFeature|EString] (  vehicleFeature+=[VehicleFeature|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+FaultFailure returns FaultFailure:
+    'FaultFailure' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('anomaly' anomaly=FaultFailure_anomaly';' )?
+        'faultFailureValue' faultFailureValue=EAValue';'
+    '}');
+
+QuantitativeSafetyConstraint returns QuantitativeSafetyConstraint:
+    'QuantitativeSafetyConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'failureRate' failureRate=Float';'
+        'repairRate' repairRate=Float';'
+        'constrainedFaultFailure' '(' constrainedFaultFailure+=[FaultFailure|EString] (  constrainedFaultFailure+=[FaultFailure|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+SafetyConstraint returns SafetyConstraint:
+    'SafetyConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'asilValue' asilValue=ASILKind';'
+        'constrainedFaultFailure' '(' constrainedFaultFailure+=[FaultFailure|EString] (  constrainedFaultFailure+=[FaultFailure|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+ErrorModelType returns ErrorModelType:
+    'ErrorModelType' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('hwTarget' '(' hwTarget+=[HardwareComponentType|EString] (  hwTarget+=[HardwareComponentType|EString])* ')' )?
+        ('target' '(' target+=[FunctionType|EString] (  target+=[FunctionType|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (errorBehaviorDescription+=ErrorBehavior (  errorBehaviorDescription+=ErrorBehavior)*)?
+        (externalFault+=FaultInPort (  externalFault+=FaultInPort)*)?
+        (part+=ErrorModelPrototype (  part+=ErrorModelPrototype)*)?
+        (faultFailureConnector+=FaultFailurePropagationLink (  faultFailureConnector+=FaultFailurePropagationLink)*)?
+        (failure+=FailureOutPort (  failure+=FailureOutPort)*)?
+        (internalFault+=InternalFaultPrototype (  internalFault+=InternalFaultPrototype)*)?
+        (processFault+=ProcessFaultPrototype (  processFault+=ProcessFaultPrototype)*)?
+    '}')?;
+
+FunctionalSafetyConcept returns FunctionalSafetyConcept:
+    'FunctionalSafetyConcept' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('containedRequirement' '(' containedRequirement+=[Requirement|EString] (  containedRequirement+=[Requirement|EString])* ')' )?
+        ('functionalSafetyRequirement' '(' functionalSafetyRequirement+=[Requirement|EString] (  functionalSafetyRequirement+=[Requirement|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (childHierarchy+=RequirementsHierarchy (  childHierarchy+=RequirementsHierarchy)*)?
+    '}')?;
+
+TechnicalSafetyConcept returns TechnicalSafetyConcept:
+    'TechnicalSafetyConcept' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('containedRequirement' '(' containedRequirement+=[Requirement|EString] (  containedRequirement+=[Requirement|EString])* ')' )?
+        ('technicalSafetyRequirement' '(' technicalSafetyRequirement+=[Requirement|EString] (  technicalSafetyRequirement+=[Requirement|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (childHierarchy+=RequirementsHierarchy (  childHierarchy+=RequirementsHierarchy)*)?
+    '}')?;
+
+Claim returns Claim:
+    'Claim' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('safetyRequirement' '(' safetyRequirement+=[TraceableSpecification|EString] (  safetyRequirement+=[TraceableSpecification|EString])* ')' )?
+        'evidence' '(' evidence+=[Ground|EString] (  evidence+=[Ground|EString])* ')' 
+        ('supportedArgument' '(' supportedArgument+=[Warrant|EString] (  supportedArgument+=[Warrant|EString])* ')' )?
+        ('goalDecompositionStrategy' '(' goalDecompositionStrategy+=[Warrant|EString] (  goalDecompositionStrategy+=[Warrant|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (justification+=Rationale (  justification+=Rationale)*)?
+    '}');
+
+Ground returns Ground:
+    'Ground' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('safetyEvidence' '(' safetyEvidence+=[Identifiable|EString] (  safetyEvidence+=[Identifiable|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (justification+=Rationale (  justification+=Rationale)*)?
+    '}')?;
+
+SafetyCase returns SafetyCase:
+    'SafetyCase' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'context' context=String0';'
+        'stage' stage=LifecycleStageKind';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        claim+=Claim (  claim+=Claim)*
+        ground+=Ground (  ground+=Ground)*
+        (warrant+=Warrant (  warrant+=Warrant)*)?
+        (safetyCase+=SafetyCase (  safetyCase+=SafetyCase)*)?
+    '}');
+
+Warrant returns Warrant:
+    'Warrant' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        ('decomposedGoal' '(' decomposedGoal+=[Claim|EString] (  decomposedGoal+=[Claim|EString])* ')' )?
+        ('evidence' '(' evidence+=[Ground|EString] (  evidence+=[Ground|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (justification+=Rationale (  justification+=Rationale)*)?
+    '}')?;
+
+GenericConstraint_Impl returns GenericConstraint:
+    'GenericConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'kind' kind=GenericConstraintKind';'
+        ('target' '(' target+=[Identifiable|EString] (  target+=[Identifiable|EString])* ')' )?
+        ('mode' '(' mode+=[Mode|EString] (  mode+=[Mode|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('value' value=EAValue';' )?
+    '}');
+
+GenericConstraintSet returns GenericConstraintSet:
+    'GenericConstraintSet' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (genericConstraint+=GenericConstraint (  genericConstraint+=GenericConstraint)*)?
+    '}')?;
+
+TakeRateConstraint returns TakeRateConstraint:
+    'TakeRateConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'kind' kind=GenericConstraintKind';'
+        'takeRate' takeRate=Float';'
+        ('target' '(' target+=[Identifiable|EString] (  target+=[Identifiable|EString])* ')' )?
+        ('mode' '(' mode+=[Mode|EString] (  mode+=[Mode|EString])* ')' )?
+        ('source' '(' source+=[Identifiable|EString] (  source+=[Identifiable|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('value' value=EAValue';' )?
+    '}');
+
 ArrayDatatype returns ArrayDatatype:
     'ArrayDatatype' shortName=Identifier
     ('{'
@@ -476,33 +1341,214 @@ UserElementType returns UserElementType:
         (uaDefinition+=UserAttributeDefinition (  uaDefinition+=UserAttributeDefinition)*)?
     '}');
 
-Allocation returns Allocation:
-    'Allocation' shortName=Identifier
+BehaviorConstraintPrototype returns BehaviorConstraintPrototype:
+    'BehaviorConstraintPrototype' shortName=Identifier
     ('{'
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'type' type=[BehaviorConstraintType|EString]';'
+        ('instantiationVariable' '(' instantiationVariable+=[BehaviorConstraintInternalBinding|EString] (  instantiationVariable+=[BehaviorConstraintInternalBinding|EString])* ')' )?
+        ('targetedVehicleFeatureElement' '(' targetedVehicleFeatureElement+=[VehicleFeature|EString] (  targetedVehicleFeatureElement+=[VehicleFeature|EString])* ')' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
-        (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
+        (errorModelTarget+=BehaviorConstraintPrototype_errorModelTarget (  errorModelTarget+=BehaviorConstraintPrototype_errorModelTarget)*)?
+        (functionTarget+=BehaviorConstraintPrototype_functionTarget (  functionTarget+=BehaviorConstraintPrototype_functionTarget)*)?
+        (hardwareComponentTarget+=BehaviorConstraintPrototype_hardwareComponentTarget (  hardwareComponentTarget+=BehaviorConstraintPrototype_hardwareComponentTarget)*)?
+    '}');
+
+BehaviorConstraintType returns BehaviorConstraintType:
+    'BehaviorConstraintType' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('traceableSpecification' '(' traceableSpecification+=[TraceableSpecification|EString] (  traceableSpecification+=[TraceableSpecification|EString])* ')' )?
+        ('interfaceVariable' '(' interfaceVariable+=[BehaviorConstraintParameter|EString] (  interfaceVariable+=[BehaviorConstraintParameter|EString])* ')' )?
+        ('sharedVariable' '(' sharedVariable+=[BehaviorConstraintInternalBinding|EString] (  sharedVariable+=[BehaviorConstraintInternalBinding|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (ownedRelationship+=Relationship (  ownedRelationship+=Relationship)*)?
+        (part+=BehaviorConstraintPrototype (  part+=BehaviorConstraintPrototype)*)?
+        (attributeQuantificationConstraint+=AttributeQuantificationConstraint (  attributeQuantificationConstraint+=AttributeQuantificationConstraint)*)?
+        (computationConstraint+=ComputationConstraint (  computationConstraint+=ComputationConstraint)*)?
+        (temporalConstraint+=TemporalConstraint (  temporalConstraint+=TemporalConstraint)*)?
     '}')?;
 
-DesignFunctionPrototype returns DesignFunctionPrototype:
-    'DesignFunctionPrototype' shortName=Identifier
+Stakeholder returns Stakeholder:
+    'Stakeholder' shortName=Identifier
     ('{'
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'type' type=[DesignFunctionType|EString]';'
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'responsibilities' responsibilities=String0';'
+        ('successCriteria' successCriteria=String0';' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
-HardwareComponentPrototype returns HardwareComponentPrototype:
-    'HardwareComponentPrototype' shortName=Identifier
+StakeholderNeed returns StakeholderNeed:
+    'StakeholderNeed' shortName=Identifier
     ('{'
         ('category' category=Identifier';' )?
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
-        'type' type=[HardwareComponentType|EString]';'
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'need' need=String0';'
+        'priority' priority=Integer';'
+        'stakeholder' '(' stakeholder+=[Stakeholder|EString] (  stakeholder+=[Stakeholder|EString])* ')' 
+        'problemStatement' '(' problemStatement+=[ProblemStatement|EString] (  problemStatement+=[ProblemStatement|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+BusinessOpportunity returns BusinessOpportunity:
+    'BusinessOpportunity' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'businessOpportunity' businessOpportunity=String0';'
+        ('productPositioning' '(' productPositioning+=[ProductPositioning|EString] (  productPositioning+=[ProductPositioning|EString])* ')' )?
+        ('problemStatement' '(' problemStatement+=[ProblemStatement|EString] (  problemStatement+=[ProblemStatement|EString])* ')' )?
+        'motivatesDevelopmentOf' '(' motivatesDevelopmentOf+=[SystemModel|EString] (  motivatesDevelopmentOf+=[SystemModel|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+ProblemStatement returns ProblemStatement:
+    'ProblemStatement' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'impact' impact=String0';'
+        'problem' problem=String0';'
+        'solutionBenefits' solutionBenefits=String0';'
+        ('affects' '(' affects+=[Stakeholder|EString] (  affects+=[Stakeholder|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+ProductPositioning returns ProductPositioning:
+    'ProductPositioning' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('text' text=String0';' )?
+        ('uri' uri=String0';' )?
+        'drivingNeeds' drivingNeeds=String0';'
+        'keyCapabilities' keyCapabilities=String0';'
+        'primaryCompetitiveAlternative' primaryCompetitiveAlternative=String0';'
+        'primaryDifferentiation' primaryDifferentiation=String0';'
+        'targetCustomers' targetCustomers=String0';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+FeatureLink returns FeatureLink:
+    'FeatureLink' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('customType' customType=String0';' )?
+        ('isBidirectional' isBidirectional=Boolean';' )?
+        'kind' kind=VariabilityDependencyKind';'
+        'end' end=[Feature|EString]';'
+        'start' start=[Feature|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+DeriveRequirement returns DeriveRequirement:
+    'DeriveRequirement' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'derived' '(' derived+=[Requirement|EString] (  derived+=[Requirement|EString])* ')' 
+        'derivedFrom' '(' derivedFrom+=[Requirement|EString] (  derivedFrom+=[Requirement|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Refine returns Refine:
+    'Refine' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'refinedRequirement' '(' refinedRequirement+=[Requirement|EString] (  refinedRequirement+=[Requirement|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        refinedBy+=Refine_refinedBy (  refinedBy+=Refine_refinedBy)*
+    '}');
+
+Satisfy returns Satisfy:
+    'Satisfy' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('satisfiedUseCase' '(' satisfiedUseCase+=[UseCase|EString] (  satisfiedUseCase+=[UseCase|EString])* ')' )?
+        ('satisfiedRequirement' '(' satisfiedRequirement+=[Requirement|EString] (  satisfiedRequirement+=[Requirement|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (satisfiedBy+=Satisfy_satisfiedBy (  satisfiedBy+=Satisfy_satisfiedBy)*)?
+    '}')?;
+
+RequirementsLink returns RequirementsLink:
+    'RequirementsLink' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isBidirectional' isBidirectional=Boolean';'
+        'source' '(' source+=[Requirement|EString] (  source+=[Requirement|EString])* ')' 
+        'target' '(' target+=[Requirement|EString] (  target+=[Requirement|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Extend returns Extend:
+    'Extend' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'extendedCase' extendedCase=[UseCase|EString]';'
+        'extensionLocation' '(' extensionLocation+=[ExtensionPoint|EString] (  extensionLocation+=[ExtensionPoint|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Include returns Include:
+    'Include' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'addition' addition=[UseCase|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Interact returns Interact:
+    'Interact' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'actor' actor=[Actor|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Verify returns Verify:
+    'Verify' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'verifiedByCase' '(' verifiedByCase+=[VVCase|EString] (  verifiedByCase+=[VVCase|EString])* ')' 
+        ('verifiedByProcedure' '(' verifiedByProcedure+=[VVProcedure|EString] (  verifiedByProcedure+=[VVProcedure|EString])* ')' )?
+        'verifiedRequirement' '(' verifiedRequirement+=[Requirement|EString] (  verifiedRequirement+=[Requirement|EString])* ')' 
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -517,19 +1563,87 @@ Realization returns Realization:
         realizedBy+=Realization_realizedBy (  realizedBy+=Realization_realizedBy)*
     '}');
 
-Realization_realized returns Realization_realized:
-    'Realization_realized'
+BehaviorConstraintTargetBinding returns BehaviorConstraintTargetBinding:
+    'BehaviorConstraintTargetBinding' shortName=Identifier
     ('{'
-        'identifiable_target' identifiable_target=[EAElement|EString]';'
-        ('identifiable_context' '(' identifiable_context+=[EAElement|EString] ( "," identifiable_context+=[EAElement|EString])* ')' )?
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'behaviorConstraintType' behaviorConstraintType=[BehaviorConstraintType|EString]';'
+        ('constrainedErrorModel' '(' constrainedErrorModel+=[ErrorModelType|EString] (  constrainedErrorModel+=[ErrorModelType|EString])* ')' )?
+        ('constrainedFunctionTriggering' '(' constrainedFunctionTriggering+=[FunctionTrigger|EString] (  constrainedFunctionTriggering+=[FunctionTrigger|EString])* ')' )?
+        ('constrainedFunctionBehavior' '(' constrainedFunctionBehavior+=[FunctionBehavior|EString] (  constrainedFunctionBehavior+=[FunctionBehavior|EString])* ')' )?
+        ('constrainedModeBehavior' '(' constrainedModeBehavior+=[Mode|EString] (  constrainedModeBehavior+=[Mode|EString])* ')' )?
+        ('targetedHardwareComponentType' '(' targetedHardwareComponentType+=[HardwareComponentType|EString] (  targetedHardwareComponentType+=[HardwareComponentType|EString])* ')' )?
+        ('targetedFunctionType' '(' targetedFunctionType+=[FunctionType|EString] (  targetedFunctionType+=[FunctionType|EString])* ')' )?
+        ('targetedVehicleFeature' '(' targetedVehicleFeature+=[VehicleFeature|EString] (  targetedVehicleFeature+=[VehicleFeature|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
-Realization_realizedBy returns Realization_realizedBy:
-    'Realization_realizedBy'
+BehaviorAttributeBinding returns BehaviorAttributeBinding:
+    'BehaviorAttributeBinding' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'attribute' '(' attribute+=[Attribute|EString] (  attribute+=[Attribute|EString])* ')' 
+        ('visibleThroughAnomaly' '(' visibleThroughAnomaly+=[Anomaly|EString] (  visibleThroughAnomaly+=[Anomaly|EString])* ')' )?
+        ('visibleThroughHardwarePort' '(' visibleThroughHardwarePort+=[HardwarePort|EString] (  visibleThroughHardwarePort+=[HardwarePort|EString])* ')' )?
+        ('visibleThroughHardwarePin' '(' visibleThroughHardwarePin+=[HardwarePin|EString] (  visibleThroughHardwarePin+=[HardwarePin|EString])* ')' )?
+        ('visibleThroughFunctionPort' '(' visibleThroughFunctionPort+=[FunctionPort|EString] (  visibleThroughFunctionPort+=[FunctionPort|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Boolean returns ecore::EBoolean:
+    'true' | 'false';
+
+enum VariabilityDependencyKind returns VariabilityDependencyKind:
+                needs = 'needs' | excludes = 'excludes' | optionalAlternative = 'optionalAlternative' | mandatoryAlternative = 'mandatoryAlternative' | suggests = 'suggests' | impedes = 'impedes' | custom = 'custom';
+
+Refine_refinedBy returns Refine_refinedBy:
+    'Refine_refinedBy'
     ('{'
         'identifiable_target' identifiable_target=[Identifiable|EString]';'
         ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
     '}');
+
+FeatureConstraint returns FeatureConstraint:
+    'FeatureConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'criterion' criterion=String0';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+DeviationAttributeSet returns DeviationAttributeSet:
+    'DeviationAttributeSet' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'allowChangeAttribute' allowChangeAttribute=DeviationPermissionKind';'
+        'allowChangeCardinality' allowChangeCardinality=DeviationPermissionKind';'
+        'allowChangeDescription' allowChangeDescription=DeviationPermissionKind';'
+        'allowChangeName' allowChangeName=DeviationPermissionKind';'
+        'allowMove' allowMove=DeviationPermissionKind';'
+        'allowReduction' allowReduction=DeviationPermissionKind';'
+        'allowRefinement' allowRefinement=DeviationPermissionKind';'
+        'allowRegrouping' allowRegrouping=DeviationPermissionKind';'
+        'allowRemoval' allowRemoval=DeviationPermissionKind';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Allocation returns Allocation:
+    'Allocation' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (functionAllocation+=FunctionAllocation (  functionAllocation+=FunctionAllocation)*)?
+    '}')?;
 
 AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
     'AnalysisFunctionPrototype' shortName=Identifier
@@ -538,6 +1652,16 @@ AnalysisFunctionPrototype returns AnalysisFunctionPrototype:
         ('uuid' uuid=UUID';' )?
         ('name' name=String0';' )?
         'type' type=[AnalysisFunctionType|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+DesignFunctionPrototype returns DesignFunctionPrototype:
+    'DesignFunctionPrototype' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'type' type=[DesignFunctionType|EString]';'
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}');
 
@@ -628,6 +1752,16 @@ CommunicationHardwarePin returns CommunicationHardwarePin:
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}')?;
 
+HardwareComponentPrototype returns HardwareComponentPrototype:
+    'HardwareComponentPrototype' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'type' type=[HardwareComponentType|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
 HardwareConnector returns HardwareConnector:
     'HardwareConnector' shortName=Identifier
     ('{'
@@ -697,6 +1831,615 @@ PowerHardwarePin returns PowerHardwarePin:
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}')?;
 
+ClampConnector returns ClampConnector:
+    'ClampConnector' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        port+=ClampConnector_port (  port+=ClampConnector_port)*
+    '}');
+
+Mode returns Mode:
+    'Mode' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'condition' condition=String0';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+FunctionTrigger returns FunctionTrigger:
+    'FunctionTrigger' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'triggerPolicy' triggerPolicy=TriggerPolicyKind';'
+        'type' type=[EADatatype|EString]';'
+        ('mode' '(' mode+=[Mode|EString] (  mode+=[Mode|EString])* ')' )?
+        ('functionPrototype' functionPrototype=[FunctionPrototype|EString]';' )?
+        ('function' function=[FunctionType|EString]';' )?
+        ('port' '(' port+=[FunctionPort|EString] (  port+=[FunctionPort|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (value+=EAValue (  value+=EAValue)*)?
+    '}');
+
+ConfigurableContainer returns ConfigurableContainer:
+    'ConfigurableContainer' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'configurableElement' configurableElement=[Identifiable|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (variationGroup+=VariationGroup (  variationGroup+=VariationGroup)*)?
+        ('internalBinding' internalBinding=InternalBinding';' )?
+        ('publicFeatureModel' publicFeatureModel=FeatureModel';' )?
+        (privateContent+=PrivateContent (  privateContent+=PrivateContent)*)?
+    '}');
+
+ConfigurationDecision returns ConfigurationDecision:
+    'ConfigurationDecision' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isActive' isActive=Boolean';'
+        ('criterion' criterion=String0';' )?
+        ('effect' effect=String0';' )?
+        'isEquivalence' isEquivalence=Boolean';'
+        ('target' '(' target+=[Identifiable|EString] (  target+=[Identifiable|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('selectionCriterion' selectionCriterion=SelectionCriterion';' )?
+    '}');
+
+ConfigurationDecisionFolder returns ConfigurationDecisionFolder:
+    'ConfigurationDecisionFolder' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isActive' isActive=Boolean';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (childEntry+=ConfigurationDecisionModelEntry (  childEntry+=ConfigurationDecisionModelEntry)*)?
+    '}');
+
+ContainerConfiguration returns ContainerConfiguration:
+    'ContainerConfiguration' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'configuredContainer' configuredContainer=[ConfigurableContainer|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (rootEntry+=ConfigurationDecisionModelEntry (  rootEntry+=ConfigurationDecisionModelEntry)*)?
+    '}');
+
+FeatureConfiguration returns FeatureConfiguration:
+    'FeatureConfiguration' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'configuredFeatureModel' configuredFeatureModel=[FeatureModel|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (rootEntry+=ConfigurationDecisionModelEntry (  rootEntry+=ConfigurationDecisionModelEntry)*)?
+    '}');
+
+InternalBinding returns InternalBinding:
+    'InternalBinding' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (rootEntry+=ConfigurationDecisionModelEntry (  rootEntry+=ConfigurationDecisionModelEntry)*)?
+    '}')?;
+
+PrivateContent returns PrivateContent:
+    'PrivateContent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'privateElement' privateElement=[Identifiable|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+VariableElement returns VariableElement:
+    'VariableElement' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('actualBindingTime' actualBindingTime=BindingTimeKind';' )?
+        ('requiredBindingTime' requiredBindingTime=BindingTimeKind';' )?
+        'optionalElement' '(' optionalElement+=[Identifiable|EString] (  optionalElement+=[Identifiable|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('reuseMetaInformation' reuseMetaInformation=ReuseMetaInformation';' )?
+    '}');
+
+VariationGroup returns VariationGroup:
+    'VariationGroup' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('constraint' constraint=String0';' )?
+        'kind' kind=VariabilityDependencyKind';'
+        'variableElement' '(' variableElement+=[VariableElement|EString] (  variableElement+=[VariableElement|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+VehicleLevelBinding returns VehicleLevelBinding:
+    'VehicleLevelBinding' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('targetFeatureModel' '(' targetFeatureModel+=[FeatureModel|EString] (  targetFeatureModel+=[FeatureModel|EString])* ')' )?
+        ('sourceVehicleFeatureModel' '(' sourceVehicleFeatureModel+=[FeatureModel|EString] (  sourceVehicleFeatureModel+=[FeatureModel|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (rootEntry+=ConfigurationDecisionModelEntry (  rootEntry+=ConfigurationDecisionModelEntry)*)?
+    '}')?;
+
+ExtensionPoint returns ExtensionPoint:
+    'ExtensionPoint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+EventChain returns EventChain:
+    'EventChain' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('segment' '(' segment+=[EventChain|EString] (  segment+=[EventChain|EString])* ')' )?
+        'response' response=[Event|EString]';'
+        'stimulus' stimulus=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+NonConcurrenceConstraint returns NonConcurrenceConstraint:
+    'NonConcurrenceConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        exclusive+=NonConcurrentConstraint_exclusive (  exclusive+=NonConcurrentConstraint_exclusive)*
+    '}');
+
+NonPreemptiveConstraint returns NonPreemptiveConstraint:
+    'NonPreemptiveConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'eventChain' eventChain=[EventChain|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+PrecedenceConstraint returns PrecedenceConstraint:
+    'PrecedenceConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'eventChain' eventChain=[EventChain|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+AUTOSAREvent returns AUTOSAREvent:
+    'AUTOSAREvent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+EventFaultFailure returns EventFaultFailure:
+    'EventFaultFailure' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'faultFailure' faultFailure=[FaultFailure|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+EventFeatureFlaw returns EventFeatureFlaw:
+    'EventFeatureFlaw' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'featureFlaw' featureFlaw=[FeatureFlaw|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+EventFunction returns EventFunction:
+    'EventFunction' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'eventKind' eventKind=EventFunctionKind';'
+        ('functionType' functionType=[FunctionType|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        'function' function=EventFunction_function';'
+    '}');
+
+EventFunctionClientServerPort returns EventFunctionClientServerPort:
+    'EventFunctionClientServerPort' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'eventKind' eventKind=EventFunctionClientServerPortKind';'
+        'type' type=[EADatatype|EString]';'
+        (value+=EAValue (  value+=EAValue)*)?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        'port' port=EventFunctionClientServerPort_port';'
+    '}');
+
+EventFunctionFlowPort returns EventFunctionFlowPort:
+    'EventFunctionFlowPort' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'type' type=[EADatatype|EString]';'
+        (value+=EAValue (  value+=EAValue)*)?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        'port' port=EventFunctionFlowPort_port';'
+    '}');
+
+ExternalEvent returns ExternalEvent:
+    'ExternalEvent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+ModeEvent returns ModeEvent:
+    'ModeEvent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('end' '(' end+=[Mode|EString] (  end+=[Mode|EString])* ')' )?
+        ('start' '(' start+=[Mode|EString] (  start+=[Mode|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+AgeConstraint returns AgeConstraint:
+    'AgeConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'scope' scope=[EventChain|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('minimum' minimum=TimingExpression';' )?
+        ('maximum' maximum=TimingExpression';' )?
+    '}');
+
+ArbitraryConstraint returns ArbitraryConstraint:
+    'ArbitraryConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'event' event=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        minimum+=TimingExpression (  minimum+=TimingExpression)*
+        maximum+=TimingExpression (  maximum+=TimingExpression)*
+    '}');
+
+BurstConstraint returns BurstConstraint:
+    'BurstConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'maxOccurrences' maxOccurrences=Integer';'
+        ('mode' mode=[Mode|EString]';' )?
+        'event' event=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('minimum' minimum=TimingExpression';' )?
+        'length' length=TimingExpression';'
+    '}');
+
+DelayConstraint returns DelayConstraint:
+    'DelayConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'source' source=[Event|EString]';'
+        'target' target=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('upper' upper=TimingExpression';' )?
+        ('lower' lower=TimingExpression';' )?
+    '}');
+
+ExecutionTimeConstraint returns ExecutionTimeConstraint:
+    'ExecutionTimeConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        ('resume' resume=[Event|EString]';' )?
+        'start' start=[Event|EString]';'
+        'stop' stop=[Event|EString]';'
+        ('preemption' preemption=[Event|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('lower' lower=TimingExpression';' )?
+        ('upper' upper=TimingExpression';' )?
+    '}');
+
+InputSynchronizationConstraint returns InputSynchronizationConstraint:
+    'InputSynchronizationConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'scope' '(' scope+=[EventChain|EString] (  scope+=[EventChain|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('tolerance' tolerance=TimingExpression';' )?
+    '}');
+
+OrderConstraint returns OrderConstraint:
+    'OrderConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'target' target=[Event|EString]';'
+        'source' source=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+OutputSynchronizationConstraint returns OutputSynchronizationConstraint:
+    'OutputSynchronizationConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'scope' '(' scope+=[EventChain|EString] (  scope+=[EventChain|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('tolerance' tolerance=TimingExpression';' )?
+    '}');
+
+PatternConstraint returns PatternConstraint:
+    'PatternConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'event' event=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        'period' period=TimingExpression';'
+        offset+=TimingExpression (  offset+=TimingExpression)*
+        ('minimum' minimum=TimingExpression';' )?
+        ('jitter' jitter=TimingExpression';' )?
+    '}');
+
+PeriodicConstraint returns PeriodicConstraint:
+    'PeriodicConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'event' event=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('jitter' jitter=TimingExpression';' )?
+        'period' period=TimingExpression';'
+        ('minimum' minimum=TimingExpression';' )?
+    '}');
+
+ReactionConstraint returns ReactionConstraint:
+    'ReactionConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'scope' scope=[EventChain|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('minimum' minimum=TimingExpression';' )?
+        ('maximum' maximum=TimingExpression';' )?
+    '}');
+
+RepetitionConstraint returns RepetitionConstraint:
+    'RepetitionConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'span' span=Integer';'
+        ('mode' mode=[Mode|EString]';' )?
+        'event' event=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('upper' upper=TimingExpression';' )?
+        ('lower' lower=TimingExpression';' )?
+        ('jitter' jitter=TimingExpression';' )?
+    '}');
+
+SporadicConstraint returns SporadicConstraint:
+    'SporadicConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'event' event=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('jitter' jitter=TimingExpression';' )?
+        ('upper' upper=TimingExpression';' )?
+        ('minimum' minimum=TimingExpression';' )?
+        ('lower' lower=TimingExpression';' )?
+    '}');
+
+StrongDelayConstraint returns StrongDelayConstraint:
+    'StrongDelayConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'target' target=[Event|EString]';'
+        'source' source=[Event|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('upper' upper=TimingExpression';' )?
+        ('lower' lower=TimingExpression';' )?
+    '}');
+
+StrongSynchronizationConstraint returns StrongSynchronizationConstraint:
+    'StrongSynchronizationConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'event' '(' event+=[Event|EString] (  event+=[Event|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('tolerance' tolerance=TimingExpression';' )?
+    '}');
+
+SynchronizationConstraint returns SynchronizationConstraint:
+    'SynchronizationConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('mode' mode=[Mode|EString]';' )?
+        'event' '(' event+=[Event|EString] (  event+=[Event|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('tolerance' tolerance=TimingExpression';' )?
+    '}');
+
+ErrorBehavior returns ErrorBehavior:
+    'ErrorBehavior' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('failureLogic' failureLogic=String0';' )?
+        'type' type=ErrorBehaviorKind';'
+        ('externalFault' '(' externalFault+=[FaultInPort|EString] (  externalFault+=[FaultInPort|EString])* ')' )?
+        'externalFailure' '(' externalFailure+=[FailureOutPort|EString] (  externalFailure+=[FailureOutPort|EString])* ')' 
+        ('internalFailure' '(' internalFailure+=[FailureOutPort|EString] (  internalFailure+=[FailureOutPort|EString])* ')' )?
+        ('processFault' '(' processFault+=[ProcessFaultPrototype|EString] (  processFault+=[ProcessFaultPrototype|EString])* ')' )?
+        ('internalFault' '(' internalFault+=[InternalFaultPrototype|EString] (  internalFault+=[InternalFaultPrototype|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+ErrorModelPrototype returns ErrorModelPrototype:
+    'ErrorModelPrototype' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'target' target=[Identifiable|EString]';'
+        'type' type=[ErrorModelType|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (functionTarget+=ErrorModelPrototype_functionTarget (  functionTarget+=ErrorModelPrototype_functionTarget)*)?
+        (hwTarget+=ErrorModelPrototype_hwTarget (  hwTarget+=ErrorModelPrototype_hwTarget)*)?
+    '}');
+
+FailureOutPort returns FailureOutPort:
+    'FailureOutPort' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'type' type=[EADatatype|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (functionTarget+=FaultFailurePort_functionTarget (  functionTarget+=FaultFailurePort_functionTarget)*)?
+        (hwTarget+=FaultFailurePort_hwTarget (  hwTarget+=FaultFailurePort_hwTarget)*)?
+    '}');
+
+FaultFailurePropagationLink returns FaultFailurePropagationLink:
+    'FaultFailurePropagationLink' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'immediatePropagation' immediatePropagation=Boolean';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        'fromPort' fromPort=FaultFailurePropagationLink_fromPort';'
+        'toPort' toPort=FaultFailurePropagationLink_toPort';'
+    '}');
+
+FaultInPort returns FaultInPort:
+    'FaultInPort' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'type' type=[EADatatype|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (functionTarget+=FaultFailurePort_functionTarget (  functionTarget+=FaultFailurePort_functionTarget)*)?
+        (hwTarget+=FaultFailurePort_hwTarget (  hwTarget+=FaultFailurePort_hwTarget)*)?
+    '}');
+
+InternalFaultPrototype returns InternalFaultPrototype:
+    'InternalFaultPrototype' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'type' type=[EADatatype|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+ProcessFaultPrototype returns ProcessFaultPrototype:
+    'ProcessFaultPrototype' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'type' type=[EADatatype|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+SafetyGoal returns SafetyGoal:
+    'SafetyGoal' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'hazardClassification' hazardClassification=ASILKind';'
+        'derivedFrom' '(' derivedFrom+=[HazardousEvent|EString] (  derivedFrom+=[HazardousEvent|EString])* ')' 
+        'requirement' '(' requirement+=[Requirement|EString] (  requirement+=[Requirement|EString])* ')' 
+        ('safeState' '(' safeState+=[Mode|EString] (  safeState+=[Mode|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
 EADatatypePrototype returns EADatatypePrototype:
     'EADatatypePrototype' shortName=Identifier
     ('{'
@@ -715,6 +2458,305 @@ EnumerationLiteral returns EnumerationLiteral:
         ('name' name=String0';' )?
         (ownedComment+=Comment (  ownedComment+=Comment)*)?
     '}')?;
+
+BehaviorConstraintBindingAttribute returns BehaviorConstraintBindingAttribute:
+    'BehaviorConstraintBindingAttribute' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isExternVisible' isExternVisible=Boolean';'
+        'type' type=[EADatatype|EString]';'
+        ('bindingThroughClampConnector' '(' bindingThroughClampConnector+=[ClampConnector|EString] (  bindingThroughClampConnector+=[ClampConnector|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (bindingThroughHardwareConnector+=BehaviorConstraintInternalBinding_bindingThroughHardwareConnector (  bindingThroughHardwareConnector+=BehaviorConstraintInternalBinding_bindingThroughHardwareConnector)*)?
+        (bindingThroughFunctionConnector+=BehaviorConstraintInternalBinding_bindingThroughFunctionConnector (  bindingThroughFunctionConnector+=BehaviorConstraintInternalBinding_bindingThroughFunctionConnector)*)?
+    '}');
+
+BehaviorConstraintBindingEvent returns BehaviorConstraintBindingEvent:
+    'BehaviorConstraintBindingEvent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('occurredLogicalEvent' '(' occurredLogicalEvent+=[LogicalEvent|EString] (  occurredLogicalEvent+=[LogicalEvent|EString])* ')' )?
+        ('occurredFaultFailure' '(' occurredFaultFailure+=[FaultFailure|EString] (  occurredFaultFailure+=[FaultFailure|EString])* ')' )?
+        ('occurredHazardousEvent' '(' occurredHazardousEvent+=[HazardousEvent|EString] (  occurredHazardousEvent+=[HazardousEvent|EString])* ')' )?
+        ('occurredFeatureFlaw' '(' occurredFeatureFlaw+=[FeatureFlaw|EString] (  occurredFeatureFlaw+=[FeatureFlaw|EString])* ')' )?
+        ('occurredExecutionEvent' '(' occurredExecutionEvent+=[Event|EString] (  occurredExecutionEvent+=[Event|EString])* ')' )?
+        ('bindingThroughClampConnector' '(' bindingThroughClampConnector+=[ClampConnector|EString] (  bindingThroughClampConnector+=[ClampConnector|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (bindingThroughHardwareConnector+=BehaviorConstraintInternalBinding_bindingThroughHardwareConnector (  bindingThroughHardwareConnector+=BehaviorConstraintInternalBinding_bindingThroughHardwareConnector)*)?
+        (bindingThroughFunctionConnector+=BehaviorConstraintInternalBinding_bindingThroughFunctionConnector (  bindingThroughFunctionConnector+=BehaviorConstraintInternalBinding_bindingThroughFunctionConnector)*)?
+    '}')?;
+
+Attribute_Impl returns Attribute:
+    'Attribute' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isExternVisible' isExternVisible=Boolean';'
+        'type' type=[EADatatype|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+AttributeQuantificationConstraint returns AttributeQuantificationConstraint:
+    'AttributeQuantificationConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (attribute+=Attribute (  attribute+=Attribute)*)?
+        (quantification+=Quantification (  quantification+=Quantification)*)?
+    '}')?;
+
+LogicalEvent returns LogicalEvent:
+    'LogicalEvent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isExternVisible' isExternVisible=Boolean';'
+        'type' type=[EADatatype|EString]';'
+        ('timeCondition' timeCondition=[LogicalTimeCondition|EString]';' )?
+        'operand' '(' operand+=[Attribute|EString] (  operand+=[Attribute|EString])* ')' 
+        ('visibleThroughFunctionPort' '(' visibleThroughFunctionPort+=[FunctionPort|EString] (  visibleThroughFunctionPort+=[FunctionPort|EString])* ')' )?
+        (value+=EAValue (  value+=EAValue)*)?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Quantification_Impl returns Quantification:
+    'Quantification' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'type' type=[EADatatype|EString]';'
+        ('timeCondition' timeCondition=[LogicalTimeCondition|EString]';' )?
+        'operand' '(' operand+=[Attribute|EString] (  operand+=[Attribute|EString])* ')' 
+        (value+=EAValue (  value+=EAValue)*)?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+ComputationConstraint returns ComputationConstraint:
+    'ComputationConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        (logicalPath+=LogicalPath (  logicalPath+=LogicalPath)*)?
+        (logicalTransformation+=LogicalTransformation (  logicalTransformation+=LogicalTransformation)*)?
+    '}')?;
+
+LogicalPath returns LogicalPath:
+    'LogicalPath' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('segment' '(' segment+=[LogicalPath|EString] (  segment+=[LogicalPath|EString])* ')' )?
+        ('strand' '(' strand+=[LogicalPath|EString] (  strand+=[LogicalPath|EString])* ')' )?
+        ('logicalStimulus' '(' logicalStimulus+=[LogicalEvent|EString] (  logicalStimulus+=[LogicalEvent|EString])* ')' )?
+        ('logicalResponse' '(' logicalResponse+=[LogicalEvent|EString] (  logicalResponse+=[LogicalEvent|EString])* ')' )?
+        ('correspondingExecutionEventChain' '(' correspondingExecutionEventChain+=[EventChain|EString] (  correspondingExecutionEventChain+=[EventChain|EString])* ')' )?
+        ('succeedingExecutionEventChain' '(' succeedingExecutionEventChain+=[EventChain|EString] (  succeedingExecutionEventChain+=[EventChain|EString])* ')' )?
+        ('precedingExecutionEventChain' '(' precedingExecutionEventChain+=[EventChain|EString] (  precedingExecutionEventChain+=[EventChain|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('transformationOccurrence' transformationOccurrence=TransformationOccurrence';' )?
+    '}')?;
+
+LogicalTransformation returns LogicalTransformation:
+    'LogicalTransformation' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isClientServerInterface' isClientServerInterface=Boolean';'
+        ('timeInvariant' timeInvariant=[LogicalTimeCondition|EString]';' )?
+        ('postCondition' '(' postCondition+=[Quantification|EString] (  postCondition+=[Quantification|EString])* ')' )?
+        ('preCondition' '(' preCondition+=[Quantification|EString] (  preCondition+=[Quantification|EString])* ')' )?
+        ('quantificationInvariant' '(' quantificationInvariant+=[Quantification|EString] (  quantificationInvariant+=[Quantification|EString])* ')' )?
+        ('in' '(' in+=[Attribute|EString] (  in+=[Attribute|EString])* ')' )?
+        ('out' '(' out+=[Attribute|EString] (  out+=[Attribute|EString])* ')' )?
+        ('contained' '(' contained+=[Attribute|EString] (  contained+=[Attribute|EString])* ')' )?
+        ('clientServerInterfaceOperation' '(' clientServerInterfaceOperation+=[Operation|EString] (  clientServerInterfaceOperation+=[Operation|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('expression' expression=EAExpression';' )?
+    '}');
+
+TransformationOccurrence returns TransformationOccurrence:
+    'TransformationOccurrence' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('timeCondition' timeCondition=[LogicalTimeCondition|EString]';' )?
+        'invokedLogicalTransformation' invokedLogicalTransformation=[LogicalTransformation|EString]';'
+        ('outQuantification' '(' outQuantification+=[Quantification|EString] (  outQuantification+=[Quantification|EString])* ')' )?
+        ('inQuantification' '(' inQuantification+=[Quantification|EString] (  inQuantification+=[Quantification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+LogicalTimeCondition returns LogicalTimeCondition:
+    'LogicalTimeCondition' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isLogicalTimeSuspended' isLogicalTimeSuspended=Boolean';'
+        ('consecutiveTimeCondition' consecutiveTimeCondition=[LogicalTimeCondition|EString]';' )?
+        ('startPointReference' startPointReference=[TransitionEvent|EString]';' )?
+        ('endPointReference' endPointReference=[TransitionEvent|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('upper' upper=EAValue';' )?
+        ('lower' lower=EAValue';' )?
+        ('width' width=EAValue';' )?
+    '}');
+
+State returns State:
+    'State' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'isErrorState' isErrorState=Boolean';'
+        'isHazard' isHazard=Boolean';'
+        'isInitState' isInitState=Boolean';'
+        'isMode' isMode=Boolean';'
+        ('timeInvariant' '(' timeInvariant+=[LogicalTimeCondition|EString] (  timeInvariant+=[LogicalTimeCondition|EString])* ')' )?
+        ('quantificationInvariant' '(' quantificationInvariant+=[Quantification|EString] (  quantificationInvariant+=[Quantification|EString])* ')' )?
+        ('hazardDeclaration' '(' hazardDeclaration+=[Hazard|EString] (  hazardDeclaration+=[Hazard|EString])* ')' )?
+        ('modeDeclaration' '(' modeDeclaration+=[Mode|EString] (  modeDeclaration+=[Mode|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+StateEvent returns StateEvent:
+    'StateEvent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('start' start=[State|EString]';' )?
+        ('end' end=[State|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+SynchronousTransition returns SynchronousTransition:
+    'SynchronousTransition' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'from' from=[State|EString]';'
+        'to' to=[State|EString]';'
+        ('timeGuard' '(' timeGuard+=[LogicalTimeCondition|EString] (  timeGuard+=[LogicalTimeCondition|EString])* ')' )?
+        ('effect' effect=[TransformationOccurrence|EString]';' )?
+        ('quantificationGuard' '(' quantificationGuard+=[Quantification|EString] (  quantificationGuard+=[Quantification|EString])* ')' )?
+        ('readTransitionEvent' readTransitionEvent=[TransitionEvent|EString]';' )?
+        ('writeTransitionEvent' writeTransitionEvent=[TransitionEvent|EString]';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+TemporalConstraint returns TemporalConstraint:
+    'TemporalConstraint' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'initState' initState=[State|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        ('assertion' assertion=EAExpression';' )?
+        (timeCondition+=LogicalTimeCondition (  timeCondition+=LogicalTimeCondition)*)?
+        (state+=State (  state+=State)*)?
+        (transition+=Transition (  transition+=Transition)*)?
+        (transitionEvent+=TransitionEvent (  transitionEvent+=TransitionEvent)*)?
+    '}');
+
+Transition_Impl returns Transition:
+    'Transition' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'from' from=[State|EString]';'
+        'to' to=[State|EString]';'
+        ('timeGuard' '(' timeGuard+=[LogicalTimeCondition|EString] (  timeGuard+=[LogicalTimeCondition|EString])* ')' )?
+        ('effect' effect=[TransformationOccurrence|EString]';' )?
+        ('quantificationGuard' '(' quantificationGuard+=[Quantification|EString] (  quantificationGuard+=[Quantification|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+TransitionEvent_Impl returns TransitionEvent:
+    'TransitionEvent' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('occurredLogicalEvent' '(' occurredLogicalEvent+=[LogicalEvent|EString] (  occurredLogicalEvent+=[LogicalEvent|EString])* ')' )?
+        ('occurredFaultFailure' '(' occurredFaultFailure+=[FaultFailure|EString] (  occurredFaultFailure+=[FaultFailure|EString])* ')' )?
+        ('occurredHazardousEvent' '(' occurredHazardousEvent+=[HazardousEvent|EString] (  occurredHazardousEvent+=[HazardousEvent|EString])* ')' )?
+        ('occurredFeatureFlaw' '(' occurredFeatureFlaw+=[FeatureFlaw|EString] (  occurredFeatureFlaw+=[FeatureFlaw|EString])* ')' )?
+        ('occurredExecutionEvent' '(' occurredExecutionEvent+=[Event|EString] (  occurredExecutionEvent+=[Event|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+ArchitecturalDescription returns ArchitecturalDescription:
+    'ArchitecturalDescription' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'identifies' '(' identifies+=[Stakeholder|EString] (  identifies+=[Stakeholder|EString])* ')' 
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+        aggregates+=ArchitecturalModel (  aggregates+=ArchitecturalModel)*
+    '}');
+
+ArchitecturalModel returns ArchitecturalModel:
+    'ArchitecturalModel' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        ('isConceptFor' '(' isConceptFor+=[SystemModel|EString] (  isConceptFor+=[SystemModel|EString])* ')' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+Architecture returns Architecture:
+    'Architecture' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'describedBy' describedBy=[ArchitecturalDescription|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+Mission returns Mission:
+    'Mission' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}')?;
+
+VehicleSystem returns VehicleSystem:
+    'VehicleSystem' shortName=Identifier
+    ('{'
+        ('category' category=Identifier';' )?
+        ('uuid' uuid=UUID';' )?
+        ('name' name=String0';' )?
+        'has' '(' has+=[Stakeholder|EString] (  has+=[Stakeholder|EString])* ')' 
+        'fulfills' '(' fulfills+=[Mission|EString] (  fulfills+=[Mission|EString])* ')' 
+        'hasAn' hasAn=[Architecture|EString]';'
+        (ownedComment+=Comment (  ownedComment+=Comment)*)?
+    '}');
+
+enum DeviationPermissionKind returns DeviationPermissionKind:
+                no = 'no' | append = 'append' | subset = 'subset' | subtree = 'subtree' | widen = 'widen' | yes = 'yes';
 
 FunctionAllocation_allocatedElement returns FunctionAllocation_allocatedElement:
     'FunctionAllocation_allocatedElement'
@@ -742,6 +2784,21 @@ FunctionConnector_port returns FunctionConnector_port:
 
 enum EADirectionKind returns EADirectionKind:
                 in = 'in' | inout = 'inout' | out = 'out';
+
+SelectionCriterion returns SelectionCriterion:
+    'SelectionCriterion'
+    ('{'
+        'type' type=[EADatatype|EString]';'
+        ('source' '(' source+=[Identifiable|EString] (  source+=[Identifiable|EString])* ')' )?
+        (value+=EAValue (  value+=EAValue)*)?
+    '}');
+
+TimingExpression returns TimingExpression:
+    'TimingExpression'
+    ('{'
+        'type' type=[EADatatype|EString]';'
+        (value+=EAValue (  value+=EAValue)*)?
+    '}');
 
 EAArrayValue returns EAArrayValue:
     'EAArrayValue'
@@ -771,7 +2828,7 @@ EAEnumerationValue returns EAEnumerationValue:
         'value' '(' value+=[EnumerationLiteral|EString] (  value+=[EnumerationLiteral|EString])* ')' 
     '}');
 
-EAExpression returns EAExpression:
+EAExpression_Impl returns EAExpression:
     'EAExpression'
     ('{'
         'type' type=[EADatatype|EString]';'
@@ -791,9 +2848,6 @@ EAStringValue returns EAStringValue:
         'value' value=String0';'
         'type' type=[EADatatype|EString]';'
     '}');
-
-Boolean returns ecore::EBoolean:
-    'true' | 'false';
 
 Numerical returns Numerical:
     EABINARY | EAOCTAL | INT | EAHEX | EAEXPONENT;
@@ -821,8 +2875,204 @@ enum HardwareBusKind returns HardwareBusKind:
 Float returns ecore::EDouble:
     INT '.' INT;
 
+ClampConnector_port returns ClampConnector_port:
+    'ClampConnector_port'
+    ('{'
+        ('functionPrototype' '(' functionPrototype+=[FunctionPrototype|EString] (  functionPrototype+=[FunctionPrototype|EString])* ')' )?
+        'functionPort' functionPort=[FunctionPort|EString]';'
+    '}');
+
+enum TriggerPolicyKind returns TriggerPolicyKind:
+                EVENT = 'EVENT' | TIME = 'TIME';
+
+enum BindingTimeKind returns BindingTimeKind:
+                systemDesignTime = 'systemDesignTime' | codeGenerationTime = 'codeGenerationTime' | preCompileTime = 'preCompileTime' | linkTime = 'linkTime' | postBuild = 'postBuild' | runtime = 'runtime';
+
+NonConcurrentConstraint_exclusive returns NonConcurrentConstraint_exclusive:
+    'NonConcurrentConstraint_exclusive'
+    ('{'
+        'NameWasNotSet_0' NameWasNotSet_0=[FunctionPrototype|EString]';'
+        ('NameWasNotSet_1' '(' NameWasNotSet_1+=[FunctionPrototype|EString] (  NameWasNotSet_1+=[FunctionPrototype|EString])* ')' )?
+    '}');
+
+enum EventFunctionKind returns EventFunctionKind:
+                start = 'start' | stop = 'stop' | preemption = 'preemption' | resume = 'resume' | activate = 'activate';
+
+EventFunction_function returns EventFunction_function:
+    'EventFunction_function'
+    ('{'
+        ('functionPrototype_context' '(' functionPrototype_context+=[FunctionPrototype|EString] (  functionPrototype_context+=[FunctionPrototype|EString])* ')' )?
+        'functionPrototype_target' functionPrototype_target=[FunctionPrototype|EString]';'
+    '}');
+
+enum EventFunctionClientServerPortKind returns EventFunctionClientServerPortKind:
+                sentRequest = 'sentRequest' | receivedResponse = 'receivedResponse' | receivedRequest = 'receivedRequest' | sentResponse = 'sentResponse';
+
+EventFunctionClientServerPort_port returns EventFunctionClientServerPort_port:
+    'EventFunctionClientServerPort_port'
+    ('{'
+        'functionClientServerPort' functionClientServerPort=[FunctionClientServerPort|EString]';'
+        ('functionPrototype' '(' functionPrototype+=[FunctionPrototype|EString] (  functionPrototype+=[FunctionPrototype|EString])* ')' )?
+    '}');
+
+EventFunctionFlowPort_port returns EventFunctionFlowPort_port:
+    'EventFunctionFlowPort_port'
+    ('{'
+        'functionFlowPort' functionFlowPort=[FunctionFlowPort|EString]';'
+        ('functionPrototype' '(' functionPrototype+=[FunctionPrototype|EString] (  functionPrototype+=[FunctionPrototype|EString])* ')' )?
+    '}');
+
 Integer returns Integer:
     INT;
+
+enum ErrorBehaviorKind returns ErrorBehaviorKind:
+                HIP_HOPS = 'HIP_HOPS' | ALTARICA = 'ALTARICA' | AADL = 'AADL' | OTHER = 'OTHER';
+
+ErrorModelPrototype_functionTarget returns ErrorModelPrototype_functionTarget:
+    'ErrorModelPrototype_functionTarget'
+    ('{'
+        ('functionPrototype_context' '(' functionPrototype_context+=[FunctionPrototype|EString] (  functionPrototype_context+=[FunctionPrototype|EString])* ')' )?
+        'functionPrototype' functionPrototype=[FunctionPrototype|EString]';'
+    '}');
+
+ErrorModelPrototype_hwTarget returns ErrorModelPrototype_hwTarget:
+    'ErrorModelPrototype_hwTarget'
+    ('{'
+        'hardwareComponentPrototype' hardwareComponentPrototype=[HardwareComponentPrototype|EString]';'
+        ('hardwareComponentPrototype_context' '(' hardwareComponentPrototype_context+=[HardwareComponentPrototype|EString] (  hardwareComponentPrototype_context+=[HardwareComponentPrototype|EString])* ')' )?
+    '}');
+
+FaultFailurePort_functionTarget returns FaultFailurePort_functionTarget:
+    'FaultFailurePort_functionTarget'
+    ('{'
+        ('functionPrototype' '(' functionPrototype+=[FunctionPrototype|EString] (  functionPrototype+=[FunctionPrototype|EString])* ')' )?
+        'functionPort' functionPort=[FunctionPort|EString]';'
+    '}');
+
+FaultFailurePort_hwTarget returns FaultFailurePort_hwTarget:
+    'FaultFailurePort_hwTarget'
+    ('{'
+        'hardwarePort' hardwarePort=[HardwarePin|EString]';'
+        ('hardwareComponentPrototype' '(' hardwareComponentPrototype+=[HardwareComponentPrototype|EString] (  hardwareComponentPrototype+=[HardwareComponentPrototype|EString])* ')' )?
+    '}');
+
+FaultFailurePropagationLink_fromPort returns FaultFailurePropagationLink_fromPort:
+    'FaultFailurePropagationLink_fromPort'
+    ('{'
+        'faultFailurePort' faultFailurePort=[FaultFailurePort|EString]';'
+        ('errorModelPrototype' '(' errorModelPrototype+=[ErrorModelPrototype|EString] (  errorModelPrototype+=[ErrorModelPrototype|EString])* ')' )?
+    '}');
+
+FaultFailurePropagationLink_toPort returns FaultFailurePropagationLink_toPort:
+    'FaultFailurePropagationLink_toPort'
+    ('{'
+        'faultFailurePort' faultFailurePort=[FaultFailurePort|EString]';'
+        ('errorModelPrototype' '(' errorModelPrototype+=[ErrorModelPrototype|EString] (  errorModelPrototype+=[ErrorModelPrototype|EString])* ')' )?
+    '}');
+
+enum ASILKind returns ASILKind:
+                ASIL_A = 'ASIL_A' | ASIL_B = 'ASIL_B' | ASIL_C = 'ASIL_C' | ASIL_D = 'ASIL_D' | QM = 'QM';
+
+BehaviorConstraintInternalBinding_bindingThroughHardwareConnector returns BehaviorConstraintInternalBinding_bindingThroughHardwareConnector:
+    'BehaviorConstraintInternalBinding_bindingThroughHardwareConnector'
+    ('{'
+        ('hardwareComponentPrototype' '(' hardwareComponentPrototype+=[HardwareComponentPrototype|EString] (  hardwareComponentPrototype+=[HardwareComponentPrototype|EString])* ')' )?
+        'hardwareConnector' hardwareConnector=[HardwareConnector|EString]';'
+    '}');
+
+BehaviorConstraintInternalBinding_bindingThroughFunctionConnector returns BehaviorConstraintInternalBinding_bindingThroughFunctionConnector:
+    'BehaviorConstraintInternalBinding_bindingThroughFunctionConnector'
+    ('{'
+        ('functionPrototype' '(' functionPrototype+=[FunctionPrototype|EString] (  functionPrototype+=[FunctionPrototype|EString])* ')' )?
+        'functionConnector' functionConnector=[FunctionConnector|EString]';'
+    '}');
+
+Satisfy_satisfiedBy returns Satisfy_satisfiedBy:
+    'Satisfy_satisfiedBy'
+    ('{'
+        'identifiable_target' identifiable_target=[Identifiable|EString]';'
+        ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
+    '}');
+
+Realization_realized returns Realization_realized:
+    'Realization_realized'
+    ('{'
+        'identifiable_target' identifiable_target=[EAElement|EString]';'
+        ('identifiable_context' '(' identifiable_context+=[EAElement|EString] ( "," identifiable_context+=[EAElement|EString])* ')' )?
+    '}');
+
+Realization_realizedBy returns Realization_realizedBy:
+    'Realization_realizedBy'
+    ('{'
+        'identifiable_target' identifiable_target=[Identifiable|EString]';'
+        ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
+    '}');
+
+enum FunctionBehaviorKind returns FunctionBehaviorKind:
+                SIMULINK = 'SIMULINK' | STATEMATE = 'STATEMATE' | SDL = 'SDL' | ASCET = 'ASCET' | SCADE = 'SCADE' | OTHER = 'OTHER' | MARTE = 'MARTE' | UML = 'UML' | SCILAB = 'SCILAB';
+
+enum QualityRequirementKind returns QualityRequirementKind:
+                availability = 'availability' | confidentiality = 'confidentiality' | configurability = 'configurability' | ergonomy = 'ergonomy' | integrity = 'integrity' | humanMachineInterface = 'humanMachineInterface' | maintainability = 'maintainability' | other = 'other' | performance = 'performance' | reliability = 'reliability' | safety = 'safety' | security = 'security' | timing = 'timing';
+
+VVCase_vvSubject returns VVCase_vvSubject:
+    'VVCase_vvSubject'
+    ('{'
+        'identifiable_target' identifiable_target=[Identifiable|EString]';'
+        ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
+    '}');
+
+VVTarget_element returns VVTarget_element:
+    'VVTarget_element'
+    ('{'
+        ('identifiable_context' '(' identifiable_context+=[Identifiable|EString] ( "," identifiable_context+=[Identifiable|EString])* ')' )?
+        'identifiable_target' identifiable_target=[Identifiable|EString]';'
+    '}');
+
+enum ControllabilityClassKind returns ControllabilityClassKind:
+                C0 = 'C0' | C1 = 'C1' | C2 = 'C2' | C3 = 'C3';
+
+enum ExposureClassKind returns ExposureClassKind:
+                E1 = 'E1' | E2 = 'E2' | E3 = 'E3' | E4 = 'E4';
+
+enum SeverityClassKind returns SeverityClassKind:
+                S0 = 'S0' | S1 = 'S1' | S2 = 'S2' | S3 = 'S3';
+
+enum DevelopmentCategoryKind returns DevelopmentCategoryKind:
+                newItemDevelopment = 'newItemDevelopment' | modificationOfExistingItem = 'modificationOfExistingItem';
+
+FaultFailure_anomaly returns FaultFailure_anomaly:
+    'FaultFailure_anomaly'
+    ('{'
+        ('errorModelPrototype' '(' errorModelPrototype+=[ErrorModelPrototype|EString] (  errorModelPrototype+=[ErrorModelPrototype|EString])* ')' )?
+        'anomaly' anomaly=[Anomaly|EString]';'
+    '}');
+
+enum LifecycleStageKind returns LifecycleStageKind:
+                PreliminarySafetyCase = 'PreliminarySafetyCase' | InterimSafetyCase = 'InterimSafetyCase' | OperationalSafetyCase = 'OperationalSafetyCase';
+
+enum GenericConstraintKind returns GenericConstraintKind:
+                cableLength = 'cableLength' | computationalElementKind = 'computationalElementKind' | ^current = 'current' | developmentCost = 'developmentCost' | functionAllocationDifferentHW = 'functionAllocationDifferentHW' | functionAllocationSameHW = 'functionAllocationSameHW' | impedance = 'impedance' | insulation = 'insulation' | memory = 'memory' | nonVolatileMemory = 'nonVolatileMemory' | other = 'other' | pieceCost = 'pieceCost' | powerConsumption = 'powerConsumption' | powerSupplyIndependent = 'powerSupplyIndependent' | realizationDifferent = 'realizationDifferent' | realizationSame = 'realizationSame' | spaceRedundancy = 'spaceRedundancy' | standard = 'standard' | timeRedundancy = 'timeRedundancy' | utilization = 'utilization' | volatileMemory = 'volatileMemory' | voltage = 'voltage' | weight = 'weight';
+
+BehaviorConstraintPrototype_errorModelTarget returns BehaviorConstraintPrototype_errorModelTarget:
+    'BehaviorConstraintPrototype_errorModelTarget'
+    ('{'
+        ('errorModelPrototype_context' '(' errorModelPrototype_context+=[ErrorModelPrototype|EString] (  errorModelPrototype_context+=[ErrorModelPrototype|EString])* ')' )?
+        'errorModelPrototype_target' errorModelPrototype_target=[ErrorModelPrototype|EString]';'
+    '}');
+
+BehaviorConstraintPrototype_functionTarget returns BehaviorConstraintPrototype_functionTarget:
+    'BehaviorConstraintPrototype_functionTarget'
+    ('{'
+        'functionPrototype_target' functionPrototype_target=[FunctionPrototype|EString]';'
+        ('functionPrototype_context' '(' functionPrototype_context+=[FunctionPrototype|EString] (  functionPrototype_context+=[FunctionPrototype|EString])* ')' )?
+    '}');
+
+BehaviorConstraintPrototype_hardwareComponentTarget returns BehaviorConstraintPrototype_hardwareComponentTarget:
+    'BehaviorConstraintPrototype_hardwareComponentTarget'
+    ('{'
+        'hardwareComponentPrototype_target' hardwareComponentPrototype_target=[HardwareComponentPrototype|EString]';'
+        ('hardwareComponentPrototype_context' '(' hardwareComponentPrototype_context+=[HardwareComponentPrototype|EString] (  hardwareComponentPrototype_context+=[HardwareComponentPrototype|EString])* ')' )?
+    '}');
 
 
 EString returns ecore::EString:
