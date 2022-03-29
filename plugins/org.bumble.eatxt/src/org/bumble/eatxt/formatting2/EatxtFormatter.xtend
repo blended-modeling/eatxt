@@ -3,8 +3,6 @@
  */
 package org.bumble.eatxt.formatting2
 
-import com.google.inject.Inject
-import org.bumble.eatxt.services.EatxtGrammarAccess
 import org.eclipse.eatop.eastadl22.Actuator
 import org.eclipse.eatop.eastadl22.Allocation
 import org.eclipse.eatop.eastadl22.AnalysisFunctionPrototype
@@ -61,7 +59,7 @@ import org.eclipse.xtext.formatting2.IFormattableDocument
 
 class EatxtFormatter extends AbstractFormatter2 {
 		
-		@Inject extension EatxtGrammarAccess
+		
 		def dispatch void format(EAXML eAXML, extension IFormattableDocument document) {
 			val open = eAXML.regionFor.keyword('{')
 			val close = eAXML.regionFor.keyword('}')
