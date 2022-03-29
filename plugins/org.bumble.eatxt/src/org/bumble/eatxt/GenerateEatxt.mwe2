@@ -9,6 +9,8 @@ var idePath = "${rootPath}/org.bumble.eatxt.ide"
 
 Workflow {
 	
+	bean = EatxtMWE2MetaModelRegistrar {}
+	
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
@@ -41,9 +43,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "org.bumble.eatxt.Eatxt"
 			fileExtensions = "eatxt"
-			// FIXME: dirty hack due to wrongly registered plugin (wrong ID "eastadl22" instead of "org.eclipse.eatop.eastadl22"), the following line should be:
-			// referencedResource = "platform:/resource/org.eclipse.eatop.eastadl22/model/eastadl22.genmodel"
-			referencedResource = "platform:/resource/eastadl22/model/eastadl22.genmodel"
+			referencedResource = "platform:/resource/org.eclipse.eatop.eastadl22/model/eastadl22.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 			fragment = formatting2.EatxtFormatter2Fragment auto-inject {
