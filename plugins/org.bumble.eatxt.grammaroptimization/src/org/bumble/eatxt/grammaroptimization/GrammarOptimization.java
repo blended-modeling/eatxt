@@ -11,16 +11,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GrammarOptimization {
-	private static final String ECLIPSE_WORKSPACE_PATH = "(.*\\\\eatxt)";
 	private static final String XTEXT_PROJECT_NAME = "org.bumble.eatxt";
 	private static final String NEW_LANGUAGE_NAME = "Eatxt";
-	private static final String GRAMMAR_RELATIVE_PATH = "\\src\\org\\bumble\\eatxt\\";
+	private static final String GRAMMAR_RELATIVE_PATH = String.join(File.separator, new String[]{ "src", "org", "bumble", "eatxt" });
 
 	public class GrammarRule {
 		public List<String> lines;
@@ -33,51 +33,36 @@ public class GrammarOptimization {
 	 */
 	public static void main(String[] args) {
 		System.out.println("[Info]**************************************Start optimizing grammar!");
-		// Get absolute of current project
-		Path path = FileSystems.getDefault().getPath("");
-		String directoryName = path.toAbsolutePath().toString();
-
 		// Get object of current class
 		GrammarOptimization optimizer = new GrammarOptimization();
 
-		// Get Eclipse workpsace path
-		String strRegex4Workspace = ECLIPSE_WORKSPACE_PATH;
-		Pattern pattern = Pattern.compile(strRegex4Workspace);
-		String strEclipseWorkspace = optimizer.getTargetString(directoryName, pattern);
-
-		// Construct name string of xtext text file
-		String xtextFileName = strEclipseWorkspace + "\\plugins\\" + XTEXT_PROJECT_NAME + GRAMMAR_RELATIVE_PATH
-				+ NEW_LANGUAGE_NAME + ".xtext";
-		String xtendFileName = strEclipseWorkspace + "\\plugins\\" + XTEXT_PROJECT_NAME + GRAMMAR_RELATIVE_PATH + "formatting2\\"
-				+ NEW_LANGUAGE_NAME + "Formatter" + ".xtend";
-
-		File xtextFile = new File(xtextFileName);
+		File xtextFile = getProjectFile(NEW_LANGUAGE_NAME + ".xtext");
 
 		if (!xtextFile.exists()) {
-			System.err.printf("[Error]*******************File %s.xtext doesn't exist!\n", xtextFileName);
+			System.err.printf("[Error]*******************File %s doesn't exist!\n", xtextFile.getName());
 			System.err.println("[Error]**************Place check the name and path of the xtext file!");
 			System.err.println("[Error]**********Please make sure you have generated xtext artifacts!");
 			System.err.println("[Error]**********************************************Stop optimizing!");
 			return;
 		}
 
-		File xtendFile = new File(xtendFileName);
-
-		if (!xtendFile.exists()) {
-			System.err.printf("[Error]**********File %sFormatter.xtend doesn't exist!\n", xtendFileName);
-			System.err.println("[Error]**************Place check the name and path of the xtend file!");
-			System.err.println("[Error]**********************************************Stop optimizing!");
-			return;
-		}
+//		File xtendFile = new File(NEW_LANGUAGE_NAME + "Formatter" + ".xtend");
+//
+//		if (!xtendFile.exists()) {
+//			System.err.printf("[Error]**********File %sFormatter doesn't exist!\n", xtendFile.getName());
+//			System.err.println("[Error]**************Place check the name and path of the xtend file!");
+//			System.err.println("[Error]**********************************************Stop optimizing!");
+//			return;
+//		}
 
 		// 1. Modify the xtext file
-		if (!optimizer.optimizeXtext(xtextFile, directoryName)) {
+		if (!optimizer.optimizeXtext(xtextFile)) {
 			System.err.println("[Error]*************************Failed to optimize xtext, so stopped!");
 			return;
 		}
 
 //		// 2. Modify the formatting xtend file
-//		if (!optimizer.modifyFormatter(xtendFile, directoryName)) {
+//		if (!optimizer.modifyFormatter(xtendFile)) {
 //			System.err.println("[Error]**********************Failed to modify xtend file, so stopped!");
 //			return;
 //		}
@@ -85,6 +70,17 @@ public class GrammarOptimization {
 		System.out.println("[Info]*************************Stop optimizing grammar! Successfully!");
 	}
 
+	private static File getProjectFile(String fileName) {
+		Path path = FileSystems.getDefault().getPath("");
+		Path absolutePath = path.toAbsolutePath(); 
+		
+		String directoryName = absolutePath.subpath(0, absolutePath.getNameCount()-2).toString();
+		
+		File file = Paths.get("/", directoryName, "plugins", XTEXT_PROJECT_NAME, GRAMMAR_RELATIVE_PATH, 
+				 fileName).toFile();
+		return file;
+	}
+	
 	public boolean modifyFormatter(File file, String directoryName) {
 
 		try {
@@ -134,7 +130,7 @@ public class GrammarOptimization {
 	/**
 	 * Optimize xtext grammar as a whole
 	 */
-	public boolean optimizeXtext(File file, String directoryName) {
+	public boolean optimizeXtext(File file) {
 
 		try {
 			// read whole content from xtext file
