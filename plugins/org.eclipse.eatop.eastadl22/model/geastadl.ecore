@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="geastadl"
+    nsURI="http://east-adl.info/geastadl" nsPrefix="">
+  <eSubpackages name="ginfrastructure" nsURI="http://east-adl.info/geastadl/ginfrastructure"
+      nsPrefix="">
+    <eSubpackages name="gelements" nsURI="http://east-adl.info/geastadl/ginfrastructure/gelements"
+        nsPrefix="">
+      <eClassifiers xsi:type="ecore:EClass" name="GEAPackage" abstract="true" interface="true"
+          eSuperTypes="#//ginfrastructure/gelements/GIdentifiable">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="gElement" upperBound="-1"
+            eType="#//ginfrastructure/gelements/GEAPackageableElement" volatile="true"
+            transient="true" derived="true" resolveProxies="false"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="gSubPackage" upperBound="-1"
+            eType="#//ginfrastructure/gelements/GEAPackage" volatile="true" transient="true"
+            derived="true" resolveProxies="false"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="GEAXML" abstract="true" interface="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="gTopLevelPackage" upperBound="-1"
+            eType="#//ginfrastructure/gelements/GEAPackage" volatile="true" transient="true"
+            derived="true" resolveProxies="false"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="GIdentifiable" abstract="true" interface="true"
+          eSuperTypes="#//ginfrastructure/gelements/GReferrable"/>
+      <eClassifiers xsi:type="ecore:EClass" name="GEAPackageableElement" abstract="true"
+          interface="true" eSuperTypes="#//ginfrastructure/gelements/GIdentifiable">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="gEAPackage_element"
+            eType="#//ginfrastructure/gelements/GEAPackage" volatile="true" transient="true"
+            derived="true" resolveProxies="false">
+          <eAnnotations source="feature.mapping">
+            <details key="eastadl" value="EAPackage_element"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="GReferrable" abstract="true" interface="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gShortName" lowerBound="1"
+            eType="#//ginfrastructure/gprimitivetypes/Identifier" volatile="true"
+            transient="true" unsettable="true" derived="true"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="gprimitivetypes" nsURI="http://east-adl.info/geastadl/ginfrastructure/gprimitivetypes"
+        nsPrefix="">
+      <eClassifiers xsi:type="ecore:EDataType" name="Identifier" instanceClassName="java.lang.String"/>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

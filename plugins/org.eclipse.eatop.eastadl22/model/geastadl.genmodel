@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&lt;copyright>&#xD;&#xA; &#xD;&#xA;Copyright (c) Continental AG and others.&#xD;&#xA;All rights reserved. This program and the accompanying materials are made&#xD;&#xA;available under the terms of the Eclipse Public License &#xD;&#xA;which accompanies this distribution, and is&#xD;&#xA;available at http://www.eclipse.org/org/documents/epl-v10.php&#xD;&#xA; &#xD;&#xA;Contributors: &#xD;&#xA;    Continental AG - Initial API and implementation&#xD;&#xA; &#xD;&#xA;&lt;/copyright>&#xD;&#xA;"
+    modelDirectory="/org.eclipse.eatop.geastadl/src" creationSubmenus="true" modelPluginID="org.eclipse.eatop.geastadl"
+    modelName="geastadl" modelPluginClass="org.eclipse.eatop.geastadl.internal.Activator"
+    editPluginClass="org.eclipse.eatop.geastadl.edit.internal.Activator" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>geastadl.ecore</foreignModel>
+  <genPackages prefix="Geastadl" basePackage="org.eclipse.eatop" disposableProviderFactory="true"
+      contentTypeIdentifier="" fileExtensions="" ecorePackage="geastadl.ecore#/">
+    <nestedGenPackages prefix="Ginfrastructure" basePackage="org.eclipse.eatop.geastadl"
+        disposableProviderFactory="true" providerPackageSuffix="edit.provider" fileExtensions=""
+        ecorePackage="geastadl.ecore#//ginfrastructure">
+      <nestedGenPackages prefix="Gelements" basePackage="org.eclipse.eatop.geastadl.ginfrastructure"
+          disposableProviderFactory="true" fileExtensions="" ecorePackage="geastadl.ecore#//ginfrastructure/gelements">
+        <genClasses image="false" ecoreClass="geastadl.ecore#//ginfrastructure/gelements/GEAPackage">
+          <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference geastadl.ecore#//ginfrastructure/gelements/GEAPackage/gElement"/>
+          <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference geastadl.ecore#//ginfrastructure/gelements/GEAPackage/gSubPackage"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="geastadl.ecore#//ginfrastructure/gelements/GEAXML">
+          <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference geastadl.ecore#//ginfrastructure/gelements/GEAXML/gTopLevelPackage"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="geastadl.ecore#//ginfrastructure/gelements/GIdentifiable"/>
+        <genClasses image="false" ecoreClass="geastadl.ecore#//ginfrastructure/gelements/GEAPackageableElement">
+          <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference geastadl.ecore#//ginfrastructure/gelements/GEAPackageableElement/gEAPackage_element"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="geastadl.ecore#//ginfrastructure/gelements/GReferrable">
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute geastadl.ecore#//ginfrastructure/gelements/GReferrable/gShortName"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Gprimitivetypes" basePackage="org.eclipse.eatop.geastadl.ginfrastructure"
+          disposableProviderFactory="true" fileExtensions="" ecorePackage="geastadl.ecore#//ginfrastructure/gprimitivetypes">
+        <genDataTypes ecoreDataType="geastadl.ecore#//ginfrastructure/gprimitivetypes/Identifier"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
