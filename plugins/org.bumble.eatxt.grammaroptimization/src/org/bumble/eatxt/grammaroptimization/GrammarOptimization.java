@@ -18,6 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GrammarOptimization {
+	private static final String ECLIPSE_WORKSPACE_PATH = "(.*\\\\eatxt)";
 	private static final String XTEXT_PROJECT_NAME = "org.bumble.eatxt";
 	private static final String NEW_LANGUAGE_NAME = "Eatxt";
 	private static final String GRAMMAR_RELATIVE_PATH = String.join(File.separator, new String[]{ "src", "org", "bumble", "eatxt" });
@@ -36,10 +37,10 @@ public class GrammarOptimization {
 		// Get object of current class
 		GrammarOptimization optimizer = new GrammarOptimization();
 
-		File xtextFile = getProjectFile(NEW_LANGUAGE_NAME + ".xtext");
+		File xtextFile = getProjectFile(NEW_LANGUAGE_NAME + ".xtext", optimizer);
 
 		if (!xtextFile.exists()) {
-			System.err.printf("[Error]*******************File %s doesn't exist!\n", xtextFile.getName());
+			System.err.printf("[Error]**************************************File %s doesn't exist!\n", xtextFile.getName());
 			System.err.println("[Error]**************Place check the name and path of the xtext file!");
 			System.err.println("[Error]**********Please make sure you have generated xtext artifacts!");
 			System.err.println("[Error]**********************************************Stop optimizing!");
@@ -70,14 +71,32 @@ public class GrammarOptimization {
 		System.out.println("[Info]*************************Stop optimizing grammar! Successfully!");
 	}
 
-	private static File getProjectFile(String fileName) {
+	private static File getProjectFile(String fileName, GrammarOptimization optimizer) {
 		Path path = FileSystems.getDefault().getPath("");
-		Path absolutePath = path.toAbsolutePath(); 
 		
-		String directoryName = absolutePath.subpath(0, absolutePath.getNameCount()-2).toString();
+		File file = null;
 		
-		File file = Paths.get("/", directoryName, "plugins", XTEXT_PROJECT_NAME, GRAMMAR_RELATIVE_PATH, 
-				 fileName).toFile();
+		String os = System.getProperty("os.name");
+		if (os.toLowerCase().startsWith("win")) {
+			String directoryName = path.toAbsolutePath().toString();
+			// Get Eclipse workpsace path
+			String strRegex4Workspace = ECLIPSE_WORKSPACE_PATH;
+			Pattern pattern = Pattern.compile(strRegex4Workspace);
+			String strEclipseWorkspace = optimizer.getTargetString(directoryName, pattern);
+			// Construct name string of xtext text file
+			String xtextFileName = strEclipseWorkspace + "\\plugins\\" + XTEXT_PROJECT_NAME + "\\" + GRAMMAR_RELATIVE_PATH
+					+ "\\" + NEW_LANGUAGE_NAME + ".xtext";
+			file = new File(xtextFileName);
+		}
+		else {
+			Path absolutePath = path.toAbsolutePath(); 
+			String directoryName = absolutePath.subpath(0, absolutePath.getNameCount()-2).toString();
+			
+			file = Paths.get("/", directoryName, "plugins", XTEXT_PROJECT_NAME, GRAMMAR_RELATIVE_PATH, 
+					 fileName).toFile();
+		}
+		
+		
 		return file;
 	}
 	
@@ -260,8 +279,20 @@ public class GrammarOptimization {
 			return strInput;
 		}
 		
+		// remove '{' and '}' from input string
+		String regex1 = "BEGIN";
+		String regex2 = "END";
+		
+		boolean isArbitraryConstraint = false;
+		
 		// 
 		for (int i = 0; i < lines.length; i++) {
+			
+			if (!isArbitraryConstraint) {
+				if (checkExistofString(lines[i], "ArbitraryConstraint"))
+					isArbitraryConstraint = true;
+			}
+			
 			// search if BEGIN and END both exist in the same line
 			if (checkExistofString(lines[i], "BEGIN\\s(.*)\\sEND")) {
 				Pattern pattern = Pattern.compile("BEGIN\\s(.*)\\sEND");
@@ -269,6 +300,35 @@ public class GrammarOptimization {
 				
 				if (subStr.isEmpty() || subStr.isBlank()) {
 					continue;
+				}
+				
+				if (checkExistofString(lines[i], "justification") || 
+						checkExistofString(lines[i], "featureLink") || 
+						checkExistofString(lines[i], "verify")) {
+					lines[i] = lines[i].replaceAll(regex1, "");
+					lines[i] = lines[i].replaceAll(regex2, "");
+					lines[i] += "\r\n";
+					strOutput += lines[i];
+					continue;
+				}				
+				
+				if (isArbitraryConstraint) {
+					if (checkExistofString(lines[i], "minimum")) {
+						lines[i] = lines[i].replaceAll(regex1, "");
+						lines[i] = lines[i].replaceAll(regex2, "");
+						lines[i] += "\r\n";
+						strOutput += lines[i];
+						continue;
+					}
+					
+					if (checkExistofString(lines[i], "maximum")) {
+						lines[i] = lines[i].replaceAll(regex1, "");
+						lines[i] = lines[i].replaceAll(regex2, "");
+						lines[i] += "\r\n";
+						strOutput += lines[i];
+						isArbitraryConstraint = false;
+						continue;
+					}
 				}
 				
 				// if there is any tab or whitespace in the head of the line, then keep it
