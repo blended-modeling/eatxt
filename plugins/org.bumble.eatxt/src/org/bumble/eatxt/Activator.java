@@ -58,11 +58,14 @@ public class Activator implements BundleActivator {
 	}
 
 	/**
-	 * Returns a map to lookup all (non-containment) cross EReferences of the
-	 * EAST-ADL Metamodel, which is intended for the EaTextScopeProvider.
+	 * Returns a map to lookup all (non-containment) cross {@link EReference}s of
+	 * the EAST-ADL Metamodel, which is intended for the
+	 * {@link org.bumble.eatxt.scoping.EatxtScopeProvider}.
 	 * 
-	 * @return the lookup map for the EatxtScopeProvider, might be empty (but not
-	 *         null) if metamodel was not able to load
+	 * @return the lookup map for the
+	 *         {@link org.bumble.eatxt.scoping.EatxtScopeProvider}, might be empty
+	 *         (but not {@code null}) if metamodel was not able to load
+	 * 
 	 */
 	public Map<EClass, List<EClass>> getEastadlMMCrossReferenceMap() {
 		return this.eastadlMMCrossReferenceMap;
