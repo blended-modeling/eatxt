@@ -23,10 +23,7 @@ Require-Bundle: org.eclipse.eatop.eastadl22,
  org.objectweb.asm;resolution:=optional,
  org.bumble.eatxt.common
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: org.bumble.eatxt.parser.antlr.internal,
- org.bumble.eatxt.serializer,
- org.bumble.eatxt.services,
- org.bumble.eatxt,
+Export-Package: org.bumble.eatxt,
  org.bumble.eatxt.formatting2,
  org.bumble.eatxt.generator,
  org.bumble.eatxt.jvmmodel,
