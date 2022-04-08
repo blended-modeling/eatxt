@@ -20,7 +20,7 @@ public class Activator implements BundleActivator {
 	// The shared instance
 	private static Activator plugin;
 
-	private Map<EClass, List<EClass>> eastadlMMCrossReferenceMap = null;
+	private Map<EClass, List<EClass>> eastadlMMCrossReferenceMap = new HashMap<EClass, List<EClass>>();
 
 	private ILog logger = Platform.getLog(getClass());
 
@@ -28,7 +28,6 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext context) throws Exception {
 		plugin = this;
 
-		this.eastadlMMCrossReferenceMap = new HashMap<EClass, List<EClass>>();
 		EReference referenceOfClassifier = null;
 		EPackage eastadlMMToplevelPackage = EPackage.Registry.INSTANCE.getEPackage("http://east-adl.info/2.2.0");
 		if (eastadlMMToplevelPackage != null) {
