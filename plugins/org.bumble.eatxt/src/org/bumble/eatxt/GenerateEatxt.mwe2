@@ -40,45 +40,65 @@ Workflow {
 				preferXtendStubs = false
 			}
 		}
-		language = StandardLanguage {
+		language = XtextGeneratorLanguage {
 			name = "org.bumble.eatxt.Eatxt"
 			fileExtensions = "eatxt"
 			referencedResource = "platform:/resource/org.eclipse.eatop.eastadl22/model/eastadl22.genmodel"
 			
-			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
+		    fragment = grammarAccess.GrammarAccessFragment2 {}
+		    fragment = ecore.EMFGeneratorFragment2 {}
+		    fragment = serializer.SerializerFragment2 {
+		    	generateStub = false
+		    }
+		    fragment = resourceFactory.ResourceFactoryFragment2 {}
+		    fragment = parser.antlr.XtextAntlrGeneratorFragment2 {
+		    	options = {
+					classSplitting = true
+				}
+		    }
+		    fragment = validation.ValidatorFragment2 {
+		    	// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				// Generates checks for @Deprecated grammar annotations, an IssueProvider and a corresponding PropertyPage
+				generateDeprecationValidation = true
+		    }
+		    fragment = scoping.ImportNamespacesScopingFragment2 {}
+		    fragment = exporting.QualifiedNamesFragment2 {}
+		    fragment = builder.BuilderIntegrationFragment2 {}
+		    fragment = generator.GeneratorFragment2 {
+		    	generateXtendStub = true
+		    }
+			
 			fragment = formatting2.EatxtFormatter2Fragment auto-inject {
 				generateStub = true
 				generateXtendStub = true
 			}
-
-			formatter = {
-				generateStub = false
-				generateXtendStub = true
+			
+			fragment = ui.labeling.LabelProviderFragment2 {}
+		    fragment = ui.outline.QuickOutlineFragment2 {}
+		    fragment = ui.outline.OutlineTreeProviderFragment2 {}
+		    fragment = ui.quickfix.QuickfixProviderFragment2 {}
+		    
+		    fragment = contentassist.EatxtContentAssistFragment auto-inject {
+				generateXtendStub = false
+				inheritImplementation = true
 			}
 			
-			parserGenerator = {
-				options = {
-					classSplitting = true
-				}
-			}
-
-			serializer = {
-				generateStub = false
-			}
-			validator = {
-				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-				// Generates checks for @Deprecated grammar annotations, an IssueProvider and a corresponding PropertyPage
-				generateDeprecationValidation = true
-			}
-			fileWizard = {
-				generate = true
-			}
-			generator = {
-				generateXtendStub = true
-			}
-			junitSupport = {
-				junitVersion = "5"
-			}
+			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
+			
+		    fragment = junit.JUnitFragment {
+		    	junitVersion = "5"
+		    }
+		    fragment = ui.refactoring.RefactorElementNameFragment2 {}
+		    fragment = types.TypesGeneratorFragment2 {}
+		    fragment = xbase.XtypeGeneratorFragment2 {}
+		    fragment = xbase.XbaseGeneratorFragment2 {}
+		    fragment = ui.templates.CodetemplatesGeneratorFragment2 {}
+		    fragment = ui.compare.CompareFragment2 {}
+        	fragment = ui.projectWizard.TemplateProjectWizardFragment {}
+    		fragment = ui.fileWizard.TemplateFileWizardFragment {
+    			generate = true
+    		}
+    		
 		}
 	}
 }
