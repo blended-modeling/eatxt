@@ -21,7 +21,10 @@ Require-Bundle: org.eclipse.eatop.eastadl22,
  org.eclipse.xtext.xtext.generator,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.objectweb.asm;resolution:=optional,
- org.bumble.eatxt.common
+ org.bumble.eatxt.common,
+ org.apache.commons.logging,
+ org.eclipse.emf.mwe.core,
+ org.eclipse.emf.mwe.utils
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.bumble.eatxt,
  org.bumble.eatxt.formatting2,

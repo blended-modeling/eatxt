@@ -2,96 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.eclipse.eatop.releng</groupId>
-		<artifactId>org.eclipse.eatop.releng.parent</artifactId>
-		<version>0.5.0-SNAPSHOT</version>
-		<relativePath>../../releng/org.eclipse.eatop.releng.builds/parent/pom.xml</relativePath>
-	</parent>
+
 	<groupId>org.eclipse.eatop.plugins</groupId>
 	<artifactId>org.eclipse.eatop.eastadl22</artifactId>
 	<version>0.5.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
-<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.4.1</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>src</directory>
-							<includes>
-								<include>**/*</include>
-							</includes>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.1.0</version>
-				<executions>
-					<execution>
-						<id>clean-unpacked-sources</id>
-						<phase>clean</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/META-INF</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${basedir}/releng/original</directory>
-								    <filtering>true</filtering>
-									<includes>
-										<include>MANIFEST.MF</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-					<execution>
-						<id>copy-MANIFEST</id>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/META-INF</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${basedir}/releng</directory>
-								    <filtering>true</filtering>
-									<includes>
-										<include>MANIFEST.MF</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<groupId>org.apache.maven.plugins</groupId>
-				<version>3.0.0</version>
-				<executions>
-					<execution>
-						<id>unpack-sources</id>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<target>
-								<unzip src="${basedir}/lib/eastadl22src.zip" dest="${basedir}/src"/>
-							</target>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+
+	<parent>
+		<groupId>org.bumble.eatxt</groupId>
+		<artifactId>org.bumble.eatxt.parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../../releng/org.bumble.eatxt.parent/pom.xml</relativePath>
+	</parent>
 </project>
