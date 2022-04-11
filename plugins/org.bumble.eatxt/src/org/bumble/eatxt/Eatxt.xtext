@@ -527,7 +527,7 @@ ModeGroup returns ModeGroup:
 		('name' name=String0 ';')?
 		('text' text=String0 ';')?
 		('uri' uri=String0 ';')?
-		'precondition' precondition=String0 ';' 
+		'precondition' precondition=EString ';' 
 		(  ownedComment+=Comment (  ownedComment+=Comment)*  )?
 		  mode+=Mode (  mode+=Mode)*  
 	'}';
@@ -617,7 +617,7 @@ Requirement_Impl returns Requirement:
 		('category' category=Identifier ';')?
 		('uuid' uuid=UUID ';')?
 		('name' name=String0 ';')?
-		('text' text=String0 ';')?
+		('text' text=EString ';')?
 		('uri' uri=String0 ';')?
 		('formalism' formalism=String0 ';')?
 		('mode' '(' mode+=[Mode|EString] (  mode+=[Mode|EString])* ')' )?
@@ -1829,7 +1829,7 @@ Mode returns Mode:
 		('category' category=Identifier ';')?
 		('uuid' uuid=UUID ';')?
 		('name' name=String0 ';')?
-		'condition' condition=String0 ';' 
+		'condition' condition=EString ';' 
 		(  ownedComment+=Comment (  ownedComment+=Comment)*  )?
 	'}';
 
