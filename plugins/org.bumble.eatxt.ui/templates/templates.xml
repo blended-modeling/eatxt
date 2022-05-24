@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+
+<template autoinsert="true" context="org.bumble.eatxt.Eatxt.ModeGroup" deleted="false" description="Template for ModeGroup" enabled="true" name="ModeGroup" id="ModeGroup">ModeGroup ${shortName} {&#13;
+	precondition "insert precondition";&#13;
+	Mode ${shortName} {&#13;
+		condition "insert condition";&#13;
+	}&#13;
+}</template>
+
+</templates>
