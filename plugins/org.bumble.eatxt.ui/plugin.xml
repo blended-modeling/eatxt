@@ -446,7 +446,7 @@
          point="org.eclipse.ui.commands">
       <command
 			id="org.bumble.eatxt.ui.handlers.serialiseEaxml"
-            name="Serialise file as EAXML...">
+            name="Convert to EAXML...">
       </command>
       <command
 			id="org.bumble.eatxt.ui.handlers.importFromEaxml"
@@ -455,14 +455,22 @@
     </extension>
     <extension point="org.eclipse.ui.menus">
 		<menuContribution
-			locationURI="popup:#TextEditorContext?after=group.edit">
+			allPopups="false"
+			locationURI="popup:org.eclipse.ui.popup.any">
 			<command commandId="org.bumble.eatxt.ui.handlers.serialiseEaxml"
 				style="push">
-				<visibleWhen checkEnabled="false">
-					<reference
-						definitionId="org.bumble.eatxt.Eatxt.Editor.opened">
-					</reference>
-				</visibleWhen>
+				<visibleWhen
+                     checkEnabled="false">
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="eatxt">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </visibleWhen>
 			</command>
 		</menuContribution>
 		<menuContribution
