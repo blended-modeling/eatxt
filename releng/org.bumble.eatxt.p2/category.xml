@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Eatxt Update Site">
+      
+   </description>
+   <feature url="features/org.bumble.eatxt.feature_1.0.0.qualifier.jar" id="org.bumble.eatxt.feature" version="1.0.0.qualifier">
+      <category name="org.bumble.eatxt"/>
+   </feature>
+   <feature url="features/org.eclipse.eatop.eastadl.feature_1.0.0.qualifier.jar" id="org.eclipse.eatop.eastadl.feature" version="1.0.0.qualifier">
+      <category name="org.bumble.eatxt"/>
+   </feature>
+   <category-def name="org.bumble.eatxt" label="Eatxt"/>
+</site>

@@ -39,7 +39,7 @@
 		<!-- Releng -->
 		<module>../../releng/org.bumble.eatxt.target</module>
 		<module>../../releng/org.bumble.eatxt.product</module>
-
+		<module>../../releng/org.bumble.eatxt.p2</module>
 	</modules>
 
 	<build>
