@@ -41,7 +41,7 @@ class EatxtTemplateFragment extends AbstractXtextGeneratorFragment {
 							«ENDFOR»
 							«FOR reference: rule.EAllReferences»
 								«IF reference.lowerBound > 0»
-									«reference.name» ${«reference.name»}&#13;
+									«reference.name» «IF reference.upperBound < 0»(«ENDIF»${«reference.name»}«IF reference.upperBound < 0»)«ENDIF»&#13;
 								«ENDIF»
 							«ENDFOR»
 						}
