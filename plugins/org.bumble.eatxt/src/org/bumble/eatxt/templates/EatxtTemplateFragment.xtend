@@ -36,7 +36,11 @@ class EatxtTemplateFragment extends AbstractXtextGeneratorFragment {
 						«rule.name» ${shortName} {&#13;
 							«FOR attribute: rule.EAllAttributes»
 								«IF attribute.lowerBound > 0 && !attribute.name.contains("hortName")»
-									«attribute.name» ${«attribute.name»}&#13;
+									«IF attribute.EType.name.toLowerCase.contains("string")» ««« attributes with types EString or STRING have to get quotation marks 
+										«attribute.name» "${«attribute.name»}"&#13;
+									«ELSE»
+										«attribute.name» ${«attribute.name»}&#13;
+									«ENDIF»
 								«ENDIF»
 							«ENDFOR»
 							«FOR reference: rule.EAllReferences»
