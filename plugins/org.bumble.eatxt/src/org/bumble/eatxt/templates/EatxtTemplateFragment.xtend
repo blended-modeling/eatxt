@@ -45,7 +45,21 @@ class EatxtTemplateFragment extends AbstractXtextGeneratorFragment {
 							«ENDFOR»
 							«FOR reference: rule.EAllReferences»
 								«IF reference.lowerBound > 0»
-									«reference.name» «IF reference.upperBound < 0»(«ENDIF»${«reference.name»}«IF reference.upperBound < 0»)«ENDIF»&#13;
+									«IF reference.containment» ««« we have to go one level deeper and propose the nested creation of the containment itself
+										«reference.EType.name» ${shortName} {&#13;
+											«FOR containmentAttribute: reference.EReferenceType.EAllAttributes»
+												«IF containmentAttribute.lowerBound > 0 && !containmentAttribute.name.contains("hortName")»
+													«IF containmentAttribute.EType.name.toLowerCase.contains("string")» ««« attributes with types EString or STRING have to get quotation marks 
+														«containmentAttribute.name» "${«containmentAttribute.name»}"&#13;
+													«ELSE»
+														«containmentAttribute.name» ${«containmentAttribute.name»}&#13;
+													«ENDIF»
+												«ENDIF»
+											«ENDFOR»
+										}									
+									«ELSE»
+										«reference.name» «IF reference.upperBound < 0»(«ENDIF»${«reference.name»}«IF reference.upperBound < 0»)«ENDIF»&#13;
+									«ENDIF»
 								«ENDIF»
 							«ENDFOR»
 						}
