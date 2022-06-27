@@ -37,9 +37,9 @@ class EatxtTemplateFragment extends AbstractXtextGeneratorFragment {
 							«FOR attribute: rule.EAllAttributes»
 								«IF attribute.lowerBound > 0 && !attribute.name.contains("hortName")»
 									«IF attribute.EType.name.toLowerCase.contains("string")» ««« attributes with types EString or STRING have to get quotation marks 
-										«attribute.name» "${«attribute.name»}"&#13;
+										«attribute.name» "${«attribute.name»}";&#13;
 									«ELSE»
-										«attribute.name» ${«attribute.name»}&#13;
+										«attribute.name» ${«attribute.name»};&#13;
 									«ENDIF»
 								«ENDIF»
 							«ENDFOR»
@@ -50,9 +50,9 @@ class EatxtTemplateFragment extends AbstractXtextGeneratorFragment {
 											«FOR containmentAttribute: reference.EReferenceType.EAllAttributes»
 												«IF containmentAttribute.lowerBound > 0 && !containmentAttribute.name.contains("hortName")»
 													«IF containmentAttribute.EType.name.toLowerCase.contains("string")» ««« attributes with types EString or STRING have to get quotation marks 
-														«containmentAttribute.name» "${«containmentAttribute.name»}"&#13;
+														«containmentAttribute.name» "${«containmentAttribute.name»}";&#13;
 													«ELSE»
-														«containmentAttribute.name» ${«containmentAttribute.name»}&#13;
+														«containmentAttribute.name» ${«containmentAttribute.name»};&#13;
 													«ENDIF»
 												«ENDIF»
 											«ENDFOR»
