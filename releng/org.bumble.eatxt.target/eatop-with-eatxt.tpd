@@ -1,0 +1,76 @@
+target "east-adl-simplified" with source requirements
+
+location "http://download.eclipse.org/releases/2021-03/" eclipse-2021-03 {
+	org.eclipse.emf.sdk.feature.group
+	org.eclipse.gmf.feature.group
+	org.eclipse.xtext.sdk.feature.group
+	org.eclipse.graphiti.sdk.feature.feature.group
+	org.eclipse.gmf.runtime.sdk.feature.group
+	org.eclipse.gmf.runtime.notation.sdk.feature.group
+	org.eclipse.lsp4e
+	org.eclipse.sdk.feature.group
+	org.eclipse.equinox.executable.feature.group
+	org.eclipse.core.runtime.feature.feature.group
+	org.eclipse.xpand
+	org.eclipse.rcp.source.feature.group
+	org.eclipse.sdk.ide
+	org.eclipse.rcp.feature.group
+}
+
+location "https://download.eclipse.org/cbi/updates/license" eclipse-license {
+	org.eclipse.license.feature.group
+}
+
+location "https://download.eclipse.org/sphinx/previews" sphinx {
+	org.eclipse.sphinx.sdk.feature.group
+	org.eclipse.sphinx.testutils.feature.group
+}
+
+location "https://www.artop.org/containers/artop-eel-update-site-1.0" artop {
+	org.artop.eel.feature.group
+	org.artop.eel.sdk.feature.group
+}
+
+
+location "https://download.eclipse.org/tools/orbit/downloads/drops/R20210223232630/repository" eclipse-orbit-2021-03 {
+	org.junit.jupiter.api
+	org.junit.jupiter.engine
+	io.github.classgraph
+	com.google.gson
+	org.aopalliance
+	org.apache.xml.resolver
+	org.apache.xml.serializer
+	com.google.guava
+	org.apache.commons.cli.source
+	org.apache.commons.lang3
+	org.jdom
+	org.easymock
+}
+
+location "https://download.eclipse.org/tools/orbit/downloads/drops/R20191126223242/repository" eclipse-orbit-2019-12 {
+	// We need Xerces 2.9 to word around https://bugs.eclipse.org/bugs/show_bug.cgi?id=575868
+	org.apache.xerces [2.9.0,2.10.0)
+}
+
+location "https://download.eclipse.org/lsp4j/updates/releases/0.12.0/" lsp4j {
+	org.eclipse.lsp4j
+	org.eclipse.lsp4j.jsonrpc
+}
+
+location "https://download.eclipse.org/nattable/releases/1.6.0/repository" nattable {
+	org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.extension.nebula.source.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.core.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.core.source.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.extension.poi.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.extension.nebula.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.extension.e4.source.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.extension.poi.source.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.extension.e4.feature.feature.group
+	org.eclipse.nebula.widgets.nattable.extension.glazedlists.source.feature.feature.group
+}
+
+location "https://download.eclipse.org/nebula/releases/2.3.0" nebula {
+	org.eclipse.nebula.feature.feature.group
+	org.eclipse.nebula.examples.release.feature.feature.group
+}
