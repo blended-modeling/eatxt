@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eatxt Integration UI
+Bundle-SymbolicName: org.eclipse.eatop.eatxt.ui;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Require-Bundle: javax.inject,
+ org.eclipse.osgi,
+ org.eclipse.jface,
+ org.eclipse.e4.ui.services,
+ org.eclipse.e4.core.di.annotations,
+ org.eclipse.xtext.ui,
+ org.bumble.eatxt.common,
+ org.bumble.eatxt.ui,
+ org.eclipse.eatop.eastadl22,
+ org.eclipse.osgi
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: com.google.inject;version="1.3.0",
+ javax.annotation;version="1.2.0",
+ org.eclipse.eatop.eastadl22.util,
+ org.eclipse.emf.ecore.resource,
+ org.eclipse.sphinx.emf.resource,
+ org.eclipse.ui,
+ org.eclipse.ui.handlers,
+ org.eclipse.xtext.resource
+Automatic-Module-Name: org.eclipse.eatop.eatxt.ui

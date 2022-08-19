@@ -31,5 +31,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.bumble.eatxt.ui.contentassist,
  org.bumble.eatxt.ui.internal,
  org.bumble.eatxt.ui.quickfix,
- org.bumble.eatxt.ui.wizard
+ org.bumble.eatxt.ui.wizard,
+ org.bumble.eatxt.ui
 Bundle-Activator: org.bumble.eatxt.ui.internal.EatxtActivator
