@@ -37,29 +37,37 @@ class EatxtTemplateFragment extends AbstractXtextGeneratorFragment {
 							«FOR attribute: rule.EAllAttributes»
 								«IF attribute.lowerBound > 0 && !attribute.name.contains("hortName")»
 									«IF attribute.EType.name.toLowerCase.contains("string")» ««« attributes with types EString or STRING have to get quotation marks 
-										«attribute.name» "${«attribute.name»}";&#13;
+						«attribute.name» "${«attribute.name»}";&#13;
+									«ELSEIF attribute.EType.name.toLowerCase.contains("integer")» ««« attributes with types Integer should have an int value»
+						«attribute.name» 0;&#13;
+									«ELSEIF attribute.EType.name.toLowerCase.contains("float")» ««« attributes with types Float should have a float value»
+						«attribute.name» 0.0;&#13;
 									«ELSE»
-										«attribute.name» ${«attribute.name»};&#13;
-									«ENDIF»
+						«attribute.name» ${«attribute.name»};&#13;
+									«ENDIF»									
 								«ENDIF»
 							«ENDFOR»
 							«FOR reference: rule.EAllReferences»
 								«IF reference.lowerBound > 0»
 									«IF reference.containment» ««« we have to go one level deeper and propose the nested creation of the containment itself
-										«reference.EType.name» ${shortName} {&#13;
+						«reference.EType.name» ${shortName} {&#13;
 											«FOR containmentAttribute: reference.EReferenceType.EAllAttributes»
 												«IF containmentAttribute.lowerBound > 0 && !containmentAttribute.name.contains("hortName")»
 													«IF containmentAttribute.EType.name.toLowerCase.contains("string")» ««« attributes with types EString or STRING have to get quotation marks 
-														«containmentAttribute.name» "${«containmentAttribute.name»}";&#13;
+							«containmentAttribute.name» "${«containmentAttribute.name»}";&#13;
+													«ELSEIF containmentAttribute.EType.name.toLowerCase.contains("integer")» ««« attributes with types Integer should have an int value»
+							«containmentAttribute.name» 0;&#13;
+													«ELSEIF containmentAttribute.EType.name.toLowerCase.contains("float")» ««« attributes with types Float should have a float value»
+							«containmentAttribute.name» 0.0;&#13;
 													«ELSE»
-														«containmentAttribute.name» ${«containmentAttribute.name»};&#13;
-													«ENDIF»
+							«containmentAttribute.name» ${«containmentAttribute.name»};&#13;
+													«ENDIF»															
 												«ENDIF»
 											«ENDFOR»
 										}									
-									«ELSE»
-										«reference.name» «IF reference.upperBound < 0»(«ENDIF»${«reference.name»}«IF reference.upperBound < 0»)«ENDIF»&#13;
-									«ENDIF»
+									«ELSE»««« cross references => Cross Reference Template Variable Resolver (https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#templates)
+							«reference.name» «IF reference.upperBound < 0»(«ENDIF»${«reference.name»:CrossReference('«rule.name».«reference.name»')}«IF reference.upperBound < 0»)«ENDIF»&#13;
+									«ENDIF»									
 								«ENDIF»
 							«ENDFOR»
 						}
