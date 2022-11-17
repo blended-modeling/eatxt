@@ -42,6 +42,8 @@ class EatxtTemplateFragment extends AbstractXtextGeneratorFragment {
 						«attribute.name» 0;&#13;
 									«ELSEIF attribute.EType.name.toLowerCase.contains("float")» ««« attributes with types Float should have a float value»
 						«attribute.name» 0.0;&#13;
+									«ELSEIF attribute.EType.name.toLowerCase.contains("kind")» ««« attributes with type Enumeration are called xxxKind in the EAST-ADL metamodel and should use an Enum Template Variable Resolver
+						«attribute.name» ${«attribute.EType.defaultValue.toString.toLowerCase»:Enum('«attribute.name»')};&#13;
 									«ELSE»
 						«attribute.name» ${«attribute.name»};&#13;
 									«ENDIF»									
@@ -66,7 +68,7 @@ class EatxtTemplateFragment extends AbstractXtextGeneratorFragment {
 											«ENDFOR»
 										}									
 									«ELSE»««« cross references => Cross Reference Template Variable Resolver (https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#templates)
-							«reference.name» «IF reference.upperBound < 0»(«ENDIF»${«reference.name»:CrossReference('«rule.name».«reference.name»')}«IF reference.upperBound < 0»)«ENDIF»&#13;
+							«reference.name» «IF reference.upperBound < 0»(«ENDIF»"${«reference.name»:CrossReference('«rule.name».«reference.name»')}"«IF reference.upperBound < 0»)«ENDIF»&#13;
 									«ENDIF»									
 								«ENDIF»
 							«ENDFOR»
