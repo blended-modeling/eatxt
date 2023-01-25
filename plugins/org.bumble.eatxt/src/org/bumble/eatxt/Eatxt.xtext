@@ -1224,7 +1224,7 @@ RangeableValueType returns RangeableValueType:
         'accuracy' accuracy=Float ';' 
         'resolution' resolution=Float ';' 
         ('significantDigits' significantDigits=Integer ';')?
-        'baseRangeable' baseRangeable=[EANumerical|EString] ';' 
+        ('baseRangeable' baseRangeable=[EANumerical|EString] ';')? 
         (  ownedComment+=Comment (  ownedComment+=Comment)*  )?
     '}';
 
@@ -1672,7 +1672,7 @@ FunctionFlowPort returns FunctionFlowPort:
         ('uuid' uuid=UUID ';')?
         ('name' name=Identifier ';')?
         'direction' direction=EADirectionKind ';' 
-        'type' type=[EADatatype|EString] ';' 
+        ('type' type=[EADatatype|EString] ';')? 
         (  ownedComment+=Comment (  ownedComment+=Comment)*  )?
         ('defaultValue' defaultValue=EAValue ';')?
     '}';
