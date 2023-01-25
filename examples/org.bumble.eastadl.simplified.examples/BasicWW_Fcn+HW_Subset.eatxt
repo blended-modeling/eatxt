@@ -1,0 +1,315 @@
+EAPackage CoreFcnHw {
+	EAPackage Structure {
+		EAPackage DesignPkg {
+			EAPackage FcnDesignPkg {
+				DesignFunctionType StalkHWFLDM {
+					isElementary false;
+					FunctionFlowPort stalkPositionPhys {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+					FunctionFlowPort wipingHMI_rqst {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+				}
+				BasicSoftwareFunctionType WiperMotorBSW {
+					isElementary true;
+					FunctionFlowPort wiperMotorHighSpeed {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort wiperMotorLowSpeed {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort Digital_WiperHi {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort Digital_WiperLo {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+				}
+				HardwareFunctionType WiperMotorHWF {
+					uuid "848b7e2a-102e-479f-9fd5-956e98c7a7cf";
+					isElementary true;
+					FunctionFlowPort bWindScreenWiperParkPosition {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort bWiperMotorHighSpeed {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort bWiperMotorLowSpeed {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort WiperMotorAngle {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Real_float64" ;
+					}
+					FunctionFlowPort WiperMotorSpeed {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Real_float64" ;
+					}
+				}
+				LocalDeviceManager WiperMotorLDM {
+					isElementary true;
+					FunctionFlowPort wipingCommand {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+					FunctionFlowPort Digital_WiperLo {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort Digital_WiperHi {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+				}
+				HardwareFunctionType WiperMotorRelayHWF {
+					uuid "766f9e0e-1c0c-4162-8853-a256c4e3d21e";
+					isElementary true;
+					FunctionFlowPort wiperMotorHighSpeedOut {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort wiperMotorLowSpeedOut {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort wiperMotorHighSpeedIn {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort wiperMotorLowSpeedIn {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+				}
+				LocalDeviceManager WiperParkPositionLDM {
+					isElementary true;
+					FunctionFlowPort wiperParkStatusIn {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean" ;
+					}
+					FunctionFlowPort wiperParkStatusOut {
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+				}
+				DesignFunctionType WiperVisualizationHWFLDM {
+					isElementary false;
+					FunctionFlowPort WiperAngle {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Real_float64" ;
+					}
+				}
+				DesignFunctionType WiperCtrlBasic {
+					isElementary true;
+					FunctionFlowPort bWiperParkStatus {
+						name bWiperParkStatus;
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+					FunctionFlowPort Wiping_HMI_rqst {
+						name Wiping_HMI_rqst;
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+					FunctionFlowPort WiperParkStatus_Global {
+						name WiperParkStatus_Global;
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+					FunctionFlowPort WipingCmd {
+						name WipingCmd;
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+				}
+				Behavior BehaviorFMU { name BehaviorFMU ; FunctionBehavior WiperMotorHWFFMU { path "FMU/WiperMotorHWF.fmu" ; representation OTHER ; function "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF" ; } FunctionBehavior WiperMotorBSWFMU { path "FMU/WiperMotorBSW.fmu" ; representation OTHER ; function "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW" ; } FunctionBehavior WiperMotorRelayHWFFMU { path "FMU/WiperMotorRelayHWF.fmu" ; representation OTHER ; function "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF" ; } FunctionBehavior WiperParkPositionLDMFMU { path "FMU/WiperParkPositionLDM.fmu" ; representation OTHER ; function "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperParkPositionLDM" ; } FunctionBehavior WiperMotorLDMFMU { path "FMU/WiperMotorLDM.fmu" ; representation OTHER ; function "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorLDM" ; } FunctionBehavior FuncBehaviorWiperCtrlBasic { path "/FMU/WiperCtrlBasic.fmu" ; representation OTHER ; function "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperCtrlBasic" ; } }
+			}
+			EAPackage DataTypes {
+				uuid "3caef442-a383-4f3c-bdba-9bf55d2f672b";
+				EABoolean Boolean {
+					name Boolean;
+				}
+				EANumerical Numerical {
+					name Numerical;
+				}
+				EANumerical Integer_uint8 				
+				RangeableValueType Real_float64 {
+					accuracy 0.0;
+					resolution 0.0;
+					significantDigits 0;
+					baseRangeable "CoreFcnHw.Structure.DesignPkg.DataTypes.Numerical";
+				}
+				FunctionClientServerInterface WipingCommandCSI
+			}
+			EAPackage FcnDesignArchitecture {
+				DesignFunctionType FDAWithController {
+					isElementary false;
+					FunctionConnector wiperHighCommandC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorRelayHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF.wiperMotorHighSpeedOut" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF.bWiperMotorHighSpeed" ; }
+					}
+					FunctionConnector wiperHighCommandC2 {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorBSW" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW.wiperMotorHighSpeed" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorRelayHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF.wiperMotorHighSpeedIn" ; }
+					}
+					FunctionConnector wiperLowCommandC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorRelayHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF.wiperMotorLowSpeedOut" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF.bWiperMotorLowSpeed" ; }
+					}
+					FunctionConnector wiperLowCommandC2 {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorRelayHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF.wiperMotorLowSpeedIn" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorBSW" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW.wiperMotorLowSpeed" ; }
+					}
+					FunctionConnector WiperParkStatusC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperParkPositionLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperParkPositionLDM.wiperParkStatusIn" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF.bWindScreenWiperParkPosition" ; }
+					}
+					FunctionConnector wipingCommandHiC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorBSW" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW.Digital_WiperHi" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorLDM.Digital_WiperHi" ; }
+					}
+					FunctionConnector wipingCommandLoC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorBSW" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW.Digital_WiperLo" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorLDM.Digital_WiperLo" ; }
+					}
+					FunctionConnector WiperAngle {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperVizualizationHWFLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperVisualizationHWFLDM.WiperAngle" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF.WiperMotorAngle" ; }
+					}
+					FunctionConnector wiperCtrlBasic_WipingCmd_to_wiperMotorLDM_wipingCommand {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperCtrlBasic" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperCtrlBasic.WipingCmd" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperMotorLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorLDM.wipingCommand" ; }
+					}
+					FunctionConnector wiperParkPositionLDM_wiperParkStatusOut_to_wiperCtrlBasic_bWiperParkStatus {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperCtrlBasic" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperCtrlBasic.bWiperParkStatus" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperParkPositionLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperParkPositionLDM.wiperParkStatusOut" ; }
+					}
+					FunctionConnector WiperParkStatus_Global_delegate_wiperCtrlBasic_WiperParkStatus_Global {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperCtrlBasic" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperCtrlBasic.WiperParkStatus_Global" ; } FunctionConnector_port { functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.WiperParkStatus_Global" ; }
+					}
+					FunctionConnector Wiping_HMI_rqst_delegate_wiperCtrlBasic_Wiping_HMI_rqst {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperCtrlBasic" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperCtrlBasic.Wiping_HMI_rqst" ; } FunctionConnector_port { functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.Wiping_HMI_rqst" ; }
+					}
+					FunctionFlowPort Wiping_HMI_rqst {
+						name Wiping_HMI_rqst;
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean";
+					}
+					FunctionFlowPort WiperParkStatus_Global {
+						name WiperParkStatus_Global;
+						direction out;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Boolean";
+					}
+					DesignFunctionPrototype wiperMotorBSW {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW" ;
+					}
+					DesignFunctionPrototype wiperMotorHWF {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF" ;
+					}
+					DesignFunctionPrototype wiperMotorLDM {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorLDM" ;
+					}
+					DesignFunctionPrototype wiperMotorRelayHWF {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF" ;
+					}
+					DesignFunctionPrototype wiperParkPositionLDM {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperParkPositionLDM" ;
+					}
+					DesignFunctionPrototype wiperVizualizationHWFLDM {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperVisualizationHWFLDM" ;
+					}
+					DesignFunctionPrototype wiperCtrlBasic {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperCtrlBasic" ;
+					}
+				}
+				DesignFunctionType FDAWithoutController {
+					isElementary false;
+					FunctionConnector wiperHighCommandC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorRelayHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF.wiperMotorHighSpeedOut" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF.bWiperMotorHighSpeed" ; }
+					}
+					FunctionConnector wiperHighCommandC2 {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorBSW" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW.wiperMotorHighSpeed" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorRelayHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF.wiperMotorHighSpeedIn" ; }
+					}
+					FunctionConnector wiperLowCommandC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorRelayHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF.wiperMotorLowSpeedOut" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF.bWiperMotorLowSpeed" ; }
+					}
+					FunctionConnector wiperLowCommandC2 {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorRelayHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF.wiperMotorLowSpeedIn" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorBSW" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW.wiperMotorLowSpeed" ; }
+					}
+					FunctionConnector WiperParkStatusC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperParkPositionLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperParkPositionLDM.wiperParkStatusIn" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF.bWindScreenWiperParkPosition" ; }
+					}
+					FunctionConnector wipingCommandHiC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorBSW" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW.Digital_WiperHi" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorLDM.Digital_WiperHi" ; }
+					}
+					FunctionConnector wipingCommandLoC {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorBSW" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW.Digital_WiperLo" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorLDM.Digital_WiperLo" ; }
+					}
+					FunctionConnector WiperAngle {
+						FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperVizualizationHWFLDM" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperVisualizationHWFLDM.WiperAngle" ; } FunctionConnector_port { functionPrototype "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorHWF" ; functionPort "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF.WiperMotorAngle" ; }
+					}
+					FunctionFlowPort stalkPositionPhysical {
+						direction in;
+						type "CoreFcnHw.Structure.DesignPkg.DataTypes.Integer_uint8" ;
+					}
+					DesignFunctionPrototype wiperMotorBSW {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorBSW" ;
+					}
+					DesignFunctionPrototype wiperMotorHWF {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorHWF" ;
+					}
+					DesignFunctionPrototype wiperMotorLDM {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorLDM" ;
+					}
+					DesignFunctionPrototype wiperMotorRelayHWF {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperMotorRelayHWF" ;
+					}
+					DesignFunctionPrototype wiperParkPositionLDM {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperParkPositionLDM" ;
+					}
+					DesignFunctionPrototype wiperVizualizationHWFLDM {
+						type "CoreFcnHw.Structure.DesignPkg.FcnDesignPkg.WiperVisualizationHWFLDM" ;
+					}
+				}
+			}
+			EAPackage HWDesignPkg {
+				HardwareComponentType WiperECU HardwareComponentType WiperSubsystemHDA {
+					HardwareComponentPrototype pECU {
+						type "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.WiperECU" ;
+					}
+				}
+				HardwareComponentType VehicleHDA {
+					HardwareComponentPrototype pWiperSubsystem {
+						type "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.WiperSubsystemHDA" ;
+					}
+				}
+			}
+		}
+		DesignLevel DesignLevelWW {
+			Allocation FcnAllocations {
+				FunctionAllocation a1 {
+					allocatedElement FunctionAllocation_allocatedElement { allocateableElement_context ( "CoreFcnHw.Structure.DesignLevelWW.pFDA" ) allocateableElement "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController.wiperCtrlBasic" ; } ; target FunctionAllocation_target { allocationTarget_context ( "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.VehicleHDA.pWiperSubsystem" , "CoreFcnHw.Structure.DesignLevelWW.pHDA" ) allocationTarget "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.WiperSubsystemHDA.pECU" ; } ;
+				}
+				FunctionAllocation a2 {
+					allocatedElement FunctionAllocation_allocatedElement { allocateableElement_context ( "CoreFcnHw.Structure.DesignLevelWW.pFDA" ) allocateableElement "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorLDM" ; } ; target FunctionAllocation_target { allocationTarget_context ( "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.VehicleHDA.pWiperSubsystem" , "CoreFcnHw.Structure.DesignLevelWW.pHDA" ) allocationTarget "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.WiperSubsystemHDA.pECU" ; } ;
+				}
+				FunctionAllocation a3 {
+					allocatedElement FunctionAllocation_allocatedElement { allocateableElement_context ( "CoreFcnHw.Structure.DesignLevelWW.pFDA" ) allocateableElement "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperMotorBSW" ; } ; target FunctionAllocation_target { allocationTarget_context ( "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.VehicleHDA.pWiperSubsystem" , "CoreFcnHw.Structure.DesignLevelWW.pHDA" ) allocationTarget "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.WiperSubsystemHDA.pECU" ; } ;
+				}
+				FunctionAllocation a4 {
+					allocatedElement FunctionAllocation_allocatedElement { allocateableElement_context ( "CoreFcnHw.Structure.DesignLevelWW.pFDA" ) allocateableElement "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperParkPositionLDM" ; } ; target FunctionAllocation_target { allocationTarget_context ( "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.VehicleHDA.pWiperSubsystem" , "CoreFcnHw.Structure.DesignLevelWW.pHDA" ) allocationTarget "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.WiperSubsystemHDA.pECU" ; } ;
+				}
+				FunctionAllocation a5 {
+					allocatedElement FunctionAllocation_allocatedElement { allocateableElement_context ( "CoreFcnHw.Structure.DesignLevelWW.pFDA" ) allocateableElement "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithoutController.wiperVizualizationHWFLDM" ; } ; target FunctionAllocation_target { allocationTarget_context ( "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.VehicleHDA.pWiperSubsystem" , "CoreFcnHw.Structure.DesignLevelWW.pHDA" ) allocationTarget "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.WiperSubsystemHDA.pECU" ; } ;
+				}
+			}
+			functionalDesignArchitecture DesignFunctionPrototype pFDA {
+				type "CoreFcnHw.Structure.DesignPkg.FcnDesignArchitecture.FDAWithController" ;
+			}
+			; hardwareDesignArchitecture HardwareComponentPrototype pHDA {
+				type "CoreFcnHw.Structure.DesignPkg.HWDesignPkg.VehicleHDA" ;
+			}
+			;
+		}
+	}
+}
