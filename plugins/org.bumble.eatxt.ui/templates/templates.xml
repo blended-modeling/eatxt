@@ -30,15 +30,15 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Feature" deleted="false" description="Template for Feature" enabled="true" name="Feature" id="eastadl22.Feature">
 	Feature ${shortName} {&#13;
-		 						cardinality "${cardinality}";&#13;
+		 				cardinality "${cardinality}";&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FeatureGroup" deleted="false" description="Template for FeatureGroup" enabled="true" name="FeatureGroup" id="eastadl22.FeatureGroup">
 	FeatureGroup ${shortName} {&#13;
-		 						cardinality "${cardinality}";&#13;
-				 						Feature ${shortName} {&#13;
-				 							cardinality "${cardinality}";&#13;
-							}									
+		 				cardinality "${cardinality}";&#13;
+				 				Feature ${shortName} {&#13;
+				 				cardinality "${cardinality}";&#13;
+							}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FeatureModel" deleted="false" description="Template for FeatureModel" enabled="true" name="FeatureModel" id="eastadl22.FeatureModel">
@@ -47,7 +47,7 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.VehicleFeature" deleted="false" description="Template for VehicleFeature" enabled="true" name="VehicleFeature" id="eastadl22.VehicleFeature">
 	VehicleFeature ${shortName} {&#13;
-		 						cardinality "${cardinality}";&#13;
+		 				cardinality "${cardinality}";&#13;
 				isCustomerVisible ${isCustomerVisible};&#13;
 		isDesignVariabilityRationale ${isDesignVariabilityRationale};&#13;
 		isRemoved ${isRemoved};&#13;
@@ -111,21 +111,21 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ModeGroup" deleted="false" description="Template for ModeGroup" enabled="true" name="ModeGroup" id="eastadl22.ModeGroup">
 	ModeGroup ${shortName} {&#13;
-		 						precondition "${precondition}";&#13;
-				 						Mode ${shortName} {&#13;
-				 							condition "${condition}";&#13;
-							}									
+		 				precondition "${precondition}";&#13;
+				 				Mode ${shortName} {&#13;
+				 				condition "${condition}";&#13;
+							}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FunctionBehavior" deleted="false" description="Template for FunctionBehavior" enabled="true" name="FunctionBehavior" id="eastadl22.FunctionBehavior">
 	FunctionBehavior ${shortName} {&#13;
-		 						path "${path}";&#13;
-				 						representation ${simulink:Enum('representation')};&#13;
+		 				path "${path}";&#13;
+				 				representation ${simulink:Enum('representation')};&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ReuseMetaInformation" deleted="false" description="Template for ReuseMetaInformation" enabled="true" name="ReuseMetaInformation" id="eastadl22.ReuseMetaInformation">
 	ReuseMetaInformation ${shortName} {&#13;
-		 						information "${information}";&#13;
+		 				information "${information}";&#13;
 				isReusable ${isReusable};&#13;
 	}
 </template>
@@ -151,12 +151,12 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.RequirementsRelationshipGroup" deleted="false" description="Template for RequirementsRelationshipGroup" enabled="true" name="RequirementsRelationshipGroup" id="eastadl22.RequirementsRelationshipGroup">
 	RequirementsRelationshipGroup ${shortName} {&#13;
-									requirementsRelationship ("${requirementsRelationship:CrossReference('RequirementsRelationshipGroup.requirementsRelationship')}")&#13;
+						requirementsRelationship ("${requirementsRelationship:CrossReference('RequirementsRelationshipGroup.requirementsRelationship')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.QualityRequirement" deleted="false" description="Template for QualityRequirement" enabled="true" name="QualityRequirement" id="eastadl22.QualityRequirement">
 	QualityRequirement ${shortName} {&#13;
-		 						kind ${availability:Enum('kind')};&#13;
+		 				kind ${availability:Enum('kind')};&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Actor" deleted="false" description="Template for Actor" enabled="true" name="Actor" id="eastadl22.Actor">
@@ -185,8 +185,8 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.VVLog" deleted="false" description="Template for VVLog" enabled="true" name="VVLog" id="eastadl22.VVLog">
 	VVLog ${shortName} {&#13;
-		 						date "${date}";&#13;
-											performedVVProcedure "${performedVVProcedure:CrossReference('VVLog.performedVVProcedure')}"&#13;
+		 				date "${date}";&#13;
+								performedVVProcedure "${performedVVProcedure:CrossReference('VVLog.performedVVProcedure')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.VVProcedure" deleted="false" description="Template for VVProcedure" enabled="true" name="VVProcedure" id="eastadl22.VVProcedure">
@@ -211,48 +211,48 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FeatureFlaw" deleted="false" description="Template for FeatureFlaw" enabled="true" name="FeatureFlaw" id="eastadl22.FeatureFlaw">
 	FeatureFlaw ${shortName} {&#13;
-									item ("${item:CrossReference('FeatureFlaw.item')}")&#13;
+						item ("${item:CrossReference('FeatureFlaw.item')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Hazard" deleted="false" description="Template for Hazard" enabled="true" name="Hazard" id="eastadl22.Hazard">
 	Hazard ${shortName} {&#13;
-									malfunction ("${malfunction:CrossReference('Hazard.malfunction')}")&#13;
-									item ("${item:CrossReference('Hazard.item')}")&#13;
+						malfunction ("${malfunction:CrossReference('Hazard.malfunction')}");&#13;
+						item ("${item:CrossReference('Hazard.item')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.HazardousEvent" deleted="false" description="Template for HazardousEvent" enabled="true" name="HazardousEvent" id="eastadl22.HazardousEvent">
 	HazardousEvent ${shortName} {&#13;
-		 						controllability ${c0:Enum('controllability')};&#13;
-		 						exposure ${e1:Enum('exposure')};&#13;
-		 						hazardClassification ${asil_a:Enum('hazardClassification')};&#13;
-		 						severity ${s0:Enum('severity')};&#13;
-									hazard ("${hazard:CrossReference('HazardousEvent.hazard')}")&#13;
-									useCase ("${useCase:CrossReference('HazardousEvent.useCase')}")&#13;
+		 				controllability ${c0:Enum('controllability')};&#13;
+		 				exposure ${e1:Enum('exposure')};&#13;
+		 				hazardClassification ${asil_a:Enum('hazardClassification')};&#13;
+		 				severity ${s0:Enum('severity')};&#13;
+						hazard ("${hazard:CrossReference('HazardousEvent.hazard')}");&#13;
+						useCase ("${useCase:CrossReference('HazardousEvent.useCase')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Item" deleted="false" description="Template for Item" enabled="true" name="Item" id="eastadl22.Item">
 	Item ${shortName} {&#13;
-		 						developmentCategory ${newitemdevelopment:Enum('developmentCategory')};&#13;
-									vehicleFeature ("${vehicleFeature:CrossReference('Item.vehicleFeature')}")&#13;
+		 				developmentCategory ${newitemdevelopment:Enum('developmentCategory')};&#13;
+						vehicleFeature ("${vehicleFeature:CrossReference('Item.vehicleFeature')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FaultFailure" deleted="false" description="Template for FaultFailure" enabled="true" name="FaultFailure" id="eastadl22.FaultFailure">
 	FaultFailure ${shortName} {&#13;
-		 						EAValue ${shortName} {&#13;
-			}									
+		 				EAValue ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.QuantitativeSafetyConstraint" deleted="false" description="Template for QuantitativeSafetyConstraint" enabled="true" name="QuantitativeSafetyConstraint" id="eastadl22.QuantitativeSafetyConstraint">
 	QuantitativeSafetyConstraint ${shortName} {&#13;
-		 						failureRate 0.0;&#13;
-				 						repairRate 0.0;&#13;
-											constrainedFaultFailure ("${constrainedFaultFailure:CrossReference('QuantitativeSafetyConstraint.constrainedFaultFailure')}")&#13;
+		 				failureRate 0.0;&#13;
+				 				repairRate 0.0;&#13;
+								constrainedFaultFailure ("${constrainedFaultFailure:CrossReference('QuantitativeSafetyConstraint.constrainedFaultFailure')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.SafetyConstraint" deleted="false" description="Template for SafetyConstraint" enabled="true" name="SafetyConstraint" id="eastadl22.SafetyConstraint">
 	SafetyConstraint ${shortName} {&#13;
-		 						asilValue ${asil_a:Enum('asilValue')};&#13;
-									constrainedFaultFailure ("${constrainedFaultFailure:CrossReference('SafetyConstraint.constrainedFaultFailure')}")&#13;
+		 				asilValue ${asil_a:Enum('asilValue')};&#13;
+						constrainedFaultFailure ("${constrainedFaultFailure:CrossReference('SafetyConstraint.constrainedFaultFailure')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ErrorModelType" deleted="false" description="Template for ErrorModelType" enabled="true" name="ErrorModelType" id="eastadl22.ErrorModelType">
@@ -269,7 +269,7 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Claim" deleted="false" description="Template for Claim" enabled="true" name="Claim" id="eastadl22.Claim">
 	Claim ${shortName} {&#13;
-									evidence ("${evidence:CrossReference('Claim.evidence')}")&#13;
+						evidence ("${evidence:CrossReference('Claim.evidence')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Ground" deleted="false" description="Template for Ground" enabled="true" name="Ground" id="eastadl22.Ground">
@@ -278,12 +278,12 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.SafetyCase" deleted="false" description="Template for SafetyCase" enabled="true" name="SafetyCase" id="eastadl22.SafetyCase">
 	SafetyCase ${shortName} {&#13;
-		 						context "${context}";&#13;
-				 						stage ${preliminarysafetycase:Enum('stage')};&#13;
-		 						Claim ${shortName} {&#13;
-			}									
-				 						Ground ${shortName} {&#13;
-			}									
+		 				context "${context}";&#13;
+				 				stage ${preliminarysafetycase:Enum('stage')};&#13;
+		 				Claim ${shortName} {&#13;
+			}
+				 				Ground ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Warrant" deleted="false" description="Template for Warrant" enabled="true" name="Warrant" id="eastadl22.Warrant">
@@ -292,7 +292,7 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.GenericConstraint" deleted="false" description="Template for GenericConstraint" enabled="true" name="GenericConstraint" id="eastadl22.GenericConstraint">
 	GenericConstraint ${shortName} {&#13;
-		 						kind ${cablelength:Enum('kind')};&#13;
+		 				kind ${cablelength:Enum('kind')};&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.GenericConstraintSet" deleted="false" description="Template for GenericConstraintSet" enabled="true" name="GenericConstraintSet" id="eastadl22.GenericConstraintSet">
@@ -301,19 +301,19 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.TakeRateConstraint" deleted="false" description="Template for TakeRateConstraint" enabled="true" name="TakeRateConstraint" id="eastadl22.TakeRateConstraint">
 	TakeRateConstraint ${shortName} {&#13;
-		 						kind ${cablelength:Enum('kind')};&#13;
-		 						takeRate 0.0;&#13;
+		 				kind ${cablelength:Enum('kind')};&#13;
+		 				takeRate 0.0;&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ArrayDatatype" deleted="false" description="Template for ArrayDatatype" enabled="true" name="ArrayDatatype" id="eastadl22.ArrayDatatype">
 	ArrayDatatype ${shortName} {&#13;
-									elementType "${elementType:CrossReference('ArrayDatatype.elementType')}"&#13;
+						elementType "${elementType:CrossReference('ArrayDatatype.elementType')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.CompositeDatatype" deleted="false" description="Template for CompositeDatatype" enabled="true" name="CompositeDatatype" id="eastadl22.CompositeDatatype">
 	CompositeDatatype ${shortName} {&#13;
-		 						EADatatypePrototype ${shortName} {&#13;
-			}									
+		 				EADatatypePrototype ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EABoolean" deleted="false" description="Template for EABoolean" enabled="true" name="EABoolean" id="eastadl22.EABoolean">
@@ -331,53 +331,53 @@
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Enumeration" deleted="false" description="Template for Enumeration" enabled="true" name="Enumeration" id="eastadl22.Enumeration">
 	Enumeration ${shortName} {&#13;
 		isMultiValued ${isMultiValued};&#13;
-		 						EnumerationLiteral ${shortName} {&#13;
-			}									
+		 				EnumerationLiteral ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Quantity" deleted="false" description="Template for Quantity" enabled="true" name="Quantity" id="eastadl22.Quantity">
 	Quantity ${shortName} {&#13;
-		 						amountOfSubstanceExp 0;&#13;
-				 						electricCurrentExp 0;&#13;
-				 						lengthExp 0;&#13;
-				 						luminousIntensityExp 0;&#13;
-				 						massExp 0;&#13;
-				 						thermodynamicTemperatureExp 0;&#13;
-				 						timeExp 0;&#13;
+		 				amountOfSubstanceExp 0;&#13;
+				 				electricCurrentExp 0;&#13;
+				 				lengthExp 0;&#13;
+				 				luminousIntensityExp 0;&#13;
+				 				massExp 0;&#13;
+				 				thermodynamicTemperatureExp 0;&#13;
+				 				timeExp 0;&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.RangeableValueType" deleted="false" description="Template for RangeableValueType" enabled="true" name="RangeableValueType" id="eastadl22.RangeableValueType">
 	RangeableValueType ${shortName} {&#13;
-		 						accuracy 0.0;&#13;
-				 						resolution 0.0;&#13;
-											baseRangeable "${baseRangeable:CrossReference('RangeableValueType.baseRangeable')}"&#13;
+		 				accuracy 0.0;&#13;
+				 				resolution 0.0;&#13;
+								baseRangeable "${baseRangeable:CrossReference('RangeableValueType.baseRangeable')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Unit" deleted="false" description="Template for Unit" enabled="true" name="Unit" id="eastadl22.Unit">
 	Unit ${shortName} {&#13;
-		 						factor 0.0;&#13;
-				 						symbol "${symbol}";&#13;
-				 						offset 0.0;&#13;
+		 				factor 0.0;&#13;
+				 				symbol "${symbol}";&#13;
+				 				offset 0.0;&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.UserAttributeDefinition" deleted="false" description="Template for UserAttributeDefinition" enabled="true" name="UserAttributeDefinition" id="eastadl22.UserAttributeDefinition">
 	UserAttributeDefinition ${shortName} {&#13;
-									type "${type:CrossReference('UserAttributeDefinition.type')}"&#13;
+						type "${type:CrossReference('UserAttributeDefinition.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.UserAttributedElement" deleted="false" description="Template for UserAttributedElement" enabled="true" name="UserAttributedElement" id="eastadl22.UserAttributedElement">
 	UserAttributedElement ${shortName} {&#13;
-									attributedElement "${attributedElement:CrossReference('UserAttributedElement.attributedElement')}"&#13;
+						attributedElement "${attributedElement:CrossReference('UserAttributedElement.attributedElement')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.UserElementType" deleted="false" description="Template for UserElementType" enabled="true" name="UserElementType" id="eastadl22.UserElementType">
 	UserElementType ${shortName} {&#13;
-		 						key "${key}";&#13;
+		 				key "${key}";&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.BehaviorConstraintPrototype" deleted="false" description="Template for BehaviorConstraintPrototype" enabled="true" name="BehaviorConstraintPrototype" id="eastadl22.BehaviorConstraintPrototype">
 	BehaviorConstraintPrototype ${shortName} {&#13;
-									type "${type:CrossReference('BehaviorConstraintPrototype.type')}"&#13;
+						type "${type:CrossReference('BehaviorConstraintPrototype.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.BehaviorConstraintType" deleted="false" description="Template for BehaviorConstraintType" enabled="true" name="BehaviorConstraintType" id="eastadl22.BehaviorConstraintType">
@@ -386,57 +386,57 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Stakeholder" deleted="false" description="Template for Stakeholder" enabled="true" name="Stakeholder" id="eastadl22.Stakeholder">
 	Stakeholder ${shortName} {&#13;
-		 						responsibilities "${responsibilities}";&#13;
+		 				responsibilities "${responsibilities}";&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.StakeholderNeed" deleted="false" description="Template for StakeholderNeed" enabled="true" name="StakeholderNeed" id="eastadl22.StakeholderNeed">
 	StakeholderNeed ${shortName} {&#13;
-		 						need "${need}";&#13;
-				 						priority 0;&#13;
-											stakeholder ("${stakeholder:CrossReference('StakeholderNeed.stakeholder')}")&#13;
-									problemStatement ("${problemStatement:CrossReference('StakeholderNeed.problemStatement')}")&#13;
+		 				need "${need}";&#13;
+				 				priority 0;&#13;
+								stakeholder ("${stakeholder:CrossReference('StakeholderNeed.stakeholder')}");&#13;
+						problemStatement ("${problemStatement:CrossReference('StakeholderNeed.problemStatement')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.BusinessOpportunity" deleted="false" description="Template for BusinessOpportunity" enabled="true" name="BusinessOpportunity" id="eastadl22.BusinessOpportunity">
 	BusinessOpportunity ${shortName} {&#13;
-		 						businessOpportunity "${businessOpportunity}";&#13;
-											motivatesDevelopmentOf ("${motivatesDevelopmentOf:CrossReference('BusinessOpportunity.motivatesDevelopmentOf')}")&#13;
+		 				businessOpportunity "${businessOpportunity}";&#13;
+								motivatesDevelopmentOf ("${motivatesDevelopmentOf:CrossReference('BusinessOpportunity.motivatesDevelopmentOf')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ProblemStatement" deleted="false" description="Template for ProblemStatement" enabled="true" name="ProblemStatement" id="eastadl22.ProblemStatement">
 	ProblemStatement ${shortName} {&#13;
-		 						impact "${impact}";&#13;
-				 						problem "${problem}";&#13;
-				 						solutionBenefits "${solutionBenefits}";&#13;
+		 				impact "${impact}";&#13;
+				 				problem "${problem}";&#13;
+				 				solutionBenefits "${solutionBenefits}";&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ProductPositioning" deleted="false" description="Template for ProductPositioning" enabled="true" name="ProductPositioning" id="eastadl22.ProductPositioning">
 	ProductPositioning ${shortName} {&#13;
-		 						drivingNeeds "${drivingNeeds}";&#13;
-				 						keyCapabilities "${keyCapabilities}";&#13;
-				 						primaryCompetitiveAlternative "${primaryCompetitiveAlternative}";&#13;
-				 						primaryDifferentiation "${primaryDifferentiation}";&#13;
-				 						targetCustomers "${targetCustomers}";&#13;
+		 				drivingNeeds "${drivingNeeds}";&#13;
+				 				keyCapabilities "${keyCapabilities}";&#13;
+				 				primaryCompetitiveAlternative "${primaryCompetitiveAlternative}";&#13;
+				 				primaryDifferentiation "${primaryDifferentiation}";&#13;
+				 				targetCustomers "${targetCustomers}";&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FeatureLink" deleted="false" description="Template for FeatureLink" enabled="true" name="FeatureLink" id="eastadl22.FeatureLink">
 	FeatureLink ${shortName} {&#13;
-		 						kind ${needs:Enum('kind')};&#13;
-									end "${end:CrossReference('FeatureLink.end')}"&#13;
-									start "${start:CrossReference('FeatureLink.start')}"&#13;
+		 				kind ${needs:Enum('kind')};&#13;
+						end "${end:CrossReference('FeatureLink.end')}";&#13;
+						start "${start:CrossReference('FeatureLink.start')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.DeriveRequirement" deleted="false" description="Template for DeriveRequirement" enabled="true" name="DeriveRequirement" id="eastadl22.DeriveRequirement">
 	DeriveRequirement ${shortName} {&#13;
-									derived ("${derived:CrossReference('DeriveRequirement.derived')}")&#13;
-									derivedFrom ("${derivedFrom:CrossReference('DeriveRequirement.derivedFrom')}")&#13;
+						derived ("${derived:CrossReference('DeriveRequirement.derived')}");&#13;
+						derivedFrom ("${derivedFrom:CrossReference('DeriveRequirement.derivedFrom')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Refine" deleted="false" description="Template for Refine" enabled="true" name="Refine" id="eastadl22.Refine">
 	Refine ${shortName} {&#13;
-									refinedRequirement ("${refinedRequirement:CrossReference('Refine.refinedRequirement')}")&#13;
-		 						Refine_refinedBy ${shortName} {&#13;
-			}									
+						refinedRequirement ("${refinedRequirement:CrossReference('Refine.refinedRequirement')}");&#13;
+		 				Refine_refinedBy ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Satisfy" deleted="false" description="Template for Satisfy" enabled="true" name="Satisfy" id="eastadl22.Satisfy">
@@ -446,66 +446,66 @@
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.RequirementsLink" deleted="false" description="Template for RequirementsLink" enabled="true" name="RequirementsLink" id="eastadl22.RequirementsLink">
 	RequirementsLink ${shortName} {&#13;
 		isBidirectional ${isBidirectional};&#13;
-									source ("${source:CrossReference('RequirementsLink.source')}")&#13;
-									target ("${target:CrossReference('RequirementsLink.target')}")&#13;
+						source ("${source:CrossReference('RequirementsLink.source')}");&#13;
+						target ("${target:CrossReference('RequirementsLink.target')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Extend" deleted="false" description="Template for Extend" enabled="true" name="Extend" id="eastadl22.Extend">
 	Extend ${shortName} {&#13;
-									extendedCase "${extendedCase:CrossReference('Extend.extendedCase')}"&#13;
-									extensionLocation ("${extensionLocation:CrossReference('Extend.extensionLocation')}")&#13;
+						extendedCase "${extendedCase:CrossReference('Extend.extendedCase')}";&#13;
+						extensionLocation ("${extensionLocation:CrossReference('Extend.extensionLocation')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Include" deleted="false" description="Template for Include" enabled="true" name="Include" id="eastadl22.Include">
 	Include ${shortName} {&#13;
-									addition "${addition:CrossReference('Include.addition')}"&#13;
+						addition "${addition:CrossReference('Include.addition')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Interact" deleted="false" description="Template for Interact" enabled="true" name="Interact" id="eastadl22.Interact">
 	Interact ${shortName} {&#13;
-									actor "${actor:CrossReference('Interact.actor')}"&#13;
+						actor "${actor:CrossReference('Interact.actor')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Verify" deleted="false" description="Template for Verify" enabled="true" name="Verify" id="eastadl22.Verify">
 	Verify ${shortName} {&#13;
-									verifiedByCase ("${verifiedByCase:CrossReference('Verify.verifiedByCase')}")&#13;
-									verifiedRequirement ("${verifiedRequirement:CrossReference('Verify.verifiedRequirement')}")&#13;
+						verifiedByCase ("${verifiedByCase:CrossReference('Verify.verifiedByCase')}");&#13;
+						verifiedRequirement ("${verifiedRequirement:CrossReference('Verify.verifiedRequirement')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Realization" deleted="false" description="Template for Realization" enabled="true" name="Realization" id="eastadl22.Realization">
 	Realization ${shortName} {&#13;
-		 						Realization_realized ${shortName} {&#13;
-			}									
-				 						Realization_realizedBy ${shortName} {&#13;
-			}									
+		 				Realization_realized ${shortName} {&#13;
+			}
+				 				Realization_realizedBy ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.BehaviorConstraintTargetBinding" deleted="false" description="Template for BehaviorConstraintTargetBinding" enabled="true" name="BehaviorConstraintTargetBinding" id="eastadl22.BehaviorConstraintTargetBinding">
 	BehaviorConstraintTargetBinding ${shortName} {&#13;
-									behaviorConstraintType "${behaviorConstraintType:CrossReference('BehaviorConstraintTargetBinding.behaviorConstraintType')}"&#13;
+						behaviorConstraintType "${behaviorConstraintType:CrossReference('BehaviorConstraintTargetBinding.behaviorConstraintType')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.BehaviorAttributeBinding" deleted="false" description="Template for BehaviorAttributeBinding" enabled="true" name="BehaviorAttributeBinding" id="eastadl22.BehaviorAttributeBinding">
 	BehaviorAttributeBinding ${shortName} {&#13;
-									attribute ("${attribute:CrossReference('BehaviorAttributeBinding.attribute')}")&#13;
+						attribute ("${attribute:CrossReference('BehaviorAttributeBinding.attribute')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FeatureConstraint" deleted="false" description="Template for FeatureConstraint" enabled="true" name="FeatureConstraint" id="eastadl22.FeatureConstraint">
 	FeatureConstraint ${shortName} {&#13;
-		 						criterion "${criterion}";&#13;
+		 				criterion "${criterion}";&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.DeviationAttributeSet" deleted="false" description="Template for DeviationAttributeSet" enabled="true" name="DeviationAttributeSet" id="eastadl22.DeviationAttributeSet">
 	DeviationAttributeSet ${shortName} {&#13;
-		 						allowChangeAttribute ${no:Enum('allowChangeAttribute')};&#13;
-		 						allowChangeCardinality ${no:Enum('allowChangeCardinality')};&#13;
-		 						allowChangeDescription ${no:Enum('allowChangeDescription')};&#13;
-		 						allowChangeName ${no:Enum('allowChangeName')};&#13;
-		 						allowMove ${no:Enum('allowMove')};&#13;
-		 						allowReduction ${no:Enum('allowReduction')};&#13;
-		 						allowRefinement ${no:Enum('allowRefinement')};&#13;
-		 						allowRegrouping ${no:Enum('allowRegrouping')};&#13;
-		 						allowRemoval ${no:Enum('allowRemoval')};&#13;
+		 				allowChangeAttribute ${no:Enum('allowChangeAttribute')};&#13;
+		 				allowChangeCardinality ${no:Enum('allowChangeCardinality')};&#13;
+		 				allowChangeDescription ${no:Enum('allowChangeDescription')};&#13;
+		 				allowChangeName ${no:Enum('allowChangeName')};&#13;
+		 				allowMove ${no:Enum('allowMove')};&#13;
+		 				allowReduction ${no:Enum('allowReduction')};&#13;
+		 				allowRefinement ${no:Enum('allowRefinement')};&#13;
+		 				allowRegrouping ${no:Enum('allowRegrouping')};&#13;
+		 				allowRemoval ${no:Enum('allowRemoval')};&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Allocation" deleted="false" description="Template for Allocation" enabled="true" name="Allocation" id="eastadl22.Allocation">
@@ -514,43 +514,43 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.AnalysisFunctionPrototype" deleted="false" description="Template for AnalysisFunctionPrototype" enabled="true" name="AnalysisFunctionPrototype" id="eastadl22.AnalysisFunctionPrototype">
 	AnalysisFunctionPrototype ${shortName} {&#13;
-									type "${type:CrossReference('AnalysisFunctionPrototype.type')}"&#13;
+						type "${type:CrossReference('AnalysisFunctionPrototype.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.DesignFunctionPrototype" deleted="false" description="Template for DesignFunctionPrototype" enabled="true" name="DesignFunctionPrototype" id="eastadl22.DesignFunctionPrototype">
 	DesignFunctionPrototype ${shortName} {&#13;
-									type "${type:CrossReference('DesignFunctionPrototype.type')}"&#13;
+						type "${type:CrossReference('DesignFunctionPrototype.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FunctionAllocation" deleted="false" description="Template for FunctionAllocation" enabled="true" name="FunctionAllocation" id="eastadl22.FunctionAllocation">
 	FunctionAllocation ${shortName} {&#13;
-		 						FunctionAllocation_allocatedElement ${shortName} {&#13;
-			}									
-				 						FunctionAllocation_target ${shortName} {&#13;
-			}									
+		 				FunctionAllocation_allocatedElement ${shortName} {&#13;
+			}
+				 				FunctionAllocation_target ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FunctionClientServerPort" deleted="false" description="Template for FunctionClientServerPort" enabled="true" name="FunctionClientServerPort" id="eastadl22.FunctionClientServerPort">
 	FunctionClientServerPort ${shortName} {&#13;
-		 						kind ${client:Enum('kind')};&#13;
-									type "${type:CrossReference('FunctionClientServerPort.type')}"&#13;
+		 				kind ${client:Enum('kind')};&#13;
+						type "${type:CrossReference('FunctionClientServerPort.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FunctionConnector" deleted="false" description="Template for FunctionConnector" enabled="true" name="FunctionConnector" id="eastadl22.FunctionConnector">
 	FunctionConnector ${shortName} {&#13;
-		 						FunctionConnector_port ${shortName} {&#13;
-			}									
+		 				FunctionConnector_port ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FunctionFlowPort" deleted="false" description="Template for FunctionFlowPort" enabled="true" name="FunctionFlowPort" id="eastadl22.FunctionFlowPort">
 	FunctionFlowPort ${shortName} {&#13;
-		direction ${in:Enum('direction')};&#13;
-		type "${type:CrossReference('FunctionFlowPort.type')}"&#13;
+		 				direction ${in:Enum('direction')};&#13;
+						type "${type:CrossReference('FunctionFlowPort.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FunctionPowerPort" deleted="false" description="Template for FunctionPowerPort" enabled="true" name="FunctionPowerPort" id="eastadl22.FunctionPowerPort">
 	FunctionPowerPort ${shortName} {&#13;
-									type "${type:CrossReference('FunctionPowerPort.type')}"&#13;
+						type "${type:CrossReference('FunctionPowerPort.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Operation" deleted="false" description="Template for Operation" enabled="true" name="Operation" id="eastadl22.Operation">
@@ -567,13 +567,13 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.HardwareComponentPrototype" deleted="false" description="Template for HardwareComponentPrototype" enabled="true" name="HardwareComponentPrototype" id="eastadl22.HardwareComponentPrototype">
 	HardwareComponentPrototype ${shortName} {&#13;
-									type "${type:CrossReference('HardwareComponentPrototype.type')}"&#13;
+						type "${type:CrossReference('HardwareComponentPrototype.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.HardwareConnector" deleted="false" description="Template for HardwareConnector" enabled="true" name="HardwareConnector" id="eastadl22.HardwareConnector">
 	HardwareConnector ${shortName} {&#13;
-		 						HardwareConnector_port ${shortName} {&#13;
-			}									
+		 				HardwareConnector_port ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.HardwarePort" deleted="false" description="Template for HardwarePort" enabled="true" name="HardwarePort" id="eastadl22.HardwarePort">
@@ -582,8 +582,8 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.HardwarePortConnector" deleted="false" description="Template for HardwarePortConnector" enabled="true" name="HardwarePortConnector" id="eastadl22.HardwarePortConnector">
 	HardwarePortConnector ${shortName} {&#13;
-		 						HardwarePortConnector_port ${shortName} {&#13;
-			}									
+		 				HardwarePortConnector_port ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.IOHardwarePin" deleted="false" description="Template for IOHardwarePin" enabled="true" name="IOHardwarePin" id="eastadl22.IOHardwarePin">
@@ -592,8 +592,8 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.LogicalPortConnector" deleted="false" description="Template for LogicalPortConnector" enabled="true" name="LogicalPortConnector" id="eastadl22.LogicalPortConnector">
 	LogicalPortConnector ${shortName} {&#13;
-		 						HardwarePortConnector_port ${shortName} {&#13;
-			}									
+		 				HardwarePortConnector_port ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.PowerHardwarePin" deleted="false" description="Template for PowerHardwarePin" enabled="true" name="PowerHardwarePin" id="eastadl22.PowerHardwarePin">
@@ -602,24 +602,24 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ClampConnector" deleted="false" description="Template for ClampConnector" enabled="true" name="ClampConnector" id="eastadl22.ClampConnector">
 	ClampConnector ${shortName} {&#13;
-		 						ClampConnector_port ${shortName} {&#13;
-			}									
+		 				ClampConnector_port ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Mode" deleted="false" description="Template for Mode" enabled="true" name="Mode" id="eastadl22.Mode">
 	Mode ${shortName} {&#13;
-		 						condition "${condition}";&#13;
+		 				condition "${condition}";&#13;
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FunctionTrigger" deleted="false" description="Template for FunctionTrigger" enabled="true" name="FunctionTrigger" id="eastadl22.FunctionTrigger">
 	FunctionTrigger ${shortName} {&#13;
-		 						triggerPolicy ${event:Enum('triggerPolicy')};&#13;
-									type "${type:CrossReference('FunctionTrigger.type')}"&#13;
+		 				triggerPolicy ${event:Enum('triggerPolicy')};&#13;
+						type "${type:CrossReference('FunctionTrigger.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ConfigurableContainer" deleted="false" description="Template for ConfigurableContainer" enabled="true" name="ConfigurableContainer" id="eastadl22.ConfigurableContainer">
 	ConfigurableContainer ${shortName} {&#13;
-									configurableElement "${configurableElement:CrossReference('ConfigurableContainer.configurableElement')}"&#13;
+						configurableElement "${configurableElement:CrossReference('ConfigurableContainer.configurableElement')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ConfigurationDecision" deleted="false" description="Template for ConfigurationDecision" enabled="true" name="ConfigurationDecision" id="eastadl22.ConfigurationDecision">
@@ -635,12 +635,12 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ContainerConfiguration" deleted="false" description="Template for ContainerConfiguration" enabled="true" name="ContainerConfiguration" id="eastadl22.ContainerConfiguration">
 	ContainerConfiguration ${shortName} {&#13;
-									configuredContainer "${configuredContainer:CrossReference('ContainerConfiguration.configuredContainer')}"&#13;
+						configuredContainer "${configuredContainer:CrossReference('ContainerConfiguration.configuredContainer')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FeatureConfiguration" deleted="false" description="Template for FeatureConfiguration" enabled="true" name="FeatureConfiguration" id="eastadl22.FeatureConfiguration">
 	FeatureConfiguration ${shortName} {&#13;
-									configuredFeatureModel "${configuredFeatureModel:CrossReference('FeatureConfiguration.configuredFeatureModel')}"&#13;
+						configuredFeatureModel "${configuredFeatureModel:CrossReference('FeatureConfiguration.configuredFeatureModel')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.InternalBinding" deleted="false" description="Template for InternalBinding" enabled="true" name="InternalBinding" id="eastadl22.InternalBinding">
@@ -649,18 +649,18 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.PrivateContent" deleted="false" description="Template for PrivateContent" enabled="true" name="PrivateContent" id="eastadl22.PrivateContent">
 	PrivateContent ${shortName} {&#13;
-									privateElement "${privateElement:CrossReference('PrivateContent.privateElement')}"&#13;
+						privateElement "${privateElement:CrossReference('PrivateContent.privateElement')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.VariableElement" deleted="false" description="Template for VariableElement" enabled="true" name="VariableElement" id="eastadl22.VariableElement">
 	VariableElement ${shortName} {&#13;
-									optionalElement ("${optionalElement:CrossReference('VariableElement.optionalElement')}")&#13;
+						optionalElement ("${optionalElement:CrossReference('VariableElement.optionalElement')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.VariationGroup" deleted="false" description="Template for VariationGroup" enabled="true" name="VariationGroup" id="eastadl22.VariationGroup">
 	VariationGroup ${shortName} {&#13;
-		 						kind ${needs:Enum('kind')};&#13;
-									variableElement ("${variableElement:CrossReference('VariationGroup.variableElement')}")&#13;
+		 				kind ${needs:Enum('kind')};&#13;
+						variableElement ("${variableElement:CrossReference('VariationGroup.variableElement')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.VehicleLevelBinding" deleted="false" description="Template for VehicleLevelBinding" enabled="true" name="VehicleLevelBinding" id="eastadl22.VehicleLevelBinding">
@@ -673,24 +673,24 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EventChain" deleted="false" description="Template for EventChain" enabled="true" name="EventChain" id="eastadl22.EventChain">
 	EventChain ${shortName} {&#13;
-									response "${response:CrossReference('EventChain.response')}"&#13;
-									stimulus "${stimulus:CrossReference('EventChain.stimulus')}"&#13;
+						response "${response:CrossReference('EventChain.response')}";&#13;
+						stimulus "${stimulus:CrossReference('EventChain.stimulus')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.NonConcurrenceConstraint" deleted="false" description="Template for NonConcurrenceConstraint" enabled="true" name="NonConcurrenceConstraint" id="eastadl22.NonConcurrenceConstraint">
 	NonConcurrenceConstraint ${shortName} {&#13;
-		 						NonConcurrentConstraint_exclusive ${shortName} {&#13;
-			}									
+		 				NonConcurrentConstraint_exclusive ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.NonPreemptiveConstraint" deleted="false" description="Template for NonPreemptiveConstraint" enabled="true" name="NonPreemptiveConstraint" id="eastadl22.NonPreemptiveConstraint">
 	NonPreemptiveConstraint ${shortName} {&#13;
-									eventChain "${eventChain:CrossReference('NonPreemptiveConstraint.eventChain')}"&#13;
+						eventChain "${eventChain:CrossReference('NonPreemptiveConstraint.eventChain')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.PrecedenceConstraint" deleted="false" description="Template for PrecedenceConstraint" enabled="true" name="PrecedenceConstraint" id="eastadl22.PrecedenceConstraint">
 	PrecedenceConstraint ${shortName} {&#13;
-									eventChain "${eventChain:CrossReference('PrecedenceConstraint.eventChain')}"&#13;
+						eventChain "${eventChain:CrossReference('PrecedenceConstraint.eventChain')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.AUTOSAREvent" deleted="false" description="Template for AUTOSAREvent" enabled="true" name="AUTOSAREvent" id="eastadl22.AUTOSAREvent">
@@ -699,34 +699,34 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EventFaultFailure" deleted="false" description="Template for EventFaultFailure" enabled="true" name="EventFaultFailure" id="eastadl22.EventFaultFailure">
 	EventFaultFailure ${shortName} {&#13;
-									faultFailure "${faultFailure:CrossReference('EventFaultFailure.faultFailure')}"&#13;
+						faultFailure "${faultFailure:CrossReference('EventFaultFailure.faultFailure')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EventFeatureFlaw" deleted="false" description="Template for EventFeatureFlaw" enabled="true" name="EventFeatureFlaw" id="eastadl22.EventFeatureFlaw">
 	EventFeatureFlaw ${shortName} {&#13;
-									featureFlaw "${featureFlaw:CrossReference('EventFeatureFlaw.featureFlaw')}"&#13;
+						featureFlaw "${featureFlaw:CrossReference('EventFeatureFlaw.featureFlaw')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EventFunction" deleted="false" description="Template for EventFunction" enabled="true" name="EventFunction" id="eastadl22.EventFunction">
 	EventFunction ${shortName} {&#13;
-		 						eventKind ${start:Enum('eventKind')};&#13;
-		 						EventFunction_function ${shortName} {&#13;
-			}									
+		 				eventKind ${start:Enum('eventKind')};&#13;
+		 				EventFunction_function ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EventFunctionClientServerPort" deleted="false" description="Template for EventFunctionClientServerPort" enabled="true" name="EventFunctionClientServerPort" id="eastadl22.EventFunctionClientServerPort">
 	EventFunctionClientServerPort ${shortName} {&#13;
-		 						eventKind ${sentrequest:Enum('eventKind')};&#13;
-									type "${type:CrossReference('EventFunctionClientServerPort.type')}"&#13;
-		 						EventFunctionClientServerPort_port ${shortName} {&#13;
-			}									
+		 				eventKind ${sentrequest:Enum('eventKind')};&#13;
+						type "${type:CrossReference('EventFunctionClientServerPort.type')}";&#13;
+		 				EventFunctionClientServerPort_port ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EventFunctionFlowPort" deleted="false" description="Template for EventFunctionFlowPort" enabled="true" name="EventFunctionFlowPort" id="eastadl22.EventFunctionFlowPort">
 	EventFunctionFlowPort ${shortName} {&#13;
-									type "${type:CrossReference('EventFunctionFlowPort.type')}"&#13;
-		 						EventFunctionFlowPort_port ${shortName} {&#13;
-			}									
+						type "${type:CrossReference('EventFunctionFlowPort.type')}";&#13;
+		 				EventFunctionFlowPort_port ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ExternalEvent" deleted="false" description="Template for ExternalEvent" enabled="true" name="ExternalEvent" id="eastadl22.ExternalEvent">
@@ -739,153 +739,153 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.AgeConstraint" deleted="false" description="Template for AgeConstraint" enabled="true" name="AgeConstraint" id="eastadl22.AgeConstraint">
 	AgeConstraint ${shortName} {&#13;
-									scope "${scope:CrossReference('AgeConstraint.scope')}"&#13;
+						scope "${scope:CrossReference('AgeConstraint.scope')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ArbitraryConstraint" deleted="false" description="Template for ArbitraryConstraint" enabled="true" name="ArbitraryConstraint" id="eastadl22.ArbitraryConstraint">
 	ArbitraryConstraint ${shortName} {&#13;
-		 						TimingExpression ${shortName} {&#13;
-			}									
-				 						TimingExpression ${shortName} {&#13;
-			}									
-											event "${event:CrossReference('ArbitraryConstraint.event')}"&#13;
+		 				TimingExpression ${shortName} {&#13;
+			}
+				 				TimingExpression ${shortName} {&#13;
+			}
+								event "${event:CrossReference('ArbitraryConstraint.event')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.BurstConstraint" deleted="false" description="Template for BurstConstraint" enabled="true" name="BurstConstraint" id="eastadl22.BurstConstraint">
 	BurstConstraint ${shortName} {&#13;
-		 						maxOccurrences 0;&#13;
-				 						TimingExpression ${shortName} {&#13;
-			}									
-											event "${event:CrossReference('BurstConstraint.event')}"&#13;
+		 				maxOccurrences 0;&#13;
+				 				TimingExpression ${shortName} {&#13;
+			}
+								event "${event:CrossReference('BurstConstraint.event')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.DelayConstraint" deleted="false" description="Template for DelayConstraint" enabled="true" name="DelayConstraint" id="eastadl22.DelayConstraint">
 	DelayConstraint ${shortName} {&#13;
-									source "${source:CrossReference('DelayConstraint.source')}"&#13;
-									target "${target:CrossReference('DelayConstraint.target')}"&#13;
+						source "${source:CrossReference('DelayConstraint.source')}";&#13;
+						target "${target:CrossReference('DelayConstraint.target')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ExecutionTimeConstraint" deleted="false" description="Template for ExecutionTimeConstraint" enabled="true" name="ExecutionTimeConstraint" id="eastadl22.ExecutionTimeConstraint">
 	ExecutionTimeConstraint ${shortName} {&#13;
-									start "${start:CrossReference('ExecutionTimeConstraint.start')}"&#13;
-									stop "${stop:CrossReference('ExecutionTimeConstraint.stop')}"&#13;
+						start "${start:CrossReference('ExecutionTimeConstraint.start')}";&#13;
+						stop "${stop:CrossReference('ExecutionTimeConstraint.stop')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.InputSynchronizationConstraint" deleted="false" description="Template for InputSynchronizationConstraint" enabled="true" name="InputSynchronizationConstraint" id="eastadl22.InputSynchronizationConstraint">
 	InputSynchronizationConstraint ${shortName} {&#13;
-									scope ("${scope:CrossReference('InputSynchronizationConstraint.scope')}")&#13;
+						scope ("${scope:CrossReference('InputSynchronizationConstraint.scope')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.OrderConstraint" deleted="false" description="Template for OrderConstraint" enabled="true" name="OrderConstraint" id="eastadl22.OrderConstraint">
 	OrderConstraint ${shortName} {&#13;
-									target "${target:CrossReference('OrderConstraint.target')}"&#13;
-									source "${source:CrossReference('OrderConstraint.source')}"&#13;
+						target "${target:CrossReference('OrderConstraint.target')}";&#13;
+						source "${source:CrossReference('OrderConstraint.source')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.OutputSynchronizationConstraint" deleted="false" description="Template for OutputSynchronizationConstraint" enabled="true" name="OutputSynchronizationConstraint" id="eastadl22.OutputSynchronizationConstraint">
 	OutputSynchronizationConstraint ${shortName} {&#13;
-									scope ("${scope:CrossReference('OutputSynchronizationConstraint.scope')}")&#13;
+						scope ("${scope:CrossReference('OutputSynchronizationConstraint.scope')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.PatternConstraint" deleted="false" description="Template for PatternConstraint" enabled="true" name="PatternConstraint" id="eastadl22.PatternConstraint">
 	PatternConstraint ${shortName} {&#13;
-		 						TimingExpression ${shortName} {&#13;
-			}									
-				 						TimingExpression ${shortName} {&#13;
-			}									
-											event "${event:CrossReference('PatternConstraint.event')}"&#13;
+		 				TimingExpression ${shortName} {&#13;
+			}
+				 				TimingExpression ${shortName} {&#13;
+			}
+								event "${event:CrossReference('PatternConstraint.event')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.PeriodicConstraint" deleted="false" description="Template for PeriodicConstraint" enabled="true" name="PeriodicConstraint" id="eastadl22.PeriodicConstraint">
 	PeriodicConstraint ${shortName} {&#13;
-		 						TimingExpression ${shortName} {&#13;
-			}									
-											event "${event:CrossReference('PeriodicConstraint.event')}"&#13;
+		 				TimingExpression ${shortName} {&#13;
+			}
+								event "${event:CrossReference('PeriodicConstraint.event')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ReactionConstraint" deleted="false" description="Template for ReactionConstraint" enabled="true" name="ReactionConstraint" id="eastadl22.ReactionConstraint">
 	ReactionConstraint ${shortName} {&#13;
-									scope "${scope:CrossReference('ReactionConstraint.scope')}"&#13;
+						scope "${scope:CrossReference('ReactionConstraint.scope')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.RepetitionConstraint" deleted="false" description="Template for RepetitionConstraint" enabled="true" name="RepetitionConstraint" id="eastadl22.RepetitionConstraint">
 	RepetitionConstraint ${shortName} {&#13;
-		 						span 0;&#13;
-											event "${event:CrossReference('RepetitionConstraint.event')}"&#13;
+		 				span 0;&#13;
+								event "${event:CrossReference('RepetitionConstraint.event')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.SporadicConstraint" deleted="false" description="Template for SporadicConstraint" enabled="true" name="SporadicConstraint" id="eastadl22.SporadicConstraint">
 	SporadicConstraint ${shortName} {&#13;
-									event "${event:CrossReference('SporadicConstraint.event')}"&#13;
+						event "${event:CrossReference('SporadicConstraint.event')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.StrongDelayConstraint" deleted="false" description="Template for StrongDelayConstraint" enabled="true" name="StrongDelayConstraint" id="eastadl22.StrongDelayConstraint">
 	StrongDelayConstraint ${shortName} {&#13;
-									target "${target:CrossReference('StrongDelayConstraint.target')}"&#13;
-									source "${source:CrossReference('StrongDelayConstraint.source')}"&#13;
+						target "${target:CrossReference('StrongDelayConstraint.target')}";&#13;
+						source "${source:CrossReference('StrongDelayConstraint.source')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.StrongSynchronizationConstraint" deleted="false" description="Template for StrongSynchronizationConstraint" enabled="true" name="StrongSynchronizationConstraint" id="eastadl22.StrongSynchronizationConstraint">
 	StrongSynchronizationConstraint ${shortName} {&#13;
-									event ("${event:CrossReference('StrongSynchronizationConstraint.event')}")&#13;
+						event ("${event:CrossReference('StrongSynchronizationConstraint.event')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.SynchronizationConstraint" deleted="false" description="Template for SynchronizationConstraint" enabled="true" name="SynchronizationConstraint" id="eastadl22.SynchronizationConstraint">
 	SynchronizationConstraint ${shortName} {&#13;
-									event ("${event:CrossReference('SynchronizationConstraint.event')}")&#13;
+						event ("${event:CrossReference('SynchronizationConstraint.event')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ErrorBehavior" deleted="false" description="Template for ErrorBehavior" enabled="true" name="ErrorBehavior" id="eastadl22.ErrorBehavior">
 	ErrorBehavior ${shortName} {&#13;
-		 						type ${hip_hops:Enum('type')};&#13;
-									externalFailure ("${externalFailure:CrossReference('ErrorBehavior.externalFailure')}")&#13;
+		 				type ${hip_hops:Enum('type')};&#13;
+						externalFailure ("${externalFailure:CrossReference('ErrorBehavior.externalFailure')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ErrorModelPrototype" deleted="false" description="Template for ErrorModelPrototype" enabled="true" name="ErrorModelPrototype" id="eastadl22.ErrorModelPrototype">
 	ErrorModelPrototype ${shortName} {&#13;
-									target "${target:CrossReference('ErrorModelPrototype.target')}"&#13;
-									type "${type:CrossReference('ErrorModelPrototype.type')}"&#13;
+						target "${target:CrossReference('ErrorModelPrototype.target')}";&#13;
+						type "${type:CrossReference('ErrorModelPrototype.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FailureOutPort" deleted="false" description="Template for FailureOutPort" enabled="true" name="FailureOutPort" id="eastadl22.FailureOutPort">
 	FailureOutPort ${shortName} {&#13;
-									type "${type:CrossReference('FailureOutPort.type')}"&#13;
+						type "${type:CrossReference('FailureOutPort.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FaultFailurePropagationLink" deleted="false" description="Template for FaultFailurePropagationLink" enabled="true" name="FaultFailurePropagationLink" id="eastadl22.FaultFailurePropagationLink">
 	FaultFailurePropagationLink ${shortName} {&#13;
 		immediatePropagation ${immediatePropagation};&#13;
-		 						FaultFailurePropagationLink_fromPort ${shortName} {&#13;
-			}									
-				 						FaultFailurePropagationLink_toPort ${shortName} {&#13;
-			}									
+		 				FaultFailurePropagationLink_fromPort ${shortName} {&#13;
+			}
+				 				FaultFailurePropagationLink_toPort ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.FaultInPort" deleted="false" description="Template for FaultInPort" enabled="true" name="FaultInPort" id="eastadl22.FaultInPort">
 	FaultInPort ${shortName} {&#13;
-									type "${type:CrossReference('FaultInPort.type')}"&#13;
+						type "${type:CrossReference('FaultInPort.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.InternalFaultPrototype" deleted="false" description="Template for InternalFaultPrototype" enabled="true" name="InternalFaultPrototype" id="eastadl22.InternalFaultPrototype">
 	InternalFaultPrototype ${shortName} {&#13;
-									type "${type:CrossReference('InternalFaultPrototype.type')}"&#13;
+						type "${type:CrossReference('InternalFaultPrototype.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ProcessFaultPrototype" deleted="false" description="Template for ProcessFaultPrototype" enabled="true" name="ProcessFaultPrototype" id="eastadl22.ProcessFaultPrototype">
 	ProcessFaultPrototype ${shortName} {&#13;
-									type "${type:CrossReference('ProcessFaultPrototype.type')}"&#13;
+						type "${type:CrossReference('ProcessFaultPrototype.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.SafetyGoal" deleted="false" description="Template for SafetyGoal" enabled="true" name="SafetyGoal" id="eastadl22.SafetyGoal">
 	SafetyGoal ${shortName} {&#13;
-		 						hazardClassification ${asil_a:Enum('hazardClassification')};&#13;
-									derivedFrom ("${derivedFrom:CrossReference('SafetyGoal.derivedFrom')}")&#13;
-									requirement ("${requirement:CrossReference('SafetyGoal.requirement')}")&#13;
+		 				hazardClassification ${asil_a:Enum('hazardClassification')};&#13;
+						derivedFrom ("${derivedFrom:CrossReference('SafetyGoal.derivedFrom')}");&#13;
+						requirement ("${requirement:CrossReference('SafetyGoal.requirement')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EADatatypePrototype" deleted="false" description="Template for EADatatypePrototype" enabled="true" name="EADatatypePrototype" id="eastadl22.EADatatypePrototype">
 	EADatatypePrototype ${shortName} {&#13;
-									type "${type:CrossReference('EADatatypePrototype.type')}"&#13;
+						type "${type:CrossReference('EADatatypePrototype.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EnumerationLiteral" deleted="false" description="Template for EnumerationLiteral" enabled="true" name="EnumerationLiteral" id="eastadl22.EnumerationLiteral">
@@ -895,7 +895,7 @@
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.BehaviorConstraintBindingAttribute" deleted="false" description="Template for BehaviorConstraintBindingAttribute" enabled="true" name="BehaviorConstraintBindingAttribute" id="eastadl22.BehaviorConstraintBindingAttribute">
 	BehaviorConstraintBindingAttribute ${shortName} {&#13;
 		isExternVisible ${isExternVisible};&#13;
-									type "${type:CrossReference('BehaviorConstraintBindingAttribute.type')}"&#13;
+						type "${type:CrossReference('BehaviorConstraintBindingAttribute.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.BehaviorConstraintBindingEvent" deleted="false" description="Template for BehaviorConstraintBindingEvent" enabled="true" name="BehaviorConstraintBindingEvent" id="eastadl22.BehaviorConstraintBindingEvent">
@@ -905,7 +905,7 @@
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Attribute" deleted="false" description="Template for Attribute" enabled="true" name="Attribute" id="eastadl22.Attribute">
 	Attribute ${shortName} {&#13;
 		isExternVisible ${isExternVisible};&#13;
-									type "${type:CrossReference('Attribute.type')}"&#13;
+						type "${type:CrossReference('Attribute.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.AttributeQuantificationConstraint" deleted="false" description="Template for AttributeQuantificationConstraint" enabled="true" name="AttributeQuantificationConstraint" id="eastadl22.AttributeQuantificationConstraint">
@@ -915,14 +915,14 @@
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.LogicalEvent" deleted="false" description="Template for LogicalEvent" enabled="true" name="LogicalEvent" id="eastadl22.LogicalEvent">
 	LogicalEvent ${shortName} {&#13;
 		isExternVisible ${isExternVisible};&#13;
-									type "${type:CrossReference('LogicalEvent.type')}"&#13;
-									operand ("${operand:CrossReference('LogicalEvent.operand')}")&#13;
+						type "${type:CrossReference('LogicalEvent.type')}";&#13;
+						operand ("${operand:CrossReference('LogicalEvent.operand')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Quantification" deleted="false" description="Template for Quantification" enabled="true" name="Quantification" id="eastadl22.Quantification">
 	Quantification ${shortName} {&#13;
-									type "${type:CrossReference('Quantification.type')}"&#13;
-									operand ("${operand:CrossReference('Quantification.operand')}")&#13;
+						type "${type:CrossReference('Quantification.type')}";&#13;
+						operand ("${operand:CrossReference('Quantification.operand')}");&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ComputationConstraint" deleted="false" description="Template for ComputationConstraint" enabled="true" name="ComputationConstraint" id="eastadl22.ComputationConstraint">
@@ -940,7 +940,7 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.TransformationOccurrence" deleted="false" description="Template for TransformationOccurrence" enabled="true" name="TransformationOccurrence" id="eastadl22.TransformationOccurrence">
 	TransformationOccurrence ${shortName} {&#13;
-									invokedLogicalTransformation "${invokedLogicalTransformation:CrossReference('TransformationOccurrence.invokedLogicalTransformation')}"&#13;
+						invokedLogicalTransformation "${invokedLogicalTransformation:CrossReference('TransformationOccurrence.invokedLogicalTransformation')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.LogicalTimeCondition" deleted="false" description="Template for LogicalTimeCondition" enabled="true" name="LogicalTimeCondition" id="eastadl22.LogicalTimeCondition">
@@ -962,19 +962,19 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.SynchronousTransition" deleted="false" description="Template for SynchronousTransition" enabled="true" name="SynchronousTransition" id="eastadl22.SynchronousTransition">
 	SynchronousTransition ${shortName} {&#13;
-									from "${from:CrossReference('SynchronousTransition.from')}"&#13;
-									to "${to:CrossReference('SynchronousTransition.to')}"&#13;
+						from "${from:CrossReference('SynchronousTransition.from')}";&#13;
+						to "${to:CrossReference('SynchronousTransition.to')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.TemporalConstraint" deleted="false" description="Template for TemporalConstraint" enabled="true" name="TemporalConstraint" id="eastadl22.TemporalConstraint">
 	TemporalConstraint ${shortName} {&#13;
-									initState "${initState:CrossReference('TemporalConstraint.initState')}"&#13;
+						initState "${initState:CrossReference('TemporalConstraint.initState')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Transition" deleted="false" description="Template for Transition" enabled="true" name="Transition" id="eastadl22.Transition">
 	Transition ${shortName} {&#13;
-									from "${from:CrossReference('Transition.from')}"&#13;
-									to "${to:CrossReference('Transition.to')}"&#13;
+						from "${from:CrossReference('Transition.from')}";&#13;
+						to "${to:CrossReference('Transition.to')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.TransitionEvent" deleted="false" description="Template for TransitionEvent" enabled="true" name="TransitionEvent" id="eastadl22.TransitionEvent">
@@ -983,9 +983,9 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ArchitecturalDescription" deleted="false" description="Template for ArchitecturalDescription" enabled="true" name="ArchitecturalDescription" id="eastadl22.ArchitecturalDescription">
 	ArchitecturalDescription ${shortName} {&#13;
-									identifies ("${identifies:CrossReference('ArchitecturalDescription.identifies')}")&#13;
-		 						ArchitecturalModel ${shortName} {&#13;
-			}									
+						identifies ("${identifies:CrossReference('ArchitecturalDescription.identifies')}");&#13;
+		 				ArchitecturalModel ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.ArchitecturalModel" deleted="false" description="Template for ArchitecturalModel" enabled="true" name="ArchitecturalModel" id="eastadl22.ArchitecturalModel">
@@ -994,7 +994,7 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Architecture" deleted="false" description="Template for Architecture" enabled="true" name="Architecture" id="eastadl22.Architecture">
 	Architecture ${shortName} {&#13;
-									describedBy "${describedBy:CrossReference('Architecture.describedBy')}"&#13;
+						describedBy "${describedBy:CrossReference('Architecture.describedBy')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.Mission" deleted="false" description="Template for Mission" enabled="true" name="Mission" id="eastadl22.Mission">
@@ -1003,36 +1003,36 @@
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.VehicleSystem" deleted="false" description="Template for VehicleSystem" enabled="true" name="VehicleSystem" id="eastadl22.VehicleSystem">
 	VehicleSystem ${shortName} {&#13;
-									has ("${has:CrossReference('VehicleSystem.has')}")&#13;
-									fulfills ("${fulfills:CrossReference('VehicleSystem.fulfills')}")&#13;
-									hasAn "${hasAn:CrossReference('VehicleSystem.hasAn')}"&#13;
+						has ("${has:CrossReference('VehicleSystem.has')}");&#13;
+						fulfills ("${fulfills:CrossReference('VehicleSystem.fulfills')}");&#13;
+						hasAn "${hasAn:CrossReference('VehicleSystem.hasAn')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.SelectionCriterion" deleted="false" description="Template for SelectionCriterion" enabled="true" name="SelectionCriterion" id="eastadl22.SelectionCriterion">
 	SelectionCriterion ${shortName} {&#13;
-									type "${type:CrossReference('SelectionCriterion.type')}"&#13;
+						type "${type:CrossReference('SelectionCriterion.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.TimingExpression" deleted="false" description="Template for TimingExpression" enabled="true" name="TimingExpression" id="eastadl22.TimingExpression">
 	TimingExpression ${shortName} {&#13;
-									type "${type:CrossReference('TimingExpression.type')}"&#13;
+						type "${type:CrossReference('TimingExpression.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EAArrayValue" deleted="false" description="Template for EAArrayValue" enabled="true" name="EAArrayValue" id="eastadl22.EAArrayValue">
 	EAArrayValue ${shortName} {&#13;
-									type "${type:CrossReference('EAArrayValue.type')}"&#13;
+						type "${type:CrossReference('EAArrayValue.type')}";&#13;
 	}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EACompositeValue" deleted="false" description="Template for EACompositeValue" enabled="true" name="EACompositeValue" id="eastadl22.EACompositeValue">
 	EACompositeValue ${shortName} {&#13;
-									type "${type:CrossReference('EACompositeValue.type')}"&#13;
-		 						EAValue ${shortName} {&#13;
-			}									
+						type "${type:CrossReference('EACompositeValue.type')}";&#13;
+		 				EAValue ${shortName} {&#13;
+			}
 			}
 </template>
 <template autoinsert="true" context="org.bumble.eatxt.Eatxt.EAExpression" deleted="false" description="Template for EAExpression" enabled="true" name="EAExpression" id="eastadl22.EAExpression">
 	EAExpression ${shortName} {&#13;
-									type "${type:CrossReference('EAExpression.type')}"&#13;
+						type "${type:CrossReference('EAExpression.type')}";&#13;
 	}
 </template>
 </templates>
