@@ -3,8 +3,10 @@
  */
 package org.bumble.eatxt.ui;
 
-import org.bumble.eatxt.ui.AbstractEatxtUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.templates.CrossReferenceTemplateVariableResolver;
+
+import com.google.inject.Binder;
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
@@ -13,5 +15,11 @@ public class EatxtUiModule extends AbstractEatxtUiModule {
 
 	public EatxtUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	@Override
+	public void configure(Binder binder) {
+		binder.bind(CrossReferenceTemplateVariableResolver.class).to(NonAliasedCrossReferenceTemplateVariableResolver.class);
+		super.configure(binder);
 	}
 }
