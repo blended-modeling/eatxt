@@ -64,6 +64,7 @@ In this folder, we provide EATXT in the form of source code (including its gramm
 5. Use the EAText editor.
 
 Here, we will start the EATXT editor in runtime mode. The steps are as follows:
+
 	a. Find the project `org.bumble.eatxt`.
 	
 	b. Right click on it and select `Run As` -> `Eclipse Application` in the context menu. A new Eclipse RCP instance starts.
