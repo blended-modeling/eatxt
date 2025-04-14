@@ -51,11 +51,9 @@ In this folder, we provide EATXT in the form of source code (including its gramm
 
 4.	Generate the EATXT editor
 
-	a. Go the directory “plugins\org.eclipse.eatop.eastadl22\model” where you will see two genmodel files and they usually contain “.xml” in their names, please remove “.xml” from their names (i.e., their extensions should be .genmodel).
+	a. Open the project `src/org.bumble.eatxt` folder in the `org.bumble.eatxt` project **(Please check the java version in the “Java Build Path”, and it should be no lower than 17)**.
 	
-	b. Open the project `src/org.bumble.eatxt` folder in the `org.bumble.eatxt` project **(Please check the java version in the “Java Build Path”, and it should be no lower than 17)**.
-	
-	c. Right click on the `.mwe2` file and choose `Run As` -> `MWE2 workflow` from the context menu. Because Eclipse may still display a few errors at this time, you may be asked if you want to continue. Please click “Proceed”. 
+	b. Right click on the `.mwe2` file and choose `Run As` -> `MWE2 workflow` from the context menu. Because Eclipse may still display a few errors at this time, you may be asked if you want to continue. Please click “Proceed”. 
 	
 	**Then all the errors will be disappeared.**
 	
